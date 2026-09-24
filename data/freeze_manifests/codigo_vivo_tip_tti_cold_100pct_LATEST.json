@@ -22,5 +22,7 @@
   "eval_after": [
     "data/video_synth/distance_est/EVAL_TTI_COLD_AFTER.json",
     "data/video_synth/distance_est/danger50/EVAL_TTI_COLD_AFTER.json"
-  ]
+  ],
+  "feat_sha": "9ddb8f4439b015d0a907b6ede1bdcbd80d6ddcba",
+  "feat_sha_short": "9ddb8f4"
 }

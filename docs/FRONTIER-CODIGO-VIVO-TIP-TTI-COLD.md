@@ -6,6 +6,7 @@
 **Base tip:** `4bfc924` (`frontier/codigo-vivo-tip`, post inverse-r3 fold; ≥ `9a0de24`)  
 **When:** 2026-09-24 ~14:35 ET  
 **Freeze:** `codigo_vivo_tip_tti_cold_100pct_20260924_143601`  
+**Feat SHA:** `9ddb8f4` (`9ddb8f4439b015d0a907b6ede1bdcbd80d6ddcba`)  
 **Claim:** NO quantum advantage. CPU heuristic / soft priors only.
 
 ## LOCK (Anthony / Leader)

@@ -82,5 +82,7 @@
   "adapter_gitkeep_mtime": 1790274737.763645,
   "no_fold": true,
   "freeze_id": "codigo_vivo_tip_tti_cold_100pct_20260924_143601",
-  "anti_contam": "CLEAN"
+  "anti_contam": "CLEAN",
+  "feat_sha": "9ddb8f4439b015d0a907b6ede1bdcbd80d6ddcba",
+  "feat_sha_short": "9ddb8f4"
 }
