@@ -1,8 +1,8 @@
 # FRONTIER — Scaffold wire → VLM (MoE ent lane)
 
 **Branch:** `frontier/scaffold-wire-vlm`  
-**Written:** 2026-09-24 12:58:56  
-**Parent tip:** `frontier/codigo-vivo-tip` @ `7b0c63b`
+**Written:** 2026-09-24 13:17:54  
+**Parent tip:** `frontier/codigo-vivo-tip` @ `30194cb`
 
 ## Claim scope
 

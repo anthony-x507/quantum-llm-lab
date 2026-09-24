@@ -28,6 +28,10 @@
 | `frontier/tip-hardneg-r6` | `259e4a4` | fold R6 polish `f3fcf1e` (rebase onto `3b10288` → `f3fcf1e` + pin `259e4a4`); R6 48/48·40/40; LP held 43/43·32/32; floor **1.0** held |
 | `frontier/tip-own-delta-refresh` | `1b56131` | fold own-delta refresh (rebase onto `4291aab`); RAW Py−0.062 Ent+1.0 Vis−0.200; dual-lane **1.0**; floor **1.0** held |
 | `frontier/tip-hardneg-r7` | `f586efd` | fold R7 polish `00fdaaf` (rebase onto `f0fe729` → `00fdaaf` + pin `f586efd`); R7 52/52·44/44; LP held 43/43·32/32; floor **1.0** held |
+| `frontier/tip-scaffold-motion` | `d892398` | fold scaffold-motion (rebase onto `69655dd` → `7b0c63b` + pin); motion **44%**; floor **1.0** held |
+| `frontier/tip-hardneg-r8` | `e2a950d` | fold R8 polish (rebase onto `d892398` → `afd52c9`+`32b0b14`); R8 52/52·44/44; floor **1.0** held |
+| `frontier/tip-distance-danger` | `fd07999` | fold distance-danger (rebase `110bcbc` onto `e2a950d` → `da55eac`+pin); DZ 30–70 m **100%**; floor **1.0** held |
+| `frontier/tip-collision-pred` | `3834ebe` | fold collision-pred (rebase `c52ea34`/`da7a628` onto `fd07999` → `3834ebe`+`30194cb` FF); CPU oracle **100%**; floor **1.0** held |
 
 **Metric policy:** Prefer vision **1.0** / overall **1.0** from `mixed-freeze-vision` over scaffold-merge / R2-port scoreboards that still show vis **0.9** / overall **0.9667**. Keep scaffold wiring + R2 reinforces + anti-think.
 
@@ -626,6 +630,26 @@ Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. 
 
 
 
+## Collision-pred (CPU oracle) — FOLDED
+
+**When:** polish ~13:09 ET · fold 2026-09-24 13:18:46 ET · Mac-111 · rebase `da7a628`/`c52ea34` onto `fd07999` → `3834ebe`+`30194cb` FF  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-COLLISION-PRED.md`  
+**Freeze:** `codigo_vivo_tip_collision_pred_100pct_20260924_131846`
+
+| Surface | Result |
+|---------|--------|
+| Mixed (d) unified | **1.0** (py/ent/vis) |
+| collision_physics overall | **100%** (555 queries / 8 eval) |
+| collision_choose_safest | **100%** |
+| ablation vs inverse_cv | **+14.77 pp** |
+| contam / retrieval | **PASS** / **ok** |
+| R8 / LP | **52/52·44/44** / **43/43·32/32** |
+| pillars / smoke | **26/26** / **12/12** |
+| motion coverage | **44%** (held) |
+| `wired_to_vlm` / gt_leak / `ent_never_on_python` | **true** / **false** / **true** |
+
+**CPU re-smoke after fold:** unified **1.0**; R8+LP held; collision probe reconfirmed 100%; freezes retained incl. r8 + scaffold_motion + distance_danger + r7 + post_od2 + LP + r6 + priors. Adapters RO. **Motion-r2 not folded**.
+
 ## Distance-danger (30–70 m DZ) — FOLDED
 
 **When:** polish ~13:05 ET · fold 2026-09-24 13:12:43 ET · Mac-111 · rebase `110bcbc` onto `e2a950d` → `da55eac` FF  
@@ -644,7 +668,7 @@ Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. 
 | motion coverage | **44%** (held) |
 | `wired_to_vlm` / gt_leak / `ent_never_on_python` | **true** / **false** / **true** |
 
-**CPU re-smoke after fold:** unified **1.0**; R8+LP held; DZ probe reconfirmed; freezes retained incl. r8 + scaffold_motion + r7 + post_od2 + LP + r6 + priors. Adapters RO. **Collision-pred not folded**.
+**CPU re-smoke after fold:** unified **1.0**; R8+LP held; DZ probe reconfirmed; freezes retained incl. r8 + scaffold_motion + r7 + post_od2 + LP + r6 + priors. Adapters RO. Collision-pred folded later — see Collision-pred section.
 
 ## Hardneg R8 — FOLDED
 

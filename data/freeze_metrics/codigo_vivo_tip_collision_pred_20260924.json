@@ -1,0 +1,11 @@
+{
+  "frontier": "codigo-vivo-tip-collision-pred",
+  "written_et": "2026-09-24 13:18:46 ET",
+  "branch": "frontier/codigo-vivo-tip",
+  "source": "frontier/tip-collision-pred",
+  "mixed_d_unified": 1.0,
+  "collision_physics_pct": 100.0,
+  "floor_held": true,
+  "motion_coverage_known": 0.44,
+  "adapters_ro": true
+}

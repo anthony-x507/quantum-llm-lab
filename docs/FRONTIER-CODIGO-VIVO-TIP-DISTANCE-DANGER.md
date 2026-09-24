@@ -112,6 +112,6 @@ python examples/distance_est/eval_heuristic.py --contam-self-test
 **Prior freezes retained (not abandoned):** platform, mlx_r3, post_polish, R5, label_protect, R6, post_od2, R7, scaffold_motion, **R8** `codigo_vivo_tip_r8_100pct_20260924_130950`.  
 **Re-smoke:** mixed (d) **1.0**; R8 **52/52·44/44**; LP **43/43·32/32**; pillars **26/26**; smoke **12/12**; motion coverage **44%**; `wired_to_vlm=true`; `gt_leak=false`; `ent_never_on_python=true`.  
 **Distance probe recheck:** 30–70 m DZ **100%** (orig 527/527 · danger50 915/915); ~50 m **100%**; future-pred DZ +dist **97.3% / 96.59%**; tracking DZ **100%**; anti-contam **CLEAN**.  
-**Not folded:** tip-collision-pred (still out).  
+**Later folded:** tip-collision-pred @ `3834ebe` / freeze `codigo_vivo_tip_collision_pred_100pct_20260924_131846`.  
 **Adapters:** `data/lora_adapter/` RO mtime unchanged (2026-09-24 10:57:17).
 

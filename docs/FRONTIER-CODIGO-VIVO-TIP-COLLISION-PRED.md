@@ -1,7 +1,7 @@
 # FRONTIER — tip-collision-pred (predictive collision layer)
 
 **Branch:** `frontier/tip-collision-pred`  
-**Base tip SHA:** `d892398` (`frontier/codigo-vivo-tip`)  
+**Base tip SHA:** `d892398` → rebased onto `fd07999` (`frontier/codigo-vivo-tip`)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-collision-pred` (Mac-111)  
 **When:** 2026-09-24 13:09:21 ET  
 **Freeze:** `codigo_vivo_tip_collision_pred_100pct_20260924_130921` @ `c52ea34`  
@@ -75,3 +75,16 @@ cd /Users/anthony/Documents/quantum-llm-lab-tip-collision-pred
 - No write to `data/lora_adapter/`.
 - No reimplementation of distance-danger floor-scale physics.
 - No R8 / hardneg fold.
+
+
+## FOLDED into tip
+
+**When:** 2026-09-24 13:18:46 ET · Mac-111 (`074c6626-…`)  
+**Method:** rebase `frontier/tip-collision-pred` (`da7a628` / feat `c52ea34`) onto tip `fd07999` → `3834ebe` + pin `30194cb`; FF into tip (clean; no file conflicts).  
+**Prior freezes retained (not abandoned):** platform, mlx_r3, post_polish, R5, label_protect, R6, post_od2, R7, scaffold_motion, **R8** `codigo_vivo_tip_r8_100pct_20260924_130950`, **distance_danger** `codigo_vivo_tip_distance_danger_100pct_20260924_131243`.  
+**Re-smoke:** mixed (d) **1.0**; R8 **52/52·44/44**; LP **43/43·32/32**; pillars **26/26**; smoke **12/12**; motion coverage **44%**; `wired_to_vlm=true`; `gt_leak=false`; `ent_never_on_python=true`.  
+**Collision probe recheck:** physics oracle **100%** (555/555 · 8 eval seqs); choose_safest **100%**; ablation +14.77 pp vs inverse_cv; contam **PASS**; retrieval **ok**; distance stubs only (no unmerged distance import).  
+**Not folded:** tip-motion-r2 (queued next).  
+**Adapters:** `data/lora_adapter/` RO mtime unchanged (2026-09-24 10:57:17).  
+**Freeze:** `codigo_vivo_tip_collision_pred_100pct_20260924_131846`.
+
