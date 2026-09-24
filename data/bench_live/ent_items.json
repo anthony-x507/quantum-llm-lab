@@ -1,0 +1,99 @@
+{
+  "n": 12,
+  "seed": 20260924,
+  "source": "balanced_eval_set_n30 (10) + 2 extra for gate variety",
+  "scene_ids": [
+    "scene_0222",
+    "scene_0157",
+    "scene_0291",
+    "scene_0359",
+    "scene_0239",
+    "scene_0293",
+    "scene_0317",
+    "scene_0336",
+    "scene_0155",
+    "scene_0283",
+    "scene_0099",
+    "scene_0142"
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_0222",
+      "domain": "entanglement",
+      "meta_path": "data/scenes/scene_0222/meta.json",
+      "scene_seed": 4200222
+    },
+    {
+      "scene_id": "scene_0157",
+      "domain": "entanglement",
+      "meta_path": "data/scenes/scene_0157/meta.json",
+      "scene_seed": 4200157
+    },
+    {
+      "scene_id": "scene_0291",
+      "domain": "entanglement",
+      "meta_path": "data/scenes/scene_0291/meta.json",
+      "scene_seed": 24092400291
+    },
+    {
+      "scene_id": "scene_0359",
+      "domain": "entanglement",
+      "meta_path": "data/scenes/scene_0359/meta.json",
+      "scene_seed": 24092400359
+    },
+    {
+      "scene_id": "scene_0239",
+      "domain": "entanglement",
+      "meta_path": "data/scenes/scene_0239/meta.json",
+      "scene_seed": 4200239
+    },
+    {
+      "scene_id": "scene_0293",
+      "domain": "entanglement",
+      "meta_path": "data/scenes/scene_0293/meta.json",
+      "scene_seed": 24092400293
+    },
+    {
+      "scene_id": "scene_0317",
+      "domain": "entanglement",
+      "meta_path": "data/scenes/scene_0317/meta.json",
+      "scene_seed": 24092400317
+    },
+    {
+      "scene_id": "scene_0336",
+      "domain": "entanglement",
+      "meta_path": "data/scenes/scene_0336/meta.json",
+      "scene_seed": 24092400336
+    },
+    {
+      "scene_id": "scene_0155",
+      "domain": "entanglement",
+      "meta_path": "data/scenes/scene_0155/meta.json",
+      "scene_seed": 4200155
+    },
+    {
+      "scene_id": "scene_0283",
+      "domain": "entanglement",
+      "meta_path": "data/scenes/scene_0283/meta.json",
+      "scene_seed": 24092400283
+    },
+    {
+      "scene_id": "scene_0099",
+      "domain": "entanglement",
+      "bell_state": "Psi-",
+      "correlation": "anti_correlated_xy",
+      "entangled": true,
+      "separable": false,
+      "meta_path": "data/scenes/scene_0099/meta.json"
+    },
+    {
+      "scene_id": "scene_0142",
+      "domain": "entanglement",
+      "bell_state": null,
+      "correlation": "independent",
+      "entangled": false,
+      "separable": true,
+      "meta_path": "data/scenes/scene_0142/meta.json"
+    }
+  ]
+}

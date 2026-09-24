@@ -251,3 +251,28 @@ python examples/eval_lora.py --adapter data/lora_adapter --n-test 10
 Carga: `load(..., adapter_path="data/lora_adapter")` con mlx-vlm.
 
 QEC Fase 3: `docs/quantum_error_correction.md` — `python examples/qec_robustness.py --self-test`.
+
+## Amplitude embedding prototype
+
+Pedagogical fusion only — **no quantum advantage claim**. Converts a PennyLane
+statevector into real amplitude features and projects them into the Qwen3-VL-8B
+embedding dim (4096), injected as a soft-prompt residual (not via text/JSON).
+
+```bash
+# CPU unit tests (safe while another LoRA train holds GPU)
+python examples/amplitude_embed_prototype.py --self-test
+
+# Side-MLP + Linear probe metrics on fixed ENT_SET (12 scenes)
+python examples/amplitude_embed_prototype.py --cpu-eval \
+  --ent-set data/bench_live/ent_items.json
+
+# Optional MLX residual inject (only when data/TRAIN_LOCK.txt absent)
+python examples/amplitude_embed_prototype.py --mlx-eval \
+  --model mlx-community/Qwen3-VL-8B-Thinking-4bit \
+  --adapter-ro data/lora_adapter
+```
+
+Five-method roadmap: [`docs/PLAN-MAESTRO-5-METODOS.md`](docs/PLAN-MAESTRO-5-METODOS.md).
+`data/lora_adapter/` stays read-only for compares.
+
+

@@ -1,0 +1,94 @@
+{
+  "n": 10,
+  "items": [
+    {
+      "id": "vis_math_01",
+      "kind": "math",
+      "image": "data/bench_live/vision_items/vis_math_01.png",
+      "prompt": "Look at the image. Solve the arithmetic problem. Reply with ONLY the final integer answer, no words.",
+      "expected": "45",
+      "match": "exact_int"
+    },
+    {
+      "id": "vis_math_02",
+      "kind": "math",
+      "image": "data/bench_live/vision_items/vis_math_02.png",
+      "prompt": "Look at the image. Compute the expression. Reply with ONLY the final integer.",
+      "expected": "50",
+      "match": "exact_int"
+    },
+    {
+      "id": "vis_math_03",
+      "kind": "math",
+      "image": "data/bench_live/vision_items/vis_math_03.png",
+      "prompt": "Look at the image word problem. Reply with ONLY the integer total.",
+      "expected": "20",
+      "match": "exact_int"
+    },
+    {
+      "id": "vis_math_04",
+      "kind": "math",
+      "image": "data/bench_live/vision_items/vis_math_04.png",
+      "prompt": "Look at the equation in the image. Reply with ONLY the integer value of x.",
+      "expected": "6",
+      "match": "exact_int"
+    },
+    {
+      "id": "vis_math_05",
+      "kind": "math",
+      "image": "data/bench_live/vision_items/vis_math_05.png",
+      "prompt": "Look at the image. Reply with ONLY the integer result.",
+      "expected": "20",
+      "match": "exact_int"
+    },
+    {
+      "id": "vis_math_06",
+      "kind": "math",
+      "image": "data/bench_live/vision_items/vis_math_06.png",
+      "prompt": "Look at the sequence. Reply with ONLY the next integer.",
+      "expected": "48",
+      "match": "exact_int"
+    },
+    {
+      "id": "vis_circ_01",
+      "kind": "circuit",
+      "image": "data/bench_live/vision_items/vis_circ_01.png",
+      "prompt": "Look at the circuit description in the image. Emit ONLY a JSON object with keys n_qubits (int) and gates (list of {name, wires}). No markdown.",
+      "expected_gates": [
+        "H",
+        "X",
+        "CNOT"
+      ],
+      "match": "json_gates_contain",
+      "n_qubits": 2
+    },
+    {
+      "id": "vis_circ_02",
+      "kind": "circuit",
+      "image": "data/bench_live/vision_items/vis_circ_02.png",
+      "prompt": "Look at the circuit in the image. Emit ONLY JSON with n_qubits and gates (name, wires, optionally params). No markdown.",
+      "expected_gates": [
+        "RY",
+        "Z"
+      ],
+      "match": "json_gates_contain",
+      "n_qubits": 1
+    },
+    {
+      "id": "vis_math_07",
+      "kind": "math",
+      "image": "data/bench_live/vision_items/vis_math_07.png",
+      "prompt": "Look at the image. Reply with ONLY the integer area.",
+      "expected": "20",
+      "match": "exact_int"
+    },
+    {
+      "id": "vis_math_08",
+      "kind": "math",
+      "image": "data/bench_live/vision_items/vis_circ_08_math.png",
+      "prompt": "Look at the image. Reply with ONLY the integer distance in meters.",
+      "expected": "45",
+      "match": "exact_int"
+    }
+  ]
+}

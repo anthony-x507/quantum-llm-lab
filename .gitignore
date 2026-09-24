@@ -38,3 +38,8 @@ data/EVAL_LOCK.txt
 data/experiment_scenes/
 examples/*\ 2.py
 examples/*.bak-*
+
+# Entanglement enrich adapters / amp-embed artifacts (code-only push)
+data/lora_adapter_ent/
+data/lora_adapter_frozen_*/
+data/amp_embed/
