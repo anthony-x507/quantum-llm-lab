@@ -123,7 +123,7 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 **Conflicts:** `STATUS.md` (keep both sections); `mixed_unified.json` (ours/tip; re-smoke). Scoreboard auto-merged own-delta table.  
 **CPU re-smoke:** unified overall **1.0** (py/ent/vis 1.0); hardneg R1–R4 **18/18·22/22·35/35·40/40**; R3/R4 verifier **28/28·32/32**; `wired_to_vlm=true`.  
 **Honesty held:** RAW Py **−0.062** / Ent **+1.0** / Vis **−0.200**; dual-lane protects tip at 1.0 (ent2 helps; quantum alone hurts py/vis).  
-**Freezes:** platform / mlx_r3 / polish_r4 **retained**; new `codigo_vivo_tip_post_polish_…` cites tip HEAD.  
+**Freezes:** platform / mlx_r3 / polish_r4 **retained**; new `codigo_vivo_tip_post_polish_100pct_20260924_123210` cites tip HEAD `bf58743`.  
 **RO:** no `lora_adapter` writes. No `main` merge. Anti-contam **CLEAN**.
 
 **Reproduce (CPU floor):**

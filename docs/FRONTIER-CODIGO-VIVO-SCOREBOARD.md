@@ -54,6 +54,36 @@
 | Unified | `data/frontier_moe_verifier_mixed_unified.json` |
 | Smoke reconfirm | PASS · ~1.35s · pillars 26/26 · hardneg 18/18 |
 
+
+## POST-POLISH PLATFORM FREEZE (overall 1.0) — after own-delta fold
+
+**Freeze id:** `codigo_vivo_tip_post_polish_100pct_20260924_123210`  
+**Frozen SHA:** `bf5874332b69ffb8d875628a0aa59fef6fee8b40` (`bf58743`) · branch `frontier/codigo-vivo-tip`  
+**When:** 2026-09-24 12:32:10 ET · Mac-111 (`074c6626-…`)  
+**Claim:** NO quantum advantage. Cites tip HEAD after own-delta fold; **prior platform / mlx_r3 / polish_r3 / polish_r4 freezes NOT abandoned**.
+
+| Lock | Value |
+|------|-------|
+| overall (d unified) | **1.0000** |
+| MoE Δ overall | **+0.3334** visible |
+| pillars | **26/26** |
+| hardneg R1–R4 | **18/18 · 22/22 · 35/35 · 40/40** |
+| R3/R4 verifier | **28/28 · 32/32** |
+| wired_to_vlm | **true** (`text_scaffold_prefix`) |
+| own-delta honesty | Py **−0.062** · Ent **+1.0** · Vis **−0.200** (dual-lane protects) |
+| ent_never_on_python | **true** |
+| prompt_touches_gt | **false** |
+| floor held | **yes** (≥0.967, actual 1.0) |
+
+**Policy:** Never abandon platform `f0da3e7` / mlx_r3 / polish_r4. `data/lora_adapter/` **READ-ONLY**. No merge to `main`.
+
+| Artifact | Path |
+|----------|------|
+| Manifest | `data/freeze_manifests/codigo_vivo_tip_post_polish_100pct_20260924_123210.json` |
+| Metrics | `data/freeze_metrics/codigo_vivo_tip_post_polish_20260924.json` |
+| Unified | `data/frontier_moe_verifier_mixed_unified.json` |
+| Own-delta | `docs/FRONTIER-CODIGO-VIVO-TIP-OWN-DELTA-SCOREBOARD.md` |
+
 ## MLX+R3 CONSOLIDATE FREEZE (overall 1.0)
 
 **Freeze id:** `codigo_vivo_tip_mlx_r3_100pct_20260924_112131`  

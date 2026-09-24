@@ -1,0 +1,50 @@
+{
+  "frontier": "codigo-vivo-tip-post-polish",
+  "freeze_id": "codigo_vivo_tip_post_polish_100pct_20260924_123210",
+  "written_et": "2026-09-24 12:32:10 ET",
+  "branch": "frontier/codigo-vivo-tip",
+  "frozen_sha": "bf5874332b69ffb8d875628a0aa59fef6fee8b40",
+  "frozen_sha_short": "bf58743",
+  "tip_head_at_write": "bf5874332b69ffb8d875628a0aa59fef6fee8b40",
+  "host": "Mac-111",
+  "machine_id": "074c6626-0440-4817-9829-6bae77c578d6",
+  "policy": "POST-POLISH freeze overall=1.0 @ bf58743. Never abandon prior freezes. RO data/lora_adapter/. No merge main. NO Q-advantage claims.",
+  "scoreboard": {
+    "a_baseline": 0.3333,
+    "b_moe_alone": 0.6667,
+    "c_verifier_on_python": 0.6667,
+    "d_unified": 1.0
+  },
+  "delta_moe_overall": 0.3334,
+  "moe_delta_visible": true,
+  "holds": {
+    "mixed_d_unified": 1.0,
+    "hardneg_r1": "18/18",
+    "hardneg_r2": "22/22",
+    "hardneg_r3": "35/35",
+    "hardneg_r4": "40/40",
+    "verifier_r3": "28/28",
+    "verifier_r4": "32/32",
+    "wired_to_vlm": true,
+    "floor_held": true,
+    "floor": 0.9667
+  },
+  "own_delta": {
+    "python_delta": -0.062,
+    "entanglement_delta": 1.0,
+    "vision_delta": -0.2,
+    "note": "ent2 still +1.0; quantum alone hurts py/vis; dual-lane protects"
+  },
+  "retained_freezes": [
+    "codigo_vivo_tip_platform_100pct_20260924_111435",
+    "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",
+    "tip_moe_verifier_polish_r3_100pct_20260924_111740",
+    "tip_moe_verifier_polish_r4_100pct_20260924_112851"
+  ],
+  "artifacts": {
+    "manifest": "data/freeze_manifests/codigo_vivo_tip_post_polish_100pct_20260924_123210.json",
+    "unified": "data/frontier_moe_verifier_mixed_unified.json",
+    "own_delta_scoreboard": "data/frontier_tip_own_delta_scoreboard.json",
+    "own_delta_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-OWN-DELTA-SCOREBOARD.md"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "schema": "qlab_freeze_manifest_v1",
+  "freeze_id": "codigo_vivo_tip_post_polish_100pct_20260924_123210",
+  "frozen_at_et": "2026-09-24 12:32:10 ET",
+  "domain": "codigo_vivo_tip_post_polish",
+  "pct": 100.0,
+  "band": "100",
+  "git_sha": "bf5874332b69ffb8d875628a0aa59fef6fee8b40",
+  "git_sha_short": "bf58743",
+  "branch": "frontier/codigo-vivo-tip",
+  "host": "Mac-111",
+  "machine_id": "074c6626-0440-4817-9829-6bae77c578d6",
+  "artifact": "data/frontier_moe_verifier_mixed_unified.json",
+  "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
+  "metrics": {
+    "overall": 1.0,
+    "python": 1.0,
+    "entanglement": 1.0,
+    "vision_scored": 1.0,
+    "moe_delta_overall": 0.3334,
+    "moe_delta_visible": true,
+    "router_pillars": "26/26",
+    "hardneg_r1": "18/18",
+    "hardneg_r1_rate": 1.0,
+    "hardneg_r2": "22/22",
+    "hardneg_r2_rate": 1.0,
+    "hardneg_r3": "35/35",
+    "hardneg_r3_rate": 1.0,
+    "hardneg_r4": "40/40",
+    "hardneg_r4_rate": 1.0,
+    "hardneg_r3_verifier": "28/28",
+    "hardneg_r4_verifier": "32/32",
+    "wired_to_vlm": true,
+    "channel": "text_scaffold_prefix",
+    "scaffold_freeze_held": true,
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false,
+    "floor_held": true,
+    "floor": 0.9667,
+    "prefer": 1.0,
+    "own_delta": {
+      "python": -0.062,
+      "entanglement": 1.0,
+      "vision": -0.2,
+      "honesty": "ent2 still +1.0; quantum alone hurts py/vis; dual-lane protects"
+    },
+    "smoke_reconfirm_et": "2026-09-24 12:32:10 ET",
+    "fold_source": "frontier/tip-own-delta-scoreboard@66db30a (rebase 2382c90 onto 0a1ef4d)"
+  },
+  "pillars": {
+    "moe": {
+      "actual": "+0.333 visible; (d) 1.0",
+      "gap": 0
+    },
+    "verifier": {
+      "actual": 1.0,
+      "gap": 0
+    },
+    "scaffold": {
+      "actual": "ON; wired_to_vlm=true",
+      "gap": 0
+    },
+    "vision": {
+      "actual": 1.0,
+      "gap": 0
+    },
+    "own_delta_honesty": {
+      "actual": "Py−0.062 Ent+1.0 Vis−0.200; dual-lane protects",
+      "gap": 0
+    }
+  },
+  "paths": {
+    "a_baseline": 0.3333,
+    "b_moe_alone": 0.6667,
+    "c_verifier_on_python": 0.6667,
+    "d_unified": 1.0
+  },
+  "retained_freezes": [
+    "codigo_vivo_tip_platform_100pct_20260924_111435",
+    "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",
+    "tip_moe_verifier_polish_r3_100pct_20260924_111740",
+    "tip_moe_verifier_polish_r4_100pct_20260924_112851"
+  ],
+  "note": "POST-POLISH platform freeze overall=1.0 at tip SHA bf58743 after own-delta fold. Locks MoE Δ+0.333, pillars 26/26, hardneg R1–R4, R3/R4 verifier, wired_to_vlm, own-delta honesty table. Prior platform/mlx_r3/polish_r3/polish_r4 freezes RETAINED / never abandoned.",
+  "policy": "Do not abandon prior freezes; polish and/or reinforce around. RO data/lora_adapter/. No merge to main. NO quantum-advantage claims.",
+  "tip_head_at_freeze_write": "bf5874332b69ffb8d875628a0aa59fef6fee8b40"
+}
