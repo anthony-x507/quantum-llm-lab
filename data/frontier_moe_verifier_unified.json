@@ -1,0 +1,274 @@
+{
+  "frontier": "C3-moe-verifier-codigo-vivo",
+  "written": "2026-09-24 10:06:24",
+  "claims": [
+    "NO quantum-advantage claims"
+  ],
+  "prompt_touches_gt": false,
+  "runs": {
+    "cpu_smoke": {
+      "mode": "smoke",
+      "prompt_touches_gt": false,
+      "router_smoke": "12/12",
+      "comparison_table": [
+        {
+          "path": "baseline_single_no_moe",
+          "n": 5,
+          "metric": "solve_rate_single",
+          "rate": 0.0,
+          "delta_vs_baseline": 0.0,
+          "repair_success_rate": 0.0,
+          "prompt_touches_gt": false
+        },
+        {
+          "path": "moe_alone_python_lane",
+          "n": 5,
+          "metric": "solve_rate_single",
+          "rate": 0.0,
+          "delta_vs_baseline": 0.0,
+          "repair_success_rate": 0.0,
+          "prompt_touches_gt": false
+        },
+        {
+          "path": "verifier_alone",
+          "n": 5,
+          "metric": "solve_rate_loop",
+          "rate": 1.0,
+          "delta_vs_baseline": 1.0,
+          "repair_success_rate": 1.0,
+          "prompt_touches_gt": false
+        },
+        {
+          "path": "moe_verifier_unified_python_lane",
+          "n": 5,
+          "metric": "solve_rate_loop",
+          "rate": 1.0,
+          "delta_vs_baseline": 1.0,
+          "repair_success_rate": 1.0,
+          "prompt_touches_gt": false
+        }
+      ],
+      "ent_never_on_python": true
+    },
+    "cpu_n16": {
+      "mode": "cpu-eval",
+      "prompt_touches_gt": false,
+      "router_smoke": "12/12",
+      "comparison_table": [
+        {
+          "path": "baseline_single_no_moe",
+          "n": 16,
+          "metric": "solve_rate_single",
+          "rate": 0.0,
+          "delta_vs_baseline": 0.0,
+          "repair_success_rate": 0.0,
+          "prompt_touches_gt": false
+        },
+        {
+          "path": "moe_alone_python_lane",
+          "n": 16,
+          "metric": "solve_rate_single",
+          "rate": 0.0,
+          "delta_vs_baseline": 0.0,
+          "repair_success_rate": 0.0,
+          "prompt_touches_gt": false
+        },
+        {
+          "path": "verifier_alone",
+          "n": 16,
+          "metric": "solve_rate_loop",
+          "rate": 0.875,
+          "delta_vs_baseline": 0.875,
+          "repair_success_rate": 0.875,
+          "prompt_touches_gt": false
+        },
+        {
+          "path": "moe_verifier_unified_python_lane",
+          "n": 16,
+          "metric": "solve_rate_loop",
+          "rate": 0.875,
+          "delta_vs_baseline": 0.875,
+          "repair_success_rate": 0.875,
+          "prompt_touches_gt": false
+        }
+      ],
+      "ent_never_on_python": true
+    },
+    "replay_n16": {
+      "mode": "replay",
+      "prompt_touches_gt": false,
+      "router_smoke": null,
+      "comparison_table": [
+        {
+          "path": "baseline_single_no_moe",
+          "n": 16,
+          "metric": "solve_rate_single",
+          "rate": 0.0625,
+          "delta_vs_baseline": 0.0,
+          "repair_success_rate": 0.0,
+          "prompt_touches_gt": false
+        },
+        {
+          "path": "moe_alone_python_lane",
+          "n": 16,
+          "metric": "solve_rate_single",
+          "rate": 0.0625,
+          "delta_vs_baseline": 0.0,
+          "repair_success_rate": 0.0,
+          "prompt_touches_gt": false
+        },
+        {
+          "path": "verifier_alone",
+          "n": 16,
+          "metric": "solve_rate_loop",
+          "rate": 0.6875,
+          "delta_vs_baseline": 0.625,
+          "repair_success_rate": 0.6666666666666666,
+          "prompt_touches_gt": false
+        },
+        {
+          "path": "moe_verifier_unified_python_lane",
+          "n": 16,
+          "metric": "solve_rate_loop",
+          "rate": 0.6875,
+          "delta_vs_baseline": 0.625,
+          "repair_success_rate": 0.6666666666666666,
+          "prompt_touches_gt": false
+        }
+      ],
+      "ent_never_on_python": true
+    }
+  },
+  "flat_comparison": [
+    {
+      "run": "cpu_smoke",
+      "path": "baseline_single_no_moe",
+      "n": 5,
+      "metric": "solve_rate_single",
+      "rate": 0.0,
+      "delta_vs_baseline": 0.0,
+      "repair_success_rate": 0.0,
+      "prompt_touches_gt": false
+    },
+    {
+      "run": "cpu_smoke",
+      "path": "moe_alone_python_lane",
+      "n": 5,
+      "metric": "solve_rate_single",
+      "rate": 0.0,
+      "delta_vs_baseline": 0.0,
+      "repair_success_rate": 0.0,
+      "prompt_touches_gt": false
+    },
+    {
+      "run": "cpu_smoke",
+      "path": "verifier_alone",
+      "n": 5,
+      "metric": "solve_rate_loop",
+      "rate": 1.0,
+      "delta_vs_baseline": 1.0,
+      "repair_success_rate": 1.0,
+      "prompt_touches_gt": false
+    },
+    {
+      "run": "cpu_smoke",
+      "path": "moe_verifier_unified_python_lane",
+      "n": 5,
+      "metric": "solve_rate_loop",
+      "rate": 1.0,
+      "delta_vs_baseline": 1.0,
+      "repair_success_rate": 1.0,
+      "prompt_touches_gt": false
+    },
+    {
+      "run": "cpu_n16",
+      "path": "baseline_single_no_moe",
+      "n": 16,
+      "metric": "solve_rate_single",
+      "rate": 0.0,
+      "delta_vs_baseline": 0.0,
+      "repair_success_rate": 0.0,
+      "prompt_touches_gt": false
+    },
+    {
+      "run": "cpu_n16",
+      "path": "moe_alone_python_lane",
+      "n": 16,
+      "metric": "solve_rate_single",
+      "rate": 0.0,
+      "delta_vs_baseline": 0.0,
+      "repair_success_rate": 0.0,
+      "prompt_touches_gt": false
+    },
+    {
+      "run": "cpu_n16",
+      "path": "verifier_alone",
+      "n": 16,
+      "metric": "solve_rate_loop",
+      "rate": 0.875,
+      "delta_vs_baseline": 0.875,
+      "repair_success_rate": 0.875,
+      "prompt_touches_gt": false
+    },
+    {
+      "run": "cpu_n16",
+      "path": "moe_verifier_unified_python_lane",
+      "n": 16,
+      "metric": "solve_rate_loop",
+      "rate": 0.875,
+      "delta_vs_baseline": 0.875,
+      "repair_success_rate": 0.875,
+      "prompt_touches_gt": false
+    },
+    {
+      "run": "replay_n16",
+      "path": "baseline_single_no_moe",
+      "n": 16,
+      "metric": "solve_rate_single",
+      "rate": 0.0625,
+      "delta_vs_baseline": 0.0,
+      "repair_success_rate": 0.0,
+      "prompt_touches_gt": false
+    },
+    {
+      "run": "replay_n16",
+      "path": "moe_alone_python_lane",
+      "n": 16,
+      "metric": "solve_rate_single",
+      "rate": 0.0625,
+      "delta_vs_baseline": 0.0,
+      "repair_success_rate": 0.0,
+      "prompt_touches_gt": false
+    },
+    {
+      "run": "replay_n16",
+      "path": "verifier_alone",
+      "n": 16,
+      "metric": "solve_rate_loop",
+      "rate": 0.6875,
+      "delta_vs_baseline": 0.625,
+      "repair_success_rate": 0.6666666666666666,
+      "prompt_touches_gt": false
+    },
+    {
+      "run": "replay_n16",
+      "path": "moe_verifier_unified_python_lane",
+      "n": 16,
+      "metric": "solve_rate_loop",
+      "rate": 0.6875,
+      "delta_vs_baseline": 0.625,
+      "repair_success_rate": 0.6666666666666666,
+      "prompt_touches_gt": false
+    }
+  ],
+  "prior_moe_live_pillars": {
+    "python": 0.0625,
+    "python_baseline": 0.0625,
+    "ent_label_acc": 1.0,
+    "vision": 0.9,
+    "gate_pass": true
+  },
+  "ro_lock": {
+    "script_writes_to_lora_adapter": false
+  }
+}
