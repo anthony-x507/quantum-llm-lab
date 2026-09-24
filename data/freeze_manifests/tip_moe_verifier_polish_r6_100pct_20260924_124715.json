@@ -4,8 +4,8 @@
   "domain": "codigo_vivo_tip_r6",
   "pct": 100,
   "band": "100pct",
-  "git_sha": "4cb5291695d659b2a7d0e3d4d3c1f133a0d16dde",
-  "git_sha_short": "4cb5291",
+  "git_sha": "4bfa2fe9d1ce28af9d4e90ac2ca9a93778e4fe19",
+  "git_sha_short": "4bfa2fe",
   "artifact": "data/frontier_moe_verifier_hardneg_r6.json",
   "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
   "metrics": {
@@ -20,6 +20,6 @@
     "held": true
   },
   "policy": "RO data/lora_adapter/; no merge main; R1–R5 held; anti-contam",
-  "polish_commit": "4cb5291",
+  "polish_commit": "4bfa2fe",
   "note": "R6 hardneg polish from tip 32fed9b on frontier/tip-hardneg-r6"
 }
