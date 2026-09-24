@@ -1,0 +1,70 @@
+{
+  "freeze_id": "codigo_vivo_tip_future_track_100pct_20260924_141347",
+  "written_et": "2026-09-24 14:13:48 ET",
+  "branch": "frontier/tip-future-track",
+  "base_tip_sha": "e70b23a7d6bf2120dc48c10684f69e12f3918ca4",
+  "predictor": "floor_scale_parallax_size_prior_closing_speed_v5_future_track",
+  "before": {
+    "original": {
+      "tracking_only_pct": 86.21,
+      "plus_distance_pct": 95.36,
+      "dz_tracking_only_pct": 91.08,
+      "dz_plus_distance_pct": 97.3,
+      "n_plus": 1661,
+      "correct_plus": 1584
+    },
+    "danger50": {
+      "tracking_only_pct": 89.89,
+      "plus_distance_pct": 98.12,
+      "dz_tracking_only_pct": 89.66,
+      "dz_plus_distance_pct": 96.59,
+      "n_plus": 1760,
+      "correct_plus": 1727
+    },
+    "dz_distance_pct_original": 100.0,
+    "dz_distance_pct_danger50": 100.0,
+    "tracking_assoc_dz_pct": 100.0
+  },
+  "after": {
+    "original": {
+      "tracking_only_pct": 97.89,
+      "plus_distance_pct": 98.19,
+      "dz_tracking_only_pct": 100.0,
+      "dz_plus_distance_pct": 100.0,
+      "n_plus": 1661,
+      "correct_plus": 1631
+    },
+    "danger50": {
+      "tracking_only_pct": 99.77,
+      "plus_distance_pct": 99.77,
+      "dz_tracking_only_pct": 100.0,
+      "dz_plus_distance_pct": 100.0,
+      "n_plus": 1760,
+      "correct_plus": 1756
+    },
+    "dz_distance_pct_original": 100.0,
+    "dz_distance_pct_danger50": 100.0,
+    "dz_mae_original_m": 1.491,
+    "dz_mae_danger50_m": 0.726,
+    "tracking_assoc_dz_pct": 100.0,
+    "distance_overall_pct_original": 100.0,
+    "distance_overall_pct_danger50": 100.0
+  },
+  "deltas_pp": {
+    "orig_future_track": 11.68,
+    "orig_future_plus_dist": 2.83,
+    "orig_future_dz_plus_dist": 2.7,
+    "danger_future_dz_plus_dist": 3.41
+  },
+  "floors_held": {
+    "distance_dz_30_70m": true,
+    "tracking_assoc_dz": true,
+    "motion_100": "untouched_distance_est_only",
+    "collision_100": "untouched_distance_est_only",
+    "mixed_1_0": "untouched_distance_est_only"
+  },
+  "anti_contam": "CLEAN",
+  "adapters_ro": true,
+  "adapters_mtime_et": "2026-09-24 14:10:40 ET",
+  "claim": "NO quantum advantage. Classical CPU heuristic future-pred polish only."
+}

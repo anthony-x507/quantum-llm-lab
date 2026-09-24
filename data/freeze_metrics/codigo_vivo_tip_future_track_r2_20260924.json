@@ -1,0 +1,40 @@
+{
+  "freeze_id": "codigo_vivo_tip_future_track_r2_100pct_20260924_142016",
+  "written_et": "2026-09-24 14:20:16 ET",
+  "branch": "frontier/tip-future-track-r2",
+  "base_sha": "0a1c9b5",
+  "base_note": "from tip-future-track @ 0a1c9b5 (easier than tip HEAD e0f3183 \u2014 TTI conflicts)",
+  "predictor": "floor_scale_parallax_size_prior_closing_speed_v6_future_track_r2",
+  "before": {
+    "future_track_original": 0.9789,
+    "future_plus_dist_original": 0.9819,
+    "future_dz_track_original": 1.0,
+    "future_dz_plus_dist_original": 1.0,
+    "future_track_danger50": 0.9977,
+    "future_plus_dist_danger50": 0.9977
+  },
+  "after": {
+    "future_track_original": 0.9934,
+    "future_plus_dist_original": 0.9946,
+    "future_dz_track_original": 1.0,
+    "future_dz_plus_dist_original": 1.0,
+    "future_track_danger50": 1.0,
+    "future_plus_dist_danger50": 1.0,
+    "future_dz_track_danger50": 1.0,
+    "future_dz_plus_dist_danger50": 1.0,
+    "distance_dz_30_70m_original": 1.0,
+    "distance_dz_30_70m_danger50": 1.0,
+    "distance_tracking_assoc_dz": 1.0,
+    "distance_mae_dz_original_m": 1.491,
+    "distance_mae_dz_danger50_m": 0.726
+  },
+  "deltas_pp": {
+    "orig_future_track": 1.45,
+    "orig_future_plus_dist": 1.27,
+    "danger50_future_track": 0.23,
+    "danger50_future_plus_dist": 0.23
+  },
+  "anti_contam": "CLEAN",
+  "adapters_ro": true,
+  "floor_held": true
+}

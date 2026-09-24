@@ -533,6 +533,277 @@ def predict_next_distance(d_curr: float, d_prev: float | None) -> float:
     return max(0.5, d_curr + v)
 
 
+def size_rate_next_distance(
+    d_curr: float,
+    size_prev: float | None,
+    size_curr: float | None,
+) -> float:
+    """d ∝ 1/s → next depth from apparent-size rate (GT-free).
+
+    If size grows (approach), predicted next distance shrinks by the same rate.
+    """
+    if size_prev is None or size_curr is None or size_prev <= 1.0 or size_curr <= 1.0:
+        return max(0.5, float(d_curr))
+    rate = float(size_curr) / float(size_prev)
+    if rate <= 1e-6:
+        return max(0.5, float(d_curr))
+    return max(0.5, float(d_curr) / rate)
+
+
+def predict_future_distance_v5(
+    e: dict[str, Any],
+    *,
+    d_prev: float | None,
+    size_prev: float | None,
+    size_curr: float | None,
+    conf_gate: float = 0.50,
+) -> tuple[float | None, str]:
+    """Future depth for tip-future-track (v5).
+
+    High-conf: median of (legacy closing-speed blend, size-rate, depth-vel).
+    Low-conf: None → caller should GP-fallback (keeps distance estimator untouched).
+    """
+    if e.get("est_m") is None:
+        return None, "no_est"
+    d_curr = float(e["est_m"])
+    conf = float(e.get("confidence") or 0.0)
+    if conf < conf_gate:
+        return None, "low_conf"
+    para = e.get("parallax") or "unknown"
+    d_vel = predict_next_distance(d_curr, float(d_prev) if d_prev is not None else None)
+    d_size = size_rate_next_distance(d_curr, size_prev, size_curr)
+    # Legacy closing-speed-informed blend (pre-v5 tip path)
+    if e.get("closing_speed_mps") is not None and para == "approach":
+        d_cs = d_curr - float(e["closing_speed_mps"]) * (1.0 / 12.0)
+        d_legacy = 0.40 * d_curr + 0.30 * d_vel + 0.30 * max(0.5, d_cs)
+    elif e.get("closing_speed_mps") is not None and para == "recede":
+        d_cs = d_curr - float(e["closing_speed_mps"]) * (1.0 / 12.0)
+        d_legacy = 0.45 * d_curr + 0.30 * d_vel + 0.25 * max(0.5, d_cs)
+    else:
+        w_vel = 0.55 if para in ("approach", "recede") else 0.18
+        d_legacy = (1.0 - w_vel) * d_curr + w_vel * d_vel
+    # Robust median of three GT-free cues
+    trio = sorted([float(d_legacy), float(d_size), float(d_vel)])
+    return trio[1], "v5_median_legacy_size_vel"
+
+
+
+# Synth / camera near-plane (generate.py: d = max(1.5, ...)). Predicting
+# below this is physically unreachable in the distance_est corpus.
+FUTURE_NEAR_FLOOR_M = 1.5
+FUTURE_SIZE_RATE_CAP = 1.45
+FUTURE_COLD_MOTION_STEP = 0.08  # cold-start only; meta motion_hint (obs channel)
+FUTURE_COLD_DZ_GUARD_LO = 25.0  # skip cold nudge when est in/near DZ band
+FUTURE_COLD_DZ_GUARD_HI = 75.0
+FUTURE_COLD_MIN_EST_M = 3.5
+
+
+def size_rate_next_distance_v6(
+    d_curr: float,
+    size_prev: float | None,
+    size_curr: float | None,
+    motion_hint: str | None = None,
+    *,
+    near_floor: float = FUTURE_NEAR_FLOOR_M,
+    rate_cap: float = FUTURE_SIZE_RATE_CAP,
+    cold_step: float = FUTURE_COLD_MOTION_STEP,
+) -> float:
+    """v6 size-rate next depth (tip-future-track-r2).
+
+    Adds: (1) near-plane clamp at synth camera floor 1.5 m;
+    (2) damp extreme apparent growth/shrink (occlusion / near-field);
+    (3) cold-start soft nudge from meta ``motion_hint`` (already in obs/prompt;
+        not GT meters) with DZ-band guard so future DZ 100% stays held.
+    """
+    d0 = float(d_curr)
+    cold = size_prev is None or size_curr is None or size_prev <= 1.0 or size_curr <= 1.0
+    if cold:
+        mh = (motion_hint or "unknown")
+        in_guard = FUTURE_COLD_DZ_GUARD_LO <= d0 <= FUTURE_COLD_DZ_GUARD_HI
+        if (
+            not in_guard
+            and cold_step
+            and mh in ("approach", "recede")
+            and d0 >= FUTURE_COLD_MIN_EST_M
+        ):
+            if mh == "approach":
+                d0 = d0 * (1.0 - cold_step)
+            else:
+                d0 = d0 * (1.0 + cold_step)
+        return max(near_floor, d0)
+    rate = float(size_curr) / float(size_prev)
+    if rate <= 1e-6:
+        return max(near_floor, d0)
+    if rate > rate_cap:
+        rate_eff = rate_cap + 0.35 * (rate - rate_cap)
+        d_raw = d0 / rate_eff
+    elif rate < 1.0 / rate_cap:
+        rate_eff = (1.0 / rate_cap) - 0.35 * ((1.0 / rate_cap) - rate)
+        d_raw = d0 / max(rate_eff, 1e-6)
+    else:
+        d_raw = d0 / rate
+    return max(near_floor, d_raw)
+
+
+def predict_future_distance_v6(
+    e: dict[str, Any],
+    *,
+    d_prev: float | None,
+    size_prev: float | None,
+    size_curr: float | None,
+    motion_hint: str | None = None,
+    conf_gate: float = 0.50,
+) -> tuple[float | None, str]:
+    """Future depth for tip-future-track-r2 (v6).
+
+    High-conf warm: median(legacy, size-rate-v6, depth-vel) with near-floor clamp.
+    High-conf cold: size-rate-v6 alone (motion_hint nudge; median would cancel it).
+    Low-conf: None → caller GP-fallback. Distance estimator untouched.
+    """
+    if e.get("est_m") is None:
+        return None, "no_est"
+    d_curr = float(e["est_m"])
+    conf = float(e.get("confidence") or 0.0)
+    if conf < conf_gate:
+        return None, "low_conf"
+    cold = size_prev is None or size_curr is None or size_prev <= 1.0 or size_curr <= 1.0
+    d_size = size_rate_next_distance_v6(d_curr, size_prev, size_curr, motion_hint)
+    if cold:
+        return d_size, "v6_cold_motion_hint"
+    para = e.get("parallax") or "unknown"
+    d_vel = max(
+        FUTURE_NEAR_FLOOR_M,
+        predict_next_distance(d_curr, float(d_prev) if d_prev is not None else None),
+    )
+    if e.get("closing_speed_mps") is not None and para == "approach":
+        d_cs = d_curr - float(e["closing_speed_mps"]) * (1.0 / 12.0)
+        d_legacy = 0.40 * d_curr + 0.30 * d_vel + 0.30 * max(FUTURE_NEAR_FLOOR_M, d_cs)
+    elif e.get("closing_speed_mps") is not None and para == "recede":
+        d_cs = d_curr - float(e["closing_speed_mps"]) * (1.0 / 12.0)
+        d_legacy = 0.45 * d_curr + 0.30 * d_vel + 0.25 * max(FUTURE_NEAR_FLOOR_M, d_cs)
+    else:
+        w_vel = 0.55 if para in ("approach", "recede") else 0.18
+        d_legacy = (1.0 - w_vel) * d_curr + w_vel * d_vel
+    d_legacy = max(FUTURE_NEAR_FLOOR_M, float(d_legacy))
+    trio = sorted([float(d_legacy), float(d_size), float(d_vel)])
+    return max(FUTURE_NEAR_FLOOR_M, trio[1]), "v6_median_legacy_size_vel"
+
+
+
+# tip-future-track-r3 (v7): class-aware near-field cold motion_hint.
+# Movable (car/ped) near (<7 m): ±12% — relative depth rates are larger near-field.
+# Staticish landmarks (ix/stop/light): soft ±4% — mh often reflects ego-motion.
+# Far / default: keep v6 ±8%. DZ-band guard + near-floor unchanged. No GT leak.
+FUTURE_COLD_NEAR_BAND_M = 7.0
+FUTURE_COLD_NEAR_MOVABLE_STEP = 0.12
+FUTURE_COLD_STATICISH_STEP = 0.04
+FUTURE_COLD_MOVABLE_CLASSES = frozenset({"car", "pedestrian"})
+FUTURE_COLD_STATICISH_CLASSES = frozenset({"intersection", "stop_sign", "light"})
+
+
+def _cold_motion_step_v7(d0: float, obj_class: str | None) -> float:
+    """Select cold-start motion_hint step (obs-channel only; no GT meters)."""
+    cls = obj_class or ""
+    if cls in FUTURE_COLD_STATICISH_CLASSES:
+        return FUTURE_COLD_STATICISH_STEP
+    if d0 < FUTURE_COLD_NEAR_BAND_M and cls in FUTURE_COLD_MOVABLE_CLASSES:
+        return FUTURE_COLD_NEAR_MOVABLE_STEP
+    return FUTURE_COLD_MOTION_STEP
+
+
+def size_rate_next_distance_v7(
+    d_curr: float,
+    size_prev: float | None,
+    size_curr: float | None,
+    motion_hint: str | None = None,
+    *,
+    obj_class: str | None = None,
+    near_floor: float = FUTURE_NEAR_FLOOR_M,
+    rate_cap: float = FUTURE_SIZE_RATE_CAP,
+) -> float:
+    """v7 size-rate next depth (tip-future-track-r3).
+
+    Keeps v6 near-floor clamp + rate dampen. Cold-start motion_hint nudge is
+    class-aware + near-band scaled (see ``_cold_motion_step_v7``); DZ-guard held.
+    """
+    d0 = float(d_curr)
+    cold = size_prev is None or size_curr is None or size_prev <= 1.0 or size_curr <= 1.0
+    if cold:
+        mh = (motion_hint or "unknown")
+        in_guard = FUTURE_COLD_DZ_GUARD_LO <= d0 <= FUTURE_COLD_DZ_GUARD_HI
+        step = _cold_motion_step_v7(d0, obj_class)
+        if (
+            not in_guard
+            and step
+            and mh in ("approach", "recede")
+            and d0 >= FUTURE_COLD_MIN_EST_M
+        ):
+            if mh == "approach":
+                d0 = d0 * (1.0 - step)
+            else:
+                d0 = d0 * (1.0 + step)
+        return max(near_floor, d0)
+    rate = float(size_curr) / float(size_prev)
+    if rate <= 1e-6:
+        return max(near_floor, d0)
+    if rate > rate_cap:
+        rate_eff = rate_cap + 0.35 * (rate - rate_cap)
+        d_raw = d0 / rate_eff
+    elif rate < 1.0 / rate_cap:
+        rate_eff = (1.0 / rate_cap) - 0.35 * ((1.0 / rate_cap) - rate)
+        d_raw = d0 / max(rate_eff, 1e-6)
+    else:
+        d_raw = d0 / rate
+    return max(near_floor, d_raw)
+
+
+def predict_future_distance_v7(
+    e: dict[str, Any],
+    *,
+    d_prev: float | None,
+    size_prev: float | None,
+    size_curr: float | None,
+    motion_hint: str | None = None,
+    obj_class: str | None = None,
+    conf_gate: float = 0.50,
+) -> tuple[float | None, str]:
+    """Future depth for tip-future-track-r3 (v7).
+
+    High-conf warm: median(legacy, size-rate-v7, depth-vel) with near-floor clamp.
+    High-conf cold: size-rate-v7 alone (class-aware near motion_hint nudge).
+    Low-conf: None → caller GP-fallback. Distance estimator untouched.
+    """
+    if e.get("est_m") is None:
+        return None, "no_est"
+    d_curr = float(e["est_m"])
+    conf = float(e.get("confidence") or 0.0)
+    if conf < conf_gate:
+        return None, "low_conf"
+    cold = size_prev is None or size_curr is None or size_prev <= 1.0 or size_curr <= 1.0
+    d_size = size_rate_next_distance_v7(
+        d_curr, size_prev, size_curr, motion_hint, obj_class=obj_class,
+    )
+    if cold:
+        return d_size, "v7_cold_near_motion"
+    para = e.get("parallax") or "unknown"
+    d_vel = max(
+        FUTURE_NEAR_FLOOR_M,
+        predict_next_distance(d_curr, float(d_prev) if d_prev is not None else None),
+    )
+    if e.get("closing_speed_mps") is not None and para == "approach":
+        d_cs = d_curr - float(e["closing_speed_mps"]) * (1.0 / 12.0)
+        d_legacy = 0.40 * d_curr + 0.30 * d_vel + 0.30 * max(FUTURE_NEAR_FLOOR_M, d_cs)
+    elif e.get("closing_speed_mps") is not None and para == "recede":
+        d_cs = d_curr - float(e["closing_speed_mps"]) * (1.0 / 12.0)
+        d_legacy = 0.45 * d_curr + 0.30 * d_vel + 0.25 * max(FUTURE_NEAR_FLOOR_M, d_cs)
+    else:
+        w_vel = 0.55 if para in ("approach", "recede") else 0.18
+        d_legacy = (1.0 - w_vel) * d_curr + w_vel * d_vel
+    d_legacy = max(FUTURE_NEAR_FLOOR_M, float(d_legacy))
+    trio = sorted([float(d_legacy), float(d_size), float(d_vel)])
+    return max(FUTURE_NEAR_FLOOR_M, trio[1]), "v7_median_legacy_size_vel"
+
+
 def track_associate_greedy(
     prev_objs: list[dict[str, Any]],
     curr_objs: list[dict[str, Any]],

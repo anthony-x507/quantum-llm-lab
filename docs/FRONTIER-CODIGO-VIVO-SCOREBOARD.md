@@ -1,5 +1,28 @@
 # FRONTIER — Código-vivo tip scoreboard
 
+## Fold — tip-future-track-r3 → codigo-vivo-tip (2026-09-24 14:49:46 ET)
+
+| Surface | Score |
+|---------|-------|
+| mixed (d) unified | **1.0** |
+| future track orig (before→after) | **86.15→99.34%** (1650/1661) |
+| future +dist orig | **95.36→99.52%** (1653/1661) |
+| future DZ / d50 future | **100% / 100%** (held) |
+| far MAE · DZ/mid · TTI | **retained** (2.600 m · 100% · 100%) |
+| R13 router · verifier | **52/52 · 44/44** (retained) |
+| inverse_cv · collision · choose_safest | **100% · 100% · 100%** (n=40 / 2850) |
+| pillars / hardneg smoke | **26/26 · 18/18** |
+| Freeze | `codigo_vivo_tip_future_track_r3_fold_100pct_20260924_144946` |
+| Tip SHA (fold) | `PENDING` |
+| Policy | RO `data/lora_adapter/`; no main; R13+far+mid+inv floors kept; circ/R14+/pillars not folded |
+
+**Method:** merge-port `6da80e5`/`2d6788c` (prefer r3 over r2/r1) onto tip `8beae21` keeping mid+far+TTI estimator; layer v5/v6/v7 future helpers; eval → `v7_future_track_r3`.
+
+**CPU re-smoke after fold:** unified **1.0**; R13 **52/52·44/44**; far MAE **2.600**; DZ/mid/TTI **100%**; inv/collision **100%**; future track **86.15→99.34** / +dist **95.36→99.52**; pillars 26/26; hardneg 18/18; `wired_to_vlm=true`; tip vis BASE.  
+Anti-contam **CLEAN**. Adapters RO unchanged. Freezes retained incl. r13 + distance_far + inverse_r3 + r12 + distance_mid + tti + r11 + motion_r4 + vision_ground + inverse_r2 + r10 + priors. Residual ~0.42–0.66 pp plateau — do not chase. Never abandon.
+
+**Not folded:** circ-expand @ 2631d83 / R14+ / pillars.
+
 
 ## Fold — tip-hardneg-r13 → codigo-vivo-tip (2026-09-24 14:44:57 ET)
 

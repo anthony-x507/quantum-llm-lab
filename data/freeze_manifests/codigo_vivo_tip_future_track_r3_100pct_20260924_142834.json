@@ -1,0 +1,54 @@
+{
+  "id": "codigo_vivo_tip_future_track_r3_100pct_20260924_142834",
+  "kind": "codigo_vivo_tip_future_track_r3_100pct",
+  "branch": "frontier/tip-future-track-r3",
+  "base_sha": "6dab62d2bc2a815909440f41fdf12f340bc61c41",
+  "feat_sha_placeholder": "6da80e5",
+  "when_et": "2026-09-24 14:28:34 ET",
+  "scope": "side-only; NO fold into tip / tip-cv / tip-tti / tip-distance-* / tip-hardneg-r12+ / tip-inverse-r3 / tip-circ-expand / tip-future-track(-r2)",
+  "metrics": {
+    "orig_track": 99.58,
+    "orig_plus_dist": 99.64,
+    "orig_dz_track": 100.0,
+    "orig_dz_plus": 100.0,
+    "d50_track": 100.0,
+    "d50_plus": 100.0,
+    "distance_dz_pct": 100.0,
+    "distance_dz_mae": 1.491,
+    "d50_dz_mae": 0.726,
+    "n_track": 1661,
+    "c_track": 1654,
+    "n_plus": 1661,
+    "c_plus": 1655
+  },
+  "before": {
+    "orig_track": 99.34,
+    "orig_plus_dist": 99.46,
+    "orig_dz_track": 100.0,
+    "orig_dz_plus": 100.0,
+    "d50_track": 100.0,
+    "d50_plus": 100.0,
+    "distance_dz_mae": 1.491,
+    "d50_dz_mae": 0.726
+  },
+  "delta_pp": {
+    "orig_track": 0.24,
+    "orig_plus_dist": 0.18
+  },
+  "floors_held": {
+    "future_dz_100": true,
+    "distance_dz_100": true,
+    "distance_dz_mae_unchanged": true,
+    "danger50_future_100": true,
+    "adapters_ro": true,
+    "anti_contam": "CLEAN"
+  },
+  "adapters_ro": true,
+  "anti_contam": "CLEAN",
+  "files": [
+    "examples/distance_est/physics.py",
+    "examples/distance_est/eval_heuristic.py",
+    "docs/FRONTIER-CODIGO-VIVO-TIP-FUTURE-TRACK-R3.md"
+  ],
+  "feat_sha": "6da80e5361607209aa19fbe44467f9a663a26c64"
+}

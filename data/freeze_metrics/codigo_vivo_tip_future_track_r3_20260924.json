@@ -1,0 +1,46 @@
+{
+  "freeze_id": "codigo_vivo_tip_future_track_r3_100pct_20260924_142834",
+  "branch": "frontier/tip-future-track-r3",
+  "base": "frontier/tip-future-track-r2 @ 6dab62d (feat ba5f2cf)",
+  "when_et": "2026-09-24 14:28:34 ET",
+  "predictor": "floor_scale_parallax_size_prior_closing_speed_v7_future_track_r3",
+  "before": {
+    "orig_track": 99.34,
+    "orig_plus_dist": 99.46,
+    "orig_dz_track": 100.0,
+    "orig_dz_plus": 100.0,
+    "d50_track": 100.0,
+    "d50_plus": 100.0,
+    "distance_dz_mae": 1.491,
+    "d50_dz_mae": 0.726
+  },
+  "after": {
+    "orig_track": 99.58,
+    "orig_plus_dist": 99.64,
+    "orig_dz_track": 100.0,
+    "orig_dz_plus": 100.0,
+    "d50_track": 100.0,
+    "d50_plus": 100.0,
+    "distance_dz_pct": 100.0,
+    "distance_dz_mae": 1.491,
+    "d50_dz_mae": 0.726,
+    "n_track": 1661,
+    "c_track": 1654,
+    "n_plus": 1661,
+    "c_plus": 1655
+  },
+  "floors_held": {
+    "future_dz_100": true,
+    "distance_dz_100": true,
+    "distance_dz_mae_unchanged": true,
+    "danger50_future_100": true,
+    "adapters_ro": true,
+    "anti_contam": "CLEAN"
+  },
+  "delta_pp": {
+    "orig_track": 0.24,
+    "orig_plus_dist": 0.18
+  },
+  "note": "Safe rise; residual ~0.42 pp still cold/warm near-plane where motion magnitude has no obs-channel signal beyond class-aware step. No GT leak. NO fold into tip.",
+  "feat_sha": "6da80e5361607209aa19fbe44467f9a663a26c64"
+}
