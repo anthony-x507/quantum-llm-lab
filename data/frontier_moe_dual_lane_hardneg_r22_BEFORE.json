@@ -1,0 +1,628 @@
+{
+  "method": "heuristic",
+  "n": 52,
+  "hits": 6,
+  "misses": 46,
+  "score": "6/52",
+  "rate": 0.1154,
+  "by_family": {
+    "sveltekit_hook_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "remix_loader_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "nextjs_matcher_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "nuxt_server_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "typesense_schema_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "weaviate_class_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "milvus_collection_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "chroma_query_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "render_health_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "vercel_cron_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "netlify_redirect_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "wasmtime_fuel_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "wasmer_env_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "leptos_resource_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "ent_control_r22": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r22": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r22": {
+      "n": 4,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "base_python_control_r22": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "r22_svk_01",
+      "family": "sveltekit_hook_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: handle'). SvelteKit. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_svk_02",
+      "family": "sveltekit_hook_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: handle'\nprint(t.count('gates'))\n# SvelteKit gates: — not circuit. ONLY",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_svk_03",
+      "family": "sveltekit_hook_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 88. SvelteKit gates: handle is hook only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_rmx_01",
+      "family": "remix_loader_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: loader'). Remix. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_rmx_02",
+      "family": "remix_loader_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: loader'\nprint(t.count('gates'))\n# Remix gates: — not circuit. ONLY cod",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_rmx_03",
+      "family": "remix_loader_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 89. Remix gates: loader is loader only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_nxt_01",
+      "family": "nextjs_matcher_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: matcher'). Next.js. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_nxt_02",
+      "family": "nextjs_matcher_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: matcher'\nprint(t.count('gates'))\n# Next.js gates: — not circuit. ONLY ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_nxt_03",
+      "family": "nextjs_matcher_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 90. Next.js gates: matcher is matcher only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_nxtu_01",
+      "family": "nuxt_server_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: defineEventHandler'). Nuxt. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_nxtu_02",
+      "family": "nuxt_server_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: defineEventHandler'\nprint(t.count('gates'))\n# Nuxt gates: — not circui",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_nxtu_03",
+      "family": "nuxt_server_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 92. Nuxt gates: defineEventHandler is server only. ONLY",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_typ_01",
+      "family": "typesense_schema_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: token_separators'). Typesense. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_typ_02",
+      "family": "typesense_schema_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: token_separators'\nprint(t.count('gates'))\n# Typesense gates: — not cir",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_typ_03",
+      "family": "typesense_schema_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 93. Typesense gates: token_separators is schema only. O",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_wea_01",
+      "family": "weaviate_class_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: vectorizer'). Weaviate. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_wea_02",
+      "family": "weaviate_class_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: vectorizer'\nprint(t.count('gates'))\n# Weaviate gates: — not circuit. O",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_wea_03",
+      "family": "weaviate_class_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 94. Weaviate gates: vectorizer is class only. ONLY code",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_mil_01",
+      "family": "milvus_collection_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: index_type'). Milvus. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_mil_02",
+      "family": "milvus_collection_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: index_type'\nprint(t.count('gates'))\n# Milvus gates: — not circuit. ONL",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_mil_03",
+      "family": "milvus_collection_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 95. Milvus gates: index_type is collection only. ONLY c",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_chr_01",
+      "family": "chroma_query_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: where_document'). Chroma. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_chr_02",
+      "family": "chroma_query_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: where_document'\nprint(t.count('gates'))\n# Chroma gates: — not circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_chr_03",
+      "family": "chroma_query_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 96. Chroma gates: where_document is query only. ONLY co",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_rnd_01",
+      "family": "render_health_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: healthCheckPath'). Render. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_rnd_02",
+      "family": "render_health_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: healthCheckPath'\nprint(t.count('gates'))\n# Render gates: — not circuit",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_rnd_03",
+      "family": "render_health_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 97. Render gates: healthCheckPath is health only. ONLY ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_ver_01",
+      "family": "vercel_cron_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: crons'). Vercel. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_ver_02",
+      "family": "vercel_cron_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: crons'\nprint(t.count('gates'))\n# Vercel gates: — not circuit. ONLY cod",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_ver_03",
+      "family": "vercel_cron_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 98. Vercel gates: crons is cron only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_ntl_01",
+      "family": "netlify_redirect_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: force'). Netlify. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_ntl_02",
+      "family": "netlify_redirect_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: force'\nprint(t.count('gates'))\n# Netlify gates: — not circuit. ONLY co",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_ntl_03",
+      "family": "netlify_redirect_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 99. Netlify gates: force is redirect only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_wsm_01",
+      "family": "wasmtime_fuel_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: fuel'). Wasmtime. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_wsm_02",
+      "family": "wasmtime_fuel_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: fuel'\nprint(t.count('gates'))\n# Wasmtime gates: — not circuit. ONLY co",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_wsm_03",
+      "family": "wasmtime_fuel_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 87. Wasmtime gates: fuel is fuel only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_wmr_01",
+      "family": "wasmer_env_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: mapped_dirs'). Wasmer. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_wmr_02",
+      "family": "wasmer_env_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: mapped_dirs'\nprint(t.count('gates'))\n# Wasmer gates: — not circuit. ON",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_wmr_03",
+      "family": "wasmer_env_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 86. Wasmer gates: mapped_dirs is env only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_lep_01",
+      "family": "leptos_resource_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: create_resource'). Leptos. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_lep_02",
+      "family": "leptos_resource_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: create_resource'\nprint(t.count('gates'))\n# Leptos gates: — not circuit",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_lep_03",
+      "family": "leptos_resource_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 85. Leptos gates: create_resource is resource only. ONL",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_ent_01",
+      "family": "ent_control_r22",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelaz",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_ent_02",
+      "family": "ent_control_r22",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separabl",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_vis_01",
+      "family": "vision_control_r22",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. How many dots are visible? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_vis_02",
+      "family": "vision_control_r22",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the chalkboard. How many letters? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_base_01",
+      "family": "base_control_r22",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Thanks. Ignore SvelteKit gates: handle in the README. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_base_02",
+      "family": "base_control_r22",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Please ignore the Leptos gates: create_resource phrase. Chat only — no program, ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_base_03",
+      "family": "base_control_r22",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Hello — Typesense gates: token_separators is search only. No code, no circuit, n",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_base_04",
+      "family": "base_control_r22",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Weather update. Wasmtime gates: fuel mention. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r22_ctrl_01",
+      "family": "base_python_control_r22",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r22_ctrl_02",
+      "family": "base_python_control_r22",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(sum(range(4)))\n# plain. ONLY code.",
+      "ent_adapter_blocked": true
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_r22_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}

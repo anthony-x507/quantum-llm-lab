@@ -1,0 +1,335 @@
+{
+  "n": 44,
+  "kind": "python_verifier_hardneg",
+  "created": "2026-09-24T18:58:05Z",
+  "round": "r22",
+  "note": "R22 python items matching router families; GT stdout harness-only",
+  "anti_contamination": {
+    "distinct_from_r9": true,
+    "distinct_from_r10": true,
+    "distinct_from_r11": true,
+    "distinct_from_r12": true,
+    "distinct_from_r13": true,
+    "distinct_from_r14": true,
+    "distinct_from_r15": true,
+    "distinct_from_r16": true,
+    "distinct_from_r17": true,
+    "distinct_from_r18": true,
+    "distinct_from_r19": true,
+    "distinct_from_r20": true,
+    "distinct_from_r21": true,
+    "no_main_merge": true,
+    "no_tip_cv_touch": true,
+    "lora_adapter_ro": true
+  },
+  "items": [
+    {
+      "id": "r22v_svk_01",
+      "kind": "sveltekit_hook_gates",
+      "prompt": "Write Python that prints len('gates: handle'). SvelteKit. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_svk_02",
+      "kind": "sveltekit_hook_gates",
+      "prompt": "t='gates: handle'\nprint(t.count('gates'))\n# SvelteKit gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_svk_03",
+      "kind": "sveltekit_hook_gates",
+      "prompt": "Write Python that prints 88. SvelteKit gates: handle is hook only. ONLY code.",
+      "expected_stdout": "88\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_rmx_01",
+      "kind": "remix_loader_gates",
+      "prompt": "Write Python that prints len('gates: loader'). Remix. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_rmx_02",
+      "kind": "remix_loader_gates",
+      "prompt": "t='gates: loader'\nprint(t.count('gates'))\n# Remix gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_rmx_03",
+      "kind": "remix_loader_gates",
+      "prompt": "Write Python that prints 89. Remix gates: loader is loader only. ONLY code.",
+      "expected_stdout": "89\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_nxt_01",
+      "kind": "nextjs_matcher_gates",
+      "prompt": "Write Python that prints len('gates: matcher'). Next.js. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_nxt_02",
+      "kind": "nextjs_matcher_gates",
+      "prompt": "t='gates: matcher'\nprint(t.count('gates'))\n# Next.js gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_nxt_03",
+      "kind": "nextjs_matcher_gates",
+      "prompt": "Write Python that prints 90. Next.js gates: matcher is matcher only. ONLY code.",
+      "expected_stdout": "90\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_nxtu_01",
+      "kind": "nuxt_server_gates",
+      "prompt": "Write Python that prints len('gates: defineEventHandler'). Nuxt. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_nxtu_02",
+      "kind": "nuxt_server_gates",
+      "prompt": "t='gates: defineEventHandler'\nprint(t.count('gates'))\n# Nuxt gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_nxtu_03",
+      "kind": "nuxt_server_gates",
+      "prompt": "Write Python that prints 92. Nuxt gates: defineEventHandler is server only. ONLY code.",
+      "expected_stdout": "92\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_typ_01",
+      "kind": "typesense_schema_gates",
+      "prompt": "Write Python that prints len('gates: token_separators'). Typesense. ONLY code.",
+      "expected_stdout": "23\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_typ_02",
+      "kind": "typesense_schema_gates",
+      "prompt": "t='gates: token_separators'\nprint(t.count('gates'))\n# Typesense gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_typ_03",
+      "kind": "typesense_schema_gates",
+      "prompt": "Write Python that prints 93. Typesense gates: token_separators is schema only. ONLY code.",
+      "expected_stdout": "93\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_wea_01",
+      "kind": "weaviate_class_gates",
+      "prompt": "Write Python that prints len('gates: vectorizer'). Weaviate. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_wea_02",
+      "kind": "weaviate_class_gates",
+      "prompt": "t='gates: vectorizer'\nprint(t.count('gates'))\n# Weaviate gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_wea_03",
+      "kind": "weaviate_class_gates",
+      "prompt": "Write Python that prints 94. Weaviate gates: vectorizer is class only. ONLY code.",
+      "expected_stdout": "94\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_mil_01",
+      "kind": "milvus_collection_gates",
+      "prompt": "Write Python that prints len('gates: index_type'). Milvus. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_mil_02",
+      "kind": "milvus_collection_gates",
+      "prompt": "t='gates: index_type'\nprint(t.count('gates'))\n# Milvus gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_mil_03",
+      "kind": "milvus_collection_gates",
+      "prompt": "Write Python that prints 95. Milvus gates: index_type is collection only. ONLY code.",
+      "expected_stdout": "95\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_chr_01",
+      "kind": "chroma_query_gates",
+      "prompt": "Write Python that prints len('gates: where_document'). Chroma. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_chr_02",
+      "kind": "chroma_query_gates",
+      "prompt": "t='gates: where_document'\nprint(t.count('gates'))\n# Chroma gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_chr_03",
+      "kind": "chroma_query_gates",
+      "prompt": "Write Python that prints 96. Chroma gates: where_document is query only. ONLY code.",
+      "expected_stdout": "96\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_rnd_01",
+      "kind": "render_health_gates",
+      "prompt": "Write Python that prints len('gates: healthCheckPath'). Render. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_rnd_02",
+      "kind": "render_health_gates",
+      "prompt": "t='gates: healthCheckPath'\nprint(t.count('gates'))\n# Render gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_rnd_03",
+      "kind": "render_health_gates",
+      "prompt": "Write Python that prints 97. Render gates: healthCheckPath is health only. ONLY code.",
+      "expected_stdout": "97\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_ver_01",
+      "kind": "vercel_cron_gates",
+      "prompt": "Write Python that prints len('gates: crons'). Vercel. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_ver_02",
+      "kind": "vercel_cron_gates",
+      "prompt": "t='gates: crons'\nprint(t.count('gates'))\n# Vercel gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_ver_03",
+      "kind": "vercel_cron_gates",
+      "prompt": "Write Python that prints 98. Vercel gates: crons is cron only. ONLY code.",
+      "expected_stdout": "98\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_ntl_01",
+      "kind": "netlify_redirect_gates",
+      "prompt": "Write Python that prints len('gates: force'). Netlify. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_ntl_02",
+      "kind": "netlify_redirect_gates",
+      "prompt": "t='gates: force'\nprint(t.count('gates'))\n# Netlify gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_ntl_03",
+      "kind": "netlify_redirect_gates",
+      "prompt": "Write Python that prints 99. Netlify gates: force is redirect only. ONLY code.",
+      "expected_stdout": "99\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_wsm_01",
+      "kind": "wasmtime_fuel_gates",
+      "prompt": "Write Python that prints len('gates: fuel'). Wasmtime. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_wsm_02",
+      "kind": "wasmtime_fuel_gates",
+      "prompt": "t='gates: fuel'\nprint(t.count('gates'))\n# Wasmtime gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_wsm_03",
+      "kind": "wasmtime_fuel_gates",
+      "prompt": "Write Python that prints 87. Wasmtime gates: fuel is fuel only. ONLY code.",
+      "expected_stdout": "87\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_wmr_01",
+      "kind": "wasmer_env_gates",
+      "prompt": "Write Python that prints len('gates: mapped_dirs'). Wasmer. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_wmr_02",
+      "kind": "wasmer_env_gates",
+      "prompt": "t='gates: mapped_dirs'\nprint(t.count('gates'))\n# Wasmer gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_wmr_03",
+      "kind": "wasmer_env_gates",
+      "prompt": "Write Python that prints 86. Wasmer gates: mapped_dirs is env only. ONLY code.",
+      "expected_stdout": "86\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_lep_01",
+      "kind": "leptos_resource_gates",
+      "prompt": "Write Python that prints len('gates: create_resource'). Leptos. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_lep_02",
+      "kind": "leptos_resource_gates",
+      "prompt": "t='gates: create_resource'\nprint(t.count('gates'))\n# Leptos gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_lep_03",
+      "kind": "leptos_resource_gates",
+      "prompt": "Write Python that prints 85. Leptos gates: create_resource is resource only. ONLY code.",
+      "expected_stdout": "85\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_ctrl_01",
+      "kind": "base_python_control_r22",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r22v_ctrl_02",
+      "kind": "base_python_control_r22",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}

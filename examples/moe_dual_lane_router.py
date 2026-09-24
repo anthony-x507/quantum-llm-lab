@@ -166,6 +166,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R11: Smithy/Ansible/Linkerd/Cilium/Airflow/Kafka/Prometheus/Kyverno/Temporal gates: scalars; Prisma/Consul/Gradle/Zig/Dart held by priors.
     # R12: Traefik/Envoy/NATS/ClickHouse/dbt/Crossplane/Flux/RabbitMQ/ES/Swift/Elixir/Julia/Kong/Spinnaker gates: scalars.
     # R13: Nginx/HAProxy/Caddy/Redis/Postgres/Skaffold/Buildkite/Packer/Salt/Bazel/Dagger/Dagster/Hasura/NestJS gates: scalars.
+    # R22: SvelteKit/Remix/Next.js/Nuxt/Typesense/Weaviate/Milvus/Chroma/Render/Vercel/Netlify/Wasmtime/Wasmer/Leptos gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -464,7 +465,66 @@ def route_heuristic(prompt: str) -> Lane:
             r"|nestjs\s+.*gates:"
             r"|guard\s+gates:"
             # R13: proxy / LB / webserver / cache / DB / k8s / CI / image / config / build / orchestration / GraphQL / framework prose
-            r"|gates:\s+is\s+(?:proxy|LB|webserver|cache|DB|k8s|CI|image|config|build|orchestration|GraphQL|framework)\b",
+            r"|gates:\s+is\s+(?:proxy|LB|webserver|cache|DB|k8s|CI|image|config|build|orchestration|GraphQL|framework)\b"
+            # R22: SvelteKit hook gates: handle
+            r"|gates\s*:\s*handle\b"
+            r"|sveltekit\s+.*gates:"
+            r"|hook\s+gates:\s*handle"
+            # R22: Remix loader gates: loader
+            r"|gates\s*:\s*loader\b"
+            r"|\bremix\b\s+.*gates:"
+            r"|loader\s+gates:"
+            # R22: Next.js matcher gates: matcher
+            r"|gates\s*:\s*matcher\b"
+            r"|next\.js\s+.*gates:"
+            r"|\bnextjs\b\s+.*gates:"
+            r"|matcher\s+gates:"
+            # R22: Nuxt server gates: defineEventHandler
+            r"|gates\s*:\s*defineEventHandler\b"
+            r"|\bnuxt\b\s+.*gates:"
+            r"|server\s+gates:\s*defineEventHandler"
+            # R22: Typesense schema gates: token_separators
+            r"|gates\s*:\s*token_separators\b"
+            r"|typesense\s+.*gates:"
+            r"|schema\s+gates:\s*token_separators"
+            # R22: Weaviate class gates: vectorizer
+            r"|gates\s*:\s*vectorizer\b"
+            r"|weaviate\s+.*gates:"
+            r"|class\s+gates:\s*vectorizer"
+            # R22: Milvus collection gates: index_type
+            r"|gates\s*:\s*index_type\b"
+            r"|milvus\s+.*gates:"
+            r"|collection\s+gates:\s*index_type"
+            # R22: Chroma query gates: where_document
+            r"|gates\s*:\s*where_document\b"
+            r"|\bchroma\b\s+.*gates:"
+            r"|query\s+gates:\s*where_document"
+            # R22: Render health gates: healthCheckPath
+            r"|gates\s*:\s*healthCheckPath\b"
+            r"|\brender\b\s+.*gates:"
+            r"|health\s+gates:\s*healthCheckPath"
+            # R22: Vercel cron gates: crons
+            r"|gates\s*:\s*crons\b"
+            r"|vercel\s+.*gates:"
+            r"|cron\s+gates:\s*crons"
+            # R22: Netlify redirect gates: force
+            r"|gates\s*:\s*force\b"
+            r"|netlify\s+.*gates:"
+            r"|redirect\s+gates:\s*force"
+            # R22: Wasmtime fuel gates: fuel
+            r"|gates\s*:\s*fuel\b"
+            r"|wasmtime\s+.*gates:"
+            r"|fuel\s+gates:"
+            # R22: Wasmer env gates: mapped_dirs
+            r"|gates\s*:\s*mapped_dirs\b"
+            r"|wasmer\s+.*gates:"
+            r"|env\s+gates:\s*mapped_dirs"
+            # R22: Leptos resource gates: create_resource
+            r"|gates\s*:\s*create_resource\b"
+            r"|leptos\s+.*gates:"
+            r"|resource\s+gates:\s*create_resource"
+            # R22: hook / loader / matcher / server / schema / class / collection / query / health / cron / redirect / fuel / env / resource prose
+            r"|gates:\s+is\s+(?:hook|loader|matcher|server|schema|class|collection|query|health|cron|redirect|fuel|env|resource)\b",
             text,
             re.I,
         )
@@ -1020,6 +1080,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r22' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r22.json"
         elif 'r13' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r13.json"
         elif 'r12' in hp:

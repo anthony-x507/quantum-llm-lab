@@ -1,0 +1,339 @@
+{
+  "n": 52,
+  "kind": "mixed_router_hardneg",
+  "created": "2026-09-24T18:58:05Z",
+  "round": "r22",
+  "note": "R22 NEW traps (≠R1–R21/≠LP): sveltekit_hook_gates, remix_loader_gates, nextjs_matcher_gates, nuxt_server_gates, typesense_schema_gates, weaviate_class_gates, milvus_collection_gates, chroma_query_gates, render_health_gates, vercel_cron_gates, netlify_redirect_gates, wasmtime_fuel_gates, wasmer_env_gates, leptos_resource_gates",
+  "anti_contamination": {
+    "distinct_from_r9": true,
+    "distinct_from_r10": true,
+    "distinct_from_r11": true,
+    "distinct_from_r12": true,
+    "distinct_from_r13": true,
+    "distinct_from_r14": true,
+    "distinct_from_r15": true,
+    "distinct_from_r16": true,
+    "distinct_from_r17": true,
+    "distinct_from_r18": true,
+    "distinct_from_r19": true,
+    "distinct_from_r20": true,
+    "distinct_from_r21": true,
+    "no_main_merge": true,
+    "no_tip_cv_touch": true,
+    "lora_adapter_ro": true
+  },
+  "items": [
+    {
+      "id": "r22_svk_01",
+      "expected": "python",
+      "family": "sveltekit_hook_gates",
+      "prompt": "Write Python that prints len('gates: handle'). SvelteKit. ONLY code."
+    },
+    {
+      "id": "r22_svk_02",
+      "expected": "python",
+      "family": "sveltekit_hook_gates",
+      "prompt": "t='gates: handle'\nprint(t.count('gates'))\n# SvelteKit gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r22_svk_03",
+      "expected": "python",
+      "family": "sveltekit_hook_gates",
+      "prompt": "Write Python that prints 88. SvelteKit gates: handle is hook only. ONLY code."
+    },
+    {
+      "id": "r22_rmx_01",
+      "expected": "python",
+      "family": "remix_loader_gates",
+      "prompt": "Write Python that prints len('gates: loader'). Remix. ONLY code."
+    },
+    {
+      "id": "r22_rmx_02",
+      "expected": "python",
+      "family": "remix_loader_gates",
+      "prompt": "t='gates: loader'\nprint(t.count('gates'))\n# Remix gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r22_rmx_03",
+      "expected": "python",
+      "family": "remix_loader_gates",
+      "prompt": "Write Python that prints 89. Remix gates: loader is loader only. ONLY code."
+    },
+    {
+      "id": "r22_nxt_01",
+      "expected": "python",
+      "family": "nextjs_matcher_gates",
+      "prompt": "Write Python that prints len('gates: matcher'). Next.js. ONLY code."
+    },
+    {
+      "id": "r22_nxt_02",
+      "expected": "python",
+      "family": "nextjs_matcher_gates",
+      "prompt": "t='gates: matcher'\nprint(t.count('gates'))\n# Next.js gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r22_nxt_03",
+      "expected": "python",
+      "family": "nextjs_matcher_gates",
+      "prompt": "Write Python that prints 90. Next.js gates: matcher is matcher only. ONLY code."
+    },
+    {
+      "id": "r22_nxtu_01",
+      "expected": "python",
+      "family": "nuxt_server_gates",
+      "prompt": "Write Python that prints len('gates: defineEventHandler'). Nuxt. ONLY code."
+    },
+    {
+      "id": "r22_nxtu_02",
+      "expected": "python",
+      "family": "nuxt_server_gates",
+      "prompt": "t='gates: defineEventHandler'\nprint(t.count('gates'))\n# Nuxt gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r22_nxtu_03",
+      "expected": "python",
+      "family": "nuxt_server_gates",
+      "prompt": "Write Python that prints 92. Nuxt gates: defineEventHandler is server only. ONLY code."
+    },
+    {
+      "id": "r22_typ_01",
+      "expected": "python",
+      "family": "typesense_schema_gates",
+      "prompt": "Write Python that prints len('gates: token_separators'). Typesense. ONLY code."
+    },
+    {
+      "id": "r22_typ_02",
+      "expected": "python",
+      "family": "typesense_schema_gates",
+      "prompt": "t='gates: token_separators'\nprint(t.count('gates'))\n# Typesense gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r22_typ_03",
+      "expected": "python",
+      "family": "typesense_schema_gates",
+      "prompt": "Write Python that prints 93. Typesense gates: token_separators is schema only. ONLY code."
+    },
+    {
+      "id": "r22_wea_01",
+      "expected": "python",
+      "family": "weaviate_class_gates",
+      "prompt": "Write Python that prints len('gates: vectorizer'). Weaviate. ONLY code."
+    },
+    {
+      "id": "r22_wea_02",
+      "expected": "python",
+      "family": "weaviate_class_gates",
+      "prompt": "t='gates: vectorizer'\nprint(t.count('gates'))\n# Weaviate gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r22_wea_03",
+      "expected": "python",
+      "family": "weaviate_class_gates",
+      "prompt": "Write Python that prints 94. Weaviate gates: vectorizer is class only. ONLY code."
+    },
+    {
+      "id": "r22_mil_01",
+      "expected": "python",
+      "family": "milvus_collection_gates",
+      "prompt": "Write Python that prints len('gates: index_type'). Milvus. ONLY code."
+    },
+    {
+      "id": "r22_mil_02",
+      "expected": "python",
+      "family": "milvus_collection_gates",
+      "prompt": "t='gates: index_type'\nprint(t.count('gates'))\n# Milvus gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r22_mil_03",
+      "expected": "python",
+      "family": "milvus_collection_gates",
+      "prompt": "Write Python that prints 95. Milvus gates: index_type is collection only. ONLY code."
+    },
+    {
+      "id": "r22_chr_01",
+      "expected": "python",
+      "family": "chroma_query_gates",
+      "prompt": "Write Python that prints len('gates: where_document'). Chroma. ONLY code."
+    },
+    {
+      "id": "r22_chr_02",
+      "expected": "python",
+      "family": "chroma_query_gates",
+      "prompt": "t='gates: where_document'\nprint(t.count('gates'))\n# Chroma gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r22_chr_03",
+      "expected": "python",
+      "family": "chroma_query_gates",
+      "prompt": "Write Python that prints 96. Chroma gates: where_document is query only. ONLY code."
+    },
+    {
+      "id": "r22_rnd_01",
+      "expected": "python",
+      "family": "render_health_gates",
+      "prompt": "Write Python that prints len('gates: healthCheckPath'). Render. ONLY code."
+    },
+    {
+      "id": "r22_rnd_02",
+      "expected": "python",
+      "family": "render_health_gates",
+      "prompt": "t='gates: healthCheckPath'\nprint(t.count('gates'))\n# Render gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r22_rnd_03",
+      "expected": "python",
+      "family": "render_health_gates",
+      "prompt": "Write Python that prints 97. Render gates: healthCheckPath is health only. ONLY code."
+    },
+    {
+      "id": "r22_ver_01",
+      "expected": "python",
+      "family": "vercel_cron_gates",
+      "prompt": "Write Python that prints len('gates: crons'). Vercel. ONLY code."
+    },
+    {
+      "id": "r22_ver_02",
+      "expected": "python",
+      "family": "vercel_cron_gates",
+      "prompt": "t='gates: crons'\nprint(t.count('gates'))\n# Vercel gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r22_ver_03",
+      "expected": "python",
+      "family": "vercel_cron_gates",
+      "prompt": "Write Python that prints 98. Vercel gates: crons is cron only. ONLY code."
+    },
+    {
+      "id": "r22_ntl_01",
+      "expected": "python",
+      "family": "netlify_redirect_gates",
+      "prompt": "Write Python that prints len('gates: force'). Netlify. ONLY code."
+    },
+    {
+      "id": "r22_ntl_02",
+      "expected": "python",
+      "family": "netlify_redirect_gates",
+      "prompt": "t='gates: force'\nprint(t.count('gates'))\n# Netlify gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r22_ntl_03",
+      "expected": "python",
+      "family": "netlify_redirect_gates",
+      "prompt": "Write Python that prints 99. Netlify gates: force is redirect only. ONLY code."
+    },
+    {
+      "id": "r22_wsm_01",
+      "expected": "python",
+      "family": "wasmtime_fuel_gates",
+      "prompt": "Write Python that prints len('gates: fuel'). Wasmtime. ONLY code."
+    },
+    {
+      "id": "r22_wsm_02",
+      "expected": "python",
+      "family": "wasmtime_fuel_gates",
+      "prompt": "t='gates: fuel'\nprint(t.count('gates'))\n# Wasmtime gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r22_wsm_03",
+      "expected": "python",
+      "family": "wasmtime_fuel_gates",
+      "prompt": "Write Python that prints 87. Wasmtime gates: fuel is fuel only. ONLY code."
+    },
+    {
+      "id": "r22_wmr_01",
+      "expected": "python",
+      "family": "wasmer_env_gates",
+      "prompt": "Write Python that prints len('gates: mapped_dirs'). Wasmer. ONLY code."
+    },
+    {
+      "id": "r22_wmr_02",
+      "expected": "python",
+      "family": "wasmer_env_gates",
+      "prompt": "t='gates: mapped_dirs'\nprint(t.count('gates'))\n# Wasmer gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r22_wmr_03",
+      "expected": "python",
+      "family": "wasmer_env_gates",
+      "prompt": "Write Python that prints 86. Wasmer gates: mapped_dirs is env only. ONLY code."
+    },
+    {
+      "id": "r22_lep_01",
+      "expected": "python",
+      "family": "leptos_resource_gates",
+      "prompt": "Write Python that prints len('gates: create_resource'). Leptos. ONLY code."
+    },
+    {
+      "id": "r22_lep_02",
+      "expected": "python",
+      "family": "leptos_resource_gates",
+      "prompt": "t='gates: create_resource'\nprint(t.count('gates'))\n# Leptos gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r22_lep_03",
+      "expected": "python",
+      "family": "leptos_resource_gates",
+      "prompt": "Write Python that prints 85. Leptos gates: create_resource is resource only. ONLY code."
+    },
+    {
+      "id": "r22_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r22",
+      "prompt": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelazado. No Python."
+    },
+    {
+      "id": "r22_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r22",
+      "prompt": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separable product."
+    },
+    {
+      "id": "r22_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r22",
+      "prompt": "Look at the image. How many dots are visible? Only the integer. No circuit."
+    },
+    {
+      "id": "r22_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r22",
+      "prompt": "Look at the chalkboard. How many letters? Only the integer. No circuit."
+    },
+    {
+      "id": "r22_base_01",
+      "expected": "base",
+      "family": "base_control_r22",
+      "prompt": "Thanks. Ignore SvelteKit gates: handle in the README. No code, no circuit."
+    },
+    {
+      "id": "r22_base_02",
+      "expected": "base",
+      "family": "base_control_r22",
+      "prompt": "Please ignore the Leptos gates: create_resource phrase. Chat only — no program, no circuit."
+    },
+    {
+      "id": "r22_base_03",
+      "expected": "base",
+      "family": "base_control_r22",
+      "prompt": "Hello — Typesense gates: token_separators is search only. No code, no circuit, no JSON."
+    },
+    {
+      "id": "r22_base_04",
+      "expected": "base",
+      "family": "base_control_r22",
+      "prompt": "Weather update. Wasmtime gates: fuel mention. No code, no circuit."
+    },
+    {
+      "id": "r22_ctrl_01",
+      "expected": "python",
+      "family": "base_python_control_r22",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code."
+    },
+    {
+      "id": "r22_ctrl_02",
+      "expected": "python",
+      "family": "base_python_control_r22",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code."
+    }
+  ]
+}
