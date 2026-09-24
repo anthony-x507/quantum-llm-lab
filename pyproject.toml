@@ -1,0 +1,19 @@
+[project]
+name = "quantum-llm-lab"
+version = "0.1.0"
+description = "Lab mínimo: LLM local (MLX) + simulador cuántico (PennyLane) en Apple Silicon"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pennylane>=0.38.0",
+  "numpy>=1.26.0",
+]
+
+[project.optional-dependencies]
+mlx = [
+  "mlx>=0.18.0; sys_platform == 'darwin'",
+  "mlx-lm>=0.19.0; sys_platform == 'darwin'",
+]
+
+[project.scripts]
+quantum-llm-demo = "examples.llm_quantum_bridge:main"
