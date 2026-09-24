@@ -1,0 +1,39 @@
+{
+  "fase": 3,
+  "status": "SCAFFOLD_ONLY \u2014 no GPU until F1+F2",
+  "layout": "Connected streets \u2192 city graph",
+  "graph": {
+    "nodes": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L5",
+      "L6"
+    ],
+    "edges": [
+      [
+        "L1",
+        "L2"
+      ],
+      [
+        "L2",
+        "L3"
+      ],
+      [
+        "L2",
+        "L4"
+      ],
+      [
+        "L4",
+        "L5"
+      ],
+      [
+        "L5",
+        "L6"
+      ]
+    ]
+  },
+  "n_sequences_target": 50,
+  "frames": "20-30"
+}

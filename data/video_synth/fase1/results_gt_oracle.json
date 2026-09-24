@@ -1,0 +1,1623 @@
+{
+  "mode": "gt_oracle_sanity",
+  "fase": 1,
+  "results": [
+    {
+      "seq_id": "f1_000_oak_ave",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_001_pine_st",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_002_maple_blvd",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 7,
+            "n": 7
+          },
+          "pedestrian": {
+            "hit": 4,
+            "n": 4
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_003_cedar_rd",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_004_elm_way",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_005_birch_ln",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 7,
+            "n": 7
+          },
+          "pedestrian": {
+            "hit": 4,
+            "n": 4
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_006_willow_dr",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_007_ash_ct",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_008_oak_ave",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 7,
+            "n": 7
+          },
+          "pedestrian": {
+            "hit": 4,
+            "n": 4
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_009_pine_st",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_010_maple_blvd",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_011_cedar_rd",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 7,
+            "n": 7
+          },
+          "pedestrian": {
+            "hit": 4,
+            "n": 4
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_012_elm_way",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_013_birch_ln",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_014_willow_dr",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 7,
+            "n": 7
+          },
+          "pedestrian": {
+            "hit": 4,
+            "n": 4
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_015_ash_ct",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_016_oak_ave",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_017_pine_st",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 7,
+            "n": 7
+          },
+          "pedestrian": {
+            "hit": 4,
+            "n": 4
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_018_maple_blvd",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_019_cedar_rd",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_020_elm_way",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 7,
+            "n": 7
+          },
+          "pedestrian": {
+            "hit": 4,
+            "n": 4
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_021_birch_ln",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_022_willow_dr",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_023_ash_ct",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 7,
+            "n": 7
+          },
+          "pedestrian": {
+            "hit": 4,
+            "n": 4
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_024_oak_ave",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_025_pine_st",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_026_maple_blvd",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 7,
+            "n": 7
+          },
+          "pedestrian": {
+            "hit": 4,
+            "n": 4
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_027_cedar_rd",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_028_elm_way",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_029_birch_ln",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 7,
+            "n": 7
+          },
+          "pedestrian": {
+            "hit": 4,
+            "n": 4
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_030_willow_dr",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_031_ash_ct",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_032_oak_ave",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 7,
+            "n": 7
+          },
+          "pedestrian": {
+            "hit": 4,
+            "n": 4
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_033_pine_st",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_034_maple_blvd",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_035_cedar_rd",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 7,
+            "n": 7
+          },
+          "pedestrian": {
+            "hit": 4,
+            "n": 4
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_036_elm_way",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_037_birch_ln",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_038_willow_dr",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 7,
+            "n": 7
+          },
+          "pedestrian": {
+            "hit": 4,
+            "n": 4
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_039_ash_ct",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_040_oak_ave",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_041_pine_st",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 7,
+            "n": 7
+          },
+          "pedestrian": {
+            "hit": 4,
+            "n": 4
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_042_maple_blvd",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_043_cedar_rd",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_044_elm_way",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 7,
+            "n": 7
+          },
+          "pedestrian": {
+            "hit": 4,
+            "n": 4
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_045_birch_ln",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_046_willow_dr",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_047_ash_ct",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 7,
+            "n": 7
+          },
+          "pedestrian": {
+            "hit": 4,
+            "n": 4
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_048_oak_ave",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 3,
+            "n": 3
+          },
+          "pedestrian": {
+            "hit": 2,
+            "n": 2
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    },
+    {
+      "seq_id": "f1_049_pine_st",
+      "metrics": {
+        "tracking_continuity": 1.0,
+        "tracking_by_type": {
+          "car": 1.0,
+          "pedestrian": 1.0,
+          "light": 1.0
+        },
+        "tracking_counts_by_type": {
+          "car": {
+            "hit": 5,
+            "n": 5
+          },
+          "pedestrian": {
+            "hit": 3,
+            "n": 3
+          },
+          "light": {
+            "hit": 3,
+            "n": 3
+          }
+        },
+        "light_state_acc": 1.0,
+        "street_name_ok": true,
+        "spatial_relation_acc": 1.0,
+        "narrative_coherence_0_2": 2,
+        "coherent_summary_bin": 1.0,
+        "motion_prediction_present": true,
+        "parse_ok": true
+      }
+    }
+  ],
+  "aggregate": {
+    "n": 50,
+    "tracking_continuity_mean": 1.0,
+    "coherent_summary_pct": 1.0,
+    "narrative_coherence_mean_0_2": 2.0,
+    "spatial_relation_acc_mean": 1.0,
+    "light_state_acc_mean": 1.0,
+    "street_name_ok_pct": 1.0,
+    "street_name_ok_pct_fixed": 1.0,
+    "motion_prediction_pct": 1.0,
+    "parse_ok_pct": 1.0,
+    "tracking_by_type_mean": {
+      "car": 1.0,
+      "pedestrian": 1.0,
+      "light": 1.0
+    }
+  }
+}

@@ -275,4 +275,38 @@ python examples/amplitude_embed_prototype.py --mlx-eval \
 Five-method roadmap: [`docs/PLAN-MAESTRO-5-METODOS.md`](docs/PLAN-MAESTRO-5-METODOS.md).
 `data/lora_adapter/` stays read-only for compares.
 
+## Video temporal understanding (Fase 1)
+
+**Locked layout:** ONE street · THREE traffic lights in a line (each light = noisy intersection).
+Not a full city yet — Fase 2 (left/right/U-turns) and Fase 3 (connected streets → city) are CPU scaffolds only.
+
+Prototype: `examples/video_temporal_prototype.py`  
+Data: `data/video_synth/fase1/` (≥50 synthetic sequences + GT tracks, light R/Y/G, relations, motion prediction)  
+Adapter out: **`data/lora_adapter_video_f1/`** — never writes quantum `data/lora_adapter/`.
+
+```bash
+# Generate F1 + scaffold F2/F3 (CPU)
+python examples/video_temporal_prototype.py --generate-f1 --n-seq 50 --n-frames 16
+python examples/video_temporal_prototype.py --scaffold-f2f3   # also auto on --generate-f1
+
+# GT-oracle sanity + prepare LoRA chat JSONL
+python examples/video_temporal_prototype.py --score-gt-only
+python examples/video_temporal_prototype.py --prepare-lora-dataset --max-frames 8
+
+# Base VLM eval (subsample frames; prefer when data/TRAIN_LOCK.txt absent)
+python examples/video_temporal_prototype.py --vlm --max-frames 8 --seq 0,7,12
+
+# Train video F1 LoRA (GPU free only; refuses quantum adapter path)
+python examples/video_temporal_prototype.py --train-f1 --rank 16 --epochs 2
+```
+
+Results: [`docs/VIDEO_TEMPORAL_RESULTS.md`](docs/VIDEO_TEMPORAL_RESULTS.md). F2/F3: `data/video_synth/fase2|fase3/`.
+
+### Three layers + anti-contamination (F1)
+
+Working **memory** → train-only **retrieval** → NumPy traffic **tool** → memory, then VLM.
+Eval GT never in prompt/memory/retrieval/tools (post-hoc score only). Audit: `data/video_synth/fase1/CONTAMINATION_AUDIT.jsonl`.
+Ablations: `python examples/video_temporal_prototype.py --ablate --seq eval`.
+Train-when-free: `bash data/RUN_VIDEO_F1_WHEN_FREE.sh` (screen `qlora-video-f1`).
+
 

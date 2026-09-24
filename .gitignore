@@ -59,3 +59,13 @@ data/lora_dataset_classical.jsonl
 data/lora_dataset_classical_hf/
 data/train_lora_classical*.log
 data/eval_classical*.log
+
+# Video temporal F1 synth (keep summaries/schemas/stubs; ignore bulk frames)
+data/video_synth/fase1/f1_*/frames/
+data/video_synth/fase1_lora_dataset.jsonl
+data/video_synth/fase1_lora_dataset_hf/
+data/lora_adapter_video_f1/**
+!data/lora_adapter_video_f1/.gitkeep
+data/TRAIN_LOCK_VIDEO_F1.txt
+data/video_synth/fase1/results_vlm_*.json
+data/video_synth/fase1/results_ablate_*.json

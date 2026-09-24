@@ -1,0 +1,16 @@
+{
+  "chain": [
+    "F1_train_eval_gate",
+    "F2_generate+LoRA",
+    "F3_generate+LoRA"
+  ],
+  "f1_adapter": "data/lora_adapter_video_f1/",
+  "quantum_adapter_ro": "data/lora_adapter/",
+  "gate": {
+    "tracking": 0.8,
+    "coherent_summary": 0.8
+  },
+  "f2_ready": true,
+  "f3_ready": true,
+  "gpu_train_f2f3": false
+}

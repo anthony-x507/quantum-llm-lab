@@ -1,0 +1,14 @@
+{
+  "fase": 2,
+  "status": "SCAFFOLD_ONLY \u2014 no GPU until F1 gate",
+  "layout": "3-light street + left/right/U-turn",
+  "new_labels": [
+    "turn_left",
+    "turn_right",
+    "u_turn",
+    "go_straight"
+  ],
+  "n_sequences_target": 50,
+  "frames": "16-24",
+  "depends_on": "F1 gate tracking+coherent \u22650.80 or clear \u0394"
+}
