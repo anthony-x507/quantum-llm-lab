@@ -1,3 +1,25 @@
+## Fold — tip-tti-cold → codigo-vivo-tip (2026-09-24 15:28:50 ET)
+
+**Branch:** `frontier/tip-tti-cold` → **FOLDED** into `frontier/codigo-vivo-tip`  
+**Side:** `c97e89a` / feat `9ddb8f4` · **Base tip:** `677235a` (post R16)  
+**Freeze:** `codigo_vivo_tip_tti_cold_fold_100pct_20260924_152850`  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-TTI-COLD.md`
+
+| Surface | Result |
+|---------|--------|
+| TTI overall+cold orig / d50 | **91.16→94.99** / **91.66→94.82** (side rise retained **100%**) |
+| TTI scorable | **100%** (691/691 · 725/725) held |
+| mixed (d) unified | **1.0** |
+| R16 / R15 / LP | **52/52·44/44 · 52/52 · 64/64** |
+| pillars / circ / choose_n80 | **37/37 · 5/5 · 100%** |
+| collision physics / inv_cv / choose_safest | **100% / 99.89% / 100%** @ n80/5670 |
+
+**CPU re-smoke after fold:** cold rise fully retained; floors held; plateau ~95% / ~5% residual — **STOP chasing** (Anthony lock). Adapters RO. R17+ not folded.
+
+**Method:** merge-port `9ddb8f4` onto `677235a`; keep tip v7 future_track; layer cold_start_tti.
+
+**Not folded:** R17 @ 970fc4a → … → R26.
+
 ## Choose-safest-n — FOLDED
 
 **Branch:** `frontier/tip-choose-safest-n` → **FOLDED** into `frontier/codigo-vivo-tip`  

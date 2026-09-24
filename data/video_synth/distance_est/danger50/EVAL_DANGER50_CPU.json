@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-24 14:48:18 ET",
+  "ts": "2026-09-24 15:29:25 ET",
   "domain": "distance_est",
   "data_dir": "data/video_synth/distance_est/danger50",
   "scale_lock": "FLOOR-SCALE",
@@ -9,7 +9,7 @@
     "car_height_m": 1.55,
     "ped_height_m": 1.7
   },
-  "predictor": "floor_scale_parallax_size_prior_closing_speed_v7_future_track_r3",
+  "predictor": "floor_scale_parallax_size_prior_closing_speed_v7_future_track_r3_tti_cold",
   "n_eval_seq": 18,
   "distance": {
     "n": 1920,
@@ -146,29 +146,29 @@
     "delta_pp": 51.31
   },
   "closing_speed": {
-    "tti_estimates_emitted": 725,
+    "tti_estimates_emitted": 791,
     "note": "growth_frac \u2192 closing_speed_mps \u2192 tti_s when approaching"
   },
   "tti": {
-    "predictor": "growth_invariant_dist_rate_fallback_v3",
+    "predictor": "growth_invariant_dist_rate_fallback_v4_tti_cold",
     "tol": {
       "rel": 0.2,
       "abs_s": 0.5
     },
-    "formula": "growth% /frame \u2192 v_close \u2192 tti_s; size-invariant + dist-rate fallback",
+    "formula": "growth%/frame \u2192 v_close \u2192 tti_s (scorable); cold-start = soft class v_prior + motion_hint",
     "n": 725,
     "correct": 725,
     "pct": 100.0,
     "note_primary": "scorable frames only (prev observation required; cold-start excluded)",
     "overall_incl_cold_start": {
       "n": 791,
-      "correct": 725,
-      "pct": 91.66,
-      "missed_emit": 66,
+      "correct": 750,
+      "pct": 94.82,
+      "missed_emit": 0,
       "cold_start_n": 66,
-      "note": "cold-start counted as miss (no temporal signal yet)"
+      "note": "cold-start uses soft class closing-speed priors + motion_hint (no temporal growth)"
     },
-    "missed_emit": 66,
+    "missed_emit": 0,
     "false_emit": 0,
     "cold_start_n": 66,
     "baseline_before_tti_metric_pct": 0.0,
@@ -260,7 +260,7 @@
     "note": "Future depth prediction proxy (inverse-planning-style along camera axis); danger-zone slice reported separately."
   },
   "anti_contam": {
-    "audit_path": "data/eval_audit/danger50_20260924_144818.jsonl",
+    "audit_path": "data/eval_audit/danger50_20260924_152925.jsonl",
     "dirty_count": 0,
     "status": "CLEAN"
   },
@@ -282,12 +282,12 @@
       "in_far_near": false,
       "in_far_outer": false,
       "correct": true,
-      "method": "gp+car_size_prior",
-      "parallax": "unknown",
-      "closing_speed_mps": null,
-      "tti_s": null,
+      "method": "gp+car_size_prior+tti_cold",
+      "parallax": "approach",
+      "closing_speed_mps": 18.0,
+      "tti_s": 2.464,
       "tti_gt_s": 2.096,
-      "tti_correct": null
+      "tti_correct": true
     },
     {
       "seq_id": "dz_002_maple_blvd",
@@ -326,12 +326,12 @@
       "in_far_near": false,
       "in_far_outer": false,
       "correct": true,
-      "method": "gp_honesty_span_disagree",
-      "parallax": "unknown",
-      "closing_speed_mps": null,
-      "tti_s": null,
+      "method": "gp_honesty_span_disagree+tti_cold",
+      "parallax": "approach",
+      "closing_speed_mps": 6.0,
+      "tti_s": 6.242,
       "tti_gt_s": 5.667,
-      "tti_correct": null
+      "tti_correct": true
     },
     {
       "seq_id": "dz_002_maple_blvd",
@@ -348,12 +348,12 @@
       "in_far_near": false,
       "in_far_outer": false,
       "correct": true,
-      "method": "ground_plane_floor_anchored",
-      "parallax": "unknown",
-      "closing_speed_mps": null,
-      "tti_s": null,
+      "method": "ground_plane_floor_anchored+tti_cold",
+      "parallax": "approach",
+      "closing_speed_mps": 6.0,
+      "tti_s": 6.242,
       "tti_gt_s": 5.667,
-      "tti_correct": null
+      "tti_correct": true
     },
     {
       "seq_id": "dz_002_maple_blvd",
@@ -392,12 +392,12 @@
       "in_far_near": false,
       "in_far_outer": false,
       "correct": true,
-      "method": "gp+car_size_prior",
-      "parallax": "unknown",
-      "closing_speed_mps": null,
-      "tti_s": null,
+      "method": "gp+car_size_prior+tti_cold",
+      "parallax": "approach",
+      "closing_speed_mps": 18.0,
+      "tti_s": 2.82,
       "tti_gt_s": 3.3,
-      "tti_correct": null
+      "tti_correct": true
     },
     {
       "seq_id": "dz_002_maple_blvd",
@@ -458,12 +458,12 @@
       "in_far_near": false,
       "in_far_outer": false,
       "correct": true,
-      "method": "gp+ped_height_prior",
-      "parallax": "unknown",
-      "closing_speed_mps": null,
-      "tti_s": null,
+      "method": "gp+ped_height_prior+tti_cold",
+      "parallax": "approach",
+      "closing_speed_mps": 9.498,
+      "tti_s": 0.8,
       "tti_gt_s": 2.141,
-      "tti_correct": null
+      "tti_correct": false
     },
     {
       "seq_id": "dz_002_maple_blvd",

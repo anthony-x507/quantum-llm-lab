@@ -1,7 +1,7 @@
 # Collision predictive — CPU eval
 
-ts: 2026-09-24 15:14:59 ET
-audit: `data/eval_audit/collision_20260924_151458.jsonl`
+ts: 2026-09-24 15:25:30 ET
+audit: `data/eval_audit/collision_20260924_152528.jsonl`
 contam_self_test.passed: True
 
 ## % collision correct (post-hoc GT)

@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-24 15:29:18 ET",
+  "ts": "2026-09-24 15:25:17 ET",
   "domain": "distance_est",
   "data_dir": "data/video_synth/distance_est",
   "scale_lock": "FLOOR-SCALE",
@@ -260,7 +260,7 @@
     "note": "Future depth prediction proxy (inverse-planning-style along camera axis); danger-zone slice reported separately."
   },
   "anti_contam": {
-    "audit_path": "data/eval_audit/distance_20260924_152918.jsonl",
+    "audit_path": "data/eval_audit/distance_20260924_152516.jsonl",
     "dirty_count": 0,
     "status": "CLEAN"
   },

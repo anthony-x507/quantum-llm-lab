@@ -1,0 +1,28 @@
+{
+  "id": "codigo_vivo_tip_tti_cold_100pct_20260924_143601",
+  "ts": "2026-09-24 14:36:01 ET",
+  "branch": "frontier/tip-tti-cold",
+  "base_sha": "4bfc92432d7d55ab3cd305bf45d285fa03533117",
+  "claim": "NO quantum advantage. CPU heuristic TTI cold-start soft priors only.",
+  "metrics": {
+    "tti_scorable_orig": "100% (691/691)",
+    "tti_scorable_danger50": "100% (725/725)",
+    "tti_overall_cold_orig_before_after": "91.16% \u2192 94.99%",
+    "tti_overall_cold_danger50_before_after": "91.66% \u2192 94.82%",
+    "distance_dz": "100%",
+    "collision_physics": "100%",
+    "inverse_cv": "100%",
+    "choose_safest": "100%"
+  },
+  "floors_held": true,
+  "clear_cold_rise": true,
+  "adapters_ro": true,
+  "folded": false,
+  "probe": "data/frontier_tip_tti_cold_probe.json",
+  "eval_after": [
+    "data/video_synth/distance_est/EVAL_TTI_COLD_AFTER.json",
+    "data/video_synth/distance_est/danger50/EVAL_TTI_COLD_AFTER.json"
+  ],
+  "feat_sha": "9ddb8f4439b015d0a907b6ede1bdcbd80d6ddcba",
+  "feat_sha_short": "9ddb8f4"
+}

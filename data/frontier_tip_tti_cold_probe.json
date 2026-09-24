@@ -1,0 +1,101 @@
+{
+  "branch": "frontier/codigo-vivo-tip",
+  "fold": "tip-tti-cold",
+  "base_tip_sha": "677235af8f034afb3fc808b793558e74060545e9",
+  "source_branch": "frontier/tip-tti-cold",
+  "source_feat_sha": "9ddb8f4439b015d0a907b6ede1bdcbd80d6ddcba",
+  "source_side_sha": "c97e89a4687141d8d83483a17138ba5ba8e95865",
+  "ts": "2026-09-24 15:28:50 ET",
+  "predictor": "floor_scale_parallax_size_prior_closing_speed_v7_future_track_r3_tti_cold",
+  "tti_predictor": "growth_invariant_dist_rate_fallback_v4_tti_cold",
+  "before": {
+    "orig_overall_incl_cold_pct": 91.16,
+    "danger50_overall_incl_cold_pct": 91.66,
+    "orig_scorable": "100% (691/691)",
+    "danger50_scorable": "100% (725/725)"
+  },
+  "after": {
+    "orig_overall_incl_cold": {
+      "n": 758,
+      "correct": 720,
+      "pct": 94.99,
+      "missed_emit": 0,
+      "cold_start_n": 67,
+      "note": "cold-start uses soft class closing-speed priors + motion_hint (no temporal growth)"
+    },
+    "danger50_overall_incl_cold": {
+      "n": 791,
+      "correct": 750,
+      "pct": 94.82,
+      "missed_emit": 0,
+      "cold_start_n": 66,
+      "note": "cold-start uses soft class closing-speed priors + motion_hint (no temporal growth)"
+    },
+    "orig_scorable": {
+      "pct": 100.0,
+      "frac": "691/691"
+    },
+    "danger50_scorable": {
+      "pct": 100.0,
+      "frac": "725/725"
+    },
+    "orig_dz_tti_pct": 100.0,
+    "danger50_dz_tti_pct": 100.0,
+    "orig_distance_dz_pct": 100.0,
+    "danger50_distance_dz_pct": 100.0,
+    "false_emit": {
+      "orig": 0,
+      "danger50": 0
+    }
+  },
+  "delta_pp": {
+    "orig_overall_cold": 3.83,
+    "danger50_overall_cold": 3.16
+  },
+  "rise_retention_vs_side": {
+    "orig": 1.0,
+    "danger50": 1.0,
+    "side_rise_pp": {
+      "orig": 3.83,
+      "danger50": 3.16
+    },
+    "threshold": 0.8,
+    "met": true
+  },
+  "plateau": {
+    "overall_cold_approx_pct": 95.0,
+    "residual_pp_approx": 5.0,
+    "anthony_lock": "freeze and STOP chasing residual ~5% without temporal signal / GT leak"
+  },
+  "floors_held": {
+    "tti_scorable_100": true,
+    "distance_dz_100": true,
+    "mixed_d_unified": 1.0,
+    "r16_router": "52/52",
+    "r16_verifier": "44/44",
+    "r15_router": "52/52",
+    "lp_router": "64/64",
+    "pillars": "37/37",
+    "circ_axis": "5/5",
+    "choose_safest_n80": "100%",
+    "collision_physics_100": true,
+    "inverse_cv": 99.89,
+    "choose_safest_100": true,
+    "router_smoke": "12/12",
+    "hardneg_smoke": "18/18",
+    "ent_never_on_python": true,
+    "wired_to_vlm": true
+  },
+  "collision_re_smoke": {
+    "collision_physics_pct": 100.0,
+    "inverse_cv_pct": 99.89,
+    "choose_safest_pct": 100.0,
+    "n_eval_seqs": 80,
+    "n_queries": 5670
+  },
+  "method": "merge-port side feat 9ddb8f4 cold_start_tti onto tip 677235a; keep tip v7 future_track predictor; layer +tti_cold",
+  "adapters_ro": true,
+  "adapter_mtime": 1790261820,
+  "folded": true,
+  "source_side_sha_short": "c97e89a"
+}
