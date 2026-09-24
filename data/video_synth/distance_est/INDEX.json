@@ -1,0 +1,1974 @@
+{
+  "sequences": [
+    {
+      "seq_id": "de_000_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.632
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.439
+        }
+      ],
+      "dir": "de_000_oak_ave"
+    },
+    {
+      "seq_id": "de_001_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.753
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.507
+        }
+      ],
+      "dir": "de_001_pine_st"
+    },
+    {
+      "seq_id": "de_002_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.688
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.448
+        }
+      ],
+      "dir": "de_002_maple_blvd"
+    },
+    {
+      "seq_id": "de_003_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.772
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.651
+        }
+      ],
+      "dir": "de_003_cedar_rd"
+    },
+    {
+      "seq_id": "de_004_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.902
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.919
+        }
+      ],
+      "dir": "de_004_elm_way"
+    },
+    {
+      "seq_id": "de_005_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.633
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.755
+        }
+      ],
+      "dir": "de_005_birch_ln"
+    },
+    {
+      "seq_id": "de_006_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.799
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.657
+        }
+      ],
+      "dir": "de_006_willow_dr"
+    },
+    {
+      "seq_id": "de_007_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.505
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.427
+        }
+      ],
+      "dir": "de_007_ash_ct"
+    },
+    {
+      "seq_id": "de_008_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.643
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.532
+        }
+      ],
+      "dir": "de_008_oak_ave"
+    },
+    {
+      "seq_id": "de_009_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.95
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.614
+        }
+      ],
+      "dir": "de_009_pine_st"
+    },
+    {
+      "seq_id": "de_010_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.663
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.817
+        }
+      ],
+      "dir": "de_010_maple_blvd"
+    },
+    {
+      "seq_id": "de_011_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.738
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.534
+        }
+      ],
+      "dir": "de_011_cedar_rd"
+    },
+    {
+      "seq_id": "de_012_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.414
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 6,
+          "floor_height_m": 2.737
+        }
+      ],
+      "dir": "de_012_elm_way"
+    },
+    {
+      "seq_id": "de_013_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.782
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 6,
+          "floor_height_m": 2.647
+        }
+      ],
+      "dir": "de_013_birch_ln"
+    },
+    {
+      "seq_id": "de_014_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.618
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.483
+        }
+      ],
+      "dir": "de_014_willow_dr"
+    },
+    {
+      "seq_id": "de_015_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.471
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 6,
+          "floor_height_m": 2.432
+        }
+      ],
+      "dir": "de_015_ash_ct"
+    },
+    {
+      "seq_id": "de_016_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.487
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 6,
+          "floor_height_m": 2.9
+        }
+      ],
+      "dir": "de_016_oak_ave"
+    },
+    {
+      "seq_id": "de_017_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.593
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.432
+        }
+      ],
+      "dir": "de_017_pine_st"
+    },
+    {
+      "seq_id": "de_018_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.792
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.529
+        }
+      ],
+      "dir": "de_018_maple_blvd"
+    },
+    {
+      "seq_id": "de_019_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.781
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.912
+        }
+      ],
+      "dir": "de_019_cedar_rd"
+    },
+    {
+      "seq_id": "de_020_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.55
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.804
+        }
+      ],
+      "dir": "de_020_elm_way"
+    },
+    {
+      "seq_id": "de_021_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.41
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.75
+        }
+      ],
+      "dir": "de_021_birch_ln"
+    },
+    {
+      "seq_id": "de_022_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.448
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.835
+        }
+      ],
+      "dir": "de_022_willow_dr"
+    },
+    {
+      "seq_id": "de_023_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.909
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.619
+        }
+      ],
+      "dir": "de_023_ash_ct"
+    },
+    {
+      "seq_id": "de_024_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.904
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.61
+        }
+      ],
+      "dir": "de_024_oak_ave"
+    },
+    {
+      "seq_id": "de_025_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.441
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.901
+        }
+      ],
+      "dir": "de_025_pine_st"
+    },
+    {
+      "seq_id": "de_026_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.594
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.906
+        }
+      ],
+      "dir": "de_026_maple_blvd"
+    },
+    {
+      "seq_id": "de_027_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.441
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.912
+        }
+      ],
+      "dir": "de_027_cedar_rd"
+    },
+    {
+      "seq_id": "de_028_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.961
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.98
+        }
+      ],
+      "dir": "de_028_elm_way"
+    },
+    {
+      "seq_id": "de_029_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.769
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.424
+        }
+      ],
+      "dir": "de_029_birch_ln"
+    },
+    {
+      "seq_id": "de_030_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.971
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.509
+        }
+      ],
+      "dir": "de_030_willow_dr"
+    },
+    {
+      "seq_id": "de_031_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.683
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.767
+        }
+      ],
+      "dir": "de_031_ash_ct"
+    },
+    {
+      "seq_id": "de_032_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.45
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.855
+        }
+      ],
+      "dir": "de_032_oak_ave"
+    },
+    {
+      "seq_id": "de_033_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.914
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.985
+        }
+      ],
+      "dir": "de_033_pine_st"
+    },
+    {
+      "seq_id": "de_034_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.446
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.826
+        }
+      ],
+      "dir": "de_034_maple_blvd"
+    },
+    {
+      "seq_id": "de_035_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.624
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.973
+        }
+      ],
+      "dir": "de_035_cedar_rd"
+    },
+    {
+      "seq_id": "de_036_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.465
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.644
+        }
+      ],
+      "dir": "de_036_elm_way"
+    },
+    {
+      "seq_id": "de_037_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.762
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 6,
+          "floor_height_m": 2.531
+        }
+      ],
+      "dir": "de_037_birch_ln"
+    },
+    {
+      "seq_id": "de_038_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.54
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 6,
+          "floor_height_m": 2.445
+        }
+      ],
+      "dir": "de_038_willow_dr"
+    },
+    {
+      "seq_id": "de_039_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.898
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.816
+        }
+      ],
+      "dir": "de_039_ash_ct"
+    },
+    {
+      "seq_id": "de_040_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.629
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.529
+        }
+      ],
+      "dir": "de_040_oak_ave"
+    },
+    {
+      "seq_id": "de_041_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.575
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.436
+        }
+      ],
+      "dir": "de_041_pine_st"
+    },
+    {
+      "seq_id": "de_042_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.51
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 6,
+          "floor_height_m": 2.959
+        }
+      ],
+      "dir": "de_042_maple_blvd"
+    },
+    {
+      "seq_id": "de_043_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.698
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 6,
+          "floor_height_m": 2.886
+        }
+      ],
+      "dir": "de_043_cedar_rd"
+    },
+    {
+      "seq_id": "de_044_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.839
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 6,
+          "floor_height_m": 2.882
+        }
+      ],
+      "dir": "de_044_elm_way"
+    },
+    {
+      "seq_id": "de_045_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.555
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.921
+        }
+      ],
+      "dir": "de_045_birch_ln"
+    },
+    {
+      "seq_id": "de_046_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.448
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.884
+        }
+      ],
+      "dir": "de_046_willow_dr"
+    },
+    {
+      "seq_id": "de_047_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.669
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.993
+        }
+      ],
+      "dir": "de_047_ash_ct"
+    },
+    {
+      "seq_id": "de_048_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.712
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.706
+        }
+      ],
+      "dir": "de_048_oak_ave"
+    },
+    {
+      "seq_id": "de_049_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.667
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.539
+        }
+      ],
+      "dir": "de_049_pine_st"
+    },
+    {
+      "seq_id": "de_050_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.873
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.552
+        }
+      ],
+      "dir": "de_050_maple_blvd"
+    },
+    {
+      "seq_id": "de_051_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.645
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.624
+        }
+      ],
+      "dir": "de_051_cedar_rd"
+    },
+    {
+      "seq_id": "de_052_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.539
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.688
+        }
+      ],
+      "dir": "de_052_elm_way"
+    },
+    {
+      "seq_id": "de_053_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 18,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.903
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.497
+        }
+      ],
+      "dir": "de_053_birch_ln"
+    },
+    {
+      "seq_id": "de_054_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 14,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.423
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.638
+        }
+      ],
+      "dir": "de_054_willow_dr"
+    },
+    {
+      "seq_id": "de_055_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 17,
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.788
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.653
+        }
+      ],
+      "dir": "de_055_ash_ct"
+    }
+  ],
+  "split": {
+    "seed": 240924,
+    "train_ids": [
+      "de_000_oak_ave",
+      "de_001_pine_st",
+      "de_002_maple_blvd",
+      "de_003_cedar_rd",
+      "de_004_elm_way",
+      "de_005_birch_ln",
+      "de_006_willow_dr",
+      "de_008_oak_ave",
+      "de_009_pine_st",
+      "de_010_maple_blvd",
+      "de_011_cedar_rd",
+      "de_012_elm_way",
+      "de_013_birch_ln",
+      "de_014_willow_dr",
+      "de_015_ash_ct",
+      "de_016_oak_ave",
+      "de_017_pine_st",
+      "de_018_maple_blvd",
+      "de_019_cedar_rd",
+      "de_020_elm_way",
+      "de_022_willow_dr",
+      "de_023_ash_ct",
+      "de_025_pine_st",
+      "de_026_maple_blvd",
+      "de_028_elm_way",
+      "de_030_willow_dr",
+      "de_031_ash_ct",
+      "de_032_oak_ave",
+      "de_033_pine_st",
+      "de_034_maple_blvd",
+      "de_037_birch_ln",
+      "de_038_willow_dr",
+      "de_040_oak_ave",
+      "de_041_pine_st",
+      "de_042_maple_blvd",
+      "de_043_cedar_rd",
+      "de_044_elm_way",
+      "de_045_birch_ln",
+      "de_046_willow_dr",
+      "de_048_oak_ave",
+      "de_049_pine_st",
+      "de_050_maple_blvd",
+      "de_051_cedar_rd",
+      "de_052_elm_way",
+      "de_055_ash_ct"
+    ],
+    "eval_ids": [
+      "de_007_ash_ct",
+      "de_021_birch_ln",
+      "de_024_oak_ave",
+      "de_027_cedar_rd",
+      "de_029_birch_ln",
+      "de_035_cedar_rd",
+      "de_036_elm_way",
+      "de_039_ash_ct",
+      "de_047_ash_ct",
+      "de_053_birch_ln",
+      "de_054_willow_dr"
+    ],
+    "n_train": 45,
+    "n_eval": 11,
+    "rule": "GT meters NEVER in prompt/memory/retrieval; distances_gt.json post-hoc only; scale=FLOOR-SCALE not fixed-object-height"
+  }
+}

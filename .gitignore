@@ -84,3 +84,18 @@ data/inverse_planning/**
 data/lora_adapter_inverse/**
 !data/lora_adapter_inverse/.gitkeep
 data/eval_audit/inverse_*.jsonl
+
+# Distance estimation (FLOOR-SCALE) — under video_synth temporal family
+data/video_synth/distance_est/**
+!data/video_synth/distance_est/.gitignore
+!data/video_synth/distance_est/.gitkeep
+!data/video_synth/distance_est/SUMMARY.json
+!data/video_synth/distance_est/SUMMARY.md
+!data/video_synth/distance_est/INDEX.json
+!data/video_synth/distance_est/SPLIT.json
+!data/video_synth/distance_est/EVAL_FLOOR_SCALE_CPU.json
+!data/video_synth/distance_est/ANTI_CONTAM_SELFTEST.json
+data/lora_adapter_distance/**
+!data/lora_adapter_distance/.gitkeep
+data/eval_audit/distance_*.jsonl
+data/train_distance*.log

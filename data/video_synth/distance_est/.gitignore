@@ -1,0 +1,9 @@
+*
+!.gitignore
+!.gitkeep
+!SUMMARY.json
+!SUMMARY.md
+!INDEX.json
+!SPLIT.json
+!EVAL_FLOOR_SCALE_CPU.json
+!ANTI_CONTAM_SELFTEST.json

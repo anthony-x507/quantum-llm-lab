@@ -1,0 +1,261 @@
+{
+  "ts": "2026-09-24 04:54:44 ET",
+  "domain": "distance_est",
+  "scale_lock": "FLOOR-SCALE",
+  "no_fixed_object_heights": true,
+  "predictor": "floor_scale_parallax_heuristic",
+  "n_eval_seq": 11,
+  "distance": {
+    "n": 1812,
+    "correct": 1183,
+    "pct": 65.29,
+    "by_band": {
+      "~100m": {
+        "n": 473,
+        "correct": 363,
+        "pct": 76.74
+      },
+      "~200m": {
+        "n": 275,
+        "correct": 156,
+        "pct": 56.73
+      },
+      "~50m": {
+        "n": 536,
+        "correct": 261,
+        "pct": 48.69
+      },
+      "~5m": {
+        "n": 528,
+        "correct": 403,
+        "pct": 76.33
+      }
+    },
+    "tol": {
+      "lt_50m": "10%",
+      "50_to_200m": "20%"
+    },
+    "priority_classes": [
+      "car",
+      "intersection",
+      "stop_sign",
+      "pedestrian",
+      "light"
+    ]
+  },
+  "ablation_tracking": {
+    "tracking_only": {
+      "n": 1903,
+      "correct": 1903,
+      "pct": 100.0
+    },
+    "tracking_plus_distance": {
+      "n": 1900,
+      "correct": 1900,
+      "pct": 100.0
+    }
+  },
+  "ablation_future_pred": {
+    "tracking_only": {
+      "distance_pred_pct": 73.51,
+      "n": 1661,
+      "correct": 1221,
+      "position_pred_pct": 99.58
+    },
+    "plus_distance": {
+      "distance_pred_pct": 64.24,
+      "n": 1661,
+      "correct": 1067,
+      "position_pred_pct": 99.58
+    },
+    "note": "Future depth prediction proxy (inverse-planning-style along camera axis); separate domain from corridor inverse_planning."
+  },
+  "anti_contam": {
+    "audit_path": "data/eval_audit/distance_20260924_045444.jsonl",
+    "dirty_count": 0,
+    "status": "CLEAN"
+  },
+  "gpu": "deferred \u2014 heuristic CPU only; LoRA queued behind existing waiters",
+  "sample_rows": [
+    {
+      "seq_id": "de_007_ash_ct",
+      "t": 0,
+      "id": "L1",
+      "class": "light",
+      "gt_m": 4.936,
+      "est_m": 4.937,
+      "band": "~5m",
+      "correct": true,
+      "method": "ground_plane_floor_anchored",
+      "parallax": "unknown"
+    },
+    {
+      "seq_id": "de_007_ash_ct",
+      "t": 0,
+      "id": "ix_1",
+      "class": "intersection",
+      "gt_m": 4.936,
+      "est_m": 4.937,
+      "band": "~5m",
+      "correct": true,
+      "method": "ground_plane_floor_anchored",
+      "parallax": "unknown"
+    },
+    {
+      "seq_id": "de_007_ash_ct",
+      "t": 0,
+      "id": "L2",
+      "class": "light",
+      "gt_m": 50.1,
+      "est_m": 85.969,
+      "band": "~50m",
+      "correct": false,
+      "method": "floor_span+ground_plane",
+      "parallax": "unknown"
+    },
+    {
+      "seq_id": "de_007_ash_ct",
+      "t": 0,
+      "id": "ix_2",
+      "class": "intersection",
+      "gt_m": 50.1,
+      "est_m": 50.118,
+      "band": "~50m",
+      "correct": true,
+      "method": "ground_plane_floor_anchored",
+      "parallax": "unknown"
+    },
+    {
+      "seq_id": "de_007_ash_ct",
+      "t": 0,
+      "id": "L3",
+      "class": "light",
+      "gt_m": 96.648,
+      "est_m": 97.598,
+      "band": "~100m",
+      "correct": true,
+      "method": "floor_span+ground_plane",
+      "parallax": "unknown"
+    },
+    {
+      "seq_id": "de_007_ash_ct",
+      "t": 0,
+      "id": "ix_3",
+      "class": "intersection",
+      "gt_m": 96.648,
+      "est_m": 96.633,
+      "band": "~100m",
+      "correct": true,
+      "method": "ground_plane_floor_anchored",
+      "parallax": "unknown"
+    },
+    {
+      "seq_id": "de_007_ash_ct",
+      "t": 0,
+      "id": "car_red0",
+      "class": "car",
+      "gt_m": 43.428,
+      "est_m": 43.485,
+      "band": "~50m",
+      "correct": true,
+      "method": "ground_plane_floor_anchored",
+      "parallax": "unknown"
+    },
+    {
+      "seq_id": "de_007_ash_ct",
+      "t": 0,
+      "id": "car_blu1",
+      "class": "car",
+      "gt_m": 92.283,
+      "est_m": 92.405,
+      "band": "~100m",
+      "correct": true,
+      "method": "ground_plane_floor_anchored",
+      "parallax": "unknown"
+    },
+    {
+      "seq_id": "de_007_ash_ct",
+      "t": 0,
+      "id": "car_gre2",
+      "class": "car",
+      "gt_m": 4.146,
+      "est_m": 4.147,
+      "band": "~5m",
+      "correct": true,
+      "method": "ground_plane_floor_anchored",
+      "parallax": "unknown"
+    },
+    {
+      "seq_id": "de_007_ash_ct",
+      "t": 0,
+      "id": "car_yel3",
+      "class": "car",
+      "gt_m": 181.925,
+      "est_m": 182.529,
+      "band": "~200m",
+      "correct": true,
+      "method": "ground_plane_floor_anchored",
+      "parallax": "unknown"
+    },
+    {
+      "seq_id": "de_007_ash_ct",
+      "t": 0,
+      "id": "ped_0",
+      "class": "pedestrian",
+      "gt_m": 4.0,
+      "est_m": 4.0,
+      "band": "~5m",
+      "correct": true,
+      "method": "ground_plane_floor_anchored",
+      "parallax": "unknown"
+    },
+    {
+      "seq_id": "de_007_ash_ct",
+      "t": 0,
+      "id": "ped_1",
+      "class": "pedestrian",
+      "gt_m": 180.0,
+      "est_m": 180.303,
+      "band": "~200m",
+      "correct": true,
+      "method": "ground_plane_floor_anchored",
+      "parallax": "unknown"
+    },
+    {
+      "seq_id": "de_007_ash_ct",
+      "t": 0,
+      "id": "ped_2",
+      "class": "pedestrian",
+      "gt_m": 51.289,
+      "est_m": 51.336,
+      "band": "~50m",
+      "correct": true,
+      "method": "ground_plane_floor_anchored",
+      "parallax": "unknown"
+    },
+    {
+      "seq_id": "de_007_ash_ct",
+      "t": 0,
+      "id": "stop_0",
+      "class": "stop_sign",
+      "gt_m": 106.097,
+      "est_m": 100.031,
+      "band": "~100m",
+      "correct": true,
+      "method": "floor_span+ground_plane",
+      "parallax": "unknown"
+    },
+    {
+      "seq_id": "de_007_ash_ct",
+      "t": 0,
+      "id": "stop_1",
+      "class": "stop_sign",
+      "gt_m": 5.411,
+      "est_m": 5.412,
+      "band": "~5m",
+      "correct": true,
+      "method": "ground_plane_floor_anchored",
+      "parallax": "unknown"
+    }
+  ]
+}
