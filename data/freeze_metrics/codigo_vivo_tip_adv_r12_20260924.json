@@ -1,0 +1,81 @@
+{
+  "schema": "codigo_vivo_tip_adv_rN",
+  "round": "r12",
+  "when_et": "2026-09-24 2:02:00 ET",
+  "base_tip_sha": "a27b6fd32cb1a989e9e6a6ba12e70aaf5282f67e",
+  "branch": "frontier/tip-hardneg-r12",
+  "worktree": "/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r12",
+  "pre": {
+    "r12_router": "6/52",
+    "r12_router_rate": 0.1154,
+    "r12_verifier_alone": 1.0,
+    "r12_unified": null,
+    "note": "unified router-limited pre-reinforce (6/52 python-routed for coding traps)"
+  },
+  "post": {
+    "r12_router": "52/52",
+    "r12_router_rate": 1.0,
+    "r12_verifier_alone": 1.0,
+    "r12_unified": 1.0,
+    "mixed_d_unified": 1.0,
+    "ent_never_on_python": true,
+    "router_smoke": "12/12",
+    "priors_routers": {
+      "r1": "18/18",
+      "r2": "22/22",
+      "r3": "35/35",
+      "r4": "40/40",
+      "r5": "44/44",
+      "r6": "48/48",
+      "r7": "52/52",
+      "r8": "52/52",
+      "r9": "52/52",
+      "r10": "52/52",
+      "lp": "43/43"
+    },
+    "priors_verifiers": {
+      "r3": "28/28",
+      "r4": "32/32",
+      "r5": "36/36",
+      "r6": "40/40",
+      "r7": "44/44",
+      "r8": "44/44",
+      "r9": "44/44",
+      "r10": "44/44",
+      "lp": "32/32"
+    },
+    "tip_floors_cited": {
+      "motion_known": 1.0,
+      "collision_physics": 1.0,
+      "inverse_cv": 0.9982
+    }
+  },
+  "families": [
+    "traefik_middleware_gates",
+    "envoy_filter_gates",
+    "nats_subject_gates",
+    "clickhouse_setting_gates",
+    "dbt_model_gates",
+    "crossplane_claim_gates",
+    "flux_kustomization_gates",
+    "rabbitmq_policy_gates",
+    "elasticsearch_ingest_gates",
+    "swift_property_gates",
+    "elixir_attribute_gates",
+    "julia_macro_gates",
+    "kong_plugin_gates",
+    "spinnaker_stage_gates"
+  ],
+  "reinforce": "one gates_ops_label layer; proposer unchanged",
+  "floors": {
+    "mixed_d_unified": 0.9667,
+    "held": true
+  },
+  "policy": {
+    "lora_adapter_ro": true,
+    "no_main_merge": true,
+    "no_tip_cv_touch": true,
+    "side_branch_only": true,
+    "not_folded": true
+  }
+}

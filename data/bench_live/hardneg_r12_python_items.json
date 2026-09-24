@@ -1,0 +1,317 @@
+{
+  "n": 44,
+  "kind": "python_hardneg_items",
+  "created": "2026-09-24T18:00:00Z",
+  "round": "r12",
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R12.md",
+  "items": [
+    {
+      "id": "r12v_traefik_01",
+      "kind": "traefik_middleware_gates",
+      "prompt": "Write Python that prints len('gates: stripPrefix'). Traefik middleware. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_traefik_02",
+      "kind": "traefik_middleware_gates",
+      "prompt": "t='gates: stripPrefix'\nprint(t.count('gates'))\n# Traefik middleware gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_traefik_03",
+      "kind": "traefik_middleware_gates",
+      "prompt": "Write Python that prints 6*3. Traefik middleware gates: stripPrefix is proxy only. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_envoy_01",
+      "kind": "envoy_filter_gates",
+      "prompt": "Write Python that prints len('gates: HTTP'). Envoy filter. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_envoy_02",
+      "kind": "envoy_filter_gates",
+      "prompt": "e='gates: HTTP'\nprint(len(e))\n# Envoy HTTP filter gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_envoy_03",
+      "kind": "envoy_filter_gates",
+      "prompt": "Write Python that prints 15. Envoy filter gates: HTTP is proxy only. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_nats_01",
+      "kind": "nats_subject_gates",
+      "prompt": "Write Python that prints len('gates: publish'). NATS subject. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_nats_02",
+      "kind": "nats_subject_gates",
+      "prompt": "n='gates: publish'\nprint(n.count('gates'))\n# NATS subject ACL gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_nats_03",
+      "kind": "nats_subject_gates",
+      "prompt": "Write Python that prints 4*4. NATS subject gates: publish is messaging only. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_ch_01",
+      "kind": "clickhouse_setting_gates",
+      "prompt": "Write Python that prints len('gates: Readonly'). ClickHouse setting. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_ch_02",
+      "kind": "clickhouse_setting_gates",
+      "prompt": "c='gates: Readonly'\nprint(c.count('gates'))\n# ClickHouse setting gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_ch_03",
+      "kind": "clickhouse_setting_gates",
+      "prompt": "Write Python that prints 17. ClickHouse gates: Readonly is DB only. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_dbt_01",
+      "kind": "dbt_model_gates",
+      "prompt": "Write Python that prints len('gates: ephemeral'). dbt model. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_dbt_02",
+      "kind": "dbt_model_gates",
+      "prompt": "d='gates: ephemeral'\nprint(len(d))\n# dbt model config gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_dbt_03",
+      "kind": "dbt_model_gates",
+      "prompt": "Write Python that prints 5*4. dbt model gates: ephemeral is SQL only. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_xp_01",
+      "kind": "crossplane_claim_gates",
+      "prompt": "Write Python that prints len('gates: Ready'). Crossplane claim. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_xp_02",
+      "kind": "crossplane_claim_gates",
+      "prompt": "x='gates: Ready'\nprint(x.count('gates'))\n# Crossplane Composite claim gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_xp_03",
+      "kind": "crossplane_claim_gates",
+      "prompt": "Write Python that prints 19. Crossplane claim gates: Ready is k8s only. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_flux_01",
+      "kind": "flux_kustomization_gates",
+      "prompt": "Write Python that prints len('gates: prune'). Flux Kustomization. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_flux_02",
+      "kind": "flux_kustomization_gates",
+      "prompt": "f='gates: prune'\nprint(len(f))\n# Flux Kustomization gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_flux_03",
+      "kind": "flux_kustomization_gates",
+      "prompt": "Write Python that prints 7*3. Flux Kustomization gates: prune is GitOps only. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_rmq_01",
+      "kind": "rabbitmq_policy_gates",
+      "prompt": "Write Python that prints len('gates: ha-mode'). RabbitMQ policy. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_rmq_02",
+      "kind": "rabbitmq_policy_gates",
+      "prompt": "r='gates: ha-mode'\nprint(r.count('gates'))\n# RabbitMQ policy definition gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_rmq_03",
+      "kind": "rabbitmq_policy_gates",
+      "prompt": "Write Python that prints 22. RabbitMQ policy gates: ha-mode is broker only. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_es_01",
+      "kind": "elasticsearch_ingest_gates",
+      "prompt": "Write Python that prints len('gates: set'). Elasticsearch ingest. ONLY code.",
+      "expected_stdout": "10\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_es_02",
+      "kind": "elasticsearch_ingest_gates",
+      "prompt": "e='gates: set'\nprint(e.count('gates'))\n# Elasticsearch ingest pipeline gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_es_03",
+      "kind": "elasticsearch_ingest_gates",
+      "prompt": "Write Python that prints 8*3. Elasticsearch ingest gates: set is search only. ONLY code.",
+      "expected_stdout": "24\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_swift_01",
+      "kind": "swift_property_gates",
+      "prompt": "Write Python that prints len('gates: Wrapped'). Swift property. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_swift_02",
+      "kind": "swift_property_gates",
+      "prompt": "s='gates: Wrapped'\nprint(len(s))\n# Swift @propertyWrapper gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_swift_03",
+      "kind": "swift_property_gates",
+      "prompt": "Write Python that prints 23. Swift property gates: Wrapped is language only. ONLY code.",
+      "expected_stdout": "23\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_elixir_01",
+      "kind": "elixir_attribute_gates",
+      "prompt": "Write Python that prints len('gates: :atom'). Elixir attribute. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_elixir_02",
+      "kind": "elixir_attribute_gates",
+      "prompt": "a='gates: :atom'\nprint(a.count('gates'))\n# Elixir module attribute @gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_elixir_03",
+      "kind": "elixir_attribute_gates",
+      "prompt": "Write Python that prints 9*2. Elixir attribute gates: :atom is BEAM only. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_julia_01",
+      "kind": "julia_macro_gates",
+      "prompt": "Write Python that prints len('gates: Symbol'). Julia macro. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_julia_02",
+      "kind": "julia_macro_gates",
+      "prompt": "j='gates: Symbol'\nprint(j.count('gates'))\n# Julia macro @gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_julia_03",
+      "kind": "julia_macro_gates",
+      "prompt": "Write Python that prints 25. Julia macro gates: Symbol is language only. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_kong_01",
+      "kind": "kong_plugin_gates",
+      "prompt": "Write Python that prints len('gates: rate-limiting'). Kong plugin. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_kong_02",
+      "kind": "kong_plugin_gates",
+      "prompt": "k='gates: rate-limiting'\nprint(len(k))\n# Kong gateway plugin gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_kong_03",
+      "kind": "kong_plugin_gates",
+      "prompt": "Write Python that prints 11*2. Kong plugin gates: rate-limiting is gateway only. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_spin_01",
+      "kind": "spinnaker_stage_gates",
+      "prompt": "Write Python that prints len('gates: manualJudgment'). Spinnaker stage. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_spin_02",
+      "kind": "spinnaker_stage_gates",
+      "prompt": "p='gates: manualJudgment'\nprint(p.count('gates'))\n# Spinnaker pipeline stage gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_spin_03",
+      "kind": "spinnaker_stage_gates",
+      "prompt": "Write Python that prints 26. Spinnaker stage gates: manualJudgment is CD only. ONLY code.",
+      "expected_stdout": "26\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_ctrl_01",
+      "kind": "base_python_control_r12",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r12v_ctrl_02",
+      "kind": "base_python_control_r12",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}
