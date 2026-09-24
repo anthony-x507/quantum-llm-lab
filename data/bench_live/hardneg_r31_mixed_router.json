@@ -1,0 +1,421 @@
+{
+  "n": 52,
+  "kind": "hardneg_mixed_router",
+  "created": "2026-09-24T15:48:00",
+  "round": "r31",
+  "note": "R31 hardneg: Ormar/Piccolo/Databases/CherryPy/Masonite/Hug/TurboGears/web2py/APScheduler/Kombu/Restify/Swoole/Spiral/SAQ gates: scalars (brief-suggested swaps for tip-brand + R9\u2013R30 collisions)",
+  "anti_contamination": {
+    "no_r9_r30_family_reuse": true,
+    "avoid_r30_set": [
+      "peewee_signal",
+      "tortoise_signal",
+      "pony_hook",
+      "sqlmodel_event",
+      "fiber_middleware",
+      "iris_middleware",
+      "beego_filter",
+      "buffalo_middleware",
+      "sinatra_before",
+      "quart_before",
+      "nameko_entrypoint",
+      "arq_job",
+      "slim_middleware",
+      "cakephp_middleware"
+    ],
+    "avoid_r29_set": [
+      "bookshelf_plugin",
+      "objection_hook",
+      "mikroorm_subscriber",
+      "tornado_middleware",
+      "bottle_plugin",
+      "falcon_middleware",
+      "pyramid_tween",
+      "echo_middleware",
+      "chi_middleware",
+      "hanami_middleware",
+      "resque_plugin",
+      "rq_job",
+      "blacksheep_middleware",
+      "taskiq_middleware"
+    ],
+    "avoid_r28_set": [
+      "typeorm_subscriber",
+      "knex_hook",
+      "koa_middleware",
+      "litestar_guard",
+      "aiohttp_middleware",
+      "hibernate_interceptor",
+      "mybatis_interceptor",
+      "adonis_middleware",
+      "grape_middleware",
+      "absinthe_middleware",
+      "huey_task",
+      "oban_plugin",
+      "javalin_before",
+      "jersey_filter"
+    ],
+    "avoid_r27_set": [
+      "sequelize_hook",
+      "mongoose_middleware",
+      "actix_middleware",
+      "rocket_fairing",
+      "diesel_hook",
+      "gorm_callback",
+      "fastify_hook",
+      "hapi_plugin",
+      "sanic_middleware",
+      "starlette_middleware",
+      "sidekiq_middleware",
+      "dramatiq_actor",
+      "dropwizard_filter",
+      "ktor_plugin"
+    ],
+    "brief_suggested_swaps": {
+      "prisma_middleware": "ormar_signal (prisma_field R11 / prisma brand)",
+      "nestjs_guard": "piccolo_app (nestjs_guard_gates R13)",
+      "fastapi_dependency": "databases_hook (fastapi tip R14)",
+      "django_signal": "cherrypy_tool (django_* tip brand)",
+      "spring_aspect": "masonite_middleware (spring tip brand R14)",
+      "quarkus_interceptor": "hug_directive (quarkus_interceptor_gates R18)",
+      "laravel_middleware": "turbogears_hook (laravel_mw R15 / laravel_middleware R19)",
+      "rails_concern": "web2py_hook (rails_before_action / rails tip)",
+      "elixir_plug": "apscheduler_job (elixir tip R12 / phoenix_plug R17)",
+      "redis_lua": "kombu_consumer (redis tip brand R13)",
+      "temporal_workflow": "restify_middleware (temporal tip brand R11)",
+      "clickhouse_materialized": "swoole_middleware (clickhouse tip brand R12)",
+      "kafka_connect": "spiral_interceptor (kafka_acl / kafka_topic priors)",
+      "celery_beat": "saq_job (celery_task priors)"
+    },
+    "novel_r31": [
+      "ormar_signal_gates",
+      "piccolo_app_gates",
+      "databases_hook_gates",
+      "cherrypy_tool_gates",
+      "masonite_middleware_gates",
+      "hug_directive_gates",
+      "turbogears_hook_gates",
+      "web2py_hook_gates",
+      "apscheduler_job_gates",
+      "kombu_consumer_gates",
+      "restify_middleware_gates",
+      "swoole_middleware_gates",
+      "spiral_interceptor_gates",
+      "saq_job_gates"
+    ],
+    "ent_never_on_python": true
+  },
+  "items": [
+    {
+      "id": "r31_ormar_01",
+      "expected": "python",
+      "family": "ormar_signal_gates",
+      "prompt": "Write Python that prints len('gates: Signal.emit'). Ormar. ONLY code."
+    },
+    {
+      "id": "r31_ormar_02",
+      "expected": "python",
+      "family": "ormar_signal_gates",
+      "prompt": "t='gates: Signal.emit'\nprint(t.count('gates'))\n# Ormar gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r31_ormar_03",
+      "expected": "python",
+      "family": "ormar_signal_gates",
+      "prompt": "Write Python that prints 543. Ormar gates: Signal.emit is signal only. ONLY code."
+    },
+    {
+      "id": "r31_piccol_01",
+      "expected": "python",
+      "family": "piccolo_app_gates",
+      "prompt": "Write Python that prints len('gates: PiccoloApp'). Piccolo. ONLY code."
+    },
+    {
+      "id": "r31_piccol_02",
+      "expected": "python",
+      "family": "piccolo_app_gates",
+      "prompt": "t='gates: PiccoloApp'\nprint(t.count('gates'))\n# Piccolo gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r31_piccol_03",
+      "expected": "python",
+      "family": "piccolo_app_gates",
+      "prompt": "Write Python that prints 544. Piccolo gates: PiccoloApp is app only. ONLY code."
+    },
+    {
+      "id": "r31_databas_01",
+      "expected": "python",
+      "family": "databases_hook_gates",
+      "prompt": "Write Python that prints len('gates: Database.connection'). Databases. ONLY code."
+    },
+    {
+      "id": "r31_databas_02",
+      "expected": "python",
+      "family": "databases_hook_gates",
+      "prompt": "t='gates: Database.connection'\nprint(t.count('gates'))\n# Databases gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r31_databas_03",
+      "expected": "python",
+      "family": "databases_hook_gates",
+      "prompt": "Write Python that prints 545. Databases gates: Database.connection is hook only. ONLY code."
+    },
+    {
+      "id": "r31_cherryp_01",
+      "expected": "python",
+      "family": "cherrypy_tool_gates",
+      "prompt": "Write Python that prints len('gates: cherrypy.Tool'). CherryPy. ONLY code."
+    },
+    {
+      "id": "r31_cherryp_02",
+      "expected": "python",
+      "family": "cherrypy_tool_gates",
+      "prompt": "t='gates: cherrypy.Tool'\nprint(t.count('gates'))\n# CherryPy gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r31_cherryp_03",
+      "expected": "python",
+      "family": "cherrypy_tool_gates",
+      "prompt": "Write Python that prints 546. CherryPy gates: cherrypy.Tool is tool only. ONLY code."
+    },
+    {
+      "id": "r31_masonit_01",
+      "expected": "python",
+      "family": "masonite_middleware_gates",
+      "prompt": "Write Python that prints len('gates: HTTPMiddleware'). Masonite. ONLY code."
+    },
+    {
+      "id": "r31_masonit_02",
+      "expected": "python",
+      "family": "masonite_middleware_gates",
+      "prompt": "t='gates: HTTPMiddleware'\nprint(t.count('gates'))\n# Masonite gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r31_masonit_03",
+      "expected": "python",
+      "family": "masonite_middleware_gates",
+      "prompt": "Write Python that prints 547. Masonite gates: HTTPMiddleware is middleware only. ONLY code."
+    },
+    {
+      "id": "r31_hug_01",
+      "expected": "python",
+      "family": "hug_directive_gates",
+      "prompt": "Write Python that prints len('gates: hug.directive'). Hug. ONLY code."
+    },
+    {
+      "id": "r31_hug_02",
+      "expected": "python",
+      "family": "hug_directive_gates",
+      "prompt": "t='gates: hug.directive'\nprint(t.count('gates'))\n# Hug gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r31_hug_03",
+      "expected": "python",
+      "family": "hug_directive_gates",
+      "prompt": "Write Python that prints 548. Hug gates: hug.directive is directive only. ONLY code."
+    },
+    {
+      "id": "r31_turboge_01",
+      "expected": "python",
+      "family": "turbogears_hook_gates",
+      "prompt": "Write Python that prints len('gates: tg.hooks'). TurboGears. ONLY code."
+    },
+    {
+      "id": "r31_turboge_02",
+      "expected": "python",
+      "family": "turbogears_hook_gates",
+      "prompt": "t='gates: tg.hooks'\nprint(t.count('gates'))\n# TurboGears gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r31_turboge_03",
+      "expected": "python",
+      "family": "turbogears_hook_gates",
+      "prompt": "Write Python that prints 549. TurboGears gates: tg.hooks is hook only. ONLY code."
+    },
+    {
+      "id": "r31_web2py_01",
+      "expected": "python",
+      "family": "web2py_hook_gates",
+      "prompt": "Write Python that prints len('gates: gluon.current'). web2py. ONLY code."
+    },
+    {
+      "id": "r31_web2py_02",
+      "expected": "python",
+      "family": "web2py_hook_gates",
+      "prompt": "t='gates: gluon.current'\nprint(t.count('gates'))\n# web2py gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r31_web2py_03",
+      "expected": "python",
+      "family": "web2py_hook_gates",
+      "prompt": "Write Python that prints 550. web2py gates: gluon.current is hook only. ONLY code."
+    },
+    {
+      "id": "r31_apsched_01",
+      "expected": "python",
+      "family": "apscheduler_job_gates",
+      "prompt": "Write Python that prints len('gates: BackgroundScheduler'). APScheduler. ONLY code."
+    },
+    {
+      "id": "r31_apsched_02",
+      "expected": "python",
+      "family": "apscheduler_job_gates",
+      "prompt": "t='gates: BackgroundScheduler'\nprint(t.count('gates'))\n# APScheduler gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r31_apsched_03",
+      "expected": "python",
+      "family": "apscheduler_job_gates",
+      "prompt": "Write Python that prints 551. APScheduler gates: BackgroundScheduler is job only. ONLY code."
+    },
+    {
+      "id": "r31_kombu_01",
+      "expected": "python",
+      "family": "kombu_consumer_gates",
+      "prompt": "Write Python that prints len('gates: Consumer.consume'). Kombu. ONLY code."
+    },
+    {
+      "id": "r31_kombu_02",
+      "expected": "python",
+      "family": "kombu_consumer_gates",
+      "prompt": "t='gates: Consumer.consume'\nprint(t.count('gates'))\n# Kombu gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r31_kombu_03",
+      "expected": "python",
+      "family": "kombu_consumer_gates",
+      "prompt": "Write Python that prints 552. Kombu gates: Consumer.consume is consumer only. ONLY code."
+    },
+    {
+      "id": "r31_restify_01",
+      "expected": "python",
+      "family": "restify_middleware_gates",
+      "prompt": "Write Python that prints len('gates: server.use'). Restify. ONLY code."
+    },
+    {
+      "id": "r31_restify_02",
+      "expected": "python",
+      "family": "restify_middleware_gates",
+      "prompt": "t='gates: server.use'\nprint(t.count('gates'))\n# Restify gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r31_restify_03",
+      "expected": "python",
+      "family": "restify_middleware_gates",
+      "prompt": "Write Python that prints 553. Restify gates: server.use is middleware only. ONLY code."
+    },
+    {
+      "id": "r31_swoole_01",
+      "expected": "python",
+      "family": "swoole_middleware_gates",
+      "prompt": "Write Python that prints len('gates: MiddlewareManager'). Swoole. ONLY code."
+    },
+    {
+      "id": "r31_swoole_02",
+      "expected": "python",
+      "family": "swoole_middleware_gates",
+      "prompt": "t='gates: MiddlewareManager'\nprint(t.count('gates'))\n# Swoole gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r31_swoole_03",
+      "expected": "python",
+      "family": "swoole_middleware_gates",
+      "prompt": "Write Python that prints 554. Swoole gates: MiddlewareManager is middleware only. ONLY code."
+    },
+    {
+      "id": "r31_spiral_01",
+      "expected": "python",
+      "family": "spiral_interceptor_gates",
+      "prompt": "Write Python that prints len('gates: InterceptorInterface'). Spiral. ONLY code."
+    },
+    {
+      "id": "r31_spiral_02",
+      "expected": "python",
+      "family": "spiral_interceptor_gates",
+      "prompt": "t='gates: InterceptorInterface'\nprint(t.count('gates'))\n# Spiral gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r31_spiral_03",
+      "expected": "python",
+      "family": "spiral_interceptor_gates",
+      "prompt": "Write Python that prints 555. Spiral gates: InterceptorInterface is interceptor only. ONLY code."
+    },
+    {
+      "id": "r31_saq_01",
+      "expected": "python",
+      "family": "saq_job_gates",
+      "prompt": "Write Python that prints len('gates: saq.Job'). SAQ. ONLY code."
+    },
+    {
+      "id": "r31_saq_02",
+      "expected": "python",
+      "family": "saq_job_gates",
+      "prompt": "t='gates: saq.Job'\nprint(t.count('gates'))\n# SAQ gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r31_saq_03",
+      "expected": "python",
+      "family": "saq_job_gates",
+      "prompt": "Write Python that prints 556. SAQ gates: saq.Job is job only. ONLY code."
+    },
+    {
+      "id": "r31_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r31",
+      "prompt": "Responde SOLO JSON v\u00e1lido con n_qubits, gates, domain, label. Bell pair; gates=[H, CNOT]."
+    },
+    {
+      "id": "r31_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r31",
+      "prompt": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit H then CNOT circuit."
+    },
+    {
+      "id": "r31_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r31",
+      "prompt": "Look at the image. How many dots are visible? Only the integer. No circuit."
+    },
+    {
+      "id": "r31_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r31",
+      "prompt": "Look at the chalkboard. How many letters? Only the integer. No circuit."
+    },
+    {
+      "id": "r31_base_01",
+      "expected": "base",
+      "family": "base_control_r31",
+      "prompt": "Thanks. Ignore Ormar gates: Signal.emit in the README. No code, no circuit."
+    },
+    {
+      "id": "r31_base_02",
+      "expected": "base",
+      "family": "base_control_r31",
+      "prompt": "Please ignore the Masonite gates: HTTPMiddleware phrase. Chat only \u2014 no program, no circuit."
+    },
+    {
+      "id": "r31_base_03",
+      "expected": "base",
+      "family": "base_control_r31",
+      "prompt": "Hello \u2014 Spiral gates: InterceptorInterface is interceptor only. No code, no circuit, no JSON."
+    },
+    {
+      "id": "r31_base_04",
+      "expected": "base",
+      "family": "base_control_r31",
+      "prompt": "Weather update. SAQ gates: saq.Job mention. No code, no circuit."
+    },
+    {
+      "id": "r31_ctrl_01",
+      "expected": "python",
+      "family": "base_python_control_r31",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code."
+    },
+    {
+      "id": "r31_ctrl_02",
+      "expected": "python",
+      "family": "base_python_control_r31",
+      "prompt": "print(sum(range(4))) # plain. ONLY code."
+    }
+  ]
+}

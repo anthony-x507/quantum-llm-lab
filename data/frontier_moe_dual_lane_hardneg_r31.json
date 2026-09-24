@@ -1,0 +1,628 @@
+{
+  "method": "heuristic",
+  "n": 52,
+  "hits": 52,
+  "misses": 0,
+  "score": "52/52",
+  "rate": 1.0,
+  "by_family": {
+    "ormar_signal_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "piccolo_app_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "databases_hook_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "cherrypy_tool_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "masonite_middleware_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "hug_directive_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "turbogears_hook_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "web2py_hook_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "apscheduler_job_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "kombu_consumer_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "restify_middleware_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "swoole_middleware_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "spiral_interceptor_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "saq_job_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "ent_control_r31": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r31": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r31": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "base_python_control_r31": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "r31_ormar_01",
+      "family": "ormar_signal_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Signal.emit'). Ormar. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_ormar_02",
+      "family": "ormar_signal_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: Signal.emit'\nprint(t.count('gates'))\n# Ormar gates: — not circuit. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_ormar_03",
+      "family": "ormar_signal_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 543. Ormar gates: Signal.emit is signal only. ONLY code",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_piccol_01",
+      "family": "piccolo_app_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: PiccoloApp'). Piccolo. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_piccol_02",
+      "family": "piccolo_app_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: PiccoloApp'\nprint(t.count('gates'))\n# Piccolo gates: — not circuit. ON",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_piccol_03",
+      "family": "piccolo_app_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 544. Piccolo gates: PiccoloApp is app only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_databas_01",
+      "family": "databases_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Database.connection'). Databases. ONLY code",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_databas_02",
+      "family": "databases_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: Database.connection'\nprint(t.count('gates'))\n# Databases gates: — not ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_databas_03",
+      "family": "databases_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 545. Databases gates: Database.connection is hook only.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_cherryp_01",
+      "family": "cherrypy_tool_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: cherrypy.Tool'). CherryPy. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_cherryp_02",
+      "family": "cherrypy_tool_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: cherrypy.Tool'\nprint(t.count('gates'))\n# CherryPy gates: — not circuit",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_cherryp_03",
+      "family": "cherrypy_tool_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 546. CherryPy gates: cherrypy.Tool is tool only. ONLY c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_masonit_01",
+      "family": "masonite_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: HTTPMiddleware'). Masonite. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_masonit_02",
+      "family": "masonite_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: HTTPMiddleware'\nprint(t.count('gates'))\n# Masonite gates: — not circui",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_masonit_03",
+      "family": "masonite_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 547. Masonite gates: HTTPMiddleware is middleware only.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_hug_01",
+      "family": "hug_directive_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: hug.directive'). Hug. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_hug_02",
+      "family": "hug_directive_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: hug.directive'\nprint(t.count('gates'))\n# Hug gates: — not circuit. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_hug_03",
+      "family": "hug_directive_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 548. Hug gates: hug.directive is directive only. ONLY c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_turboge_01",
+      "family": "turbogears_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: tg.hooks'). TurboGears. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_turboge_02",
+      "family": "turbogears_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: tg.hooks'\nprint(t.count('gates'))\n# TurboGears gates: — not circuit. O",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_turboge_03",
+      "family": "turbogears_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 549. TurboGears gates: tg.hooks is hook only. ONLY code",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_web2py_01",
+      "family": "web2py_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: gluon.current'). web2py. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_web2py_02",
+      "family": "web2py_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: gluon.current'\nprint(t.count('gates'))\n# web2py gates: — not circuit. ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_web2py_03",
+      "family": "web2py_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 550. web2py gates: gluon.current is hook only. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_apsched_01",
+      "family": "apscheduler_job_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: BackgroundScheduler'). APScheduler. ONLY co",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_apsched_02",
+      "family": "apscheduler_job_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: BackgroundScheduler'\nprint(t.count('gates'))\n# APScheduler gates: — no",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_apsched_03",
+      "family": "apscheduler_job_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 551. APScheduler gates: BackgroundScheduler is job only",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_kombu_01",
+      "family": "kombu_consumer_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Consumer.consume'). Kombu. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_kombu_02",
+      "family": "kombu_consumer_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: Consumer.consume'\nprint(t.count('gates'))\n# Kombu gates: — not circuit",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_kombu_03",
+      "family": "kombu_consumer_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 552. Kombu gates: Consumer.consume is consumer only. ON",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_restify_01",
+      "family": "restify_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: server.use'). Restify. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_restify_02",
+      "family": "restify_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: server.use'\nprint(t.count('gates'))\n# Restify gates: — not circuit. ON",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_restify_03",
+      "family": "restify_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 553. Restify gates: server.use is middleware only. ONLY",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_swoole_01",
+      "family": "swoole_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: MiddlewareManager'). Swoole. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_swoole_02",
+      "family": "swoole_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: MiddlewareManager'\nprint(t.count('gates'))\n# Swoole gates: — not circu",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_swoole_03",
+      "family": "swoole_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 554. Swoole gates: MiddlewareManager is middleware only",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_spiral_01",
+      "family": "spiral_interceptor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: InterceptorInterface'). Spiral. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_spiral_02",
+      "family": "spiral_interceptor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: InterceptorInterface'\nprint(t.count('gates'))\n# Spiral gates: — not ci",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_spiral_03",
+      "family": "spiral_interceptor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 555. Spiral gates: InterceptorInterface is interceptor ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_saq_01",
+      "family": "saq_job_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: saq.Job'). SAQ. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_saq_02",
+      "family": "saq_job_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: saq.Job'\nprint(t.count('gates'))\n# SAQ gates: — not circuit. ONLY code",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_saq_03",
+      "family": "saq_job_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 556. SAQ gates: saq.Job is job only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_ent_01",
+      "family": "ent_control_r31",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair; gates=[",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r31_ent_02",
+      "family": "ent_control_r31",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit H then CNOT",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r31_vis_01",
+      "family": "vision_control_r31",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. How many dots are visible? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r31_vis_02",
+      "family": "vision_control_r31",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the chalkboard. How many letters? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r31_base_01",
+      "family": "base_control_r31",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Thanks. Ignore Ormar gates: Signal.emit in the README. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r31_base_02",
+      "family": "base_control_r31",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Please ignore the Masonite gates: HTTPMiddleware phrase. Chat only — no program,",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r31_base_03",
+      "family": "base_control_r31",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Hello — Spiral gates: InterceptorInterface is interceptor only. No code, no circ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r31_base_04",
+      "family": "base_control_r31",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Weather update. SAQ gates: saq.Job mention. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r31_ctrl_01",
+      "family": "base_python_control_r31",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r31_ctrl_02",
+      "family": "base_python_control_r31",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(sum(range(4))) # plain. ONLY code.",
+      "ent_adapter_blocked": true
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_r31_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}

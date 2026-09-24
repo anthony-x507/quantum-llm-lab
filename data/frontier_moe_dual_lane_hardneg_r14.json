@@ -525,7 +525,7 @@
       "expected": "ent",
       "got": "ent",
       "ok": true,
-      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "adapter": null,
       "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelaz",
       "ent_adapter_blocked": false
     },
@@ -535,7 +535,7 @@
       "expected": "ent",
       "got": "ent",
       "ok": true,
-      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "adapter": null,
       "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separabl",
       "ent_adapter_blocked": false
     },

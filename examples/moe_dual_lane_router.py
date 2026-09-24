@@ -189,6 +189,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R16: ATS/CoreDNS/Pulsar/Redpanda/GHA/GitLab/Terraform/Nix/Express/Flask/Knative/KEDA/Dapr/Gatekeeper gates: scalars.
     # R17: Cloudflare/CloudFront/Vitess/Cockroach/Pinot/CircleCI/Drone/Maven/sbt/Rails/Phoenix/Flagger/ArgoRollouts/Debezium gates: scalars.
     # R18: ALB/FrontDoor/URLMap/Hudi/Iceberg/Flink/NiFi/Concourse/Woodpecker/TeamCity/Cargo/Go/Quarkus/Micronaut gates: scalars.
+    # R31: Ormar/Piccolo/Databases/CherryPy/Masonite/Hug/TurboGears/web2py/APScheduler/Kombu/Restify/Swoole/Spiral/SAQ gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -782,7 +783,65 @@ def route_heuristic(prompt: str) -> Lane:
             r"|micronaut\s+.*gates:"
             r"|filter\s+gates:\s*Filter"
             # R12–R18: edge/CDN/DB/CI/build/framework/canary/CDC/cloud/lake/stream/ETL/language prose
-            r"|gates:\s+is\s+(?:edge|CDN|DB|CI|build|framework|canary|CDC|cloud|lake|stream|ETL|language)\b",
+            r"|gates:\s+is\s+(?:edge|CDN|DB|CI|build|framework|canary|CDC|cloud|lake|stream|ETL|language)\b"
+            # R31: Ormar signal gates: Signal.emit
+            r"|gates\s*:\s*Signal\.emit\b"
+            r"|ormar\s+.*gates:"
+            r"|signal\s+gates:\s*Signal\.emit"
+            # R31: Piccolo app gates: PiccoloApp
+            r"|gates\s*:\s*PiccoloApp\b"
+            r"|piccolo\s+.*gates:"
+            r"|app\s+gates:\s*PiccoloApp"
+            # R31: Databases hook gates: Database.connection
+            r"|gates\s*:\s*Database\.connection\b"
+            r"|databases\s+.*gates:"
+            r"|hook\s+gates:\s*Database\.connection"
+            # R31: CherryPy tool gates: cherrypy.Tool
+            r"|gates\s*:\s*cherrypy\.Tool\b"
+            r"|cherrypy\s+.*gates:"
+            r"|tool\s+gates:\s*cherrypy\.Tool"
+            # R31: Masonite middleware gates: HTTPMiddleware
+            r"|gates\s*:\s*HTTPMiddleware\b"
+            r"|masonite\s+.*gates:"
+            r"|middleware\s+gates:\s*HTTPMiddleware"
+            # R31: Hug directive gates: hug.directive
+            r"|gates\s*:\s*hug\.directive\b"
+            r"|\bhug\b\s+.*gates:"
+            r"|directive\s+gates:\s*hug\.directive"
+            # R31: TurboGears hook gates: tg.hooks
+            r"|gates\s*:\s*tg\.hooks\b"
+            r"|turbogears\s+.*gates:"
+            r"|hook\s+gates:\s*tg\.hooks"
+            # R31: web2py hook gates: gluon.current
+            r"|gates\s*:\s*gluon\.current\b"
+            r"|web2py\s+.*gates:"
+            r"|hook\s+gates:\s*gluon\.current"
+            # R31: APScheduler job gates: BackgroundScheduler
+            r"|gates\s*:\s*BackgroundScheduler\b"
+            r"|apscheduler\s+.*gates:"
+            r"|job\s+gates:\s*BackgroundScheduler"
+            # R31: Kombu consumer gates: Consumer.consume
+            r"|gates\s*:\s*Consumer\.consume\b"
+            r"|kombu\s+.*gates:"
+            r"|consumer\s+gates:\s*Consumer\.consume"
+            # R31: Restify middleware gates: server.use
+            r"|gates\s*:\s*server\.use\b"
+            r"|restify\s+.*gates:"
+            r"|middleware\s+gates:\s*server\.use"
+            # R31: Swoole middleware gates: MiddlewareManager
+            r"|gates\s*:\s*MiddlewareManager\b"
+            r"|swoole\s+.*gates:"
+            r"|middleware\s+gates:\s*MiddlewareManager"
+            # R31: Spiral interceptor gates: InterceptorInterface
+            r"|gates\s*:\s*InterceptorInterface\b"
+            r"|spiral\s+.*gates:"
+            r"|interceptor\s+gates:\s*InterceptorInterface"
+            # R31: SAQ job gates: saq.Job
+            r"|gates\s*:\s*saq\.Job\b"
+            r"|\bsaq\b\s+.*gates:"
+            r"|job\s+gates:\s*saq\.Job"
+            # R31: signal / app / hook / tool / middleware / directive / job / consumer / interceptor prose
+            r"|gates:\s+is\s+(?:signal|app|hook|tool|middleware|directive|job|consumer|interceptor)\b",
             text,
             re.I,
         )
@@ -1402,6 +1461,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r31' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r31.json"
         elif 'r18' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r18.json"
         elif 'r17' in hp:

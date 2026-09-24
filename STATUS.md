@@ -1,3 +1,6 @@
+## 2026-09-24 — tip-hardneg-r31 polish (side; NOT folded)
+Branch `frontier/tip-hardneg-r31` from tip `9c320cb` (post R18 fold; ≥9c320cb). R31 router **6→52/52** · verifier **44/44**; mixed (d) **1.0**; R7–R14+R17+R18+LP held; `ent_never_on_python`. Novel: Ormar / Piccolo / Databases / CherryPy / Masonite / Hug / TurboGears / web2py / APScheduler / Kombu / Restify / Swoole / Spiral / SAQ (brief-suggested swaps for tip-brand + R9–R30 collisions). Rise **+88.46 pp** → freeze polish_r31 100%. See `docs/FRONTIER-CODIGO-VIVO-TIP-R31.md`.
+
 ## 2026-09-24 — fold tip-hardneg-r18 → codigo-vivo-tip
 Cherry-pick `ed431ad` onto `2e5c484` → fold feat `e62cb61`. Conflicts: STATUS+mixed/LP/r7–r12 JSON ours; router/verifier merged R12+R13+R14+R15+R16+R17+R18 gates_ops. Re-smoke R18 **17→52/52** · **44/44** (side 6→52; post-score retained **100%**; tip-local rise_ret ~76.1% of side trail; side rise_pp **88.46** ≥80 → freeze); R17 52/52·44/44; pillars 37/37; circ 5/5 cited; mixed (d) 1.0; choose_n n=80 @100% freeze retained; tti-cold ~95% freeze retained (no residual chase); freezes retained incl. r17+tti_cold_fold+r16+choose_safest_n_fold+r15+r14+LP+pillars+circ+future_r3+side polish_r18. Freeze `codigo_vivo_tip_r18_100pct_20260924_154419`. R19+ not folded. Tip vis stays BASE. RO data/lora_adapter/.
 
