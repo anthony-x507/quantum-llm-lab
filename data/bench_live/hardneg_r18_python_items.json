@@ -1,0 +1,317 @@
+{
+  "n": 44,
+  "kind": "python_hardneg_items",
+  "created": "2026-09-24T18:40:00Z",
+  "round": "r18",
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R18.md",
+  "items": [
+    {
+      "id": "r18v_alb_01",
+      "kind": "aws_alb_rule_gates",
+      "prompt": "Write Python that prints len('gates: host-header'). AWS ALB. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_alb_02",
+      "kind": "aws_alb_rule_gates",
+      "prompt": "t='gates: host-header'\nprint(t.count('gates'))\n# AWS ALB gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_alb_03",
+      "kind": "aws_alb_rule_gates",
+      "prompt": "Write Python that prints 65. AWS ALB gates: host-header is cloud only. ONLY code.",
+      "expected_stdout": "65\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_afd_01",
+      "kind": "azure_frontdoor_gates",
+      "prompt": "Write Python that prints len('gates: matchCondition'). Azure Front Door. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_afd_02",
+      "kind": "azure_frontdoor_gates",
+      "prompt": "t='gates: matchCondition'\nprint(t.count('gates'))\n# Azure Front Door gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_afd_03",
+      "kind": "azure_frontdoor_gates",
+      "prompt": "Write Python that prints 66. Azure Front Door gates: matchCondition is CDN only. ONLY code.",
+      "expected_stdout": "66\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_gcp_01",
+      "kind": "gcp_urlmap_gates",
+      "prompt": "Write Python that prints len('gates: pathMatcher'). GCP URL Map. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_gcp_02",
+      "kind": "gcp_urlmap_gates",
+      "prompt": "t='gates: pathMatcher'\nprint(t.count('gates'))\n# GCP URL Map gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_gcp_03",
+      "kind": "gcp_urlmap_gates",
+      "prompt": "Write Python that prints 67. GCP URL Map gates: pathMatcher is cloud only. ONLY code.",
+      "expected_stdout": "67\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_hudi_01",
+      "kind": "hudi_table_gates",
+      "prompt": "Write Python that prints len('gates: hoodie'). Apache Hudi. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_hudi_02",
+      "kind": "hudi_table_gates",
+      "prompt": "t='gates: hoodie'\nprint(t.count('gates'))\n# Apache Hudi gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_hudi_03",
+      "kind": "hudi_table_gates",
+      "prompt": "Write Python that prints 68. Apache Hudi gates: hoodie is lake only. ONLY code.",
+      "expected_stdout": "68\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_ice_01",
+      "kind": "iceberg_snapshot_gates",
+      "prompt": "Write Python that prints len('gates: snapshot-id'). Apache Iceberg. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_ice_02",
+      "kind": "iceberg_snapshot_gates",
+      "prompt": "t='gates: snapshot-id'\nprint(t.count('gates'))\n# Apache Iceberg gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_ice_03",
+      "kind": "iceberg_snapshot_gates",
+      "prompt": "Write Python that prints 69. Apache Iceberg gates: snapshot-id is lake only. ONLY code.",
+      "expected_stdout": "69\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_flk_01",
+      "kind": "flink_checkpoint_gates",
+      "prompt": "Write Python that prints len('gates: exactly_once'). Apache Flink. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_flk_02",
+      "kind": "flink_checkpoint_gates",
+      "prompt": "t='gates: exactly_once'\nprint(t.count('gates'))\n# Apache Flink gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_flk_03",
+      "kind": "flink_checkpoint_gates",
+      "prompt": "Write Python that prints 70. Apache Flink gates: exactly_once is stream only. ONLY code.",
+      "expected_stdout": "70\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_nifi_01",
+      "kind": "nifi_processor_gates",
+      "prompt": "Write Python that prints len('gates: auto-terminated'). Apache NiFi. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_nifi_02",
+      "kind": "nifi_processor_gates",
+      "prompt": "t='gates: auto-terminated'\nprint(t.count('gates'))\n# Apache NiFi gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_nifi_03",
+      "kind": "nifi_processor_gates",
+      "prompt": "Write Python that prints 71. Apache NiFi gates: auto-terminated is ETL only. ONLY code.",
+      "expected_stdout": "71\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_conc_01",
+      "kind": "concourse_step_gates",
+      "prompt": "Write Python that prints len('gates: try'). Concourse CI. ONLY code.",
+      "expected_stdout": "10\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_conc_02",
+      "kind": "concourse_step_gates",
+      "prompt": "t='gates: try'\nprint(t.count('gates'))\n# Concourse CI gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_conc_03",
+      "kind": "concourse_step_gates",
+      "prompt": "Write Python that prints 72. Concourse CI gates: try is CI only. ONLY code.",
+      "expected_stdout": "72\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_wpc_01",
+      "kind": "woodpecker_when_gates",
+      "prompt": "Write Python that prints len('gates: branch'). Woodpecker CI. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_wpc_02",
+      "kind": "woodpecker_when_gates",
+      "prompt": "t='gates: branch'\nprint(t.count('gates'))\n# Woodpecker CI gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_wpc_03",
+      "kind": "woodpecker_when_gates",
+      "prompt": "Write Python that prints 73. Woodpecker CI gates: branch is CI only. ONLY code.",
+      "expected_stdout": "73\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_tc_01",
+      "kind": "teamcity_condition_gates",
+      "prompt": "Write Python that prints len('gates: equals'). TeamCity. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_tc_02",
+      "kind": "teamcity_condition_gates",
+      "prompt": "t='gates: equals'\nprint(t.count('gates'))\n# TeamCity gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_tc_03",
+      "kind": "teamcity_condition_gates",
+      "prompt": "Write Python that prints 74. TeamCity gates: equals is CI only. ONLY code.",
+      "expected_stdout": "74\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_crg_01",
+      "kind": "cargo_feature_gates",
+      "prompt": "Write Python that prints len('gates: default'). Cargo. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_crg_02",
+      "kind": "cargo_feature_gates",
+      "prompt": "t='gates: default'\nprint(t.count('gates'))\n# Cargo gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_crg_03",
+      "kind": "cargo_feature_gates",
+      "prompt": "Write Python that prints 75. Cargo gates: default is build only. ONLY code.",
+      "expected_stdout": "75\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_go_01",
+      "kind": "go_build_tag_gates",
+      "prompt": "Write Python that prints len('gates: goos'). Go build tags. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_go_02",
+      "kind": "go_build_tag_gates",
+      "prompt": "t='gates: goos'\nprint(t.count('gates'))\n# Go build tags gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_go_03",
+      "kind": "go_build_tag_gates",
+      "prompt": "Write Python that prints 76. Go build tags gates: goos is language only. ONLY code.",
+      "expected_stdout": "76\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_qrk_01",
+      "kind": "quarkus_interceptor_gates",
+      "prompt": "Write Python that prints len('gates: AroundInvoke'). Quarkus. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_qrk_02",
+      "kind": "quarkus_interceptor_gates",
+      "prompt": "t='gates: AroundInvoke'\nprint(t.count('gates'))\n# Quarkus gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_qrk_03",
+      "kind": "quarkus_interceptor_gates",
+      "prompt": "Write Python that prints 77. Quarkus gates: AroundInvoke is framework only. ONLY code.",
+      "expected_stdout": "77\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_mnc_01",
+      "kind": "micronaut_filter_gates",
+      "prompt": "Write Python that prints len('gates: Filter'). Micronaut. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_mnc_02",
+      "kind": "micronaut_filter_gates",
+      "prompt": "t='gates: Filter'\nprint(t.count('gates'))\n# Micronaut gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_mnc_03",
+      "kind": "micronaut_filter_gates",
+      "prompt": "Write Python that prints 78. Micronaut gates: Filter is framework only. ONLY code.",
+      "expected_stdout": "78\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_ctrl_01",
+      "kind": "base_python_control_r18",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r18v_ctrl_02",
+      "kind": "base_python_control_r18",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}

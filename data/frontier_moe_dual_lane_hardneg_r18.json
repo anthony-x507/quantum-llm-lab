@@ -1,0 +1,628 @@
+{
+  "method": "heuristic",
+  "n": 52,
+  "hits": 52,
+  "misses": 0,
+  "score": "52/52",
+  "rate": 1.0,
+  "by_family": {
+    "aws_alb_rule_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "azure_frontdoor_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "gcp_urlmap_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "hudi_table_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "iceberg_snapshot_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "flink_checkpoint_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "nifi_processor_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "concourse_step_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "woodpecker_when_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "teamcity_condition_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "cargo_feature_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "go_build_tag_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "quarkus_interceptor_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "micronaut_filter_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "ent_control_r18": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r18": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r18": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "base_python_control_r18": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "r18_alb_01",
+      "family": "aws_alb_rule_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: host-header'). AWS ALB. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_alb_02",
+      "family": "aws_alb_rule_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: host-header'\nprint(t.count('gates'))\n# AWS ALB gates: — not circuit. O",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_alb_03",
+      "family": "aws_alb_rule_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 65. AWS ALB gates: host-header is cloud only. ONLY code",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_afd_01",
+      "family": "azure_frontdoor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: matchCondition'). Azure Front Door. ONLY co",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_afd_02",
+      "family": "azure_frontdoor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: matchCondition'\nprint(t.count('gates'))\n# Azure Front Door gates: — no",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_afd_03",
+      "family": "azure_frontdoor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 66. Azure Front Door gates: matchCondition is CDN only.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_gcp_01",
+      "family": "gcp_urlmap_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: pathMatcher'). GCP URL Map. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_gcp_02",
+      "family": "gcp_urlmap_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: pathMatcher'\nprint(t.count('gates'))\n# GCP URL Map gates: — not circui",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_gcp_03",
+      "family": "gcp_urlmap_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 67. GCP URL Map gates: pathMatcher is cloud only. ONLY ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_hudi_01",
+      "family": "hudi_table_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: hoodie'). Apache Hudi. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_hudi_02",
+      "family": "hudi_table_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: hoodie'\nprint(t.count('gates'))\n# Apache Hudi gates: — not circuit. ON",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_hudi_03",
+      "family": "hudi_table_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 68. Apache Hudi gates: hoodie is lake only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_ice_01",
+      "family": "iceberg_snapshot_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: snapshot-id'). Apache Iceberg. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_ice_02",
+      "family": "iceberg_snapshot_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: snapshot-id'\nprint(t.count('gates'))\n# Apache Iceberg gates: — not cir",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_ice_03",
+      "family": "iceberg_snapshot_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 69. Apache Iceberg gates: snapshot-id is lake only. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_flk_01",
+      "family": "flink_checkpoint_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: exactly_once'). Apache Flink. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_flk_02",
+      "family": "flink_checkpoint_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: exactly_once'\nprint(t.count('gates'))\n# Apache Flink gates: — not circ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_flk_03",
+      "family": "flink_checkpoint_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 70. Apache Flink gates: exactly_once is stream only. ON",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_nifi_01",
+      "family": "nifi_processor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: auto-terminated'). Apache NiFi. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_nifi_02",
+      "family": "nifi_processor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: auto-terminated'\nprint(t.count('gates'))\n# Apache NiFi gates: — not ci",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_nifi_03",
+      "family": "nifi_processor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 71. Apache NiFi gates: auto-terminated is ETL only. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_conc_01",
+      "family": "concourse_step_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: try'). Concourse CI. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_conc_02",
+      "family": "concourse_step_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: try'\nprint(t.count('gates'))\n# Concourse CI gates: — not circuit. ONLY",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_conc_03",
+      "family": "concourse_step_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 72. Concourse CI gates: try is CI only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_wpc_01",
+      "family": "woodpecker_when_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: branch'). Woodpecker CI. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_wpc_02",
+      "family": "woodpecker_when_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: branch'\nprint(t.count('gates'))\n# Woodpecker CI gates: — not circuit. ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_wpc_03",
+      "family": "woodpecker_when_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 73. Woodpecker CI gates: branch is CI only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_tc_01",
+      "family": "teamcity_condition_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: equals'). TeamCity. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_tc_02",
+      "family": "teamcity_condition_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: equals'\nprint(t.count('gates'))\n# TeamCity gates: — not circuit. ONLY ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_tc_03",
+      "family": "teamcity_condition_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 74. TeamCity gates: equals is CI only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_crg_01",
+      "family": "cargo_feature_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: default'). Cargo. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_crg_02",
+      "family": "cargo_feature_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: default'\nprint(t.count('gates'))\n# Cargo gates: — not circuit. ONLY co",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_crg_03",
+      "family": "cargo_feature_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 75. Cargo gates: default is build only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_go_01",
+      "family": "go_build_tag_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: goos'). Go build tags. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_go_02",
+      "family": "go_build_tag_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: goos'\nprint(t.count('gates'))\n# Go build tags gates: — not circuit. ON",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_go_03",
+      "family": "go_build_tag_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 76. Go build tags gates: goos is language only. ONLY co",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_qrk_01",
+      "family": "quarkus_interceptor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: AroundInvoke'). Quarkus. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_qrk_02",
+      "family": "quarkus_interceptor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: AroundInvoke'\nprint(t.count('gates'))\n# Quarkus gates: — not circuit. ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_qrk_03",
+      "family": "quarkus_interceptor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 77. Quarkus gates: AroundInvoke is framework only. ONLY",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_mnc_01",
+      "family": "micronaut_filter_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Filter'). Micronaut. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_mnc_02",
+      "family": "micronaut_filter_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: Filter'\nprint(t.count('gates'))\n# Micronaut gates: — not circuit. ONLY",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_mnc_03",
+      "family": "micronaut_filter_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 78. Micronaut gates: Filter is framework only. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_ent_01",
+      "family": "ent_control_r18",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelaz",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r18_ent_02",
+      "family": "ent_control_r18",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separabl",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r18_vis_01",
+      "family": "vision_control_r18",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. How many dots are visible? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r18_vis_02",
+      "family": "vision_control_r18",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the chalkboard. How many letters? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r18_base_01",
+      "family": "base_control_r18",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Thanks. Ignore AWS ALB gates: host-header in the README. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r18_base_02",
+      "family": "base_control_r18",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Please ignore the Concourse CI gates: try phrase. Chat only — no program, no cir",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r18_base_03",
+      "family": "base_control_r18",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Hello — Quarkus gates: AroundInvoke is framework only. No code, no circuit, no J",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r18_base_04",
+      "family": "base_control_r18",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Weather update. Apache Hudi gates: hoodie mention. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r18_ctrl_01",
+      "family": "base_python_control_r18",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r18_ctrl_02",
+      "family": "base_python_control_r18",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(sum(range(4)))\n# plain. ONLY code.",
+      "ent_adapter_blocked": true
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_r18_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}
