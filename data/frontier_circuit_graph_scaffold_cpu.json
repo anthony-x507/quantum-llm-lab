@@ -1,0 +1,1329 @@
+{
+  "written": "2026-09-24 10:48:50",
+  "router_method": "heuristic",
+  "polish_features": false,
+  "n_fixtures": 24,
+  "n_ent_evaluated": 20,
+  "n_skipped_non_ent": 4,
+  "no_scaffold": {
+    "n": 20,
+    "parse_rate": 0.75,
+    "structure_rate": 0.65,
+    "solve_rate": 0.45,
+    "parse_n": 15,
+    "structure_n": 13,
+    "solve_n": 9
+  },
+  "scaffold": {
+    "n": 20,
+    "parse_rate": 1.0,
+    "structure_rate": 1.0,
+    "solve_rate": 0.9,
+    "parse_n": 20,
+    "structure_n": 20,
+    "solve_n": 18
+  },
+  "delta_scaffold_minus_off": {
+    "parse_rate": 0.25,
+    "structure_rate": 0.35,
+    "solve_rate": 0.45
+  },
+  "clear_win": true,
+  "clear_win_rule": "Δsolve≥0.15 OR (Δstructure≥0.15 AND Δparse≥0.05)",
+  "prompt_touches_gt": false,
+  "claims": [
+    "NO quantum-advantage claims",
+    "Scaffold = classical Clifford–Pauli graph features/hints only",
+    "Metrics are own-delta usability (parse/structure/solve) on CPU heuristic"
+  ],
+  "anti_contamination": {
+    "gt_in_scaffold_hints": false,
+    "prompt_touches_gt": false,
+    "graph_builder_rejects_gt_kwargs": true,
+    "lora_adapter_writes": false
+  },
+  "rows": [
+    {
+      "id": "ent_bell_01",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "nota": "weak-no-cx"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_bell_02",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "nota": "weak-no-cx"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_bell_03",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": false,
+        "structure_ok": false,
+        "solve_ok": false,
+        "unitary_ok": false,
+        "error": "missing_gates_or_n",
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [],
+          "nota": "weak-empty"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_cx_01",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": false,
+        "structure_ok": false,
+        "solve_ok": false,
+        "unitary_ok": false,
+        "error": "missing_gates_or_n",
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [],
+          "nota": "weak-empty"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_ghz_01",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": true,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ]
+          ],
+          "nota": "weak-ghz"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": true,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_product_01",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": true,
+          "want_ghz": false,
+          "want_cx": false,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "nota": "weak-product"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": true,
+          "want_ghz": false,
+          "want_cx": false,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_product_02",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": true,
+          "want_ghz": false,
+          "want_cx": false,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "nota": "weak-product"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": true,
+          "want_ghz": false,
+          "want_cx": false,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_ry_01",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "nota": "weak-no-cx"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "ry",
+              0,
+              0.5
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_generic_01",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": false,
+        "structure_ok": false,
+        "solve_ok": false,
+        "unitary_ok": false,
+        "error": "missing_gates_or_n",
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": false,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [],
+          "nota": "weak-empty"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": false,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_generic_02",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "nota": "weak-bell-ok"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "ry",
+              0,
+              0.5
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_bell_04",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "nota": "weak-bell-ok"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_bell_05",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": false,
+        "structure_ok": false,
+        "solve_ok": false,
+        "unitary_ok": false,
+        "error": "missing_gates_or_n",
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [],
+          "nota": "weak-empty"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_ghz_02",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": true,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "nota": "weak-ghz-trunc"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": true,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_product_03",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": true,
+          "want_ghz": false,
+          "want_cx": false,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "nota": "weak-product"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": true,
+          "want_ghz": false,
+          "want_cx": false,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_bell_06",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "nota": "weak-bell-ok"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_cx_02",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": false,
+        "solve_ok": false,
+        "unitary_ok": false,
+        "error": "graph_or_tool:ValueError:gate not in lab alphabet: hadamard",
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "hadamard",
+              0
+            ]
+          ],
+          "nota": "weak-bad-gate"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "py_01",
+      "lane": "python",
+      "scaffold_applied": false,
+      "note": "non-ent lane — scaffold not applicable"
+    },
+    {
+      "id": "py_02",
+      "lane": "python",
+      "scaffold_applied": false,
+      "note": "non-ent lane — scaffold not applicable"
+    },
+    {
+      "id": "vis_01",
+      "lane": "vision",
+      "scaffold_applied": false,
+      "note": "non-ent lane — scaffold not applicable"
+    },
+    {
+      "id": "base_01",
+      "lane": "base",
+      "scaffold_applied": false,
+      "note": "non-ent lane — scaffold not applicable"
+    },
+    {
+      "id": "ent_bell_07",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": false,
+        "structure_ok": false,
+        "solve_ok": false,
+        "unitary_ok": false,
+        "error": "missing_gates_or_n",
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [],
+          "nota": "weak-empty"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_bell_08",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": false,
+        "solve_ok": false,
+        "unitary_ok": false,
+        "error": "graph_or_tool:ValueError:gate not in lab alphabet: hadamard",
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "hadamard",
+              0
+            ]
+          ],
+          "nota": "weak-bad-gate"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_product_04",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": true,
+          "want_ghz": false,
+          "want_cx": false,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "nota": "weak-product"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": true,
+          "want_ghz": false,
+          "want_cx": false,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "ent_ghz_03",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": true,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ]
+          ],
+          "nota": "weak-ghz"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": true,
+          "want_product": false,
+          "want_ghz": true,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    }
+  ],
+  "elapsed_s": 1.41,
+  "router_scaffold_smoke": {
+    "n": 8,
+    "ent_injected": 8,
+    "any_gt_leak": false,
+    "rows": [
+      {
+        "id": "ent_bell_01",
+        "lane": "ent",
+        "injected": true,
+        "has_scaffold_markers": true,
+        "gt_leak": false
+      },
+      {
+        "id": "ent_bell_02",
+        "lane": "ent",
+        "injected": true,
+        "has_scaffold_markers": true,
+        "gt_leak": false
+      },
+      {
+        "id": "ent_bell_03",
+        "lane": "ent",
+        "injected": true,
+        "has_scaffold_markers": true,
+        "gt_leak": false
+      },
+      {
+        "id": "ent_cx_01",
+        "lane": "ent",
+        "injected": true,
+        "has_scaffold_markers": true,
+        "gt_leak": false
+      },
+      {
+        "id": "ent_ghz_01",
+        "lane": "ent",
+        "injected": true,
+        "has_scaffold_markers": true,
+        "gt_leak": false
+      },
+      {
+        "id": "ent_product_01",
+        "lane": "ent",
+        "injected": true,
+        "has_scaffold_markers": true,
+        "gt_leak": false
+      },
+      {
+        "id": "ent_product_02",
+        "lane": "ent",
+        "injected": true,
+        "has_scaffold_markers": true,
+        "gt_leak": false
+      },
+      {
+        "id": "ent_ry_01",
+        "lane": "ent",
+        "injected": true,
+        "has_scaffold_markers": true,
+        "gt_leak": false
+      }
+    ]
+  },
+  "frontier": "circuit-graph-moe-scaffold",
+  "mode": "cpu-eval"
+}

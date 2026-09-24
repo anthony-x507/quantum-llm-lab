@@ -44,6 +44,10 @@ sys.path.insert(0, str(ROOT / "examples"))
 
 import moe_dual_lane_router as moe  # noqa: E402
 import python_verifier_loop as ver  # noqa: E402
+try:
+    import circuit_graph_moe_scaffold as cg_scaffold  # noqa: E402
+except ImportError:  # pragma: no cover
+    cg_scaffold = None  # type: ignore
 
 SMOKE_OUT = ROOT / "data" / "frontier_moe_verifier_cpu_smoke.json"
 EVAL_OUT = ROOT / "data" / "frontier_moe_verifier_unified.json"
@@ -377,8 +381,16 @@ def run_python_paths(
     }
 
 
-def run_ent_vision_routing(method: str = "heuristic") -> dict[str, Any]:
-    """Route Ent/Vision samples; report RO adapter selection only (no overwrite)."""
+def run_ent_vision_routing(
+    method: str = "heuristic",
+    *,
+    circuit_scaffold: bool = False,
+) -> dict[str, Any]:
+    """Route Ent/Vision samples; report RO adapter selection only (no overwrite).
+
+    If circuit_scaffold and lane=ent, attach GT-free circuit-graph hint metadata
+    (prompt text not required for this routing report).
+    """
     samples = [
         {
             "id": "ent_sample",
@@ -402,11 +414,21 @@ def run_ent_vision_routing(method: str = "heuristic") -> dict[str, Any]:
     for s in samples:
         lane = moe.route(s["prompt"], method=method)
         ap = _resolve_adapter(lane)
+        sc_meta = None
+        if circuit_scaffold and lane == "ent" and cg_scaffold is not None:
+            hint = cg_scaffold.format_scaffold_hint(s["prompt"])
+            sc_meta = {
+                "injected": True,
+                "hint_chars": len(hint),
+                "has_markers": cg_scaffold.SCAFFOLD_BEGIN in hint,
+                "gt_leak": bool(cg_scaffold._FORBIDDEN_HINT.search(hint)),
+            }
         rows.append({
             **s,
             "routed_lane": lane,
             "adapter_ro": str(ap) if ap else None,
             "adapter_write": False,
+            "circuit_graph_scaffold": sc_meta,
         })
     return {
         "note": "Ent/Vision: adapter selection READ-ONLY; no pillar re-run in CPU smoke",
@@ -476,6 +498,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--mlx-eval", action="store_true", help="Live VLM (optional; never blocks ship)")
     p.add_argument("--mlp", action="store_true", help="Use MoE MLP router")
     p.add_argument("--vqc-router", action="store_true", help="Ablation VQC router (CPU)")
+    p.add_argument("--circuit-scaffold", action="store_true",
+                   help="When lane=ent, inject Clifford–Pauli graph scaffold hints (no GT)")
     p.add_argument("--items", type=Path, default=ver.DEFAULT_ITEMS)
     p.add_argument("--bench", type=Path, default=ver.DEFAULT_BENCH)
     p.add_argument("--replay-source", default="base", choices=("base", "adapter_run", "finetuned"))
@@ -507,7 +531,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"=== C3 router smoke method={method} ===", flush=True)
         router_smoke = run_router_smoke(method)
         print(f"Router smoke: {router_smoke['score']} ent_never_on_python={router_smoke['ent_never_on_python']}", flush=True)
-        ent_vis = run_ent_vision_routing(method)
+        ent_vis = run_ent_vision_routing(method, circuit_scaffold=args.circuit_scaffold)
 
     # Python comparative paths
     proposer = "heuristic"
