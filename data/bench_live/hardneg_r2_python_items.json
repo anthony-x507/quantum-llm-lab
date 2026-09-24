@@ -1,0 +1,149 @@
+{
+  "n": 20,
+  "kind": "hardneg_r2_python_verifier",
+  "created": "2026-09-24 10:51:00 ET",
+  "round": 2,
+  "seed_doc": "R2 adversarial; GT stdout harness-only",
+  "items": [
+    {
+      "id": "r2v_bil_01",
+      "kind": "bilingual_trap",
+      "prompt": "Escribe un programa en Python que imprima 3**5. Circuitos y qubits son distractores. ONLY code.",
+      "expected_stdout": "243\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_bil_02",
+      "kind": "bilingual_trap",
+      "prompt": "Write Python that prints len('superposici\u00f3n'). La palabra cu\u00e1ntica es un string. Output ONLY the code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_meas_01",
+      "kind": "measure_in_comment",
+      "prompt": "Write Python that prints 17+4.\n# TODO: measure the runtime later\nONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_meas_02",
+      "kind": "measure_in_comment",
+      "prompt": "def score(xs):\n    return sum(xs)\nprint(score([2,3,5]))\n# measure accuracy offline; NOT a qubit measure",
+      "expected_stdout": "10\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_meas_03",
+      "kind": "measure_in_comment",
+      "prompt": "Write a Python program that prints int(9*9). Comment may say 'measure twice'. ONLY code.",
+      "expected_stdout": "81\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_meas_04",
+      "kind": "measure_in_comment",
+      "prompt": "import math\nprint(int(math.sqrt(144)))\n# measure := wall-clock; no pennylane",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_visneg_01",
+      "kind": "vision_words_no_image",
+      "prompt": "Write Python that prints the length of the string 'screenshot.png'. Text-only, without any picture. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_visneg_02",
+      "kind": "vision_words_no_image",
+      "prompt": "Write Python that prints 'photo'.count('o'). Pure chat coding \u2014 sin imagen. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_visneg_03",
+      "kind": "vision_words_no_image",
+      "prompt": "Write Python that prints len('dataframe frame'). Without any image or png. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_crud_01",
+      "kind": "ent_metaphor_crud",
+      "prompt": "Write Python that prints len(['user_a','user_b']) after we 'entangle' two CRUD records. ONLY code \u2014 no circuit.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_crud_02",
+      "kind": "ent_metaphor_crud",
+      "prompt": "Write Python: users={'alice':1,'bob':2}; print(sum(users.values())). 'superpose the fields' metaphor. ONLY code.",
+      "expected_stdout": "3\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_crud_03",
+      "kind": "ent_metaphor_crud",
+      "prompt": "Write a Python program that prints 2  # 'Bell-pair' match of two DB rows \u2014 just print(2). ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_crud_04",
+      "kind": "ent_metaphor_crud",
+      "prompt": "def merge(a,b):\n    return {**a,**b}\nprint(len(merge({'x':1},{'y':2})))\n# entanglement of dicts is metaphor",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_jsonphys_01",
+      "kind": "json_looking_physics",
+      "prompt": "Write Python that prints int(0.5*2*3*3)  # like {\"ke\":0.5*m*v*v} but OUTPUT code not JSON. ONLY code.",
+      "expected_stdout": "9\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_jsonphys_02",
+      "kind": "json_looking_physics",
+      "prompt": "The note says {\"omega\": 2*3.1416, \"f\": 5}. Write Python that prints int(2*3.1416*5). No circuit JSON. ONLY code.",
+      "expected_stdout": "31\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_jsonphys_03",
+      "kind": "json_looking_physics",
+      "prompt": "Write Python to print int((9.8*10)//1) given toy {\"g\":9.8,\"t\":10}. Code only, not the JSON.",
+      "expected_stdout": "98\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_jsonphys_04",
+      "kind": "json_looking_physics",
+      "prompt": "Write Python that prints int(1/2 * 8 * 8) as classical amplitude-squared toy. Payload looks like JSON physics. ONLY code.",
+      "expected_stdout": "32\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_bil_03",
+      "kind": "bilingual_trap",
+      "prompt": "Programa en Python: print(sum(range(1,6))). Ignora 'Hadamard' y 'CX' en este comentario. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_crud_05",
+      "kind": "ent_metaphor_crud",
+      "prompt": "Write Python that prints 'qubit'.count('u') while syncing a REST resource named qubit_meta. String count, not gates. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r2v_meas_05",
+      "kind": "measure_in_comment",
+      "prompt": "Write Python that prints 2**8. # measure throughput; Bell pairs mentioned as distractors \u2014 no circuit. ONLY code.",
+      "expected_stdout": "256\n",
+      "timeout_s": 5
+    }
+  ]
+}

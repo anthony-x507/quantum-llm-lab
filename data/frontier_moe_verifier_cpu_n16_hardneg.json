@@ -1,6 +1,6 @@
 {
   "frontier": "C3-moe-verifier-codigo-vivo",
-  "written": "2026-09-24 10:50:45",
+  "written": "2026-09-24 10:48:53",
   "mode": "cpu-eval",
   "router_method": "heuristic",
   "claims": [
@@ -612,12 +612,12 @@
         "path": "c_verifier_alone",
         "n": 16,
         "solve_rate_single": 0.0,
-        "solve_rate_loop": 1.0,
-        "delta_solve_rate": 1.0,
+        "solve_rate_loop": 0.875,
+        "delta_solve_rate": 0.875,
         "solved_single": 0,
-        "solved_loop": 16,
-        "repair_success_rate": 1.0,
-        "repair_helped_n": 16,
+        "solved_loop": 14,
+        "repair_success_rate": 0.875,
+        "repair_helped_n": 14,
         "failed_single_n": 16,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
@@ -746,23 +746,25 @@
           {
             "id": "py_script_04",
             "single_solved": false,
-            "loop_solved": true,
-            "rounds_used": 1,
-            "repair_helped": true,
+            "loop_solved": false,
+            "rounds_used": 2,
+            "repair_helped": false,
             "prompt_touches_gt": false,
             "actions": [
-              "strip_trailing_prose"
+              "strip_trailing_prose",
+              "noop_no_local_rule"
             ]
           },
           {
             "id": "py_script_05",
             "single_solved": false,
-            "loop_solved": true,
-            "rounds_used": 1,
-            "repair_helped": true,
+            "loop_solved": false,
+            "rounds_used": 2,
+            "repair_helped": false,
             "prompt_touches_gt": false,
             "actions": [
-              "strip_trailing_prose"
+              "strip_trailing_prose",
+              "noop_no_local_rule"
             ]
           },
           {
@@ -804,12 +806,12 @@
         "path": "d_moe_verifier_unified",
         "n": 16,
         "solve_rate_single": 0.0,
-        "solve_rate_loop": 1.0,
-        "delta_solve_rate": 1.0,
+        "solve_rate_loop": 0.875,
+        "delta_solve_rate": 0.875,
         "solved_single": 0,
-        "solved_loop": 16,
-        "repair_success_rate": 1.0,
-        "repair_helped_n": 16,
+        "solved_loop": 14,
+        "repair_success_rate": 0.875,
+        "repair_helped_n": 14,
         "failed_single_n": 16,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
@@ -938,23 +940,25 @@
           {
             "id": "py_script_04",
             "single_solved": false,
-            "loop_solved": true,
-            "rounds_used": 1,
-            "repair_helped": true,
+            "loop_solved": false,
+            "rounds_used": 2,
+            "repair_helped": false,
             "prompt_touches_gt": false,
             "actions": [
-              "strip_trailing_prose"
+              "strip_trailing_prose",
+              "noop_no_local_rule"
             ]
           },
           {
             "id": "py_script_05",
             "single_solved": false,
-            "loop_solved": true,
-            "rounds_used": 1,
-            "repair_helped": true,
+            "loop_solved": false,
+            "rounds_used": 2,
+            "repair_helped": false,
             "prompt_touches_gt": false,
             "actions": [
-              "strip_trailing_prose"
+              "strip_trailing_prose",
+              "noop_no_local_rule"
             ]
           },
           {
@@ -994,7 +998,7 @@
         "n_items_total": 16,
         "n_routed_python": 16,
         "n_routed_away": 0,
-        "solve_rate_on_python_lane": 1.0,
+        "solve_rate_on_python_lane": 0.875,
         "routing": [
           {
             "id": "py_arith_01",
@@ -1118,18 +1122,18 @@
         "path": "verifier_alone",
         "n": 16,
         "metric": "solve_rate_loop",
-        "rate": 1.0,
-        "delta_vs_baseline": 1.0,
-        "repair_success_rate": 1.0,
+        "rate": 0.875,
+        "delta_vs_baseline": 0.875,
+        "repair_success_rate": 0.875,
         "prompt_touches_gt": false
       },
       {
         "path": "moe_verifier_unified_python_lane",
         "n": 16,
         "metric": "solve_rate_loop",
-        "rate": 1.0,
-        "delta_vs_baseline": 1.0,
-        "repair_success_rate": 1.0,
+        "rate": 0.875,
+        "delta_vs_baseline": 0.875,
+        "repair_success_rate": 0.875,
         "prompt_touches_gt": false
       }
     ],

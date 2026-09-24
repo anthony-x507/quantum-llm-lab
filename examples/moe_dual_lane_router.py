@@ -63,7 +63,9 @@ VISION_RE = re.compile(
     r"look\s+at\s+the\s+(?:image\s+)?sequence|"
     r"look\s+at\s+the\s+(?:diagram|chalkboard|whiteboard|photo|screenshot)|"
     r"in\s+the\s+image|screenshot|photo|picture|png|jpeg|"
-    r"mira\s+la\s+imagen|video\s+frame|vlm|chalkboard|whiteboard|diagram"
+    r"mira\s+la\s+imagen|video\s+frame|vlm|chalkboard|whiteboard|diagram|"
+    # R2 bilingual vision cues (ES) from freeze-polish-bridge
+    r"observa\s+la\s+imagen|imagen\s+adjunta|\bfoto\b|en\s+la\s+foto"
     r")\b",
     re.IGNORECASE,
 )
@@ -75,6 +77,16 @@ VISION_NEG_RE = re.compile(
     r"text[- ]only|pure\s+chat|no\s+png\s+attached|no\s+picture|"
     r"sin\s+imagen|sin\s+archivo\s+de\s+imagen|no\s+frame\s+attached|"
     r"no\s+visual\s+input|description\s+only\s+\(no\s+image"
+    r")",
+    re.IGNORECASE,
+)
+
+# R2: cancel ent when chat explicitly rejects circuit/code (bilingual)
+ENT_NEG_RE = re.compile(
+    r"("
+    r"no\s+circuit|not\s+a\s+(?:quantum\s+)?circuit|sin\s+circuito|"
+    r"no\s+code,\s*no\s+circuit|ignore\s+(?:any\s+)?(?:circuit|qubit)|"
+    r"no\s+pennylane|no\s+quantum\s+circuit"
     r")",
     re.IGNORECASE,
 )
@@ -139,6 +151,7 @@ def route_heuristic(prompt: str) -> Lane:
     has_py = bool(PYTHON_RE.search(text))
     has_vis = bool(VISION_RE.search(text))
     vis_negated = bool(VISION_NEG_RE.search(text))
+    ent_negated = bool(ENT_NEG_RE.search(text))
     ent_json_ask = bool(
         re.search(r"\b(n_qubits|gates\s*[=:\[]|json\s+v[aá]lido)\b", text, re.I)
     )
@@ -159,6 +172,13 @@ def route_heuristic(prompt: str) -> Lane:
     # Code-generation intent dominates (protect Python lane from ent LoRA)
     if has_py and not (has_ent and ent_json_ask):
         return "python"
+    # R2: explicit "no circuit" chat stays base (unless real JSON circuit ask)
+    if has_ent and ent_negated and not re.search(
+        r"\b(n_qubits|gates\s*[=:\[]|json\s+v[aá]lido|reply\s+json|responde\s+solo\s+json)\b",
+        text,
+        re.I,
+    ):
+        has_ent = False
     if vis_arith and not ent_json_ask:
         return "vision"
     if has_ent:

@@ -1,7 +1,7 @@
 {
   "frontier": "C3-moe-verifier-codigo-vivo",
-  "written": "2026-09-24 10:50:45",
-  "mode": "cpu-eval",
+  "written": "2026-09-24 10:54:27",
+  "mode": "hardneg-cpu",
   "router_method": "heuristic",
   "claims": [
     "NO quantum-advantage claims",
@@ -181,14 +181,14 @@
     }
   },
   "python_paths": {
-    "n_items": 16,
+    "n_items": 20,
     "proposer": "heuristic",
     "router_method": "heuristic",
     "rounds_max": 2,
     "paths": {
       "a_single_shot_no_moe": {
         "path": "a_single_shot_no_moe",
-        "n": 16,
+        "n": 20,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 0.0,
         "delta_solve_rate": 0.0,
@@ -196,12 +196,12 @@
         "solved_loop": 0,
         "repair_success_rate": 0.0,
         "repair_helped_n": 0,
-        "failed_single_n": 16,
+        "failed_single_n": 20,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "py_arith_01",
+            "id": "r2v_bil_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -210,7 +210,7 @@
             "actions": []
           },
           {
-            "id": "py_arith_02",
+            "id": "r2v_bil_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -219,7 +219,7 @@
             "actions": []
           },
           {
-            "id": "py_arith_03",
+            "id": "r2v_meas_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -228,7 +228,7 @@
             "actions": []
           },
           {
-            "id": "py_arith_04",
+            "id": "r2v_meas_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -237,7 +237,7 @@
             "actions": []
           },
           {
-            "id": "py_alg_01",
+            "id": "r2v_meas_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -246,7 +246,7 @@
             "actions": []
           },
           {
-            "id": "py_alg_02",
+            "id": "r2v_meas_04",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -255,7 +255,7 @@
             "actions": []
           },
           {
-            "id": "py_alg_03",
+            "id": "r2v_visneg_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -264,7 +264,7 @@
             "actions": []
           },
           {
-            "id": "py_alg_04",
+            "id": "r2v_visneg_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -273,7 +273,7 @@
             "actions": []
           },
           {
-            "id": "py_script_01",
+            "id": "r2v_visneg_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -282,7 +282,7 @@
             "actions": []
           },
           {
-            "id": "py_script_02",
+            "id": "r2v_crud_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -291,7 +291,7 @@
             "actions": []
           },
           {
-            "id": "py_script_03",
+            "id": "r2v_crud_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -300,7 +300,7 @@
             "actions": []
           },
           {
-            "id": "py_script_04",
+            "id": "r2v_crud_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -309,7 +309,7 @@
             "actions": []
           },
           {
-            "id": "py_script_05",
+            "id": "r2v_crud_04",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -318,7 +318,7 @@
             "actions": []
           },
           {
-            "id": "py_script_06",
+            "id": "r2v_jsonphys_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -327,7 +327,7 @@
             "actions": []
           },
           {
-            "id": "py_script_07",
+            "id": "r2v_jsonphys_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -336,7 +336,43 @@
             "actions": []
           },
           {
-            "id": "py_script_08",
+            "id": "r2v_jsonphys_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_jsonphys_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_bil_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_crud_05",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_meas_05",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -348,7 +384,7 @@
       },
       "b_moe_alone": {
         "path": "b_moe_alone",
-        "n": 16,
+        "n": 20,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 0.0,
         "delta_solve_rate": 0.0,
@@ -356,12 +392,12 @@
         "solved_loop": 0,
         "repair_success_rate": 0.0,
         "repair_helped_n": 0,
-        "failed_single_n": 16,
+        "failed_single_n": 20,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "py_arith_01",
+            "id": "r2v_bil_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -370,7 +406,7 @@
             "actions": []
           },
           {
-            "id": "py_arith_02",
+            "id": "r2v_bil_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -379,7 +415,7 @@
             "actions": []
           },
           {
-            "id": "py_arith_03",
+            "id": "r2v_meas_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -388,7 +424,7 @@
             "actions": []
           },
           {
-            "id": "py_arith_04",
+            "id": "r2v_meas_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -397,7 +433,7 @@
             "actions": []
           },
           {
-            "id": "py_alg_01",
+            "id": "r2v_meas_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -406,7 +442,7 @@
             "actions": []
           },
           {
-            "id": "py_alg_02",
+            "id": "r2v_meas_04",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -415,7 +451,7 @@
             "actions": []
           },
           {
-            "id": "py_alg_03",
+            "id": "r2v_visneg_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -424,7 +460,7 @@
             "actions": []
           },
           {
-            "id": "py_alg_04",
+            "id": "r2v_visneg_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -433,7 +469,7 @@
             "actions": []
           },
           {
-            "id": "py_script_01",
+            "id": "r2v_visneg_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -442,7 +478,7 @@
             "actions": []
           },
           {
-            "id": "py_script_02",
+            "id": "r2v_crud_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -451,7 +487,7 @@
             "actions": []
           },
           {
-            "id": "py_script_03",
+            "id": "r2v_crud_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -460,7 +496,7 @@
             "actions": []
           },
           {
-            "id": "py_script_04",
+            "id": "r2v_crud_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -469,7 +505,7 @@
             "actions": []
           },
           {
-            "id": "py_script_05",
+            "id": "r2v_crud_04",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -478,7 +514,7 @@
             "actions": []
           },
           {
-            "id": "py_script_06",
+            "id": "r2v_jsonphys_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -487,7 +523,7 @@
             "actions": []
           },
           {
-            "id": "py_script_07",
+            "id": "r2v_jsonphys_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -496,7 +532,43 @@
             "actions": []
           },
           {
-            "id": "py_script_08",
+            "id": "r2v_jsonphys_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_jsonphys_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_bil_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_crud_05",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_meas_05",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -505,103 +577,127 @@
             "actions": []
           }
         ],
-        "n_items_total": 16,
-        "n_routed_python": 16,
+        "n_items_total": 20,
+        "n_routed_python": 20,
         "n_routed_away": 0,
         "solve_rate_on_python_lane": 0.0,
         "routing": [
           {
-            "id": "py_arith_01",
+            "id": "r2v_bil_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_arith_02",
+            "id": "r2v_bil_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_arith_03",
+            "id": "r2v_meas_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_arith_04",
+            "id": "r2v_meas_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_alg_01",
+            "id": "r2v_meas_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_alg_02",
+            "id": "r2v_meas_04",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_alg_03",
+            "id": "r2v_visneg_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_alg_04",
+            "id": "r2v_visneg_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_script_01",
+            "id": "r2v_visneg_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_script_02",
+            "id": "r2v_crud_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_script_03",
+            "id": "r2v_crud_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_script_04",
+            "id": "r2v_crud_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_script_05",
+            "id": "r2v_crud_04",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_script_06",
+            "id": "r2v_jsonphys_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_script_07",
+            "id": "r2v_jsonphys_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_script_08",
+            "id": "r2v_jsonphys_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_jsonphys_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_bil_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_crud_05",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_meas_05",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
@@ -610,20 +706,20 @@
       },
       "c_verifier_alone": {
         "path": "c_verifier_alone",
-        "n": 16,
+        "n": 20,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 1.0,
         "delta_solve_rate": 1.0,
         "solved_single": 0,
-        "solved_loop": 16,
+        "solved_loop": 20,
         "repair_success_rate": 1.0,
-        "repair_helped_n": 16,
-        "failed_single_n": 16,
+        "repair_helped_n": 20,
+        "failed_single_n": 20,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "py_arith_01",
+            "id": "r2v_bil_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -634,7 +730,7 @@
             ]
           },
           {
-            "id": "py_arith_02",
+            "id": "r2v_bil_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -645,7 +741,7 @@
             ]
           },
           {
-            "id": "py_arith_03",
+            "id": "r2v_meas_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -656,7 +752,7 @@
             ]
           },
           {
-            "id": "py_arith_04",
+            "id": "r2v_meas_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -667,7 +763,7 @@
             ]
           },
           {
-            "id": "py_alg_01",
+            "id": "r2v_meas_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -678,7 +774,7 @@
             ]
           },
           {
-            "id": "py_alg_02",
+            "id": "r2v_meas_04",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -689,7 +785,7 @@
             ]
           },
           {
-            "id": "py_alg_03",
+            "id": "r2v_visneg_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -700,7 +796,7 @@
             ]
           },
           {
-            "id": "py_alg_04",
+            "id": "r2v_visneg_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -711,7 +807,7 @@
             ]
           },
           {
-            "id": "py_script_01",
+            "id": "r2v_visneg_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -722,7 +818,7 @@
             ]
           },
           {
-            "id": "py_script_02",
+            "id": "r2v_crud_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -733,7 +829,7 @@
             ]
           },
           {
-            "id": "py_script_03",
+            "id": "r2v_crud_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -744,7 +840,7 @@
             ]
           },
           {
-            "id": "py_script_04",
+            "id": "r2v_crud_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -755,7 +851,7 @@
             ]
           },
           {
-            "id": "py_script_05",
+            "id": "r2v_crud_04",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -766,7 +862,7 @@
             ]
           },
           {
-            "id": "py_script_06",
+            "id": "r2v_jsonphys_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -777,7 +873,7 @@
             ]
           },
           {
-            "id": "py_script_07",
+            "id": "r2v_jsonphys_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -788,7 +884,51 @@
             ]
           },
           {
-            "id": "py_script_08",
+            "id": "r2v_jsonphys_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_jsonphys_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_bil_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_crud_05",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_meas_05",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -802,20 +942,20 @@
       },
       "d_moe_verifier_unified": {
         "path": "d_moe_verifier_unified",
-        "n": 16,
+        "n": 20,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 1.0,
         "delta_solve_rate": 1.0,
         "solved_single": 0,
-        "solved_loop": 16,
+        "solved_loop": 20,
         "repair_success_rate": 1.0,
-        "repair_helped_n": 16,
-        "failed_single_n": 16,
+        "repair_helped_n": 20,
+        "failed_single_n": 20,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "py_arith_01",
+            "id": "r2v_bil_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -826,7 +966,7 @@
             ]
           },
           {
-            "id": "py_arith_02",
+            "id": "r2v_bil_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -837,7 +977,7 @@
             ]
           },
           {
-            "id": "py_arith_03",
+            "id": "r2v_meas_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -848,7 +988,7 @@
             ]
           },
           {
-            "id": "py_arith_04",
+            "id": "r2v_meas_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -859,7 +999,7 @@
             ]
           },
           {
-            "id": "py_alg_01",
+            "id": "r2v_meas_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -870,7 +1010,7 @@
             ]
           },
           {
-            "id": "py_alg_02",
+            "id": "r2v_meas_04",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -881,7 +1021,7 @@
             ]
           },
           {
-            "id": "py_alg_03",
+            "id": "r2v_visneg_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -892,7 +1032,7 @@
             ]
           },
           {
-            "id": "py_alg_04",
+            "id": "r2v_visneg_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -903,7 +1043,7 @@
             ]
           },
           {
-            "id": "py_script_01",
+            "id": "r2v_visneg_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -914,7 +1054,7 @@
             ]
           },
           {
-            "id": "py_script_02",
+            "id": "r2v_crud_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -925,7 +1065,7 @@
             ]
           },
           {
-            "id": "py_script_03",
+            "id": "r2v_crud_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -936,7 +1076,7 @@
             ]
           },
           {
-            "id": "py_script_04",
+            "id": "r2v_crud_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -947,7 +1087,7 @@
             ]
           },
           {
-            "id": "py_script_05",
+            "id": "r2v_crud_04",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -958,7 +1098,7 @@
             ]
           },
           {
-            "id": "py_script_06",
+            "id": "r2v_jsonphys_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -969,7 +1109,7 @@
             ]
           },
           {
-            "id": "py_script_07",
+            "id": "r2v_jsonphys_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -980,7 +1120,51 @@
             ]
           },
           {
-            "id": "py_script_08",
+            "id": "r2v_jsonphys_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_jsonphys_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_bil_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_crud_05",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_meas_05",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -991,103 +1175,127 @@
             ]
           }
         ],
-        "n_items_total": 16,
-        "n_routed_python": 16,
+        "n_items_total": 20,
+        "n_routed_python": 20,
         "n_routed_away": 0,
         "solve_rate_on_python_lane": 1.0,
         "routing": [
           {
-            "id": "py_arith_01",
+            "id": "r2v_bil_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_arith_02",
+            "id": "r2v_bil_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_arith_03",
+            "id": "r2v_meas_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_arith_04",
+            "id": "r2v_meas_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_alg_01",
+            "id": "r2v_meas_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_alg_02",
+            "id": "r2v_meas_04",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_alg_03",
+            "id": "r2v_visneg_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_alg_04",
+            "id": "r2v_visneg_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_script_01",
+            "id": "r2v_visneg_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_script_02",
+            "id": "r2v_crud_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_script_03",
+            "id": "r2v_crud_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_script_04",
+            "id": "r2v_crud_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_script_05",
+            "id": "r2v_crud_04",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_script_06",
+            "id": "r2v_jsonphys_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_script_07",
+            "id": "r2v_jsonphys_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "py_script_08",
+            "id": "r2v_jsonphys_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_jsonphys_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_bil_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_crud_05",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_meas_05",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
@@ -1098,7 +1306,7 @@
     "comparison_table": [
       {
         "path": "baseline_single_no_moe",
-        "n": 16,
+        "n": 20,
         "metric": "solve_rate_single",
         "rate": 0.0,
         "delta_vs_baseline": 0.0,
@@ -1107,7 +1315,7 @@
       },
       {
         "path": "moe_alone_python_lane",
-        "n": 16,
+        "n": 20,
         "metric": "solve_rate_single",
         "rate": 0.0,
         "delta_vs_baseline": 0.0,
@@ -1116,7 +1324,7 @@
       },
       {
         "path": "verifier_alone",
-        "n": 16,
+        "n": 20,
         "metric": "solve_rate_loop",
         "rate": 1.0,
         "delta_vs_baseline": 1.0,
@@ -1125,7 +1333,7 @@
       },
       {
         "path": "moe_verifier_unified_python_lane",
-        "n": 16,
+        "n": 20,
         "metric": "solve_rate_loop",
         "rate": 1.0,
         "delta_vs_baseline": 1.0,
@@ -1174,222 +1382,262 @@
   "notes": [],
   "hardneg_router": {
     "method": "heuristic",
-    "n": 18,
-    "hits": 18,
+    "n": 22,
+    "hits": 22,
     "misses": 0,
-    "score": "18/18",
+    "score": "22/22",
     "rate": 1.0,
     "by_family": {
-      "python_looks_like_physics": {
-        "n": 4,
-        "hits": 4,
-        "rate": 1.0
-      },
-      "ent_wording_in_coding": {
-        "n": 6,
-        "hits": 6,
-        "rate": 1.0
-      },
-      "vision_caption_ambiguous": {
+      "bilingual_trap": {
         "n": 5,
         "hits": 5,
         "rate": 1.0
       },
-      "ent_control": {
-        "n": 2,
-        "hits": 2,
+      "measure_in_comment": {
+        "n": 4,
+        "hits": 4,
         "rate": 1.0
       },
-      "base_control": {
-        "n": 1,
-        "hits": 1,
+      "vision_words_no_image": {
+        "n": 5,
+        "hits": 5,
+        "rate": 1.0
+      },
+      "ent_metaphor_crud": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      },
+      "json_looking_physics": {
+        "n": 4,
+        "hits": 4,
         "rate": 1.0
       }
     },
     "ent_never_on_python": true,
     "rows": [
       {
-        "id": "hn_py_physics_01",
-        "family": "python_looks_like_physics",
+        "id": "r2_bil_01",
+        "family": "bilingual_trap",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints the integer classical free-fall distance int(0.5 * 9.81",
+        "prompt_preview": "Escribe un programa en Python que imprima 3**5. Circuitos y qubits en este párra",
         "ent_adapter_blocked": true
       },
       {
-        "id": "hn_py_physics_02",
-        "family": "python_looks_like_physics",
+        "id": "r2_bil_02",
+        "family": "bilingual_trap",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write a Python program that prints int(v0*t - 0.5*g*t*t) for ballistic height wi",
+        "prompt_preview": "Write Python that prints len('superposición'). La palabra cuántica es un string,",
         "ent_adapter_blocked": true
       },
       {
-        "id": "hn_py_physics_03",
-        "family": "python_looks_like_physics",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "def kinetic_energy(m, v):\n    return int(0.5 * m * v * v)\nprint(kinetic_energy(4",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "hn_py_physics_04",
-        "family": "python_looks_like_physics",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Write Python to simulate a 1D elastic collision velocity and print the integer r",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "hn_py_entword_01",
-        "family": "ent_wording_in_coding",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Write a Python program that prints the length of the string 'entanglement'. Outp",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "hn_py_entword_02",
-        "family": "ent_wording_in_coding",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Write Python that counts how many times the substring 'qubit' appears in: 'qubit",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "hn_py_entword_03",
-        "family": "ent_wording_in_coding",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Write Python that prints 2**10. Mentions of Bell pairs, entanglement, or gates i",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "hn_py_entword_04",
-        "family": "ent_wording_in_coding",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "import math\nprint(int(math.factorial(6)))\n# Python sandbox task — ignore any ent",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "hn_py_entword_05",
-        "family": "ent_wording_in_coding",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Write a Python program that prints the word 'Hadamard' character count (len). ON",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "hn_vis_amb_01",
-        "family": "vision_caption_ambiguous",
-        "expected": "vision",
-        "got": "vision",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Look at the image caption overlay. How many street lights are visible in the fra",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "hn_vis_amb_02",
-        "family": "vision_caption_ambiguous",
-        "expected": "vision",
-        "got": "vision",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Photo of a table: red ball, blue cube, green cone. In the image, how many object",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "hn_vis_amb_03",
-        "family": "vision_caption_ambiguous",
+        "id": "r2_bil_03",
+        "family": "bilingual_trap",
         "expected": "base",
         "got": "base",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Text-only description (no image file attached): There are 2 cats and 1 dog. How ",
+        "prompt_preview": "Hola! Gracias por el chat. ¿Algún dicho divertido sobre el clima? No code, no ci",
         "ent_adapter_blocked": false
       },
       {
-        "id": "hn_vis_amb_04",
-        "family": "vision_caption_ambiguous",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Pure chat: someone said 'three rockets launched'. Without any picture or png, wh",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "hn_vis_amb_05",
-        "family": "vision_caption_ambiguous",
-        "expected": "vision",
-        "got": "vision",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Mira la imagen. La visión muestra semáforos en el video frame. ¿Cuántos? Solo el",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "hn_ent_clean_01",
-        "family": "ent_control",
+        "id": "r2_bil_04",
+        "family": "bilingual_trap",
         "expected": "ent",
         "got": "ent",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Propose a quantum circuit with n_qubits and gates for a Bell-pair entanglement s",
+        "prompt_preview": "Propón un circuito cuántico con n_qubits y gates para un Bell-pair. Responde SOL",
         "ent_adapter_blocked": false
       },
       {
-        "id": "hn_ent_clean_02",
-        "family": "ent_control",
-        "expected": "ent",
-        "got": "ent",
+        "id": "r2_bil_05",
+        "family": "bilingual_trap",
+        "expected": "vision",
+        "got": "vision",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Build a PennyLane circuit: Hadamard then CX on qubits 0,1. Return n_qubits and g",
+        "prompt_preview": "Observa la imagen adjunta del panel. En la foto, ¿cuántos botones rojos se ven? ",
         "ent_adapter_blocked": false
       },
       {
-        "id": "hn_base_01",
-        "family": "base_control",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Hello! Thanks for the earlier chat. Any fun weather idioms?",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "hn_py_gate_garden_01",
-        "family": "ent_wording_in_coding",
+        "id": "r2_meas_01",
+        "family": "measure_in_comment",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints s.count('gate') for s='the garden gate is closed'. ONLY",
+        "prompt_preview": "Write Python that prints 17+4.\n# TODO: measure the runtime later — ignore quantu",
         "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_meas_02",
+        "family": "measure_in_comment",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "def score(xs):\n    return sum(xs)\nprint(score([2,3,5]))\n# measure accuracy offli",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_meas_03",
+        "family": "measure_in_comment",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write a Python program that prints int(9*9). Comment in code may say 'measure tw",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_meas_04",
+        "family": "measure_in_comment",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "import math\nprint(int(math.sqrt(144)))\n# measure := wall-clock; no pennylane, no",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_visneg_01",
+        "family": "vision_words_no_image",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Chat only — no image file, no png attached. Someone said 'four frames of film'. ",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r2_visneg_02",
+        "family": "vision_words_no_image",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints the length of the string 'screenshot.png'. Text-only ta",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_visneg_03",
+        "family": "vision_words_no_image",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 'photo'.count('o'). Pure chat coding — sin imagen, no f",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_visneg_04",
+        "family": "vision_words_no_image",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Text-only description (no image): the spreadsheet has 5 rows. How many rows? Rep",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r2_visneg_05",
+        "family": "vision_words_no_image",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Look at the image. In the screenshot of the UI, how many tabs are visible in the",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r2_crud_01",
+        "family": "ent_metaphor_crud",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len(['user_a','user_b']) after we 'entangle' two CRUD r",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_crud_02",
+        "family": "ent_metaphor_crud",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python: users={'alice':1,'bob':2}; print(sum(users.values())). Metaphor: '",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_crud_03",
+        "family": "ent_metaphor_crud",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write a Python program that prints 2 if we 'Bell-pair' match two DB rows else 0 ",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_crud_04",
+        "family": "ent_metaphor_crud",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "def merge(a,b):\n    return {**a,**b}\nprint(len(merge({'x':1},{'y':2})))\n# 'entan",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_jsonphys_01",
+        "family": "json_looking_physics",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints int(0.5*2*3*3)  # like {\"ke\":0.5*m*v*v} but OUTPUT code",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_jsonphys_02",
+        "family": "json_looking_physics",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "The note says {\"omega\": 2*3.1416, \"f\": 5}. Write Python that prints int(2*3.1416",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_jsonphys_03",
+        "family": "json_looking_physics",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python to print int((9.8*10)//1) given toy payload {\"g\":9.8,\"t\":10,\"kind\":",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_jsonphys_04",
+        "family": "json_looking_physics",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Return a valid JSON object with n_qubits and gates for a Bell-pair entanglement ",
+        "ent_adapter_blocked": false
       }
     ],
-    "fixture_path": "data/bench_live/hardneg_mixed_router.json",
+    "fixture_path": "data/bench_live/hardneg_r2_mixed_router.json",
     "anti_contamination": {
       "expected_lane_harness_only": true,
       "gt_never_in_route_api": true
@@ -1397,7 +1645,7 @@
   },
   "hardneg_delta": {
     "router_rate": 1.0,
-    "router_score": "18/18",
+    "router_score": "22/22",
     "ent_never_on_python": true,
     "vs_freeze_floor": "hold"
   }

@@ -1,7 +1,7 @@
 {
   "frontier": "C3-moe-verifier-codigo-vivo",
-  "written": "2026-09-24 10:50:48",
-  "mode": "smoke",
+  "written": "2026-09-24 10:54:30",
+  "mode": "cpu-eval",
   "router_method": "heuristic",
   "claims": [
     "NO quantum-advantage claims",
@@ -181,14 +181,14 @@
     }
   },
   "python_paths": {
-    "n_items": 5,
+    "n_items": 16,
     "proposer": "heuristic",
     "router_method": "heuristic",
     "rounds_max": 2,
     "paths": {
       "a_single_shot_no_moe": {
         "path": "a_single_shot_no_moe",
-        "n": 5,
+        "n": 16,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 0.0,
         "delta_solve_rate": 0.0,
@@ -196,7 +196,7 @@
         "solved_loop": 0,
         "repair_success_rate": 0.0,
         "repair_helped_n": 0,
-        "failed_single_n": 5,
+        "failed_single_n": 16,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
@@ -238,6 +238,105 @@
           },
           {
             "id": "py_alg_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_alg_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_alg_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_alg_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_05",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_06",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_07",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_08",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -249,7 +348,7 @@
       },
       "b_moe_alone": {
         "path": "b_moe_alone",
-        "n": 5,
+        "n": 16,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 0.0,
         "delta_solve_rate": 0.0,
@@ -257,7 +356,7 @@
         "solved_loop": 0,
         "repair_success_rate": 0.0,
         "repair_helped_n": 0,
-        "failed_single_n": 5,
+        "failed_single_n": 16,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
@@ -305,10 +404,109 @@
             "repair_helped": false,
             "prompt_touches_gt": false,
             "actions": []
+          },
+          {
+            "id": "py_alg_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_alg_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_alg_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_05",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_06",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_07",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_08",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
           }
         ],
-        "n_items_total": 5,
-        "n_routed_python": 5,
+        "n_items_total": 16,
+        "n_routed_python": 16,
         "n_routed_away": 0,
         "solve_rate_on_python_lane": 0.0,
         "routing": [
@@ -341,20 +539,86 @@
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_alg_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_alg_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_alg_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_05",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_06",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_07",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_08",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
           }
         ]
       },
       "c_verifier_alone": {
         "path": "c_verifier_alone",
-        "n": 5,
+        "n": 16,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 1.0,
         "delta_solve_rate": 1.0,
         "solved_single": 0,
-        "solved_loop": 5,
+        "solved_loop": 16,
         "repair_success_rate": 1.0,
-        "repair_helped_n": 5,
-        "failed_single_n": 5,
+        "repair_helped_n": 16,
+        "failed_single_n": 16,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
@@ -404,6 +668,127 @@
           },
           {
             "id": "py_alg_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_alg_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_alg_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_alg_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_05",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_06",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_07",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_08",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -417,15 +802,15 @@
       },
       "d_moe_verifier_unified": {
         "path": "d_moe_verifier_unified",
-        "n": 5,
+        "n": 16,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 1.0,
         "delta_solve_rate": 1.0,
         "solved_single": 0,
-        "solved_loop": 5,
+        "solved_loop": 16,
         "repair_success_rate": 1.0,
-        "repair_helped_n": 5,
-        "failed_single_n": 5,
+        "repair_helped_n": 16,
+        "failed_single_n": 16,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
@@ -483,10 +868,131 @@
             "actions": [
               "strip_trailing_prose"
             ]
+          },
+          {
+            "id": "py_alg_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_alg_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_alg_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_05",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_06",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_07",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_08",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
           }
         ],
-        "n_items_total": 5,
-        "n_routed_python": 5,
+        "n_items_total": 16,
+        "n_routed_python": 16,
         "n_routed_away": 0,
         "solve_rate_on_python_lane": 1.0,
         "routing": [
@@ -519,6 +1025,72 @@
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_alg_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_alg_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_alg_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_05",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_06",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_07",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_08",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
           }
         ]
       }
@@ -526,7 +1098,7 @@
     "comparison_table": [
       {
         "path": "baseline_single_no_moe",
-        "n": 5,
+        "n": 16,
         "metric": "solve_rate_single",
         "rate": 0.0,
         "delta_vs_baseline": 0.0,
@@ -535,7 +1107,7 @@
       },
       {
         "path": "moe_alone_python_lane",
-        "n": 5,
+        "n": 16,
         "metric": "solve_rate_single",
         "rate": 0.0,
         "delta_vs_baseline": 0.0,
@@ -544,7 +1116,7 @@
       },
       {
         "path": "verifier_alone",
-        "n": 5,
+        "n": 16,
         "metric": "solve_rate_loop",
         "rate": 1.0,
         "delta_vs_baseline": 1.0,
@@ -553,7 +1125,7 @@
       },
       {
         "path": "moe_verifier_unified_python_lane",
-        "n": 5,
+        "n": 16,
         "metric": "solve_rate_loop",
         "rate": 1.0,
         "delta_vs_baseline": 1.0,

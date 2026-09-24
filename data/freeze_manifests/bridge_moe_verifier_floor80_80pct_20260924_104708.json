@@ -1,0 +1,20 @@
+{
+  "schema": "qlab_freeze_manifest_v1",
+  "frozen_at_et": "2026-09-24 10:47:08 ET",
+  "domain": "bridge_moe_verifier_floor80",
+  "pct": 80.0,
+  "band": "80",
+  "git_sha": "3eeeb33414b763175379b53988f0965f552f14fe",
+  "git_sha_short": "3eeeb33",
+  "artifact": "data/frontier_moe_verifier_cpu_n16.json",
+  "eval_path": null,
+  "metrics": {
+    "solve_rate_loop_floor": 0.8,
+    "solve_rate_loop_measured": 0.875,
+    "n": 16,
+    "ent_never_on_python": true,
+    "lock": "never_abandon_80"
+  },
+  "note": "LOCK floor 80%: measured unified/verifier 0.875 (n=16). Polish upward; never abandon this floor.",
+  "policy": "Do not abandon; polish and/or reinforce around. RO quantum adapters."
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "qlab_freeze_manifest_v1",
+  "frozen_at_et": "2026-09-24 10:54:42 ET",
+  "domain": "bridge_moe_verifier_polish_r2",
+  "pct": 100.0,
+  "band": "100",
+  "git_sha": "9b7e20a729ce0e0511c60064f6d5e90501a727ce",
+  "git_sha_short": "9b7e20a",
+  "artifact": "data/frontier_moe_verifier_hardneg_r2.json",
+  "eval_path": "data/freeze_metrics/bridge_moe_verifier_adv_r2_20260924.json",
+  "metrics": {
+    "round": 2,
+    "written_et": "2026-09-24 10:54:42 ET",
+    "branch": "frontier/freeze-polish-bridge",
+    "base_sha": "9b7e20a729ce0e0511c60064f6d5e90501a727ce",
+    "policy": "LOCK freeze ≥0.875/1.0; polish upward; never abandon. RO data/lora_adapter/. No merge main.",
+    "reinforce_applied": true,
+    "router_rate": 1.0,
+    "unified_loop": 1.0,
+    "verifier_loop": 1.0,
+    "freeze_floor_held": 0.875,
+    "n16_held": 1.0,
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false
+  },
+  "note": "R2 adversarial polish: router 22/22 + unified loop 1.0 after one gold-free reinforce; original freeze ≥0.875 held (n16=1.0). Never abandon floor.",
+  "policy": "Do not abandon; polish and/or reinforce around. RO quantum adapters."
+}

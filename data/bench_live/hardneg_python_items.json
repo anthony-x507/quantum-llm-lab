@@ -1,0 +1,92 @@
+{
+  "n": 12,
+  "kind": "hardneg_python_verifier",
+  "created": "2026-09-24 10:48:00 ET",
+  "seed_doc": "hard-neg mixed; GT stdout harness-only",
+  "items": [
+    {
+      "id": "hnv_freefall_01",
+      "kind": "physics_lookalike",
+      "prompt": "Write Python that prints the integer classical free-fall distance int(0.5 * 9.81 * 4 * 4). Output ONLY the code, no markdown fences.",
+      "expected_stdout": "78\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "hnv_ballistic_01",
+      "kind": "physics_lookalike",
+      "prompt": "Write a Python program that prints int(20*2 - 0.5*10*2*2) for a ballistic height toy formula. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "hnv_ke_01",
+      "kind": "physics_lookalike",
+      "prompt": "def kinetic_energy(m, v):\n    return int(0.5 * m * v * v)\nprint(kinetic_energy(4, 3))\n# run this Python helper",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "hnv_collision_01",
+      "kind": "physics_lookalike",
+      "prompt": "Write Python to print the integer (u1*(m1-m2)+2*m2*u2)//(m1+m2) for m1=3 m2=1 u1=4 u2=0. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "hnv_entstr_01",
+      "kind": "ent_wording_coding",
+      "prompt": "Write a Python program that prints the length of the string 'entanglement'. Output ONLY the code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "hnv_qubitcnt_01",
+      "kind": "ent_wording_coding",
+      "prompt": "Write Python that counts how many times 'qubit' appears in 'qubit qubit circuit' and prints that integer. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "hnv_pow_distract_01",
+      "kind": "ent_wording_coding",
+      "prompt": "Write Python that prints 2**10. Mentions of Bell pairs or entanglement here are distractors \u2014 do not emit circuit JSON.",
+      "expected_stdout": "1024\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "hnv_hadamard_len_01",
+      "kind": "ent_wording_coding",
+      "prompt": "Write a Python program that prints len('Hadamard'). ONLY executable code, no circuit JSON.",
+      "expected_stdout": "8\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "hnv_gate_garden_01",
+      "kind": "ent_wording_coding",
+      "prompt": "Write Python that prints 'the garden gate is closed'.count('gate'). ONLY code \u2014 string count, not quantum gates.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "hnv_fact_01",
+      "kind": "ent_wording_coding",
+      "prompt": "import math\nprint(int(math.factorial(6)))\n# Python sandbox \u2014 ignore entanglement jargon",
+      "expected_stdout": "720\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "hnv_sum_range_01",
+      "kind": "physics_lookalike",
+      "prompt": "Write Python that prints sum(range(1,11)) as an integer energy-bin counter. ONLY code.",
+      "expected_stdout": "55\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "hnv_drag_01",
+      "kind": "physics_lookalike",
+      "prompt": "Write Python that prints int(100 * (1 - 2.71828**(-0.1*3))) as a toy drag remainder. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    }
+  ]
+}
