@@ -1,0 +1,26 @@
+{
+  "schema": "tip_moe_verifier_polish_rN_100pct",
+  "frozen_at_et": "2026-09-24 1:52:00 ET",
+  "domain": "codigo_vivo_tip_r11",
+  "pct": 100,
+  "band": "100pct",
+  "git_sha": "6bb06fc4dccebe32d087d085a24b506b89d3d34f",
+  "git_sha_short": "6bb06fc",
+  "artifact": "data/frontier_moe_verifier_hardneg_r11.json",
+  "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
+  "metrics": {
+    "r11_router": "52/52",
+    "r11_verifier_alone": 1.0,
+    "r11_unified": 1.0,
+    "mixed_d_unified": 1.0,
+    "ent_never_on_python": true
+  },
+  "floors": {
+    "mixed_d_unified": 0.9667,
+    "held": true
+  },
+  "policy": "RO data/lora_adapter/; no merge main; R1\u2013R10+LP held; anti-contam",
+  "polish_commit": "6bb06fc",
+  "note": "R11 hardneg polish on tip 1304d1a (post R10 fold) on frontier/tip-hardneg-r11",
+  "base_tip_sha": "1304d1a3246c0a7f5d6669d84900e14c596dffff"
+}

@@ -48,7 +48,7 @@ Avoided (R9/R10): OpenAPI/Helm/Pulumi/… and AsyncAPI/Nomad/Vault/Istio/ArgoCD/
 
 | Manifest | pct |
 |----------|-----|
-| `data/freeze_manifests/tip_moe_verifier_polish_r11_100pct_*.json` | **100** |
+| `data/freeze_manifests/tip_moe_verifier_polish_r11_100pct_20260924_135200.json` | **100** |
 
 Evidence: `data/freeze_metrics/codigo_vivo_tip_adv_r11_20260924.json`
 
@@ -72,7 +72,7 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `data/frontier_moe_verifier_hardneg_r11.json`
 - `data/frontier_moe_verifier_mixed_{cpu,unified}.json`
 - `data/freeze_metrics/codigo_vivo_tip_adv_r11_20260924.json`
-- `data/freeze_manifests/tip_moe_verifier_polish_r11_100pct_*.json`
+- `data/freeze_manifests/tip_moe_verifier_polish_r11_100pct_20260924_135200.json`
 - `docs/FRONTIER-CODIGO-VIVO-TIP-R11.md` (this file)
 
 ## Not folded
