@@ -731,10 +731,20 @@ def sample_configs(n_scenes: int, rng: random.Random) -> list[dict[str, Any]]:
         "bell_hcx", "bell_xhcx", "bell_hxcx", "bell_xxhcx",
         "bell_hcxz", "bell_yhcx", "bell_hcxry",
         "bell_zhcx", "bell_hycx", "bell_ryhcx", "bell_hcx_x",
+        "bell_xhcxz", "bell_zxhcx", "bell_yhcx_x",
+        "bell_hcxryz", "bell_xyhcx", "bell_hcxh", "bell_ryxhcx",
+        "bell_yxhcx", "bell_hcxryx", "bell_hzcx", "bell_ryzhcx",
+        "bell_zhcxry", "bell_hycxry", "bell_xxhcxz", "bell_ryhcxz",
+        "bell_xhycx", "bell_hcxryh", "bell_zyhcx", "bell_hcxzx",
     ]
     ENT_TEMPLATES_SEP = [
         "sep_hh", "sep_xx", "sep_hy", "sep_ryry", "sep_hx", "sep_zz", "sep_yh",
         "sep_xy", "sep_hz", "sep_yz", "sep_ryx",
+        "sep_yy", "sep_zx", "sep_ryz", "sep_xry",
+        "sep_hry", "sep_xh", "sep_hxy", "sep_ryh",
+        "sep_xhry", "sep_hzx", "sep_xyh", "sep_ryxh",
+        "sep_zxh", "sep_yhry", "sep_hzy", "sep_ryxy",
+        "sep_zyh", "sep_hxx", "sep_ryhz", "sep_xyz",
     ]
     n_ent = max(12, int(n_scenes * 0.38))
     for i in range(n_ent):
@@ -901,13 +911,23 @@ def generate_dataset(
             if domain_only == "entanglement":
                 entangled = i % 3 != 0
                 ENT_B = [
+                    "bell_xhycx", "bell_hcxryh", "bell_zyhcx", "bell_hcxzx",
+                    "bell_zhcxry", "bell_hycxry", "bell_xxhcxz", "bell_ryhcxz",
+                    "bell_yxhcx", "bell_hcxryx", "bell_hzcx", "bell_ryzhcx",
+                    "bell_hcxryz", "bell_xyhcx", "bell_hcxh", "bell_ryxhcx",
                     "bell_hcx", "bell_xhcx", "bell_hxcx", "bell_xxhcx",
                     "bell_hcxz", "bell_yhcx", "bell_hcxry",
                     "bell_zhcx", "bell_hycx", "bell_ryhcx", "bell_hcx_x",
+                    "bell_xhcxz", "bell_zxhcx", "bell_yhcx_x",
                 ]
                 ENT_S = [
+                    "sep_zyh", "sep_hxx", "sep_ryhz", "sep_xyz",
+                    "sep_zxh", "sep_yhry", "sep_hzy", "sep_ryxy",
+                    "sep_xhry", "sep_hzx", "sep_xyh", "sep_ryxh",
+                    "sep_hry", "sep_xh", "sep_hxy", "sep_ryh",
                     "sep_hh", "sep_xx", "sep_hy", "sep_ryry", "sep_hx", "sep_zz", "sep_yh",
                     "sep_xy", "sep_hz", "sep_yz", "sep_ryx",
+                    "sep_yy", "sep_zx", "sep_ryz", "sep_xry",
                 ]
                 forced.append({
                     "domain": "entanglement",
