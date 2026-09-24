@@ -531,6 +531,20 @@ def propose_heuristic(item: dict[str, Any], *, fault: str = "prose_tail") -> str
         prompt,
         re.I,
     )
+    # R4: len('csv'.split(',')) / len(str.split(...))
+    m_len_split = re.search(
+        r"\blen\s*\(\s*(['\"][^'\"]*['\"]\s*\.\s*split\s*\(\s*['\"][^'\"]*['\"]\s*\))\s*\)",
+        prompt,
+    )
+    # R4: from dataclasses import dataclass ... print(Class(...).field)
+    m_dataclass_block = re.search(
+        r"(from\s+dataclasses\s+import\s+dataclass\s*\n"
+        r"@dataclass\s*\n"
+        r"class\s+\w+\s*:\s*\n"
+        r"(?:[ \t]+[^\n]*\n)+"
+        r"print\s*\([^\n]+\))",
+        prompt,
+    )
     # Collision toy formula spelled with named vars
     m_coll = re.search(
         r"\(u1\*\(m1-m2\)\+2\*m2\*u2\)//\(m1\+m2\).*?m1\s*=\s*(\d+).*?m2\s*=\s*(\d+).*?u1\s*=\s*(\d+).*?u2\s*=\s*(\d+)",
@@ -571,6 +585,10 @@ def propose_heuristic(item: dict[str, Any], *, fault: str = "prose_tail") -> str
         code = f"print(sum({lst}))"
     elif m_import_findall:
         code = f"print({m_import_findall.group(1)})"
+    elif m_dataclass_block:
+        code = m_dataclass_block.group(1).rstrip()
+    elif m_len_split:
+        code = f"print(len({m_len_split.group(1)}))"
     elif m_def_block:
         code = m_def_block.group(1).rstrip()
     elif m_fact_embed:

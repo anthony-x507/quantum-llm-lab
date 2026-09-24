@@ -1,0 +1,233 @@
+{
+  "n": 32,
+  "kind": "hardneg_r4_python_items",
+  "created": "2026-09-24 11:25:00 ET",
+  "round": 4,
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R4.md",
+  "items": [
+    {
+      "id": "r4v_yaml_01",
+      "kind": "yaml_key_qubit",
+      "prompt": "Write Python that prints len('qubit: 3'). YAML key distractor. ONLY code.",
+      "expected_stdout": "8\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_yaml_02",
+      "kind": "yaml_key_qubit",
+      "prompt": "cfg = 'hadamard: cleanup\\ncx: nightly'\nprint(cfg.count(':'))\n# YAML ops labels. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_yaml_03",
+      "kind": "yaml_key_qubit",
+      "prompt": "Write Python that prints int(4*5). YAML n_qubits: 0 is a distractor. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_yaml_04",
+      "kind": "yaml_key_qubit",
+      "prompt": "Write Python that prints 2**4. Config gates=hadamard_cleanup is a string label. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_sql_01",
+      "kind": "sql_column_bell",
+      "prompt": "Write Python that prints len('SELECT bell, cx FROM scores'). ONLY code.",
+      "expected_stdout": "27\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_sql_02",
+      "kind": "sql_column_bell",
+      "prompt": "q = 'SELECT COUNT(*) FROM gates'\nprint(len(q))\n# table name. ONLY code.",
+      "expected_stdout": "26\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_sql_03",
+      "kind": "sql_column_bell",
+      "prompt": "Write Python that prints 9+8. SQL measure jargon distractor. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_dock_01",
+      "kind": "docker_image_pennylane",
+      "prompt": "Write Python that prints len('pennylane/ci:latest'). ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_dock_02",
+      "kind": "docker_image_pennylane",
+      "prompt": "img = 'ghcr.io/org/qubit-proxy:1.2'\nprint(img.count('/'))\n# docker ref. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_dock_03",
+      "kind": "docker_image_pennylane",
+      "prompt": "Write Python that prints 6*6. Image tag circuit-runner distractor. ONLY code.",
+      "expected_stdout": "36\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_git_01",
+      "kind": "git_ref_entangle",
+      "prompt": "Write Python that prints len('feature/entangle-users'). ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_git_02",
+      "kind": "git_ref_entangle",
+      "prompt": "msg = 'fix: unbell the flaky test'\nprint(msg.count('l'))\n# commit subject. ONLY code.",
+      "expected_stdout": "3\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_git_03",
+      "kind": "git_ref_entangle",
+      "prompt": "Write Python that prints 11+11. PR title Hadamard CSS distractor. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_schema_01",
+      "kind": "json_schema_prop",
+      "prompt": "Write Python that prints len('n_qubits'). Property name string. ONLY code.",
+      "expected_stdout": "8\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_schema_02",
+      "kind": "json_schema_prop",
+      "prompt": "Write Python that prints 3+4. Schema reply-JSON-only note is distractor. ONLY code.",
+      "expected_stdout": "7\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_schema_04",
+      "kind": "json_schema_prop",
+      "prompt": "props = ['gates','shots','seed']\nprint(len(props))\n# schema props. ONLY code.",
+      "expected_stdout": "3\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_csv_01",
+      "kind": "csv_header_cx",
+      "prompt": "Write Python that prints len('cx,bell,shots'.split(',')). ONLY code.",
+      "expected_stdout": "3\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_csv_02",
+      "kind": "csv_header_cx",
+      "prompt": "hdr = 'hadamard,ry,rz'\nprint(hdr.count(','))\n# csv headers. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_csv_03",
+      "kind": "csv_header_cx",
+      "prompt": "Write Python that prints sum([1,2,3,4]). Column entanglement_score distractor. ONLY code.",
+      "expected_stdout": "10\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_stack_01",
+      "kind": "stack_trace_gate",
+      "prompt": "Write Python that prints len('GateError: boom'). ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_stack_02",
+      "kind": "stack_trace_gate",
+      "prompt": "tb = 'File circuit_ui.py, line 10, in render'\nprint(len(tb))\n# stack path. ONLY code.",
+      "expected_stdout": "38\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_stack_03",
+      "kind": "stack_trace_gate",
+      "prompt": "Write Python that prints 100-55. UnitaryTransform class-name distractor. ONLY code.",
+      "expected_stdout": "45\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_dc_01",
+      "kind": "dataclass_n_qubits",
+      "prompt": "from dataclasses import dataclass\n@dataclass\nclass Job:\n    n_qubits: int = 0\nprint(Job(n_qubits=7).n_qubits)\n# classical counter field. ONLY code.",
+      "expected_stdout": "7\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_dc_02",
+      "kind": "dataclass_n_qubits",
+      "prompt": "Write Python that prints 5*3. Field bell_pair_id distractor. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_dc_03",
+      "kind": "dataclass_n_qubits",
+      "prompt": "Write Python that prints len('CircuitConfig'). ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_mail_01",
+      "kind": "email_subject_quantum",
+      "prompt": "Write Python that prints len('Re: quantum leap in Q3 sales'). ONLY code.",
+      "expected_stdout": "28\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_mail_02",
+      "kind": "email_subject_quantum",
+      "prompt": "subj = 'FW: entangle the two CRM leads'\nprint(subj.count('e'))\n# email. ONLY code.",
+      "expected_stdout": "4\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_toml_01",
+      "kind": "toml_section_qubits",
+      "prompt": "Write Python that prints len('[qubits]'). ONLY code.",
+      "expected_stdout": "8\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_toml_02",
+      "kind": "toml_section_qubits",
+      "prompt": "Write Python that prints 8*2. INI [pennylane] distractor. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_toml_03",
+      "kind": "toml_section_qubits",
+      "prompt": "Write Python that prints int(7*7). TOML gates: [] allow-list distractor. ONLY code.",
+      "expected_stdout": "49\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_mmd_01",
+      "kind": "mermaid_text_diagram",
+      "prompt": "Mermaid text (sin imagen): Write Python that prints 3. ONLY code.",
+      "expected_stdout": "3\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r4v_mmd_03",
+      "kind": "mermaid_text_diagram",
+      "prompt": "Write Python that prints 'diagram'.count('a'). Text-only plantuml. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    }
+  ]
+}

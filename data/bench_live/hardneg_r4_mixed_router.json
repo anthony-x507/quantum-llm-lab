@@ -1,0 +1,250 @@
+{
+  "n": 40,
+  "kind": "hardneg_r4_mixed_router",
+  "created": "2026-09-24 11:25:00 ET",
+  "round": 4,
+  "note": "R4 NEW traps (not R1/R2/R3): yaml_key_qubit, sql_column_bell, docker_image_pennylane, git_ref_entangle, json_schema_prop, csv_header_cx, stack_trace_gate, dataclass_n_qubits, email_subject_quantum, toml_section_qubits, mermaid_text_diagram. HARD: gates= config label + schema reply-JSON-only + n_qubits field. GT harness-only.",
+  "anti_contamination": "expected lane is harness-only; never injected into route()",
+  "items": [
+    {
+      "id": "r4_yaml_01",
+      "expected": "python",
+      "family": "yaml_key_qubit",
+      "prompt": "Write Python that prints len('qubit: 3'). YAML key 'qubit' is a config label, not a circuit ask. ONLY code."
+    },
+    {
+      "id": "r4_yaml_02",
+      "expected": "python",
+      "family": "yaml_key_qubit",
+      "prompt": "cfg = 'hadamard: cleanup\\ncx: nightly'\nprint(cfg.count(':'))\n# YAML keys named hadamard/cx are ops labels, not PennyLane. ONLY code."
+    },
+    {
+      "id": "r4_yaml_03",
+      "expected": "python",
+      "family": "yaml_key_qubit",
+      "prompt": "Write Python that prints int(4*5). A YAML snippet may show n_qubits: 0 as a disabled feature flag — ignore. ONLY code."
+    },
+    {
+      "id": "r4_yaml_04",
+      "expected": "python",
+      "family": "yaml_key_qubit",
+      "prompt": "Write Python that prints 2**4. Ops config line gates=hadamard_cleanup is a string label in YAML, not a circuit JSON ask. ONLY code."
+    },
+    {
+      "id": "r4_sql_01",
+      "expected": "python",
+      "family": "sql_column_bell",
+      "prompt": "Write Python that prints len('SELECT bell, cx FROM scores'). SQL column names bell/cx are classical analytics. ONLY code."
+    },
+    {
+      "id": "r4_sql_02",
+      "expected": "python",
+      "family": "sql_column_bell",
+      "prompt": "q = 'SELECT COUNT(*) FROM gates'\nprint(len(q))\n# table named gates is a sports scoreboard, not quantum gates. ONLY code."
+    },
+    {
+      "id": "r4_sql_03",
+      "expected": "python",
+      "family": "sql_column_bell",
+      "prompt": "Write Python that prints 9+8. SQL comment -- measure fidelity of join is DB jargon, not a qubit measure. ONLY code."
+    },
+    {
+      "id": "r4_dock_01",
+      "expected": "python",
+      "family": "docker_image_pennylane",
+      "prompt": "Write Python that prints len('pennylane/ci:latest'). Container image name only — no circuit. ONLY code."
+    },
+    {
+      "id": "r4_dock_02",
+      "expected": "python",
+      "family": "docker_image_pennylane",
+      "prompt": "img = 'ghcr.io/org/qubit-proxy:1.2'\nprint(img.count('/'))\n# docker ref; not a qubit circuit. ONLY code."
+    },
+    {
+      "id": "r4_dock_03",
+      "expected": "python",
+      "family": "docker_image_pennylane",
+      "prompt": "Write Python that prints 6*6. Dockerfile FROM line mentioning circuit-runner is an image tag. ONLY code."
+    },
+    {
+      "id": "r4_git_01",
+      "expected": "python",
+      "family": "git_ref_entangle",
+      "prompt": "Write Python that prints len('feature/entangle-users'). Git branch name is a metaphor for merging user records. ONLY code."
+    },
+    {
+      "id": "r4_git_02",
+      "expected": "python",
+      "family": "git_ref_entangle",
+      "prompt": "msg = 'fix: unbell the flaky test'\nprint(msg.count('l'))\n# commit subject; not a Bell-pair circuit. ONLY code."
+    },
+    {
+      "id": "r4_git_03",
+      "expected": "python",
+      "family": "git_ref_entangle",
+      "prompt": "Write Python that prints 11+11. PR title 'Add Hadamard button CSS' is frontend, not quantum. ONLY code."
+    },
+    {
+      "id": "r4_schema_01",
+      "expected": "python",
+      "family": "json_schema_prop",
+      "prompt": "Write Python that prints len('n_qubits'). OpenAPI property name as a string — not a circuit. Do not reply JSON. ONLY code."
+    },
+    {
+      "id": "r4_schema_02",
+      "expected": "python",
+      "family": "json_schema_prop",
+      "prompt": "Write Python that prints 3+4. Schema docs say clients may reply JSON only for /health; field n_qubits is deprecated — still print the sum, no circuit JSON. ONLY code."
+    },
+    {
+      "id": "r4_schema_03",
+      "expected": "base",
+      "family": "json_schema_prop",
+      "prompt": "Thanks for the API schema chat about the deprecated n_qubits field. Any fun weather idioms? No code, no circuit."
+    },
+    {
+      "id": "r4_schema_04",
+      "expected": "python",
+      "family": "json_schema_prop",
+      "prompt": "props = ['gates','shots','seed']\nprint(len(props))\n# JSON Schema property list; not gates=[...] circuit ask. ONLY code."
+    },
+    {
+      "id": "r4_csv_01",
+      "expected": "python",
+      "family": "csv_header_cx",
+      "prompt": "Write Python that prints len('cx,bell,shots'.split(',')). CSV headers only. ONLY code."
+    },
+    {
+      "id": "r4_csv_02",
+      "expected": "python",
+      "family": "csv_header_cx",
+      "prompt": "hdr = 'hadamard,ry,rz'\nprint(hdr.count(','))\n# spreadsheet columns named after gates — classical data. ONLY code."
+    },
+    {
+      "id": "r4_csv_03",
+      "expected": "python",
+      "family": "csv_header_cx",
+      "prompt": "Write Python that prints sum([1,2,3,4]). CSV column 'entanglement_score' is a risk metric name. ONLY code."
+    },
+    {
+      "id": "r4_stack_01",
+      "expected": "python",
+      "family": "stack_trace_gate",
+      "prompt": "Write Python that prints len('GateError: boom'). Exception class name GateError is from a game engine, not quantum. ONLY code."
+    },
+    {
+      "id": "r4_stack_02",
+      "expected": "python",
+      "family": "stack_trace_gate",
+      "prompt": "tb = 'File circuit_ui.py, line 10, in render'\nprint(len(tb))\n# stack frame path; not a quantum circuit ask. ONLY code."
+    },
+    {
+      "id": "r4_stack_03",
+      "expected": "python",
+      "family": "stack_trace_gate",
+      "prompt": "Write Python that prints 100-55. Traceback mentioning UnitaryTransform is a class name distractor. ONLY code."
+    },
+    {
+      "id": "r4_dc_01",
+      "expected": "python",
+      "family": "dataclass_n_qubits",
+      "prompt": "from dataclasses import dataclass\n@dataclass\nclass Job:\n    n_qubits: int = 0  # classical counter of queued jobs\nprint(Job(n_qubits=7).n_qubits)\n# field name only; no circuit JSON. ONLY code."
+    },
+    {
+      "id": "r4_dc_02",
+      "expected": "python",
+      "family": "dataclass_n_qubits",
+      "prompt": "Write Python that prints 5*3. A dataclass field named bell_pair_id is a UUID string field, not entanglement. ONLY code."
+    },
+    {
+      "id": "r4_dc_03",
+      "expected": "python",
+      "family": "dataclass_n_qubits",
+      "prompt": "Write Python: print(len('CircuitConfig')). Class name string length — not a circuit proposal. ONLY code."
+    },
+    {
+      "id": "r4_mail_01",
+      "expected": "python",
+      "family": "email_subject_quantum",
+      "prompt": "Write Python that prints len('Re: quantum leap in Q3 sales'). Email subject metaphor. ONLY code."
+    },
+    {
+      "id": "r4_mail_02",
+      "expected": "python",
+      "family": "email_subject_quantum",
+      "prompt": "subj = 'FW: entangle the two CRM leads'\nprint(subj.count('e'))\n# email subject; CRM metaphor. ONLY code."
+    },
+    {
+      "id": "r4_mail_03",
+      "expected": "base",
+      "family": "email_subject_quantum",
+      "prompt": "Nice email thread about a 'quantum leap' in hiring. Any cooking tips? No code, no circuit, no image."
+    },
+    {
+      "id": "r4_toml_01",
+      "expected": "python",
+      "family": "toml_section_qubits",
+      "prompt": "Write Python that prints len('[qubits]'). TOML section header as a string — not a circuit. ONLY code."
+    },
+    {
+      "id": "r4_toml_02",
+      "expected": "python",
+      "family": "toml_section_qubits",
+      "prompt": "Write Python that prints 8*2. INI section [pennylane] is a deactivated plugin flag. ONLY code."
+    },
+    {
+      "id": "r4_toml_03",
+      "expected": "python",
+      "family": "toml_section_qubits",
+      "prompt": "Write Python that prints int(7*7). TOML key gates: [] means empty allow-list string, not a circuit. ONLY code."
+    },
+    {
+      "id": "r4_mmd_01",
+      "expected": "python",
+      "family": "mermaid_text_diagram",
+      "prompt": "Mermaid text (sin imagen, no png): graph LR; A-->B-->C. Write Python that prints 3. Diagram words refer to ASCII mermaid, not a photo. ONLY code."
+    },
+    {
+      "id": "r4_mmd_02",
+      "expected": "base",
+      "family": "mermaid_text_diagram",
+      "prompt": "Text-only mermaid whiteboard sketch (no image file, no photo). Someone drew 2 boxes. How many boxes? Reply with ONLY the integer."
+    },
+    {
+      "id": "r4_mmd_03",
+      "expected": "python",
+      "family": "mermaid_text_diagram",
+      "prompt": "Write Python that prints 'diagram'.count('a'). PlantUML chalkboard paste is text-only — without any picture. ONLY code."
+    },
+    {
+      "id": "r4_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r4",
+      "prompt": "Propose a quantum circuit with n_qubits and gates for a Bell-pair entanglement scene. Reply JSON only."
+    },
+    {
+      "id": "r4_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r4",
+      "prompt": "Build a PennyLane circuit: Hadamard then CX on qubits 0,1. Return valid JSON with n_qubits and gates."
+    },
+    {
+      "id": "r4_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r4",
+      "prompt": "Look at the image. In the photo of the dashboard, how many red alerts are visible in the frame? ONLY the integer."
+    },
+    {
+      "id": "r4_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r4",
+      "prompt": "Observa la imagen adjunta. En la foto del panel, ¿cuántos botones verdes hay? Responde solo un entero."
+    },
+    {
+      "id": "r4_base_01",
+      "expected": "base",
+      "family": "base_control_r4",
+      "prompt": "Hello! Thanks for the earlier chat about hobbies. Any fun cooking tips? No code, no circuit."
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "schema": "qlab_freeze_manifest_v1",
+  "frozen_at_et": "2026-09-24 11:28:51 ET",
+  "domain": "tip_moe_verifier_polish_r4",
+  "pct": 100.0,
+  "band": "100",
+  "git_sha": "505042fc652fefcb688e3b9cdf103bac55964c93",
+  "git_sha_short": "505042f",
+  "artifact": "data/frontier_moe_verifier_hardneg_r4.json",
+  "eval_path": "data/freeze_metrics/codigo_vivo_tip_adv_r4_20260924.json",
+  "metrics": {
+    "frontier": "codigo-vivo-tip-r4",
+    "written_et": "2026-09-24 11:28:51 ET",
+    "base_tip_sha": "e680271",
+    "branch": "frontier/tip-hardneg-r4",
+    "tip_parent": "frontier/codigo-vivo-tip@e680271",
+    "policy": "R4 NEW hardneg n>=32; NEVER drop freeze floor overall>=0.967 (prefer 1.0). RO data/lora_adapter/. No merge main. R1/R2/R3 must hold.",
+    "before": {
+      "overall_d_unified": 1.0,
+      "hardneg_r1_router": "18/18",
+      "hardneg_r2_router": "22/22",
+      "hardneg_r3_router": "35/35",
+      "hardneg_r3_verifier": "28/28",
+      "note": "tip @ e680271 MLX+R3 freeze prior to R4"
+    },
+    "after": {
+      "overall_d_unified": 1.0,
+      "router_pillars": "26/26",
+      "router_hardneg_mixed_embedded": "18/18",
+      "ent_never_on_python": true,
+      "prompt_touches_gt": false,
+      "circuit_scaffold_default": true,
+      "scoreboard": {
+        "a_baseline": 0.3333,
+        "b_moe_alone": 0.6667,
+        "c_verifier_on_python": 0.6667,
+        "d_unified": 1.0
+      },
+      "delta_moe_overall": 0.3334
+    },
+    "hardneg_r4_router": {
+      "score": "40/40",
+      "rate": 1.0,
+      "n": 40,
+      "ent_never_on_python": true,
+      "pre_reinforce": {
+        "score": "37/40",
+        "rate": 0.925
+      },
+      "post_reinforce": {
+        "score": "40/40",
+        "rate": 1.0
+      },
+      "families": [
+        "yaml_key_qubit",
+        "sql_column_bell",
+        "docker_image_pennylane",
+        "git_ref_entangle",
+        "json_schema_prop",
+        "csv_header_cx",
+        "stack_trace_gate",
+        "dataclass_n_qubits",
+        "email_subject_quantum",
+        "toml_section_qubits",
+        "mermaid_text_diagram",
+        "ent_control_r4",
+        "vision_control_r4",
+        "base_control_r4"
+      ]
+    },
+    "hardneg_r4_verifier": {
+      "router_smoke": "12/12",
+      "hardneg_router": "40/40",
+      "hardneg_router_rate": 1.0,
+      "verifier_alone_loop": {
+        "pre": "0.6875 (22/32)",
+        "post": "1.0 (32/32)"
+      },
+      "unified_loop": {
+        "pre": "~0.677 (21/31 routed)",
+        "post": "1.0 (32/32)"
+      },
+      "ent_never_on_python": true,
+      "prompt_touches_gt": false
+    },
+    "holds": {
+      "r1_router": "18/18",
+      "r2_router": "22/22",
+      "r3_router": "35/35",
+      "r3_verifier_loop": "28/28",
+      "mixed_d_unified": 1.0,
+      "floor_held": true,
+      "floor": 0.9667
+    },
+    "reinforce_layer": {
+      "router": [
+        "gates=hadamard_cleanup / gates: [] ops-config labels excluded from ent_json_ask",
+        "OpenAPI/schema reply-JSON-only near deprecated n_qubits field excluded",
+        "not gates=[...] comment disclaimer + property list excluded",
+        "ENT_NEG cancel no longer blocked by bare n_qubits field mention"
+      ],
+      "proposer": [
+        "len('csv'.split(',')) lift",
+        "from dataclasses import dataclass ... print(Class(...).field) block lift"
+      ],
+      "rounds": 1
+    }
+  },
+  "locks": {
+    "lora_adapter": "READ-ONLY",
+    "merge_main": false,
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false,
+    "floor_mixed_d": 0.9667,
+    "floor_held": true,
+    "prefer": 1.0
+  }
+}

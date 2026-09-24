@@ -1,0 +1,488 @@
+{
+  "method": "heuristic",
+  "n": 40,
+  "hits": 40,
+  "misses": 0,
+  "score": "40/40",
+  "rate": 1.0,
+  "by_family": {
+    "yaml_key_qubit": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "sql_column_bell": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "docker_image_pennylane": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "git_ref_entangle": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "json_schema_prop": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "csv_header_cx": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "stack_trace_gate": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "dataclass_n_qubits": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "email_subject_quantum": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "toml_section_qubits": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "mermaid_text_diagram": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "ent_control_r4": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r4": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r4": {
+      "n": 1,
+      "hits": 1,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "r4_yaml_01",
+      "family": "yaml_key_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('qubit: 3'). YAML key 'qubit' is a config label, no",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_yaml_02",
+      "family": "yaml_key_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "cfg = 'hadamard: cleanup\\ncx: nightly'\nprint(cfg.count(':'))\n# YAML keys named h",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_yaml_03",
+      "family": "yaml_key_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints int(4*5). A YAML snippet may show n_qubits: 0 as a disa",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_yaml_04",
+      "family": "yaml_key_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 2**4. Ops config line gates=hadamard_cleanup is a strin",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_sql_01",
+      "family": "sql_column_bell",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('SELECT bell, cx FROM scores'). SQL column names be",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_sql_02",
+      "family": "sql_column_bell",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "q = 'SELECT COUNT(*) FROM gates'\nprint(len(q))\n# table named gates is a sports s",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_sql_03",
+      "family": "sql_column_bell",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 9+8. SQL comment -- measure fidelity of join is DB jarg",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_dock_01",
+      "family": "docker_image_pennylane",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('pennylane/ci:latest'). Container image name only —",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_dock_02",
+      "family": "docker_image_pennylane",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "img = 'ghcr.io/org/qubit-proxy:1.2'\nprint(img.count('/'))\n# docker ref; not a qu",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_dock_03",
+      "family": "docker_image_pennylane",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 6*6. Dockerfile FROM line mentioning circuit-runner is ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_git_01",
+      "family": "git_ref_entangle",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('feature/entangle-users'). Git branch name is a met",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_git_02",
+      "family": "git_ref_entangle",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "msg = 'fix: unbell the flaky test'\nprint(msg.count('l'))\n# commit subject; not a",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_git_03",
+      "family": "git_ref_entangle",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 11+11. PR title 'Add Hadamard button CSS' is frontend, ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_schema_01",
+      "family": "json_schema_prop",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('n_qubits'). OpenAPI property name as a string — no",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_schema_02",
+      "family": "json_schema_prop",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 3+4. Schema docs say clients may reply JSON only for /h",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_schema_03",
+      "family": "json_schema_prop",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Thanks for the API schema chat about the deprecated n_qubits field. Any fun weat",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r4_schema_04",
+      "family": "json_schema_prop",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "props = ['gates','shots','seed']\nprint(len(props))\n# JSON Schema property list; ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_csv_01",
+      "family": "csv_header_cx",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('cx,bell,shots'.split(',')). CSV headers only. ONLY",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_csv_02",
+      "family": "csv_header_cx",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "hdr = 'hadamard,ry,rz'\nprint(hdr.count(','))\n# spreadsheet columns named after g",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_csv_03",
+      "family": "csv_header_cx",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints sum([1,2,3,4]). CSV column 'entanglement_score' is a ri",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_stack_01",
+      "family": "stack_trace_gate",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('GateError: boom'). Exception class name GateError ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_stack_02",
+      "family": "stack_trace_gate",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "tb = 'File circuit_ui.py, line 10, in render'\nprint(len(tb))\n# stack frame path;",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_stack_03",
+      "family": "stack_trace_gate",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 100-55. Traceback mentioning UnitaryTransform is a clas",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_dc_01",
+      "family": "dataclass_n_qubits",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "from dataclasses import dataclass\n@dataclass\nclass Job:\n    n_qubits: int = 0  #",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_dc_02",
+      "family": "dataclass_n_qubits",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 5*3. A dataclass field named bell_pair_id is a UUID str",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_dc_03",
+      "family": "dataclass_n_qubits",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python: print(len('CircuitConfig')). Class name string length — not a circ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_mail_01",
+      "family": "email_subject_quantum",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('Re: quantum leap in Q3 sales'). Email subject meta",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_mail_02",
+      "family": "email_subject_quantum",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "subj = 'FW: entangle the two CRM leads'\nprint(subj.count('e'))\n# email subject; ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_mail_03",
+      "family": "email_subject_quantum",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Nice email thread about a 'quantum leap' in hiring. Any cooking tips? No code, n",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r4_toml_01",
+      "family": "toml_section_qubits",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('[qubits]'). TOML section header as a string — not ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_toml_02",
+      "family": "toml_section_qubits",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 8*2. INI section [pennylane] is a deactivated plugin fl",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_toml_03",
+      "family": "toml_section_qubits",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints int(7*7). TOML key gates: [] means empty allow-list str",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_mmd_01",
+      "family": "mermaid_text_diagram",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Mermaid text (sin imagen, no png): graph LR; A-->B-->C. Write Python that prints",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_mmd_02",
+      "family": "mermaid_text_diagram",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Text-only mermaid whiteboard sketch (no image file, no photo). Someone drew 2 bo",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r4_mmd_03",
+      "family": "mermaid_text_diagram",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 'diagram'.count('a'). PlantUML chalkboard paste is text",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r4_ent_01",
+      "family": "ent_control_r4",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Propose a quantum circuit with n_qubits and gates for a Bell-pair entanglement s",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r4_ent_02",
+      "family": "ent_control_r4",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Build a PennyLane circuit: Hadamard then CX on qubits 0,1. Return valid JSON wit",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r4_vis_01",
+      "family": "vision_control_r4",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. In the photo of the dashboard, how many red alerts are visibl",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r4_vis_02",
+      "family": "vision_control_r4",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Observa la imagen adjunta. En la foto del panel, ¿cuántos botones verdes hay? Re",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r4_base_01",
+      "family": "base_control_r4",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Hello! Thanks for the earlier chat about hobbies. Any fun cooking tips? No code,",
+      "ent_adapter_blocked": false
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_r4_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}

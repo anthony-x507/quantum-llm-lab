@@ -154,8 +154,34 @@ def route_heuristic(prompt: str) -> Lane:
     ent_negated = bool(ENT_NEG_RE.search(text))
     # R3: bare n_qubits / N_QUBITS in strings or len('N_QUBITS') is NOT a JSON circuit ask.
     # Keep ent_json_ask for explicit gates=/json-válido OR n_qubits + JSON-reply intent.
-    ent_json_ask = bool(
-        re.search(r"\b(gates\s*[=:\[]|json\s+v[aá]lido)\b", text, re.I)
+    # R4: gates=hadamard_cleanup / gates: [] ops-config labels are NOT circuit asks.
+    # R4: OpenAPI/schema "reply JSON only" near a deprecated n_qubits *field* is NOT ent.
+    gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
+    gates_ops_label = bool(
+        re.search(
+            r"gates\s*=\s*[A-Za-z_][\w\-]*"
+            r"|gates\s*:\s*\[\s*\]"
+            r"|ops\s+config\s+line\s+gates="
+            r"|config\s+(?:line\s+)?gates="
+            r"|not\s+gates\s*[=:\[]"  # R4 schema/comment disclaimer
+            r"|property\s+list",
+            text,
+            re.I,
+        )
+    )
+    json_valido = bool(re.search(r"\bjson\s+v[aá]lido\b", text, re.I))
+    schema_field_distract = bool(
+        re.search(
+            r"(?:openapi|schema|deprecated|property|field)\s+"
+            r"(?:n_qubits|.*\bn_qubits\b)"
+            r"|\bn_qubits\b\s+(?:field|property|is\s+deprecated)"
+            r"|reply\s+json\s+only\s+for\s+/\w+",
+            text,
+            re.I,
+        )
+    )
+    ent_json_ask = (
+        (gates_token and not gates_ops_label) or json_valido
     ) or (
         bool(re.search(r"\bn_qubits\b", text, re.I))
         and bool(
@@ -174,6 +200,7 @@ def route_heuristic(prompt: str) -> Lane:
                 re.I,
             )
         )
+        and not schema_field_distract
     )
     # Vision arithmetic / explicit "no circuit" beats stray "circuit" token in the prompt
     vis_arith = bool(
@@ -193,10 +220,14 @@ def route_heuristic(prompt: str) -> Lane:
     if has_py and not (has_ent and ent_json_ask):
         return "python"
     # R2: explicit "no circuit" chat stays base (unless real JSON circuit ask)
-    if has_ent and ent_negated and not re.search(
-        r"\b(n_qubits|gates\s*[=:\[]|json\s+v[aá]lido|reply\s+json|responde\s+solo\s+json)\b",
-        text,
-        re.I,
+    # R4: bare n_qubits *field/property* mention no longer blocks ENT_NEG cancel.
+    if has_ent and ent_negated and not (
+        ent_json_ask
+        or re.search(
+            r"\b(gates\s*[=:\[]|json\s+v[aá]lido|reply\s+json|responde\s+solo\s+json)\b",
+            text,
+            re.I,
+        )
     ):
         has_ent = False
     if vis_arith and not ent_json_ask:
@@ -672,7 +703,9 @@ def main() -> int:
         )
         out = args.out if args.out != SMOKE_OUT else HARDNEG_OUT
         hp = str(args.hardneg_path).lower()
-        if 'r3' in hp:
+        if 'r4' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r4.json"
+        elif 'r3' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r3.json"
         elif 'r2' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r2.json"

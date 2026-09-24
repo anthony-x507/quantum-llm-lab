@@ -70,7 +70,7 @@
       "expected": "ent",
       "got": "ent",
       "ok": true,
-      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "adapter": null,
       "prompt_preview": "Propón un circuito cuántico con n_qubits y gates para un Bell-pair. Responde SOL",
       "ent_adapter_blocked": false
     },
@@ -250,7 +250,7 @@
       "expected": "ent",
       "got": "ent",
       "ok": true,
-      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "adapter": null,
       "prompt_preview": "Return a valid JSON object with n_qubits and gates for a Bell-pair entanglement ",
       "ent_adapter_blocked": false
     }
