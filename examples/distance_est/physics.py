@@ -42,11 +42,19 @@ NEAR_CUTOFF_M = 50.0
 DANGER_ZONE_M_LO = 30.0
 DANGER_ZONE_M_HI = 70.0
 
-# Side polish outside DZ: near mid + outer mid (tip-distance-mid)
+# Side polish outside DZ: near mid + outer mid (tip-distance-mid) — FROZEN floors
 MID_NEAR_M_LO = 5.0
 MID_NEAR_M_HI = 30.0
 MID_OUTER_M_LO = 70.0
 MID_OUTER_M_HI = 100.0
+
+# Side polish FAR band ~100–200 m (tip-distance-far)
+FAR_M_LO = 100.0
+FAR_M_HI = 200.0
+FAR_NEAR_M_LO = 100.0
+FAR_NEAR_M_HI = 150.0
+FAR_OUTER_M_LO = 150.0
+FAR_OUTER_M_HI = 200.0
 
 # Priority classes for distance scoring (height is NOT the goal)
 PRIORITY_DISTANCE_CLASSES = ("car", "intersection", "stop_sign", "pedestrian", "light")
@@ -67,18 +75,33 @@ def in_danger_zone(d_m: float) -> bool:
 
 
 def in_mid_near(d_m: float) -> bool:
-    """5–30 m near/mid band (outside frozen DZ)."""
+    """5–30 m near/mid band (outside frozen DZ) — hold floor."""
     return MID_NEAR_M_LO <= d_m <= MID_NEAR_M_HI
 
 
 def in_mid_outer(d_m: float) -> bool:
-    """70–100 m outer/mid band (outside frozen DZ)."""
+    """70–100 m outer/mid band (outside frozen DZ) — hold floor."""
     return MID_OUTER_M_LO <= d_m <= MID_OUTER_M_HI
 
 
+def in_far(d_m: float) -> bool:
+    """100–200 m far band (tip-distance-far target)."""
+    return FAR_M_LO <= d_m <= FAR_M_HI
+
+
+def in_far_near(d_m: float) -> bool:
+    """100–150 m far-near slice."""
+    return FAR_NEAR_M_LO <= d_m <= FAR_NEAR_M_HI
+
+
+def in_far_outer(d_m: float) -> bool:
+    """150–200 m far-outer slice."""
+    return FAR_OUTER_M_LO <= d_m <= FAR_OUTER_M_HI
+
+
 def in_gp_heavy_band(d_m: float) -> bool:
-    """GP-heavy triangulation: frozen DZ + outer mid (weak size priors)."""
-    return in_danger_zone(d_m) or in_mid_outer(d_m)
+    """GP-heavy: frozen DZ + outer mid + far (weak size priors at range)."""
+    return in_danger_zone(d_m) or in_mid_outer(d_m) or in_far(d_m)
 
 
 def tolerance_for_gt(gt_m: float) -> float:
@@ -201,17 +224,21 @@ def estimate_via_floor_scale(
         # (d_gp ≈ d_building). Near lights share cy with far buildings but are
         # NOT coplanar — floor-span then invents huge "span floors" and
         # overshoots the 30–70 m DANGER ZONE. Prefer GP; honesty when unsure.
+        # FAR 100–200 m: size/span priors weak → GP-heavy like DZ/outer mid.
         dz = in_danger_zone(d_gp)
         outer = in_mid_outer(d_gp)
         near = in_mid_near(d_gp)
-        gp_heavy = dz or outer  # outer mid: size/span priors weak like DZ
+        far = in_far(d_gp)
+        gp_heavy = dz or outer or far
         coplanar = abs(d_gp - d_b) / max(d_b, 1.0) < 0.28 and abs(cy_f - bcy) < 6
         if coplanar and floor_px > 1e-6 and app > 1e-3:
             H = derived_height_from_floor_span(app, floor_px, fh)
             d_h = distance_from_derived_height(app, H, focal_px)
             if d_h is not None:
-                # Facade-coplanar: soft span in DZ/outer; near trusts GP more (not coplanar usually)
-                if gp_heavy:
+                # Facade-coplanar: soft span in DZ/outer/far; near trusts GP more
+                if far:
+                    w_h = 0.22
+                elif gp_heavy:
                     w_h = 0.25
                 elif near:
                     w_h = 0.15
@@ -227,8 +254,11 @@ def estimate_via_floor_scale(
                 if rel > 0.45:
                     # Strong disagreement → honesty: GP only, low conf
                     return max(1.0, d_gp), 0.42, "gp_honesty_span_disagree"
-                # Mild disagree: tiny span vote outside danger/outer; none inside
-                if gp_heavy:
+                # Mild disagree: tiny span vote outside danger/outer/far; none inside
+                if far:
+                    w_h = 0.04
+                    conf = 0.56
+                elif gp_heavy:
                     w_h = 0.05
                     conf = 0.58
                 elif near:
@@ -244,26 +274,36 @@ def estimate_via_floor_scale(
     if cls == "car":
         # Triangulate GP + length prior (bbox_w ≈ length * scale * 0.5 in render)
         # and soft height prior on apparent_px.
-        # DZ + outer mid: heavier GP (size prior ~1.2× long). Near: trust size more.
+        # DZ + outer mid + FAR: heavier GP (size prior noisy at range). Near: trust size more.
         d_len = distance_from_size_prior(max(bbox_w, 1e-3) / 0.5, CAR_LENGTH_M_PRIOR, focal_px)
         d_h = distance_from_size_prior(app, CAR_HEIGHT_M_PRIOR, focal_px)
         dz = in_danger_zone(d_gp)
         outer = in_mid_outer(d_gp)
         near = in_mid_near(d_gp)
+        far = in_far(d_gp)
         gp_heavy = dz or outer
         parts = [d_gp]
-        if gp_heavy:
+        if far:
+            # Far: GP dominates; tiny prior votes only
+            weights = [0.72]
+            w_len, w_h = 0.16, 0.12
+            conf = 0.76
+            thr = 0.50  # honesty earlier — priors less trustworthy far
+        elif gp_heavy:
             weights = [0.62]
             w_len, w_h = 0.23, 0.15
             conf = 0.80
+            thr = 0.55
         elif near:
             weights = [0.40]
             w_len, w_h = 0.35, 0.25
             conf = 0.82
+            thr = 0.70
         else:
             weights = [0.50]
             w_len, w_h = 0.30, 0.20
             conf = 0.78
+            thr = 0.55
         if d_len is not None:
             parts.append(d_len)
             weights.append(w_len)
@@ -276,8 +316,6 @@ def estimate_via_floor_scale(
         priors = [x for x in (d_len, d_h) if x is not None]
         if priors:
             d_prior = sum(priors) / len(priors)
-            # Near: allow more prior disagreement before honesty (priors sharper)
-            thr = 0.70 if near else 0.55
             if abs(d_prior - d_gp) / max(d_gp, 1.0) > thr:
                 return max(1.0, d_gp), 0.48, "gp_honesty_car_prior_disagree"
         return max(1.0, d), conf, "gp+car_size_prior"
@@ -288,8 +326,11 @@ def estimate_via_floor_scale(
             dz = in_danger_zone(d_gp)
             outer = in_mid_outer(d_gp)
             near = in_mid_near(d_gp)
-            # DZ/outer: softer height prior; near: trust height prior more
-            if dz or outer:
+            far = in_far(d_gp)
+            # DZ/outer/far: softer height prior; near: trust height prior more
+            if far:
+                w_h, conf, thr = 0.18, 0.74, 0.50
+            elif dz or outer:
                 w_h, conf, thr = 0.28, 0.78, 0.55
             elif near:
                 w_h, conf, thr = 0.42, 0.82, 0.70
@@ -330,20 +371,25 @@ def refine_with_parallax(
     if size_prev <= 1e-6 or size_curr <= 1e-6:
         return d_est, conf
     d_par = d_est * (size_prev / size_curr)
-    # Finer parallax in DZ + outer mid; near also leans on motion (large Δsize)
+    # Finer parallax in DZ + outer mid + FAR; near also leans on motion
     if alpha is None:
         dz = in_danger_zone(d_est)
         outer = in_mid_outer(d_est)
         near = in_mid_near(d_est)
+        far = in_far(d_est)
         if signal in ("approach", "recede"):
-            if dz or outer:
+            if far:
+                alpha = 0.68  # lean harder on parallax at range
+            elif dz or outer:
                 alpha = 0.62
             elif near:
                 alpha = 0.55
             else:
                 alpha = 0.42
         else:
-            if dz or outer:
+            if far:
+                alpha = 0.14  # stable far: trust GP more (noise)
+            elif dz or outer:
                 alpha = 0.18  # stable: trust GP/size more
             elif near:
                 alpha = 0.22
@@ -571,14 +617,19 @@ def temporal_ema_distance(
     *,
     beta: float | None = None,
 ) -> float:
-    """Light EMA toward previous estimate; stronger hold when signal=stable."""
+    """Light EMA toward previous estimate; stronger hold when signal=stable.
+
+    Far band (100–200 m): stronger history hold on stable (small apparent Δ is noisy);
+    slightly softer follow on approach/recede so parallax can still cut MAE.
+    """
     if d_prev is None or d_prev <= 0:
         return d_curr
     if beta is None:
+        far = in_far(d_curr) or in_far(d_prev)
         if signal == "stable":
-            beta = 0.45  # trust history more
+            beta = 0.55 if far else 0.45  # far: trust history more
         elif signal in ("approach", "recede"):
-            beta = 0.22  # follow parallax motion
+            beta = 0.18 if far else 0.22  # far: follow parallax a bit more
         else:
             beta = 0.30
     return max(0.5, (1.0 - beta) * d_curr + beta * d_prev)

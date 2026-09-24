@@ -1,0 +1,30 @@
+{
+  "name": "codigo_vivo_tip_distance_far_100pct_20260924_140738",
+  "freeze_id": "codigo_vivo_tip_distance_far_100pct",
+  "ts": "2026-09-24 14:07:38 ET",
+  "branch": "frontier/tip-distance-far",
+  "base_tip_sha": "f70faa1",
+  "worktree": "/Users/anthony/Documents/quantum-llm-lab-tip-distance-far",
+  "machine": "Mac-111",
+  "criterion": "clear MAE win on far 100-200m + DZ/mid floors held at 100% (pct already saturated)",
+  "metrics_ref": "data/freeze_metrics/codigo_vivo_tip_distance_far_20260924.json",
+  "far_set_mae_m": {
+    "before": 4.653,
+    "after": 2.6
+  },
+  "original_far_mae_m": {
+    "before": 5.44,
+    "after": 4.563
+  },
+  "danger50_far_mae_m": {
+    "before": 6.121,
+    "after": 2.684
+  },
+  "dz_held_pct": 100.0,
+  "mid_held_pct": 100.0,
+  "far_pct": 100.0,
+  "predictor": "floor_scale_parallax_size_prior_closing_speed_v4_far",
+  "side_only": true,
+  "not_folded": true,
+  "adapters_ro": "data/lora_adapter/"
+}

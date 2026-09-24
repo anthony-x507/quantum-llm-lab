@@ -28,3 +28,16 @@ mid/*
 !mid/EVAL_MID_BEFORE.json
 !mid/EVAL_MID_AFTER.json
 !mid/ANTI_CONTAM_SELFTEST.json
+
+!far/
+far/*
+!far/.gitignore
+!far/SUMMARY.json
+!far/SUMMARY.md
+!far/INDEX.json
+!far/SPLIT.json
+!far/EVAL_FAR_CPU.json
+!far/EVAL_FAR_BEFORE.json
+!far/EVAL_FAR_AFTER.json
+!far/ANTI_CONTAM_SELFTEST.json
+!EVAL_BEFORE_FAR_ORIG.json

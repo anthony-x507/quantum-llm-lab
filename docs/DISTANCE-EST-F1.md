@@ -1,5 +1,8 @@
 # Distance estimation — Fase 1 + DANGER ZONE 50 m reinforce
 
+> **v4 far polish (2026-09-24, folded into tip):** GP-heavy far 100–200 m + finer parallax/EMA. Far-set MAE **4.653→2.600 m** (side); re-smoke on tip after fold. DZ + mid held 100%. See `docs/FRONTIER-CODIGO-VIVO-TIP-DISTANCE-FAR.md`.
+
+
 > **v2 polish (2026-09-24 ~13:05 ET, branch `frontier/tip-distance-danger`):** GP-first lights/signs + multi-building floor-scale + honesty + finer parallax/EMA. Original DZ 30–70 m **49.72% → 100%** (+51.31 pp vs baseline 48.69); danger50 DZ **60.11% → 100%**; future-pred DZ +dist improves (orig 48.55→97.3; danger50 61.69→96.59). MAE DZ 1.49 m / 0.73 m. See `docs/FRONTIER-CODIGO-VIVO-TIP-DISTANCE-DANGER.md`. Caveat: synth pinhole invert can saturate tol — not VLM.
 
 
