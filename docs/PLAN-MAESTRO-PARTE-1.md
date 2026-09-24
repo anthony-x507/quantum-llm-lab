@@ -3,7 +3,7 @@
 **Repo:** `anthony-x507/quantum-llm-lab`  
 **Hardware:** Mac M4 (`Qwen3-VL-8B-Thinking-4bit`)  
 **Estado:** fuente única de verdad (SSOT) — **iterar y mejorar**, no archivar  
-**Creado:** 2026-09-24 ~04:51 ET · **GOAL 10× añadido:** 2026-09-24 ~04:55 ET (voz Anthony → ABACO LEADER)  
+**Creado:** 2026-09-24 ~04:51 ET · **GOAL 10×:** 2026-09-24 ~04:55 ET · **§5.1 proactividad + freeze 80–100%:** 2026-09-24 ~04:57 ET  
 **Supersede parcial:** `docs/PLAN-MAESTRO.md` (fases 0–5 históricas) queda como archivo de fases tempranas; **este documento manda** para visión, dominios, capas y ciclo.
 
 ---
@@ -175,11 +175,44 @@ Locks: `docs/LOCK-WORK-CYCLE.md`, `docs/LOCK-CONTINUOUS-SELF-IMPROVE.md`, `docs/
 3. **Sin bancos contra modelos grandes** hasta tener ese delta propio del 8B.
 4. **Adapter cuántico** `data/lora_adapter/` — **solo lectura**.
 5. **Sin claims de ventaja cuántica.**
-6. **Proactividad del Leader** — proponer ideas (incluidas las que **contradicen** a Anthony). Por cada idea material: **dos respuestas** — una que **refuerza** y una que **cuestiona**. Anthony decide.
+6. **Proactividad del Leader** — ver **§5.1.A**: Leader trae ángulos (incl. los que contradicen); dos respuestas (refuerza/cuestiona); Anthony solo aprueba/rechaza — **no** corrige el brainstorming.
+7. **Congelar 80–100%** — ver **§5.1.B**: avance sustancial se congela como plataforma; pulir o reforzar alrededor; nunca abandonar un 80%.
 7. Cola GPU compartida (`data/TRAIN_LOCK.txt`); no matar screens ajenos; adapters por dominio en dirs separados.
 
 ---
 
+## 5.1 Directivas permanentes (2026-09-24 ~04:57 ET)
+
+### A) Proactividad sin corrección (brainstorming = Leader)
+
+- **ABACO LEADER** genera **múltiples ángulos** de mejora por su cuenta en cada tropiezo o avance.
+- Anthony **no** tiene que corregir ni sugerir el brainstorming.
+- Si una idea del Leader es mala, el Leader la **descarta** y trae la siguiente.
+- Anthony solo **aprueba o rechaza** opciones ya formuladas — no lidera el ideario.
+- Compatibilidad: la regla de “dos respuestas por idea (refuerza / cuestiona)” sigue; ambas las escribe el Leader.
+
+### B) Congelar al 80–100% (plataforma, no abandono)
+
+Cuando un dominio o métrica llega a **~80%, ~90% o 100%** (avance sustancial medido en eval limpia):
+
+1. Se **CONGELA** ese resultado como **baseline de plataforma** (artifact + número + SHA/audit).
+2. Luego, en paralelo o secuencia:
+   - **(a)** pulir para subir el número hacia el techo 10×, y/o
+   - **(b)** trabajar **alrededor**: reforzar otras reglas/capas para que el sistema quede más **unido y uniforme**.
+3. **No se abandona** un 80% — se aprovecha como base de apilado.
+4. Aplica a **todos** los dominios: cuántico, física clásica, visión temporal, planificación inversa, distancia.
+
+Congelados de ejemplo (actualizar al cerrar caras):
+
+| Dominio / eje | % congelado | Nota |
+|---------------|-------------|------|
+| Cuántico Jev/compile (LoRA RO) | ~100% | Plataforma RO; no overwrite `data/lora_adapter/` |
+| Cuántico label (LoRA RO) | ~90% | Pulir con ent / loop; no bajar el piso |
+| Cuántico label (hybrid loop n=12) | 100% | Plataforma tools; gold-free |
+| Inversa pos CV @k | 100% | CV ≠ VLM; congelar como ref heurística; VLM propio pendiente |
+| Distancia heurística overall | ~65% | **Aún no** congela plataforma 80% — diagnosticar antes |
+
+---
 ## 6. Cola tip-of-spear (vivo — actualizar al cerrar caras)
 
 Orden típico GPU (revisar screens reales):
