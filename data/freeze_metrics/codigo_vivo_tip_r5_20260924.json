@@ -1,0 +1,62 @@
+{
+  "frontier": "codigo-vivo-tip-r5",
+  "freeze_id": "codigo_vivo_tip_r5_100pct_20260924_123727",
+  "written_et": "2026-09-24 12:37:27 ET",
+  "branch": "frontier/codigo-vivo-tip",
+  "frozen_sha": "6dce7b6cceb58ac8ed0946d1977f099f6ab55454",
+  "frozen_sha_short": "6dce7b6",
+  "tip_head_at_write": "6dce7b6cceb58ac8ed0946d1977f099f6ab55454",
+  "host": "Mac-111",
+  "machine_id": "074c6626-0440-4817-9829-6bae77c578d6",
+  "policy": "R5 tip freeze overall=1.0 @ 6dce7b6. Never abandon prior freezes (platform/mlx_r3/post_polish/polish_r5). RO data/lora_adapter/. No merge main. NO Q-advantage claims.",
+  "scoreboard": {
+    "a_baseline": 0.3333,
+    "b_moe_alone": 0.6667,
+    "c_verifier_on_python": 0.6667,
+    "d_unified": 1.0
+  },
+  "delta_moe_overall": 0.3334,
+  "moe_delta_visible": true,
+  "holds": {
+    "mixed_d_unified": 1.0,
+    "hardneg_r1": "18/18",
+    "hardneg_r2": "22/22",
+    "hardneg_r3": "35/35",
+    "hardneg_r4": "40/40",
+    "hardneg_r5": "44/44",
+    "verifier_r3": "28/28",
+    "verifier_r4": "32/32",
+    "verifier_r5": "36/36",
+    "wired_to_vlm": true,
+    "channel": "text_scaffold_prefix",
+    "mlx_largern_d": 1.0,
+    "ent_sep_mlx_ent2": 1.0,
+    "own_delta_honesty": "Py\u22120.062 Ent+1.0 Vis\u22120.200",
+    "floor_held": true,
+    "floor": 0.9667
+  },
+  "own_delta": {
+    "python_delta": -0.062,
+    "entanglement_delta": 1.0,
+    "vision_delta": -0.2,
+    "note": "ent2 still +1.0; quantum alone hurts py/vis; dual-lane protects"
+  },
+  "retained_freezes": [
+    "codigo_vivo_tip_platform_100pct_20260924_111435",
+    "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",
+    "codigo_vivo_tip_post_polish_100pct_20260924_123210",
+    "tip_moe_verifier_polish_r3_100pct_20260924_111740",
+    "tip_moe_verifier_polish_r4_100pct_20260924_112851",
+    "tip_moe_verifier_polish_r5_100pct_20260924_123200"
+  ],
+  "artifacts": {
+    "manifest": "data/freeze_manifests/codigo_vivo_tip_r5_100pct_20260924_123727.json",
+    "unified": "data/frontier_moe_verifier_mixed_unified.json",
+    "mlx_largern": "data/frontier_moe_verifier_mixed_mlx_live_pillars_largern_merged.json",
+    "ent_sep": "data/frontier_moe_verifier_mixed_mlx_live_pillars_ent_sep_fix_merged.json",
+    "own_delta_scoreboard": "data/frontier_tip_own_delta_scoreboard.json",
+    "wire_vlm": "data/frontier_scaffold_wire_vlm.json",
+    "r5_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R5.md"
+  },
+  "blockers": []
+}

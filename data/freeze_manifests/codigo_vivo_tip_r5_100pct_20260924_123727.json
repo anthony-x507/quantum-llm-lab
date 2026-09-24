@@ -1,0 +1,161 @@
+{
+  "schema": "qlab_freeze_manifest_v1",
+  "freeze_id": "codigo_vivo_tip_r5_100pct_20260924_123727",
+  "frozen_at_et": "2026-09-24 12:37:27 ET",
+  "domain": "codigo_vivo_tip_r5",
+  "pct": 100.0,
+  "band": "100",
+  "git_sha": "6dce7b6cceb58ac8ed0946d1977f099f6ab55454",
+  "git_sha_short": "6dce7b6",
+  "branch": "frontier/codigo-vivo-tip",
+  "host": "Mac-111",
+  "machine_id": "074c6626-0440-4817-9829-6bae77c578d6",
+  "artifact": "data/frontier_moe_verifier_mixed_unified.json",
+  "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
+  "metrics": {
+    "overall": 1.0,
+    "python": 1.0,
+    "entanglement": 1.0,
+    "vision_scored": 1.0,
+    "moe_delta_overall": 0.3334,
+    "moe_delta_visible": true,
+    "router_pillars": "26/26",
+    "hardneg_r1": "18/18",
+    "hardneg_r1_rate": 1.0,
+    "hardneg_r2": "22/22",
+    "hardneg_r2_rate": 1.0,
+    "hardneg_r3": "35/35",
+    "hardneg_r3_rate": 1.0,
+    "hardneg_r4": "40/40",
+    "hardneg_r4_rate": 1.0,
+    "hardneg_r5": "44/44",
+    "hardneg_r5_rate": 1.0,
+    "hardneg_r3_verifier": "28/28",
+    "hardneg_r4_verifier": "32/32",
+    "hardneg_r5_verifier": "36/36",
+    "wired_to_vlm": true,
+    "channel": "text_scaffold_prefix",
+    "scaffold_freeze_held": true,
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false,
+    "floor_held": true,
+    "floor": 0.9667,
+    "prefer": 1.0,
+    "mlx_largern": {
+      "overall": 1.0,
+      "n": "py8/ent16/vis16",
+      "vs_cpu_delta": 0.0,
+      "source": "frontier/tip-mlx-largern@c11ccac",
+      "merged": "data/frontier_moe_verifier_mixed_mlx_live_pillars_largern_merged.json"
+    },
+    "ent_sep": {
+      "mlx_ent2_with_sep": 1.0,
+      "n": 16,
+      "scene_0222_held": true,
+      "source": "frontier/tip-ent-sep-fix@08463a2",
+      "merged": "data/frontier_moe_verifier_mixed_mlx_live_pillars_ent_sep_fix_merged.json"
+    },
+    "own_delta": {
+      "python": -0.062,
+      "entanglement": 1.0,
+      "vision": -0.2,
+      "honesty": "ent2 still +1.0; quantum alone hurts py/vis; dual-lane protects",
+      "source": "frontier/tip-own-delta-scoreboard@66db30a"
+    },
+    "smoke_reconfirm_et": "2026-09-24 12:37:27 ET",
+    "fold_source": "frontier/tip-hardneg-r5@55bdfb7 (rebase onto b1c7091 \u2192 49d7ccc + pin; tip HEAD 6dce7b6)"
+  },
+  "pillars": {
+    "moe": {
+      "actual": "+0.333 visible; (d) 1.0",
+      "gap": 0
+    },
+    "verifier": {
+      "actual": 1.0,
+      "gap": 0
+    },
+    "scaffold": {
+      "actual": "ON; wired_to_vlm=true",
+      "gap": 0
+    },
+    "vision": {
+      "actual": 1.0,
+      "gap": 0
+    },
+    "hardneg_r5": {
+      "actual": "44/44 router \u00b7 36/36 verifier",
+      "gap": 0
+    },
+    "mlx_largern": {
+      "actual": 1.0,
+      "gap": 0
+    },
+    "ent_sep": {
+      "actual": "ent2 w/ sep 1.0 (16/16)",
+      "gap": 0
+    },
+    "own_delta_honesty": {
+      "actual": "Py\u22120.062 Ent+1.0 Vis\u22120.200; dual-lane protects",
+      "gap": 0
+    }
+  },
+  "paths": {
+    "a_baseline": 0.3333,
+    "b_moe_alone": 0.6667,
+    "c_verifier_on_python": 0.6667,
+    "d_unified": 1.0
+  },
+  "composition_sources": {
+    "tip_head": "6dce7b6",
+    "hardneg_r5_fold": "55bdfb7",
+    "hardneg_r5_polish": "9a12fbc",
+    "post_polish": "bf58743",
+    "own_delta": "66db30a",
+    "ent_sep_fix": "08463a2",
+    "mlx_largern": "c11ccac",
+    "scaffold_wire_vlm": "ae62ce2",
+    "hardneg_r4": "0dd7b79",
+    "mlx_r3": "5c67267",
+    "platform": "f0da3e7"
+  },
+  "retained_freezes": [
+    "codigo_vivo_tip_platform_100pct_20260924_111435",
+    "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",
+    "codigo_vivo_tip_post_polish_100pct_20260924_123210",
+    "tip_moe_verifier_polish_r3_100pct_20260924_111740",
+    "tip_moe_verifier_polish_r4_100pct_20260924_112851",
+    "tip_moe_verifier_polish_r5_100pct_20260924_123200"
+  ],
+  "platform_freeze_retained": {
+    "freeze_id": "codigo_vivo_tip_platform_100pct_20260924_111435",
+    "frozen_sha": "f0da3e70eba5bebd82d9d07bf2668e042ec250f1",
+    "abandoned": false
+  },
+  "mlx_r3_freeze_retained": {
+    "freeze_id": "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",
+    "frozen_sha": "5c672671419546de7b510e793875c95e070a0e34",
+    "abandoned": false
+  },
+  "post_polish_freeze_retained": {
+    "freeze_id": "codigo_vivo_tip_post_polish_100pct_20260924_123210",
+    "frozen_sha": "bf5874332b69ffb8d875628a0aa59fef6fee8b40",
+    "abandoned": false
+  },
+  "polish_r5_freeze_retained": {
+    "freeze_id": "tip_moe_verifier_polish_r5_100pct_20260924_123200",
+    "frozen_sha": "9a12fbcff599c11d276b5e82de63e582c012f6de",
+    "abandoned": false
+  },
+  "related_prior_freezes": [
+    "data/freeze_manifests/codigo_vivo_tip_platform_100pct_20260924_111435.json",
+    "data/freeze_manifests/codigo_vivo_tip_mlx_r3_100pct_20260924_112131.json",
+    "data/freeze_manifests/codigo_vivo_tip_post_polish_100pct_20260924_123210.json",
+    "data/freeze_manifests/tip_moe_verifier_polish_r5_100pct_20260924_123200.json",
+    "data/freeze_manifests/tip_moe_verifier_polish_r4_100pct_20260924_112851.json",
+    "data/freeze_manifests/tip_moe_verifier_polish_r3_100pct_20260924_111740.json"
+  ],
+  "note": "R5 platform freeze overall=1.0 at tip SHA 6dce7b6 after hardneg-r5 fold. Cites tip HEAD + R1\u2013R5 holds + mlx largern + ent-sep + own-delta + wired_to_vlm. Prior platform/mlx_r3/post_polish/polish_r5 freezes RETAINED / never abandoned.",
+  "policy": "Do not abandon prior freezes; polish and/or reinforce around. RO data/lora_adapter/. No merge to main. NO quantum-advantage claims.",
+  "tip_head_at_freeze_write": "6dce7b6cceb58ac8ed0946d1977f099f6ab55454",
+  "blockers": []
+}

@@ -1,7 +1,7 @@
 # FRONTIER — Código-vivo tip scoreboard
 
 **Branch:** `frontier/codigo-vivo-tip`  
-**Written:** 2026-09-24 12:35:26 ET · Mac-111 (`074c6626-…`) · tip post hardneg-r5 fold  
+**Written:** 2026-09-24 12:37:27 ET · Mac-111 (`074c6626-…`) · tip R5 100pct freeze @ `6dce7b6`  
 **Claim scope:** classical MoE router + `python -I` verifier + prior-replay ent/vision + GT-free circuit-graph scaffold on ent + mlx vision parse polish. **NO quantum-advantage claims.**
 
 ## Tip composition (merges / folds)
@@ -54,6 +54,42 @@
 | Metrics | `data/freeze_metrics/codigo_vivo_tip_platform_20260924.json` |
 | Unified | `data/frontier_moe_verifier_mixed_unified.json` |
 | Smoke reconfirm | PASS · ~1.35s · pillars 26/26 · hardneg 18/18 |
+
+
+## R5 TIP FREEZE (overall 1.0) — tip HEAD after hardneg-r5 fold
+
+**Freeze id:** `codigo_vivo_tip_r5_100pct_20260924_123727`  
+**Frozen SHA:** `6dce7b6cceb58ac8ed0946d1977f099f6ab55454` (`6dce7b6`) · branch `frontier/codigo-vivo-tip`  
+**When:** 2026-09-24 12:37:27 ET · Mac-111 (`074c6626-…`)  
+**Claim:** NO quantum advantage. Cites tip HEAD + R1–R5 holds + mlx largern + ent-sep + own-delta + `wired_to_vlm`. **Prior platform / mlx_r3 / post_polish / polish_r5 freezes NOT abandoned.**
+
+| Lock | Value |
+|------|-------|
+| overall (d unified) | **1.0000** |
+| MoE Δ overall | **+0.3334** visible |
+| pillars | **26/26** |
+| hardneg R1–R5 | **18/18 · 22/22 · 35/35 · 40/40 · 44/44** |
+| R3/R4/R5 verifier | **28/28 · 32/32 · 36/36** |
+| wired_to_vlm | **true** (`text_scaffold_prefix`) |
+| mlx largern (d) | **1.0000** (py8/ent16/vis16 · Δ vs CPU 0) |
+| ent-sep mlx ent2 | **1.0000** (16/16 · scene_0222 held) |
+| own-delta honesty | Py **−0.062** · Ent **+1.0** · Vis **−0.200** (dual-lane protects) |
+| ent_never_on_python | **true** |
+| prompt_touches_gt | **false** |
+| floor held | **yes** (≥0.967, actual 1.0) |
+
+**Policy:** Never abandon platform `f0da3e7` / mlx_r3 / post_polish / polish_r5. `data/lora_adapter/` **READ-ONLY**. No merge to `main`.
+
+| Artifact | Path |
+|----------|------|
+| Manifest | `data/freeze_manifests/codigo_vivo_tip_r5_100pct_20260924_123727.json` |
+| Metrics | `data/freeze_metrics/codigo_vivo_tip_r5_20260924.json` |
+| Unified | `data/frontier_moe_verifier_mixed_unified.json` |
+| MLX largern | `data/frontier_moe_verifier_mixed_mlx_live_pillars_largern_merged.json` |
+| Ent-sep | `data/frontier_moe_verifier_mixed_mlx_live_pillars_ent_sep_fix_merged.json` |
+| Own-delta | `docs/FRONTIER-CODIGO-VIVO-TIP-OWN-DELTA-SCOREBOARD.md` |
+| Wire VLM | `data/frontier_scaffold_wire_vlm.json` |
+| Re-smoke | PASS · pillars 26/26 · R1–R5 holds · overall 1.0 · blockers **none** |
 
 
 ## POST-POLISH PLATFORM FREEZE (overall 1.0) — after own-delta fold
@@ -276,7 +312,7 @@
 
 ## Live retest (this tip)
 
-**Re-smoke @ 2026-09-24 12:24:30 ET** (fold tip-ent-sep-fix @ `08463a2`) · Mac-111
+**Re-smoke @ 2026-09-24 12:37:27 ET** (R5 tip freeze @ `6dce7b6`) · Mac-111
 
 | Check | Result |
 |-------|--------|
@@ -287,13 +323,14 @@
 | `wired_to_vlm` | **True** (text_scaffold_prefix) |
 | Unified (d) overall | **1.0000** (py1 / ent1 / vis1) |
 | MoE Δ overall | **+0.3334** visible |
-| Hardneg R1 router | **18/18 (1.0)** |
-| Hardneg R2 router | **22/22 (1.0)** |
-| Hardneg R3 router | **35/35 (1.0)** |
-| Hardneg R4 router | **40/40 (1.0)** |
-| R3 / R4 verifier loop | **28/28 · 32/32** |
+| Hardneg R1–R5 router | **18/18 · 22/22 · 35/35 · 40/40 · 44/44** |
+| R3 / R4 / R5 verifier loop | **28/28 · 32/32 · 36/36** |
+| MLX LIVE largern (d) | **1.0000** (py8/ent16/vis16 · Δ vs CPU 0) |
 | MLX LIVE ent2 w/ sep | **1.0000** (n16 · scene_0222 held · Δ vs CPU 0) |
+| Own-delta honesty | Py **−0.062** · Ent **+1.0** · Vis **−0.200** |
 | Floor ≥0.967 | **held at 1.0** |
+| Blockers | **none** |
+| Retained freezes | platform · mlx_r3 · post_polish · polish_r5 (**not abandoned**) |
 
 
 
@@ -407,6 +444,8 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `data/frontier_vision_mlx_api_fix_mac111.json`
 - `data/frontier_vision_mlx_anti_think_mac111.json`
 - `data/freeze_metrics/mixed_with_freeze_r2_20260924.json`
+- `data/freeze_manifests/codigo_vivo_tip_r5_100pct_20260924_123727.json`
+- `data/freeze_metrics/codigo_vivo_tip_r5_20260924.json`
 - `data/freeze_manifests/codigo_vivo_tip_platform_100pct_20260924_111435.json`
 - `data/freeze_metrics/codigo_vivo_tip_platform_20260924.json`
 - `data/freeze_manifests/codigo_vivo_tip_mlx_r3_100pct_20260924_112131.json`
@@ -473,3 +512,5 @@ Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. 
 
 **CPU re-smoke after fold:** unified **1.0**; R1–R5 routers **18/18·22/22·35/35·40/40·44/44**; R3/R4/R5 verifier **28/28·32/32·36/36**; `wired_to_vlm=true`.  
 Anti-contam **CLEAN**. Adapters RO unchanged. Platform / mlx_r3 / polish_r4 / **post_polish** / polish_r5 freezes **retained**.
+
+**R5 tip freeze (100pct):** `codigo_vivo_tip_r5_100pct_20260924_123727` @ tip `6dce7b6` · 2026-09-24 12:37:27 ET · cites R1–R5 + mlx largern + ent-sep + own-delta + wired_to_vlm · blockers **none**.
