@@ -186,6 +186,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R13: Nginx/HAProxy/Caddy/Redis/Postgres/Skaffold/Buildkite/Packer/Salt/Bazel/Dagger/Dagster/Hasura/NestJS gates: scalars.
     # R14: Apache httpd/Varnish/APISIX/Tyk/KrakenD/MongoDB/Cassandra/Jenkins/Vagrant/Chef/Pants/Prefect/FastAPI/Spring gates: scalars.
     # R15: Squid/OpenResty/Contour/Emissary/Zuul/Django/Laravel/Gin/DynamoDB/Firestore/Keycloak/Falco/OTel/Ray gates: scalars.
+    # R16: ATS/CoreDNS/Pulsar/Redpanda/GHA/GitLab/Terraform/Nix/Express/Flask/Knative/KEDA/Dapr/Gatekeeper gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -602,7 +603,68 @@ def route_heuristic(prompt: str) -> Lane:
             r"|ray\s+.*gates:"
             r"|actor\s+gates:\s*num_cpus"
             # R15: proxy / ingress / gateway / framework / DB / security / observability / orchestration prose
-            r"|gates:\s+is\s+(?:proxy|ingress|gateway|framework|DB|security|observability|orchestration)\b",
+            r"|gates:\s+is\s+(?:proxy|ingress|gateway|framework|DB|security|observability|orchestration)\b"
+            # R16: Apache Traffic Server remap gates: remap
+            r"|gates\s*:\s*remap\b"
+            r"|trafficserver\s+.*gates:"
+            r"|apache\s+traffic\s+server\s+.*gates:"
+            r"|ats\s+.*gates:"
+            # R16: CoreDNS acl gates: acl
+            r"|gates\s*:\s*acl\b"
+            r"|coredns\s+.*gates:"
+            r"|dns\s+gates:\s*acl"
+            # R16: Apache Pulsar topic gates: produce
+            r"|gates\s*:\s*produce\b"
+            r"|pulsar\s+.*gates:"
+            r"|topic\s+gates:\s*produce"
+            # R16: Redpanda ACL gates: ALTER
+            r"|gates\s*:\s*ALTER\b"
+            r"|redpanda\s+.*gates:"
+            r"|acl\s+gates:\s*ALTER"
+            # R16: GitHub Actions needs gates: needs
+            r"|gates\s*:\s*needs\b"
+            r"|github\s+actions\s+.*gates:"
+            r"|gha\s+.*gates:"
+            r"|actions\s+gates:\s*needs"
+            # R16: GitLab CI rules gates: rules
+            r"|gates\s*:\s*rules\b"
+            r"|gitlab\s+(?:ci\s+)?.*gates:"
+            r"|ci\s+gates:\s*rules"
+            # R16: Terraform count gates: count
+            r"|gates\s*:\s*count\b"
+            r"|terraform\s+.*gates:"
+            r"|iac\s+gates:\s*count"
+            # R16: Nix flake gates: outputs
+            r"|gates\s*:\s*outputs\b"
+            r"|nix\s+flake\s+.*gates:"
+            r"|flake\s+gates:\s*outputs"
+            # R16: Express.js middleware gates: helmet
+            r"|gates\s*:\s*helmet\b"
+            r"|express(?:\.js)?\s+.*gates:"
+            r"|middleware\s+gates:\s*helmet"
+            # R16: Flask before_request gates: before_request
+            r"|gates\s*:\s*before_request\b"
+            r"|flask\s+.*gates:"
+            r"|before_request\s+gates:"
+            # R16: Knative Serving gates: minScale
+            r"|gates\s*:\s*minScale\b"
+            r"|knative\s+.*gates:"
+            r"|serving\s+gates:\s*minScale"
+            # R16: KEDA scaler gates: cooldownPeriod
+            r"|gates\s*:\s*cooldownPeriod\b"
+            r"|keda\s+.*gates:"
+            r"|scaler\s+gates:\s*cooldown"
+            # R16: Dapr middleware gates: Retry
+            r"|gates\s*:\s*Retry\b"
+            r"|dapr\s+.*gates:"
+            r"|sidecar\s+gates:\s*Retry"
+            # R16: OPA Gatekeeper constraint gates: enforcementAction
+            r"|gates\s*:\s*enforcementAction\b"
+            r"|gatekeeper\s+.*gates:"
+            r"|opa\s+gatekeeper\s+.*gates:"
+            r"|constraint\s+gates:\s*enforcement"
+            # R16: proxy / DNS / messaging / CI / IaC / build / framework / serving / autoscaler / sidecar / policy prose
+            r"|gates:\s+is\s+(?:proxy|DNS|messaging|CI|IaC|build|framework|serving|autoscaler|sidecar|policy)\b",
             text,
             re.I,
         )
@@ -1222,6 +1284,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r16' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r16.json"
         elif 'r15' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r15.json"
         elif 'r14' in hp:

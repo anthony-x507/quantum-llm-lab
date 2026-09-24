@@ -60,6 +60,24 @@
 
 **CPU re-smoke after fold:** unified **1.0**; R14 held; LP/pillars/circ floors retained; freezes retained incl. label_protect_expand_fold + pillars + circ + future_r3 + r13 + priors. Adapters RO. R15+ not folded.
 
+## Fold — tip-hardneg-r16 → codigo-vivo-tip (2026-09-24 15:22:53 ET)
+
+**Branch:** `frontier/tip-hardneg-r16` → **FOLDED** into `frontier/codigo-vivo-tip`  
+**Side:** `f3ccb0b` / feat `d4eea50` · **Base tip:** `88287bc` (post choose-safest-n)  
+**Freeze:** `codigo_vivo_tip_r16_100pct_20260924_152253`
+
+| Surface | Result |
+|---------|--------|
+| R16 router / verifier | **52/52** / **44/44** (tip before **11/52**; side 6→52; rise retained **89.1%**) |
+| Mixed (d) unified | **1.0** |
+| R15 / R14 / LP | **52/52 · 52/52 · 64/64·42/42** |
+| pillars / circ / hardneg smoke | **37/37 · 5/5 · 18/18** |
+| choose_safest n=80 | **freeze retained** (`codigo_vivo_tip_choose_safest_n_fold_100pct_20260924_151818`) |
+
+**CPU re-smoke after fold:** unified **1.0**; R16 **11→52**; R15/R14/LP/pillars/circ floors retained; choose_n freeze retained; freezes retained incl. choose_safest_n_fold + r15 + r14 + label_protect_expand_fold + pillars + circ + future_r3 + priors + side polish_r16. Adapters RO. tti-cold/R17+ not folded.
+
+**Method:** cherry-pick `d4eea50` onto tip `88287bc`; merge R12+R13+R14+R15+R16 gates_ops; keep tip STATUS+mixed/LP/r7–r12 JSON ours.
+
 ## Fold — tip-label-protect-expand → codigo-vivo-tip (2026-09-24 15:03:06 ET)
 
 | Surface | Score |

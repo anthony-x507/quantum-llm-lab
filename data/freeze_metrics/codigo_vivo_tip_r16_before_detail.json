@@ -1,0 +1,319 @@
+{
+  "phase": "tip_pre_r16_gates",
+  "n": 52,
+  "hits": 11,
+  "details": [
+    {
+      "id": "r16_ats_01",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_ats_02",
+      "expected": "python",
+      "got": "python",
+      "ok": true
+    },
+    {
+      "id": "r16_ats_03",
+      "expected": "python",
+      "got": "python",
+      "ok": true
+    },
+    {
+      "id": "r16_coredns_01",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_coredns_02",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_coredns_03",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_pulsar_01",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_pulsar_02",
+      "expected": "python",
+      "got": "python",
+      "ok": true
+    },
+    {
+      "id": "r16_pulsar_03",
+      "expected": "python",
+      "got": "python",
+      "ok": true
+    },
+    {
+      "id": "r16_redpanda_01",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_redpanda_02",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_redpanda_03",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_gha_01",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_gha_02",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_gha_03",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_gitlab_01",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_gitlab_02",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_gitlab_03",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_tf_01",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_tf_02",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_tf_03",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_nix_01",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_nix_02",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_nix_03",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_express_01",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_express_02",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_express_03",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_flask_01",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_flask_02",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_flask_03",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_knative_01",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_knative_02",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_knative_03",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_keda_01",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_keda_02",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_keda_03",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_dapr_01",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_dapr_02",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_dapr_03",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_gk_01",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_gk_02",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_gk_03",
+      "expected": "python",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_ent_01",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true
+    },
+    {
+      "id": "r16_ent_02",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true
+    },
+    {
+      "id": "r16_vis_01",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true
+    },
+    {
+      "id": "r16_vis_02",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true
+    },
+    {
+      "id": "r16_base_01",
+      "expected": "base",
+      "got": "base",
+      "ok": true
+    },
+    {
+      "id": "r16_base_02",
+      "expected": "base",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_base_03",
+      "expected": "base",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_base_04",
+      "expected": "base",
+      "got": "ent",
+      "ok": false
+    },
+    {
+      "id": "r16_ctrl_01",
+      "expected": "python",
+      "got": "python",
+      "ok": true
+    },
+    {
+      "id": "r16_ctrl_02",
+      "expected": "python",
+      "got": "python",
+      "ok": true
+    }
+  ]
+}
