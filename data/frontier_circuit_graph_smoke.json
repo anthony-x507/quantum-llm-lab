@@ -1,0 +1,745 @@
+{
+  "n_rows": 30,
+  "n_ok": 30,
+  "pct_unitary_ok": 100.0,
+  "mean_embed_norm": 0.8057565947373708,
+  "embed_dim": 64,
+  "embed_shape": [
+    64
+  ],
+  "sample_fingerprints": [
+    "dcd366251a3d",
+    "dcd366251a3d",
+    "70fc6bdc8c8f",
+    "a753935f0409",
+    "770fb9cdeb1b"
+  ],
+  "mean_energy_ok": 0.08539614838763378,
+  "backend": "pennylane.default.qubit + torch.cpu",
+  "conditioning_wired_to_vlm": false,
+  "no_gt_in_graph": true,
+  "dataset": "data/lora_dataset_ent_v7.jsonl",
+  "limit": 30,
+  "rows": [
+    {
+      "i": 0,
+      "n_qubits": 2,
+      "n_gates": 1,
+      "n_nodes": 1,
+      "n_edges": 0,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8169475793838501,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "dcd366251a3d",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 1,
+      "n_qubits": 2,
+      "n_gates": 1,
+      "n_nodes": 1,
+      "n_edges": 0,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8169475793838501,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "dcd366251a3d",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 2,
+      "n_qubits": 2,
+      "n_gates": 3,
+      "n_nodes": 3,
+      "n_edges": 1,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.7060931324958801,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": -0.9999999999999998,
+      "fingerprint": "70fc6bdc8c8f",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 3,
+      "n_qubits": 2,
+      "n_gates": 4,
+      "n_nodes": 4,
+      "n_edges": 2,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8788914084434509,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.5029056351155687,
+      "fingerprint": "a753935f0409",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 4,
+      "n_qubits": 2,
+      "n_gates": 4,
+      "n_nodes": 4,
+      "n_edges": 4,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.567062497138977,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.987227283375627,
+      "fingerprint": "770fb9cdeb1b",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 5,
+      "n_qubits": 2,
+      "n_gates": 3,
+      "n_nodes": 3,
+      "n_edges": 3,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.6339094042778015,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.9999999999999998,
+      "fingerprint": "ee82c5643f22",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 6,
+      "n_qubits": 2,
+      "n_gates": 1,
+      "n_nodes": 1,
+      "n_edges": 0,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8169475793838501,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "dcd366251a3d",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 7,
+      "n_qubits": 2,
+      "n_gates": 2,
+      "n_nodes": 2,
+      "n_edges": 1,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.577649712562561,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.9999999999999998,
+      "fingerprint": "ee82c5643f22",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 8,
+      "n_qubits": 2,
+      "n_gates": 3,
+      "n_nodes": 3,
+      "n_edges": 0,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 1.0225012302398682,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "4d4b71b17eb0",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 9,
+      "n_qubits": 2,
+      "n_gates": 3,
+      "n_nodes": 3,
+      "n_edges": 1,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.7060931324958801,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": -0.9999999999999998,
+      "fingerprint": "70fc6bdc8c8f",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 10,
+      "n_qubits": 2,
+      "n_gates": 4,
+      "n_nodes": 4,
+      "n_edges": 2,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.7069077491760254,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": -0.9999999999999998,
+      "fingerprint": "70fc6bdc8c8f",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 11,
+      "n_qubits": 2,
+      "n_gates": 3,
+      "n_nodes": 3,
+      "n_edges": 0,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 1.0225012302398682,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "4d4b71b17eb0",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 12,
+      "n_qubits": 2,
+      "n_gates": 3,
+      "n_nodes": 3,
+      "n_edges": 1,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8718318939208984,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "b1f050567774",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 13,
+      "n_qubits": 2,
+      "n_gates": 1,
+      "n_nodes": 1,
+      "n_edges": 0,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8169475793838501,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "dcd366251a3d",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 14,
+      "n_qubits": 2,
+      "n_gates": 3,
+      "n_nodes": 3,
+      "n_edges": 1,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8776268362998962,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "bbd4457f3ed3",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 15,
+      "n_qubits": 2,
+      "n_gates": 1,
+      "n_nodes": 1,
+      "n_edges": 0,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8169475793838501,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "dcd366251a3d",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 16,
+      "n_qubits": 2,
+      "n_gates": 1,
+      "n_nodes": 1,
+      "n_edges": 0,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8169475793838501,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "dcd366251a3d",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 17,
+      "n_qubits": 2,
+      "n_gates": 1,
+      "n_nodes": 1,
+      "n_edges": 0,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8169475793838501,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "dcd366251a3d",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 18,
+      "n_qubits": 2,
+      "n_gates": 1,
+      "n_nodes": 1,
+      "n_edges": 0,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8169475793838501,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "dcd366251a3d",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 19,
+      "n_qubits": 2,
+      "n_gates": 1,
+      "n_nodes": 1,
+      "n_edges": 0,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8169475793838501,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "dcd366251a3d",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 20,
+      "n_qubits": 2,
+      "n_gates": 3,
+      "n_nodes": 3,
+      "n_edges": 2,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.4514878988265991,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.921060994002885,
+      "fingerprint": "c8763f3d2638",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 21,
+      "n_qubits": 2,
+      "n_gates": 2,
+      "n_nodes": 2,
+      "n_edges": 0,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8417853116989136,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "dcd366251a3d",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 22,
+      "n_qubits": 2,
+      "n_gates": 2,
+      "n_nodes": 2,
+      "n_edges": 1,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8986250758171082,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": -0.12765076088614857,
+      "fingerprint": "aa7d264684e6",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 23,
+      "n_qubits": 2,
+      "n_gates": 2,
+      "n_nodes": 2,
+      "n_edges": 0,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8400440216064453,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "aefd2a1e50d9",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 24,
+      "n_qubits": 2,
+      "n_gates": 4,
+      "n_nodes": 4,
+      "n_edges": 2,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8815569281578064,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.5316991454678061,
+      "fingerprint": "4663df511f92",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 25,
+      "n_qubits": 2,
+      "n_gates": 3,
+      "n_nodes": 3,
+      "n_edges": 3,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8999302387237549,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.7466421545532751,
+      "fingerprint": "ff04a8194ee0",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 26,
+      "n_qubits": 2,
+      "n_gates": 3,
+      "n_nodes": 3,
+      "n_edges": 1,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8634147047996521,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "0792d447f0b2",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 27,
+      "n_qubits": 2,
+      "n_gates": 3,
+      "n_nodes": 3,
+      "n_edges": 1,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8821168541908264,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "7c726256e10b",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 28,
+      "n_qubits": 2,
+      "n_gates": 3,
+      "n_nodes": 3,
+      "n_edges": 1,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8731927871704102,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "4d4b71b17eb0",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    },
+    {
+      "i": 29,
+      "n_qubits": 2,
+      "n_gates": 1,
+      "n_nodes": 1,
+      "n_edges": 0,
+      "embed_shape": [
+        64
+      ],
+      "embed_norm": 0.8169475793838501,
+      "prefix_shape": [
+        4,
+        128
+      ],
+      "cross_attn_keys_shape": [
+        4,
+        128
+      ],
+      "unitary_ok": true,
+      "energy": 0.0,
+      "fingerprint": "dcd366251a3d",
+      "backend": "pennylane.default.qubit",
+      "error": null
+    }
+  ]
+}

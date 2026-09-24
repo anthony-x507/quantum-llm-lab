@@ -1,0 +1,90 @@
+{
+  "written": "2026-09-24 10:53:11",
+  "freeze_still_held": true,
+  "freeze_path": "data/FRONTIER_CIRCUIT_GRAPH_SCAFFOLD_FREEZE.json",
+  "freeze_blob": {
+    "frontier": "circuit-graph-moe-scaffold",
+    "written": "2026-09-24 10:48:51",
+    "clear_win": true,
+    "delta": {
+      "parse_rate": 0.25,
+      "structure_rate": 0.35,
+      "solve_rate": 0.45
+    },
+    "n_ent": 20,
+    "polish_features": true,
+    "claims": [
+      "NO quantum-advantage claims",
+      "Scaffold = classical Clifford–Pauli graph features/hints only",
+      "Metrics are own-delta usability (parse/structure/solve) on CPU heuristic"
+    ],
+    "anti_contamination": {
+      "gt_in_scaffold_hints": false,
+      "prompt_touches_gt": false,
+      "graph_builder_rejects_gt_kwargs": true,
+      "lora_adapter_writes": false
+    },
+    "note": "Freeze: scaffold own-delta clear on CPU heuristic; still no Q-advantage / no VLM wire."
+  },
+  "floors": {
+    "solve_rate": 0.9,
+    "delta_solve_rate": 0.45
+  },
+  "observed": {
+    "solve_rate": 0.9,
+    "delta_solve_rate": 0.5,
+    "delta": {
+      "parse_rate": 0.25,
+      "structure_rate": 0.35,
+      "solve_rate": 0.5
+    },
+    "clear_win": true,
+    "n_ent": 20
+  },
+  "ablation": {
+    "written": "2026-09-24 10:53:11",
+    "router_method": "heuristic",
+    "polish_features": false,
+    "n_fixtures": 24,
+    "n_ent_evaluated": 20,
+    "n_skipped_non_ent": 4,
+    "no_scaffold": {
+      "n": 20,
+      "parse_rate": 0.75,
+      "structure_rate": 0.65,
+      "solve_rate": 0.4,
+      "parse_n": 15,
+      "structure_n": 13,
+      "solve_n": 8
+    },
+    "scaffold": {
+      "n": 20,
+      "parse_rate": 1.0,
+      "structure_rate": 1.0,
+      "solve_rate": 0.9,
+      "parse_n": 20,
+      "structure_n": 20,
+      "solve_n": 18
+    },
+    "delta_scaffold_minus_off": {
+      "parse_rate": 0.25,
+      "structure_rate": 0.35,
+      "solve_rate": 0.5
+    },
+    "clear_win": true,
+    "clear_win_rule": "Δsolve≥0.15 OR (Δstructure≥0.15 AND Δparse≥0.05)",
+    "prompt_touches_gt": false,
+    "claims": [
+      "NO quantum-advantage claims",
+      "Scaffold = classical Clifford–Pauli graph features/hints only",
+      "Metrics are own-delta usability (parse/structure/solve) on CPU heuristic"
+    ],
+    "anti_contamination": {
+      "gt_in_scaffold_hints": false,
+      "prompt_touches_gt": false,
+      "graph_builder_rejects_gt_kwargs": true,
+      "lora_adapter_writes": false
+    }
+  },
+  "elapsed_s": 1.64
+}
