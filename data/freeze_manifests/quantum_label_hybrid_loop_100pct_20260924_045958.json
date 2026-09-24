@@ -1,0 +1,21 @@
+{
+  "schema": "qlab_freeze_manifest_v1",
+  "frozen_at_et": "2026-09-24 04:59:58 ET",
+  "domain": "quantum_label_hybrid_loop",
+  "pct": 100.0,
+  "band": "100",
+  "git_sha": "70ac1879df8ef5caa78daae291b2a64c70d2ae34",
+  "git_sha_short": "70ac187",
+  "artifact": "data/hybrid_oracle/report.json",
+  "eval_path": null,
+  "metrics": {
+    "n": 12,
+    "label_acc": 1.0,
+    "energy_ok": 1.0,
+    "compile": 1.0,
+    "jev": 1.0,
+    "source": "hybrid_oracle/report.json after_loop"
+  },
+  "note": "Hybrid AFTER-LOOP label_acc=1.0 (n=12); single_shot was 0.333; gold-free; classical sim oracle — not quantum advantage",
+  "policy": "Do not abandon; polish and/or reinforce around. RO quantum adapters."
+}

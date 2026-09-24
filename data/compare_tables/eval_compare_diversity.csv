@@ -1,0 +1,10 @@
+metric,base,adapter,prototype,delta
+compile_rate,0.0,1.0,,1.0
+domain_acc,0.0,1.0,,1.0
+energy_loss_scenes,0,10,,
+energy_ok_rate,0.0,1.0,,
+jev_approve_rate,0.0,1.0,,1.0
+label_acc,0.0,0.9,,0.9
+n,10,10,,
+parse_rate,0.0,1.0,,1.0
+unique_gate_combos,0,6,,

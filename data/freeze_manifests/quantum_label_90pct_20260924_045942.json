@@ -1,0 +1,19 @@
+{
+  "schema": "qlab_freeze_manifest_v1",
+  "frozen_at_et": "2026-09-24 04:59:42 ET",
+  "domain": "quantum_label",
+  "pct": 90.0,
+  "band": "90",
+  "git_sha": "70ac1879df8ef5caa78daae291b2a64c70d2ae34",
+  "git_sha_short": "70ac187",
+  "artifact": "data/lora_adapter_frozen_rebalance_20260924-041300",
+  "eval_path": null,
+  "metrics": {
+    "label_acc": 0.9,
+    "gate_combos": 7,
+    "jev": 1.0,
+    "domain_acc": 1.0
+  },
+  "note": "LoRA rebalance label_acc=0.9 platform; SHA captured now",
+  "policy": "Do not abandon; polish and/or reinforce around. RO quantum adapters."
+}
