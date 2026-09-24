@@ -43,5 +43,6 @@
     "flutter_channel_gates"
   ],
   "not_folded": true,
-  "lora_adapter_ro": true
+  "lora_adapter_ro": true,
+  "feat_sha": "d6ca2256313f1423bbf8d2d069b9a1d19ca5e8e7"
 }

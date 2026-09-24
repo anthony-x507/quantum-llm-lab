@@ -4,6 +4,7 @@
 **Base tip:** `f0dfb11` (`frontier/codigo-vivo-tip` post tip pillars-reinforce fold freeze/doc sha pin)  
 **When:** 2026-09-24T15:03:38-04:00 ET · Mac-111 (`074c6626-0440-4817-9829-6bae77c578d6`)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r23`  
+**Feat sha:** `d6ca2256313f1423bbf8d2d069b9a1d19ca5e8e7`  
 **Claim:** NO quantum advantage. Classical heuristic router + `python -I` verifier only.
 
 ## LOCK

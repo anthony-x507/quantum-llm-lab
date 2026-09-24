@@ -1,4 +1,5 @@
 ## 2026-09-24 — tip-hardneg-r23 polish (side; NOT folded)
+Feat `d6ca225` (`d6ca2256313f1423bbf8d2d069b9a1d19ca5e8e7`). Freeze/doc sha pin follow-up.
 Branch `frontier/tip-hardneg-r23` from tip `f0dfb11` (post pillars-reinforce). R23 router **6→52/52** · verifier **44/44**; mixed (d) **1.0**; R7–R13+LP held; `ent_never_on_python`. Novel: Tauri / Electron / Expo / Capacitor / Vite / esbuild / Rollup / Turborepo / Nx / Biome / Oxc / Drizzle / SurrealDB / Flutter. Freeze `codigo_vivo_tip_polish_r23_100pct_20260924_150338`. Side-only continuous polish free slot after R22 done. **Do NOT fold.** RO `data/lora_adapter/`. See `docs/FRONTIER-CODIGO-VIVO-TIP-R23.md`.
 
 ## 2026-09-24 — fold tip-pillars-reinforce → codigo-vivo-tip
