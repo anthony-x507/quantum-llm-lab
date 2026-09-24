@@ -7,6 +7,9 @@
 
 ---
 
+## 2026-09-24 — tip-scaffold-motion (RGB cue honesty)
+Branch `frontier/tip-scaffold-motion` from tip `f0fe729` (rebase onto tip post-R7). Multi-hue GT-free motion cue + scaffold→VLM meta; coverage↑; mixed (d) **1.0** held; wired_to_vlm. See `docs/FRONTIER-CODIGO-VIVO-TIP-SCAFFOLD-MOTION.md`.
+
 ## 2026-09-24 — fold tip-hardneg-r7 → codigo-vivo-tip
 Rebase `bac0ad0`/`76a3eac` onto `f0fe729` → `00fdaaf`+`f586efd` FF. CPU unified **1.0** (re-smoke); R7 52/52·44/44; LP 43/43·32/32; R1–R6 held; freezes retained incl. post_od2 + R6 + label_protect. See SCOREBOARD + TIP-R7.
 

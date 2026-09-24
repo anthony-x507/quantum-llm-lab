@@ -213,8 +213,14 @@ def run_pillar_entanglement(
             _suf = motion_cue_prompt_suffix(str(_mc.get('cue') or 'unknown'))
             if _suf:
                 prompt = prompt.rstrip() + '\n' + _suf
-        except Exception:
-            _mc = {'cue': 'unknown'}
+        except Exception as _mc_exc:  # noqa: BLE001
+            _mc = {
+                'cue': 'unknown',
+                'reason': f'exc:{type(_mc_exc).__name__}',
+                'gt_free': True,
+                'reads_meta': False,
+                'inference_uses_gt': False,
+            }
         scaffold_meta: dict[str, Any] | None = None
         if circuit_scaffold:
             try:
@@ -227,10 +233,25 @@ def run_pillar_entanglement(
                     scaffold_wired_n += 1
                 if scaffold_meta.get("gt_leak"):
                     scaffold_gt_leaks += 1
+                # Attach motion-cue honesty into scaffold→VLM meta (still GT-free)
+                scaffold_meta = dict(scaffold_meta or {})
+                scaffold_meta['motion_cue'] = {
+                    k: _mc.get(k)
+                    for k in (
+                        'cue', 'reason', 'vel_corr', 'dist_cv', 'n',
+                        'hues_chosen', 'gt_free', 'reads_meta',
+                        'source', 'inference_uses_gt',
+                    )
+                    if k in _mc or k in ('cue', 'gt_free', 'reads_meta', 'inference_uses_gt')
+                }
+                scaffold_meta['motion_cue_gt_free'] = bool(_mc.get('gt_free', True))
+                scaffold_meta['motion_cue_reads_meta'] = bool(_mc.get('reads_meta', False))
             except Exception as _sc_exc:  # noqa: BLE001
                 scaffold_meta = {
                     "wired_to_vlm": False,
                     "error": f"{type(_sc_exc).__name__}: {_sc_exc}",
+                    "motion_cue": _mc,
+                    "motion_cue_gt_free": bool(_mc.get('gt_free', True)),
                 }
         source = "vlm"
         proposal: dict[str, Any] = {"n_qubits": 2, "gates": []}

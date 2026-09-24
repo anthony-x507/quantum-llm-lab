@@ -181,67 +181,135 @@ def graph_features(proposal: dict[str, Any], encoder: GNNEncoder | None = None) 
 def visual_motion_cue(scene_dir) -> dict:
     """GT-free visual cue from RGB frames: independent vs correlated blob motion.
 
-    Uses color-tinted centroids (red-ish / blue-ish). Never reads meta labels.
+    Tracks up to two strongest color-tint centroids among {red, blue, green,
+    yellow}. Never reads meta labels / GT. Fails open to cue=unknown with an
+    honesty payload (gt_free=true, reads_meta=false).
     Returns {cue: independent|correlated|unknown, ...}.
     """
     from pathlib import Path as _P
+    honesty = {
+        "gt_free": True,
+        "reads_meta": False,
+        "source": "rgb_centroid_velocity",
+        "inference_uses_gt": False,
+    }
     try:
         import numpy as np
         from PIL import Image
     except Exception as exc:  # noqa: BLE001
-        return {"cue": "unknown", "reason": f"deps:{type(exc).__name__}"}
+        return {"cue": "unknown", "reason": f"deps:{type(exc).__name__}", **honesty}
     scene_dir = _P(scene_dir)
-    frames = sorted(scene_dir.glob("frame_*.png"))[::2][:10]
+    frames = sorted(scene_dir.glob("frame_*.png"))
+    if not frames:
+        frames = sorted(scene_dir.glob("**/frame_*.png"))
+    frames = frames[::2][:10]
     if len(frames) < 3:
-        return {"cue": "unknown", "reason": "few_frames"}
-    red_c, blue_c = [], []
+        return {"cue": "unknown", "reason": "few_frames", "n_frames": len(frames), **honesty}
+
+    def _cent(m, np_mod):
+        yy, xx = np_mod.where(m)
+        if len(xx) < 5:
+            return None
+        return np_mod.array([xx.mean(), yy.mean()])
+
+    tracks: dict[str, list] = {"red": [], "blue": [], "green": [], "yellow": []}
+    mass: dict[str, float] = {k: 0.0 for k in tracks}
     for fp in frames:
         arr = np.asarray(Image.open(fp).convert("RGB"), dtype=np.float32)
         R, G, B = arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]
-        red_m = (R > 140) & (R > G + 30) & (R > B + 30)
-        blue_m = (B > 140) & (B > R + 20) & (B > G + 20)
+        masks = {
+            "red": (R > 140) & (R > G + 30) & (R > B + 30),
+            "blue": (B > 140) & (B > R + 20) & (B > G + 20),
+            "green": (G > 140) & (G > R + 30) & (G > B + 30),
+            "yellow": (R > 150) & (G > 150) & (B < 120) & (R > B + 30) & (G > B + 30),
+        }
+        for name, m in masks.items():
+            c = _cent(m, np)
+            if c is None:
+                tracks[name].append(None)
+            else:
+                tracks[name].append(c)
+                mass[name] += float(m.sum())
 
-        def _cent(m):
-            yy, xx = np.where(m)
-            if len(xx) < 5:
-                return None
-            return np.array([xx.mean(), yy.mean()])
+    ranked = sorted(mass.items(), key=lambda kv: -kv[1])
+    chosen: list[str] = []
+    series: list[list] = []
+    for name, _ in ranked:
+        pts = [p for p in tracks[name] if p is not None]
+        if len(pts) >= 3:
+            chosen.append(name)
+            series.append(pts)
+        if len(chosen) == 2:
+            break
+    if len(chosen) < 2:
+        return {
+            "cue": "unknown",
+            "reason": "color_track_fail",
+            "n": 0 if not chosen else len(series[0]),
+            "hues_seen": {k: round(v, 1) for k, v in mass.items() if v > 0},
+            "hues_chosen": chosen,
+            **honesty,
+        }
 
-        cr, cb = _cent(red_m), _cent(blue_m)
-        if cr is None or cb is None:
-            continue
-        red_c.append(cr)
-        blue_c.append(cb)
-    if len(red_c) < 3:
-        return {"cue": "unknown", "reason": "color_track_fail", "n": len(red_c)}
-    v0 = np.diff(red_c, axis=0).ravel()
-    v1 = np.diff(blue_c, axis=0).ravel()
+    n = min(len(series[0]), len(series[1]))
+    a = __import__("numpy").asarray(series[0][:n], dtype="float64")
+    b = __import__("numpy").asarray(series[1][:n], dtype="float64")
+    import numpy as np  # local for corrcoef
+    v0 = np.diff(a, axis=0).ravel()
+    v1 = np.diff(b, axis=0).ravel()
     if v0.std() < 1e-6 or v1.std() < 1e-6:
         c = 0.0
     else:
         c = float(np.corrcoef(v0, v1)[0, 1])
-    dist = np.array([np.linalg.norm(a - b) for a, b in zip(red_c, blue_c)])
+        if c != c:
+            c = 0.0
+    dist = np.linalg.norm(a - b, axis=1)
     dist_cv = float(dist.std() / (dist.mean() + 1e-6))
-    if abs(c) < 0.45:
+    # Honesty: varying pair-distance ⇒ independent trajectories (product-like).
+    # Locked distance + high |vel_corr| ⇒ correlated (Bell-like). Else unknown.
+    if dist_cv >= 0.10:
         cue = "independent"
     elif abs(c) > 0.75 and dist_cv < 0.08:
         cue = "correlated"
+    elif abs(c) < 0.45:
+        cue = "independent"
     else:
         cue = "unknown"
-    return {"cue": cue, "vel_corr": round(c, 3), "dist_cv": round(dist_cv, 3), "n": len(red_c)}
+    out = {
+        "cue": cue,
+        "vel_corr": round(c, 3),
+        "dist_cv": round(dist_cv, 3),
+        "n": int(n),
+        "hues_chosen": chosen,
+        **honesty,
+    }
+    if cue == "unknown":
+        out["reason"] = "corr_ambiguous"
+    return out
 
 
 def motion_cue_prompt_suffix(cue: str) -> str:
-    """Map cue → GT-free prompt keywords that steer scaffold priors."""
+    """Map cue → GT-free prompt keywords that steer scaffold priors.
+
+    unknown → explicit honesty line (no invented motion prior; no GT).
+    """
     if cue == "independent":
         return (
             "Visual motion cue (structure only): colored objects appear on "
-            "independent trajectories (product-state / no CX prior)."
+            "independent trajectories (product-state / no CX prior). "
+            "GT-free RGB centroid cue; no eval labels."
         )
     if cue == "correlated":
         return (
             "Visual motion cue (structure only): colored objects appear on "
-            "correlated trajectories (Bell-pair / CX prior)."
+            "correlated trajectories (Bell-pair / CX prior). "
+            "GT-free RGB centroid cue; no eval labels."
+        )
+    if cue == "unknown":
+        return (
+            "Visual motion cue (structure only): no reliable RGB motion prior "
+            "(unknown). Do not invent entanglement from color; use balanced "
+            "scaffold priors only. GT-free; no eval labels."
         )
     return ""
 

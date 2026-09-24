@@ -1,0 +1,220 @@
+{
+  "frontier": "tip-scaffold-motion",
+  "written": "2026-09-24 12:55:22 ET",
+  "branch": "frontier/tip-scaffold-motion",
+  "tip_base": "f0fe729",
+  "claims": [
+    "NO quantum-advantage claims",
+    "GT-free RGB motion cue only"
+  ],
+  "anti_contamination": {
+    "gt_free_all": true,
+    "reads_meta_any": false,
+    "inference_uses_gt": false,
+    "prompt_suffix_unknown_honesty": true
+  },
+  "n_scenes": 200,
+  "cue_counts": {
+    "unknown": 112,
+    "independent": 73,
+    "correlated": 15
+  },
+  "reason_counts": {
+    "color_track_fail": 101,
+    "corr_ambiguous": 11,
+    "ok": 88
+  },
+  "coverage_known": 0.44,
+  "special_cases": {
+    "scene_0222": {
+      "cue": "independent",
+      "vel_corr": 0.279,
+      "dist_cv": 0.02,
+      "n": 10,
+      "hues_chosen": [
+        "red",
+        "blue"
+      ],
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false
+    },
+    "scene_0157": {
+      "cue": "independent",
+      "vel_corr": -0.985,
+      "dist_cv": 0.129,
+      "n": 10,
+      "hues_chosen": [
+        "blue",
+        "green"
+      ],
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false
+    },
+    "scene_0291": {
+      "cue": "independent",
+      "vel_corr": -0.987,
+      "dist_cv": 0.216,
+      "n": 10,
+      "hues_chosen": [
+        "blue",
+        "green"
+      ],
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false
+    }
+  },
+  "sample_rows": [
+    {
+      "id": "scene_0000",
+      "cue": "unknown",
+      "reason": "color_track_fail",
+      "vel_corr": null,
+      "dist_cv": null,
+      "n": 9,
+      "hues_chosen": [
+        "blue"
+      ]
+    },
+    {
+      "id": "scene_0001",
+      "cue": "unknown",
+      "reason": "color_track_fail",
+      "vel_corr": null,
+      "dist_cv": null,
+      "n": 10,
+      "hues_chosen": [
+        "blue"
+      ]
+    },
+    {
+      "id": "scene_0002",
+      "cue": "unknown",
+      "reason": "corr_ambiguous",
+      "vel_corr": 0.514,
+      "dist_cv": 0.056,
+      "n": 10,
+      "hues_chosen": [
+        "green",
+        "blue"
+      ]
+    },
+    {
+      "id": "scene_0003",
+      "cue": "unknown",
+      "reason": "color_track_fail",
+      "vel_corr": null,
+      "dist_cv": null,
+      "n": 10,
+      "hues_chosen": [
+        "green"
+      ]
+    },
+    {
+      "id": "scene_0004",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": 0.626,
+      "dist_cv": 0.211,
+      "n": 10,
+      "hues_chosen": [
+        "red",
+        "yellow"
+      ]
+    },
+    {
+      "id": "scene_0005",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.703,
+      "dist_cv": 0.269,
+      "n": 10,
+      "hues_chosen": [
+        "green",
+        "blue"
+      ]
+    },
+    {
+      "id": "scene_0006",
+      "cue": "unknown",
+      "reason": "color_track_fail",
+      "vel_corr": null,
+      "dist_cv": null,
+      "n": 10,
+      "hues_chosen": [
+        "blue"
+      ]
+    },
+    {
+      "id": "scene_0007",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.981,
+      "dist_cv": 0.136,
+      "n": 10,
+      "hues_chosen": [
+        "green",
+        "yellow"
+      ]
+    },
+    {
+      "id": "scene_0009",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.917,
+      "dist_cv": 0.136,
+      "n": 10,
+      "hues_chosen": [
+        "blue",
+        "red"
+      ]
+    },
+    {
+      "id": "scene_0020",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.7,
+      "dist_cv": 0.298,
+      "n": 10,
+      "hues_chosen": [
+        "red",
+        "blue"
+      ]
+    },
+    {
+      "id": "scene_0023",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": 0.365,
+      "dist_cv": 0.02,
+      "n": 10,
+      "hues_chosen": [
+        "blue",
+        "red"
+      ]
+    },
+    {
+      "id": "scene_0027",
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 0.88,
+      "dist_cv": 0.017,
+      "n": 10,
+      "hues_chosen": [
+        "red",
+        "blue"
+      ]
+    }
+  ],
+  "delta_vs_prior_red_blue_only": {
+    "note": "prior ~4 independent / 3 correlated / 73 unknown on n\u224880; multi-hue+dist_cv rule expands known coverage",
+    "post_independent": 73,
+    "post_correlated": 15,
+    "post_unknown": 112
+  }
+}
