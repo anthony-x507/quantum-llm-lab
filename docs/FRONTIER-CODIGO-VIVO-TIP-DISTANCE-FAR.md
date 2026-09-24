@@ -4,8 +4,9 @@
 **Base tip SHA:** `f70faa1` (`frontier/codigo-vivo-tip` @ motion-r4; **side-only**)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-distance-far` (Mac-111)  
 **When:** 2026-09-24 ~14:07 ET  
-**Feat SHA:**  ()  
-**Freeze:**   
+**Feat SHA:** `8b4779c` (`8b4779c50f0276b798d02b404696ac561c984489`)  
+**Freeze:** `codigo_vivo_tip_distance_far_100pct_20260924_140738`  
+**Docs pin HEAD:** `2cac3b0`  
 **Scope:** Side-branch only — does **not** fold into tip / tip-cv / tip-distance-mid / tip-hardneg-r11 / tip-hardneg-r12 / tip-tti / tip-motion-r4 / tip-inverse-r3.
 
 ## LOCK (Anthony)

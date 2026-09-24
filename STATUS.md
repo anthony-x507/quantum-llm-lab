@@ -1,3 +1,6 @@
+## 2026-09-24 — tip-distance-far freeze sha pin (8b4779c)
+Freeze `codigo_vivo_tip_distance_far_100pct_20260924_140738` pins feat `8b4779c` (HEAD `2cac3b0`). Side-only; not folded.
+
 ## 2026-09-24 — tip-distance-far (SIDE ONLY, not folded)
 Branch `frontier/tip-distance-far` @ tip `f70faa1` (motion-r4). Far 100–200 m MAE: far-set **4.653→2.600 m**; original 5.440→4.563; danger50 6.121→2.684. DZ 30–70 **100% held**; mid_near/outer **100% held**. Freeze `codigo_vivo_tip_distance_far_100pct`. Adapters RO. See `docs/FRONTIER-CODIGO-VIVO-TIP-DISTANCE-FAR.md`.
 
