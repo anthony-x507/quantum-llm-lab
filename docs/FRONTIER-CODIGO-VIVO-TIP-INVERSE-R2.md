@@ -1,11 +1,11 @@
 # FRONTIER — tip-inverse-r2 (inverse_cv / choose_safest polish)
 
-**Branch:** `frontier/tip-inverse-r2`  
-**Base tip SHA:** `2d13d0a` (`origin/frontier/codigo-vivo-tip`)  
-**Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-inverse-r2` (Mac-111)  
-**When:** 2026-09-24 13:43:26 ET  
-**Freeze:** `codigo_vivo_tip_inverse_r2_100pct_20260924_134326` @ `0a1439d`
-**Scope:** Side-branch only — does **not** fold into tip; avoids tip-cv / tip-hardneg-r10 / tip-vision-ground / tip-motion-r3 / tip-vision-delta.
+**Status:** **FOLDED** into `frontier/codigo-vivo-tip` (rebase `0a1439d`/`7db813f`/`95b1ad6` onto `fabef2b` → content `6b77248` / pins `343d00a`+`5d4d466` FF)  
+**Branch:** `frontier/tip-inverse-r2` (rebased; source kept) · tip `frontier/codigo-vivo-tip`  
+**Base tip at fold:** `fabef2b` (post R10) · inverse originally from `2d13d0a`  
+**When:** polish ~13:43 ET · fold 2026-09-24 13:49:42 ET · Mac-111 (`074c6626-…`)  
+**Freeze:** `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`  
+**Claim:** NO quantum advantage. CPU elastic-disk physics oracle + action-aware wall-bounce CV only.
 
 ## LOCK (Anthony / Leader)
 
@@ -14,7 +14,7 @@
 - Retain freezes **r9**, **collision_n**, **motion_r2**, **collision_pred**, **distance_danger** + priors.
 - Anti-contam: GT / real consequences **NEVER** at inference.
 - Quantum `data/lora_adapter/` = **READ-ONLY**.
-- No merge to `main`; no fold into tip.
+- No merge to `main`. Fold destination is tip-cv only.
 
 ## What this branch changes
 
@@ -79,12 +79,23 @@ cd /Users/anthony/Documents/quantum-llm-lab-tip-inverse-r2
 /Users/anthony/Documents/quantum-llm-lab/.venv/bin/python examples/collision_predictive/eval_harness.py --contam-self-test
 ```
 
+
+## FOLDED into tip
+
+**When:** 2026-09-24 13:49:42 ET · Mac-111 (`074c6626-…`)  
+**Method:** rebase `frontier/tip-inverse-r2` (`95b1ad6` / feat `0a1439d`; pins `7db813f`+`95b1ad6`) onto tip `fabef2b` → `6b77248`+`343d00a`+`5d4d466`; FF into tip (STATUS kept both motion-r3 fold + inverse side note; relative mixed_unified primary kept).  
+**Prior freezes retained (not abandoned):** platform, mlx_r3, post_polish, R5, label_protect, R6, post_od2, R7, **scaffold_motion**, **R8**, **distance_danger**, **collision_pred**, **motion_r2**, **collision_n**, **R9**, **motion_r3**, **R10** `codigo_vivo_tip_r10_100pct_20260924_134615`.  
+**Re-smoke:** mixed (d) **1.0**; collision physics **100%** (n=40 / 2850); inverse_cv **99.82%**; choose_safest **100%**; R10 **52/52·44/44**; motion coverage **97.5%** (138 ind + 57 corr); pillars **26/26**; smoke **12/12**; `wired_to_vlm=true`; `gt_leak=false`; `ent_never_on_python=true`.  
+**Not folded:** tip-vision-ground / tip-motion-r4 / tip-hardneg-r11 (active — do not fold).  
+**Adapters:** `data/lora_adapter/` RO mtime unchanged (2026-09-24 10:57:00).  
+**Freeze:** `codigo_vivo_tip_inverse_r2_100pct_20260924_134326` (pinned on tip after fold).
+
 ## Non-goals / avoided
 
-- No merge to `main` / tip / tip-cv.
+- No merge to `main`.
 - No CloudAgent.
 - No write to `data/lora_adapter/`.
-- No tip-hardneg-r10 / tip-vision-ground / tip-motion-r3 / tip-vision-delta worktrees.
+- No tip-vision-ground / tip-motion-r4 / tip-hardneg-r11 worktree writes.
 - No fake metrics.
 
 ## Blockers

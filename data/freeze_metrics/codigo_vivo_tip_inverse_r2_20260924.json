@@ -1,0 +1,40 @@
+{
+  "frontier": "codigo-vivo-tip-inverse-r2",
+  "written_et": "2026-09-24 13:49:42 ET",
+  "branch": "frontier/codigo-vivo-tip",
+  "source_branch": "frontier/tip-inverse-r2",
+  "rebase_onto": "fabef2b",
+  "pre_feat_sha": "0a1439d",
+  "post_rebase_feat_sha": "6b77248",
+  "post_rebase_pin_shas": [
+    "343d00a",
+    "5d4d466"
+  ],
+  "metrics": {
+    "mixed_d_unified": 1.0,
+    "collision_physics_overall_pct": 100.0,
+    "collision_inverse_cv_overall_pct": 99.82,
+    "collision_choose_safest_overall_pct": 100.0,
+    "collision_inverse_cv_overall_pct_before": 89.82,
+    "collision_ablation_pp": 0.18,
+    "collision_n_eval_seqs": 40,
+    "collision_n_queries": 2850,
+    "r10_router": "52/52",
+    "r10_verifier": "44/44",
+    "motion_coverage_known": 0.975,
+    "motion_counts": {
+      "independent": 138,
+      "correlated": 57,
+      "unknown": 5
+    },
+    "pillars": "26/26",
+    "smoke": "12/12",
+    "wired_to_vlm": true,
+    "gt_leak": false,
+    "ent_never_on_python": true,
+    "floor_held": true,
+    "contam_passed": true,
+    "retrieval_ok": true
+  },
+  "freeze_id": "codigo_vivo_tip_inverse_r2_100pct_20260924_134326"
+}

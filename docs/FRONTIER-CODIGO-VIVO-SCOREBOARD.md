@@ -1,8 +1,39 @@
 # FRONTIER — Código-vivo tip scoreboard
 
 **Branch:** `frontier/codigo-vivo-tip`  
-**Written:** 2026-09-24 13:46:15 ET · Mac-111 (`074c6626-…`) · tip hardneg-r10 fold
+**Written:** 2026-09-24 13:49:42 ET · Mac-111 (`074c6626-…`) · tip inverse-r2 fold
 **Claim scope:** classical MoE router + `python -I` verifier + prior-replay ent/vision + GT-free circuit-graph scaffold on ent + mlx vision parse polish. **NO quantum-advantage claims.**
+
+
+## INVERSE-R2 TIP FREEZE / FOLD (overall 1.0) — tip HEAD after inverse-r2 fold
+
+**Freeze id:** `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`  
+**Frozen SHA:** *(pinned on tip after fold — see pin commit)* · branch `frontier/codigo-vivo-tip` · rebase `0a1439d`/`7db813f`/`95b1ad6` onto `fabef2b` → `6b77248`+`343d00a`+`5d4d466` FF then fold  
+**When:** 2026-09-24 13:49:42 ET · Mac-111 (`074c6626-…`)  
+**Claim:** NO quantum advantage. Cites tip HEAD after inverse-r2 fold; **prior platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2 / R7 / scaffold_motion / R8 / distance_danger / collision_pred / motion_r2 / collision_n / R9 / motion_r3 / R10 freezes NOT abandoned**.
+
+| Surface | Score |
+|---------|-------|
+| mixed (d) unified | **1.0** |
+| collision physics (n=40) | **100%** (2850/2850) |
+| inverse_cv | **99.82%** (was 89.82%; +10.00 pp) |
+| collision_choose_safest | **100%** |
+| hardneg R10 | **52/52 · 44/44** |
+| motion coverage | **97.5%** (138 ind + 57 corr) |
+| router smoke / pillars | **12/12 · 26/26** |
+| `ent_never_on_python` | **true** |
+| `wired_to_vlm` | **true** |
+
+**Policy:** Never abandon r10 / motion_r3 / r9 / collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. **Do not fold vision-ground / motion-r4 / hardneg-r11**.
+
+| Artifact | Path |
+|----------|------|
+| Manifest | `data/freeze_manifests/codigo_vivo_tip_inverse_r2_100pct_20260924_134326.json` |
+| Metrics | `data/freeze_metrics/codigo_vivo_tip_inverse_r2_20260924.json` |
+| Fold metrics | `data/freeze_metrics/codigo_vivo_tip_inverse_r2_fold_20260924.json` |
+| Inverse-r2 doc | `docs/FRONTIER-CODIGO-VIVO-TIP-INVERSE-R2.md` |
+| Re-smoke | PASS · inverse_cv 99.82% · collision 100% · choose_safest 100% · R10 52/52·44/44 · motion 97.5% · cpu overall 1.0 |
+
 
 ## R10 TIP FREEZE / FOLD (overall 1.0) — tip HEAD after hardneg-r10 fold
 
@@ -22,7 +53,7 @@
 | `ent_never_on_python` | **true** |
 | `wired_to_vlm` | **true** |
 
-**Policy:** Never abandon motion_r3 / r9 / collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. **Do not fold vision-ground / inverse-r2**.
+**Policy:** Never abandon motion_r3 / r9 / collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. **Inverse-r2 folded** (see INVERSE-R2 section above). Do not fold vision-ground / motion-r4 / hardneg-r11.
 
 | Artifact | Path |
 |----------|------|
@@ -66,7 +97,7 @@
 **Freeze id:** `codigo_vivo_tip_r9_100pct_20260924_133405`  
 **Frozen SHA:** `eefc61711bbd321fe72fd21c43b88a0082eb6dba` (`eefc617`) · branch `frontier/codigo-vivo-tip` · rebase `eec0a8a`/`b33c2b0` onto `3d05cbe` → `ea2f450`+`0096a6e` FF then fold  
 **When:** 2026-09-24 13:34:05 ET · Mac-111 (`074c6626-…`)  
-**Claim:** NO quantum advantage. Cites tip HEAD after R9 fold; **prior platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2 / R7 / scaffold_motion / R8 / distance_danger / collision_pred / motion_r2 / collision_n freezes NOT abandoned**. Side-branch `frontier/tip-inverse-r2` raises inverse_cv **89.82→99.82** (not folded).
+**Claim:** NO quantum advantage. Cites tip HEAD after R9 fold; **prior platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2 / R7 / scaffold_motion / R8 / distance_danger / collision_pred / motion_r2 / collision_n freezes NOT abandoned**. `frontier/tip-inverse-r2` raises inverse_cv **89.82→99.82** (**FOLDED** — see INVERSE-R2 section).
 
 | Surface | Score |
 |---------|-------|
@@ -724,7 +755,7 @@ Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. 
 
 ## Collision-n (eval expand 8→40) — FOLDED
 
-## tip-inverse-r2 (side branch — not folded)
+## tip-inverse-r2 (inverse_cv 89.82→99.82) — FOLDED
 
 **Branch:** `frontier/tip-inverse-r2` @ `0a1439d` · base tip `2d13d0a`  
 **Freeze:** `codigo_vivo_tip_inverse_r2_100pct_20260924_134326` @ `0a1439d`  
@@ -739,7 +770,7 @@ Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. 
 | mixed floor | **1.0** | **1.0** (router untouched) |
 | contam / retrieval | PASS / ok | PASS / ok |
 
-**Policy:** Side-branch only — **no fold** into tip / tip-cv. Avoided tip-hardneg-r10 / tip-vision-* / tip-motion-r3. Adapters RO. Retained r9 + collision_n + motion_r2 + collision_pred + distance_danger + priors.
+**Policy:** **FOLDED** into tip @ 13:49:42 ET. Adapters RO. Retained r10 + motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + priors. Not folded: vision-ground / motion-r4 / R11.
 
 **Freeze:** `codigo_vivo_tip_collision_n_100pct_20260924_132559`  
 **Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-COLLISION-N.md`  

@@ -1,8 +1,8 @@
 {
   "schema": "frontier_tip_inverse_r2_probe",
-  "ts": "2026-09-24 13:43:03 ET",
+  "ts": "2026-09-24 13:49:34 ET",
   "domain": "collision_predictive",
-  "branch": "frontier/tip-inverse-r2",
+  "branch": "frontier/codigo-vivo-tip",
   "base_tip_sha": "2d13d0a",
   "n_eval_seqs": 40,
   "metric_collision_correct_pct": 100.0,
@@ -180,7 +180,19 @@
     }
   },
   "quantum_adapter_touched": false,
-  "floor_resmoke": "N/A \u2014 side-branch collision_predictive / inverse_cv + choose_safest polish only; tip router / mixed untouched; mixed floor 1.0 assumed held",
+  "floor_resmoke": {
+    "mixed_d_unified": 1.0,
+    "r10_router": "52/52",
+    "r10_verifier": "44/44",
+    "motion_coverage_known": 0.975,
+    "collision_physics_pct": 100.0,
+    "inverse_cv_pct": 99.82,
+    "choose_safest_pct": 100.0,
+    "smoke": "12/12",
+    "pillars": "26/26",
+    "when_et": "2026-09-24 13:49:34 ET",
+    "held": true
+  },
   "physics_freeze_held": true,
   "physics_freeze_100pct": true,
   "inverse_target_ge_95": true,
@@ -204,5 +216,6 @@
     "codigo_vivo_tip_distance_danger_100pct_20260924_131243"
   ],
   "freeze_sha": "0a1439d1a1356318667222753fb9e99e8df7be2c",
-  "freeze_id": "codigo_vivo_tip_inverse_r2_100pct_20260924_134326"
+  "freeze_id": "codigo_vivo_tip_inverse_r2_100pct_20260924_134326",
+  "fold_reprobe": true
 }

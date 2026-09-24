@@ -1,3 +1,6 @@
+## 2026-09-24 — fold tip-inverse-r2 → codigo-vivo-tip
+Rebase `0a1439d`/`7db813f`/`95b1ad6` onto `fabef2b` → `6b77248`+`343d00a`+`5d4d466` FF. CPU unified **1.0** (re-smoke); collision physics **100%** (n=40/2850); inverse_cv **99.82%**; choose_safest **100%**; R10 **52/52·44/44**; motion **97.5%**; pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. r10 + motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`. Vision-ground / motion-r4 / R11 **not** folded. See SCOREBOARD + TIP-INVERSE-R2.
+
 ## 2026-09-24 — fold tip-hardneg-r10 → codigo-vivo-tip
 Rebase `b281e88`/`677c7ce` onto `6624df1` → `d4b2d4f`+`06fcc67` FF (skipped redundant R9-priors `c65cc04`). CPU unified **1.0** (re-smoke); R10 **52/52·44/44**; R9 **52/52·44/44**; motion **97.5%**; collision physics **100%** (n=40); pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_r10_100pct_20260924_134615`. Vision-ground / inverse-r2 **not** folded. See SCOREBOARD + TIP-R10.
 
@@ -6,8 +9,8 @@ Branch `frontier/tip-hardneg-r10` from tip `3d05cbe`. R10 router **52/52** · ve
 
 # Estado de avance
 
-## 2026-09-24 — tip-inverse-r2 (side branch, pre-fold)
-Branch `frontier/tip-inverse-r2` from tip `2d13d0a` (rebase onto tip post-R10). inverse_cv **89.82→99.82**; collision physics **100%** held (n=40/2850); choose_safest **100%**; mixed **1.0** assumed (router untouched); ablation +10.18→+0.18 pp; contam PASS; adapters RO. Freeze `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`. See SCOREBOARD + TIP-INVERSE-R2.
+## 2026-09-24 — tip-inverse-r2 polish (pre-fold)
+Branch `frontier/tip-inverse-r2` from tip `2d13d0a` → rebased onto `fabef2b`. inverse_cv **89.82→99.82**; collision physics **100%** held; choose_safest **100%**. See fold entry above + TIP-INVERSE-R2.
 
 ## 2026-09-24 — fold tip-motion-r3 → codigo-vivo-tip
 Rebase `24798e3`/`1d2ca87` onto `2d13d0a` → `fbe296a`+`553b7e5` FF. CPU unified **1.0** (re-smoke); motion coverage **97.5%** (138 ind + 57 corr; +6.5 pp vs 91%); R9 **52/52·44/44**; collision physics **100%** (n=40); pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_motion_r3_100pct_20260924_133333`. Hardneg-r10 / vision-delta **not** folded. See SCOREBOARD + TIP-MOTION-R3.

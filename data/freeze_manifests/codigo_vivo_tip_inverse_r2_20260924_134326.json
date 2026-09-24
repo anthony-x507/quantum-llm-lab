@@ -24,7 +24,7 @@
     "collision_retrieval_ok": true,
     "mixed_d_unified": 1.0,
     "floor_held": true,
-    "floor_resmoke": "N/A"
+    "floor_resmoke": "PASS \u00b7 mixed 1.0 \u00b7 R10 52/52\u00b744/44 \u00b7 motion 97.5% \u00b7 collision 100% \u00b7 inverse_cv 99.82%"
   },
   "floors": {
     "mixed_d_unified": 1.0,
@@ -35,13 +35,17 @@
     "inverse_cv_actual": 0.9982,
     "min_hold_pct": 80.0
   },
-  "policy": "RO data/lora_adapter/; no merge main; no fold into tip; side-branch only; avoid tip-cv / tip-hardneg-r10 / tip-vision-ground / tip-motion-r3 / tip-vision-delta; GT never at inference; retain r9+collision_n+motion_r2+collision_pred+distance_danger+priors",
-  "note": "inverse-r2 polish: raise inverse_cv 89.82\u219299.82 via action-aware wall-bounce CV + third-party geometric overlap; choose_safest clearance rank among safe; collision physics 100% freeze held",
+  "policy": "RO data/lora_adapter/; no merge main; FOLDED into tip; avoid tip-vision-ground / tip-motion-r4 / tip-hardneg-r11; GT never at inference; retain r10+motion_r3+r9+collision_n+motion_r2+collision_pred+distance_danger+priors",
+  "note": "inverse-r2 FOLDED into tip: inverse_cv 89.82\u219299.82; collision physics 100%; choose_safest 100%; mixed 1.0 re-smoke held",
   "prior_freeze_retained": [
+    "codigo_vivo_tip_r10_100pct_20260924_134615",
+    "codigo_vivo_tip_motion_r3_100pct_20260924_133333",
     "codigo_vivo_tip_r9_100pct_20260924_133405",
     "codigo_vivo_tip_collision_n_100pct_20260924_132559",
     "codigo_vivo_tip_motion_r2_100pct_20260924_131537",
     "codigo_vivo_tip_collision_pred_100pct_20260924_131846",
     "codigo_vivo_tip_distance_danger_100pct_20260924_131243"
-  ]
+  ],
+  "folded_at_et": "2026-09-24 13:49:42 ET",
+  "fold_base_tip_sha": "fabef2b314847256a466791badb81735da3a1397"
 }
