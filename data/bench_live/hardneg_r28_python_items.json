@@ -1,0 +1,370 @@
+{
+  "n": 44,
+  "kind": "hardneg_python_items",
+  "created": "2026-09-24T15:27:08",
+  "round": "r28",
+  "note": "R28 hardneg: TypeORM/Knex/Koa/Litestar/aiohttp/Hibernate/MyBatis/AdonisJS/Grape/Absinthe/Huey/Oban/Javalin/Jersey gates: scalars (brief-suggested swaps for tip-brand + R9\u2013R27 collisions; typeorm kept free)",
+  "anti_contamination": {
+    "no_r9_r27_family_reuse": true,
+    "avoid_r27_set": [
+      "sequelize_hook",
+      "mongoose_middleware",
+      "actix_middleware",
+      "rocket_fairing",
+      "diesel_hook",
+      "gorm_callback",
+      "fastify_hook",
+      "hapi_plugin",
+      "sanic_middleware",
+      "starlette_middleware",
+      "sidekiq_middleware",
+      "dramatiq_actor",
+      "dropwizard_filter",
+      "ktor_plugin"
+    ],
+    "brief_suggested_swaps": {
+      "prisma_middleware": "typeorm_subscriber (prisma_field R11 / prisma brand; typeorm free)",
+      "nestjs_guard": "koa_middleware (nestjs_guard_gates R13)",
+      "svelte_dependency": "litestar_guard (svelte_store R7 / sveltekit_hook R22)",
+      "django_signal": "aiohttp_middleware (django_* tip brand)",
+      "spring_aspect": "hibernate_interceptor (spring tip brand R14)",
+      "quarkus_interceptor": "mybatis_interceptor (quarkus_interceptor_gates R18)",
+      "laravel_middleware": "adonis_middleware (laravel_mw R15 / laravel_middleware R19)",
+      "rails_concern": "grape_middleware (rails_before_action / rails_concern docs)",
+      "elixir_plug": "absinthe_middleware (elixir tip R12 / phoenix_plug R17)",
+      "redis_lua": "huey_task (redis tip brand R13)",
+      "temporal_workflow": "oban_plugin (temporal tip brand R11)",
+      "clickhouse_materialized": "javalin_before (clickhouse tip brand R12)",
+      "kafka_connect": "jersey_filter (kafka_acl / kafka_topic priors)"
+    },
+    "kept_free": [
+      "typeorm_subscriber"
+    ],
+    "novel_r28": [
+      "typeorm_subscriber_gates",
+      "knex_hook_gates",
+      "koa_middleware_gates",
+      "litestar_guard_gates",
+      "aiohttp_middleware_gates",
+      "hibernate_interceptor_gates",
+      "mybatis_interceptor_gates",
+      "adonis_middleware_gates",
+      "grape_middleware_gates",
+      "absinthe_middleware_gates",
+      "huey_task_gates",
+      "oban_plugin_gates",
+      "javalin_before_gates",
+      "jersey_filter_gates"
+    ]
+  },
+  "items": [
+    {
+      "id": "r28v_typeorm_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: afterInsert'). TypeORM. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_typeorm_02",
+      "kind": "python",
+      "prompt": "t='gates: afterInsert'\nprint(t.count('gates'))\n# TypeORM gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_typeorm_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 501. TypeORM gates: afterInsert is subscriber only. ONLY code.",
+      "expected_stdout": "501\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_knex_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: onQuery'). Knex. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_knex_02",
+      "kind": "python",
+      "prompt": "t='gates: onQuery'\nprint(t.count('gates'))\n# Knex gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_knex_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 502. Knex gates: onQuery is hook only. ONLY code.",
+      "expected_stdout": "502\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_koa_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: compose'). Koa. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_koa_02",
+      "kind": "python",
+      "prompt": "t='gates: compose'\nprint(t.count('gates'))\n# Koa gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_koa_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 503. Koa gates: compose is middleware only. ONLY code.",
+      "expected_stdout": "503\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_litest_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: ASGIConnection'). Litestar. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_litest_02",
+      "kind": "python",
+      "prompt": "t='gates: ASGIConnection'\nprint(t.count('gates'))\n# Litestar gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_litest_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 504. Litestar gates: ASGIConnection is guard only. ONLY code.",
+      "expected_stdout": "504\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_aiohttp_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: @middleware'). aiohttp. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_aiohttp_02",
+      "kind": "python",
+      "prompt": "t='gates: @middleware'\nprint(t.count('gates'))\n# aiohttp gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_aiohttp_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 505. aiohttp gates: @middleware is middleware only. ONLY code.",
+      "expected_stdout": "505\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_hibern_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: EmptyInterceptor'). Hibernate. ONLY code.",
+      "expected_stdout": "23\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_hibern_02",
+      "kind": "python",
+      "prompt": "t='gates: EmptyInterceptor'\nprint(t.count('gates'))\n# Hibernate gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_hibern_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 506. Hibernate gates: EmptyInterceptor is interceptor only. ONLY code.",
+      "expected_stdout": "506\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_mybatis_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: Interceptor.intercept'). MyBatis. ONLY code.",
+      "expected_stdout": "28\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_mybatis_02",
+      "kind": "python",
+      "prompt": "t='gates: Interceptor.intercept'\nprint(t.count('gates'))\n# MyBatis gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_mybatis_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 507. MyBatis gates: Interceptor.intercept is interceptor only. ONLY code.",
+      "expected_stdout": "507\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_adonis_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: HttpContext'). AdonisJS. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_adonis_02",
+      "kind": "python",
+      "prompt": "t='gates: HttpContext'\nprint(t.count('gates'))\n# AdonisJS gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_adonis_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 508. AdonisJS gates: HttpContext is middleware only. ONLY code.",
+      "expected_stdout": "508\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_grape_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: Grape::Middleware'). Grape. ONLY code.",
+      "expected_stdout": "24\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_grape_02",
+      "kind": "python",
+      "prompt": "t='gates: Grape::Middleware'\nprint(t.count('gates'))\n# Grape gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_grape_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 509. Grape gates: Grape::Middleware is middleware only. ONLY code.",
+      "expected_stdout": "509\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_absinth_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: Absinthe.Middleware'). Absinthe. ONLY code.",
+      "expected_stdout": "26\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_absinth_02",
+      "kind": "python",
+      "prompt": "t='gates: Absinthe.Middleware'\nprint(t.count('gates'))\n# Absinthe gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_absinth_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 510. Absinthe gates: Absinthe.Middleware is middleware only. ONLY code.",
+      "expected_stdout": "510\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_huey_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: db_task'). Huey. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_huey_02",
+      "kind": "python",
+      "prompt": "t='gates: db_task'\nprint(t.count('gates'))\n# Huey gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_huey_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 511. Huey gates: db_task is task only. ONLY code.",
+      "expected_stdout": "511\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_oban_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: after_process'). Oban. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_oban_02",
+      "kind": "python",
+      "prompt": "t='gates: after_process'\nprint(t.count('gates'))\n# Oban gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_oban_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 512. Oban gates: after_process is plugin only. ONLY code.",
+      "expected_stdout": "512\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_javalin_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: beforeMatched'). Javalin. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_javalin_02",
+      "kind": "python",
+      "prompt": "t='gates: beforeMatched'\nprint(t.count('gates'))\n# Javalin gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_javalin_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 513. Javalin gates: beforeMatched is filter only. ONLY code.",
+      "expected_stdout": "513\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_jersey_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: NameBinding'). Jersey. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_jersey_02",
+      "kind": "python",
+      "prompt": "t='gates: NameBinding'\nprint(t.count('gates'))\n# Jersey gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_jersey_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 514. Jersey gates: NameBinding is filter only. ONLY code.",
+      "expected_stdout": "514\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_ctrl_01",
+      "kind": "python",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r28v_ctrl_02",
+      "kind": "python",
+      "prompt": "print(sum(range(4))) # plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}

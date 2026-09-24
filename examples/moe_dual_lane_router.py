@@ -187,6 +187,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R14: Apache httpd/Varnish/APISIX/Tyk/KrakenD/MongoDB/Cassandra/Jenkins/Vagrant/Chef/Pants/Prefect/FastAPI/Spring gates: scalars.
     # R15: Squid/OpenResty/Contour/Emissary/Zuul/Django/Laravel/Gin/DynamoDB/Firestore/Keycloak/Falco/OTel/Ray gates: scalars.
     # R16: ATS/CoreDNS/Pulsar/Redpanda/GHA/GitLab/Terraform/Nix/Express/Flask/Knative/KEDA/Dapr/Gatekeeper gates: scalars.
+    # R28: TypeORM/Knex/Koa/Litestar/aiohttp/Hibernate/MyBatis/AdonisJS/Grape/Absinthe/Huey/Oban/Javalin/Jersey gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -664,7 +665,66 @@ def route_heuristic(prompt: str) -> Lane:
             r"|opa\s+gatekeeper\s+.*gates:"
             r"|constraint\s+gates:\s*enforcement"
             # R16: proxy / DNS / messaging / CI / IaC / build / framework / serving / autoscaler / sidecar / policy prose
-            r"|gates:\s+is\s+(?:proxy|DNS|messaging|CI|IaC|build|framework|serving|autoscaler|sidecar|policy)\b",
+            r"|gates:\s+is\s+(?:proxy|DNS|messaging|CI|IaC|build|framework|serving|autoscaler|sidecar|policy)\b"
+            # R28: TypeORM subscriber gates: afterInsert
+            r"|gates\s*:\s*afterInsert\b"
+            r"|typeorm\s+.*gates:"
+            r"|subscriber\s+gates:\s*afterInsert"
+            # R28: Knex hook gates: onQuery
+            r"|gates\s*:\s*onQuery\b"
+            r"|\bknex\b\s+.*gates:"
+            r"|hook\s+gates:\s*onQuery"
+            # R28: Koa middleware gates: compose
+            r"|gates\s*:\s*compose\b"
+            r"|\bkoa\b\s+.*gates:"
+            r"|middleware\s+gates:\s*compose"
+            # R28: Litestar guard gates: ASGIConnection
+            r"|gates\s*:\s*ASGIConnection\b"
+            r"|litestar\s+.*gates:"
+            r"|guard\s+gates:\s*ASGIConnection"
+            # R28: aiohttp middleware gates: @middleware
+            r"|gates\s*:\s*@middleware\b"
+            r"|aiohttp\s+.*gates:"
+            r"|middleware\s+gates:\s*@middleware"
+            # R28: Hibernate interceptor gates: EmptyInterceptor
+            r"|gates\s*:\s*EmptyInterceptor\b"
+            r"|hibernate\s+.*gates:"
+            r"|interceptor\s+gates:\s*EmptyInterceptor"
+            # R28: MyBatis interceptor gates: Interceptor.intercept
+            r"|gates\s*:\s*Interceptor\.intercept\b"
+            r"|mybatis\s+.*gates:"
+            r"|interceptor\s+gates:\s*Interceptor"
+            # R28: AdonisJS middleware gates: HttpContext
+            r"|gates\s*:\s*HttpContext\b"
+            r"|adonis(?:js)?\s+.*gates:"
+            r"|middleware\s+gates:\s*HttpContext"
+            # R28: Grape middleware gates: Grape::Middleware
+            r"|gates\s*:\s*Grape::Middleware\b"
+            r"|\bgrape\b\s+.*gates:"
+            r"|middleware\s+gates:\s*Grape::"
+            # R28: Absinthe middleware gates: Absinthe.Middleware
+            r"|gates\s*:\s*Absinthe\.Middleware\b"
+            r"|absinthe\s+.*gates:"
+            r"|middleware\s+gates:\s*Absinthe"
+            # R28: Huey task gates: db_task
+            r"|gates\s*:\s*db_task\b"
+            r"|\bhuey\b\s+.*gates:"
+            r"|task\s+gates:\s*db_task"
+            # R28: Oban plugin gates: after_process
+            r"|gates\s*:\s*after_process\b"
+            r"|\boban\b\s+.*gates:"
+            r"|plugin\s+gates:\s*after_process"
+            # R28: Javalin before gates: beforeMatched
+            r"|gates\s*:\s*beforeMatched\b"
+            r"|javalin\s+.*gates:"
+            r"|filter\s+gates:\s*beforeMatched"
+            # R28: Jersey filter gates: NameBinding
+            r"|gates\s*:\s*NameBinding\b"
+            r"|\bjersey\b\s+.*gates:"
+            r"|filter\s+gates:\s*NameBinding"
+            # R28: subscriber / hook / middleware / guard / interceptor / task / plugin / filter prose
+            r"|gates:\s+is\s+(?:subscriber|hook|middleware|guard|interceptor|task|plugin|filter)\b",
+
             text,
             re.I,
         )
@@ -1284,6 +1344,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r28' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r28.json"
         elif 'r16' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r16.json"
         elif 'r15' in hp:

@@ -1,15 +1,15 @@
 {
   "frontier": "C1-moe-dual-lane",
-  "written": "2026-09-24 15:25:34",
+  "written": "2026-09-24 15:28:22",
   "router_method": "heuristic",
   "claims": "No quantum-advantage claims.",
   "adapter_map": {
-    "ent": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+    "ent": null,
     "python": null,
     "vision": null,
     "base": null
   },
-  "ro_lock": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter",
+  "ro_lock": "/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r28/data/lora_adapter",
   "smoke": {
     "method": "heuristic",
     "n": 12,
@@ -22,7 +22,7 @@
         "expected": "ent",
         "got": "ent",
         "ok": true,
-        "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+        "adapter": null,
         "prompt_preview": "Propose a quantum circuit with n_qubits and gates for this entanglement scene. R"
       },
       {
@@ -30,7 +30,7 @@
         "expected": "ent",
         "got": "ent",
         "ok": true,
-        "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+        "adapter": null,
         "prompt_preview": "Eres un asistente de circuitos cuánticos. Usa PennyLane gates h,x,cx. Escena de "
       },
       {
@@ -38,7 +38,7 @@
         "expected": "ent",
         "got": "ent",
         "ok": true,
-        "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+        "adapter": null,
         "prompt_preview": "Build a Bell-pair circuit: Hadamard then CX. Return n_qubits and gates list."
       },
       {

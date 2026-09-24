@@ -1,0 +1,628 @@
+{
+  "method": "heuristic",
+  "n": 52,
+  "hits": 6,
+  "misses": 46,
+  "score": "6/52",
+  "rate": 0.1154,
+  "by_family": {
+    "typeorm_subscriber_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "knex_hook_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "koa_middleware_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "litestar_guard_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "aiohttp_middleware_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "hibernate_interceptor_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "mybatis_interceptor_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "adonis_middleware_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "grape_middleware_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "absinthe_middleware_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "huey_task_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "oban_plugin_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "javalin_before_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "jersey_filter_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "ent_control_r28": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r28": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r28": {
+      "n": 4,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "base_python_control_r28": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "r28_typeorm_01",
+      "family": "typeorm_subscriber_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: afterInsert'). TypeORM. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_typeorm_02",
+      "family": "typeorm_subscriber_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: afterInsert'\nprint(t.count('gates'))\n# TypeORM gates: — not circuit. O",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_typeorm_03",
+      "family": "typeorm_subscriber_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 501. TypeORM gates: afterInsert is subscriber only. ONL",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_knex_01",
+      "family": "knex_hook_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: onQuery'). Knex. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_knex_02",
+      "family": "knex_hook_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: onQuery'\nprint(t.count('gates'))\n# Knex gates: — not circuit. ONLY cod",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_knex_03",
+      "family": "knex_hook_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 502. Knex gates: onQuery is hook only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_koa_01",
+      "family": "koa_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: compose'). Koa. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_koa_02",
+      "family": "koa_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: compose'\nprint(t.count('gates'))\n# Koa gates: — not circuit. ONLY code",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_koa_03",
+      "family": "koa_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 503. Koa gates: compose is middleware only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_litest_01",
+      "family": "litestar_guard_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: ASGIConnection'). Litestar. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_litest_02",
+      "family": "litestar_guard_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: ASGIConnection'\nprint(t.count('gates'))\n# Litestar gates: — not circui",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_litest_03",
+      "family": "litestar_guard_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 504. Litestar gates: ASGIConnection is guard only. ONLY",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_aiohttp_01",
+      "family": "aiohttp_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: @middleware'). aiohttp. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_aiohttp_02",
+      "family": "aiohttp_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: @middleware'\nprint(t.count('gates'))\n# aiohttp gates: — not circuit. O",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_aiohttp_03",
+      "family": "aiohttp_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 505. aiohttp gates: @middleware is middleware only. ONL",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_hibern_01",
+      "family": "hibernate_interceptor_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: EmptyInterceptor'). Hibernate. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_hibern_02",
+      "family": "hibernate_interceptor_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: EmptyInterceptor'\nprint(t.count('gates'))\n# Hibernate gates: — not cir",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_hibern_03",
+      "family": "hibernate_interceptor_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 506. Hibernate gates: EmptyInterceptor is interceptor o",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_mybatis_01",
+      "family": "mybatis_interceptor_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Interceptor.intercept'). MyBatis. ONLY code",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_mybatis_02",
+      "family": "mybatis_interceptor_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: Interceptor.intercept'\nprint(t.count('gates'))\n# MyBatis gates: — not ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_mybatis_03",
+      "family": "mybatis_interceptor_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 507. MyBatis gates: Interceptor.intercept is intercepto",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_adonis_01",
+      "family": "adonis_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: HttpContext'). AdonisJS. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_adonis_02",
+      "family": "adonis_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: HttpContext'\nprint(t.count('gates'))\n# AdonisJS gates: — not circuit. ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_adonis_03",
+      "family": "adonis_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 508. AdonisJS gates: HttpContext is middleware only. ON",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_grape_01",
+      "family": "grape_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Grape::Middleware'). Grape. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_grape_02",
+      "family": "grape_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: Grape::Middleware'\nprint(t.count('gates'))\n# Grape gates: — not circui",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_grape_03",
+      "family": "grape_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 509. Grape gates: Grape::Middleware is middleware only.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_absinth_01",
+      "family": "absinthe_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Absinthe.Middleware'). Absinthe. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_absinth_02",
+      "family": "absinthe_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: Absinthe.Middleware'\nprint(t.count('gates'))\n# Absinthe gates: — not c",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_absinth_03",
+      "family": "absinthe_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 510. Absinthe gates: Absinthe.Middleware is middleware ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_huey_01",
+      "family": "huey_task_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: db_task'). Huey. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_huey_02",
+      "family": "huey_task_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: db_task'\nprint(t.count('gates'))\n# Huey gates: — not circuit. ONLY cod",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_huey_03",
+      "family": "huey_task_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 511. Huey gates: db_task is task only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_oban_01",
+      "family": "oban_plugin_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: after_process'). Oban. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_oban_02",
+      "family": "oban_plugin_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: after_process'\nprint(t.count('gates'))\n# Oban gates: — not circuit. ON",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_oban_03",
+      "family": "oban_plugin_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 512. Oban gates: after_process is plugin only. ONLY cod",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_javalin_01",
+      "family": "javalin_before_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: beforeMatched'). Javalin. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_javalin_02",
+      "family": "javalin_before_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: beforeMatched'\nprint(t.count('gates'))\n# Javalin gates: — not circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_javalin_03",
+      "family": "javalin_before_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 513. Javalin gates: beforeMatched is filter only. ONLY ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_jersey_01",
+      "family": "jersey_filter_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: NameBinding'). Jersey. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_jersey_02",
+      "family": "jersey_filter_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: NameBinding'\nprint(t.count('gates'))\n# Jersey gates: — not circuit. ON",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_jersey_03",
+      "family": "jersey_filter_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 514. Jersey gates: NameBinding is filter only. ONLY cod",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_ent_01",
+      "family": "ent_control_r28",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelaz",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_ent_02",
+      "family": "ent_control_r28",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separabl",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_vis_01",
+      "family": "vision_control_r28",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. How many dots are visible? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_vis_02",
+      "family": "vision_control_r28",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the chalkboard. How many letters? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_base_01",
+      "family": "base_control_r28",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Thanks. Ignore TypeORM gates: afterInsert in the README. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_base_02",
+      "family": "base_control_r28",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Please ignore the Koa gates: compose phrase. Chat only — no program, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_base_03",
+      "family": "base_control_r28",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Hello — Jersey gates: NameBinding is filter only. No code, no circuit, no JSON.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_base_04",
+      "family": "base_control_r28",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Weather update. Oban gates: after_process mention. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r28_ctrl_01",
+      "family": "base_python_control_r28",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r28_ctrl_02",
+      "family": "base_python_control_r28",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(sum(range(4))) # plain. ONLY code.",
+      "ent_adapter_blocked": true
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_r28_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}

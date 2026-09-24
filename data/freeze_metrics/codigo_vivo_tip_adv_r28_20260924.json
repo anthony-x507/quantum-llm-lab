@@ -1,0 +1,52 @@
+{
+  "name": "codigo_vivo_tip_adv_r28_20260924",
+  "kind": "tip_moe_verifier_polish_r28",
+  "branch": "frontier/tip-hardneg-r28",
+  "base_tip": "a54b74c",
+  "base_tip_full": "a54b74cf3849b3330d63437b853726a10ffde1ed",
+  "when_et": "2026-09-24T15:30:45-04:00",
+  "machine": "Mac-111 (074c6626-0440-4817-9829-6bae77c578d6)",
+  "scores": {
+    "router_before": "6/52",
+    "router_after": "52/52",
+    "rise_pp": 88.46,
+    "verifier_alone": "44/44",
+    "verifier_unified": "44/44",
+    "mixed": 1.0,
+    "r7_r14": "52/52 x8",
+    "lp_router": "64/64",
+    "r12_verifier": "44/44",
+    "lp_verifier": "42/42",
+    "smoke": "12/12",
+    "pillars": "37/37",
+    "hardneg_smoke": "18/18",
+    "ent_never_on_python": true
+  },
+  "families": [
+    "typeorm_subscriber_gates",
+    "knex_hook_gates",
+    "koa_middleware_gates",
+    "litestar_guard_gates",
+    "aiohttp_middleware_gates",
+    "hibernate_interceptor_gates",
+    "mybatis_interceptor_gates",
+    "adonis_middleware_gates",
+    "grape_middleware_gates",
+    "absinthe_middleware_gates",
+    "huey_task_gates",
+    "oban_plugin_gates",
+    "javalin_before_gates",
+    "jersey_filter_gates"
+  ],
+  "floors_held": true,
+  "not_folded": true,
+  "lora_adapter_ro": true,
+  "artifacts_sha16": {
+    "hardneg_r28_mixed_router.json": "f98f4fe3ebe68dee",
+    "hardneg_r28_python_items.json": "b2f67c2abe85feea",
+    "frontier_moe_dual_lane_hardneg_r28.json": "08541671dfb1a098",
+    "frontier_moe_verifier_hardneg_r28.json": "6772bb5c38f424e4",
+    "frontier_moe_verifier_mixed_unified.json": "31a5145e22cbad44"
+  },
+  "feat_sha": "PENDING"
+}
