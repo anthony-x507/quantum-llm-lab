@@ -1,0 +1,13 @@
+=== QEC self-test ===
+  PASS  clean_trivial_syndrome
+  PASS  center_x_detected
+  PASS  decode_clears_single_x
+  PASS  z_error_detected
+  PASS  decode_clears_single_z
+  PASS  pennylane_detects_x
+  PASS  guard_clean
+  PASS  guard_detects_attack
+  PASS  guard_corrects_to_coherent
+  PASS  guard_not_poisoned
+
+All QEC self-tests passed.

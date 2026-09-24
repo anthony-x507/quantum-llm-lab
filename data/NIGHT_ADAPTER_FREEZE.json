@@ -1,0 +1,17 @@
+{
+  "frozen_at_et": "2026-09-24 01:32:53 EDT",
+  "adapter_dir": "data/lora_adapter",
+  "train_meta": {
+  "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
+  "rank": 32,
+  "alpha": 32.0,
+  "lr": 0.0002,
+  "epochs": 3,
+  "n_train_rows": 280,
+  "dataset": "/Users/anthony/Documents/quantum-llm-lab/data/lora_dataset.jsonl"
+},
+  "eval": "data/eval_compare_rebalance.json",
+  "criteria": {"label_acc_min": 0.7, "gate_combos_min": 4},
+  "result": {"label_acc": 0.9, "gate_combos": 7, "jev": 1.0, "domain_acc": 1.0, "energy_ok": 1.0, "pass": true},
+  "note": "Rebalance rare-cues-first; freeze night adapter for morning report. Do not overwrite without archive."
+}

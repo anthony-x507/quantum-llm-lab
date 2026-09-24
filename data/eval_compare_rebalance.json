@@ -1,0 +1,314 @@
+{
+  "base": {
+    "n": 10,
+    "parse_rate": 0.0,
+    "compile_rate": 0.0,
+    "jev_approve_rate": 0.0,
+    "domain_acc": 0.0,
+    "label_acc": 0.0,
+    "energy_ok_rate": 0.0,
+    "energy_loss_scenes": 0,
+    "unique_gate_combos": 0,
+    "details": [
+      {
+        "scene_id": "scene_0057",
+        "source": "fail:ValueError",
+        "error": "No encontré JSON en la respuesta del modelo:\nOkay, let's tackle this problem. So, the user provided an image and wants me to respond with a specific JSON structure related to quantum circuits. First, I need to understand what's being asked.",
+        "ok_parse": false,
+        "ok_compile": false,
+        "jev": null
+      },
+      {
+        "scene_id": "scene_0012",
+        "source": "fail:ValueError",
+        "error": "No encontré JSON en la respuesta del modelo:\nOkay, let's tackle this problem. So, the user provided an image of a green ring on a dark background, and they want me to respond with a specific JSON structure related to quantum circuits. The k",
+        "ok_parse": false,
+        "ok_compile": false,
+        "jev": null
+      },
+      {
+        "scene_id": "scene_0140",
+        "source": "fail:ValueError",
+        "error": "No encontré JSON en la respuesta del modelo:\nOkay, let's tackle this problem. So, the user provided an image and some context about being a quantum circuit assistant. They want a JSON response with specific keys: n_qubits, gates, domain, la",
+        "ok_parse": false,
+        "ok_compile": false,
+        "jev": null
+      },
+      {
+        "scene_id": "scene_0125",
+        "source": "fail:ValueError",
+        "error": "No encontré JSON en la respuesta del modelo:\nOkay, let's tackle this problem. So, the user provided an image with a green rectangle and a blue ring. They want me to act as a quantum circuit assistant and respond with specific JSON keys: n_q",
+        "ok_parse": false,
+        "ok_compile": false,
+        "jev": null
+      },
+      {
+        "scene_id": "scene_0114",
+        "source": "fail:ValueError",
+        "error": "No encontré JSON en la respuesta del modelo:\nOkay, let's tackle this problem. So, the user provided an image and some scene details, and they want me to respond with a specific JSON structure related to quantum circuits. Let me break this d",
+        "ok_parse": false,
+        "ok_compile": false,
+        "jev": null
+      },
+      {
+        "scene_id": "scene_0071",
+        "source": "fail:ValueError",
+        "error": "No encontré JSON en la respuesta del modelo:\nOkay, let's tackle this problem. The user provided an image and a scenario related to quantum circuits. They want me to respond with a specific JSON structure containing n_qubits, gates, domain, ",
+        "ok_parse": false,
+        "ok_compile": false,
+        "jev": null
+      },
+      {
+        "scene_id": "scene_0052",
+        "source": "fail:ValueError",
+        "error": "No encontré JSON en la respuesta del modelo:\nOkay, let's tackle this problem. So, the user provided an image and some context about being a quantum circuit assistant. They want a JSON response with specific keys: n_qubits, gates, domain, la",
+        "ok_parse": false,
+        "ok_compile": false,
+        "jev": null
+      },
+      {
+        "scene_id": "scene_0279",
+        "source": "fail:ValueError",
+        "error": "No encontré JSON en la respuesta del modelo:\nOkay, let's tackle this problem. So, the user provided an image and some context about being a quantum circuit assistant. They want a JSON response with specific keys: n_qubits, gates, domain, la",
+        "ok_parse": false,
+        "ok_compile": false,
+        "jev": null
+      },
+      {
+        "scene_id": "scene_0044",
+        "source": "fail:ValueError",
+        "error": "No encontré JSON en la respuesta del modelo:\nOkay, let's tackle this problem. So, the user provided an image and a scenario description, and they want me to respond with a specific JSON structure related to quantum circuits. First, I need t",
+        "ok_parse": false,
+        "ok_compile": false,
+        "jev": null
+      },
+      {
+        "scene_id": "scene_0216",
+        "source": "fail:ValueError",
+        "error": "No encontré JSON en la respuesta del modelo:\nOkay, let's tackle this problem. So, the user provided an image and some context about being a quantum circuit assistant. They want a JSON response with specific keys: n_qubits, gates, domain, la",
+        "ok_parse": false,
+        "ok_compile": false,
+        "jev": null
+      }
+    ],
+    "used_vlm": true,
+    "adapter": null
+  },
+  "finetuned": {
+    "n": 10,
+    "parse_rate": 1.0,
+    "compile_rate": 1.0,
+    "jev_approve_rate": 1.0,
+    "domain_acc": 1.0,
+    "label_acc": 0.9,
+    "energy_ok_rate": 1.0,
+    "energy_loss_scenes": 10,
+    "unique_gate_combos": 7,
+    "details": [
+      {
+        "scene_id": "scene_0057",
+        "source": "vlm",
+        "parse": true,
+        "compile": true,
+        "jev": "APROBAR",
+        "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+        "gold_domain": "entanglement",
+        "pred_domain": "entanglement",
+        "ok_domain": true,
+        "gold_label": "separable",
+        "pred_label": "separable",
+        "ok_label": true,
+        "energy_ok": true,
+        "gate_names": [
+          "h",
+          "h"
+        ]
+      },
+      {
+        "scene_id": "scene_0012",
+        "source": "vlm",
+        "parse": true,
+        "compile": true,
+        "jev": "APROBAR",
+        "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+        "gold_domain": "fall",
+        "pred_domain": "fall",
+        "ok_domain": true,
+        "gold_label": "fall",
+        "pred_label": "fall",
+        "ok_label": true,
+        "energy_ok": true,
+        "gate_names": [
+          "x",
+          "ry",
+          "h"
+        ]
+      },
+      {
+        "scene_id": "scene_0140",
+        "source": "vlm",
+        "parse": true,
+        "compile": true,
+        "jev": "APROBAR",
+        "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+        "gold_domain": "fall",
+        "pred_domain": "fall",
+        "ok_domain": true,
+        "gold_label": "fall",
+        "pred_label": "fall",
+        "ok_label": true,
+        "energy_ok": true,
+        "gate_names": [
+          "h",
+          "ry",
+          "x",
+          "ry"
+        ]
+      },
+      {
+        "scene_id": "scene_0125",
+        "source": "vlm",
+        "parse": true,
+        "compile": true,
+        "jev": "APROBAR",
+        "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+        "gold_domain": "fall",
+        "pred_domain": "fall",
+        "ok_domain": true,
+        "gold_label": "fall_multi",
+        "pred_label": "fall_multi",
+        "ok_label": true,
+        "energy_ok": true,
+        "gate_names": [
+          "h",
+          "z",
+          "ry"
+        ]
+      },
+      {
+        "scene_id": "scene_0114",
+        "source": "vlm",
+        "parse": true,
+        "compile": true,
+        "jev": "APROBAR",
+        "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+        "gold_domain": "superposition",
+        "pred_domain": "superposition",
+        "ok_domain": true,
+        "gold_label": "collapsed",
+        "pred_label": "superposed",
+        "ok_label": false,
+        "energy_ok": true,
+        "gate_names": [
+          "h"
+        ]
+      },
+      {
+        "scene_id": "scene_0071",
+        "source": "vlm",
+        "parse": true,
+        "compile": true,
+        "jev": "APROBAR",
+        "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+        "gold_domain": "superposition",
+        "pred_domain": "superposition",
+        "ok_domain": true,
+        "gold_label": "superposed",
+        "pred_label": "superposed",
+        "ok_label": true,
+        "energy_ok": true,
+        "gate_names": [
+          "h"
+        ]
+      },
+      {
+        "scene_id": "scene_0052",
+        "source": "vlm",
+        "parse": true,
+        "compile": true,
+        "jev": "APROBAR",
+        "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+        "gold_domain": "fall",
+        "pred_domain": "fall",
+        "ok_domain": true,
+        "gold_label": "fall",
+        "pred_label": "fall",
+        "ok_label": true,
+        "energy_ok": true,
+        "gate_names": [
+          "y",
+          "ry",
+          "h"
+        ]
+      },
+      {
+        "scene_id": "scene_0279",
+        "source": "vlm",
+        "parse": true,
+        "compile": true,
+        "jev": "APROBAR",
+        "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+        "gold_domain": "superposition",
+        "pred_domain": "superposition",
+        "ok_domain": true,
+        "gold_label": "superposed",
+        "pred_label": "superposed",
+        "ok_label": true,
+        "energy_ok": true,
+        "gate_names": [
+          "h"
+        ]
+      },
+      {
+        "scene_id": "scene_0044",
+        "source": "vlm",
+        "parse": true,
+        "compile": true,
+        "jev": "APROBAR",
+        "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+        "gold_domain": "fall",
+        "pred_domain": "fall",
+        "ok_domain": true,
+        "gold_label": "fall_multi",
+        "pred_label": "fall_multi",
+        "ok_label": true,
+        "energy_ok": true,
+        "gate_names": [
+          "x",
+          "ry",
+          "h"
+        ]
+      },
+      {
+        "scene_id": "scene_0216",
+        "source": "vlm",
+        "parse": true,
+        "compile": true,
+        "jev": "APROBAR",
+        "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+        "gold_domain": "fall",
+        "pred_domain": "fall",
+        "ok_domain": true,
+        "gold_label": "fall_multi",
+        "pred_label": "fall_multi",
+        "ok_label": true,
+        "energy_ok": true,
+        "gate_names": [
+          "h",
+          "cx",
+          "ry",
+          "ry"
+        ]
+      }
+    ],
+    "used_vlm": true,
+    "adapter": "data/lora_adapter"
+  },
+  "delta": {
+    "parse_rate": 1.0,
+    "compile_rate": 1.0,
+    "jev_approve_rate": 1.0,
+    "domain_acc": 1.0,
+    "label_acc": 0.9
+  }
+}
