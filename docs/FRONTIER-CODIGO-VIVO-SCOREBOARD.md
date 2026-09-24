@@ -13,7 +13,7 @@
 | motion coverage | **100%** (retained) |
 | pillars / hardneg smoke | **26/26 · 18/18** |
 | Freeze | `codigo_vivo_tip_inverse_r3_fold_100pct_20260924_143102` |
-| Tip SHA (fold) | `TIP_FOLD_SHA_SHORT` |
+| Tip SHA (fold) | `4bfc924` |
 | Policy | RO `data/lora_adapter/`; no main; mid+R12 floors kept; distance-far/R13 not folded |
 
 **Method:** cherry-pick `a1cbee6`/`cf626b8` onto `fbd2e7e` → `9efe5da`+`813a790`. TP mass-aware bounce for third-party pairs; ego geometric-only (no ego elastic / no substeps).

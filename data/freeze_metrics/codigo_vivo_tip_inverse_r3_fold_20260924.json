@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-inverse-r3-fold",
   "written_et": "2026-09-24 14:31:02 ET",
-  "tip_sha": "TIP_FOLD_SHA_PLACEHOLDER",
-  "tip_sha_short": "TIP_FOLD_SHA_SHORT",
+  "tip_sha": "4bfc92432d7d55ab3cd305bf45d285fa03533117",
+  "tip_sha_short": "4bfc924",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-inverse-r3",
   "rebase_onto": "fbd2e7e",

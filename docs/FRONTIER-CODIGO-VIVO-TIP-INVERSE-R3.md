@@ -5,8 +5,8 @@
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-inverse-r3` (Mac-111)  
 **When:** 2026-09-24 14:05:11 ET
 **Freeze (side):** `codigo_vivo_tip_inverse_r3_100pct_20260924_140511` @ `a1cbee6`  
-**Freeze (fold):** `codigo_vivo_tip_inverse_r3_fold_100pct_20260924_143102` @ `TIP_FOLD_SHA_SHORT`
-**Fold status:** **FOLDED** into tip @ 2026-09-24 14:31:02 ET · freeze `codigo_vivo_tip_inverse_r3_fold_100pct_20260924_143102` · Tip SHA `TIP_FOLD_SHA_SHORT`  
+**Freeze (fold):** `codigo_vivo_tip_inverse_r3_fold_100pct_20260924_143102` @ `4bfc924`
+**Fold status:** **FOLDED** into tip @ 2026-09-24 14:31:02 ET · freeze `codigo_vivo_tip_inverse_r3_fold_100pct_20260924_143102` · Tip SHA `4bfc924`  
 **Scope:** Folded into tip-cv only. Keep mid+R12 floors. Distance-far / R13 not folded.
 
 ## LOCK (Anthony / Leader)
@@ -96,7 +96,7 @@ None (pre-fold). See Fold section — now FOLDED.
 - Onto tip HEAD `fbd2e7e` (post R12): cherry-pick `a1cbee6` + `cf626b8` → `9efe5da` + `813a790`
 - Re-smoke: mixed (d) **1.0**; inverse_cv **100.0%**; collision **100%**; choose_safest **100%**; mid+R12 floors retained
 - Freeze: `codigo_vivo_tip_inverse_r3_fold_100pct_20260924_143102`
-- Tip SHA (fold): `TIP_FOLD_SHA_SHORT`
+- Tip SHA (fold): `4bfc924`
 - Adapters RO unchanged; no merge to `main`; distance-far / R13 **not** folded
 
 ## Blockers
