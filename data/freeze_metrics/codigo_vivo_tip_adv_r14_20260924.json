@@ -1,0 +1,84 @@
+{
+  "round": "r14",
+  "branch": "frontier/tip-hardneg-r14",
+  "base_tip": "e0f3183ed4ed429591a7f4f13b1a6775c2fe47e0",
+  "when_et": "2026-09-24T14:18:30-0400",
+  "machine": "Mac-111",
+  "router_pre": {
+    "hits": 8,
+    "n": 52,
+    "rate": 0.1538
+  },
+  "router_post": {
+    "hits": 52,
+    "n": 52,
+    "rate": 1.0
+  },
+  "verifier_alone": {
+    "hits": 44,
+    "n": 44,
+    "rate": 1.0
+  },
+  "unified": {
+    "hits": 44,
+    "n": 44,
+    "rate": 1.0
+  },
+  "rise_pp": 84.62,
+  "rise_rate_pct_vs_pre": 550.0,
+  "freeze_gate_80pp": true,
+  "mixed_unified": 1.0,
+  "floors": {
+    "mixed": 1.0,
+    "motion": "100% (tip motion-r4; untouched)",
+    "tti": "100% (tip-tti fold; untouched)",
+    "collision": "100% (untouched)",
+    "inverse_cv": "\u226599.82% (untouched)",
+    "r11": "52/52\u00b744/44"
+  },
+  "held_routers": {
+    "r1": "18/18",
+    "r2": "22/22",
+    "r3": "35/35",
+    "r4": "40/40",
+    "r5": "44/44",
+    "r6": "48/48",
+    "r7": "52/52",
+    "r8": "52/52",
+    "r9": "52/52",
+    "r10": "52/52",
+    "r11": "52/52",
+    "lp": "43/43"
+  },
+  "held_verifiers": {
+    "r7": "44/44",
+    "r8": "44/44",
+    "r9": "44/44",
+    "r10": "44/44",
+    "r11": "44/44",
+    "lp": "32/32"
+  },
+  "smoke": "12/12",
+  "ent_never_on_python": true,
+  "pillars": "26/26",
+  "hardneg_smoke": "18/18",
+  "families": [
+    "httpd_rewrite_gates",
+    "varnish_vcl_gates",
+    "apisix_plugin_gates",
+    "tyk_middleware_gates",
+    "krakend_endpoint_gates",
+    "mongodb_role_gates",
+    "cassandra_table_gates",
+    "jenkins_when_gates",
+    "vagrant_provision_gates",
+    "chef_guard_gates",
+    "pants_tag_gates",
+    "prefect_task_gates",
+    "fastapi_depends_gates",
+    "spring_security_gates"
+  ],
+  "not_folded": true,
+  "lora_adapter_ro": true,
+  "adapters_mtime_unchanged": true
+}

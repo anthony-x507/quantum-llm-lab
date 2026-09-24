@@ -1,0 +1,28 @@
+{
+  "name": "codigo_vivo_tip_polish_r14_100pct_20260924_141830",
+  "kind": "tip_moe_verifier_polish_r14",
+  "pct": 100,
+  "branch": "frontier/tip-hardneg-r14",
+  "base_tip": "e0f3183",
+  "when_et": "2026-09-24T14:18:30-0400",
+  "machine": "Mac-111 (074c6626-0440-4817-9829-6bae77c578d6)",
+  "claim": "NO quantum advantage. Classical heuristic router + python -I verifier only.",
+  "scores": {
+    "r14_router": "52/52",
+    "r14_verifier": "44/44",
+    "mixed_unified": 1.0,
+    "pre_router": "8/52",
+    "rise_pp": 84.62
+  },
+  "floors_held": true,
+  "not_folded": true,
+  "lora_adapter_ro": true,
+  "artifacts_sha16": {
+    "hardneg_r14_mixed_router.json": "9ef492dc231c7db5",
+    "hardneg_r14_python_items.json": "30917d784050ea41",
+    "frontier_moe_dual_lane_hardneg_r14.json": "9a495acf1f3fecae",
+    "frontier_moe_verifier_hardneg_r14.json": "fe56d4684408708b",
+    "frontier_moe_verifier_mixed_unified.json": "10e0528d878ac4d3"
+  },
+  "evidence": "data/freeze_metrics/codigo_vivo_tip_adv_r14_20260924.json"
+}

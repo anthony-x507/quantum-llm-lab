@@ -1,3 +1,6 @@
+## 2026-09-24 — tip-hardneg-r14 polish (side; not folded)
+Branch `frontier/tip-hardneg-r14` from tip `e0f3183` (post tip-tti). R14 router **8/52→52/52** · verifier **44/44**; mixed (d) **1.0**; R1–R11+LP held; motion **100%** / TTI **100%** / collision **100%** / inverse_cv **≥99.82%** cited from tip. Novel: Apache httpd / Varnish / APISIX / Tyk / KrakenD / MongoDB / Cassandra / Jenkins / Vagrant / Chef / Pants / Prefect / FastAPI / Spring Security. See `docs/FRONTIER-CODIGO-VIVO-TIP-R14.md`. **Not folded.**
+
 ## 2026-09-24 — fold tip-tti → codigo-vivo-tip
 Cherry-pick rebase `c483e46` onto `e70b23a` → `6665e2c` FF-equivalent. CPU unified **1.0** (re-smoke); TTI scorable **100%** (orig 691/691 · danger50 725/725); overall+cold-start 91.16/91.66; R11 **52/52·44/44**; motion coverage **100%** (141 ind + 59 corr); inverse_cv **99.82%**; collision physics **100%** (n=40/2850); choose_safest **100%**; R10 **52/52**; pillars 26/26; hardneg 18/18; `wired_to_vlm`; freezes retained incl. r11 + motion_r4 + vision_ground + inverse_r2 + r10 + motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_tti_fold_100pct_20260924_141146`. Distance-mid / far / R12 / R13 / inverse-r3 **not** folded. Tip vis stays BASE. RO `data/lora_adapter/`. See SCOREBOARD + TIP-TTI.
 
