@@ -1,0 +1,294 @@
+{
+  "frontier": "tip-own-delta-refresh",
+  "branch": "frontier/tip-own-delta-refresh",
+  "tip_base_sha": "3b10288cc568255f7782640d7344078c441ad506",
+  "tip_base_sha_short": "3b10288",
+  "written": "2026-09-24 12:50:31 ET",
+  "host": "Mac-111",
+  "machine_id": "074c6626-0440-4817-9829-6bae77c578d6",
+  "claims": [
+    "NO quantum-advantage claims",
+    "BASE vs OUR RO adapters on tip MoE+verifier dual-lane"
+  ],
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "clean": true,
+    "ent_never_on_python": true,
+    "scaffold_gt_leak": 0,
+    "writes_to_lora_adapter": false,
+    "ro_mtime_unchanged": true
+  },
+  "adapters_ro": {
+    "before": {
+      "lora_adapter": {
+        "path": "data/lora_adapter/adapters.safetensors",
+        "real": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter/adapters.safetensors",
+        "mtime_epoch": 1790225889.1929486,
+        "mtime_et": "2026-09-24 00:58:09 ET",
+        "size": 349239195
+      },
+      "lora_adapter_ent2": {
+        "path": "data/lora_adapter_ent2/adapters.safetensors",
+        "real": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2/adapters.safetensors",
+        "mtime_epoch": 1790254933.0898645,
+        "mtime_et": "2026-09-24 09:02:13 ET",
+        "size": 349239195
+      },
+      "lora_adapter_classical": {
+        "path": "data/lora_adapter_classical/adapters.safetensors",
+        "real": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_classical/adapters.safetensors",
+        "mtime_epoch": 1790242168.404602,
+        "mtime_et": "2026-09-24 05:29:28 ET",
+        "size": 174650953
+      }
+    },
+    "after": {
+      "lora_adapter": {
+        "path": "data/lora_adapter/adapters.safetensors",
+        "real": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter/adapters.safetensors",
+        "mtime_epoch": 1790225889.1929486,
+        "mtime_et": "2026-09-24 00:58:09 ET",
+        "size": 349239195
+      },
+      "lora_adapter_ent2": {
+        "path": "data/lora_adapter_ent2/adapters.safetensors",
+        "real": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2/adapters.safetensors",
+        "mtime_epoch": 1790254933.0898645,
+        "mtime_et": "2026-09-24 09:02:13 ET",
+        "size": 349239195
+      },
+      "lora_adapter_classical": {
+        "path": "data/lora_adapter_classical/adapters.safetensors",
+        "real": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_classical/adapters.safetensors",
+        "mtime_epoch": 1790242168.404602,
+        "mtime_et": "2026-09-24 05:29:28 ET",
+        "size": 174650953
+      }
+    },
+    "ro_mtime_unchanged": true
+  },
+  "prior_raw_own_delta_05_00_ET": {
+    "source": "data/BENCHMARK_CODIGO_VIVO.json",
+    "python": {
+      "base": 0.0625,
+      "adapter_quantum": 0.0,
+      "delta": -0.0625,
+      "base_solved": "1/16",
+      "adapter_solved": "0/16"
+    },
+    "entanglement": {
+      "base": 0.0,
+      "adapter_quantum": 1.0,
+      "delta": 1.0,
+      "base_counts": "0/12",
+      "adapter_counts": "12/12"
+    },
+    "vision": {
+      "base": 0.9,
+      "adapter_quantum": 0.7,
+      "delta": -0.2,
+      "base_correct": "9/10",
+      "adapter_correct": "7/10"
+    },
+    "note": "Same RAW lock as prior own-delta; quantum RO alone still hurts py/vis, helps ent"
+  },
+  "tip_cpu_smoke": {
+    "pillars": "26/26",
+    "hardneg": "18/18",
+    "artifact": "data/frontier_moe_verifier_mixed_smoke_own_delta_refresh.json"
+  },
+  "tip_cpu_unified": {
+    "a_baseline": 0.3333,
+    "b_moe_alone": 0.6667,
+    "c_verifier_on_python": 0.6667,
+    "d_unified": 1.0,
+    "python_d": 1.0,
+    "ent_d": 1.0,
+    "vis_d": 1.0,
+    "delta_moe_overall": 0.3334,
+    "floor_held": true,
+    "artifact": "data/frontier_moe_verifier_mixed_cpu_own_delta_refresh.json"
+  },
+  "tip_mlx_sample": {
+    "n": {
+      "python": 2,
+      "ent": 3,
+      "vision": 2
+    },
+    "scoreboard": {
+      "table": [
+        {
+          "path": "a_baseline",
+          "python": {
+            "n": 2,
+            "rate": 0.0,
+            "metric": "solve_rate_single",
+            "source": "mlx_live"
+          },
+          "entanglement": {
+            "n": 3,
+            "label_acc": 0.0,
+            "source": "mlx_live"
+          },
+          "vision": {
+            "n": 2,
+            "accuracy": 1.0,
+            "source": "mlx_live"
+          },
+          "overall_mean": 0.3333
+        },
+        {
+          "path": "b_moe_alone",
+          "python": {
+            "n": 2,
+            "rate": 0.0,
+            "metric": "solve_rate_single",
+            "source": "mlx_live"
+          },
+          "entanglement": {
+            "n": 3,
+            "label_acc": 1.0,
+            "source": "mlx_live"
+          },
+          "vision": {
+            "n": 2,
+            "accuracy": 1.0,
+            "source": "mlx_live"
+          },
+          "overall_mean": 0.6667
+        },
+        {
+          "path": "c_verifier_on_python",
+          "python": {
+            "n": 2,
+            "rate": 1.0,
+            "metric": "solve_rate_loop",
+            "source": "mlx_live"
+          },
+          "entanglement": {
+            "n": 3,
+            "label_acc": 0.0,
+            "source": "mlx_live"
+          },
+          "vision": {
+            "n": 2,
+            "accuracy": 1.0,
+            "source": "mlx_live"
+          },
+          "overall_mean": 0.6667
+        },
+        {
+          "path": "d_unified",
+          "python": {
+            "n": 2,
+            "rate": 1.0,
+            "metric": "solve_rate_loop",
+            "source": "mlx_live"
+          },
+          "entanglement": {
+            "n": 3,
+            "label_acc": 1.0,
+            "source": "mlx_live"
+          },
+          "vision": {
+            "n": 2,
+            "accuracy": 1.0,
+            "source": "mlx_live"
+          },
+          "overall_mean": 1.0
+        }
+      ],
+      "delta_moe_vs_baseline": {
+        "python": 0.0,
+        "entanglement": 1.0,
+        "vision": 0.0,
+        "overall": 0.6667
+      },
+      "moe_delta_visible": true,
+      "vs_cpu_overall_1_0": {
+        "cpu_unified_overall": 1.0,
+        "mlx_unified_overall": 1.0,
+        "delta": 0.0,
+        "note": "CPU tip uses prior-replay ent/vis + live heuristic/verifier python → overall 1.0; this row is LIVE mlx on all three pillars with honest n."
+      }
+    },
+    "vs_cpu": {
+      "cpu_unified_overall": 1.0,
+      "mlx_unified_overall": 1.0,
+      "delta": 0.0,
+      "note": "CPU tip uses prior-replay ent/vis + live heuristic/verifier python → overall 1.0; this row is LIVE mlx on all three pillars with honest n."
+    },
+    "drops": [],
+    "elapsed_s": 112.96,
+    "ent_live_own_delta": {
+      "base_label_acc": 0.0,
+      "ent2_label_acc": 1.0,
+      "delta": 1.0,
+      "note": "LIVE mlx: BASE→ent2 on n=3; wired_to_vlm=true"
+    },
+    "artifact": "data/frontier_tip_own_delta_refresh_mlx_sample.json"
+  },
+  "pillar_deltas_scoreboard": {
+    "python": {
+      "base": 0.0625,
+      "adapter_quantum": 0.0,
+      "delta": -0.0625,
+      "tip_uses": "BASE+verifier",
+      "tip_rate_cpu_d": 1.0,
+      "adapter_still_helps": false
+    },
+    "entanglement": {
+      "base": 0.0,
+      "adapter_ent2_live_n3": 1.0,
+      "delta_live": 1.0,
+      "prior_raw_quantum_delta": 1.0,
+      "tip_uses": "ent2+scaffold_wire",
+      "tip_rate_cpu_d": 1.0,
+      "adapter_still_helps": true
+    },
+    "vision": {
+      "base": 0.9,
+      "adapter_quantum": 0.7,
+      "delta": -0.2,
+      "tip_uses": "BASE",
+      "tip_rate_cpu_d": 1.0,
+      "adapter_still_helps": false
+    }
+  },
+  "tip_dual_lane_detail": {
+    "label_protect_on_tip": true,
+    "wired_to_vlm": true,
+    "channel": "text_scaffold_prefix",
+    "freezes_retained_cited": [
+      "codigo_vivo_tip_platform_100pct_20260924_111435",
+      "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",
+      "codigo_vivo_tip_post_polish_100pct_20260924_123210",
+      "codigo_vivo_tip_r5_100pct_20260924_123727",
+      "codigo_vivo_tip_label_protect_100pct_20260924_124608"
+    ]
+  },
+  "classical": {
+    "present": true,
+    "mtime_et": "2026-09-24 05:29:28 ET",
+    "routed_on_cv_pillars": false
+  },
+  "blockers": [],
+  "paths": {
+    "scoreboard": "data/frontier_tip_own_delta_refresh_scoreboard.json",
+    "smoke": "data/frontier_moe_verifier_mixed_smoke_own_delta_refresh.json",
+    "cpu": "data/frontier_moe_verifier_mixed_cpu_own_delta_refresh.json",
+    "mlx": "data/frontier_tip_own_delta_refresh_mlx_sample.json",
+    "ro_before": "data/tip_own_delta_refresh_adapter_ro_snapshot_before.json",
+    "ro_after": "data/tip_own_delta_refresh_adapter_ro_snapshot_after.json",
+    "doc": "docs/FRONTIER-CODIGO-VIVO-TIP-OWN-DELTA-REFRESH.md",
+    "prior_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-OWN-DELTA-SCOREBOARD.md"
+  },
+  "vs_prior_own_delta": {
+    "prior_tip_sha": "459f6da",
+    "py_delta_unchanged": true,
+    "ent_delta_unchanged": true,
+    "vis_delta_unchanged": true,
+    "dual_lane_floor_still_1_0": true,
+    "note": "RAW deltas unchanged; tip dual-lane still 1.0 under label-protect+R5 composition @ 3b10288"
+  }
+}

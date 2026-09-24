@@ -584,3 +584,20 @@ Anti-contam **CLEAN**. Adapters RO unchanged. Platform / mlx_r3 / polish_r4 / **
 **Honesty:** dual-lane + negated `json válido` / empty `gates=[]` protect python/base from ent mis-route on fall/super label words; real fall/super circuit JSON asks stay ent.  
 **CPU re-smoke after fold:** unified **1.0**; label-protect **43/43·32/32**; R1–R5 routers **18/18·22/22·35/35·40/40·44/44**; R3/R4/R5 verifier **28/28·32/32·36/36**; `wired_to_vlm` retained · R5 tip freeze `codigo_vivo_tip_r5_100pct_20260924_123727` **retained**; label-protect tip freeze `codigo_vivo_tip_label_protect_100pct_20260924_124608` **locked**.  
 Platform / mlx_r3 / post_polish / polish_r5 / R5 tip freezes **retained**. Never abandon.
+
+## Own-delta tip refresh @ `3b10288` — branch `frontier/tip-own-delta-refresh`
+
+**When:** 2026-09-24 ~12:50 ET · Mac-111 · tip post label-protect freeze  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-OWN-DELTA-REFRESH.md`  
+**JSON:** `data/frontier_tip_own_delta_refresh_scoreboard.json`
+
+| pillar | base | adapter | Δ | tip dual-lane |
+|--------|------|---------|---|----------------|
+| Python | 0.062 | 0.000 (quantum) | **−0.062** | BASE+verifier → **1.0** (avoids adapter) |
+| Ent | 0.000 | 1.000 (ent2 LIVE n=3) | **+1.000** | ent2 → **1.0** (still helps) |
+| Vision | 0.900 | 0.700 (quantum) | **−0.200** | BASE → **1.0** (avoids adapter) |
+
+**CPU / MLX sample:** unified **1.0** / **1.0** (Δ=0). pillars 26/26 · hardneg 18/18 · `wired_to_vlm=true`.  
+**Honesty held:** RAW deltas unchanged vs prior own-delta; dual-lane still protects tip floor under label-protect+R5 composition.  
+`ro_mtime_unchanged=true`. Freezes retained incl. `codigo_vivo_tip_label_protect_100pct_20260924_124608`.
+

@@ -1,0 +1,26 @@
+{
+  "when": "2026-09-24 12:46:57 ET",
+  "adapters": {
+    "lora_adapter": {
+      "path": "data/lora_adapter/adapters.safetensors",
+      "real": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter/adapters.safetensors",
+      "mtime_epoch": 1790225889.1929486,
+      "mtime_et": "2026-09-24 00:58:09 ET",
+      "size": 349239195
+    },
+    "lora_adapter_ent2": {
+      "path": "data/lora_adapter_ent2/adapters.safetensors",
+      "real": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2/adapters.safetensors",
+      "mtime_epoch": 1790254933.0898645,
+      "mtime_et": "2026-09-24 09:02:13 ET",
+      "size": 349239195
+    },
+    "lora_adapter_classical": {
+      "path": "data/lora_adapter_classical/adapters.safetensors",
+      "real": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_classical/adapters.safetensors",
+      "mtime_epoch": 1790242168.404602,
+      "mtime_et": "2026-09-24 05:29:28 ET",
+      "size": 174650953
+    }
+  }
+}
