@@ -159,3 +159,9 @@ Branch `frontier/tip-own-delta-scoreboard` from tip `459f6da` (rebase onto tip w
 Own-delta tip: Py Δ **−0.062** (hurt; tip avoids), Ent **+1.0** (ent2 helps), Vis **−0.200** (hurt; tip uses BASE).  
 Tip dual-lane CPU+MLX sample unified **1.0**. Anti-contam **CLEAN**. Adapters RO unchanged.  
 See `docs/FRONTIER-CODIGO-VIVO-TIP-OWN-DELTA-SCOREBOARD.md`.
+
+
+## tip-hardneg-r24 (2026-09-24T15:09:16-04:00)
+- Side branch `frontier/tip-hardneg-r24` @ base `e1b12d5` — **NOT folded**.
+- Router 6/52→**52/52**; verifier **44/44**; mixed **1.0**; rise +88.46 pp → freeze 100%.
+- Families: Wails/Neutralino/RN/Ionic/Webpack/Parcel/SWC/moonrepo/Lage/ESLint/Ruff/SQLAlchemy/EdgeDB/MAUI.

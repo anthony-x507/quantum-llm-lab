@@ -1,0 +1,404 @@
+{
+  "n": 52,
+  "kind": "hardneg_mixed_router",
+  "created": "2026-09-24T15:07:36-04:00",
+  "round": "r24",
+  "note": "R24 hardneg: Wails/Neutralino/RN/Ionic/Webpack/Parcel/SWC/moonrepo/Lage/ESLint/Ruff/SQLAlchemy/EdgeDB/MAUI gates: traps. \u2260 R9\u2013R23.",
+  "anti_contamination": {
+    "no_r9_r23_family_reuse": true,
+    "blocked_r20": [
+      "celery_task",
+      "airbyte_stream",
+      "supabase_policy",
+      "trino_session",
+      "vector_vrl",
+      "fluentbit_filter",
+      "thanos_query",
+      "strimzi_topic",
+      "tilt_resource",
+      "mise_task",
+      "cue_field",
+      "nim_pragma",
+      "hono_middleware",
+      "axum_layer"
+    ],
+    "blocked_r21": [
+      "bun_plugin",
+      "deno_perm",
+      "pocketbase_hook",
+      "appwrite_schedule",
+      "neon_endpoint",
+      "planetscale_safe",
+      "flyio_autostop",
+      "railway_start",
+      "meilisearch_filter",
+      "qdrant_distance",
+      "spin_outbound",
+      "solidjs_effect",
+      "astro_onrequest",
+      "htmx_trigger"
+    ],
+    "blocked_r22": [
+      "sveltekit_hook",
+      "remix_loader",
+      "nextjs_matcher",
+      "nuxt_server",
+      "typesense_schema",
+      "weaviate_class",
+      "milvus_collection",
+      "chroma_query",
+      "render_health",
+      "vercel_cron",
+      "netlify_redirect",
+      "wasmtime_fuel",
+      "wasmer_env",
+      "leptos_resource"
+    ],
+    "blocked_r23": [
+      "tauri_command",
+      "electron_ipc",
+      "expo_plugin",
+      "capacitor_plugin",
+      "vite_plugin",
+      "esbuild_plugin",
+      "rollup_plugin",
+      "turborepo_pipeline",
+      "nx_executor",
+      "biome_rule",
+      "oxc_lint",
+      "drizzle_column",
+      "surreal_scope",
+      "flutter_channel"
+    ],
+    "novel_r24": [
+      "wails_bind_gates",
+      "neutralino_ext_gates",
+      "react_native_turbo_gates",
+      "ionic_lifecycle_gates",
+      "webpack_pitch_gates",
+      "parcel_transformer_gates",
+      "swc_plugin_gates",
+      "moonrepo_task_gates",
+      "lage_pipeline_gates",
+      "eslint_meta_gates",
+      "ruff_select_gates",
+      "sqlalchemy_column_gates",
+      "edgedb_constraint_gates",
+      "maui_handler_gates"
+    ]
+  },
+  "items": [
+    {
+      "id": "r24_wai_01",
+      "expected": "python",
+      "family": "wails_bind_gates",
+      "prompt": "Write Python that prints len('gates: Bind'). Wails. ONLY code."
+    },
+    {
+      "id": "r24_wai_02",
+      "expected": "python",
+      "family": "wails_bind_gates",
+      "prompt": "t='gates: Bind'\nprint(t.count('gates'))\n# Wails gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r24_wai_03",
+      "expected": "python",
+      "family": "wails_bind_gates",
+      "prompt": "Write Python that prints 101. Wails gates: Bind is bind only. ONLY code."
+    },
+    {
+      "id": "r24_neu_01",
+      "expected": "python",
+      "family": "neutralino_ext_gates",
+      "prompt": "Write Python that prints len('gates: filesystem'). Neutralino. ONLY code."
+    },
+    {
+      "id": "r24_neu_02",
+      "expected": "python",
+      "family": "neutralino_ext_gates",
+      "prompt": "t='gates: filesystem'\nprint(t.count('gates'))\n# Neutralino gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r24_neu_03",
+      "expected": "python",
+      "family": "neutralino_ext_gates",
+      "prompt": "Write Python that prints 102. Neutralino gates: filesystem is ext only. ONLY code."
+    },
+    {
+      "id": "r24_rnt_01",
+      "expected": "python",
+      "family": "react_native_turbo_gates",
+      "prompt": "Write Python that prints len('gates: TurboModule'). React Native. ONLY code."
+    },
+    {
+      "id": "r24_rnt_02",
+      "expected": "python",
+      "family": "react_native_turbo_gates",
+      "prompt": "t='gates: TurboModule'\nprint(t.count('gates'))\n# React Native gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r24_rnt_03",
+      "expected": "python",
+      "family": "react_native_turbo_gates",
+      "prompt": "Write Python that prints 103. React Native gates: TurboModule is turbo only. ONLY code."
+    },
+    {
+      "id": "r24_ion_01",
+      "expected": "python",
+      "family": "ionic_lifecycle_gates",
+      "prompt": "Write Python that prints len('gates: useIonViewDidEnter'). Ionic. ONLY code."
+    },
+    {
+      "id": "r24_ion_02",
+      "expected": "python",
+      "family": "ionic_lifecycle_gates",
+      "prompt": "t='gates: useIonViewDidEnter'\nprint(t.count('gates'))\n# Ionic gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r24_ion_03",
+      "expected": "python",
+      "family": "ionic_lifecycle_gates",
+      "prompt": "Write Python that prints 104. Ionic gates: useIonViewDidEnter is lifecycle only. ONLY code."
+    },
+    {
+      "id": "r24_wbp_01",
+      "expected": "python",
+      "family": "webpack_pitch_gates",
+      "prompt": "Write Python that prints len('gates: pitch'). Webpack. ONLY code."
+    },
+    {
+      "id": "r24_wbp_02",
+      "expected": "python",
+      "family": "webpack_pitch_gates",
+      "prompt": "t='gates: pitch'\nprint(t.count('gates'))\n# Webpack gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r24_wbp_03",
+      "expected": "python",
+      "family": "webpack_pitch_gates",
+      "prompt": "Write Python that prints 105. Webpack gates: pitch is loader only. ONLY code."
+    },
+    {
+      "id": "r24_par_01",
+      "expected": "python",
+      "family": "parcel_transformer_gates",
+      "prompt": "Write Python that prints len('gates: transform'). Parcel. ONLY code."
+    },
+    {
+      "id": "r24_par_02",
+      "expected": "python",
+      "family": "parcel_transformer_gates",
+      "prompt": "t='gates: transform'\nprint(t.count('gates'))\n# Parcel gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r24_par_03",
+      "expected": "python",
+      "family": "parcel_transformer_gates",
+      "prompt": "Write Python that prints 106. Parcel gates: transform is transformer only. ONLY code."
+    },
+    {
+      "id": "r24_swc_01",
+      "expected": "python",
+      "family": "swc_plugin_gates",
+      "prompt": "Write Python that prints len('gates: wasm'). SWC. ONLY code."
+    },
+    {
+      "id": "r24_swc_02",
+      "expected": "python",
+      "family": "swc_plugin_gates",
+      "prompt": "t='gates: wasm'\nprint(t.count('gates'))\n# SWC gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r24_swc_03",
+      "expected": "python",
+      "family": "swc_plugin_gates",
+      "prompt": "Write Python that prints 107. SWC gates: wasm is plugin only. ONLY code."
+    },
+    {
+      "id": "r24_moo_01",
+      "expected": "python",
+      "family": "moonrepo_task_gates",
+      "prompt": "Write Python that prints len('gates: deps'). moonrepo. ONLY code."
+    },
+    {
+      "id": "r24_moo_02",
+      "expected": "python",
+      "family": "moonrepo_task_gates",
+      "prompt": "t='gates: deps'\nprint(t.count('gates'))\n# moonrepo gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r24_moo_03",
+      "expected": "python",
+      "family": "moonrepo_task_gates",
+      "prompt": "Write Python that prints 108. moonrepo gates: deps is task only. ONLY code."
+    },
+    {
+      "id": "r24_lag_01",
+      "expected": "python",
+      "family": "lage_pipeline_gates",
+      "prompt": "Write Python that prints len('gates: dependsOn'). Lage. ONLY code."
+    },
+    {
+      "id": "r24_lag_02",
+      "expected": "python",
+      "family": "lage_pipeline_gates",
+      "prompt": "t='gates: dependsOn'\nprint(t.count('gates'))\n# Lage gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r24_lag_03",
+      "expected": "python",
+      "family": "lage_pipeline_gates",
+      "prompt": "Write Python that prints 109. Lage gates: dependsOn is pipeline only. ONLY code."
+    },
+    {
+      "id": "r24_esl_01",
+      "expected": "python",
+      "family": "eslint_meta_gates",
+      "prompt": "Write Python that prints len('gates: docs.url'). ESLint. ONLY code."
+    },
+    {
+      "id": "r24_esl_02",
+      "expected": "python",
+      "family": "eslint_meta_gates",
+      "prompt": "t='gates: docs.url'\nprint(t.count('gates'))\n# ESLint gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r24_esl_03",
+      "expected": "python",
+      "family": "eslint_meta_gates",
+      "prompt": "Write Python that prints 110. ESLint gates: docs.url is meta only. ONLY code."
+    },
+    {
+      "id": "r24_ruf_01",
+      "expected": "python",
+      "family": "ruff_select_gates",
+      "prompt": "Write Python that prints len('gates: select'). Ruff. ONLY code."
+    },
+    {
+      "id": "r24_ruf_02",
+      "expected": "python",
+      "family": "ruff_select_gates",
+      "prompt": "t='gates: select'\nprint(t.count('gates'))\n# Ruff gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r24_ruf_03",
+      "expected": "python",
+      "family": "ruff_select_gates",
+      "prompt": "Write Python that prints 111. Ruff gates: select is rule only. ONLY code."
+    },
+    {
+      "id": "r24_sql_01",
+      "expected": "python",
+      "family": "sqlalchemy_column_gates",
+      "prompt": "Write Python that prints len('gates: primary_key'). SQLAlchemy. ONLY code."
+    },
+    {
+      "id": "r24_sql_02",
+      "expected": "python",
+      "family": "sqlalchemy_column_gates",
+      "prompt": "t='gates: primary_key'\nprint(t.count('gates'))\n# SQLAlchemy gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r24_sql_03",
+      "expected": "python",
+      "family": "sqlalchemy_column_gates",
+      "prompt": "Write Python that prints 112. SQLAlchemy gates: primary_key is column only. ONLY code."
+    },
+    {
+      "id": "r24_edg_01",
+      "expected": "python",
+      "family": "edgedb_constraint_gates",
+      "prompt": "Write Python that prints len('gates: exclusive'). EdgeDB. ONLY code."
+    },
+    {
+      "id": "r24_edg_02",
+      "expected": "python",
+      "family": "edgedb_constraint_gates",
+      "prompt": "t='gates: exclusive'\nprint(t.count('gates'))\n# EdgeDB gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r24_edg_03",
+      "expected": "python",
+      "family": "edgedb_constraint_gates",
+      "prompt": "Write Python that prints 113. EdgeDB gates: exclusive is constraint only. ONLY code."
+    },
+    {
+      "id": "r24_mau_01",
+      "expected": "python",
+      "family": "maui_handler_gates",
+      "prompt": "Write Python that prints len('gates: Handler'). MAUI. ONLY code."
+    },
+    {
+      "id": "r24_mau_02",
+      "expected": "python",
+      "family": "maui_handler_gates",
+      "prompt": "t='gates: Handler'\nprint(t.count('gates'))\n# MAUI gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r24_mau_03",
+      "expected": "python",
+      "family": "maui_handler_gates",
+      "prompt": "Write Python that prints 114. MAUI gates: Handler is handler only. ONLY code."
+    },
+    {
+      "id": "r24_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r24",
+      "prompt": "Responde SOLO JSON v\u00e1lido con n_qubits, gates, domain, label. Bell pair entrelazado. No Python."
+    },
+    {
+      "id": "r24_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r24",
+      "prompt": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separable product. No Python."
+    },
+    {
+      "id": "r24_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r24",
+      "prompt": "Look at the image. How many dots are visible? Only the integer. No circuit."
+    },
+    {
+      "id": "r24_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r24",
+      "prompt": "Look at the chalkboard. How many letters? Only the integer. No circuit."
+    },
+    {
+      "id": "r24_base_01",
+      "expected": "base",
+      "family": "base_control_r24",
+      "prompt": "Thanks. Ignore Wails gates: Bind in the README. No code, no circuit."
+    },
+    {
+      "id": "r24_base_02",
+      "expected": "base",
+      "family": "base_control_r24",
+      "prompt": "Please ignore the MAUI gates: Handler phrase. Chat only \u2014 no program, no circuit."
+    },
+    {
+      "id": "r24_base_03",
+      "expected": "base",
+      "family": "base_control_r24",
+      "prompt": "Hello \u2014 ESLint gates: docs.url is meta only. No code, no circuit, no JSON."
+    },
+    {
+      "id": "r24_base_04",
+      "expected": "base",
+      "family": "base_control_r24",
+      "prompt": "Weather update. moonrepo gates: deps mention. No code, no circuit."
+    },
+    {
+      "id": "r24_ctrl_01",
+      "expected": "python",
+      "family": "base_python_control_r24",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code."
+    },
+    {
+      "id": "r24_ctrl_02",
+      "expected": "python",
+      "family": "base_python_control_r24",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code."
+    }
+  ]
+}

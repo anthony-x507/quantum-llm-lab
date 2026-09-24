@@ -185,6 +185,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R12: Traefik/Envoy/NATS/ClickHouse/dbt/Crossplane/Flux/RabbitMQ/ES/Swift/Elixir/Julia/Kong/Spinnaker gates: scalars.
     # R13: Nginx/HAProxy/Caddy/Redis/Postgres/Skaffold/Buildkite/Packer/Salt/Bazel/Dagger/Dagster/Hasura/NestJS gates: scalars.
     # R14: Apache httpd/Varnish/APISIX/Tyk/KrakenD/MongoDB/Cassandra/Jenkins/Vagrant/Chef/Pants/Prefect/FastAPI/Spring gates: scalars.
+    # R24: Wails/Neutralino/React Native/Ionic/Webpack/Parcel/SWC/moonrepo/Lage/ESLint/Ruff/SQLAlchemy/EdgeDB/MAUI gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -542,7 +543,65 @@ def route_heuristic(prompt: str) -> Lane:
             r"|spring\s+.*gates:"
             r"|security\s+gates:\s*has"
             # R14: httpd / cache / gateway / API / DB / CI / image / config / build / orchestration / framework / security prose
-            r"|gates:\s+is\s+(?:httpd|cache|gateway|API|DB|CI|image|config|build|orchestration|framework|security)\b",
+            r"|gates:\s+is\s+(?:httpd|cache|gateway|API|DB|CI|image|config|build|orchestration|framework|security)\b"
+            # R24: Wails bind gates: Bind
+            r"|gates\s*:\s*Bind\b"
+            r"|wails\s+.*gates:"
+            r"|bind\s+gates:\s*Bind"
+            # R24: Neutralino ext gates: filesystem
+            r"|gates\s*:\s*filesystem\b"
+            r"|neutralino\s+.*gates:"
+            r"|ext\s+gates:\s*filesystem"
+            # R24: React Native turbo gates: TurboModule
+            r"|gates\s*:\s*TurboModule\b"
+            r"|react\s+native\s+.*gates:"
+            r"|turbo\s+gates:\s*TurboModule"
+            # R24: Ionic lifecycle gates: useIonViewDidEnter
+            r"|gates\s*:\s*useIonViewDidEnter\b"
+            r"|ionic\s+.*gates:"
+            r"|lifecycle\s+gates:\s*useIon"
+            # R24: Webpack loader gates: pitch
+            r"|gates\s*:\s*pitch\b"
+            r"|webpack\s+.*gates:"
+            r"|loader\s+gates:\s*pitch"
+            # R24: Parcel transformer gates: transform
+            r"|gates\s*:\s*transform\b"
+            r"|parcel\s+.*gates:"
+            r"|transformer\s+gates:\s*transform"
+            # R24: SWC plugin gates: wasm
+            r"|gates\s*:\s*wasm\b"
+            r"|\bswc\b\s+.*gates:"
+            r"|plugin\s+gates:\s*wasm"
+            # R24: moonrepo task gates: deps
+            r"|gates\s*:\s*deps\b"
+            r"|moonrepo\s+.*gates:"
+            r"|task\s+gates:\s*deps"
+            # R24: Lage pipeline gates: dependsOn
+            r"|gates\s*:\s*dependsOn\b"
+            r"|\blage\b\s+.*gates:"
+            r"|pipeline\s+gates:\s*dependsOn"
+            # R24: ESLint meta gates: docs.url
+            r"|gates\s*:\s*docs\.url\b"
+            r"|eslint\s+.*gates:"
+            r"|meta\s+gates:\s*docs"
+            # R24: Ruff select gates: select
+            r"|gates\s*:\s*select\b"
+            r"|\bruff\b\s+.*gates:"
+            r"|rule\s+gates:\s*select"
+            # R24: SQLAlchemy column gates: primary_key
+            r"|gates\s*:\s*primary_key\b"
+            r"|sqlalchemy\s+.*gates:"
+            r"|column\s+gates:\s*primary_key"
+            # R24: EdgeDB constraint gates: exclusive
+            r"|gates\s*:\s*exclusive\b"
+            r"|edgedb\s+.*gates:"
+            r"|constraint\s+gates:\s*exclusive"
+            # R24: MAUI handler gates: Handler
+            r"|gates\s*:\s*Handler\b"
+            r"|\bmaui\b\s+.*gates:"
+            r"|handler\s+gates:\s*Handler"
+            # R24: bind / ext / turbo / lifecycle / loader / transformer / plugin / task / pipeline / meta / rule / column / constraint / handler prose
+            r"|gates:\s+is\s+(?:bind|ext|turbo|lifecycle|loader|transformer|plugin|task|pipeline|meta|rule|column|constraint|handler)\b",
             text,
             re.I,
         )
@@ -1162,6 +1221,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r24' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r24.json"
         elif 'r14' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r14.json"
         elif 'r13' in hp:

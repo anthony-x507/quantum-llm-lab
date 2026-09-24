@@ -1,6 +1,6 @@
 {
   "frontier": "C3-moe-verifier-codigo-vivo",
-  "written": "2026-09-24 15:08:33",
+  "written": "2026-09-24 15:08:19",
   "mode": "hardneg-cpu",
   "router_method": "heuristic",
   "claims": [
@@ -203,7 +203,7 @@
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "r12v_traefik_01",
+            "id": "r24v_wai_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -212,7 +212,7 @@
             "actions": []
           },
           {
-            "id": "r12v_traefik_02",
+            "id": "r24v_wai_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -221,7 +221,7 @@
             "actions": []
           },
           {
-            "id": "r12v_traefik_03",
+            "id": "r24v_wai_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -230,7 +230,7 @@
             "actions": []
           },
           {
-            "id": "r12v_envoy_01",
+            "id": "r24v_neu_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -239,7 +239,7 @@
             "actions": []
           },
           {
-            "id": "r12v_envoy_02",
+            "id": "r24v_neu_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -248,7 +248,7 @@
             "actions": []
           },
           {
-            "id": "r12v_envoy_03",
+            "id": "r24v_neu_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -257,7 +257,7 @@
             "actions": []
           },
           {
-            "id": "r12v_nats_01",
+            "id": "r24v_rnt_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -266,7 +266,7 @@
             "actions": []
           },
           {
-            "id": "r12v_nats_02",
+            "id": "r24v_rnt_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -275,7 +275,7 @@
             "actions": []
           },
           {
-            "id": "r12v_nats_03",
+            "id": "r24v_rnt_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -284,7 +284,7 @@
             "actions": []
           },
           {
-            "id": "r12v_ch_01",
+            "id": "r24v_ion_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -293,7 +293,7 @@
             "actions": []
           },
           {
-            "id": "r12v_ch_02",
+            "id": "r24v_ion_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -302,7 +302,7 @@
             "actions": []
           },
           {
-            "id": "r12v_ch_03",
+            "id": "r24v_ion_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -311,7 +311,7 @@
             "actions": []
           },
           {
-            "id": "r12v_dbt_01",
+            "id": "r24v_wbp_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -320,7 +320,7 @@
             "actions": []
           },
           {
-            "id": "r12v_dbt_02",
+            "id": "r24v_wbp_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -329,7 +329,7 @@
             "actions": []
           },
           {
-            "id": "r12v_dbt_03",
+            "id": "r24v_wbp_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -338,7 +338,7 @@
             "actions": []
           },
           {
-            "id": "r12v_xp_01",
+            "id": "r24v_par_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -347,7 +347,7 @@
             "actions": []
           },
           {
-            "id": "r12v_xp_02",
+            "id": "r24v_par_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -356,7 +356,7 @@
             "actions": []
           },
           {
-            "id": "r12v_xp_03",
+            "id": "r24v_par_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -365,7 +365,7 @@
             "actions": []
           },
           {
-            "id": "r12v_flux_01",
+            "id": "r24v_swc_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -374,7 +374,7 @@
             "actions": []
           },
           {
-            "id": "r12v_flux_02",
+            "id": "r24v_swc_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -383,7 +383,7 @@
             "actions": []
           },
           {
-            "id": "r12v_flux_03",
+            "id": "r24v_swc_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -392,7 +392,7 @@
             "actions": []
           },
           {
-            "id": "r12v_rmq_01",
+            "id": "r24v_moo_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -401,7 +401,7 @@
             "actions": []
           },
           {
-            "id": "r12v_rmq_02",
+            "id": "r24v_moo_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -410,7 +410,7 @@
             "actions": []
           },
           {
-            "id": "r12v_rmq_03",
+            "id": "r24v_moo_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -419,7 +419,7 @@
             "actions": []
           },
           {
-            "id": "r12v_es_01",
+            "id": "r24v_lag_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -428,7 +428,7 @@
             "actions": []
           },
           {
-            "id": "r12v_es_02",
+            "id": "r24v_lag_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -437,7 +437,7 @@
             "actions": []
           },
           {
-            "id": "r12v_es_03",
+            "id": "r24v_lag_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -446,7 +446,7 @@
             "actions": []
           },
           {
-            "id": "r12v_swift_01",
+            "id": "r24v_esl_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -455,7 +455,7 @@
             "actions": []
           },
           {
-            "id": "r12v_swift_02",
+            "id": "r24v_esl_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -464,7 +464,7 @@
             "actions": []
           },
           {
-            "id": "r12v_swift_03",
+            "id": "r24v_esl_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -473,7 +473,7 @@
             "actions": []
           },
           {
-            "id": "r12v_elixir_01",
+            "id": "r24v_ruf_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -482,7 +482,7 @@
             "actions": []
           },
           {
-            "id": "r12v_elixir_02",
+            "id": "r24v_ruf_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -491,7 +491,7 @@
             "actions": []
           },
           {
-            "id": "r12v_elixir_03",
+            "id": "r24v_ruf_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -500,7 +500,7 @@
             "actions": []
           },
           {
-            "id": "r12v_julia_01",
+            "id": "r24v_sql_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -509,7 +509,7 @@
             "actions": []
           },
           {
-            "id": "r12v_julia_02",
+            "id": "r24v_sql_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -518,7 +518,7 @@
             "actions": []
           },
           {
-            "id": "r12v_julia_03",
+            "id": "r24v_sql_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -527,7 +527,7 @@
             "actions": []
           },
           {
-            "id": "r12v_kong_01",
+            "id": "r24v_edg_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -536,7 +536,7 @@
             "actions": []
           },
           {
-            "id": "r12v_kong_02",
+            "id": "r24v_edg_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -545,7 +545,7 @@
             "actions": []
           },
           {
-            "id": "r12v_kong_03",
+            "id": "r24v_edg_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -554,7 +554,7 @@
             "actions": []
           },
           {
-            "id": "r12v_spin_01",
+            "id": "r24v_mau_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -563,7 +563,7 @@
             "actions": []
           },
           {
-            "id": "r12v_spin_02",
+            "id": "r24v_mau_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -572,7 +572,7 @@
             "actions": []
           },
           {
-            "id": "r12v_spin_03",
+            "id": "r24v_mau_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -581,7 +581,7 @@
             "actions": []
           },
           {
-            "id": "r12v_ctrl_01",
+            "id": "r24v_ctrl_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -590,7 +590,7 @@
             "actions": []
           },
           {
-            "id": "r12v_ctrl_02",
+            "id": "r24v_ctrl_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -615,7 +615,7 @@
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "r12v_traefik_01",
+            "id": "r24v_wai_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -624,7 +624,7 @@
             "actions": []
           },
           {
-            "id": "r12v_traefik_02",
+            "id": "r24v_wai_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -633,7 +633,7 @@
             "actions": []
           },
           {
-            "id": "r12v_traefik_03",
+            "id": "r24v_wai_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -642,7 +642,7 @@
             "actions": []
           },
           {
-            "id": "r12v_envoy_01",
+            "id": "r24v_neu_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -651,7 +651,7 @@
             "actions": []
           },
           {
-            "id": "r12v_envoy_02",
+            "id": "r24v_neu_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -660,7 +660,7 @@
             "actions": []
           },
           {
-            "id": "r12v_envoy_03",
+            "id": "r24v_neu_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -669,7 +669,7 @@
             "actions": []
           },
           {
-            "id": "r12v_nats_01",
+            "id": "r24v_rnt_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -678,7 +678,7 @@
             "actions": []
           },
           {
-            "id": "r12v_nats_02",
+            "id": "r24v_rnt_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -687,7 +687,7 @@
             "actions": []
           },
           {
-            "id": "r12v_nats_03",
+            "id": "r24v_rnt_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -696,7 +696,7 @@
             "actions": []
           },
           {
-            "id": "r12v_ch_01",
+            "id": "r24v_ion_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -705,7 +705,7 @@
             "actions": []
           },
           {
-            "id": "r12v_ch_02",
+            "id": "r24v_ion_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -714,7 +714,7 @@
             "actions": []
           },
           {
-            "id": "r12v_ch_03",
+            "id": "r24v_ion_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -723,7 +723,7 @@
             "actions": []
           },
           {
-            "id": "r12v_dbt_01",
+            "id": "r24v_wbp_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -732,7 +732,7 @@
             "actions": []
           },
           {
-            "id": "r12v_dbt_02",
+            "id": "r24v_wbp_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -741,7 +741,7 @@
             "actions": []
           },
           {
-            "id": "r12v_dbt_03",
+            "id": "r24v_wbp_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -750,7 +750,7 @@
             "actions": []
           },
           {
-            "id": "r12v_xp_01",
+            "id": "r24v_par_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -759,7 +759,7 @@
             "actions": []
           },
           {
-            "id": "r12v_xp_02",
+            "id": "r24v_par_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -768,7 +768,7 @@
             "actions": []
           },
           {
-            "id": "r12v_xp_03",
+            "id": "r24v_par_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -777,7 +777,7 @@
             "actions": []
           },
           {
-            "id": "r12v_flux_01",
+            "id": "r24v_swc_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -786,7 +786,7 @@
             "actions": []
           },
           {
-            "id": "r12v_flux_02",
+            "id": "r24v_swc_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -795,7 +795,7 @@
             "actions": []
           },
           {
-            "id": "r12v_flux_03",
+            "id": "r24v_swc_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -804,7 +804,7 @@
             "actions": []
           },
           {
-            "id": "r12v_rmq_01",
+            "id": "r24v_moo_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -813,7 +813,7 @@
             "actions": []
           },
           {
-            "id": "r12v_rmq_02",
+            "id": "r24v_moo_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -822,7 +822,7 @@
             "actions": []
           },
           {
-            "id": "r12v_rmq_03",
+            "id": "r24v_moo_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -831,7 +831,7 @@
             "actions": []
           },
           {
-            "id": "r12v_es_01",
+            "id": "r24v_lag_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -840,7 +840,7 @@
             "actions": []
           },
           {
-            "id": "r12v_es_02",
+            "id": "r24v_lag_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -849,7 +849,7 @@
             "actions": []
           },
           {
-            "id": "r12v_es_03",
+            "id": "r24v_lag_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -858,7 +858,7 @@
             "actions": []
           },
           {
-            "id": "r12v_swift_01",
+            "id": "r24v_esl_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -867,7 +867,7 @@
             "actions": []
           },
           {
-            "id": "r12v_swift_02",
+            "id": "r24v_esl_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -876,7 +876,7 @@
             "actions": []
           },
           {
-            "id": "r12v_swift_03",
+            "id": "r24v_esl_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -885,7 +885,7 @@
             "actions": []
           },
           {
-            "id": "r12v_elixir_01",
+            "id": "r24v_ruf_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -894,7 +894,7 @@
             "actions": []
           },
           {
-            "id": "r12v_elixir_02",
+            "id": "r24v_ruf_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -903,7 +903,7 @@
             "actions": []
           },
           {
-            "id": "r12v_elixir_03",
+            "id": "r24v_ruf_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -912,7 +912,7 @@
             "actions": []
           },
           {
-            "id": "r12v_julia_01",
+            "id": "r24v_sql_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -921,7 +921,7 @@
             "actions": []
           },
           {
-            "id": "r12v_julia_02",
+            "id": "r24v_sql_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -930,7 +930,7 @@
             "actions": []
           },
           {
-            "id": "r12v_julia_03",
+            "id": "r24v_sql_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -939,7 +939,7 @@
             "actions": []
           },
           {
-            "id": "r12v_kong_01",
+            "id": "r24v_edg_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -948,7 +948,7 @@
             "actions": []
           },
           {
-            "id": "r12v_kong_02",
+            "id": "r24v_edg_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -957,7 +957,7 @@
             "actions": []
           },
           {
-            "id": "r12v_kong_03",
+            "id": "r24v_edg_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -966,7 +966,7 @@
             "actions": []
           },
           {
-            "id": "r12v_spin_01",
+            "id": "r24v_mau_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -975,7 +975,7 @@
             "actions": []
           },
           {
-            "id": "r12v_spin_02",
+            "id": "r24v_mau_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -984,7 +984,7 @@
             "actions": []
           },
           {
-            "id": "r12v_spin_03",
+            "id": "r24v_mau_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -993,7 +993,7 @@
             "actions": []
           },
           {
-            "id": "r12v_ctrl_01",
+            "id": "r24v_ctrl_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -1002,7 +1002,7 @@
             "actions": []
           },
           {
-            "id": "r12v_ctrl_02",
+            "id": "r24v_ctrl_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -1017,265 +1017,265 @@
         "solve_rate_on_python_lane": 0.0,
         "routing": [
           {
-            "id": "r12v_traefik_01",
+            "id": "r24v_wai_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_traefik_02",
+            "id": "r24v_wai_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_traefik_03",
+            "id": "r24v_wai_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_envoy_01",
+            "id": "r24v_neu_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_envoy_02",
+            "id": "r24v_neu_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_envoy_03",
+            "id": "r24v_neu_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_nats_01",
+            "id": "r24v_rnt_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_nats_02",
+            "id": "r24v_rnt_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_nats_03",
+            "id": "r24v_rnt_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_ch_01",
+            "id": "r24v_ion_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_ch_02",
+            "id": "r24v_ion_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_ch_03",
+            "id": "r24v_ion_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_dbt_01",
+            "id": "r24v_wbp_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_dbt_02",
+            "id": "r24v_wbp_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_dbt_03",
+            "id": "r24v_wbp_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_xp_01",
+            "id": "r24v_par_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_xp_02",
+            "id": "r24v_par_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_xp_03",
+            "id": "r24v_par_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_flux_01",
+            "id": "r24v_swc_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_flux_02",
+            "id": "r24v_swc_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_flux_03",
+            "id": "r24v_swc_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_rmq_01",
+            "id": "r24v_moo_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_rmq_02",
+            "id": "r24v_moo_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_rmq_03",
+            "id": "r24v_moo_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_es_01",
+            "id": "r24v_lag_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_es_02",
+            "id": "r24v_lag_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_es_03",
+            "id": "r24v_lag_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_swift_01",
+            "id": "r24v_esl_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_swift_02",
+            "id": "r24v_esl_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_swift_03",
+            "id": "r24v_esl_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_elixir_01",
+            "id": "r24v_ruf_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_elixir_02",
+            "id": "r24v_ruf_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_elixir_03",
+            "id": "r24v_ruf_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_julia_01",
+            "id": "r24v_sql_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_julia_02",
+            "id": "r24v_sql_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_julia_03",
+            "id": "r24v_sql_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_kong_01",
+            "id": "r24v_edg_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_kong_02",
+            "id": "r24v_edg_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_kong_03",
+            "id": "r24v_edg_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_spin_01",
+            "id": "r24v_mau_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_spin_02",
+            "id": "r24v_mau_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_spin_03",
+            "id": "r24v_mau_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_ctrl_01",
+            "id": "r24v_ctrl_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_ctrl_02",
+            "id": "r24v_ctrl_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
@@ -1297,7 +1297,7 @@
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "r12v_traefik_01",
+            "id": "r24v_wai_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1308,7 +1308,7 @@
             ]
           },
           {
-            "id": "r12v_traefik_02",
+            "id": "r24v_wai_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1319,7 +1319,7 @@
             ]
           },
           {
-            "id": "r12v_traefik_03",
+            "id": "r24v_wai_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1330,7 +1330,7 @@
             ]
           },
           {
-            "id": "r12v_envoy_01",
+            "id": "r24v_neu_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1341,7 +1341,7 @@
             ]
           },
           {
-            "id": "r12v_envoy_02",
+            "id": "r24v_neu_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1352,7 +1352,7 @@
             ]
           },
           {
-            "id": "r12v_envoy_03",
+            "id": "r24v_neu_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1363,7 +1363,7 @@
             ]
           },
           {
-            "id": "r12v_nats_01",
+            "id": "r24v_rnt_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1374,7 +1374,7 @@
             ]
           },
           {
-            "id": "r12v_nats_02",
+            "id": "r24v_rnt_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1385,7 +1385,7 @@
             ]
           },
           {
-            "id": "r12v_nats_03",
+            "id": "r24v_rnt_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1396,7 +1396,7 @@
             ]
           },
           {
-            "id": "r12v_ch_01",
+            "id": "r24v_ion_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1407,7 +1407,7 @@
             ]
           },
           {
-            "id": "r12v_ch_02",
+            "id": "r24v_ion_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1418,7 +1418,7 @@
             ]
           },
           {
-            "id": "r12v_ch_03",
+            "id": "r24v_ion_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1429,7 +1429,7 @@
             ]
           },
           {
-            "id": "r12v_dbt_01",
+            "id": "r24v_wbp_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1440,7 +1440,7 @@
             ]
           },
           {
-            "id": "r12v_dbt_02",
+            "id": "r24v_wbp_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1451,7 +1451,7 @@
             ]
           },
           {
-            "id": "r12v_dbt_03",
+            "id": "r24v_wbp_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1462,7 +1462,7 @@
             ]
           },
           {
-            "id": "r12v_xp_01",
+            "id": "r24v_par_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1473,7 +1473,7 @@
             ]
           },
           {
-            "id": "r12v_xp_02",
+            "id": "r24v_par_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1484,7 +1484,7 @@
             ]
           },
           {
-            "id": "r12v_xp_03",
+            "id": "r24v_par_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1495,7 +1495,7 @@
             ]
           },
           {
-            "id": "r12v_flux_01",
+            "id": "r24v_swc_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1506,7 +1506,7 @@
             ]
           },
           {
-            "id": "r12v_flux_02",
+            "id": "r24v_swc_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1517,7 +1517,7 @@
             ]
           },
           {
-            "id": "r12v_flux_03",
+            "id": "r24v_swc_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1528,7 +1528,7 @@
             ]
           },
           {
-            "id": "r12v_rmq_01",
+            "id": "r24v_moo_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1539,7 +1539,7 @@
             ]
           },
           {
-            "id": "r12v_rmq_02",
+            "id": "r24v_moo_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1550,7 +1550,7 @@
             ]
           },
           {
-            "id": "r12v_rmq_03",
+            "id": "r24v_moo_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1561,7 +1561,7 @@
             ]
           },
           {
-            "id": "r12v_es_01",
+            "id": "r24v_lag_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1572,7 +1572,7 @@
             ]
           },
           {
-            "id": "r12v_es_02",
+            "id": "r24v_lag_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1583,7 +1583,7 @@
             ]
           },
           {
-            "id": "r12v_es_03",
+            "id": "r24v_lag_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1594,7 +1594,7 @@
             ]
           },
           {
-            "id": "r12v_swift_01",
+            "id": "r24v_esl_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1605,7 +1605,7 @@
             ]
           },
           {
-            "id": "r12v_swift_02",
+            "id": "r24v_esl_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1616,7 +1616,7 @@
             ]
           },
           {
-            "id": "r12v_swift_03",
+            "id": "r24v_esl_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1627,7 +1627,7 @@
             ]
           },
           {
-            "id": "r12v_elixir_01",
+            "id": "r24v_ruf_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1638,7 +1638,7 @@
             ]
           },
           {
-            "id": "r12v_elixir_02",
+            "id": "r24v_ruf_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1649,7 +1649,7 @@
             ]
           },
           {
-            "id": "r12v_elixir_03",
+            "id": "r24v_ruf_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1660,7 +1660,7 @@
             ]
           },
           {
-            "id": "r12v_julia_01",
+            "id": "r24v_sql_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1671,7 +1671,7 @@
             ]
           },
           {
-            "id": "r12v_julia_02",
+            "id": "r24v_sql_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1682,7 +1682,7 @@
             ]
           },
           {
-            "id": "r12v_julia_03",
+            "id": "r24v_sql_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1693,7 +1693,7 @@
             ]
           },
           {
-            "id": "r12v_kong_01",
+            "id": "r24v_edg_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1704,7 +1704,7 @@
             ]
           },
           {
-            "id": "r12v_kong_02",
+            "id": "r24v_edg_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1715,7 +1715,7 @@
             ]
           },
           {
-            "id": "r12v_kong_03",
+            "id": "r24v_edg_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1726,7 +1726,7 @@
             ]
           },
           {
-            "id": "r12v_spin_01",
+            "id": "r24v_mau_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1737,7 +1737,7 @@
             ]
           },
           {
-            "id": "r12v_spin_02",
+            "id": "r24v_mau_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1748,7 +1748,7 @@
             ]
           },
           {
-            "id": "r12v_spin_03",
+            "id": "r24v_mau_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1759,7 +1759,7 @@
             ]
           },
           {
-            "id": "r12v_ctrl_01",
+            "id": "r24v_ctrl_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1770,7 +1770,7 @@
             ]
           },
           {
-            "id": "r12v_ctrl_02",
+            "id": "r24v_ctrl_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1797,7 +1797,7 @@
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "r12v_traefik_01",
+            "id": "r24v_wai_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1808,7 +1808,7 @@
             ]
           },
           {
-            "id": "r12v_traefik_02",
+            "id": "r24v_wai_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1819,7 +1819,7 @@
             ]
           },
           {
-            "id": "r12v_traefik_03",
+            "id": "r24v_wai_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1830,7 +1830,7 @@
             ]
           },
           {
-            "id": "r12v_envoy_01",
+            "id": "r24v_neu_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1841,7 +1841,7 @@
             ]
           },
           {
-            "id": "r12v_envoy_02",
+            "id": "r24v_neu_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1852,7 +1852,7 @@
             ]
           },
           {
-            "id": "r12v_envoy_03",
+            "id": "r24v_neu_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1863,7 +1863,7 @@
             ]
           },
           {
-            "id": "r12v_nats_01",
+            "id": "r24v_rnt_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1874,7 +1874,7 @@
             ]
           },
           {
-            "id": "r12v_nats_02",
+            "id": "r24v_rnt_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1885,7 +1885,7 @@
             ]
           },
           {
-            "id": "r12v_nats_03",
+            "id": "r24v_rnt_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1896,7 +1896,7 @@
             ]
           },
           {
-            "id": "r12v_ch_01",
+            "id": "r24v_ion_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1907,7 +1907,7 @@
             ]
           },
           {
-            "id": "r12v_ch_02",
+            "id": "r24v_ion_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1918,7 +1918,7 @@
             ]
           },
           {
-            "id": "r12v_ch_03",
+            "id": "r24v_ion_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1929,7 +1929,7 @@
             ]
           },
           {
-            "id": "r12v_dbt_01",
+            "id": "r24v_wbp_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1940,7 +1940,7 @@
             ]
           },
           {
-            "id": "r12v_dbt_02",
+            "id": "r24v_wbp_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1951,7 +1951,7 @@
             ]
           },
           {
-            "id": "r12v_dbt_03",
+            "id": "r24v_wbp_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1962,7 +1962,7 @@
             ]
           },
           {
-            "id": "r12v_xp_01",
+            "id": "r24v_par_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1973,7 +1973,7 @@
             ]
           },
           {
-            "id": "r12v_xp_02",
+            "id": "r24v_par_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1984,7 +1984,7 @@
             ]
           },
           {
-            "id": "r12v_xp_03",
+            "id": "r24v_par_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1995,7 +1995,7 @@
             ]
           },
           {
-            "id": "r12v_flux_01",
+            "id": "r24v_swc_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2006,7 +2006,7 @@
             ]
           },
           {
-            "id": "r12v_flux_02",
+            "id": "r24v_swc_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2017,7 +2017,7 @@
             ]
           },
           {
-            "id": "r12v_flux_03",
+            "id": "r24v_swc_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2028,7 +2028,7 @@
             ]
           },
           {
-            "id": "r12v_rmq_01",
+            "id": "r24v_moo_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2039,7 +2039,7 @@
             ]
           },
           {
-            "id": "r12v_rmq_02",
+            "id": "r24v_moo_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2050,7 +2050,7 @@
             ]
           },
           {
-            "id": "r12v_rmq_03",
+            "id": "r24v_moo_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2061,7 +2061,7 @@
             ]
           },
           {
-            "id": "r12v_es_01",
+            "id": "r24v_lag_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2072,7 +2072,7 @@
             ]
           },
           {
-            "id": "r12v_es_02",
+            "id": "r24v_lag_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2083,7 +2083,7 @@
             ]
           },
           {
-            "id": "r12v_es_03",
+            "id": "r24v_lag_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2094,7 +2094,7 @@
             ]
           },
           {
-            "id": "r12v_swift_01",
+            "id": "r24v_esl_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2105,7 +2105,7 @@
             ]
           },
           {
-            "id": "r12v_swift_02",
+            "id": "r24v_esl_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2116,7 +2116,7 @@
             ]
           },
           {
-            "id": "r12v_swift_03",
+            "id": "r24v_esl_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2127,7 +2127,7 @@
             ]
           },
           {
-            "id": "r12v_elixir_01",
+            "id": "r24v_ruf_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2138,7 +2138,7 @@
             ]
           },
           {
-            "id": "r12v_elixir_02",
+            "id": "r24v_ruf_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2149,7 +2149,7 @@
             ]
           },
           {
-            "id": "r12v_elixir_03",
+            "id": "r24v_ruf_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2160,7 +2160,7 @@
             ]
           },
           {
-            "id": "r12v_julia_01",
+            "id": "r24v_sql_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2171,7 +2171,7 @@
             ]
           },
           {
-            "id": "r12v_julia_02",
+            "id": "r24v_sql_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2182,7 +2182,7 @@
             ]
           },
           {
-            "id": "r12v_julia_03",
+            "id": "r24v_sql_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2193,7 +2193,7 @@
             ]
           },
           {
-            "id": "r12v_kong_01",
+            "id": "r24v_edg_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2204,7 +2204,7 @@
             ]
           },
           {
-            "id": "r12v_kong_02",
+            "id": "r24v_edg_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2215,7 +2215,7 @@
             ]
           },
           {
-            "id": "r12v_kong_03",
+            "id": "r24v_edg_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2226,7 +2226,7 @@
             ]
           },
           {
-            "id": "r12v_spin_01",
+            "id": "r24v_mau_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2237,7 +2237,7 @@
             ]
           },
           {
-            "id": "r12v_spin_02",
+            "id": "r24v_mau_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2248,7 +2248,7 @@
             ]
           },
           {
-            "id": "r12v_spin_03",
+            "id": "r24v_mau_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2259,7 +2259,7 @@
             ]
           },
           {
-            "id": "r12v_ctrl_01",
+            "id": "r24v_ctrl_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2270,7 +2270,7 @@
             ]
           },
           {
-            "id": "r12v_ctrl_02",
+            "id": "r24v_ctrl_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2287,265 +2287,265 @@
         "solve_rate_on_python_lane": 1.0,
         "routing": [
           {
-            "id": "r12v_traefik_01",
+            "id": "r24v_wai_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_traefik_02",
+            "id": "r24v_wai_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_traefik_03",
+            "id": "r24v_wai_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_envoy_01",
+            "id": "r24v_neu_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_envoy_02",
+            "id": "r24v_neu_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_envoy_03",
+            "id": "r24v_neu_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_nats_01",
+            "id": "r24v_rnt_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_nats_02",
+            "id": "r24v_rnt_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_nats_03",
+            "id": "r24v_rnt_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_ch_01",
+            "id": "r24v_ion_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_ch_02",
+            "id": "r24v_ion_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_ch_03",
+            "id": "r24v_ion_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_dbt_01",
+            "id": "r24v_wbp_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_dbt_02",
+            "id": "r24v_wbp_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_dbt_03",
+            "id": "r24v_wbp_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_xp_01",
+            "id": "r24v_par_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_xp_02",
+            "id": "r24v_par_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_xp_03",
+            "id": "r24v_par_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_flux_01",
+            "id": "r24v_swc_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_flux_02",
+            "id": "r24v_swc_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_flux_03",
+            "id": "r24v_swc_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_rmq_01",
+            "id": "r24v_moo_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_rmq_02",
+            "id": "r24v_moo_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_rmq_03",
+            "id": "r24v_moo_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_es_01",
+            "id": "r24v_lag_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_es_02",
+            "id": "r24v_lag_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_es_03",
+            "id": "r24v_lag_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_swift_01",
+            "id": "r24v_esl_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_swift_02",
+            "id": "r24v_esl_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_swift_03",
+            "id": "r24v_esl_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_elixir_01",
+            "id": "r24v_ruf_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_elixir_02",
+            "id": "r24v_ruf_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_elixir_03",
+            "id": "r24v_ruf_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_julia_01",
+            "id": "r24v_sql_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_julia_02",
+            "id": "r24v_sql_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_julia_03",
+            "id": "r24v_sql_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_kong_01",
+            "id": "r24v_edg_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_kong_02",
+            "id": "r24v_edg_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_kong_03",
+            "id": "r24v_edg_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_spin_01",
+            "id": "r24v_mau_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_spin_02",
+            "id": "r24v_mau_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_spin_03",
+            "id": "r24v_mau_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_ctrl_01",
+            "id": "r24v_ctrl_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r12v_ctrl_02",
+            "id": "r24v_ctrl_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
@@ -2638,92 +2638,92 @@
     "score": "52/52",
     "rate": 1.0,
     "by_family": {
-      "traefik_middleware_gates": {
+      "wails_bind_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "envoy_filter_gates": {
+      "neutralino_ext_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "nats_subject_gates": {
+      "react_native_turbo_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "clickhouse_setting_gates": {
+      "ionic_lifecycle_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "dbt_model_gates": {
+      "webpack_pitch_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "crossplane_claim_gates": {
+      "parcel_transformer_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "flux_kustomization_gates": {
+      "swc_plugin_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "rabbitmq_policy_gates": {
+      "moonrepo_task_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "elasticsearch_ingest_gates": {
+      "lage_pipeline_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "swift_property_gates": {
+      "eslint_meta_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "elixir_attribute_gates": {
+      "ruff_select_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "julia_macro_gates": {
+      "sqlalchemy_column_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "kong_plugin_gates": {
+      "edgedb_constraint_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "spinnaker_stage_gates": {
+      "maui_handler_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "ent_control_r12": {
+      "ent_control_r24": {
         "n": 2,
         "hits": 2,
         "rate": 1.0
       },
-      "vision_control_r12": {
+      "vision_control_r24": {
         "n": 2,
         "hits": 2,
         "rate": 1.0
       },
-      "base_control_r12": {
+      "base_control_r24": {
         "n": 4,
         "hits": 4,
         "rate": 1.0
       },
-      "base_python_control_r12": {
+      "base_python_control_r24": {
         "n": 2,
         "hits": 2,
         "rate": 1.0
@@ -2732,428 +2732,428 @@
     "ent_never_on_python": true,
     "rows": [
       {
-        "id": "r12_traefik_01",
-        "family": "traefik_middleware_gates",
+        "id": "r24_wai_01",
+        "family": "wails_bind_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('gates: stripPrefix'). Traefik middleware. ONLY cod",
+        "prompt_preview": "Write Python that prints len('gates: Bind'). Wails. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_traefik_02",
-        "family": "traefik_middleware_gates",
+        "id": "r24_wai_02",
+        "family": "wails_bind_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "t='gates: stripPrefix'\nprint(t.count('gates'))\n# Traefik middleware gates: — not",
+        "prompt_preview": "t='gates: Bind'\nprint(t.count('gates'))\n# Wails gates: — not circuit. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_traefik_03",
-        "family": "traefik_middleware_gates",
+        "id": "r24_wai_03",
+        "family": "wails_bind_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 6*3. Traefik middleware gates: stripPrefix is proxy onl",
+        "prompt_preview": "Write Python that prints 101. Wails gates: Bind is bind only. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_envoy_01",
-        "family": "envoy_filter_gates",
+        "id": "r24_neu_01",
+        "family": "neutralino_ext_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('gates: HTTP'). Envoy filter. ONLY code.",
+        "prompt_preview": "Write Python that prints len('gates: filesystem'). Neutralino. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_envoy_02",
-        "family": "envoy_filter_gates",
+        "id": "r24_neu_02",
+        "family": "neutralino_ext_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "e='gates: HTTP'\nprint(len(e))\n# Envoy HTTP filter gates: — not circuit. ONLY cod",
+        "prompt_preview": "t='gates: filesystem'\nprint(t.count('gates'))\n# Neutralino gates: — not circuit.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_envoy_03",
-        "family": "envoy_filter_gates",
+        "id": "r24_neu_03",
+        "family": "neutralino_ext_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 15. Envoy filter gates: HTTP is proxy only. ONLY code.",
+        "prompt_preview": "Write Python that prints 102. Neutralino gates: filesystem is ext only. ONLY cod",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_nats_01",
-        "family": "nats_subject_gates",
+        "id": "r24_rnt_01",
+        "family": "react_native_turbo_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('gates: publish'). NATS subject. ONLY code.",
+        "prompt_preview": "Write Python that prints len('gates: TurboModule'). React Native. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_nats_02",
-        "family": "nats_subject_gates",
+        "id": "r24_rnt_02",
+        "family": "react_native_turbo_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "n='gates: publish'\nprint(n.count('gates'))\n# NATS subject ACL gates: — not circu",
+        "prompt_preview": "t='gates: TurboModule'\nprint(t.count('gates'))\n# React Native gates: — not circu",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_nats_03",
-        "family": "nats_subject_gates",
+        "id": "r24_rnt_03",
+        "family": "react_native_turbo_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 4*4. NATS subject gates: publish is messaging only. ONL",
+        "prompt_preview": "Write Python that prints 103. React Native gates: TurboModule is turbo only. ONL",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_ch_01",
-        "family": "clickhouse_setting_gates",
+        "id": "r24_ion_01",
+        "family": "ionic_lifecycle_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('gates: Readonly'). ClickHouse setting. ONLY code.",
+        "prompt_preview": "Write Python that prints len('gates: useIonViewDidEnter'). Ionic. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_ch_02",
-        "family": "clickhouse_setting_gates",
+        "id": "r24_ion_02",
+        "family": "ionic_lifecycle_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "c='gates: Readonly'\nprint(c.count('gates'))\n# ClickHouse setting gates: — not ci",
+        "prompt_preview": "t='gates: useIonViewDidEnter'\nprint(t.count('gates'))\n# Ionic gates: — not circu",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_ch_03",
-        "family": "clickhouse_setting_gates",
+        "id": "r24_ion_03",
+        "family": "ionic_lifecycle_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 17. ClickHouse gates: Readonly is DB only. ONLY code.",
+        "prompt_preview": "Write Python that prints 104. Ionic gates: useIonViewDidEnter is lifecycle only.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_dbt_01",
-        "family": "dbt_model_gates",
+        "id": "r24_wbp_01",
+        "family": "webpack_pitch_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('gates: ephemeral'). dbt model. ONLY code.",
+        "prompt_preview": "Write Python that prints len('gates: pitch'). Webpack. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_dbt_02",
-        "family": "dbt_model_gates",
+        "id": "r24_wbp_02",
+        "family": "webpack_pitch_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "d='gates: ephemeral'\nprint(len(d))\n# dbt model config gates: — not circuit. ONLY",
+        "prompt_preview": "t='gates: pitch'\nprint(t.count('gates'))\n# Webpack gates: — not circuit. ONLY co",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_dbt_03",
-        "family": "dbt_model_gates",
+        "id": "r24_wbp_03",
+        "family": "webpack_pitch_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 5*4. dbt model gates: ephemeral is SQL only. ONLY code.",
+        "prompt_preview": "Write Python that prints 105. Webpack gates: pitch is loader only. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_xp_01",
-        "family": "crossplane_claim_gates",
+        "id": "r24_par_01",
+        "family": "parcel_transformer_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('gates: Ready'). Crossplane claim. ONLY code.",
+        "prompt_preview": "Write Python that prints len('gates: transform'). Parcel. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_xp_02",
-        "family": "crossplane_claim_gates",
+        "id": "r24_par_02",
+        "family": "parcel_transformer_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "x='gates: Ready'\nprint(x.count('gates'))\n# Crossplane Composite claim gates: — n",
+        "prompt_preview": "t='gates: transform'\nprint(t.count('gates'))\n# Parcel gates: — not circuit. ONLY",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_xp_03",
-        "family": "crossplane_claim_gates",
+        "id": "r24_par_03",
+        "family": "parcel_transformer_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 19. Crossplane claim gates: Ready is k8s only. ONLY cod",
+        "prompt_preview": "Write Python that prints 106. Parcel gates: transform is transformer only. ONLY ",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_flux_01",
-        "family": "flux_kustomization_gates",
+        "id": "r24_swc_01",
+        "family": "swc_plugin_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('gates: prune'). Flux Kustomization. ONLY code.",
+        "prompt_preview": "Write Python that prints len('gates: wasm'). SWC. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_flux_02",
-        "family": "flux_kustomization_gates",
+        "id": "r24_swc_02",
+        "family": "swc_plugin_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "f='gates: prune'\nprint(len(f))\n# Flux Kustomization gates: — not circuit. ONLY c",
+        "prompt_preview": "t='gates: wasm'\nprint(t.count('gates'))\n# SWC gates: — not circuit. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_flux_03",
-        "family": "flux_kustomization_gates",
+        "id": "r24_swc_03",
+        "family": "swc_plugin_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 7*3. Flux Kustomization gates: prune is GitOps only. ON",
+        "prompt_preview": "Write Python that prints 107. SWC gates: wasm is plugin only. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_rmq_01",
-        "family": "rabbitmq_policy_gates",
+        "id": "r24_moo_01",
+        "family": "moonrepo_task_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('gates: ha-mode'). RabbitMQ policy. ONLY code.",
+        "prompt_preview": "Write Python that prints len('gates: deps'). moonrepo. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_rmq_02",
-        "family": "rabbitmq_policy_gates",
+        "id": "r24_moo_02",
+        "family": "moonrepo_task_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "r='gates: ha-mode'\nprint(r.count('gates'))\n# RabbitMQ policy definition gates: —",
+        "prompt_preview": "t='gates: deps'\nprint(t.count('gates'))\n# moonrepo gates: — not circuit. ONLY co",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_rmq_03",
-        "family": "rabbitmq_policy_gates",
+        "id": "r24_moo_03",
+        "family": "moonrepo_task_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 22. RabbitMQ policy gates: ha-mode is broker only. ONLY",
+        "prompt_preview": "Write Python that prints 108. moonrepo gates: deps is task only. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_es_01",
-        "family": "elasticsearch_ingest_gates",
+        "id": "r24_lag_01",
+        "family": "lage_pipeline_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('gates: set'). Elasticsearch ingest. ONLY code.",
+        "prompt_preview": "Write Python that prints len('gates: dependsOn'). Lage. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_es_02",
-        "family": "elasticsearch_ingest_gates",
+        "id": "r24_lag_02",
+        "family": "lage_pipeline_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "e='gates: set'\nprint(e.count('gates'))\n# Elasticsearch ingest pipeline gates: — ",
+        "prompt_preview": "t='gates: dependsOn'\nprint(t.count('gates'))\n# Lage gates: — not circuit. ONLY c",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_es_03",
-        "family": "elasticsearch_ingest_gates",
+        "id": "r24_lag_03",
+        "family": "lage_pipeline_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 8*3. Elasticsearch ingest gates: set is search only. ON",
+        "prompt_preview": "Write Python that prints 109. Lage gates: dependsOn is pipeline only. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_swift_01",
-        "family": "swift_property_gates",
+        "id": "r24_esl_01",
+        "family": "eslint_meta_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('gates: Wrapped'). Swift property. ONLY code.",
+        "prompt_preview": "Write Python that prints len('gates: docs.url'). ESLint. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_swift_02",
-        "family": "swift_property_gates",
+        "id": "r24_esl_02",
+        "family": "eslint_meta_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "s='gates: Wrapped'\nprint(len(s))\n# Swift @propertyWrapper gates: — not circuit. ",
+        "prompt_preview": "t='gates: docs.url'\nprint(t.count('gates'))\n# ESLint gates: — not circuit. ONLY ",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_swift_03",
-        "family": "swift_property_gates",
+        "id": "r24_esl_03",
+        "family": "eslint_meta_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 23. Swift property gates: Wrapped is language only. ONL",
+        "prompt_preview": "Write Python that prints 110. ESLint gates: docs.url is meta only. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_elixir_01",
-        "family": "elixir_attribute_gates",
+        "id": "r24_ruf_01",
+        "family": "ruff_select_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('gates: :atom'). Elixir attribute. ONLY code.",
+        "prompt_preview": "Write Python that prints len('gates: select'). Ruff. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_elixir_02",
-        "family": "elixir_attribute_gates",
+        "id": "r24_ruf_02",
+        "family": "ruff_select_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "a='gates: :atom'\nprint(a.count('gates'))\n# Elixir module attribute @gates: — not",
+        "prompt_preview": "t='gates: select'\nprint(t.count('gates'))\n# Ruff gates: — not circuit. ONLY code",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_elixir_03",
-        "family": "elixir_attribute_gates",
+        "id": "r24_ruf_03",
+        "family": "ruff_select_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 9*2. Elixir attribute gates: :atom is BEAM only. ONLY c",
+        "prompt_preview": "Write Python that prints 111. Ruff gates: select is rule only. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_julia_01",
-        "family": "julia_macro_gates",
+        "id": "r24_sql_01",
+        "family": "sqlalchemy_column_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('gates: Symbol'). Julia macro. ONLY code.",
+        "prompt_preview": "Write Python that prints len('gates: primary_key'). SQLAlchemy. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_julia_02",
-        "family": "julia_macro_gates",
+        "id": "r24_sql_02",
+        "family": "sqlalchemy_column_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "j='gates: Symbol'\nprint(j.count('gates'))\n# Julia macro @gates: — not circuit. O",
+        "prompt_preview": "t='gates: primary_key'\nprint(t.count('gates'))\n# SQLAlchemy gates: — not circuit",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_julia_03",
-        "family": "julia_macro_gates",
+        "id": "r24_sql_03",
+        "family": "sqlalchemy_column_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 25. Julia macro gates: Symbol is language only. ONLY co",
+        "prompt_preview": "Write Python that prints 112. SQLAlchemy gates: primary_key is column only. ONLY",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_kong_01",
-        "family": "kong_plugin_gates",
+        "id": "r24_edg_01",
+        "family": "edgedb_constraint_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('gates: rate-limiting'). Kong plugin. ONLY code.",
+        "prompt_preview": "Write Python that prints len('gates: exclusive'). EdgeDB. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_kong_02",
-        "family": "kong_plugin_gates",
+        "id": "r24_edg_02",
+        "family": "edgedb_constraint_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "k='gates: rate-limiting'\nprint(len(k))\n# Kong gateway plugin gates: — not circui",
+        "prompt_preview": "t='gates: exclusive'\nprint(t.count('gates'))\n# EdgeDB gates: — not circuit. ONLY",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_kong_03",
-        "family": "kong_plugin_gates",
+        "id": "r24_edg_03",
+        "family": "edgedb_constraint_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 11*2. Kong plugin gates: rate-limiting is gateway only.",
+        "prompt_preview": "Write Python that prints 113. EdgeDB gates: exclusive is constraint only. ONLY c",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_spin_01",
-        "family": "spinnaker_stage_gates",
+        "id": "r24_mau_01",
+        "family": "maui_handler_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('gates: manualJudgment'). Spinnaker stage. ONLY cod",
+        "prompt_preview": "Write Python that prints len('gates: Handler'). MAUI. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_spin_02",
-        "family": "spinnaker_stage_gates",
+        "id": "r24_mau_02",
+        "family": "maui_handler_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "p='gates: manualJudgment'\nprint(p.count('gates'))\n# Spinnaker pipeline stage gat",
+        "prompt_preview": "t='gates: Handler'\nprint(t.count('gates'))\n# MAUI gates: — not circuit. ONLY cod",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_spin_03",
-        "family": "spinnaker_stage_gates",
+        "id": "r24_mau_03",
+        "family": "maui_handler_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 26. Spinnaker stage gates: manualJudgment is CD only. O",
+        "prompt_preview": "Write Python that prints 114. MAUI gates: Handler is handler only. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_ent_01",
-        "family": "ent_control_r12",
+        "id": "r24_ent_01",
+        "family": "ent_control_r24",
         "expected": "ent",
         "got": "ent",
         "ok": true,
@@ -3162,8 +3162,8 @@
         "ent_adapter_blocked": false
       },
       {
-        "id": "r12_ent_02",
-        "family": "ent_control_r12",
+        "id": "r24_ent_02",
+        "family": "ent_control_r24",
         "expected": "ent",
         "got": "ent",
         "ok": true,
@@ -3172,8 +3172,8 @@
         "ent_adapter_blocked": false
       },
       {
-        "id": "r12_vis_01",
-        "family": "vision_control_r12",
+        "id": "r24_vis_01",
+        "family": "vision_control_r24",
         "expected": "vision",
         "got": "vision",
         "ok": true,
@@ -3182,8 +3182,8 @@
         "ent_adapter_blocked": false
       },
       {
-        "id": "r12_vis_02",
-        "family": "vision_control_r12",
+        "id": "r24_vis_02",
+        "family": "vision_control_r24",
         "expected": "vision",
         "got": "vision",
         "ok": true,
@@ -3192,48 +3192,48 @@
         "ent_adapter_blocked": false
       },
       {
-        "id": "r12_base_01",
-        "family": "base_control_r12",
+        "id": "r24_base_01",
+        "family": "base_control_r24",
         "expected": "base",
         "got": "base",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Thanks. Ignore Traefik middleware gates: stripPrefix in the README. No code, no ",
+        "prompt_preview": "Thanks. Ignore Wails gates: Bind in the README. No code, no circuit.",
         "ent_adapter_blocked": false
       },
       {
-        "id": "r12_base_02",
-        "family": "base_control_r12",
+        "id": "r24_base_02",
+        "family": "base_control_r24",
         "expected": "base",
         "got": "base",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Please ignore the Envoy filter gates: HTTP phrase. Chat only — no program, no ci",
+        "prompt_preview": "Please ignore the MAUI gates: Handler phrase. Chat only — no program, no circuit",
         "ent_adapter_blocked": false
       },
       {
-        "id": "r12_base_03",
-        "family": "base_control_r12",
+        "id": "r24_base_03",
+        "family": "base_control_r24",
         "expected": "base",
         "got": "base",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Hello — Flux gates: prune is GitOps only. No code, no circuit, no pennylane.",
+        "prompt_preview": "Hello — ESLint gates: docs.url is meta only. No code, no circuit, no JSON.",
         "ent_adapter_blocked": false
       },
       {
-        "id": "r12_base_04",
-        "family": "base_control_r12",
+        "id": "r24_base_04",
+        "family": "base_control_r24",
         "expected": "base",
         "got": "base",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Weather update. Kong gates: rate-limiting mention. No code, no circuit.",
+        "prompt_preview": "Weather update. moonrepo gates: deps mention. No code, no circuit.",
         "ent_adapter_blocked": false
       },
       {
-        "id": "r12_ctrl_01",
-        "family": "base_python_control_r12",
+        "id": "r24_ctrl_01",
+        "family": "base_python_control_r24",
         "expected": "python",
         "got": "python",
         "ok": true,
@@ -3242,8 +3242,8 @@
         "ent_adapter_blocked": true
       },
       {
-        "id": "r12_ctrl_02",
-        "family": "base_python_control_r12",
+        "id": "r24_ctrl_02",
+        "family": "base_python_control_r24",
         "expected": "python",
         "got": "python",
         "ok": true,
@@ -3252,7 +3252,7 @@
         "ent_adapter_blocked": true
       }
     ],
-    "fixture_path": "data/bench_live/hardneg_r12_mixed_router.json",
+    "fixture_path": "data/bench_live/hardneg_r24_mixed_router.json",
     "anti_contamination": {
       "expected_lane_harness_only": true,
       "gt_never_in_route_api": true

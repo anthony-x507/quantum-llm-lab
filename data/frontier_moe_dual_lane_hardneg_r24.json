@@ -6,92 +6,92 @@
   "score": "52/52",
   "rate": 1.0,
   "by_family": {
-    "smithy_member_gates": {
+    "wails_bind_gates": {
       "n": 3,
       "hits": 3,
       "rate": 1.0
     },
-    "prisma_field_gates": {
+    "neutralino_ext_gates": {
       "n": 3,
       "hits": 3,
       "rate": 1.0
     },
-    "ansible_var_gates": {
+    "react_native_turbo_gates": {
       "n": 3,
       "hits": 3,
       "rate": 1.0
     },
-    "consul_intention_gates": {
+    "ionic_lifecycle_gates": {
       "n": 3,
       "hits": 3,
       "rate": 1.0
     },
-    "linkerd_server_gates": {
+    "webpack_pitch_gates": {
       "n": 3,
       "hits": 3,
       "rate": 1.0
     },
-    "cilium_policy_gates": {
+    "parcel_transformer_gates": {
       "n": 3,
       "hits": 3,
       "rate": 1.0
     },
-    "airflow_task_gates": {
+    "swc_plugin_gates": {
       "n": 3,
       "hits": 3,
       "rate": 1.0
     },
-    "kafka_acl_gates": {
+    "moonrepo_task_gates": {
       "n": 3,
       "hits": 3,
       "rate": 1.0
     },
-    "prometheus_relabel_gates": {
+    "lage_pipeline_gates": {
       "n": 3,
       "hits": 3,
       "rate": 1.0
     },
-    "kyverno_validate_gates": {
+    "eslint_meta_gates": {
       "n": 3,
       "hits": 3,
       "rate": 1.0
     },
-    "gradle_property_gates": {
+    "ruff_select_gates": {
       "n": 3,
       "hits": 3,
       "rate": 1.0
     },
-    "zig_comptime_gates": {
+    "sqlalchemy_column_gates": {
       "n": 3,
       "hits": 3,
       "rate": 1.0
     },
-    "dart_annotation_gates": {
+    "edgedb_constraint_gates": {
       "n": 3,
       "hits": 3,
       "rate": 1.0
     },
-    "temporal_activity_gates": {
+    "maui_handler_gates": {
       "n": 3,
       "hits": 3,
       "rate": 1.0
     },
-    "ent_control_r11": {
+    "ent_control_r24": {
       "n": 2,
       "hits": 2,
       "rate": 1.0
     },
-    "vision_control_r11": {
+    "vision_control_r24": {
       "n": 2,
       "hits": 2,
       "rate": 1.0
     },
-    "base_control_r11": {
+    "base_control_r24": {
       "n": 4,
       "hits": 4,
       "rate": 1.0
     },
-    "base_python_control_r11": {
+    "base_python_control_r24": {
       "n": 2,
       "hits": 2,
       "rate": 1.0
@@ -100,428 +100,428 @@
   "ent_never_on_python": true,
   "rows": [
     {
-      "id": "r11_smithy_01",
-      "family": "smithy_member_gates",
+      "id": "r24_wai_01",
+      "family": "wails_bind_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints len('gates: Long'). Smithy member. ONLY code.",
+      "prompt_preview": "Write Python that prints len('gates: Bind'). Wails. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_smithy_02",
-      "family": "smithy_member_gates",
+      "id": "r24_wai_02",
+      "family": "wails_bind_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "m='gates: Boolean'\nprint(m.count('gates'))\n# Smithy structure member gates: — no",
+      "prompt_preview": "t='gates: Bind'\nprint(t.count('gates'))\n# Wails gates: — not circuit. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_smithy_03",
-      "family": "smithy_member_gates",
+      "id": "r24_wai_03",
+      "family": "wails_bind_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints 6*6. Smithy member gates: Long is IDL only. ONLY code.",
+      "prompt_preview": "Write Python that prints 101. Wails gates: Bind is bind only. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_prisma_01",
-      "family": "prisma_field_gates",
+      "id": "r24_neu_01",
+      "family": "neutralino_ext_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints len('gates String'). Prisma field. ONLY code.",
+      "prompt_preview": "Write Python that prints len('gates: filesystem'). Neutralino. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_prisma_02",
-      "family": "prisma_field_gates",
+      "id": "r24_neu_02",
+      "family": "neutralino_ext_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "f='gates String @id'\nprint(f.count('gates'))\n# Prisma schema field gates — not c",
+      "prompt_preview": "t='gates: filesystem'\nprint(t.count('gates'))\n# Neutralino gates: — not circuit.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_prisma_03",
-      "family": "prisma_field_gates",
+      "id": "r24_neu_03",
+      "family": "neutralino_ext_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints 8. Prisma model field gates String is ORM only. ONLY co",
+      "prompt_preview": "Write Python that prints 102. Neutralino gates: filesystem is ext only. ONLY cod",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_ans_01",
-      "family": "ansible_var_gates",
+      "id": "r24_rnt_01",
+      "family": "react_native_turbo_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints len('gates: yes'). Ansible var. ONLY code.",
+      "prompt_preview": "Write Python that prints len('gates: TurboModule'). React Native. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_ans_02",
-      "family": "ansible_var_gates",
+      "id": "r24_rnt_02",
+      "family": "react_native_turbo_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "v='gates: \"{{ item }}\"'\nprint(v.count('gates'))\n# Ansible vars gates: — not circ",
+      "prompt_preview": "t='gates: TurboModule'\nprint(t.count('gates'))\n# React Native gates: — not circu",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_ans_03",
-      "family": "ansible_var_gates",
+      "id": "r24_rnt_03",
+      "family": "react_native_turbo_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints 9. Ansible vars gates: yes is YAML only. ONLY code.",
+      "prompt_preview": "Write Python that prints 103. React Native gates: TurboModule is turbo only. ONL",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_consul_01",
-      "family": "consul_intention_gates",
+      "id": "r24_ion_01",
+      "family": "ionic_lifecycle_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints len('Action = \"gates\"'). Consul intention. ONLY code.",
+      "prompt_preview": "Write Python that prints len('gates: useIonViewDidEnter'). Ionic. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_consul_02",
-      "family": "consul_intention_gates",
+      "id": "r24_ion_02",
+      "family": "ionic_lifecycle_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "line='DestinationName = \"gates\"'\nprint(line.count('gates'))\n# Consul intention n",
+      "prompt_preview": "t='gates: useIonViewDidEnter'\nprint(t.count('gates'))\n# Ionic gates: — not circu",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_consul_03",
-      "family": "consul_intention_gates",
+      "id": "r24_ion_03",
+      "family": "ionic_lifecycle_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints 11. Consul intention DestinationName gates is ACL only.",
+      "prompt_preview": "Write Python that prints 104. Ionic gates: useIonViewDidEnter is lifecycle only.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_linkerd_01",
-      "family": "linkerd_server_gates",
+      "id": "r24_wbp_01",
+      "family": "webpack_pitch_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints len('gates: inbound'). Linkerd Server. ONLY code.",
+      "prompt_preview": "Write Python that prints len('gates: pitch'). Webpack. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_linkerd_02",
-      "family": "linkerd_server_gates",
+      "id": "r24_wbp_02",
+      "family": "webpack_pitch_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "s='gates: inbound'\nprint(len(s))\n# Linkerd Server gates: — not circuit. ONLY cod",
+      "prompt_preview": "t='gates: pitch'\nprint(t.count('gates'))\n# Webpack gates: — not circuit. ONLY co",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_linkerd_03",
-      "family": "linkerd_server_gates",
+      "id": "r24_wbp_03",
+      "family": "webpack_pitch_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints 14. Linkerd Server gates: inbound is mesh-proxy only. O",
+      "prompt_preview": "Write Python that prints 105. Webpack gates: pitch is loader only. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_cilium_01",
-      "family": "cilium_policy_gates",
+      "id": "r24_par_01",
+      "family": "parcel_transformer_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints len('gates: toEntities'). Cilium policy. ONLY code.",
+      "prompt_preview": "Write Python that prints len('gates: transform'). Parcel. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_cilium_02",
-      "family": "cilium_policy_gates",
+      "id": "r24_par_02",
+      "family": "parcel_transformer_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "p='gates: toCIDR'\nprint(p.count('gates'))\n# Cilium NetworkPolicy gates: — not ci",
+      "prompt_preview": "t='gates: transform'\nprint(t.count('gates'))\n# Parcel gates: — not circuit. ONLY",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_cilium_03",
-      "family": "cilium_policy_gates",
+      "id": "r24_par_03",
+      "family": "parcel_transformer_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints 7*2. Cilium CNP gates: toEntities is eBPF only. ONLY co",
+      "prompt_preview": "Write Python that prints 106. Parcel gates: transform is transformer only. ONLY ",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_air_01",
-      "family": "airflow_task_gates",
+      "id": "r24_swc_01",
+      "family": "swc_plugin_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints len('gates: branch_a'). Airflow task. ONLY code.",
+      "prompt_preview": "Write Python that prints len('gates: wasm'). SWC. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_air_02",
-      "family": "airflow_task_gates",
+      "id": "r24_swc_02",
+      "family": "swc_plugin_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "t='gates: branch_a'\nprint(t.count(':'))\n# Airflow BranchPythonOperator gates: — ",
+      "prompt_preview": "t='gates: wasm'\nprint(t.count('gates'))\n# SWC gates: — not circuit. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_air_03",
-      "family": "airflow_task_gates",
+      "id": "r24_swc_03",
+      "family": "swc_plugin_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints 16. Airflow task_id gates: branch_a is DAG only. ONLY c",
+      "prompt_preview": "Write Python that prints 107. SWC gates: wasm is plugin only. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_kafka_01",
-      "family": "kafka_acl_gates",
+      "id": "r24_moo_01",
+      "family": "moonrepo_task_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints len('gates: Describe'). Kafka ACL. ONLY code.",
+      "prompt_preview": "Write Python that prints len('gates: deps'). moonrepo. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_kafka_02",
-      "family": "kafka_acl_gates",
+      "id": "r24_moo_02",
+      "family": "moonrepo_task_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "a='Operation: gates: Describe'\nprint(a.count('gates'))\n# Kafka ACL operation gat",
+      "prompt_preview": "t='gates: deps'\nprint(t.count('gates'))\n# moonrepo gates: — not circuit. ONLY co",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_kafka_03",
-      "family": "kafka_acl_gates",
+      "id": "r24_moo_03",
+      "family": "moonrepo_task_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints 18. Kafka ACL gates: Describe is broker only. ONLY code",
+      "prompt_preview": "Write Python that prints 108. moonrepo gates: deps is task only. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_prom_01",
-      "family": "prometheus_relabel_gates",
+      "id": "r24_lag_01",
+      "family": "lage_pipeline_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints len('gates: replacement'). Prometheus relabel. ONLY cod",
+      "prompt_preview": "Write Python that prints len('gates: dependsOn'). Lage. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_prom_02",
-      "family": "prometheus_relabel_gates",
+      "id": "r24_lag_02",
+      "family": "lage_pipeline_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "r='gates: replacement'\nprint(len(r))\n# Prometheus relabel_config gates: — not ci",
+      "prompt_preview": "t='gates: dependsOn'\nprint(t.count('gates'))\n# Lage gates: — not circuit. ONLY c",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_prom_03",
-      "family": "prometheus_relabel_gates",
+      "id": "r24_lag_03",
+      "family": "lage_pipeline_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints 13. Prometheus relabel gates: replacement is scrape onl",
+      "prompt_preview": "Write Python that prints 109. Lage gates: dependsOn is pipeline only. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_kyv_01",
-      "family": "kyverno_validate_gates",
+      "id": "r24_esl_01",
+      "family": "eslint_meta_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints len('gates: Audit'). Kyverno validate. ONLY code.",
+      "prompt_preview": "Write Python that prints len('gates: docs.url'). ESLint. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_kyv_02",
-      "family": "kyverno_validate_gates",
+      "id": "r24_esl_02",
+      "family": "eslint_meta_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "k='validationFailureAction: gates: Audit'\nprint(k.count('gates'))\n# Kyverno Clus",
+      "prompt_preview": "t='gates: docs.url'\nprint(t.count('gates'))\n# ESLint gates: — not circuit. ONLY ",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_kyv_03",
-      "family": "kyverno_validate_gates",
+      "id": "r24_esl_03",
+      "family": "eslint_meta_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints 4*5. Kyverno validate gates: Audit is policy only. ONLY",
+      "prompt_preview": "Write Python that prints 110. ESLint gates: docs.url is meta only. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_gradle_01",
-      "family": "gradle_property_gates",
+      "id": "r24_ruf_01",
+      "family": "ruff_select_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints len('systemProp.gates'). Gradle property. ONLY code.",
+      "prompt_preview": "Write Python that prints len('gates: select'). Ruff. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_gradle_02",
-      "family": "gradle_property_gates",
+      "id": "r24_ruf_02",
+      "family": "ruff_select_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "g='org.gradle.gates.enabled'\nprint(g.count('gates'))\n# Gradle property gates — n",
+      "prompt_preview": "t='gates: select'\nprint(t.count('gates'))\n# Ruff gates: — not circuit. ONLY code",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_gradle_03",
-      "family": "gradle_property_gates",
+      "id": "r24_ruf_03",
+      "family": "ruff_select_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints 17. Gradle systemProp.gates is build only. ONLY code.",
+      "prompt_preview": "Write Python that prints 111. Ruff gates: select is rule only. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_zig_01",
-      "family": "zig_comptime_gates",
+      "id": "r24_sql_01",
+      "family": "sqlalchemy_column_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints len('gates: bool'). Zig comptime. ONLY code.",
+      "prompt_preview": "Write Python that prints len('gates: primary_key'). SQLAlchemy. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_zig_02",
-      "family": "zig_comptime_gates",
+      "id": "r24_sql_02",
+      "family": "sqlalchemy_column_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "z='gates: bool'\nprint(z.count('gates'))\n# Zig comptime field gates: — not circui",
+      "prompt_preview": "t='gates: primary_key'\nprint(t.count('gates'))\n# SQLAlchemy gates: — not circuit",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_zig_03",
-      "family": "zig_comptime_gates",
+      "id": "r24_sql_03",
+      "family": "sqlalchemy_column_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints 19. Zig comptime gates: bool is language only. ONLY cod",
+      "prompt_preview": "Write Python that prints 112. SQLAlchemy gates: primary_key is column only. ONLY",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_dart_01",
-      "family": "dart_annotation_gates",
+      "id": "r24_edg_01",
+      "family": "edgedb_constraint_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints len('@Qubit(id=1)'). Dart annotation. ONLY code.",
+      "prompt_preview": "Write Python that prints len('gates: exclusive'). EdgeDB. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_dart_02",
-      "family": "dart_annotation_gates",
+      "id": "r24_edg_02",
+      "family": "edgedb_constraint_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "a='@Gates(name: \"cleanup\")'\nprint(len(a))\n# Dart annotation @Gates — not circuit",
+      "prompt_preview": "t='gates: exclusive'\nprint(t.count('gates'))\n# EdgeDB gates: — not circuit. ONLY",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_dart_03",
-      "family": "dart_annotation_gates",
+      "id": "r24_edg_03",
+      "family": "edgedb_constraint_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints 21. Dart @Qubit annotation is metadata only. ONLY code.",
+      "prompt_preview": "Write Python that prints 113. EdgeDB gates: exclusive is constraint only. ONLY c",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_temp_01",
-      "family": "temporal_activity_gates",
+      "id": "r24_mau_01",
+      "family": "maui_handler_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints len('gates: ActivityOptions'). Temporal activity. ONLY ",
+      "prompt_preview": "Write Python that prints len('gates: Handler'). MAUI. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_temp_02",
-      "family": "temporal_activity_gates",
+      "id": "r24_mau_02",
+      "family": "maui_handler_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "t='gates: ActivityOptions'\nprint(t.count('gates'))\n# Temporal activity options g",
+      "prompt_preview": "t='gates: Handler'\nprint(t.count('gates'))\n# MAUI gates: — not circuit. ONLY cod",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_temp_03",
-      "family": "temporal_activity_gates",
+      "id": "r24_mau_03",
+      "family": "maui_handler_gates",
       "expected": "python",
       "got": "python",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Write Python that prints 3*7. Temporal workflow gates: ActivityOptions is orches",
+      "prompt_preview": "Write Python that prints 114. MAUI gates: Handler is handler only. ONLY code.",
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_ent_01",
-      "family": "ent_control_r11",
+      "id": "r24_ent_01",
+      "family": "ent_control_r24",
       "expected": "ent",
       "got": "ent",
       "ok": true,
@@ -530,8 +530,8 @@
       "ent_adapter_blocked": false
     },
     {
-      "id": "r11_ent_02",
-      "family": "ent_control_r11",
+      "id": "r24_ent_02",
+      "family": "ent_control_r24",
       "expected": "ent",
       "got": "ent",
       "ok": true,
@@ -540,8 +540,8 @@
       "ent_adapter_blocked": false
     },
     {
-      "id": "r11_vis_01",
-      "family": "vision_control_r11",
+      "id": "r24_vis_01",
+      "family": "vision_control_r24",
       "expected": "vision",
       "got": "vision",
       "ok": true,
@@ -550,8 +550,8 @@
       "ent_adapter_blocked": false
     },
     {
-      "id": "r11_vis_02",
-      "family": "vision_control_r11",
+      "id": "r24_vis_02",
+      "family": "vision_control_r24",
       "expected": "vision",
       "got": "vision",
       "ok": true,
@@ -560,48 +560,48 @@
       "ent_adapter_blocked": false
     },
     {
-      "id": "r11_base_01",
-      "family": "base_control_r11",
+      "id": "r24_base_01",
+      "family": "base_control_r24",
       "expected": "base",
       "got": "base",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Thanks. Ignore Smithy member gates: Long in the README. No code, no circuit.",
+      "prompt_preview": "Thanks. Ignore Wails gates: Bind in the README. No code, no circuit.",
       "ent_adapter_blocked": false
     },
     {
-      "id": "r11_base_02",
-      "family": "base_control_r11",
+      "id": "r24_base_02",
+      "family": "base_control_r24",
       "expected": "base",
       "got": "base",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Please ignore the Linkerd Server gates: inbound phrase. Chat only — no program, ",
+      "prompt_preview": "Please ignore the MAUI gates: Handler phrase. Chat only — no program, no circuit",
       "ent_adapter_blocked": false
     },
     {
-      "id": "r11_base_03",
-      "family": "base_control_r11",
+      "id": "r24_base_03",
+      "family": "base_control_r24",
       "expected": "base",
       "got": "base",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Hello — Cilium gates: toEntities is eBPF only. No code, no circuit, no pennylane",
+      "prompt_preview": "Hello — ESLint gates: docs.url is meta only. No code, no circuit, no JSON.",
       "ent_adapter_blocked": false
     },
     {
-      "id": "r11_base_04",
-      "family": "base_control_r11",
+      "id": "r24_base_04",
+      "family": "base_control_r24",
       "expected": "base",
       "got": "base",
       "ok": true,
       "adapter": null,
-      "prompt_preview": "Weather update. Kyverno gates: Audit mention. No code, no circuit.",
+      "prompt_preview": "Weather update. moonrepo gates: deps mention. No code, no circuit.",
       "ent_adapter_blocked": false
     },
     {
-      "id": "r11_ctrl_01",
-      "family": "base_python_control_r11",
+      "id": "r24_ctrl_01",
+      "family": "base_python_control_r24",
       "expected": "python",
       "got": "python",
       "ok": true,
@@ -610,8 +610,8 @@
       "ent_adapter_blocked": true
     },
     {
-      "id": "r11_ctrl_02",
-      "family": "base_python_control_r11",
+      "id": "r24_ctrl_02",
+      "family": "base_python_control_r24",
       "expected": "python",
       "got": "python",
       "ok": true,
@@ -620,7 +620,7 @@
       "ent_adapter_blocked": true
     }
   ],
-  "fixture_path": "data/bench_live/hardneg_r11_mixed_router.json",
+  "fixture_path": "data/bench_live/hardneg_r24_mixed_router.json",
   "anti_contamination": {
     "expected_lane_harness_only": true,
     "gt_never_in_route_api": true

@@ -1,0 +1,400 @@
+{
+  "n": 44,
+  "kind": "hardneg_python_items",
+  "created": "2026-09-24T15:07:36-04:00",
+  "round": "r24",
+  "note": "R24 python verifier items; GT stdout harness-only. Same themes as router.",
+  "anti_contamination": {
+    "no_r9_r23_family_reuse": true,
+    "blocked_r20": [
+      "celery_task",
+      "airbyte_stream",
+      "supabase_policy",
+      "trino_session",
+      "vector_vrl",
+      "fluentbit_filter",
+      "thanos_query",
+      "strimzi_topic",
+      "tilt_resource",
+      "mise_task",
+      "cue_field",
+      "nim_pragma",
+      "hono_middleware",
+      "axum_layer"
+    ],
+    "blocked_r21": [
+      "bun_plugin",
+      "deno_perm",
+      "pocketbase_hook",
+      "appwrite_schedule",
+      "neon_endpoint",
+      "planetscale_safe",
+      "flyio_autostop",
+      "railway_start",
+      "meilisearch_filter",
+      "qdrant_distance",
+      "spin_outbound",
+      "solidjs_effect",
+      "astro_onrequest",
+      "htmx_trigger"
+    ],
+    "blocked_r22": [
+      "sveltekit_hook",
+      "remix_loader",
+      "nextjs_matcher",
+      "nuxt_server",
+      "typesense_schema",
+      "weaviate_class",
+      "milvus_collection",
+      "chroma_query",
+      "render_health",
+      "vercel_cron",
+      "netlify_redirect",
+      "wasmtime_fuel",
+      "wasmer_env",
+      "leptos_resource"
+    ],
+    "blocked_r23": [
+      "tauri_command",
+      "electron_ipc",
+      "expo_plugin",
+      "capacitor_plugin",
+      "vite_plugin",
+      "esbuild_plugin",
+      "rollup_plugin",
+      "turborepo_pipeline",
+      "nx_executor",
+      "biome_rule",
+      "oxc_lint",
+      "drizzle_column",
+      "surreal_scope",
+      "flutter_channel"
+    ],
+    "novel_r24": [
+      "wails_bind_gates",
+      "neutralino_ext_gates",
+      "react_native_turbo_gates",
+      "ionic_lifecycle_gates",
+      "webpack_pitch_gates",
+      "parcel_transformer_gates",
+      "swc_plugin_gates",
+      "moonrepo_task_gates",
+      "lage_pipeline_gates",
+      "eslint_meta_gates",
+      "ruff_select_gates",
+      "sqlalchemy_column_gates",
+      "edgedb_constraint_gates",
+      "maui_handler_gates"
+    ]
+  },
+  "items": [
+    {
+      "id": "r24v_wai_01",
+      "kind": "wails_bind_gates",
+      "prompt": "Write Python that prints len('gates: Bind'). Wails. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_wai_02",
+      "kind": "wails_bind_gates",
+      "prompt": "t='gates: Bind'\nprint(t.count('gates'))\n# Wails gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_wai_03",
+      "kind": "wails_bind_gates",
+      "prompt": "Write Python that prints 101. Wails gates: Bind is bind only. ONLY code.",
+      "expected_stdout": "101\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_neu_01",
+      "kind": "neutralino_ext_gates",
+      "prompt": "Write Python that prints len('gates: filesystem'). Neutralino. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_neu_02",
+      "kind": "neutralino_ext_gates",
+      "prompt": "t='gates: filesystem'\nprint(t.count('gates'))\n# Neutralino gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_neu_03",
+      "kind": "neutralino_ext_gates",
+      "prompt": "Write Python that prints 102. Neutralino gates: filesystem is ext only. ONLY code.",
+      "expected_stdout": "102\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_rnt_01",
+      "kind": "react_native_turbo_gates",
+      "prompt": "Write Python that prints len('gates: TurboModule'). React Native. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_rnt_02",
+      "kind": "react_native_turbo_gates",
+      "prompt": "t='gates: TurboModule'\nprint(t.count('gates'))\n# React Native gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_rnt_03",
+      "kind": "react_native_turbo_gates",
+      "prompt": "Write Python that prints 103. React Native gates: TurboModule is turbo only. ONLY code.",
+      "expected_stdout": "103\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_ion_01",
+      "kind": "ionic_lifecycle_gates",
+      "prompt": "Write Python that prints len('gates: useIonViewDidEnter'). Ionic. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_ion_02",
+      "kind": "ionic_lifecycle_gates",
+      "prompt": "t='gates: useIonViewDidEnter'\nprint(t.count('gates'))\n# Ionic gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_ion_03",
+      "kind": "ionic_lifecycle_gates",
+      "prompt": "Write Python that prints 104. Ionic gates: useIonViewDidEnter is lifecycle only. ONLY code.",
+      "expected_stdout": "104\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_wbp_01",
+      "kind": "webpack_pitch_gates",
+      "prompt": "Write Python that prints len('gates: pitch'). Webpack. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_wbp_02",
+      "kind": "webpack_pitch_gates",
+      "prompt": "t='gates: pitch'\nprint(t.count('gates'))\n# Webpack gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_wbp_03",
+      "kind": "webpack_pitch_gates",
+      "prompt": "Write Python that prints 105. Webpack gates: pitch is loader only. ONLY code.",
+      "expected_stdout": "105\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_par_01",
+      "kind": "parcel_transformer_gates",
+      "prompt": "Write Python that prints len('gates: transform'). Parcel. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_par_02",
+      "kind": "parcel_transformer_gates",
+      "prompt": "t='gates: transform'\nprint(t.count('gates'))\n# Parcel gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_par_03",
+      "kind": "parcel_transformer_gates",
+      "prompt": "Write Python that prints 106. Parcel gates: transform is transformer only. ONLY code.",
+      "expected_stdout": "106\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_swc_01",
+      "kind": "swc_plugin_gates",
+      "prompt": "Write Python that prints len('gates: wasm'). SWC. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_swc_02",
+      "kind": "swc_plugin_gates",
+      "prompt": "t='gates: wasm'\nprint(t.count('gates'))\n# SWC gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_swc_03",
+      "kind": "swc_plugin_gates",
+      "prompt": "Write Python that prints 107. SWC gates: wasm is plugin only. ONLY code.",
+      "expected_stdout": "107\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_moo_01",
+      "kind": "moonrepo_task_gates",
+      "prompt": "Write Python that prints len('gates: deps'). moonrepo. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_moo_02",
+      "kind": "moonrepo_task_gates",
+      "prompt": "t='gates: deps'\nprint(t.count('gates'))\n# moonrepo gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_moo_03",
+      "kind": "moonrepo_task_gates",
+      "prompt": "Write Python that prints 108. moonrepo gates: deps is task only. ONLY code.",
+      "expected_stdout": "108\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_lag_01",
+      "kind": "lage_pipeline_gates",
+      "prompt": "Write Python that prints len('gates: dependsOn'). Lage. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_lag_02",
+      "kind": "lage_pipeline_gates",
+      "prompt": "t='gates: dependsOn'\nprint(t.count('gates'))\n# Lage gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_lag_03",
+      "kind": "lage_pipeline_gates",
+      "prompt": "Write Python that prints 109. Lage gates: dependsOn is pipeline only. ONLY code.",
+      "expected_stdout": "109\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_esl_01",
+      "kind": "eslint_meta_gates",
+      "prompt": "Write Python that prints len('gates: docs.url'). ESLint. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_esl_02",
+      "kind": "eslint_meta_gates",
+      "prompt": "t='gates: docs.url'\nprint(t.count('gates'))\n# ESLint gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_esl_03",
+      "kind": "eslint_meta_gates",
+      "prompt": "Write Python that prints 110. ESLint gates: docs.url is meta only. ONLY code.",
+      "expected_stdout": "110\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_ruf_01",
+      "kind": "ruff_select_gates",
+      "prompt": "Write Python that prints len('gates: select'). Ruff. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_ruf_02",
+      "kind": "ruff_select_gates",
+      "prompt": "t='gates: select'\nprint(t.count('gates'))\n# Ruff gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_ruf_03",
+      "kind": "ruff_select_gates",
+      "prompt": "Write Python that prints 111. Ruff gates: select is rule only. ONLY code.",
+      "expected_stdout": "111\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_sql_01",
+      "kind": "sqlalchemy_column_gates",
+      "prompt": "Write Python that prints len('gates: primary_key'). SQLAlchemy. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_sql_02",
+      "kind": "sqlalchemy_column_gates",
+      "prompt": "t='gates: primary_key'\nprint(t.count('gates'))\n# SQLAlchemy gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_sql_03",
+      "kind": "sqlalchemy_column_gates",
+      "prompt": "Write Python that prints 112. SQLAlchemy gates: primary_key is column only. ONLY code.",
+      "expected_stdout": "112\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_edg_01",
+      "kind": "edgedb_constraint_gates",
+      "prompt": "Write Python that prints len('gates: exclusive'). EdgeDB. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_edg_02",
+      "kind": "edgedb_constraint_gates",
+      "prompt": "t='gates: exclusive'\nprint(t.count('gates'))\n# EdgeDB gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_edg_03",
+      "kind": "edgedb_constraint_gates",
+      "prompt": "Write Python that prints 113. EdgeDB gates: exclusive is constraint only. ONLY code.",
+      "expected_stdout": "113\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_mau_01",
+      "kind": "maui_handler_gates",
+      "prompt": "Write Python that prints len('gates: Handler'). MAUI. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_mau_02",
+      "kind": "maui_handler_gates",
+      "prompt": "t='gates: Handler'\nprint(t.count('gates'))\n# MAUI gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_mau_03",
+      "kind": "maui_handler_gates",
+      "prompt": "Write Python that prints 114. MAUI gates: Handler is handler only. ONLY code.",
+      "expected_stdout": "114\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_ctrl_01",
+      "kind": "base_python_control_r24",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r24v_ctrl_02",
+      "kind": "base_python_control_r24",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}
