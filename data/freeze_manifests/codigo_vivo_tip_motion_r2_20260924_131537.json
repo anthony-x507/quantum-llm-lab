@@ -38,15 +38,23 @@
     "ent_never_on_python": true,
     "floor_held": true,
     "floor": 0.9667,
-    "scaffold_motion_retained": true
+    "scaffold_motion_retained": true,
+    "r8_router": "52/52",
+    "r8_verifier": "44/44",
+    "label_protect_router": "43/43",
+    "label_protect_verifier": "32/32",
+    "collision_physics_pct": 100.0,
+    "collision_pred_retained": true,
+    "distance_danger_retained": true,
+    "r8_retained": true
   },
   "floors": {
     "mixed_d_unified": 0.9667,
     "held": true,
     "coverage_freeze_gate": 0.8
   },
-  "policy": "RO data/lora_adapter/; no merge main; side branch only; scaffold-motion honesty frozen; escalate only on color_track_fail",
-  "note": "motion-r2 coverage reinforce on d892398; probe n=200 cov=0.91; mixed d=1.0; freeze because cov>=0.80",
+  "policy": "RO data/lora_adapter/; no merge main; fold into tip; scaffold-motion honesty frozen; escalate only on color_track_fail; retain r8+scaffold_motion+distance_danger+collision_pred+priors",
+  "note": "Fold tip-motion-r2 into tip; rebase c3cd0a4/9649df2 onto 4fe070e \u2192 77d161a+4d91a9c FF; re-smoke cov=0.91 mixed d=1.0; side freeze pinned on tip",
   "retained_freezes": [
     "codigo_vivo_tip_platform_100pct_20260924_111435",
     "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",
@@ -56,8 +64,11 @@
     "codigo_vivo_tip_r6_100pct_20260924_124951",
     "codigo_vivo_tip_post_od2_100pct_20260924_125301",
     "codigo_vivo_tip_r7_100pct_20260924_125600",
-    "codigo_vivo_tip_scaffold_motion_100pct_20260924_130131"
+    "codigo_vivo_tip_scaffold_motion_100pct_20260924_130131",
+    "codigo_vivo_tip_r8_100pct_20260924_130950",
+    "codigo_vivo_tip_distance_danger_100pct_20260924_131243",
+    "codigo_vivo_tip_collision_pred_100pct_20260924_131846"
   ],
-  "base_tip": "d892398",
-  "branch": "frontier/tip-motion-r2"
+  "base_tip": "4fe070e",
+  "branch": "frontier/codigo-vivo-tip"
 }

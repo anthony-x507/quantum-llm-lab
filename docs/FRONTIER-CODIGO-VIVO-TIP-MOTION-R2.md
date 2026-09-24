@@ -1,6 +1,6 @@
 # Frontier — tip motion-r2 (coverage reinforce UPWARD)
 
-**Status:** SIDE BRANCH `frontier/tip-motion-r2` (NOT folded; tip-cv / R8 / hardneg-r8 / distance-danger / collision-pred AVOIDED)  
+**Status:** **FOLDED** into `frontier/codigo-vivo-tip` (see FOLDED section)  
 **Base tip:** `d892398` (`frontier/codigo-vivo-tip` with scaffold-motion folded)  
 **When:** measure 2026-09-24 13:15:37 ET · Mac-111 (`074c6626-…`)  
 **Freeze:** `codigo_vivo_tip_motion_r2_100pct_20260924_131537` (≥80% coverage)  
@@ -66,7 +66,19 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 
 ## What this does NOT do
 
-- No merge to `main` / no tip FF (side branch only).
+- No merge to `main`.
 - No `lora_adapter` writes.
-- No CloudAgent. Does **not** touch tip-cv / R8 / hardneg-r8 / distance-danger / collision-pred / tip-scaffold-motion WTs.
+- No CloudAgent.
 - No quantum-advantage marketing.
+- Tip FF completed — see FOLDED.
+
+
+## FOLDED into tip
+
+**When:** 2026-09-24 13:23:34 ET · Mac-111 (`074c6626-…`)  
+**Method:** rebase `frontier/tip-motion-r2` (`9649df2` / feat `c3cd0a4`) onto tip `4fe070e` → `77d161a` + pin `4d91a9c`; FF into tip (mixed JSON conflicts kept tip; re-smoke).  
+**Prior freezes retained (not abandoned):** platform, mlx_r3, post_polish, R5, label_protect, R6, post_od2, R7, **scaffold_motion** `codigo_vivo_tip_scaffold_motion_100pct_20260924_130131`, **R8** `codigo_vivo_tip_r8_100pct_20260924_130950`, **distance_danger** `codigo_vivo_tip_distance_danger_100pct_20260924_131243`, **collision_pred** `codigo_vivo_tip_collision_pred_100pct_20260924_131846`.  
+**Re-smoke:** mixed (d) **1.0**; R8 **52/52·44/44**; LP **43/43·32/32**; pillars **26/26**; smoke **12/12**; motion coverage **91%** (132 ind + 50 corr / n=200; +47.0 pp vs 44%); `scene_0222=independent`; `wired_to_vlm=true`; `gt_leak=false`; `ent_never_on_python=true`.  
+**Collision held:** physics oracle **100%** (555/555 · 8 eval; prior EVAL artifact; motion fold did not touch collision paths).  
+**Adapters:** `data/lora_adapter/` RO mtime unchanged (2026-09-24 10:57:17).  
+**Freeze:** `codigo_vivo_tip_motion_r2_100pct_20260924_131537` (side freeze pinned on tip after fold).

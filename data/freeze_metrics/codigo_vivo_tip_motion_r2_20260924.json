@@ -1,0 +1,16 @@
+{
+  "frontier": "codigo-vivo-tip-motion-r2",
+  "written_et": "2026-09-24 13:23:34 ET",
+  "branch": "frontier/codigo-vivo-tip",
+  "source": "frontier/tip-motion-r2",
+  "mixed_d_unified": 1.0,
+  "motion_coverage_known": 0.91,
+  "motion_coverage_before": 0.44,
+  "motion_coverage_delta_pp": 47.0,
+  "floor_held": true,
+  "r8": "52/52\u00b744/44",
+  "label_protect": "43/43\u00b732/32",
+  "adapters_ro": true,
+  "freeze_id": "codigo_vivo_tip_motion_r2_100pct_20260924_131537",
+  "fold_sha": "PENDING"
+}

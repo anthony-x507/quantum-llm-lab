@@ -1,0 +1,30 @@
+{
+  "frontier": "codigo-vivo-tip-motion-r2-fold",
+  "written_et": "2026-09-24 13:23:34 ET",
+  "tip_sha": "PENDING",
+  "tip_sha_short": "PENDING",
+  "branch": "frontier/codigo-vivo-tip",
+  "source_branch": "frontier/tip-motion-r2",
+  "rebase_onto": "4fe070e",
+  "pre_rebase_sha": "9649df2",
+  "pre_feat_sha": "c3cd0a4",
+  "post_rebase_feat_sha": "77d161a",
+  "post_rebase_pin_sha": "4d91a9c",
+  "ff_sha": "4d91a9c",
+  "policy": "Fold motion-r2 into tip; retain r8/scaffold_motion/distance_danger/collision_pred/r7/post_od2/r6/label_protect/r5/platform/mlx_r3/post_polish; RO lora_adapter; no merge main; pin side freeze 131537.",
+  "holds": {
+    "mixed_d_unified": 1.0,
+    "motion_coverage_known": 0.91,
+    "r8_router": "52/52",
+    "r8_verifier": "44/44",
+    "lp_router": "43/43",
+    "lp_verifier": "32/32",
+    "pillars": "26/26",
+    "smoke": "12/12",
+    "collision_physics_pct": 100.0,
+    "wired_to_vlm": true,
+    "gt_leak": false,
+    "ent_never_on_python": true
+  },
+  "freeze_id": "codigo_vivo_tip_motion_r2_100pct_20260924_131537"
+}
