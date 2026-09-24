@@ -1,0 +1,75 @@
+{
+  "schema": "codigo_vivo_tip_adv_rN",
+  "round": "r11",
+  "when_et": "2026-09-24 1:51:00 ET",
+  "base_tip_sha": "1304d1a3246c0a7f5d6669d84900e14c596dffff",
+  "branch": "frontier/tip-hardneg-r11",
+  "worktree": "/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r11",
+  "pre": {
+    "r11_router": "21/52",
+    "r11_router_rate": 0.4038,
+    "r11_verifier_alone": 1.0,
+    "r11_unified": 0.3864,
+    "note": "unified n=17 python-routed pre-reinforce"
+  },
+  "post": {
+    "r11_router": "52/52",
+    "r11_router_rate": 1.0,
+    "r11_verifier_alone": 1.0,
+    "r11_unified": 1.0,
+    "mixed_d_unified": 1.0,
+    "ent_never_on_python": true,
+    "router_smoke": "12/12",
+    "priors_routers": {
+      "r1": "18/18",
+      "r2": "22/22",
+      "r3": "35/35",
+      "r4": "40/40",
+      "r5": "44/44",
+      "r6": "48/48",
+      "r7": "52/52",
+      "r8": "52/52",
+      "r9": "52/52",
+      "r10": "52/52",
+      "lp": "43/43"
+    },
+    "priors_verifiers": {
+      "r3": "28/28",
+      "r4": "32/32",
+      "r5": "36/36",
+      "r6": "40/40",
+      "r7": "44/44",
+      "r8": "44/44",
+      "r9": "44/44",
+      "r10": "44/44",
+      "lp": "32/32"
+    }
+  },
+  "families": [
+    "smithy_member_gates",
+    "prisma_field_gates",
+    "ansible_var_gates",
+    "consul_intention_gates",
+    "linkerd_server_gates",
+    "cilium_policy_gates",
+    "airflow_task_gates",
+    "kafka_acl_gates",
+    "prometheus_relabel_gates",
+    "kyverno_validate_gates",
+    "gradle_property_gates",
+    "zig_comptime_gates",
+    "dart_annotation_gates",
+    "temporal_activity_gates"
+  ],
+  "reinforce": "one gates_ops_label layer; proposer unchanged",
+  "floors": {
+    "mixed_d_unified": 0.9667,
+    "held": true
+  },
+  "policy": {
+    "lora_adapter_ro": true,
+    "no_main_merge": true,
+    "no_tip_cv_touch": true,
+    "side_branch_only": true
+  }
+}

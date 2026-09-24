@@ -1,3 +1,6 @@
+## 2026-09-24 — tip-hardneg-r11 polish (side)
+Branch `frontier/tip-hardneg-r11` from tip `1304d1a` (post R10 fold; newer than `6624df1`). R11 router **52/52** · verifier **44/44**; mixed (d) **1.0**; R1–R10+LP held; `ent_never_on_python`. Novel: Smithy / Prisma / Ansible / Consul / Linkerd / Cilium / Airflow / Kafka / Prometheus / Kyverno / Gradle / Zig / Dart / Temporal. See `docs/FRONTIER-CODIGO-VIVO-TIP-R11.md`.
+
 ## 2026-09-24 — fold tip-motion-r4 → codigo-vivo-tip
 Rebase `a59cb7a`/`606c66f` onto `3f5f1b1` → `753b1f7`+`a27b6fd` FF. CPU unified **1.0** (re-smoke); motion coverage **100%** (141 ind + 59 corr; +2.5 pp vs 97.5%); vision BASE **1.000** (10/10); circ **2/2**; inverse_cv **99.82%**; collision physics **100%** (n=40/2850); choose_safest **100%**; R10 **52/52·44/44**; pillars 26/26; hardneg 18/18; `wired_to_vlm`; freezes retained incl. vision_ground + inverse_r2 + r10 + motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_motion_r4_100pct_20260924_135017`. R11 / distance-mid / TTI **not** folded. See SCOREBOARD + TIP-MOTION-R4.
 
@@ -9,7 +12,6 @@ Rebase `0a1439d`/`7db813f`/`95b1ad6` onto `fabef2b` → `6b77248`+`343d00a`+`5d4
 
 ## 2026-09-24 — tip-vision-ground polish (pre-fold)
 Branch `frontier/tip-vision-ground` from tip `6624df1` → rebased onto `9cc5ed5`. BASE vis 0.9→**1.0**; circ **2/2**; floor **1.0**. See fold entry above + TIP-VISION-GROUND.
-
 ## 2026-09-24 — fold tip-hardneg-r10 → codigo-vivo-tip
 Rebase `b281e88`/`677c7ce` onto `6624df1` → `d4b2d4f`+`06fcc67` FF (skipped redundant R9-priors `c65cc04`). CPU unified **1.0** (re-smoke); R10 **52/52·44/44**; R9 **52/52·44/44**; motion **97.5%**; collision physics **100%** (n=40); pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_r10_100pct_20260924_134615`. Vision-ground / inverse-r2 **not** folded. See SCOREBOARD + TIP-R10.
 

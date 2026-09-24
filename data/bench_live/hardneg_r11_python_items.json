@@ -1,0 +1,317 @@
+{
+  "n": 44,
+  "kind": "python_hardneg_items",
+  "created": "2026-09-24T17:50:00Z",
+  "round": "r11",
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R11.md",
+  "items": [
+    {
+      "id": "r11v_smithy_01",
+      "kind": "smithy_member_gates",
+      "prompt": "Write Python that prints len('gates: Long'). Smithy member. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_smithy_02",
+      "kind": "smithy_member_gates",
+      "prompt": "m='gates: Boolean'\nprint(m.count('gates'))\n# Smithy structure member gates: \u2014 not a circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_smithy_03",
+      "kind": "smithy_member_gates",
+      "prompt": "Write Python that prints 6*6. Smithy member gates: Long is IDL only. ONLY code.",
+      "expected_stdout": "36\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_prisma_01",
+      "kind": "prisma_field_gates",
+      "prompt": "Write Python that prints len('gates String'). Prisma field. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_prisma_02",
+      "kind": "prisma_field_gates",
+      "prompt": "f='gates String @id'\nprint(f.count('gates'))\n# Prisma schema field gates \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_prisma_03",
+      "kind": "prisma_field_gates",
+      "prompt": "Write Python that prints 8. Prisma model field gates String is ORM only. ONLY code.",
+      "expected_stdout": "8\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_ans_01",
+      "kind": "ansible_var_gates",
+      "prompt": "Write Python that prints len('gates: yes'). Ansible var. ONLY code.",
+      "expected_stdout": "10\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_ans_02",
+      "kind": "ansible_var_gates",
+      "prompt": "v='gates: \"{{ item }}\"'\nprint(v.count('gates'))\n# Ansible vars gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_ans_03",
+      "kind": "ansible_var_gates",
+      "prompt": "Write Python that prints 9. Ansible vars gates: yes is YAML only. ONLY code.",
+      "expected_stdout": "9\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_consul_01",
+      "kind": "consul_intention_gates",
+      "prompt": "Write Python that prints len('Action = \"gates\"'). Consul intention. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_consul_02",
+      "kind": "consul_intention_gates",
+      "prompt": "line='DestinationName = \"gates\"'\nprint(line.count('gates'))\n# Consul intention name gates \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_consul_03",
+      "kind": "consul_intention_gates",
+      "prompt": "Write Python that prints 11. Consul intention DestinationName gates is ACL only. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_linkerd_01",
+      "kind": "linkerd_server_gates",
+      "prompt": "Write Python that prints len('gates: inbound'). Linkerd Server. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_linkerd_02",
+      "kind": "linkerd_server_gates",
+      "prompt": "s='gates: inbound'\nprint(len(s))\n# Linkerd Server gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_linkerd_03",
+      "kind": "linkerd_server_gates",
+      "prompt": "Write Python that prints 14. Linkerd Server gates: inbound is mesh-proxy only. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_cilium_01",
+      "kind": "cilium_policy_gates",
+      "prompt": "Write Python that prints len('gates: toEntities'). Cilium policy. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_cilium_02",
+      "kind": "cilium_policy_gates",
+      "prompt": "p='gates: toCIDR'\nprint(p.count('gates'))\n# Cilium NetworkPolicy gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_cilium_03",
+      "kind": "cilium_policy_gates",
+      "prompt": "Write Python that prints 7*2. Cilium CNP gates: toEntities is eBPF only. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_air_01",
+      "kind": "airflow_task_gates",
+      "prompt": "Write Python that prints len('gates: branch_a'). Airflow task. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_air_02",
+      "kind": "airflow_task_gates",
+      "prompt": "t='gates: branch_a'\nprint(t.count(':'))\n# Airflow BranchPythonOperator gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_air_03",
+      "kind": "airflow_task_gates",
+      "prompt": "Write Python that prints 16. Airflow task_id gates: branch_a is DAG only. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_kafka_01",
+      "kind": "kafka_acl_gates",
+      "prompt": "Write Python that prints len('gates: Describe'). Kafka ACL. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_kafka_02",
+      "kind": "kafka_acl_gates",
+      "prompt": "a='Operation: gates: Describe'\nprint(a.count('gates'))\n# Kafka ACL operation gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_kafka_03",
+      "kind": "kafka_acl_gates",
+      "prompt": "Write Python that prints 18. Kafka ACL gates: Describe is broker only. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_prom_01",
+      "kind": "prometheus_relabel_gates",
+      "prompt": "Write Python that prints len('gates: replacement'). Prometheus relabel. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_prom_02",
+      "kind": "prometheus_relabel_gates",
+      "prompt": "r='gates: replacement'\nprint(len(r))\n# Prometheus relabel_config gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_prom_03",
+      "kind": "prometheus_relabel_gates",
+      "prompt": "Write Python that prints 13. Prometheus relabel gates: replacement is scrape only. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_kyv_01",
+      "kind": "kyverno_validate_gates",
+      "prompt": "Write Python that prints len('gates: Audit'). Kyverno validate. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_kyv_02",
+      "kind": "kyverno_validate_gates",
+      "prompt": "k='validationFailureAction: gates: Audit'\nprint(k.count('gates'))\n# Kyverno ClusterPolicy gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_kyv_03",
+      "kind": "kyverno_validate_gates",
+      "prompt": "Write Python that prints 4*5. Kyverno validate gates: Audit is policy only. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_gradle_01",
+      "kind": "gradle_property_gates",
+      "prompt": "Write Python that prints len('systemProp.gates'). Gradle property. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_gradle_02",
+      "kind": "gradle_property_gates",
+      "prompt": "g='org.gradle.gates.enabled'\nprint(g.count('gates'))\n# Gradle property gates \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_gradle_03",
+      "kind": "gradle_property_gates",
+      "prompt": "Write Python that prints 17. Gradle systemProp.gates is build only. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_zig_01",
+      "kind": "zig_comptime_gates",
+      "prompt": "Write Python that prints len('gates: bool'). Zig comptime. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_zig_02",
+      "kind": "zig_comptime_gates",
+      "prompt": "z='gates: bool'\nprint(z.count('gates'))\n# Zig comptime field gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_zig_03",
+      "kind": "zig_comptime_gates",
+      "prompt": "Write Python that prints 19. Zig comptime gates: bool is language only. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_dart_01",
+      "kind": "dart_annotation_gates",
+      "prompt": "Write Python that prints len('@Qubit(id=1)'). Dart annotation. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_dart_02",
+      "kind": "dart_annotation_gates",
+      "prompt": "a='@Gates(name: \"cleanup\")'\nprint(len(a))\n# Dart annotation @Gates \u2014 not circuit. ONLY code.",
+      "expected_stdout": "23\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_dart_03",
+      "kind": "dart_annotation_gates",
+      "prompt": "Write Python that prints 21. Dart @Qubit annotation is metadata only. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_temp_01",
+      "kind": "temporal_activity_gates",
+      "prompt": "Write Python that prints len('gates: ActivityOptions'). Temporal activity. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_temp_02",
+      "kind": "temporal_activity_gates",
+      "prompt": "t='gates: ActivityOptions'\nprint(t.count('gates'))\n# Temporal activity options gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_temp_03",
+      "kind": "temporal_activity_gates",
+      "prompt": "Write Python that prints 3*7. Temporal workflow gates: ActivityOptions is orchestration only. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_ctrl_01",
+      "kind": "base_python_control_r11",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r11v_ctrl_02",
+      "kind": "base_python_control_r11",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}

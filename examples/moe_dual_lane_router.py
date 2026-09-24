@@ -162,7 +162,8 @@ def route_heuristic(prompt: str) -> Lane:
     # R7: CI YAML multiline gates:\n  - …; Make .PHONY: gates; bare len('gates:') key tokens.
     # R8: Dockerfile ARG gates=; JSON Schema "gates"; TF/TOML/Nix gates = [...]; markdown 'gates: list'; Rego input.gates[_]; CUE #Gates:; EDN :gates; fullwidth lookalikes.
     # R9: OpenAPI /gates:; Helm values gates: enabled; Pulumi gates:prod; CFN Gates:; Dhall gates : Bool; Justfile recipe gates:; Cedar when { gates:.
-# R10: AsyncAPI/Istio/ArgoCD/Tekton/FlatBuffers/Cypher/Earthfile gates:; Nomad/Vault/Cap'n/Solidity/Rust cfg/Kotlin/csproj/SPARQL.
+    # R10: AsyncAPI/Istio/ArgoCD/Tekton/FlatBuffers/Cypher/Earthfile gates:; Nomad/Vault/Cap'n/Solidity/Rust cfg/Kotlin/csproj/SPARQL.
+    # R11: Smithy/Ansible/Linkerd/Cilium/Airflow/Kafka/Prometheus/Kyverno/Temporal gates: scalars; Prisma/Consul/Gradle/Zig/Dart held by priors.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -302,6 +303,48 @@ def route_heuristic(prompt: str) -> Lane:
             # R10: messaging-only / GitOps / schema-only gates: prose
             r"|gates:\s+is\s+messaging"
             r"|gates:\s+is\s+(?:CI|schema)\b"
+            r"|gates:\s+mention"
+            # R11: Smithy member gates: Long|Boolean
+            r"|gates\s*:\s*(?:Long|Boolean)\b"
+            r"|smithy\s+.*gates:"
+            r"|member\s+gates:"
+            # R11: Ansible vars gates: yes / gates: "{{
+            r"|gates\s*:\s*yes\b"
+            r"|gates\s*:\s*\{\{"
+            r"|ansible\s+.*gates:"
+            r"|vars?\s+gates:"
+            # R11: Linkerd Server gates: inbound
+            r"|gates\s*:\s*inbound\b"
+            r"|linkerd\s+.*gates:"
+            r"|server\s+gates:\s*inbound"
+            # R11: Cilium NetworkPolicy gates: toEntities|toCIDR
+            r"|gates\s*:\s*toEntities\b"
+            r"|gates\s*:\s*toCIDR\b"
+            r"|cilium\s+.*gates:"
+            r"|cnp\s+.*gates:"
+            # R11: Airflow task_id gates: branch_
+            r"|gates\s*:\s*branch_\w+"
+            r"|airflow\s+.*gates:"
+            r"|task_id\s+gates:"
+            r"|branchpythonoperator\s+.*gates:"
+            # R11: Kafka ACL gates: Describe
+            r"|gates\s*:\s*Describe\b"
+            r"|kafka\s+.*gates:"
+            r"|acl\s+.*gates:"
+            # R11: Prometheus relabel gates: replacement
+            r"|gates\s*:\s*replacement\b"
+            r"|prometheus\s+.*gates:"
+            r"|relabel(?:_config)?\s+.*gates:"
+            # R11: Kyverno validate gates: Audit
+            r"|gates\s*:\s*Audit\b"
+            r"|kyverno\s+.*gates:"
+            r"|validationfailureaction\s+.*gates:"
+            # R11: Temporal activity gates: ActivityOptions
+            r"|gates\s*:\s*ActivityOptions\b"
+            r"|temporal\s+.*gates:"
+            r"|activity(?:options)?\s+.*gates:"
+            # R11: IDL / YAML / mesh-proxy / eBPF / DAG / broker / scrape / policy / orchestration prose
+            r"|gates:\s+is\s+(?:IDL|YAML|mesh-proxy|eBPF|DAG|broker|scrape|policy|orchestration)\b"
             r"|gates:\s+mention",
             text,
             re.I,
@@ -858,6 +901,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r11' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r11.json"
         elif 'r10' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r10.json"
         elif 'r9' in hp:

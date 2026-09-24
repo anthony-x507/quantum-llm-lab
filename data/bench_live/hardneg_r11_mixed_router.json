@@ -1,0 +1,328 @@
+{
+  "n": 52,
+  "kind": "mixed_router_hardneg",
+  "created": "2026-09-24T17:50:00Z",
+  "round": "r11",
+  "note": "R11 NEW traps (\u2260R1\u2013R10/\u2260LP): smithy_member_gates, prisma_field_gates, ansible_var_gates, consul_intention_gates, linkerd_server_gates, cilium_policy_gates, airflow_task_gates, kafka_acl_gates, prometheus_relabel_gates, kyverno_validate_gates, gradle_property_gates, zig_comptime_gates, dart_annotation_gates, temporal_activity_gates + controls. HARD: Smithy/Ansible/Linkerd/Cilium/Airflow/Kafka/Prometheus/Kyverno/Zig/Temporal gates: scalars. GT harness-only.",
+  "anti_contamination": {
+    "no_main_merge": true,
+    "no_tip_cv_touch": true,
+    "lora_adapter_ro": true,
+    "distinct_from_r9": true,
+    "distinct_from_r10": true
+  },
+  "items": [
+    {
+      "id": "r11_smithy_01",
+      "expected": "python",
+      "family": "smithy_member_gates",
+      "prompt": "Write Python that prints len('gates: Long'). Smithy member. ONLY code."
+    },
+    {
+      "id": "r11_smithy_02",
+      "expected": "python",
+      "family": "smithy_member_gates",
+      "prompt": "m='gates: Boolean'\nprint(m.count('gates'))\n# Smithy structure member gates: \u2014 not a circuit. ONLY code."
+    },
+    {
+      "id": "r11_smithy_03",
+      "expected": "python",
+      "family": "smithy_member_gates",
+      "prompt": "Write Python that prints 6*6. Smithy member gates: Long is IDL only. ONLY code."
+    },
+    {
+      "id": "r11_prisma_01",
+      "expected": "python",
+      "family": "prisma_field_gates",
+      "prompt": "Write Python that prints len('gates String'). Prisma field. ONLY code."
+    },
+    {
+      "id": "r11_prisma_02",
+      "expected": "python",
+      "family": "prisma_field_gates",
+      "prompt": "f='gates String @id'\nprint(f.count('gates'))\n# Prisma schema field gates \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r11_prisma_03",
+      "expected": "python",
+      "family": "prisma_field_gates",
+      "prompt": "Write Python that prints 8. Prisma model field gates String is ORM only. ONLY code."
+    },
+    {
+      "id": "r11_ans_01",
+      "expected": "python",
+      "family": "ansible_var_gates",
+      "prompt": "Write Python that prints len('gates: yes'). Ansible var. ONLY code."
+    },
+    {
+      "id": "r11_ans_02",
+      "expected": "python",
+      "family": "ansible_var_gates",
+      "prompt": "v='gates: \"{{ item }}\"'\nprint(v.count('gates'))\n# Ansible vars gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r11_ans_03",
+      "expected": "python",
+      "family": "ansible_var_gates",
+      "prompt": "Write Python that prints 9. Ansible vars gates: yes is YAML only. ONLY code."
+    },
+    {
+      "id": "r11_consul_01",
+      "expected": "python",
+      "family": "consul_intention_gates",
+      "prompt": "Write Python that prints len('Action = \"gates\"'). Consul intention. ONLY code."
+    },
+    {
+      "id": "r11_consul_02",
+      "expected": "python",
+      "family": "consul_intention_gates",
+      "prompt": "line='DestinationName = \"gates\"'\nprint(line.count('gates'))\n# Consul intention name gates \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r11_consul_03",
+      "expected": "python",
+      "family": "consul_intention_gates",
+      "prompt": "Write Python that prints 11. Consul intention DestinationName gates is ACL only. ONLY code."
+    },
+    {
+      "id": "r11_linkerd_01",
+      "expected": "python",
+      "family": "linkerd_server_gates",
+      "prompt": "Write Python that prints len('gates: inbound'). Linkerd Server. ONLY code."
+    },
+    {
+      "id": "r11_linkerd_02",
+      "expected": "python",
+      "family": "linkerd_server_gates",
+      "prompt": "s='gates: inbound'\nprint(len(s))\n# Linkerd Server gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r11_linkerd_03",
+      "expected": "python",
+      "family": "linkerd_server_gates",
+      "prompt": "Write Python that prints 14. Linkerd Server gates: inbound is mesh-proxy only. ONLY code."
+    },
+    {
+      "id": "r11_cilium_01",
+      "expected": "python",
+      "family": "cilium_policy_gates",
+      "prompt": "Write Python that prints len('gates: toEntities'). Cilium policy. ONLY code."
+    },
+    {
+      "id": "r11_cilium_02",
+      "expected": "python",
+      "family": "cilium_policy_gates",
+      "prompt": "p='gates: toCIDR'\nprint(p.count('gates'))\n# Cilium NetworkPolicy gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r11_cilium_03",
+      "expected": "python",
+      "family": "cilium_policy_gates",
+      "prompt": "Write Python that prints 7*2. Cilium CNP gates: toEntities is eBPF only. ONLY code."
+    },
+    {
+      "id": "r11_air_01",
+      "expected": "python",
+      "family": "airflow_task_gates",
+      "prompt": "Write Python that prints len('gates: branch_a'). Airflow task. ONLY code."
+    },
+    {
+      "id": "r11_air_02",
+      "expected": "python",
+      "family": "airflow_task_gates",
+      "prompt": "t='gates: branch_a'\nprint(t.count(':'))\n# Airflow BranchPythonOperator gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r11_air_03",
+      "expected": "python",
+      "family": "airflow_task_gates",
+      "prompt": "Write Python that prints 16. Airflow task_id gates: branch_a is DAG only. ONLY code."
+    },
+    {
+      "id": "r11_kafka_01",
+      "expected": "python",
+      "family": "kafka_acl_gates",
+      "prompt": "Write Python that prints len('gates: Describe'). Kafka ACL. ONLY code."
+    },
+    {
+      "id": "r11_kafka_02",
+      "expected": "python",
+      "family": "kafka_acl_gates",
+      "prompt": "a='Operation: gates: Describe'\nprint(a.count('gates'))\n# Kafka ACL operation gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r11_kafka_03",
+      "expected": "python",
+      "family": "kafka_acl_gates",
+      "prompt": "Write Python that prints 18. Kafka ACL gates: Describe is broker only. ONLY code."
+    },
+    {
+      "id": "r11_prom_01",
+      "expected": "python",
+      "family": "prometheus_relabel_gates",
+      "prompt": "Write Python that prints len('gates: replacement'). Prometheus relabel. ONLY code."
+    },
+    {
+      "id": "r11_prom_02",
+      "expected": "python",
+      "family": "prometheus_relabel_gates",
+      "prompt": "r='gates: replacement'\nprint(len(r))\n# Prometheus relabel_config gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r11_prom_03",
+      "expected": "python",
+      "family": "prometheus_relabel_gates",
+      "prompt": "Write Python that prints 13. Prometheus relabel gates: replacement is scrape only. ONLY code."
+    },
+    {
+      "id": "r11_kyv_01",
+      "expected": "python",
+      "family": "kyverno_validate_gates",
+      "prompt": "Write Python that prints len('gates: Audit'). Kyverno validate. ONLY code."
+    },
+    {
+      "id": "r11_kyv_02",
+      "expected": "python",
+      "family": "kyverno_validate_gates",
+      "prompt": "k='validationFailureAction: gates: Audit'\nprint(k.count('gates'))\n# Kyverno ClusterPolicy gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r11_kyv_03",
+      "expected": "python",
+      "family": "kyverno_validate_gates",
+      "prompt": "Write Python that prints 4*5. Kyverno validate gates: Audit is policy only. ONLY code."
+    },
+    {
+      "id": "r11_gradle_01",
+      "expected": "python",
+      "family": "gradle_property_gates",
+      "prompt": "Write Python that prints len('systemProp.gates'). Gradle property. ONLY code."
+    },
+    {
+      "id": "r11_gradle_02",
+      "expected": "python",
+      "family": "gradle_property_gates",
+      "prompt": "g='org.gradle.gates.enabled'\nprint(g.count('gates'))\n# Gradle property gates \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r11_gradle_03",
+      "expected": "python",
+      "family": "gradle_property_gates",
+      "prompt": "Write Python that prints 17. Gradle systemProp.gates is build only. ONLY code."
+    },
+    {
+      "id": "r11_zig_01",
+      "expected": "python",
+      "family": "zig_comptime_gates",
+      "prompt": "Write Python that prints len('gates: bool'). Zig comptime. ONLY code."
+    },
+    {
+      "id": "r11_zig_02",
+      "expected": "python",
+      "family": "zig_comptime_gates",
+      "prompt": "z='gates: bool'\nprint(z.count('gates'))\n# Zig comptime field gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r11_zig_03",
+      "expected": "python",
+      "family": "zig_comptime_gates",
+      "prompt": "Write Python that prints 19. Zig comptime gates: bool is language only. ONLY code."
+    },
+    {
+      "id": "r11_dart_01",
+      "expected": "python",
+      "family": "dart_annotation_gates",
+      "prompt": "Write Python that prints len('@Qubit(id=1)'). Dart annotation. ONLY code."
+    },
+    {
+      "id": "r11_dart_02",
+      "expected": "python",
+      "family": "dart_annotation_gates",
+      "prompt": "a='@Gates(name: \"cleanup\")'\nprint(len(a))\n# Dart annotation @Gates \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r11_dart_03",
+      "expected": "python",
+      "family": "dart_annotation_gates",
+      "prompt": "Write Python that prints 21. Dart @Qubit annotation is metadata only. ONLY code."
+    },
+    {
+      "id": "r11_temp_01",
+      "expected": "python",
+      "family": "temporal_activity_gates",
+      "prompt": "Write Python that prints len('gates: ActivityOptions'). Temporal activity. ONLY code."
+    },
+    {
+      "id": "r11_temp_02",
+      "expected": "python",
+      "family": "temporal_activity_gates",
+      "prompt": "t='gates: ActivityOptions'\nprint(t.count('gates'))\n# Temporal activity options gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r11_temp_03",
+      "expected": "python",
+      "family": "temporal_activity_gates",
+      "prompt": "Write Python that prints 3*7. Temporal workflow gates: ActivityOptions is orchestration only. ONLY code."
+    },
+    {
+      "id": "r11_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r11",
+      "prompt": "Responde SOLO JSON v\u00e1lido con n_qubits, gates, domain, label. Bell pair entrelazado."
+    },
+    {
+      "id": "r11_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r11",
+      "prompt": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separable."
+    },
+    {
+      "id": "r11_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r11",
+      "prompt": "Look at the image. How many dots are visible? Only the integer. No circuit."
+    },
+    {
+      "id": "r11_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r11",
+      "prompt": "Look at the chalkboard. How many letters? Only the integer. No circuit."
+    },
+    {
+      "id": "r11_base_01",
+      "expected": "base",
+      "family": "base_control_r11",
+      "prompt": "Thanks. Ignore Smithy member gates: Long in the README. No code, no circuit."
+    },
+    {
+      "id": "r11_base_02",
+      "expected": "base",
+      "family": "base_control_r11",
+      "prompt": "Please ignore the Linkerd Server gates: inbound phrase. Chat only \u2014 no program, no circuit."
+    },
+    {
+      "id": "r11_base_03",
+      "expected": "base",
+      "family": "base_control_r11",
+      "prompt": "Hello \u2014 Cilium gates: toEntities is eBPF only. No code, no circuit, no pennylane."
+    },
+    {
+      "id": "r11_base_04",
+      "expected": "base",
+      "family": "base_control_r11",
+      "prompt": "Weather update. Kyverno gates: Audit mention. No code, no circuit."
+    },
+    {
+      "id": "r11_ctrl_01",
+      "expected": "python",
+      "family": "base_python_control_r11",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code."
+    },
+    {
+      "id": "r11_ctrl_02",
+      "expected": "python",
+      "family": "base_python_control_r11",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code."
+    }
+  ]
+}
