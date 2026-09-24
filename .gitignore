@@ -99,3 +99,18 @@ data/lora_adapter_distance/**
 !data/lora_adapter_distance/.gitkeep
 data/eval_audit/distance_*.jsonl
 data/train_distance*.log
+
+# Predictive collision layer (keep summaries/evals; ignore frames)
+data/collision_predictive/**
+!data/collision_predictive/.gitignore
+!data/collision_predictive/.gitkeep
+!data/collision_predictive/SUMMARY.json
+!data/collision_predictive/SUMMARY.md
+!data/collision_predictive/SCENE_CHOICE.md
+!data/collision_predictive/INDEX.json
+!data/collision_predictive/EVAL_COLLISION_CPU.json
+!data/collision_predictive/EVAL_COLLISION_CPU.md
+!data/collision_predictive/retrieval_index_train.json
+data/lora_adapter_collision/**
+!data/lora_adapter_collision/.gitkeep
+data/eval_audit/collision_*.jsonl

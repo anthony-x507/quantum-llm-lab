@@ -1,7 +1,7 @@
 # Estado de avance — Agent Lab / quantum-llm-lab
 
 **Repo:** https://github.com/anthony-x507/quantum-llm-lab  
-**Actualizado:** 2026-09-24 ~05:00 ET  
+**Actualizado:** 2026-09-24 ~05:06 ET  
 **SSOT del plan:** [`PLAN-MAESTRO-PARTE-1.md`](PLAN-MAESTRO-PARTE-1.md)  
 **Regla:** solo números de registro limpio (anti-contam). Sin claims de ventaja cuántica.
 
@@ -58,6 +58,17 @@ Fuente: `data/inverse_planning/EVAL_PASSIVE_CV.json` (push `746b70a`). VLM/LoRA 
 
 Ablación future-pred: tracking-only **73.51%** > +floor-dist **64.24%** (honesto; estimador ruidoso). Fuente: `EVAL_FLOOR_SCALE_CPU.json` (`bcbcdc8`). VLM/LoRA distancia diferido. Escala = **pisos de edificio** 2.4–3.0 m — **no** alturas fijas de semáforo.
 
+
+### Colisión predictiva (CPU, dominio separado)
+
+| predictor | k=1 | k=3 | k=5 | overall |
+|-----------|-----|-----|-----|---------|
+| collision_physics (oracle floor) | **100** | **100** | **100** | **100** |
+| inverse_cv (ablation) | 94.1 | 86.0 | 75.7 | 85.2 |
+| choose_safest | **100** | **100** | **100** | **100** |
+
+Ablación **+14.8 pp** vs inverse_cv. Contam PASS. Audit `data/eval_audit/collision_20260924_050543.jsonl`. VLM diferido (`lora_adapter_collision/`). Docs: `COLLISION-PREDICTIVE-F1.md`.
+
 ### Física clásica (pelotas / cohetes)
 
 Set ~220 escenas + scripts adapter `data/lora_adapter_classical/`. **Own-delta BASE vs LoRA pendiente** — screen `qlora-classical` en cola GPU.
@@ -95,6 +106,7 @@ Set ~220 escenas + scripts adapter `data/lora_adapter_classical/`. **Own-delta B
 3. Classical own-delta → freeze ≥80% si aplica.  
 4. Video F1 LoRA + own-delta + ablación 3 capas.  
 5. Reforzar señal inversa @k=3 y distancia (banda ~50 m / estimador) antes de apilar LoRA flojo.  
+5b. Collision CPU floor shipped — VLM own-delta when GPU free (`lora_adapter_collision/`).  
 6. Actualizar scoreboard 10× en Plan Maestro al caer números VLM.
 
 ---

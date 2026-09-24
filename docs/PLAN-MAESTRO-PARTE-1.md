@@ -3,7 +3,7 @@
 **Repo:** `anthony-x507/quantum-llm-lab`  
 **Hardware:** Mac M4 (`Qwen3-VL-8B-Thinking-4bit`)  
 **Estado:** fuente única de verdad (SSOT) — **iterar y mejorar**, no archivar  
-**Creado:** 2026-09-24 ~04:51 ET · **GOAL 10×:** 2026-09-24 ~04:55 ET · **§5.1 proactividad + freeze 80–100%:** 2026-09-24 ~04:57 ET  
+**Creado:** 2026-09-24 ~04:51 ET · **GOAL 10×:** 2026-09-24 ~04:55 ET · **§5.1 proactividad + freeze 80–100%:** 2026-09-24 ~04:57 ET · **collision predictive CPU:** 2026-09-24 ~05:05 ET  
 **Supersede parcial:** `docs/PLAN-MAESTRO.md` (fases 0–5 históricas) queda como archivo de fases tempranas; **este documento manda** para visión, dominios, capas y ciclo.
 
 ---
@@ -46,6 +46,7 @@ No se declara dominio “10× cerrado” hasta tener **own-delta limpio** (base 
 | **Visión temporal F1** | tracking + resumen | **PEND** | set 50×16 shipped; LoRA en cola | ≥0.80 gate / 1.0 techo | **PEND** | Train `lora_adapter_video_f1/` → own-delta → ablación 3 capas |
 | **Planif. inversa F1** | pos @k=1,3,5 | **PEND** (VLM) | CV: pos **1.0**; señal 0.50/0.00/0.51 | 1.0 pos+señal | Señal **débil** (CV); VLM **PEND** | Reforzar señal; LoRA `lora_adapter_inverse/` tras GPU; cruzar “anticipar error” con cuántico |
 | **Distancia** | % correct@tol por banda | **PEND** (VLM) | Heurística piso: **65.3%** overall (5m 76% / 50m 49% / 100m 77% / 200m 57%) | 1.0 | ~**35 pp** overall (heurística); VLM **PEND** | Diagnosticar banda ~50m; **no** apilar LoRA hasta estimar si VLM supera heurística; ablación: +dist **empeoró** future-pred (73.5→64.2) — reforzar estimador antes de creer el refuerzo |
+| **Colisión predictiva** | % collision correct @k + ablación | **PEND** (VLM) | CPU oracle elastic: **100%**; inverse_cv **85.2%**; ablación **+14.8 pp** | 1.0 usable VLM | VLM **PEND**; CPU floor congelable como ref | Extiende inversa Fase2; LoRA `lora_adapter_collision/` diferido; no forkar street F1 |
 | **Compuesto lab** | ejes ≥10× / techo | base ~0 usable | cuántico cerca del techo en parse/label/energía; resto PEND | todos dominios en techo | **grande** fuera de cuántico | Ciclo permanente; GPU: ent → classical → video F1 → distance/inverse |
 
 ### Capas que cierran cada tipo de gap
@@ -59,7 +60,7 @@ No se declara dominio “10× cerrado” hasta tener **own-delta limpio** (base 
 | Distancia | Floor-scale + parallax; luego LoRA `lora_adapter_distance/` **si** own-delta ≥ gate; Jeff **después** de tracking básico |
 | Seguridad / grants | **Jeff** (separado; post-tracking) |
 
-**Última actualización scoreboard:** 2026-09-24 ~04:55 ET · tip `bcbcdc8` + Parte 1.
+**Última actualización scoreboard:** 2026-09-24 ~05:05 ET · collision predictive CPU + Parte 1.
 
 ---
 ## 1. Visión
@@ -133,6 +134,23 @@ Cuando haya números de “anticipar el error” en ambos mundos → **cruzar** 
 - Tolerancia: **10%** si GT &lt; 50 m; **20%** si 50–200 m.
 - Métrica clave: % correcta por rango **y** si la distancia mejora tracking y predicción inversa vs tracking solo.
 - Anti-contam: distancias GT **nunca** en inferencia.
+
+
+### 2.f Colisión predictiva (capa sobre predicción de futuro)
+
+Al predecir el futuro de un frame, evaluar **acciones hipotéticas** y **consecuencias físicas** (brake → rear-end? turn → peatón?) con física de colisión elástica (trayectorias, velocidades, **masas**) — no solo visión.
+
+| Pieza | Estado |
+|-------|--------|
+| Emit | `chosen_action` + `predicted_consequence` + `is_safe` |
+| Set CPU | `data/collision_predictive/` (40 seq, seed 24092445) |
+| Física | `examples/collision_predictive/physics.py` (discos elásticos) |
+| Eval | % collision correct vs GT post-hoc; ablación vs inverse_cv |
+| Números CPU | collision **100%** oracle floor; inverse_cv **85.2%**; **+14.8 pp** (`docs/COLLISION-PREDICTIVE-F1.md`) |
+| Memoria | `memory_bridge.py` → WorkingMemory (niega `gt_*`) |
+| Adapter | `data/lora_adapter_collision/` — VLM diferido; nunca `data/lora_adapter/` |
+
+No forkar el set street-F1. Cruza con inversa Fase 2 (acción-condicional) por tablas, no por adapters compartidos.
 
 ---
 
@@ -211,6 +229,7 @@ Congelados de ejemplo (actualizar al cerrar caras):
 | Cuántico label (hybrid loop n=12) | 100% | Plataforma tools; gold-free |
 | Inversa pos CV @k | 100% | CV ≠ VLM; congelar como ref heurística; VLM propio pendiente |
 | Distancia heurística overall | ~65% | **Aún no** congela plataforma 80% — diagnosticar antes |
+| Colisión CPU oracle (elastic) | 100% | Ref heurística / floor VLM; **no** claim VLM; ablación +14.8 pp vs inverse_cv |
 
 ---
 ## 6. Cola tip-of-spear (vivo — actualizar al cerrar caras)
@@ -248,6 +267,8 @@ CPU puede avanzar sets, evals heurísticos, docs y anti-contam audits en paralel
 | `LOCK-ANTI-CONTAMINATION.md` | GT nunca en inferencia |
 | `LOCK-INVERSE-PLANNING.md` | Dominio inverso separado |
 | `INVERSE-PLANNING-F1.md` | Números F1 pasiva |
+| `LOCK-COLLISION-PREDICTIVE.md` | Capa colisión predictiva |
+| `COLLISION-PREDICTIVE-F1.md` | Números CPU + ablación |
 | `THREE-LAYERS-PROTOTYPE.md` | Pointer a video F1 |
 
 ---

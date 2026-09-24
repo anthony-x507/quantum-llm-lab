@@ -1,0 +1,28 @@
+{
+  "domain": "collision_predictive",
+  "seed": 24092445,
+  "n_seq": 40,
+  "n_train": 32,
+  "n_eval": 8,
+  "horizons": [
+    1,
+    3,
+    5
+  ],
+  "actions": [
+    "coast",
+    "brake",
+    "accelerate",
+    "turn_left",
+    "turn_right"
+  ],
+  "emit_schema": [
+    "chosen_action",
+    "predicted_consequence",
+    "is_safe"
+  ],
+  "physics": "elastic_disk_2d_masses",
+  "anti_contamination": "consequences_gt.json sidecar only; meta has no futures",
+  "adapter_future": "data/lora_adapter_collision/ (empty; VLM deferred)",
+  "quantum_adapter": "data/lora_adapter/ READ-ONLY \u2014 never touch"
+}

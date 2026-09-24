@@ -1,0 +1,101 @@
+{
+  "domain": "collision_predictive",
+  "ts": "2026-09-24 05:05:43 ET",
+  "n_eval_seqs": 8,
+  "predictors": {
+    "collision_physics": {
+      "k=1": {
+        "n": 185,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0
+      },
+      "k=3": {
+        "n": 185,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0
+      },
+      "k=5": {
+        "n": 185,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0054
+      },
+      "overall": {
+        "n": 555,
+        "collision_correct_pct": 100.0
+      }
+    },
+    "inverse_cv": {
+      "k=1": {
+        "n": 185,
+        "collision_correct_pct": 94.05,
+        "safe_match_pct": 99.46,
+        "physics_fail_rate": 0.0
+      },
+      "k=3": {
+        "n": 185,
+        "collision_correct_pct": 85.95,
+        "safe_match_pct": 96.22,
+        "physics_fail_rate": 0.0
+      },
+      "k=5": {
+        "n": 185,
+        "collision_correct_pct": 75.68,
+        "safe_match_pct": 90.27,
+        "physics_fail_rate": 0.0
+      },
+      "overall": {
+        "n": 555,
+        "collision_correct_pct": 85.23
+      }
+    },
+    "collision_choose_safest": {
+      "k=1": {
+        "n": 185,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0
+      },
+      "k=3": {
+        "n": 185,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0
+      },
+      "k=5": {
+        "n": 185,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0
+      },
+      "overall": {
+        "n": 555,
+        "collision_correct_pct": 100.0
+      }
+    }
+  },
+  "ablation": {
+    "collision_minus_inverse_cv_pp": 14.77,
+    "note": "Positive \u2192 elastic collision layer improves consequence/safety prediction vs inverse-style CV (no mass/collision). Scored on action-conditional GT."
+  },
+  "contam_self_test": {
+    "test": "inject_consequence_gt_into_prompt",
+    "verdict_if_dirty": "INVALID",
+    "dirty_detected": true,
+    "clean_prompt_ok": true,
+    "meta_has_no_futures": true,
+    "passed": true,
+    "rule": "injecting future/consequence GT \u2192 INVALID (discard; never report as clean)"
+  },
+  "retrieval_ok": true,
+  "audit": "data/eval_audit/collision_20260924_050543.jsonl",
+  "emit_schema": [
+    "chosen_action",
+    "predicted_consequence",
+    "is_safe"
+  ],
+  "gpu": "none \u2014 CPU physics only; VLM deferred",
+  "quantum_adapter_touched": false
+}

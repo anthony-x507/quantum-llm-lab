@@ -9,3 +9,7 @@ Fase 1 (passive, no action):
 
 GT futures live only in `*_gt.json` / `futures_gt.json` sidecars, loaded post-hoc by eval.
 See `docs/LOCK-INVERSE-PLANNING.md` and `docs/INVERSE-PLANNING-F1.md`.
+
+## Related — predictive collision (Fase 2 cousin)
+
+Action-conditional collision consequences (CPU): `examples/collision_predictive/` — does **not** replace this corridor domain; ablation compares collision layer vs inverse-style CV on its own merge-lane set.

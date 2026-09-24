@@ -105,6 +105,10 @@ docs/INVERSE-PLANNING-F1.md     # this file
 - Eval: execute `a*` in simulator; score realized N+k vs goal.
 - Still no GT in the loop; physics gate remains hard fail.
 
+## Related — collision predictive (2026-09-24 ~05:05)
+
+Runnable CPU **action-conditional** cousin: `examples/collision_predictive/` (merge-lane elastic disks). Ablation: collision layer **+14.8 pp** vs inverse-style CV on safety/consequence prediction. Does not overwrite this corridor F1 set.
+
 ## Next (GPU free)
 
 1. VLM base zero-shot on eval prompts → own-delta vs CV floor.

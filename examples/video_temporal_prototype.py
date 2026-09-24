@@ -529,7 +529,11 @@ class RetrievalIndex:
 
 
 class TrafficPhysicsTool:
-    """NumPy traffic/light kinematics from perceived state. Real compute — never GT keys."""
+    """NumPy traffic/light kinematics from perceived state. Real compute — never GT keys.
+
+    Related (separate domain): examples/collision_predictive/ — hypo-action elastic
+    collision emit (chosen_action, predicted_consequence, is_safe) + memory_bridge.
+    """
     CYCLE_ORDER = ["G", "Y", "R"]
     CYCLE_LEN = {"G": 9, "Y": 3, "R": 8}
 
