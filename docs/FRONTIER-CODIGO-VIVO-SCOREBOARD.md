@@ -726,8 +726,8 @@ Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. 
 
 ## tip-inverse-r2 (side branch — not folded)
 
-**Branch:** `frontier/tip-inverse-r2` @ (see freeze sha) · base tip `2d13d0a`  
-**Freeze:** `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`  
+**Branch:** `frontier/tip-inverse-r2` @ `0a1439d` · base tip `2d13d0a`  
+**Freeze:** `codigo_vivo_tip_inverse_r2_100pct_20260924_134326` @ `0a1439d`  
 **Doc:** [`FRONTIER-CODIGO-VIVO-TIP-INVERSE-R2.md`](FRONTIER-CODIGO-VIVO-TIP-INVERSE-R2.md)
 
 | metric | before | after |
