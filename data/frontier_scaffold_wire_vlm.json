@@ -1,0 +1,302 @@
+{
+  "frontier": "scaffold-wire-vlm",
+  "written": "2026-09-24 11:22:33",
+  "parent_sha": "5c67267",
+  "branch": "frontier/scaffold-wire-vlm",
+  "wired_to_vlm": true,
+  "channel": "text_scaffold_prefix",
+  "weight_peft_injection": false,
+  "wire_vlm_smoke": {
+    "n": 8,
+    "n_ent": 8,
+    "wired_to_vlm": true,
+    "channel": "text_scaffold_prefix",
+    "weight_peft_injection": false,
+    "any_gt_leak": false,
+    "ent_all_have_markers": true,
+    "rows": [
+      {
+        "id": "ent_bell_01",
+        "lane": "ent",
+        "wired_to_vlm": true,
+        "channel": "text_scaffold_prefix",
+        "has_scaffold_markers": true,
+        "gt_leak": false,
+        "signal": {
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 1312,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "cross_attn_keys_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.7557,
+          "gt_leak": false
+        }
+      },
+      {
+        "id": "ent_bell_02",
+        "lane": "ent",
+        "wired_to_vlm": true,
+        "channel": "text_scaffold_prefix",
+        "has_scaffold_markers": true,
+        "gt_leak": false,
+        "signal": {
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 1312,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "cross_attn_keys_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.5776,
+          "gt_leak": false
+        }
+      },
+      {
+        "id": "ent_bell_03",
+        "lane": "ent",
+        "wired_to_vlm": true,
+        "channel": "text_scaffold_prefix",
+        "has_scaffold_markers": true,
+        "gt_leak": false,
+        "signal": {
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 1312,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "cross_attn_keys_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.7557,
+          "gt_leak": false
+        }
+      },
+      {
+        "id": "ent_cx_01",
+        "lane": "ent",
+        "wired_to_vlm": true,
+        "channel": "text_scaffold_prefix",
+        "has_scaffold_markers": true,
+        "gt_leak": false,
+        "signal": {
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 1336,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "cross_attn_keys_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.7557,
+          "gt_leak": false
+        }
+      },
+      {
+        "id": "ent_ghz_01",
+        "lane": "ent",
+        "wired_to_vlm": true,
+        "channel": "text_scaffold_prefix",
+        "has_scaffold_markers": true,
+        "gt_leak": false,
+        "signal": {
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 1339,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "cross_attn_keys_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.3909,
+          "gt_leak": false
+        }
+      },
+      {
+        "id": "ent_product_01",
+        "lane": "ent",
+        "wired_to_vlm": true,
+        "channel": "text_scaffold_prefix",
+        "has_scaffold_markers": true,
+        "gt_leak": false,
+        "signal": {
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 1285,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "cross_attn_keys_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.8169,
+          "gt_leak": false
+        }
+      },
+      {
+        "id": "ent_product_02",
+        "lane": "ent",
+        "wired_to_vlm": true,
+        "channel": "text_scaffold_prefix",
+        "has_scaffold_markers": true,
+        "gt_leak": false,
+        "signal": {
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 1285,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "cross_attn_keys_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.8169,
+          "gt_leak": false
+        }
+      },
+      {
+        "id": "ent_ry_01",
+        "lane": "ent",
+        "wired_to_vlm": true,
+        "channel": "text_scaffold_prefix",
+        "has_scaffold_markers": true,
+        "gt_leak": false,
+        "signal": {
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 1313,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "cross_attn_keys_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.6942,
+          "gt_leak": false
+        }
+      }
+    ]
+  },
+  "ablation": {
+    "written": "2026-09-24 11:22:31",
+    "router_method": "heuristic",
+    "polish_features": true,
+    "n_fixtures": 24,
+    "n_ent_evaluated": 20,
+    "n_skipped_non_ent": 4,
+    "no_scaffold": {
+      "n": 20,
+      "parse_rate": 0.75,
+      "structure_rate": 0.65,
+      "solve_rate": 0.4,
+      "parse_n": 15,
+      "structure_n": 13,
+      "solve_n": 8
+    },
+    "scaffold": {
+      "n": 20,
+      "parse_rate": 1.0,
+      "structure_rate": 1.0,
+      "solve_rate": 0.9,
+      "parse_n": 20,
+      "structure_n": 20,
+      "solve_n": 18
+    },
+    "delta_scaffold_minus_off": {
+      "parse_rate": 0.25,
+      "structure_rate": 0.35,
+      "solve_rate": 0.5
+    },
+    "clear_win": true,
+    "clear_win_rule": "Δsolve≥0.15 OR (Δstructure≥0.15 AND Δparse≥0.05)",
+    "anti_contamination": {
+      "gt_in_scaffold_hints": false,
+      "prompt_touches_gt": false,
+      "graph_builder_rejects_gt_kwargs": true,
+      "lora_adapter_writes": false
+    }
+  },
+  "solve_before": 0.4,
+  "solve_after": 0.9,
+  "delta_solve": 0.5,
+  "hard_solve_after": 0.9333,
+  "hard_delta_solve": 0.6666,
+  "freeze_still_held": true,
+  "freeze_observed": {
+    "solve_rate": 0.9,
+    "delta_solve_rate": 0.5,
+    "delta": {
+      "parse_rate": 0.25,
+      "structure_rate": 0.35,
+      "solve_rate": 0.5
+    },
+    "clear_win": true,
+    "n_ent": 20
+  },
+  "freeze_floors": {
+    "solve_rate": 0.9,
+    "delta_solve_rate": 0.45
+  },
+  "mixed_unified": {
+    "overall": 1.0,
+    "floor": 0.967,
+    "prefer": 1.0,
+    "floor_held": true,
+    "wired_to_vlm_in_router": true,
+    "scaffold_injected_n": 10,
+    "scaffold_gt_leaks": 0,
+    "ent_vision_scaffold_on": true
+  },
+  "elapsed_s": 3.1,
+  "claims": [
+    "NO quantum-advantage claims",
+    "wired_to_vlm=true via text_scaffold_prefix on MoE ent lane",
+    "weight_peft_injection=false"
+  ],
+  "anti_contamination": {
+    "gt_in_scaffold_hints": false,
+    "prompt_touches_gt": false,
+    "graph_builder_rejects_gt_kwargs": true,
+    "lora_adapter_writes": false
+  },
+  "paths": {
+    "vlm_wire": "examples/circuit_graph_adapter/vlm_wire.py",
+    "scaffold": "examples/circuit_graph_moe_scaffold.py",
+    "mixed_live": "examples/moe_verifier_mixed_live.py",
+    "doc": "docs/FRONTIER-SCAFFOLD-WIRE-VLM.md",
+    "json": "data/frontier_scaffold_wire_vlm.json",
+    "freeze": "data/FRONTIER_CIRCUIT_GRAPH_SCAFFOLD_FREEZE.json"
+  }
+}

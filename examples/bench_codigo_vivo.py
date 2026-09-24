@@ -173,7 +173,14 @@ def run_pillar_python(model_bundle, items: list[dict], tag: str) -> dict[str, An
     }
 
 
-def run_pillar_entanglement(model_bundle, scene_ids: list[str], tag: str) -> dict[str, Any]:
+def run_pillar_entanglement(
+    model_bundle,
+    scene_ids: list[str],
+    tag: str,
+    *,
+    circuit_scaffold: bool = True,
+    scaffold_polish: bool = False,
+) -> dict[str, Any]:
     from jev_arbiter import arbitrate, _scene_has_bounce_energy_loss, _claims_perfect_energy
     from llm_quantum_bridge import ejecutar_circuito, parsear_propuesta
 
@@ -181,6 +188,8 @@ def run_pillar_entanglement(model_bundle, scene_ids: list[str], tag: str) -> dic
     details = []
     parse_ok = compile_ok = label_ok = domain_ok = energy_ok_n = circuit_ran = 0
     gate_combos: set[tuple[str, ...]] = set()
+    scaffold_wired_n = 0
+    scaffold_gt_leaks = 0
     for sid in scene_ids:
         scene_dir = ROOT / "data" / "scenes" / sid
         meta_path = scene_dir / "meta.json"
@@ -197,6 +206,23 @@ def run_pillar_entanglement(model_bundle, scene_ids: list[str], tag: str) -> dic
             if meta.get(k) is not None
         }
         prompt = _user_prompt_for_domain(meta, summary)
+        scaffold_meta: dict[str, Any] | None = None
+        if circuit_scaffold:
+            try:
+                from circuit_graph_adapter.vlm_wire import wire_prompt_for_vlm
+
+                prompt, scaffold_meta = wire_prompt_for_vlm(
+                    prompt, "ent", enabled=True, polish=scaffold_polish
+                )
+                if scaffold_meta.get("wired_to_vlm"):
+                    scaffold_wired_n += 1
+                if scaffold_meta.get("gt_leak"):
+                    scaffold_gt_leaks += 1
+            except Exception as _sc_exc:  # noqa: BLE001
+                scaffold_meta = {
+                    "wired_to_vlm": False,
+                    "error": f"{type(_sc_exc).__name__}: {_sc_exc}",
+                }
         source = "vlm"
         proposal: dict[str, Any] = {"n_qubits": 2, "gates": []}
         raw = ""
@@ -267,6 +293,7 @@ def run_pillar_entanglement(model_bundle, scene_ids: list[str], tag: str) -> dic
             "energy_ok": energy_ok,
             "gate_names": gnames,
             "raw_preview": _strip_thinking(raw)[:200] if raw else "",
+            "circuit_graph_scaffold": scaffold_meta,
         })
         print(f"  [{tag} ent] {sid} parse={ok_parse} compile={ok_compile} label={ok_label} energy={energy_ok}", flush=True)
     n = max(1, len(scene_ids))
@@ -284,6 +311,11 @@ def run_pillar_entanglement(model_bundle, scene_ids: list[str], tag: str) -> dic
         "domain_acc": domain_ok / n,
         "energy_ok_rate": energy_ok_n / n,
         "unique_gate_combos": len(gate_combos),
+        "wired_to_vlm": bool(circuit_scaffold) and scaffold_wired_n == len(scene_ids) and len(scene_ids) > 0,
+        "scaffold_wired_n": scaffold_wired_n,
+        "scaffold_gt_leaks": scaffold_gt_leaks,
+        "channel": "text_scaffold_prefix" if circuit_scaffold else "none",
+        "weight_peft_injection": False,
         "details": details,
     }
 

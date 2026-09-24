@@ -1,7 +1,10 @@
 """Conditioning stubs: graph embedding → prefix tokens / cross-attn keys.
 
-These do NOT wire into a real VLM (Qwen 8B). They expose a clear interface for
-future PEFT / prefix-tuning / cross-attention injection.
+Default construction sets ``wired_to_vlm=False`` (no weight-level PEFT into
+Qwen/mlx-vlm). The MoE ent lane packages these as a *companion* via
+``vlm_wire.build_vlm_scaffold_signal``, which flips companion meta to
+``wired_to_vlm=True`` for the **text scaffold channel** while keeping
+``weight_peft_injection=False``.
 """
 
 from __future__ import annotations

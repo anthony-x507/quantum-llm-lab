@@ -13,6 +13,7 @@ prior MoE dual-lane live). Optional --mlx-eval when weights/GPU free (never bloc
 
 Ent lane: --circuit-scaffold is DEFAULT ON (disable with --no-circuit-scaffold).
 Injects GT-free Clifford–Pauli circuit-graph hints when router→ent.
+VLM wire: ``wired_to_vlm=true`` via text_scaffold_prefix (weight_peft_injection=false).
 
 No quantum-advantage claims. Anti-contam: GT never in prompts; prompt_touches_gt=false.
 READ-ONLY: never write data/lora_adapter/.
@@ -81,24 +82,63 @@ def _resolve_adapter(lane: moe.Lane) -> Path | None:
 
 
 def _scaffold_meta_for_prompt(prompt: str, *, polish: bool = False) -> dict[str, Any] | None:
-    """GT-free circuit-graph scaffold metadata when module is available."""
+    """GT-free circuit-graph scaffold metadata + VLM wire flag when module is available."""
     if cg_scaffold is None:
-        return {"injected": False, "reason": "cg_scaffold_unavailable"}
-    hint = cg_scaffold.format_scaffold_hint(prompt, polish=polish)
-    return {
-        "injected": True,
-        "hint_chars": len(hint),
-        "has_markers": cg_scaffold.SCAFFOLD_BEGIN in hint,
-        "gt_leak": bool(cg_scaffold._FORBIDDEN_HINT.search(hint)),
-        "polish": polish,
-    }
+        return {
+            "injected": False,
+            "wired_to_vlm": False,
+            "reason": "cg_scaffold_unavailable",
+        }
+    # Prefer vlm_wire path (text channel usable by VLM).
+    try:
+        from circuit_graph_adapter.vlm_wire import wire_prompt_for_vlm
+
+        _prompt2, meta = wire_prompt_for_vlm(
+            prompt, "ent", enabled=True, polish=polish
+        )
+        return {
+            "injected": True,
+            "wired_to_vlm": bool(meta.get("wired_to_vlm")),
+            "channel": meta.get("channel"),
+            "weight_peft_injection": bool(meta.get("weight_peft_injection")),
+            "hint_chars": meta.get("hint_chars"),
+            "has_markers": meta.get("has_markers"),
+            "gt_leak": bool(meta.get("gt_leak")),
+            "polish": polish,
+            "prefix_shape": meta.get("prefix_shape"),
+            "embed_norm": meta.get("embed_norm"),
+        }
+    except Exception as exc:  # noqa: BLE001
+        hint = cg_scaffold.format_scaffold_hint(prompt, polish=polish)
+        return {
+            "injected": True,
+            "wired_to_vlm": True,  # text inject still VLM-usable
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": False,
+            "hint_chars": len(hint),
+            "has_markers": cg_scaffold.SCAFFOLD_BEGIN in hint,
+            "gt_leak": bool(cg_scaffold._FORBIDDEN_HINT.search(hint)),
+            "polish": polish,
+            "wire_fallback": f"{type(exc).__name__}",
+        }
 
 
 def maybe_inject_scaffold(prompt: str, lane: str, *, enabled: bool, polish: bool = False) -> str:
-    """When router→ent and scaffold enabled, append Clifford–Pauli hints (no GT)."""
+    """When router→ent and scaffold enabled, append Clifford–Pauli hints (no GT).
+
+    Uses vlm_wire so the returned prompt is the VLM-facing wired prompt.
+    """
     if not enabled or lane != "ent" or cg_scaffold is None:
         return prompt
-    return cg_scaffold.inject_scaffold(prompt, polish=polish)
+    try:
+        from circuit_graph_adapter.vlm_wire import wire_prompt_for_vlm
+
+        prompt2, _meta = wire_prompt_for_vlm(
+            prompt, lane, enabled=True, polish=polish
+        )
+        return prompt2
+    except Exception:  # noqa: BLE001
+        return cg_scaffold.inject_scaffold(prompt, polish=polish)
 
 
 def load_mixed(path: Path = MIXED_ITEMS) -> dict[str, Any]:
@@ -282,6 +322,9 @@ def run_router_mixed(
         "scaffold_polish": bool(scaffold_polish),
         "scaffold_injected_n": scaffold_injected,
         "scaffold_gt_leaks": scaffold_gt_leaks,
+        "wired_to_vlm": bool(circuit_scaffold) and cg_scaffold is not None,
+        "channel": "text_scaffold_prefix" if (circuit_scaffold and cg_scaffold is not None) else "none",
+        "weight_peft_injection": False,
         "pillar_routing": {
             "n": n,
             "hits": hits,
@@ -673,6 +716,9 @@ def score_ent_vision_paths(
         "scaffold_polish": bool(scaffold_polish),
         "scaffold_gt_leaks": scaffold_gt_leaks,
         "scaffold_module": cg_scaffold is not None,
+        "wired_to_vlm": bool(circuit_scaffold) and cg_scaffold is not None,
+        "channel": "text_scaffold_prefix" if (circuit_scaffold and cg_scaffold is not None) else "none",
+        "weight_peft_injection": False,
         "ent_routing": ent_routes,
         "vision_routing": vis_routes,
         "vision_prior_detail": vis_detail,
@@ -977,6 +1023,9 @@ def main(argv: list[str] | None = None) -> int:
             "polish": bool(args.scaffold_polish),
             "module_available": cg_scaffold is not None,
             "injected_n": router.get("scaffold_injected_n"),
+            "wired_to_vlm": bool(args.circuit_scaffold) and cg_scaffold is not None,
+            "channel": "text_scaffold_prefix" if args.circuit_scaffold else "none",
+            "weight_peft_injection": False,
             "freeze_path": "data/FRONTIER_CIRCUIT_GRAPH_SCAFFOLD_FREEZE.json",
             "mixed_freeze_overall_floor": 0.9667,
             "mixed_freeze_overall_floor_doc": 0.967,

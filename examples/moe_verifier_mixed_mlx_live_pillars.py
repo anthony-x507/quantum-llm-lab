@@ -2,8 +2,9 @@
 """
 Live MLX mixed pillars (python + ent + vision) — honest generate, not prior-replay.
 
-Uses tip circuit-scaffold defaults for routing metadata only; pillar rates come
-from live mlx_vlm generate. READ-ONLY adapters. No quantum-advantage claims.
+Ent live path injects GT-free circuit-graph scaffold into VLM prompts
+(`wired_to_vlm=true`, text_scaffold_prefix). Pillar rates from live mlx_vlm
+generate. READ-ONLY adapters. No quantum-advantage claims.
 
   QLAB_DATA=... .venv/bin/python examples/moe_verifier_mixed_mlx_live_pillars.py \
     --n-py 3 --n-ent 3 --n-vis 3
@@ -130,7 +131,7 @@ def run_ent_live(n: int) -> dict[str, Any]:
     # base (no adapter)
     print(f"=== LIVE ent BASE n={len(sids)} ===", flush=True)
     base_bundle = bench._load_vlm(MODEL, None)
-    base = bench.run_pillar_entanglement(base_bundle, sids, "mlx-live-ent-base")
+    base = bench.run_pillar_entanglement(base_bundle, sids, "mlx-live-ent-base", circuit_scaffold=True)
     del base_bundle
     # MoE ent2 RO
     print(f"=== LIVE ent ENT2 adapter={adapter} ===", flush=True)
@@ -143,7 +144,7 @@ def run_ent_live(n: int) -> dict[str, Any]:
         }
     else:
         ent_bundle = bench._load_vlm(MODEL, str(adapter))
-        moe_ent = bench.run_pillar_entanglement(ent_bundle, sids, "mlx-live-ent-ent2")
+        moe_ent = bench.run_pillar_entanglement(ent_bundle, sids, "mlx-live-ent-ent2", circuit_scaffold=True)
         del ent_bundle
     elapsed = round(time.time() - t0, 2)
     return {
@@ -153,6 +154,9 @@ def run_ent_live(n: int) -> dict[str, Any]:
         "missing_scenes": missing,
         "adapter_ent2": str(adapter) if adapter else None,
         "elapsed_s": elapsed,
+        "wired_to_vlm": bool(base.get("wired_to_vlm")) or bool(moe_ent.get("wired_to_vlm")),
+        "channel": "text_scaffold_prefix",
+        "weight_peft_injection": False,
         "base": {
             "label_acc": base.get("label_acc"),
             "parse_rate": base.get("parse_rate"),
@@ -160,6 +164,8 @@ def run_ent_live(n: int) -> dict[str, Any]:
             "n": base.get("n"),
             "label_correct": base.get("label_correct"),
             "parse_ok": base.get("parse_ok"),
+            "wired_to_vlm": base.get("wired_to_vlm"),
+            "scaffold_wired_n": base.get("scaffold_wired_n"),
             "details": base.get("details"),
         },
         "moe_ent2": {
@@ -169,6 +175,8 @@ def run_ent_live(n: int) -> dict[str, Any]:
             "n": moe_ent.get("n"),
             "label_correct": moe_ent.get("label_correct"),
             "parse_ok": moe_ent.get("parse_ok"),
+            "wired_to_vlm": moe_ent.get("wired_to_vlm"),
+            "scaffold_wired_n": moe_ent.get("scaffold_wired_n"),
             "details": moe_ent.get("details"),
             "error": moe_ent.get("error"),
         },

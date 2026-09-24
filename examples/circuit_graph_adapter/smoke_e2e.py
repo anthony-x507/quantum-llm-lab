@@ -191,7 +191,9 @@ def run_smoke(dataset: Path, limit: int, embed_dim: int, out_path: Path) -> dict
         "sample_fingerprints": fingerprints[:5],
         "mean_energy_ok": float(np.mean(energies)) if energies else None,
         "backend": "pennylane.default.qubit + torch.cpu",
-        "conditioning_wired_to_vlm": False,
+        "conditioning_wired_to_vlm": True,  # text_scaffold_prefix via vlm_wire; weight_peft=False
+        "weight_peft_injection": False,
+        "channel": "text_scaffold_prefix",
         "no_gt_in_graph": True,
         "dataset": dataset_meta,
         "limit": limit,

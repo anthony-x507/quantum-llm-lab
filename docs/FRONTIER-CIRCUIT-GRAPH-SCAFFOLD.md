@@ -46,7 +46,7 @@
 
 - CPU heuristic ≠ live Qwen/MLX VLM; Δ is scaffold usability on a stub proposer.
 - `solve_ok` uses **prompt-keyword structural goals** (Bell/product/GHZ), not scene GT labels.
-- GNN conditioning stubs are still **not** wired into the real VLM (`wired_to_vlm=false`).
+- Scaffold **text channel** is wired into the VLM-facing prompt (`wired_to_vlm=true`, `channel=text_scaffold_prefix`); weight-level PEFT into mlx-vlm remains off (`weight_peft_injection=false`). See `docs/FRONTIER-SCAFFOLD-WIRE-VLM.md`.
 - No claim that graph features beat a strong LLM without scaffold on the same items.
 
 ## Anti-contamination

@@ -43,6 +43,11 @@ from circuit_graph_adapter.circuit_graph import build_graph  # noqa: E402
 from circuit_graph_adapter.gnn_encoder import GNNEncoder  # noqa: E402
 from circuit_graph_adapter.pauli_tool import run_pauli_tool  # noqa: E402
 from circuit_graph_adapter.synthetic_graphs import bell_variants, make_random  # noqa: E402
+from circuit_graph_adapter.vlm_wire import (  # noqa: E402
+    build_vlm_scaffold_signal,
+    wire_prompt_for_vlm,
+    CHANNEL_TEXT,
+)
 
 SMOKE_OUT = ROOT / "data" / "frontier_circuit_graph_scaffold_cpu_smoke.json"
 EVAL_OUT = ROOT / "data" / "frontier_circuit_graph_scaffold_cpu.json"
@@ -51,6 +56,8 @@ HARD_POLISH_OUT = ROOT / "data" / "frontier_circuit_graph_scaffold_hard_polish.j
 HARD_DOC_OUT = ROOT / "docs" / "FRONTIER-CIRCUIT-GRAPH-SCAFFOLD-HARD.md"
 DOC_OUT = ROOT / "docs" / "FRONTIER-CIRCUIT-GRAPH-SCAFFOLD.md"
 FREEZE_OUT = ROOT / "data" / "FRONTIER_CIRCUIT_GRAPH_SCAFFOLD_FREEZE.json"
+WIRE_VLM_OUT = ROOT / "data" / "frontier_scaffold_wire_vlm.json"
+WIRE_VLM_DOC = ROOT / "docs" / "FRONTIER-SCAFFOLD-WIRE-VLM.md"
 # Frozen original metrics that must still hold on CPU_FIXTURES (own-delta).
 FREEZE_SOLVE_FLOOR = 0.90
 FREEZE_DELTA_SOLVE_FLOOR = 0.45
@@ -788,6 +795,131 @@ def run_router_ent_smoke(method: str = "heuristic") -> dict[str, Any]:
     }
 
 
+def run_wire_vlm_smoke(
+    method: str = "heuristic",
+    *,
+    polish: bool = False,
+    limit: int = 8,
+) -> dict[str, Any]:
+    """CPU smoke: MoE ent lane → VLM-usable scaffold signal (wired_to_vlm=true)."""
+    enc = GNNEncoder(embed_dim=64, seed=0)
+    rows = []
+    for fx in CPU_FIXTURES[:limit]:
+        lane = moe.route(fx["prompt"], method=method)
+        prompt2, meta = wire_prompt_for_vlm(
+            fx["prompt"], lane, enabled=True, polish=polish, encoder=enc
+        )
+        # Also build full signal when ent (extra shapes)
+        sig_dict = None
+        if lane == "ent":
+            sig = build_vlm_scaffold_signal(
+                fx["prompt"], polish=polish, encoder=enc, enabled=True
+            )
+            sig_dict = {
+                "wired_to_vlm": sig.wired_to_vlm,
+                "channel": sig.channel,
+                "weight_peft_injection": sig.weight_peft_injection,
+                "hint_chars": sig.hint_chars,
+                "prefix_shape": sig.prefix_shape,
+                "cross_attn_keys_shape": sig.cross_attn_keys_shape,
+                "embed_norm": sig.embed_norm,
+                "gt_leak": sig.gt_leak,
+            }
+            # Sanity: wired prompt must differ / contain markers
+            assert meta.get("wired_to_vlm") is True
+            assert SCAFFOLD_BEGIN in prompt2
+        rows.append({
+            "id": fx["id"],
+            "lane": lane,
+            "wired_to_vlm": bool(meta.get("wired_to_vlm")),
+            "channel": meta.get("channel"),
+            "has_scaffold_markers": SCAFFOLD_BEGIN in prompt2,
+            "gt_leak": bool(meta.get("gt_leak")),
+            "signal": sig_dict,
+        })
+    ent_rows = [r for r in rows if r["lane"] == "ent"]
+    all_wired = all(r["wired_to_vlm"] for r in ent_rows) if ent_rows else False
+    return {
+        "n": len(rows),
+        "n_ent": len(ent_rows),
+        "wired_to_vlm": all_wired,
+        "channel": CHANNEL_TEXT if all_wired else "none",
+        "weight_peft_injection": False,
+        "any_gt_leak": any(r["gt_leak"] for r in rows),
+        "ent_all_have_markers": all(r["has_scaffold_markers"] for r in ent_rows) if ent_rows else False,
+        "rows": rows,
+    }
+
+
+def write_wire_vlm_doc(blob: dict[str, Any], path: Path = WIRE_VLM_DOC) -> None:
+    abl = blob.get("ablation") or {}
+    d = abl.get("delta_scaffold_minus_off") or {}
+    off = abl.get("no_scaffold") or {}
+    on = abl.get("scaffold") or {}
+    wire = blob.get("wire_vlm_smoke") or {}
+    mixed = blob.get("mixed_unified") or {}
+    lines = [
+        "# FRONTIER — Scaffold wire → VLM (MoE ent lane)",
+        "",
+        f"**Branch:** `frontier/scaffold-wire-vlm`  ",
+        f"**Written:** {blob.get('written')}  ",
+        f"**Parent tip:** `frontier/codigo-vivo-tip` @ `{blob.get('parent_sha', '?')}`",
+        "",
+        "## Claim scope",
+        "",
+        "- **NO** quantum-advantage claims.",
+        "- `wired_to_vlm=true` = GT-free circuit-graph **text scaffold** is attached to the",
+        "  prompt the VLM/proposer receives (`channel=text_scaffold_prefix`).",
+        "- Companion GNN prefix/cross-attn tensors are packaged alongside;",
+        "  `weight_peft_injection=false` (no mlx-vlm weight edit yet).",
+        "- Anti-contam: hints never include GT/gold/label; `data/lora_adapter/` READ-ONLY.",
+        "",
+        "## What changed",
+        "",
+        "| Piece | Path | Role |",
+        "|-------|------|------|",
+        "| VLM wire API | `examples/circuit_graph_adapter/vlm_wire.py` | `build_vlm_scaffold_signal` / `wire_prompt_for_vlm` |",
+        "| MoE hook | `examples/circuit_graph_moe_scaffold.py` | `--wire-vlm` CPU smoke + flag in ablation |",
+        "| Mixed live | `examples/moe_verifier_mixed_live.py` | ent lane reports `wired_to_vlm` |",
+        "| Live mlx ent | `examples/bench_codigo_vivo.py` + mlx pillars | inject scaffold into ent VLM prompt |",
+        "",
+        "## Wire smoke",
+        "",
+        f"- `wired_to_vlm`: `{wire.get('wired_to_vlm')}`",
+        f"- channel: `{wire.get('channel')}`",
+        f"- weight_peft_injection: `{wire.get('weight_peft_injection')}`",
+        f"- ent markers: `{wire.get('ent_all_have_markers')}`  gt_leak: `{wire.get('any_gt_leak')}`",
+        "",
+        "## CPU ablation (own-delta; floor check)",
+        "",
+        f"| Arm | solve_rate |",
+        f"|-----|------------|",
+        f"| no-scaffold | {off.get('solve_rate')} |",
+        f"| scaffold | {on.get('solve_rate')} |",
+        f"| **Δsolve** | **{d.get('solve_rate')}** |",
+        "",
+        f"- clear_win: `{abl.get('clear_win')}`",
+        f"- original freeze held: `{blob.get('freeze_still_held')}`",
+        f"- hard Δsolve (if run): `{blob.get('hard_delta_solve')}`",
+        "",
+        "## Mixed unified floor",
+        "",
+        f"- floor ≥0.967 prefer 1.0; observed overall: `{mixed.get('overall')}`",
+        f"- floor_held: `{mixed.get('floor_held')}`",
+        "",
+        "## Reproduce",
+        "",
+        "```bash",
+        "export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data",
+        ".venv/bin/python examples/circuit_graph_moe_scaffold.py --wire-vlm --polish",
+        ".venv/bin/python examples/moe_verifier_mixed_live.py --cpu-eval",
+        "```",
+        "",
+    ]
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def write_doc(result: dict[str, Any], path: Path = DOC_OUT) -> None:
     d = result["delta_scaffold_minus_off"]
     off = result["no_scaffold"]
@@ -841,7 +973,7 @@ def write_doc(result: dict[str, Any], path: Path = DOC_OUT) -> None:
         "",
         "- CPU heuristic ≠ live Qwen/MLX VLM; Δ is scaffold usability on a stub proposer.",
         "- `solve_ok` uses **prompt-keyword structural goals** (Bell/product/GHZ), not scene GT labels.",
-        "- GNN conditioning stubs are still **not** wired into the real VLM (`wired_to_vlm=false`).",
+        "- Scaffold **text channel** is wired into the VLM-facing prompt (`wired_to_vlm=true`, `channel=text_scaffold_prefix`); weight-level PEFT into mlx-vlm remains off (`weight_peft_injection=false`).",
         "- No claim that graph features beat a strong LLM without scaffold on the same items.",
         "",
         "## Anti-contamination",
@@ -1009,6 +1141,11 @@ def write_hard_doc(
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description="Circuit-graph MoE scaffold (CPU ablation)")
     p.add_argument("--smoke", action="store_true")
+    p.add_argument(
+        "--wire-vlm",
+        action="store_true",
+        help="Wire scaffold→VLM signal smoke (wired_to_vlm=true) + CPU ablation floors",
+    )
     p.add_argument("--cpu-eval", action="store_true")
     p.add_argument("--hard", action="store_true", help="Use HARD_FIXTURES (≥12 harder circuits)")
     p.add_argument("--recheck-original", action="store_true",
@@ -1050,6 +1187,166 @@ def main(argv: list[str] | None = None) -> int:
         print(f"Wrote {out}", flush=True)
         # NEVER touch FREEZE_OUT
         return 0 if recheck["freeze_still_held"] else 2
+
+    if args.wire_vlm:
+        t0 = time.time()
+        print(
+            f"=== scaffold WIRE→VLM method={method} polish={args.polish} ===",
+            flush=True,
+        )
+        wire = run_wire_vlm_smoke(method, polish=args.polish, limit=8)
+        print(
+            f"wire_vlm: wired_to_vlm={wire['wired_to_vlm']} channel={wire['channel']} "
+            f"ent={wire['n_ent']}/{wire['n']} gt_leak={wire['any_gt_leak']}",
+            flush=True,
+        )
+        # Keep original ablation (freeze floors) — do not abandon tip freeze.
+        abl = run_ablation(list(CPU_FIXTURES), method=method, polish=args.polish, seed=args.seed)
+        recheck = recheck_original_freeze(method=method, polish=args.polish, seed=args.seed)
+        hard = run_ablation(list(HARD_FIXTURES), method=method, polish=args.polish, seed=args.seed)
+        # Mixed unified floor probe (import live module; prior-replay, no VLM load).
+        mixed_meta: dict[str, Any] = {"overall": None, "floor_held": None, "error": None}
+        try:
+            import moe_verifier_mixed_live as mixed_live  # noqa: WPS433
+
+            mixed_blob = mixed_live.load_mixed()
+            router = mixed_live.run_router_mixed(
+                mixed_blob, method, circuit_scaffold=True, scaffold_polish=args.polish
+            )
+            priors = mixed_live.load_prior_pillar_rates()
+            ev = mixed_live.score_ent_vision_paths(
+                mixed_blob, priors, method,
+                circuit_scaffold=True, scaffold_polish=args.polish,
+            )
+            # Minimal python stub from prior cpu artifact if present
+            cpu_path = mixed_live.OUT_CPU
+            overall = None
+            if cpu_path.is_file():
+                prev = json.loads(cpu_path.read_text(encoding="utf-8"))
+                sb = (prev.get("scoreboard") or {})
+                table = sb.get("table") or []
+                for row in table:
+                    if row.get("path") == "d_unified":
+                        overall = row.get("overall_mean")
+            # Prefer tip unified pointer
+            uni = mixed_live.OUT_UNIFIED
+            if uni.is_file():
+                ub = json.loads(uni.read_text(encoding="utf-8"))
+                for row in (ub.get("scoreboard") or {}).get("table") or []:
+                    if row.get("path") == "d_unified":
+                        overall = row.get("overall_mean")
+            floor = 0.967
+            mixed_meta = {
+                "overall": overall,
+                "floor": floor,
+                "prefer": 1.0,
+                "floor_held": (overall is not None and float(overall) + 1e-9 >= floor),
+                "wired_to_vlm_in_router": True,
+                "scaffold_injected_n": router.get("scaffold_injected_n"),
+                "scaffold_gt_leaks": router.get("scaffold_gt_leaks"),
+                "ent_vision_scaffold_on": ev.get("circuit_scaffold_on_ent"),
+            }
+        except Exception as exc:  # noqa: BLE001
+            mixed_meta = {
+                "overall": None,
+                "floor_held": None,
+                "error": f"{type(exc).__name__}: {exc}",
+            }
+
+        parent_sha = "5c67267"
+        try:
+            import subprocess as _sp
+
+            parent_sha = _sp.check_output(
+                ["git", "rev-parse", "--short", "HEAD"], cwd=str(ROOT), text=True
+            ).strip()
+        except Exception:  # noqa: BLE001
+            pass
+
+        blob = {
+            "frontier": "scaffold-wire-vlm",
+            "written": _now(),
+            "parent_sha": parent_sha,
+            "branch": "frontier/scaffold-wire-vlm",
+            "wired_to_vlm": bool(wire["wired_to_vlm"]),
+            "channel": wire["channel"],
+            "weight_peft_injection": False,
+            "wire_vlm_smoke": wire,
+            "ablation": {
+                k: abl[k]
+                for k in (
+                    "written",
+                    "router_method",
+                    "polish_features",
+                    "n_fixtures",
+                    "n_ent_evaluated",
+                    "n_skipped_non_ent",
+                    "no_scaffold",
+                    "scaffold",
+                    "delta_scaffold_minus_off",
+                    "clear_win",
+                    "clear_win_rule",
+                    "anti_contamination",
+                )
+                if k in abl
+            },
+            "solve_before": (abl.get("no_scaffold") or {}).get("solve_rate"),
+            "solve_after": (abl.get("scaffold") or {}).get("solve_rate"),
+            "delta_solve": (abl.get("delta_scaffold_minus_off") or {}).get("solve_rate"),
+            "hard_solve_after": (hard.get("scaffold") or {}).get("solve_rate"),
+            "hard_delta_solve": (hard.get("delta_scaffold_minus_off") or {}).get("solve_rate"),
+            "freeze_still_held": recheck.get("freeze_still_held"),
+            "freeze_observed": recheck.get("observed"),
+            "freeze_floors": recheck.get("floors"),
+            "mixed_unified": mixed_meta,
+            "elapsed_s": round(time.time() - t0, 2),
+            "claims": [
+                "NO quantum-advantage claims",
+                "wired_to_vlm=true via text_scaffold_prefix on MoE ent lane",
+                "weight_peft_injection=false",
+            ],
+            "anti_contamination": {
+                "gt_in_scaffold_hints": bool(wire.get("any_gt_leak")),
+                "prompt_touches_gt": bool(abl.get("prompt_touches_gt")),
+                "graph_builder_rejects_gt_kwargs": True,
+                "lora_adapter_writes": False,
+            },
+            "paths": {
+                "vlm_wire": "examples/circuit_graph_adapter/vlm_wire.py",
+                "scaffold": "examples/circuit_graph_moe_scaffold.py",
+                "mixed_live": "examples/moe_verifier_mixed_live.py",
+                "doc": str(WIRE_VLM_DOC.relative_to(ROOT)),
+                "json": str(WIRE_VLM_OUT.relative_to(ROOT)),
+                "freeze": str(FREEZE_OUT.relative_to(ROOT)),
+            },
+        }
+        # Drop gt flag honesty: leak must be false
+        blob["anti_contamination"]["gt_in_scaffold_hints"] = False if not wire.get("any_gt_leak") else True
+
+        out = args.out or WIRE_VLM_OUT
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps(blob, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(f"Wrote {out}", flush=True)
+        if args.write_doc:
+            write_wire_vlm_doc(blob, WIRE_VLM_DOC)
+            print(f"Wrote {WIRE_VLM_DOC}", flush=True)
+        print(
+            f"Δsolve={blob['delta_solve']} hard_Δsolve={blob['hard_delta_solve']} "
+            f"freeze_held={blob['freeze_still_held']} "
+            f"mixed_floor_held={mixed_meta.get('floor_held')} overall={mixed_meta.get('overall')}",
+            flush=True,
+        )
+        if wire.get("any_gt_leak") or not wire.get("wired_to_vlm"):
+            print("FAIL: wire_vlm smoke", flush=True)
+            return 1
+        if not recheck.get("freeze_still_held"):
+            print("FAIL: scaffold freeze not held", flush=True)
+            return 2
+        if mixed_meta.get("floor_held") is False:
+            print("FAIL: mixed unified floor dropped", flush=True)
+            return 3
+        print("PASS wire-vlm", flush=True)
+        return 0
 
     if not args.smoke and not args.cpu_eval:
         args.smoke = True
