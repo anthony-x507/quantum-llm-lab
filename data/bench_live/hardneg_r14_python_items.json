@@ -1,0 +1,317 @@
+{
+  "n": 44,
+  "kind": "python_hardneg_items",
+  "created": "2026-09-24T18:15:00Z",
+  "round": "r14",
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R14.md",
+  "items": [
+    {
+      "id": "r14v_httpd_01",
+      "kind": "httpd_rewrite_gates",
+      "prompt": "Write Python that prints len('gates: RewriteCond'). Apache httpd rewrite. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_httpd_02",
+      "kind": "httpd_rewrite_gates",
+      "prompt": "t='gates: RewriteCond'\nprint(t.count('gates'))\n# Apache httpd rewrite gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_httpd_03",
+      "kind": "httpd_rewrite_gates",
+      "prompt": "Write Python that prints 22. Apache httpd rewrite gates: RewriteCond is httpd only. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_varnish_01",
+      "kind": "varnish_vcl_gates",
+      "prompt": "Write Python that prints len('gates: bereq.url'). Varnish VCL. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_varnish_02",
+      "kind": "varnish_vcl_gates",
+      "prompt": "t='gates: bereq.url'\nprint(t.count('gates'))\n# Varnish VCL gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_varnish_03",
+      "kind": "varnish_vcl_gates",
+      "prompt": "Write Python that prints 21. Varnish VCL gates: bereq.url is cache only. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_apisix_01",
+      "kind": "apisix_plugin_gates",
+      "prompt": "Write Python that prints len('gates: limit-count'). APISIX plugin. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_apisix_02",
+      "kind": "apisix_plugin_gates",
+      "prompt": "t='gates: limit-count'\nprint(t.count('gates'))\n# APISIX plugin gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_apisix_03",
+      "kind": "apisix_plugin_gates",
+      "prompt": "Write Python that prints 23. APISIX plugin gates: limit-count is gateway only. ONLY code.",
+      "expected_stdout": "23\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_tyk_01",
+      "kind": "tyk_middleware_gates",
+      "prompt": "Write Python that prints len('gates: rate_limit'). Tyk middleware. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_tyk_02",
+      "kind": "tyk_middleware_gates",
+      "prompt": "t='gates: rate_limit'\nprint(t.count('gates'))\n# Tyk middleware gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_tyk_03",
+      "kind": "tyk_middleware_gates",
+      "prompt": "Write Python that prints 24. Tyk middleware gates: rate_limit is API only. ONLY code.",
+      "expected_stdout": "24\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_krakend_01",
+      "kind": "krakend_endpoint_gates",
+      "prompt": "Write Python that prints len('gates: qos/ratelimit'). KrakenD endpoint. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_krakend_02",
+      "kind": "krakend_endpoint_gates",
+      "prompt": "t='gates: qos/ratelimit'\nprint(t.count('gates'))\n# KrakenD endpoint gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_krakend_03",
+      "kind": "krakend_endpoint_gates",
+      "prompt": "Write Python that prints 25. KrakenD endpoint gates: qos/ratelimit is gateway only. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_mongo_01",
+      "kind": "mongodb_role_gates",
+      "prompt": "Write Python that prints len('gates: find'). MongoDB role. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_mongo_02",
+      "kind": "mongodb_role_gates",
+      "prompt": "t='gates: find'\nprint(t.count('gates'))\n# MongoDB role gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_mongo_03",
+      "kind": "mongodb_role_gates",
+      "prompt": "Write Python that prints 16. MongoDB role gates: find is DB only. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_cass_01",
+      "kind": "cassandra_table_gates",
+      "prompt": "Write Python that prints len('gates: compaction'). Cassandra table. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_cass_02",
+      "kind": "cassandra_table_gates",
+      "prompt": "t='gates: compaction'\nprint(t.count('gates'))\n# Cassandra table gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_cass_03",
+      "kind": "cassandra_table_gates",
+      "prompt": "Write Python that prints 26. Cassandra table gates: compaction is DB only. ONLY code.",
+      "expected_stdout": "26\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_jenkins_01",
+      "kind": "jenkins_when_gates",
+      "prompt": "Write Python that prints len('gates: expression'). Jenkins when. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_jenkins_02",
+      "kind": "jenkins_when_gates",
+      "prompt": "t='gates: expression'\nprint(t.count('gates'))\n# Jenkins when gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_jenkins_03",
+      "kind": "jenkins_when_gates",
+      "prompt": "Write Python that prints 27. Jenkins when gates: expression is CI only. ONLY code.",
+      "expected_stdout": "27\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_vagrant_01",
+      "kind": "vagrant_provision_gates",
+      "prompt": "Write Python that prints len('gates: ansible'). Vagrant provisioner. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_vagrant_02",
+      "kind": "vagrant_provision_gates",
+      "prompt": "t='gates: ansible'\nprint(t.count('gates'))\n# Vagrant provisioner gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_vagrant_03",
+      "kind": "vagrant_provision_gates",
+      "prompt": "Write Python that prints 19. Vagrant provisioner gates: ansible is image only. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_chef_01",
+      "kind": "chef_guard_gates",
+      "prompt": "Write Python that prints len('gates: not_if'). Chef guard. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_chef_02",
+      "kind": "chef_guard_gates",
+      "prompt": "t='gates: not_if'\nprint(t.count('gates'))\n# Chef guard gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_chef_03",
+      "kind": "chef_guard_gates",
+      "prompt": "Write Python that prints 18. Chef guard gates: not_if is config only. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_pants_01",
+      "kind": "pants_tag_gates",
+      "prompt": "Write Python that prints len('gates: resolve'). Pants tag. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_pants_02",
+      "kind": "pants_tag_gates",
+      "prompt": "t='gates: resolve'\nprint(t.count('gates'))\n# Pants tag gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_pants_03",
+      "kind": "pants_tag_gates",
+      "prompt": "Write Python that prints 20. Pants tag gates: resolve is build only. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_prefect_01",
+      "kind": "prefect_task_gates",
+      "prompt": "Write Python that prints len('gates: retries'). Prefect task. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_prefect_02",
+      "kind": "prefect_task_gates",
+      "prompt": "t='gates: retries'\nprint(t.count('gates'))\n# Prefect task gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_prefect_03",
+      "kind": "prefect_task_gates",
+      "prompt": "Write Python that prints 28. Prefect task gates: retries is orchestration only. ONLY code.",
+      "expected_stdout": "28\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_fastapi_01",
+      "kind": "fastapi_depends_gates",
+      "prompt": "Write Python that prints len('gates: Security'). FastAPI Depends. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_fastapi_02",
+      "kind": "fastapi_depends_gates",
+      "prompt": "t='gates: Security'\nprint(t.count('gates'))\n# FastAPI Depends gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_fastapi_03",
+      "kind": "fastapi_depends_gates",
+      "prompt": "Write Python that prints 29. FastAPI Depends gates: Security is framework only. ONLY code.",
+      "expected_stdout": "29\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_spring_01",
+      "kind": "spring_security_gates",
+      "prompt": "Write Python that prints len('gates: hasAuthority'). Spring Security. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_spring_02",
+      "kind": "spring_security_gates",
+      "prompt": "t='gates: hasAuthority'\nprint(t.count('gates'))\n# Spring Security gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_spring_03",
+      "kind": "spring_security_gates",
+      "prompt": "Write Python that prints 30. Spring Security gates: hasAuthority is security only. ONLY code.",
+      "expected_stdout": "30\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_ctrl_01",
+      "kind": "base_python_control_r14",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r14v_ctrl_02",
+      "kind": "base_python_control_r14",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}

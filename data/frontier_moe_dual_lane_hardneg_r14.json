@@ -1,0 +1,628 @@
+{
+  "method": "heuristic",
+  "n": 52,
+  "hits": 52,
+  "misses": 0,
+  "score": "52/52",
+  "rate": 1.0,
+  "by_family": {
+    "httpd_rewrite_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "varnish_vcl_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "apisix_plugin_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "tyk_middleware_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "krakend_endpoint_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "mongodb_role_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "cassandra_table_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "jenkins_when_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "vagrant_provision_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "chef_guard_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "pants_tag_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "prefect_task_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "fastapi_depends_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "spring_security_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "ent_control_r14": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r14": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r14": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "base_python_control_r14": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "r14_httpd_01",
+      "family": "httpd_rewrite_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: RewriteCond'). Apache httpd rewrite. ONLY c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_httpd_02",
+      "family": "httpd_rewrite_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: RewriteCond'\nprint(t.count('gates'))\n# Apache httpd rewrite gates: — n",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_httpd_03",
+      "family": "httpd_rewrite_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 22. Apache httpd rewrite gates: RewriteCond is httpd on",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_varnish_01",
+      "family": "varnish_vcl_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: bereq.url'). Varnish VCL. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_varnish_02",
+      "family": "varnish_vcl_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: bereq.url'\nprint(t.count('gates'))\n# Varnish VCL gates: — not circuit.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_varnish_03",
+      "family": "varnish_vcl_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 21. Varnish VCL gates: bereq.url is cache only. ONLY co",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_apisix_01",
+      "family": "apisix_plugin_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: limit-count'). APISIX plugin. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_apisix_02",
+      "family": "apisix_plugin_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: limit-count'\nprint(t.count('gates'))\n# APISIX plugin gates: — not circ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_apisix_03",
+      "family": "apisix_plugin_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 23. APISIX plugin gates: limit-count is gateway only. O",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_tyk_01",
+      "family": "tyk_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: rate_limit'). Tyk middleware. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_tyk_02",
+      "family": "tyk_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: rate_limit'\nprint(t.count('gates'))\n# Tyk middleware gates: — not circ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_tyk_03",
+      "family": "tyk_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 24. Tyk middleware gates: rate_limit is API only. ONLY ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_krakend_01",
+      "family": "krakend_endpoint_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: qos/ratelimit'). KrakenD endpoint. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_krakend_02",
+      "family": "krakend_endpoint_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: qos/ratelimit'\nprint(t.count('gates'))\n# KrakenD endpoint gates: — not",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_krakend_03",
+      "family": "krakend_endpoint_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 25. KrakenD endpoint gates: qos/ratelimit is gateway on",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_mongo_01",
+      "family": "mongodb_role_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: find'). MongoDB role. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_mongo_02",
+      "family": "mongodb_role_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: find'\nprint(t.count('gates'))\n# MongoDB role gates: — not circuit. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_mongo_03",
+      "family": "mongodb_role_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 16. MongoDB role gates: find is DB only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_cass_01",
+      "family": "cassandra_table_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: compaction'). Cassandra table. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_cass_02",
+      "family": "cassandra_table_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: compaction'\nprint(t.count('gates'))\n# Cassandra table gates: — not cir",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_cass_03",
+      "family": "cassandra_table_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 26. Cassandra table gates: compaction is DB only. ONLY ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_jenkins_01",
+      "family": "jenkins_when_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: expression'). Jenkins when. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_jenkins_02",
+      "family": "jenkins_when_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: expression'\nprint(t.count('gates'))\n# Jenkins when gates: — not circui",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_jenkins_03",
+      "family": "jenkins_when_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 27. Jenkins when gates: expression is CI only. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_vagrant_01",
+      "family": "vagrant_provision_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: ansible'). Vagrant provisioner. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_vagrant_02",
+      "family": "vagrant_provision_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: ansible'\nprint(t.count('gates'))\n# Vagrant provisioner gates: — not ci",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_vagrant_03",
+      "family": "vagrant_provision_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 19. Vagrant provisioner gates: ansible is image only. O",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_chef_01",
+      "family": "chef_guard_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: not_if'). Chef guard. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_chef_02",
+      "family": "chef_guard_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: not_if'\nprint(t.count('gates'))\n# Chef guard gates: — not circuit. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_chef_03",
+      "family": "chef_guard_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 18. Chef guard gates: not_if is config only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_pants_01",
+      "family": "pants_tag_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: resolve'). Pants tag. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_pants_02",
+      "family": "pants_tag_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: resolve'\nprint(t.count('gates'))\n# Pants tag gates: — not circuit. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_pants_03",
+      "family": "pants_tag_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 20. Pants tag gates: resolve is build only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_prefect_01",
+      "family": "prefect_task_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: retries'). Prefect task. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_prefect_02",
+      "family": "prefect_task_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: retries'\nprint(t.count('gates'))\n# Prefect task gates: — not circuit. ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_prefect_03",
+      "family": "prefect_task_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 28. Prefect task gates: retries is orchestration only. ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_fastapi_01",
+      "family": "fastapi_depends_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Security'). FastAPI Depends. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_fastapi_02",
+      "family": "fastapi_depends_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: Security'\nprint(t.count('gates'))\n# FastAPI Depends gates: — not circu",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_fastapi_03",
+      "family": "fastapi_depends_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 29. FastAPI Depends gates: Security is framework only. ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_spring_01",
+      "family": "spring_security_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: hasAuthority'). Spring Security. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_spring_02",
+      "family": "spring_security_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: hasAuthority'\nprint(t.count('gates'))\n# Spring Security gates: — not c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_spring_03",
+      "family": "spring_security_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 30. Spring Security gates: hasAuthority is security onl",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_ent_01",
+      "family": "ent_control_r14",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelaz",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r14_ent_02",
+      "family": "ent_control_r14",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separabl",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r14_vis_01",
+      "family": "vision_control_r14",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. How many dots are visible? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r14_vis_02",
+      "family": "vision_control_r14",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the chalkboard. How many letters? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r14_base_01",
+      "family": "base_control_r14",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Thanks. Ignore Apache httpd rewrite gates: RewriteCond in the README. No code, n",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r14_base_02",
+      "family": "base_control_r14",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Please ignore the Varnish VCL gates: bereq.url phrase. Chat only — no program, n",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r14_base_03",
+      "family": "base_control_r14",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Hello — Prefect gates: retries is orchestration only. No code, no circuit, no pe",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r14_base_04",
+      "family": "base_control_r14",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Weather update. Spring Security gates: hasAuthority mention. No code, no circuit",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r14_ctrl_01",
+      "family": "base_python_control_r14",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r14_ctrl_02",
+      "family": "base_python_control_r14",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(sum(range(4)))\n# plain. ONLY code.",
+      "ent_adapter_blocked": true
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_r14_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}

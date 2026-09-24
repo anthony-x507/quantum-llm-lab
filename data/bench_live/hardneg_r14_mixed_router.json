@@ -1,0 +1,331 @@
+{
+  "n": 52,
+  "kind": "mixed_router_hardneg",
+  "created": "2026-09-24T18:15:00Z",
+  "round": "r14",
+  "note": "R14 NEW traps (\u2260R1\u2013R13/\u2260LP): httpd_rewrite_gates, varnish_vcl_gates, apisix_plugin_gates, tyk_middleware_gates, krakend_endpoint_gates, mongodb_role_gates, cassandra_table_gates, jenkins_when_gates, vagrant_provision_gates, chef_guard_gates, pants_tag_gates, prefect_task_gates, fastapi_depends_gates, spring_security_gates + controls. HARD: Apache httpd/Varnish/APISIX/Tyk/KrakenD/MongoDB/Cassandra/Jenkins/Vagrant/Chef/Pants/Prefect/FastAPI/Spring gates: scalars. GT harness-only.",
+  "anti_contamination": {
+    "no_main_merge": true,
+    "no_tip_cv_touch": true,
+    "lora_adapter_ro": true,
+    "distinct_from_r9": true,
+    "distinct_from_r10": true,
+    "distinct_from_r11": true,
+    "distinct_from_r12": true,
+    "distinct_from_r13": true
+  },
+  "items": [
+    {
+      "id": "r14_httpd_01",
+      "expected": "python",
+      "family": "httpd_rewrite_gates",
+      "prompt": "Write Python that prints len('gates: RewriteCond'). Apache httpd rewrite. ONLY code."
+    },
+    {
+      "id": "r14_httpd_02",
+      "expected": "python",
+      "family": "httpd_rewrite_gates",
+      "prompt": "t='gates: RewriteCond'\nprint(t.count('gates'))\n# Apache httpd rewrite gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r14_httpd_03",
+      "expected": "python",
+      "family": "httpd_rewrite_gates",
+      "prompt": "Write Python that prints 22. Apache httpd rewrite gates: RewriteCond is httpd only. ONLY code."
+    },
+    {
+      "id": "r14_varnish_01",
+      "expected": "python",
+      "family": "varnish_vcl_gates",
+      "prompt": "Write Python that prints len('gates: bereq.url'). Varnish VCL. ONLY code."
+    },
+    {
+      "id": "r14_varnish_02",
+      "expected": "python",
+      "family": "varnish_vcl_gates",
+      "prompt": "t='gates: bereq.url'\nprint(t.count('gates'))\n# Varnish VCL gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r14_varnish_03",
+      "expected": "python",
+      "family": "varnish_vcl_gates",
+      "prompt": "Write Python that prints 21. Varnish VCL gates: bereq.url is cache only. ONLY code."
+    },
+    {
+      "id": "r14_apisix_01",
+      "expected": "python",
+      "family": "apisix_plugin_gates",
+      "prompt": "Write Python that prints len('gates: limit-count'). APISIX plugin. ONLY code."
+    },
+    {
+      "id": "r14_apisix_02",
+      "expected": "python",
+      "family": "apisix_plugin_gates",
+      "prompt": "t='gates: limit-count'\nprint(t.count('gates'))\n# APISIX plugin gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r14_apisix_03",
+      "expected": "python",
+      "family": "apisix_plugin_gates",
+      "prompt": "Write Python that prints 23. APISIX plugin gates: limit-count is gateway only. ONLY code."
+    },
+    {
+      "id": "r14_tyk_01",
+      "expected": "python",
+      "family": "tyk_middleware_gates",
+      "prompt": "Write Python that prints len('gates: rate_limit'). Tyk middleware. ONLY code."
+    },
+    {
+      "id": "r14_tyk_02",
+      "expected": "python",
+      "family": "tyk_middleware_gates",
+      "prompt": "t='gates: rate_limit'\nprint(t.count('gates'))\n# Tyk middleware gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r14_tyk_03",
+      "expected": "python",
+      "family": "tyk_middleware_gates",
+      "prompt": "Write Python that prints 24. Tyk middleware gates: rate_limit is API only. ONLY code."
+    },
+    {
+      "id": "r14_krakend_01",
+      "expected": "python",
+      "family": "krakend_endpoint_gates",
+      "prompt": "Write Python that prints len('gates: qos/ratelimit'). KrakenD endpoint. ONLY code."
+    },
+    {
+      "id": "r14_krakend_02",
+      "expected": "python",
+      "family": "krakend_endpoint_gates",
+      "prompt": "t='gates: qos/ratelimit'\nprint(t.count('gates'))\n# KrakenD endpoint gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r14_krakend_03",
+      "expected": "python",
+      "family": "krakend_endpoint_gates",
+      "prompt": "Write Python that prints 25. KrakenD endpoint gates: qos/ratelimit is gateway only. ONLY code."
+    },
+    {
+      "id": "r14_mongo_01",
+      "expected": "python",
+      "family": "mongodb_role_gates",
+      "prompt": "Write Python that prints len('gates: find'). MongoDB role. ONLY code."
+    },
+    {
+      "id": "r14_mongo_02",
+      "expected": "python",
+      "family": "mongodb_role_gates",
+      "prompt": "t='gates: find'\nprint(t.count('gates'))\n# MongoDB role gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r14_mongo_03",
+      "expected": "python",
+      "family": "mongodb_role_gates",
+      "prompt": "Write Python that prints 16. MongoDB role gates: find is DB only. ONLY code."
+    },
+    {
+      "id": "r14_cass_01",
+      "expected": "python",
+      "family": "cassandra_table_gates",
+      "prompt": "Write Python that prints len('gates: compaction'). Cassandra table. ONLY code."
+    },
+    {
+      "id": "r14_cass_02",
+      "expected": "python",
+      "family": "cassandra_table_gates",
+      "prompt": "t='gates: compaction'\nprint(t.count('gates'))\n# Cassandra table gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r14_cass_03",
+      "expected": "python",
+      "family": "cassandra_table_gates",
+      "prompt": "Write Python that prints 26. Cassandra table gates: compaction is DB only. ONLY code."
+    },
+    {
+      "id": "r14_jenkins_01",
+      "expected": "python",
+      "family": "jenkins_when_gates",
+      "prompt": "Write Python that prints len('gates: expression'). Jenkins when. ONLY code."
+    },
+    {
+      "id": "r14_jenkins_02",
+      "expected": "python",
+      "family": "jenkins_when_gates",
+      "prompt": "t='gates: expression'\nprint(t.count('gates'))\n# Jenkins when gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r14_jenkins_03",
+      "expected": "python",
+      "family": "jenkins_when_gates",
+      "prompt": "Write Python that prints 27. Jenkins when gates: expression is CI only. ONLY code."
+    },
+    {
+      "id": "r14_vagrant_01",
+      "expected": "python",
+      "family": "vagrant_provision_gates",
+      "prompt": "Write Python that prints len('gates: ansible'). Vagrant provisioner. ONLY code."
+    },
+    {
+      "id": "r14_vagrant_02",
+      "expected": "python",
+      "family": "vagrant_provision_gates",
+      "prompt": "t='gates: ansible'\nprint(t.count('gates'))\n# Vagrant provisioner gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r14_vagrant_03",
+      "expected": "python",
+      "family": "vagrant_provision_gates",
+      "prompt": "Write Python that prints 19. Vagrant provisioner gates: ansible is image only. ONLY code."
+    },
+    {
+      "id": "r14_chef_01",
+      "expected": "python",
+      "family": "chef_guard_gates",
+      "prompt": "Write Python that prints len('gates: not_if'). Chef guard. ONLY code."
+    },
+    {
+      "id": "r14_chef_02",
+      "expected": "python",
+      "family": "chef_guard_gates",
+      "prompt": "t='gates: not_if'\nprint(t.count('gates'))\n# Chef guard gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r14_chef_03",
+      "expected": "python",
+      "family": "chef_guard_gates",
+      "prompt": "Write Python that prints 18. Chef guard gates: not_if is config only. ONLY code."
+    },
+    {
+      "id": "r14_pants_01",
+      "expected": "python",
+      "family": "pants_tag_gates",
+      "prompt": "Write Python that prints len('gates: resolve'). Pants tag. ONLY code."
+    },
+    {
+      "id": "r14_pants_02",
+      "expected": "python",
+      "family": "pants_tag_gates",
+      "prompt": "t='gates: resolve'\nprint(t.count('gates'))\n# Pants tag gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r14_pants_03",
+      "expected": "python",
+      "family": "pants_tag_gates",
+      "prompt": "Write Python that prints 20. Pants tag gates: resolve is build only. ONLY code."
+    },
+    {
+      "id": "r14_prefect_01",
+      "expected": "python",
+      "family": "prefect_task_gates",
+      "prompt": "Write Python that prints len('gates: retries'). Prefect task. ONLY code."
+    },
+    {
+      "id": "r14_prefect_02",
+      "expected": "python",
+      "family": "prefect_task_gates",
+      "prompt": "t='gates: retries'\nprint(t.count('gates'))\n# Prefect task gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r14_prefect_03",
+      "expected": "python",
+      "family": "prefect_task_gates",
+      "prompt": "Write Python that prints 28. Prefect task gates: retries is orchestration only. ONLY code."
+    },
+    {
+      "id": "r14_fastapi_01",
+      "expected": "python",
+      "family": "fastapi_depends_gates",
+      "prompt": "Write Python that prints len('gates: Security'). FastAPI Depends. ONLY code."
+    },
+    {
+      "id": "r14_fastapi_02",
+      "expected": "python",
+      "family": "fastapi_depends_gates",
+      "prompt": "t='gates: Security'\nprint(t.count('gates'))\n# FastAPI Depends gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r14_fastapi_03",
+      "expected": "python",
+      "family": "fastapi_depends_gates",
+      "prompt": "Write Python that prints 29. FastAPI Depends gates: Security is framework only. ONLY code."
+    },
+    {
+      "id": "r14_spring_01",
+      "expected": "python",
+      "family": "spring_security_gates",
+      "prompt": "Write Python that prints len('gates: hasAuthority'). Spring Security. ONLY code."
+    },
+    {
+      "id": "r14_spring_02",
+      "expected": "python",
+      "family": "spring_security_gates",
+      "prompt": "t='gates: hasAuthority'\nprint(t.count('gates'))\n# Spring Security gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r14_spring_03",
+      "expected": "python",
+      "family": "spring_security_gates",
+      "prompt": "Write Python that prints 30. Spring Security gates: hasAuthority is security only. ONLY code."
+    },
+    {
+      "id": "r14_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r14",
+      "prompt": "Responde SOLO JSON v\u00e1lido con n_qubits, gates, domain, label. Bell pair entrelazado."
+    },
+    {
+      "id": "r14_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r14",
+      "prompt": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separable."
+    },
+    {
+      "id": "r14_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r14",
+      "prompt": "Look at the image. How many dots are visible? Only the integer. No circuit."
+    },
+    {
+      "id": "r14_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r14",
+      "prompt": "Look at the chalkboard. How many letters? Only the integer. No circuit."
+    },
+    {
+      "id": "r14_base_01",
+      "expected": "base",
+      "family": "base_control_r14",
+      "prompt": "Thanks. Ignore Apache httpd rewrite gates: RewriteCond in the README. No code, no circuit."
+    },
+    {
+      "id": "r14_base_02",
+      "expected": "base",
+      "family": "base_control_r14",
+      "prompt": "Please ignore the Varnish VCL gates: bereq.url phrase. Chat only \u2014 no program, no circuit."
+    },
+    {
+      "id": "r14_base_03",
+      "expected": "base",
+      "family": "base_control_r14",
+      "prompt": "Hello \u2014 Prefect gates: retries is orchestration only. No code, no circuit, no pennylane."
+    },
+    {
+      "id": "r14_base_04",
+      "expected": "base",
+      "family": "base_control_r14",
+      "prompt": "Weather update. Spring Security gates: hasAuthority mention. No code, no circuit."
+    },
+    {
+      "id": "r14_ctrl_01",
+      "expected": "python",
+      "family": "base_python_control_r14",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code."
+    },
+    {
+      "id": "r14_ctrl_02",
+      "expected": "python",
+      "family": "base_python_control_r14",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code."
+    }
+  ]
+}

@@ -184,6 +184,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R11: Smithy/Ansible/Linkerd/Cilium/Airflow/Kafka/Prometheus/Kyverno/Temporal gates: scalars; Prisma/Consul/Gradle/Zig/Dart held by priors.
     # R12: Traefik/Envoy/NATS/ClickHouse/dbt/Crossplane/Flux/RabbitMQ/ES/Swift/Elixir/Julia/Kong/Spinnaker gates: scalars.
     # R13: Nginx/HAProxy/Caddy/Redis/Postgres/Skaffold/Buildkite/Packer/Salt/Bazel/Dagger/Dagster/Hasura/NestJS gates: scalars.
+    # R14: Apache httpd/Varnish/APISIX/Tyk/KrakenD/MongoDB/Cassandra/Jenkins/Vagrant/Chef/Pants/Prefect/FastAPI/Spring gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -482,7 +483,66 @@ def route_heuristic(prompt: str) -> Lane:
             r"|nestjs\s+.*gates:"
             r"|guard\s+gates:"
             # R13: proxy / LB / webserver / cache / DB / k8s / CI / image / config / build / orchestration / GraphQL / framework prose
-            r"|gates:\s+is\s+(?:proxy|LB|webserver|cache|DB|k8s|CI|image|config|build|orchestration|GraphQL|framework)\b",
+            r"|gates:\s+is\s+(?:proxy|LB|webserver|cache|DB|k8s|CI|image|config|build|orchestration|GraphQL|framework)\b"
+            # R14: Apache httpd rewrite gates: RewriteCond
+            r"|gates\s*:\s*RewriteCond\b"
+            r"|httpd\s+.*gates:"
+            r"|apache\s+.*gates:"
+            r"|rewrite\s+gates:"
+            # R14: Varnish VCL gates: bereq.url
+            r"|gates\s*:\s*bereq\.url\b"
+            r"|varnish\s+.*gates:"
+            r"|vcl\s+.*gates:"
+            # R14: APISIX plugin gates: limit-count
+            r"|gates\s*:\s*limit-count\b"
+            r"|apisix\s+.*gates:"
+            r"|plugin\s+gates:\s*limit"
+            # R14: Tyk middleware gates: rate_limit
+            r"|gates\s*:\s*rate_limit\b"
+            r"|tyk\s+.*gates:"
+            r"|middleware\s+gates:\s*rate"
+            # R14: KrakenD endpoint gates: qos/ratelimit
+            r"|gates\s*:\s*qos/ratelimit\b"
+            r"|krakend\s+.*gates:"
+            r"|endpoint\s+gates:"
+            # R14: MongoDB role gates: find
+            r"|gates\s*:\s*find\b"
+            r"|mongodb\s+.*gates:"
+            r"|mongo\s+.*gates:"
+            # R14: Cassandra table gates: compaction
+            r"|gates\s*:\s*compaction\b"
+            r"|cassandra\s+.*gates:"
+            r"|table\s+gates:\s*compaction"
+            # R14: Jenkins when gates: expression
+            r"|gates\s*:\s*expression\b"
+            r"|jenkins\s+.*gates:"
+            r"|when\s+gates:\s*expression"
+            # R14: Vagrant provisioner gates: ansible
+            r"|gates\s*:\s*ansible\b"
+            r"|vagrant\s+.*gates:"
+            r"|provisioner\s+gates:\s*ansible"
+            # R14: Chef guard gates: not_if
+            r"|gates\s*:\s*not_if\b"
+            r"|chef\s+.*gates:"
+            r"|guard\s+gates:\s*not_if"
+            # R14: Pants tag gates: resolve
+            r"|gates\s*:\s*resolve\b"
+            r"|pants\s+.*gates:"
+            r"|tag\s+gates:\s*resolve"
+            # R14: Prefect task gates: retries
+            r"|gates\s*:\s*retries\b"
+            r"|prefect\s+.*gates:"
+            r"|task\s+gates:\s*retries"
+            # R14: FastAPI Depends gates: Security
+            r"|gates\s*:\s*Security\b"
+            r"|fastapi\s+.*gates:"
+            r"|depends\s+gates:"
+            # R14: Spring Security gates: hasAuthority
+            r"|gates\s*:\s*hasAuthority\b"
+            r"|spring\s+.*gates:"
+            r"|security\s+gates:\s*has"
+            # R14: httpd / cache / gateway / API / DB / CI / image / config / build / orchestration / framework / security prose
+            r"|gates:\s+is\s+(?:httpd|cache|gateway|API|DB|CI|image|config|build|orchestration|framework|security)\b",
             text,
             re.I,
         )
@@ -1102,6 +1162,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r14' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r14.json"
         elif 'r13' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r13.json"
         elif 'r12' in hp:
