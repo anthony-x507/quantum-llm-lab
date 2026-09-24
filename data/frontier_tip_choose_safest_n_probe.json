@@ -116,5 +116,7 @@
     "distance_DZ": "held_by_non_touch",
     "motion": "held_by_non_touch",
     "TTI": "held_by_non_touch"
-  }
+  },
+  "feat_sha": "d3bf16455348c366969fdaa0cf7a0af03163e956",
+  "freeze_id": "codigo_vivo_tip_choose_safest_n_100pct_20260924_142733"
 }

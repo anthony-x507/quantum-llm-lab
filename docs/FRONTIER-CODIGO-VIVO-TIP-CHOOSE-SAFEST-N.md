@@ -5,7 +5,7 @@
 **Base tip SHA:** `9a0de24` (`frontier/codigo-vivo-tip` — read-only; tip-cv may be mid-fold)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-choose-safest-n` (Mac-111)  
 **When:** see freeze manifest `frozen_at_et`  
-**Freeze:** `codigo_vivo_tip_choose_safest_n_100pct_*`  
+**Freeze:** `codigo_vivo_tip_choose_safest_n_100pct_20260924_142733` @ `d3bf164`
 **Scope:** Side-branch only — does **not** touch tip-cv / tip-distance-mid|far / tip-hardneg-r12..r15 / tip-inverse-r3 / tip-circ-expand / tip-future-track* / tip-tti.
 
 ## LOCK (Anthony / Leader)
