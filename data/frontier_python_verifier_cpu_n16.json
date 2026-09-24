@@ -1,0 +1,497 @@
+{
+  "written": "2026-09-24 09:33:49 ",
+  "elapsed_s": 0.828,
+  "branch_hint": "frontier/verifier-python-repair",
+  "proposer": "heuristic",
+  "rounds_max": 2,
+  "timeout_s": 8.0,
+  "model": null,
+  "adapter_ro": null,
+  "items_path": "/Users/anthony/Documents/quantum-llm-lab/data/bench_live/python_items.json",
+  "claims": [
+    "NO quantum advantage",
+    "classical python -I exec oracle"
+  ],
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "rule": "revision gets stderr only; expected_stdout harness-only",
+    "lock": "docs/LOCK-ANTI-CONTAMINATION.md"
+  },
+  "n": 16,
+  "solve_rate_single": 0.0,
+  "solve_rate_loop": 1.0,
+  "delta_solve_rate": 1.0,
+  "solved_single": 0,
+  "solved_loop": 16,
+  "repair_success_rate": 1.0,
+  "repair_helped_n": 16,
+  "failed_single_n": 16,
+  "prompt_touches_gt": false,
+  "prompt_touches_gt_locked_false": true,
+  "per_task": [
+    {
+      "id": "py_arith_01",
+      "kind": "arithmetic",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write a Python program that prints the integer result of 47 + 18. Output ONLY the code, no markdown fences.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write a Python program that prints the integer result of 47 + 18. Output ONLY the code, no markdown fences.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax\n\nPREVIOUS_CODE:\nprint(47 + 18)\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print(47 + 18)\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.",
+        "print(47 + 18)\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "65\n",
+      "proposer": "heuristic"
+    },
+    {
+      "id": "py_arith_02",
+      "kind": "arithmetic",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write a Python program that prints 12 * 11 - 7. ONLY code, no markdown.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write a Python program that prints 12 * 11 - 7. ONLY code, no markdown.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax\n\nPREVIOUS_CODE:\nprint(12 * 11 - 7)\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print(12 * 11 - 7)\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.",
+        "print(12 * 11 - 7)\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "125\n",
+      "proposer": "heuristic"
+    },
+    {
+      "id": "py_arith_03",
+      "kind": "arithmetic",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write a Python program that prints the integer floor of 100 / 7. ONLY code.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write a Python program that prints the integer floor of 100 / 7. ONLY code.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax\n\nPREVIOUS_CODE:\nprint(100//7)\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print(100//7)\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.",
+        "print(100//7)\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "14\n",
+      "proposer": "heuristic"
+    },
+    {
+      "id": "py_arith_04",
+      "kind": "arithmetic",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write a Python program that prints 2 ** 10. ONLY code.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write a Python program that prints 2 ** 10. ONLY code.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax\n\nPREVIOUS_CODE:\nprint(2**10)\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print(2**10)\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.",
+        "print(2**10)\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "1024\n",
+      "proposer": "heuristic"
+    },
+    {
+      "id": "py_alg_01",
+      "kind": "algebra_word",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "A tank starts with 40 liters. It gains 3 liters per minute for 8 minutes. Write Python that prints the final liters as an integer. ONLY code.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "A tank starts with 40 liters. It gains 3 liters per minute for 8 minutes. Write Python that prints the final liters as an integer. ONLY code.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax\n\nPREVIOUS_CODE:\nprint(40 + 3 * 8)\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print(40 + 3 * 8)\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.",
+        "print(40 + 3 * 8)\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "64\n",
+      "proposer": "heuristic"
+    },
+    {
+      "id": "py_alg_02",
+      "kind": "algebra_word",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Solve for x: 5x - 15 = 20. Write Python that prints the integer x. ONLY code.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Solve for x: 5x - 15 = 20. Write Python that prints the integer x. ONLY code.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax\n\nPREVIOUS_CODE:\nprint((20 + 15) // 5)\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print((20 + 15) // 5)\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.",
+        "print((20 + 15) // 5)\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "7\n",
+      "proposer": "heuristic"
+    },
+    {
+      "id": "py_alg_03",
+      "kind": "algebra_word",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Three consecutive integers sum to 54. Write Python that prints the middle integer. ONLY code.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Three consecutive integers sum to 54. Write Python that prints the middle integer. ONLY code.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax\n\nPREVIOUS_CODE:\nprint(54 // 3)\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print(54 // 3)\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.",
+        "print(54 // 3)\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "18\n",
+      "proposer": "heuristic"
+    },
+    {
+      "id": "py_alg_04",
+      "kind": "algebra_word",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "A rectangle has perimeter 30 and width 5. Write Python that prints the length as an integer. ONLY code.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "A rectangle has perimeter 30 and width 5. Write Python that prints the length as an integer. ONLY code.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax\n\nPREVIOUS_CODE:\nprint((30 - 2 * 5) // 2)\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print((30 - 2 * 5) // 2)\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.",
+        "print((30 - 2 * 5) // 2)\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "10\n",
+      "proposer": "heuristic"
+    },
+    {
+      "id": "py_script_01",
+      "kind": "script",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write Python that prints the sum of integers from 1 to 10 inclusive. ONLY code.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write Python that prints the sum of integers from 1 to 10 inclusive. ONLY code.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax\n\nPREVIOUS_CODE:\nprint(sum(range(1, 11)))\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print(sum(range(1, 11)))\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.",
+        "print(sum(range(1, 11)))\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "55\n",
+      "proposer": "heuristic"
+    },
+    {
+      "id": "py_script_02",
+      "kind": "script",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write Python that prints the number of vowels (aeiou) in the lowercase string 'quantum'. ONLY code.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write Python that prints the number of vowels (aeiou) in the lowercase string 'quantum'. ONLY code.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax\n\nPREVIOUS_CODE:\nprint(sum(1 for c in 'quantum' if c in 'aeiou'))\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print(sum(1 for c in 'quantum' if c in 'aeiou'))\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.",
+        "print(sum(1 for c in 'quantum' if c in 'aeiou'))\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "3\n",
+      "proposer": "heuristic"
+    },
+    {
+      "id": "py_script_03",
+      "kind": "script",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write Python that prints the factorial of 6 as an integer. ONLY code.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write Python that prints the factorial of 6 as an integer. ONLY code.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 4\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax\n\nPREVIOUS_CODE:\nimport math\nprint(math.factorial(6))\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "import math\nprint(math.factorial(6))\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.",
+        "import math\nprint(math.factorial(6))\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 4\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "720\n",
+      "proposer": "heuristic"
+    },
+    {
+      "id": "py_script_04",
+      "kind": "script",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Build nums = [3, 8, 2, 6, 1]. Write Python that prints the sum of nums. ONLY code, no markdown.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Build nums = [3, 8, 2, 6, 1]. Write Python that prints the sum of nums. ONLY code, no markdown.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 4\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax\n\nPREVIOUS_CODE:\nnums = [3, 8, 2, 6, 1]\nprint(sum(nums))\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "nums = [3, 8, 2, 6, 1]\nprint(sum(nums))\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.",
+        "nums = [3, 8, 2, 6, 1]\nprint(sum(nums))\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 4\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "20\n",
+      "proposer": "heuristic"
+    },
+    {
+      "id": "py_script_05",
+      "kind": "script",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write a small trial-division primality check for n=97 and print the Boolean result (True or False). ONLY code, no markdown.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write a small trial-division primality check for n=97 and print the Boolean result (True or False). ONLY code, no markdown.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 4\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax\n\nPREVIOUS_CODE:\nn = 97\nprint(n > 1 and all(n % d for d in range(2, int(n**0.5) + 1)))\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "n = 97\nprint(n > 1 and all(n % d for d in range(2, int(n**0.5) + 1)))\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.",
+        "n = 97\nprint(n > 1 and all(n % d for d in range(2, int(n**0.5) + 1)))\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 4\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "True\n",
+      "proposer": "heuristic"
+    },
+    {
+      "id": "py_script_06",
+      "kind": "script",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write Python that prints the reversed string of 'abcde' with no spaces. ONLY code.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write Python that prints the reversed string of 'abcde' with no spaces. ONLY code.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax\n\nPREVIOUS_CODE:\nprint('abcde'[::-1])\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print('abcde'[::-1])\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.",
+        "print('abcde'[::-1])\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "edcba\n",
+      "proposer": "heuristic"
+    },
+    {
+      "id": "py_script_07",
+      "kind": "script",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write Python that prints how many multiples of 3 are in range(1, 20). ONLY code.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write Python that prints how many multiples of 3 are in range(1, 20). ONLY code.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax\n\nPREVIOUS_CODE:\nprint(sum(1 for i in range(1, 20) if i % 3 == 0))\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print(sum(1 for i in range(1, 20) if i % 3 == 0))\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.",
+        "print(sum(1 for i in range(1, 20) if i % 3 == 0))\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "6\n",
+      "proposer": "heuristic"
+    },
+    {
+      "id": "py_script_08",
+      "kind": "script",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write Python: s={'a':1,'b':2,'c':3}; print the sum of values. ONLY code.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write Python: s={'a':1,'b':2,'c':3}; print the sum of values. ONLY code.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 4\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax\n\nPREVIOUS_CODE:\ns={'a':1,'b':2,'c':3}\nprint(sum(s.values()))\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "s={'a':1,'b':2,'c':3}\nprint(sum(s.values()))\n\nHowever, the problem says Output ONLY the code, so we explain here.\nImportant: emit only source.",
+        "s={'a':1,'b':2,'c':3}\nprint(sum(s.values()))\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 4\n    However, the problem says Output ONLY the code, so we explain here.\n                 ^^^^^^^\nSyntaxError: invalid syntax"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "6\n",
+      "proposer": "heuristic"
+    }
+  ]
+}
