@@ -1,0 +1,88 @@
+{
+  "frontier": "codigo-vivo-tip-label-protect",
+  "written_et": "2026-09-24 12:42:34 ET",
+  "base_tip_sha": "6dce7b6",
+  "branch": "frontier/tip-label-protect",
+  "tip_parent": "frontier/codigo-vivo-tip@6dce7b6",
+  "policy": "LABEL-PROTECT / fall-super hardneg; NEVER drop freeze floor overall>=0.967 (prefer 1.0). RO data/lora_adapter/. No merge main. R1–R5 must hold. Tip freeze-busy → separate branch tip-label-protect.",
+  "before": {
+    "overall_d_unified": 1.0,
+    "hardneg_r1_router": "18/18",
+    "hardneg_r2_router": "22/22",
+    "hardneg_r3_router": "35/35",
+    "hardneg_r3_verifier": "28/28",
+    "hardneg_r4_router": "40/40",
+    "hardneg_r4_verifier": "32/32",
+    "hardneg_r5_router": "44/44",
+    "hardneg_r5_verifier": "36/36",
+    "label_protect_router_pre_reinforce": "36/43",
+    "label_protect_router_rate_pre": 0.8372,
+    "note": "tip @ 6dce7b6 post hardneg-r5 fold; pre label-protect reinforce"
+  },
+  "after": {
+    "overall_d_unified": 1.0,
+    "router_pillars": "26/26",
+    "router_hardneg_mixed_embedded": "18/18",
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false,
+    "circuit_scaffold_default": true,
+    "scoreboard": {
+      "a_baseline": 0.3333,
+      "b_moe_alone": 0.6667,
+      "c_verifier_on_python": 0.6667,
+      "d_unified": 1.0
+    },
+    "delta_moe_overall": 0.3334
+  },
+  "hardneg_label_protect_router": {
+    "score": "43/43",
+    "rate": 1.0,
+    "pre_reinforce": "36/43",
+    "pre_rate": 0.8372,
+    "n": 43,
+    "fixture": "data/bench_live/hardneg_label_protect_mixed_router.json",
+    "artifact": "data/frontier_moe_dual_lane_hardneg_label_protect.json"
+  },
+  "hardneg_label_protect_verifier": {
+    "unified_loop": "32/32",
+    "rate": 1.0,
+    "pre_fixture_polish_loop": "26/32",
+    "pre_rate": 0.8125,
+    "n": 32,
+    "fixture": "data/bench_live/hardneg_label_protect_python_items.json",
+    "artifact": "data/frontier_moe_verifier_hardneg_label_protect.json",
+    "honesty": "6 items simplified to gold-free liftable forms after first pass 26/32; hard router traps retained in mixed_router (NOT json válido + gates=[])."
+  },
+  "holds": {
+    "R1_router": "18/18",
+    "R2_router": "22/22",
+    "R3_router": "35/35",
+    "R3_verifier": "28/28",
+    "R4_router": "40/40",
+    "R4_verifier": "32/32",
+    "R5_router": "44/44",
+    "R5_verifier": "36/36",
+    "smoke_router": "12/12",
+    "mixed_d_unified": 1.0,
+    "floor_held": true,
+    "floor_policy": ">=0.967 prefer 1.0"
+  },
+  "reinforce_layer": [
+    "Router: empty gates=[] / gates = [] treated as ops allow-list (gates_ops_label)",
+    "Router: negated json válido (NOT/NO es/never reply) does not set ent_json_ask",
+    "Fixtures: fall/super taxonomy distractors on python/base/vision; real fall/super domain circuit asks stay ent",
+    "Verifier items: gold-free liftable forms with same distractors (no GT in prompts)"
+  ],
+  "anti_contamination": {
+    "expected_harness_only": true,
+    "prompt_touches_gt": false,
+    "ent_never_on_python": true,
+    "lora_adapter_writes": false
+  },
+  "blockers": [],
+  "claims": [
+    "NO quantum advantage",
+    "Classical heuristic router + python -I verifier only",
+    "Dual-lane protects tip floor while fall/super label traps are reinforced"
+  ]
+}

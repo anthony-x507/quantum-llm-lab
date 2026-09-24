@@ -1,0 +1,508 @@
+{
+  "method": "heuristic",
+  "n": 43,
+  "hits": 43,
+  "misses": 0,
+  "score": "43/43",
+  "rate": 1.0,
+  "by_family": {
+    "neg_json_valido_tax": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "gates_empty_eq_fall": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "taxonomy_enum_fall_super": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "freefall_classical": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "superpose_crud": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "sql_yaml_csv_label": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "var_collapsed_separable": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "tax_endpoint_openapi": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "metric_name_distract": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "base_control_tax": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "vision_control_fall_super": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "ent_control_fall_super": {
+      "n": 5,
+      "hits": 5,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "lp_negjson_01",
+      "family": "neg_json_valido_tax",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "payload={'domain':'fall','label':'superposed','gates':[]}\nprint(len(payload))\n# ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_negjson_02",
+      "family": "neg_json_valido_tax",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 3. Esto NO es json válido de circuito; domain label=fal",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_negjson_03",
+      "family": "neg_json_valido_tax",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "blob={'label':'fall_multi','domain':'fall'}\nprint(blob['label'])\n# NOT a json vá",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_negjson_04",
+      "family": "neg_json_valido_tax",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 7*7. Comment: never reply json válido here; label=colla",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_gateseq_01",
+      "family": "gates_empty_eq_fall",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Ignore README gates=[] domain=fall label=superposed. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_gateseq_02",
+      "family": "gates_empty_eq_fall",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "cfg='gates=[]'\nprint(len(cfg))\n# empty gates allow-list; domain label fall is ta",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_gateseq_03",
+      "family": "gates_empty_eq_fall",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 0. Ops: gates = [] with label fall_multi. Not a circuit",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_gateseq_04",
+      "family": "gates_empty_eq_fall",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "line='gates=[] # fall/super taxonomy'\nprint(line.count('='))\n# empty gates=[] op",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_enum_01",
+      "family": "taxonomy_enum_fall_super",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "LABELS=['fall','fall_multi','superposed','collapsed','entangled','separable']\npr",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_enum_02",
+      "family": "taxonomy_enum_fall_super",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('fall|fall_multi|superposed|collapsed'). Domain lab",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_enum_03",
+      "family": "taxonomy_enum_fall_super",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "labels=['fall','superposed','entangled']\nprint(labels.index('fall'))\n# enum inde",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_enum_04",
+      "family": "taxonomy_enum_fall_super",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(len('fall,superposed,collapsed'.split(',')))\n# CSV label tokens. ONLY code",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_freefall_01",
+      "family": "freefall_classical",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "def fall_distance(t):\n    return int(0.5*9.81*t*t)\nprint(fall_distance(4))\n# cla",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_freefall_02",
+      "family": "freefall_classical",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(int(0.5*9.81*3*3))\n# Classical free-fall toy — domain word fall is physics",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_freefall_03",
+      "family": "freefall_classical",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(int(0.5*9.81*2*2))\n# Caída libre clásica — no circuito cuántico. ONLY code",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_super_01",
+      "family": "superpose_crud",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "a={'x':1}; b={'y':2}; print(len({**a,**b}))\n# superpose/merge metaphor for dicts",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_super_02",
+      "family": "superpose_crud",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print('superposition'.count('o'))\n# Metaphor only — no circuit. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_super_03",
+      "family": "superpose_crud",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(len('superposición'))\n# Palabra de taxonomía, no circuito. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_sql_01",
+      "family": "sql_yaml_csv_label",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "q=\"SELECT COUNT(*) FROM scenes WHERE label='fall'\"\nprint(len(q))\n# SQL label fil",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_yaml_01",
+      "family": "sql_yaml_csv_label",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(len('label: fall'))\n# YAML taxonomy line, not quantum. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_json_01",
+      "family": "sql_yaml_csv_label",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "import json\nprint(json.loads('{\"domain\":\"fall\",\"label\":\"superposed\"}')['domain']",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_re_01",
+      "family": "sql_yaml_csv_label",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(len(__import__('re').findall('fall|super', 'fall_multi and superposed')))\n",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_var_01",
+      "family": "var_collapsed_separable",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "collapsed_flags=[0,1,0,1]\nprint(sum(collapsed_flags))\n# classical bit flags name",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_var_02",
+      "family": "var_collapsed_separable",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "separable = True\nprint(int(separable))\n# boolean flag name — not entanglement la",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_var_03",
+      "family": "var_collapsed_separable",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "superposed_layers=['a','b','c']\nprint(len(superposed_layers))\n# list name superp",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_api_01",
+      "family": "tax_endpoint_openapi",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Reply JSON only for /v1/domain-labels body {domain:fall,label:fall_multi}. Taxon",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_api_02",
+      "family": "tax_endpoint_openapi",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "OpenAPI schema property domain_label enum fall|superposed; n_qubits deprecated. ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_api_03",
+      "family": "tax_endpoint_openapi",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(len('domain_label'))\n# OpenAPI field name string — not a circuit domain la",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_met_01",
+      "family": "metric_name_distract",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(len('label_acc'))\n# Metric key string — not a circuit label. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_met_02",
+      "family": "metric_name_distract",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "metrics={'jev':1.0,'label_acc':0.9}\nprint(int(metrics['jev']))\n# metric dict; pr",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_met_03",
+      "family": "metric_name_distract",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print('unitary'.upper())\n# String toy — no quantum circuit. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_base_01",
+      "family": "base_control_tax",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "README: domain labels are fall, fall_multi, superposed, collapsed, entangled, se",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_base_02",
+      "family": "base_control_tax",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Thanks. The domain label field uses fall|superposed. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_base_03",
+      "family": "base_control_tax",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Docs mention qubit only as metaphor; real field is domain label fall|super. No c",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_base_04",
+      "family": "base_control_tax",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Please ignore domain label=fall in the docs. No code, no circuit, just say ok.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_vis_01",
+      "family": "vision_control_fall_super",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. Free-fall trajectory: how many dots? Only the integer. No cir",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_vis_02",
+      "family": "vision_control_fall_super",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the whiteboard. It lists domain labels fall and superposed. How many wor",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_vis_03",
+      "family": "vision_control_fall_super",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the chalkboard. The word superposición is written. How many letters? Onl",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_ent_01",
+      "family": "ent_control_fall_super",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Dominio fall, labe",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_ent_02",
+      "family": "ent_control_fall_super",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Dominio superposit",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_ent_03",
+      "family": "ent_control_fall_super",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Reply with valid JSON: n_qubits, gates, domain, label. domain fall, label collap",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_ent_04",
+      "family": "ent_control_fall_super",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit separable H",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_ent_05",
+      "family": "ent_control_fall_super",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Responde SOLO JSON válido con claves n_qubits, gates, domain, label. Bell pair e",
+      "ent_adapter_blocked": false
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_label_protect_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}

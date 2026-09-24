@@ -5,6 +5,10 @@ Plan SSOT: [`docs/PLAN-MAESTRO-PARTE-1.md`](docs/PLAN-MAESTRO-PARTE-1.md).
 
 ## 2026-09-24 — R5 tip freeze codigo-vivo-tip @ 6dce7b6
 Freeze `codigo_vivo_tip_r5_100pct_20260924_123727`. CPU unified **1.0**; R1–R5 18/18·22/22·35/35·40/40·44/44; R3/R4/R5 verifier 28/28·32/32·36/36; wired_to_vlm; mlx largern + ent-sep + own-delta cited. Prior freezes **retained** (platform / mlx_r3 / post_polish / polish_r5). Blockers none. See SCOREBOARD.
+## 2026-09-24 — tip-label-protect (fall/super)
+Branch `frontier/tip-label-protect` from tip `6dce7b6` (tip freeze-busy → separate).  
+Router pre→post **36/43→43/43**; verifier **32/32**; mixed (d) **1.0** held ≥0.967; R1–R5 held.  
+Reinforce: empty `gates=[]` ops + negated `json válido`. Adapters RO. See `docs/FRONTIER-CODIGO-VIVO-TIP-LABEL-PROTECT.md`.
 
 ## 2026-09-24 — fold tip-hardneg-r5 → codigo-vivo-tip
 Rebase `5dfaf51`/`9a12fbc` onto `b1c7091` → `49d7ccc`+`55bdfb7` FF. CPU unified **1.0**; R1–R5 18/18·22/22·35/35·40/40·44/44; R3/R4/R5 verifier 28/28·32/32·36/36; `wired_to_vlm=true`. Freezes retained incl. post_polish + polish_r5. See SCOREBOARD + TIP-R5.

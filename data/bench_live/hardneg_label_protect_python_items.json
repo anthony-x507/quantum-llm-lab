@@ -1,0 +1,234 @@
+{
+  "n": 32,
+  "kind": "hardneg_label_protect_python_items",
+  "created": "2026-09-24 12:45:00 ET",
+  "round": "label_protect",
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-LABEL-PROTECT.md",
+  "items": [
+    {
+      "id": "lpv_negjson_01",
+      "kind": "neg_json_valido_tax",
+      "prompt": "Write Python that prints 3. Taxonomy payload domain=fall label=superposed gates=[] — NOT json válido circuit. ONLY code.",
+      "expected_stdout": "3\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_negjson_02",
+      "kind": "neg_json_valido_tax",
+      "prompt": "Write Python that prints 3. Esto NO es json válido de circuito; domain label=fall. ONLY code.",
+      "expected_stdout": "3\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_negjson_03",
+      "kind": "neg_json_valido_tax",
+      "prompt": "Write Python that prints 7*7. never reply json válido; label=collapsed enum. ONLY code.",
+      "expected_stdout": "49\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_gateseq_01",
+      "kind": "gates_empty_eq_fall",
+      "prompt": "cfg='gates=[]'\nprint(len(cfg))\n# empty gates allow-list; label fall taxonomy. ONLY code.",
+      "expected_stdout": "8\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_gateseq_02",
+      "kind": "gates_empty_eq_fall",
+      "prompt": "Write Python that prints 0. Ops gates = [] with label fall_multi. ONLY code.",
+      "expected_stdout": "0\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_gateseq_03",
+      "kind": "gates_empty_eq_fall",
+      "prompt": "line='gates=[] # fall/super'\nprint(line.count('='))\n# empty gates=[] marker. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_enum_01",
+      "kind": "taxonomy_enum_fall_super",
+      "prompt": "LABELS=['fall','fall_multi','superposed','collapsed','entangled','separable']\nprint(len(LABELS))\n# taxonomy. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_enum_02",
+      "kind": "taxonomy_enum_fall_super",
+      "prompt": "print(len('fall|fall_multi|superposed|collapsed'))\n# domain label enum string. ONLY code.",
+      "expected_stdout": "36\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_enum_03",
+      "kind": "taxonomy_enum_fall_super",
+      "prompt": "labels=['fall','superposed','entangled']\nprint(labels.index('fall'))\n# enum index. ONLY code.",
+      "expected_stdout": "0\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_enum_04",
+      "kind": "taxonomy_enum_fall_super",
+      "prompt": "print(len('fall,superposed,collapsed'.split(',')))\n# CSV tokens. ONLY code.",
+      "expected_stdout": "3\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_fall_01",
+      "kind": "freefall_classical",
+      "prompt": "def fall_distance(t):\n    return int(0.5*9.81*t*t)\nprint(fall_distance(4))\n# classical free-fall. ONLY code.",
+      "expected_stdout": "78\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_fall_02",
+      "kind": "freefall_classical",
+      "prompt": "print(int(0.5*9.81*3*3))\n# Classical free-fall. ONLY code.",
+      "expected_stdout": "44\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_fall_03",
+      "kind": "freefall_classical",
+      "prompt": "print(int(0.5*9.81*2*2))\n# Caída libre. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_super_01",
+      "kind": "superpose_crud",
+      "prompt": "Write Python that prints 2. Comment: superpose/merge two dicts metaphor — CRUD, no circuit. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_super_02",
+      "kind": "superpose_crud",
+      "prompt": "print('superposition'.count('o'))\n# Metaphor. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_super_03",
+      "kind": "superpose_crud",
+      "prompt": "print(len('superposición'))\n# Taxonomía. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_sql_01",
+      "kind": "sql_yaml_csv_label",
+      "prompt": "q=\"SELECT COUNT(*) FROM scenes WHERE label='fall'\"\nprint(len(q))\n# SQL. ONLY code.",
+      "expected_stdout": "46\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_yaml_01",
+      "kind": "sql_yaml_csv_label",
+      "prompt": "print(len('label: fall'))\n# YAML taxonomy. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_json_01",
+      "kind": "sql_yaml_csv_label",
+      "prompt": "import json\nprint(json.loads('{\"domain\":\"fall\",\"label\":\"superposed\"}')['domain'])\n# taxonomy. ONLY code.",
+      "expected_stdout": "fall\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_re_01",
+      "kind": "sql_yaml_csv_label",
+      "prompt": "Write Python that prints 2. Taxonomy regex fall|super over 'fall_multi and superposed' — not a circuit. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_var_01",
+      "kind": "var_collapsed_separable",
+      "prompt": "collapsed_flags=[0,1,0,1]\nprint(sum(collapsed_flags))\n# classical flags. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_var_02",
+      "kind": "var_collapsed_separable",
+      "prompt": "Write Python that prints int(True). Boolean flag named separable is classical — not entanglement label. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_var_03",
+      "kind": "var_collapsed_separable",
+      "prompt": "superposed_layers=['a','b','c']\nprint(len(superposed_layers))\n# list name. ONLY code.",
+      "expected_stdout": "3\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_api_01",
+      "kind": "tax_endpoint_openapi",
+      "prompt": "Taxonomy API distractor. Write Python that prints 6*6. ONLY code.",
+      "expected_stdout": "36\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_api_02",
+      "kind": "tax_endpoint_openapi",
+      "prompt": "OpenAPI domain_label distractor. Write Python that prints 2. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_api_03",
+      "kind": "tax_endpoint_openapi",
+      "prompt": "print(len('domain_label'))\n# Field name string. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_met_01",
+      "kind": "metric_name_distract",
+      "prompt": "print(len('label_acc'))\n# Metric key. ONLY code.",
+      "expected_stdout": "9\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_met_02",
+      "kind": "metric_name_distract",
+      "prompt": "Write Python that prints int(1.0). Metric dict jev/label_acc distractor; prior domain fall — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_met_03",
+      "kind": "metric_name_distract",
+      "prompt": "Write Python that prints len('UNITARY'). String toy unitary.upper() — no quantum circuit. ONLY code.",
+      "expected_stdout": "7\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_ctrl_01",
+      "kind": "base_python_control",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_ctrl_02",
+      "kind": "base_python_control",
+      "prompt": "Write Python that prints len('hello'). ONLY code.",
+      "expected_stdout": "5\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "lpv_ctrl_03",
+      "kind": "base_python_control",
+      "prompt": "print(sum(range(5)))\n# plain. ONLY code.",
+      "expected_stdout": "10\n",
+      "timeout_s": 5
+    }
+  ],
+  "note": "python items: hard router traps live in mixed_router; verifier items use gold-free liftable forms with same fall/super distractors"
+}

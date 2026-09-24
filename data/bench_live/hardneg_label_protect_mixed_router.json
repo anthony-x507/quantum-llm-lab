@@ -1,0 +1,268 @@
+{
+  "n": 43,
+  "kind": "hardneg_label_protect_mixed_router",
+  "created": "2026-09-24 12:40:00 ET",
+  "round": "label_protect",
+  "note": "LABEL-PROTECT / fall-super negatives (≠R1–R5): neg_json_valido_tax, gates_empty_eq_fall, taxonomy_enum_fall_super, freefall_classical, superpose_crud, sql_yaml_csv_label, var_collapsed_separable, tax_endpoint_openapi, metric_name_distract + base/vision/ent controls. HARD: NOT json válido near taxonomy; gates=[] empty-eq ops next to fall/super labels. GT harness-only.",
+  "anti_contamination": "expected lane is harness-only; never injected into route()",
+  "items": [
+    {
+      "id": "lp_negjson_01",
+      "expected": "python",
+      "family": "neg_json_valido_tax",
+      "prompt": "payload={'domain':'fall','label':'superposed','gates':[]}\nprint(len(payload))\n# taxonomy JSON with empty gates — NOT json válido circuit. ONLY code."
+    },
+    {
+      "id": "lp_negjson_02",
+      "expected": "python",
+      "family": "neg_json_valido_tax",
+      "prompt": "Write Python that prints 3. Esto NO es json válido de circuito; domain label=fall es taxonomía. ONLY code."
+    },
+    {
+      "id": "lp_negjson_03",
+      "expected": "python",
+      "family": "neg_json_valido_tax",
+      "prompt": "blob={'label':'fall_multi','domain':'fall'}\nprint(blob['label'])\n# NOT a json válido PennyLane emit — taxonomy only. ONLY code."
+    },
+    {
+      "id": "lp_negjson_04",
+      "expected": "python",
+      "family": "neg_json_valido_tax",
+      "prompt": "Write Python that prints 7*7. Comment: never reply json válido here; label=collapsed is an enum. ONLY code."
+    },
+    {
+      "id": "lp_gateseq_01",
+      "expected": "base",
+      "family": "gates_empty_eq_fall",
+      "prompt": "Ignore README gates=[] domain=fall label=superposed. No code, no circuit."
+    },
+    {
+      "id": "lp_gateseq_02",
+      "expected": "python",
+      "family": "gates_empty_eq_fall",
+      "prompt": "cfg='gates=[]'\nprint(len(cfg))\n# empty gates allow-list; domain label fall is taxonomy. ONLY code."
+    },
+    {
+      "id": "lp_gateseq_03",
+      "expected": "python",
+      "family": "gates_empty_eq_fall",
+      "prompt": "Write Python that prints 0. Ops: gates = [] with label fall_multi. Not a circuit. ONLY code."
+    },
+    {
+      "id": "lp_gateseq_04",
+      "expected": "python",
+      "family": "gates_empty_eq_fall",
+      "prompt": "line='gates=[] # fall/super taxonomy'\nprint(line.count('='))\n# empty gates=[] ops marker next to fall/super labels. ONLY code."
+    },
+    {
+      "id": "lp_enum_01",
+      "expected": "python",
+      "family": "taxonomy_enum_fall_super",
+      "prompt": "LABELS=['fall','fall_multi','superposed','collapsed','entangled','separable']\nprint(len(LABELS))\n# taxonomy enum length. ONLY code."
+    },
+    {
+      "id": "lp_enum_02",
+      "expected": "python",
+      "family": "taxonomy_enum_fall_super",
+      "prompt": "Write Python that prints len('fall|fall_multi|superposed|collapsed'). Domain label enum string. ONLY code."
+    },
+    {
+      "id": "lp_enum_03",
+      "expected": "python",
+      "family": "taxonomy_enum_fall_super",
+      "prompt": "labels=['fall','superposed','entangled']\nprint(labels.index('fall'))\n# enum index — not a Bell circuit. ONLY code."
+    },
+    {
+      "id": "lp_enum_04",
+      "expected": "python",
+      "family": "taxonomy_enum_fall_super",
+      "prompt": "print(len('fall,superposed,collapsed'.split(',')))\n# CSV label tokens. ONLY code."
+    },
+    {
+      "id": "lp_freefall_01",
+      "expected": "python",
+      "family": "freefall_classical",
+      "prompt": "def fall_distance(t):\n    return int(0.5*9.81*t*t)\nprint(fall_distance(4))\n# classical free-fall. ONLY code."
+    },
+    {
+      "id": "lp_freefall_02",
+      "expected": "python",
+      "family": "freefall_classical",
+      "prompt": "print(int(0.5*9.81*3*3))\n# Classical free-fall toy — domain word fall is physics not label. ONLY code."
+    },
+    {
+      "id": "lp_freefall_03",
+      "expected": "python",
+      "family": "freefall_classical",
+      "prompt": "print(int(0.5*9.81*2*2))\n# Caída libre clásica — no circuito cuántico. ONLY code."
+    },
+    {
+      "id": "lp_super_01",
+      "expected": "python",
+      "family": "superpose_crud",
+      "prompt": "a={'x':1}; b={'y':2}; print(len({**a,**b}))\n# superpose/merge metaphor for dicts. ONLY code."
+    },
+    {
+      "id": "lp_super_02",
+      "expected": "python",
+      "family": "superpose_crud",
+      "prompt": "print('superposition'.count('o'))\n# Metaphor only — no circuit. ONLY code."
+    },
+    {
+      "id": "lp_super_03",
+      "expected": "python",
+      "family": "superpose_crud",
+      "prompt": "print(len('superposición'))\n# Palabra de taxonomía, no circuito. ONLY code."
+    },
+    {
+      "id": "lp_sql_01",
+      "expected": "python",
+      "family": "sql_yaml_csv_label",
+      "prompt": "q=\"SELECT COUNT(*) FROM scenes WHERE label='fall'\"\nprint(len(q))\n# SQL label filter. ONLY code."
+    },
+    {
+      "id": "lp_yaml_01",
+      "expected": "python",
+      "family": "sql_yaml_csv_label",
+      "prompt": "print(len('label: fall'))\n# YAML taxonomy line, not quantum. ONLY code."
+    },
+    {
+      "id": "lp_json_01",
+      "expected": "python",
+      "family": "sql_yaml_csv_label",
+      "prompt": "import json\nprint(json.loads('{\"domain\":\"fall\",\"label\":\"superposed\"}')['domain'])\n# taxonomy parse. ONLY code."
+    },
+    {
+      "id": "lp_re_01",
+      "expected": "python",
+      "family": "sql_yaml_csv_label",
+      "prompt": "print(len(__import__('re').findall('fall|super', 'fall_multi and superposed')))\n# taxonomy regex. ONLY code."
+    },
+    {
+      "id": "lp_var_01",
+      "expected": "python",
+      "family": "var_collapsed_separable",
+      "prompt": "collapsed_flags=[0,1,0,1]\nprint(sum(collapsed_flags))\n# classical bit flags named collapsed. ONLY code."
+    },
+    {
+      "id": "lp_var_02",
+      "expected": "python",
+      "family": "var_collapsed_separable",
+      "prompt": "separable = True\nprint(int(separable))\n# boolean flag name — not entanglement label. ONLY code."
+    },
+    {
+      "id": "lp_var_03",
+      "expected": "python",
+      "family": "var_collapsed_separable",
+      "prompt": "superposed_layers=['a','b','c']\nprint(len(superposed_layers))\n# list name superposed — CRUD layers. ONLY code."
+    },
+    {
+      "id": "lp_api_01",
+      "expected": "python",
+      "family": "tax_endpoint_openapi",
+      "prompt": "Reply JSON only for /v1/domain-labels body {domain:fall,label:fall_multi}. Taxonomy API. Write Python that prints 6*6. ONLY code."
+    },
+    {
+      "id": "lp_api_02",
+      "expected": "python",
+      "family": "tax_endpoint_openapi",
+      "prompt": "OpenAPI schema property domain_label enum fall|superposed; n_qubits deprecated. Reply JSON only for /labels. Write Python that prints 2. ONLY code."
+    },
+    {
+      "id": "lp_api_03",
+      "expected": "python",
+      "family": "tax_endpoint_openapi",
+      "prompt": "print(len('domain_label'))\n# OpenAPI field name string — not a circuit domain label ask. ONLY code."
+    },
+    {
+      "id": "lp_met_01",
+      "expected": "python",
+      "family": "metric_name_distract",
+      "prompt": "print(len('label_acc'))\n# Metric key string — not a circuit label. ONLY code."
+    },
+    {
+      "id": "lp_met_02",
+      "expected": "python",
+      "family": "metric_name_distract",
+      "prompt": "metrics={'jev':1.0,'label_acc':0.9}\nprint(int(metrics['jev']))\n# metric dict; prior domain was fall — not circuit emit. ONLY code."
+    },
+    {
+      "id": "lp_met_03",
+      "expected": "python",
+      "family": "metric_name_distract",
+      "prompt": "print('unitary'.upper())\n# String toy — no quantum circuit. ONLY code."
+    },
+    {
+      "id": "lp_base_01",
+      "expected": "base",
+      "family": "base_control_tax",
+      "prompt": "README: domain labels are fall, fall_multi, superposed, collapsed, entangled, separable. No circuit, no pennylane."
+    },
+    {
+      "id": "lp_base_02",
+      "expected": "base",
+      "family": "base_control_tax",
+      "prompt": "Thanks. The domain label field uses fall|superposed. No code, no circuit."
+    },
+    {
+      "id": "lp_base_03",
+      "expected": "base",
+      "family": "base_control_tax",
+      "prompt": "Docs mention qubit only as metaphor; real field is domain label fall|super. No code, no circuit."
+    },
+    {
+      "id": "lp_base_04",
+      "expected": "base",
+      "family": "base_control_tax",
+      "prompt": "Please ignore domain label=fall in the docs. No code, no circuit, just say ok."
+    },
+    {
+      "id": "lp_vis_01",
+      "expected": "vision",
+      "family": "vision_control_fall_super",
+      "prompt": "Look at the image. Free-fall trajectory: how many dots? Only the integer. No circuit."
+    },
+    {
+      "id": "lp_vis_02",
+      "expected": "vision",
+      "family": "vision_control_fall_super",
+      "prompt": "Look at the whiteboard. It lists domain labels fall and superposed. How many words? Only the integer."
+    },
+    {
+      "id": "lp_vis_03",
+      "expected": "vision",
+      "family": "vision_control_fall_super",
+      "prompt": "Look at the chalkboard. The word superposición is written. How many letters? Only the integer. No circuit."
+    },
+    {
+      "id": "lp_ent_01",
+      "expected": "ent",
+      "family": "ent_control_fall_super",
+      "prompt": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Dominio fall, label fall_multi."
+    },
+    {
+      "id": "lp_ent_02",
+      "expected": "ent",
+      "family": "ent_control_fall_super",
+      "prompt": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Dominio superposition, label superposed."
+    },
+    {
+      "id": "lp_ent_03",
+      "expected": "ent",
+      "family": "ent_control_fall_super",
+      "prompt": "Reply with valid JSON: n_qubits, gates, domain, label. domain fall, label collapsed, one qubit measure."
+    },
+    {
+      "id": "lp_ent_04",
+      "expected": "ent",
+      "family": "ent_control_fall_super",
+      "prompt": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit separable HH; label separable."
+    },
+    {
+      "id": "lp_ent_05",
+      "expected": "ent",
+      "family": "ent_control_fall_super",
+      "prompt": "Responde SOLO JSON válido con claves n_qubits, gates, domain, label. Bell pair entrelazado."
+    }
+  ]
+}

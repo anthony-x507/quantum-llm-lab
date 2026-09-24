@@ -157,6 +157,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R4: gates=hadamard_cleanup / gates: [] ops-config labels are NOT circuit asks.
     # R4: OpenAPI/schema "reply JSON only" near a deprecated n_qubits *field* is NOT ent.
     # R5: gates=[nonempty] k8s/helm allow-lists, redis gates:key paths, protobuf gates=N; are NOT ent.
+    # label-protect: empty gates=[] ops + negated "json válido" near fall/super taxonomy are NOT ent.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -169,6 +170,8 @@ def route_heuristic(prompt: str) -> Lane:
             # R5: nonempty gates=[...] / gates: [...] ops allow-lists (k8s/helm)
             r"|gates\s*=\s*\[[^\]]+\]"
             r"|gates\s*:\s*\[[^\]]+\]"
+            # label-protect: empty gates=[] / gates = [] ops marker (fall/super taxonomy)
+            r"|gates\s*=\s*\[\s*\]"
             # R5: redis/key path gates:session:42 (colon key, not JSON)
             r"|gates\s*:\s*[A-Za-z_][\w\-]*(?:\s*:\s*[\w\-]+)+"
             # R5: protobuf field "gates = 2;" / "Gate gates = N"
@@ -182,7 +185,19 @@ def route_heuristic(prompt: str) -> Lane:
             re.I,
         )
     )
-    json_valido = bool(re.search(r"\bjson\s+v[aá]lido\b", text, re.I))
+    # label-protect: "json válido" only when not explicitly negated (NOT/NO es/never reply)
+    json_valido = bool(re.search(r"\bjson\s+v[aá]lido\b", text, re.I)) and not bool(
+        re.search(
+            r"(?:"
+            r"not\s+(?:a\s+)?json\s+v[aá]lido|"
+            r"never\s+reply\s+json\s+v[aá]lido|"
+            r"no\s+es\s+(?:un\s+)?json\s+v[aá]lido|"
+            r"\bnot\s+json\s+v[aá]lido\b"
+            r")",
+            text,
+            re.I,
+        )
+    )
     schema_field_distract = bool(
         re.search(
             r"(?:openapi|schema|deprecated|property|field)\s+"
@@ -719,7 +734,9 @@ def main() -> int:
         )
         out = args.out if args.out != SMOKE_OUT else HARDNEG_OUT
         hp = str(args.hardneg_path).lower()
-        if 'r5' in hp:
+        if 'label_protect' in hp or 'label-protect' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r5' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r5.json"
         elif 'r4' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r4.json"

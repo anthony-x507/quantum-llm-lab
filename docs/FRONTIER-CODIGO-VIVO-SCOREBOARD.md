@@ -514,3 +514,11 @@ Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. 
 Anti-contam **CLEAN**. Adapters RO unchanged. Platform / mlx_r3 / polish_r4 / **post_polish** / polish_r5 freezes **retained**.
 
 **R5 tip freeze (100pct):** `codigo_vivo_tip_r5_100pct_20260924_123727` @ tip `6dce7b6` · 2026-09-24 12:37:27 ET · cites R1–R5 + mlx largern + ent-sep + own-delta + wired_to_vlm · blockers **none**.
+
+## Label-protect polish (branch `frontier/tip-label-protect`, not yet folded)
+
+**When:** 2026-09-24 ~12:45 ET · Mac-111 · base tip `6dce7b6`  
+**Δ:** router fall/super taxonomy hardneg **36/43→43/43**; verifier **32/32**; mixed (d) **1.0 held**. R1–R5 held.  
+**Honesty:** dual-lane + negated `json válido` / empty `gates=[]` protect python/base from ent mis-route on fall/super label words; real fall/super circuit JSON asks stay ent.  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-LABEL-PROTECT.md`  
+**Policy:** tip freeze-busy → no FF yet; never abandon platform/post_polish/R5 freezes.

@@ -7,6 +7,11 @@
 
 ---
 
+## 2026-09-24 — tip-label-protect (fall/super)
+Branch `frontier/tip-label-protect` from tip `6dce7b6` (tip freeze-busy → separate).  
+Router pre→post **36/43→43/43**; verifier **32/32**; mixed (d) **1.0** held ≥0.967; R1–R5 held.  
+Reinforce: empty `gates=[]` ops + negated `json válido`. Adapters RO. See `docs/FRONTIER-CODIGO-VIVO-TIP-LABEL-PROTECT.md`.
+
 ## Tip hardneg R5 (2026-09-24) — FOLDED
 
 Branch `frontier/tip-hardneg-r5` rebased `9a12fbc`→`49d7ccc` onto tip `b1c7091` (post_polish); FF into `frontier/codigo-vivo-tip`. CPU re-smoke unified **1.0**; R1–R5 routers 18/18·22/22·35/35·40/40·44/44; R3/R4/R5 verifier 28/28·32/32·36/36. Anti-contam CLEAN. Freezes retained incl. post_polish. See `docs/FRONTIER-CODIGO-VIVO-TIP-R5.md`.
