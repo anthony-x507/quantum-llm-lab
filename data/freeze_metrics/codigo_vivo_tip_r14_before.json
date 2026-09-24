@@ -1,0 +1,224 @@
+{
+  "phase": "before",
+  "hits": 16,
+  "n": 52,
+  "rate": 0.3076923076923077,
+  "misses": [
+    {
+      "id": "r14_httpd_01",
+      "exp": "python",
+      "got": "ent",
+      "family": "httpd_rewrite_gates"
+    },
+    {
+      "id": "r14_httpd_02",
+      "exp": "python",
+      "got": "ent",
+      "family": "httpd_rewrite_gates"
+    },
+    {
+      "id": "r14_httpd_03",
+      "exp": "python",
+      "got": "ent",
+      "family": "httpd_rewrite_gates"
+    },
+    {
+      "id": "r14_varnish_01",
+      "exp": "python",
+      "got": "ent",
+      "family": "varnish_vcl_gates"
+    },
+    {
+      "id": "r14_varnish_02",
+      "exp": "python",
+      "got": "ent",
+      "family": "varnish_vcl_gates"
+    },
+    {
+      "id": "r14_varnish_03",
+      "exp": "python",
+      "got": "ent",
+      "family": "varnish_vcl_gates"
+    },
+    {
+      "id": "r14_apisix_01",
+      "exp": "python",
+      "got": "ent",
+      "family": "apisix_plugin_gates"
+    },
+    {
+      "id": "r14_tyk_01",
+      "exp": "python",
+      "got": "ent",
+      "family": "tyk_middleware_gates"
+    },
+    {
+      "id": "r14_krakend_01",
+      "exp": "python",
+      "got": "ent",
+      "family": "krakend_endpoint_gates"
+    },
+    {
+      "id": "r14_krakend_02",
+      "exp": "python",
+      "got": "ent",
+      "family": "krakend_endpoint_gates"
+    },
+    {
+      "id": "r14_krakend_03",
+      "exp": "python",
+      "got": "ent",
+      "family": "krakend_endpoint_gates"
+    },
+    {
+      "id": "r14_mongo_01",
+      "exp": "python",
+      "got": "ent",
+      "family": "mongodb_role_gates"
+    },
+    {
+      "id": "r14_mongo_02",
+      "exp": "python",
+      "got": "ent",
+      "family": "mongodb_role_gates"
+    },
+    {
+      "id": "r14_mongo_03",
+      "exp": "python",
+      "got": "ent",
+      "family": "mongodb_role_gates"
+    },
+    {
+      "id": "r14_cass_01",
+      "exp": "python",
+      "got": "ent",
+      "family": "cassandra_table_gates"
+    },
+    {
+      "id": "r14_jenkins_01",
+      "exp": "python",
+      "got": "ent",
+      "family": "jenkins_when_gates"
+    },
+    {
+      "id": "r14_jenkins_02",
+      "exp": "python",
+      "got": "ent",
+      "family": "jenkins_when_gates"
+    },
+    {
+      "id": "r14_jenkins_03",
+      "exp": "python",
+      "got": "ent",
+      "family": "jenkins_when_gates"
+    },
+    {
+      "id": "r14_vagrant_01",
+      "exp": "python",
+      "got": "ent",
+      "family": "vagrant_provision_gates"
+    },
+    {
+      "id": "r14_chef_01",
+      "exp": "python",
+      "got": "ent",
+      "family": "chef_guard_gates"
+    },
+    {
+      "id": "r14_pants_01",
+      "exp": "python",
+      "got": "ent",
+      "family": "pants_tag_gates"
+    },
+    {
+      "id": "r14_pants_02",
+      "exp": "python",
+      "got": "ent",
+      "family": "pants_tag_gates"
+    },
+    {
+      "id": "r14_pants_03",
+      "exp": "python",
+      "got": "ent",
+      "family": "pants_tag_gates"
+    },
+    {
+      "id": "r14_prefect_01",
+      "exp": "python",
+      "got": "ent",
+      "family": "prefect_task_gates"
+    },
+    {
+      "id": "r14_prefect_02",
+      "exp": "python",
+      "got": "ent",
+      "family": "prefect_task_gates"
+    },
+    {
+      "id": "r14_prefect_03",
+      "exp": "python",
+      "got": "ent",
+      "family": "prefect_task_gates"
+    },
+    {
+      "id": "r14_fastapi_01",
+      "exp": "python",
+      "got": "ent",
+      "family": "fastapi_depends_gates"
+    },
+    {
+      "id": "r14_fastapi_02",
+      "exp": "python",
+      "got": "ent",
+      "family": "fastapi_depends_gates"
+    },
+    {
+      "id": "r14_fastapi_03",
+      "exp": "python",
+      "got": "ent",
+      "family": "fastapi_depends_gates"
+    },
+    {
+      "id": "r14_spring_01",
+      "exp": "python",
+      "got": "ent",
+      "family": "spring_security_gates"
+    },
+    {
+      "id": "r14_spring_02",
+      "exp": "python",
+      "got": "ent",
+      "family": "spring_security_gates"
+    },
+    {
+      "id": "r14_spring_03",
+      "exp": "python",
+      "got": "ent",
+      "family": "spring_security_gates"
+    },
+    {
+      "id": "r14_base_01",
+      "exp": "base",
+      "got": "ent",
+      "family": "base_control_r14"
+    },
+    {
+      "id": "r14_base_02",
+      "exp": "base",
+      "got": "ent",
+      "family": "base_control_r14"
+    },
+    {
+      "id": "r14_base_03",
+      "exp": "base",
+      "got": "ent",
+      "family": "base_control_r14"
+    },
+    {
+      "id": "r14_base_04",
+      "exp": "base",
+      "got": "ent",
+      "family": "base_control_r14"
+    }
+  ]
+}

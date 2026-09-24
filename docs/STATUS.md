@@ -1,3 +1,4 @@
+- 2026-09-24: fold tip-hardneg-r14 → tip; freeze `codigo_vivo_tip_r14_100pct_20260924_150809` (16→52/52·44/44; LP 64/64; pillars 37; circ 5/5; mixed 1.0).
 - 2026-09-24: fold tip-label-protect-expand → tip; LP 43→64/64 · verif 32→42/42; pillars 37/37; circ 5/5; freeze codigo_vivo_tip_label_protect_expand_fold_100pct_20260924_150306
 - 2026-09-24: fold tip-pillars-reinforce → tip; pillars 29→37/37; freeze codigo_vivo_tip_pillars_reinforce_fold_100pct_20260924_145946
 - 2026-09-24 fold tip-circ-expand → tip: circ 2/2→5/5; BASE 13/13; mixed 1.0; freeze codigo_vivo_tip_circ_expand_fold_100pct_20260924_145451

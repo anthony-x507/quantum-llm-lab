@@ -1,6 +1,24 @@
 # FRONTIER — Código-vivo tip scoreboard
 
 
+
+## Hardneg R14 — FOLDED
+
+**When:** polish side ~14:15–14:18 ET · fold 2026-09-24 15:08:09 ET · Mac-111 · cherry-pick `37ccc6f`/`1191a24` onto `1d5fe3e` → `e1b12d5`  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-R14.md`  
+**Freeze:** `codigo_vivo_tip_r14_100pct_20260924_150809`
+
+| Surface | Result |
+|---------|--------|
+| Mixed (d) unified | **1.0** (py/ent/vis) |
+| R14 router / verifier | **52/52** / **44/44** (tip before **16/52**; side 8→52) |
+| LP | **64/64 · 42/42** |
+| pillars / circ / hardneg smoke | **37/37 · 5/5 · 18/18** |
+| R13 / R12 / R5 / R7 | **52/52 · 52/52 · 44/44 · 52/52** |
+| `wired_to_vlm` / gt_leak / `ent_never_on_python` | **true** / **false** / **true** |
+
+**CPU re-smoke after fold:** unified **1.0**; R14 held; LP/pillars/circ floors retained; freezes retained incl. label_protect_expand_fold + pillars + circ + future_r3 + r13 + priors. Adapters RO. R15+ not folded.
+
 ## Fold — tip-label-protect-expand → codigo-vivo-tip (2026-09-24 15:03:06 ET)
 
 | Surface | Score |
