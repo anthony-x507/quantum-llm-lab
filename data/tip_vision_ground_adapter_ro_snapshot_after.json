@@ -1,0 +1,21 @@
+{
+  "when": "2026-09-24 13:43:27 ET",
+  "adapters": {
+    "lora_adapter": {
+      "safetensors_mtime": "2026-09-24 00:58:09",
+      "safetensors_size": 349239195,
+      "unchanged_vs_before": true
+    },
+    "lora_adapter_ent2": {
+      "safetensors_mtime": "2026-09-24 09:02:13",
+      "safetensors_size": 349239195,
+      "unchanged_vs_before": true
+    },
+    "lora_adapter_classical": {
+      "safetensors_mtime": "2026-09-24 05:29:28",
+      "safetensors_size": 174650953,
+      "unchanged_vs_before": true
+    }
+  },
+  "ro_mtime_unchanged": true
+}

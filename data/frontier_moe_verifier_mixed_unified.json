@@ -97,7 +97,7 @@
     },
     "moe_delta_visible": true,
     "priors_used": [
-      "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/BENCHMARK_CODIGO_VIVO.json",
+      "/Users/anthony/Documents/quantum-llm-lab-tip-vision-ground/data/BENCHMARK_CODIGO_VIVO.json",
       "docs/FRONTIER-MOE-VERIFIER-UNIFIED.md#prior-live"
     ]
   },

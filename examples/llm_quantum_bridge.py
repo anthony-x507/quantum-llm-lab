@@ -98,24 +98,171 @@ def _extract_balanced_json(texto: str) -> str | None:
     return None
 
 
+def _sanitize_jsonish(blob: str) -> str:
+    """Make near-JSON circuit blobs parseable without inventing gates.
+
+    Models often emit bare pi/2 / π/2 inside arrays (invalid JSON). Replace
+    with numeric literals. Gold-free: does not consult expected answers.
+    """
+    s = blob
+    s = s.replace("'", '"')
+    s = re.sub(r"(?<![\w.])π\s*/\s*2(?![\w.])", "1.5707963267948966", s)
+    s = re.sub(r"(?<![\w.])pi\s*/\s*2(?![\w.])", "1.5707963267948966", s, flags=re.I)
+    s = re.sub(r"(?<![\w.])π(?![\w.])", "3.141592653589793", s)
+    s = re.sub(r"(?<![\w.])pi(?![\w.])", "3.141592653589793", s, flags=re.I)
+    s = re.sub(r",\s*}", "}", s)
+    s = re.sub(r",\s*]", "]", s)
+    return s
+
+
+
+def parse_circuit_from_narrative(texto: str) -> dict[str, Any] | None:
+    """Gold-free fallback: extract n_qubits + gates from prose when JSON missing.
+
+    Used by tip-vision-ground when Thinking-4bit narrates the circuit correctly
+    but never emits `{...}`. Never consults expected_gates / gold labels.
+    Returns None if too little signal (refuse to invent).
+    """
+    t = texto or ""
+    if not t.strip():
+        return None
+    # n_qubits
+    nq = None
+    m = re.search(r"\b(\d+)\s*-?\s*qubits?\b", t, flags=re.I)
+    if m:
+        nq = int(m.group(1))
+    if nq is None:
+        m = re.search(r"n_qubits\s*[:=]\s*(\d+)", t, flags=re.I)
+        if m:
+            nq = int(m.group(1))
+    if nq is None:
+        m = re.search(r"\b([12])\s+qubit\b", t, flags=re.I)
+        if m:
+            nq = int(m.group(1))
+
+    gates: list[list[Any]] = []
+    # Walk left-to-right for gate mentions (order matters)
+    # Patterns: RY(pi/2), RY(1.57), Pauli-X / X gate, CNOT q0->q1, CX, H, Z, ...
+    token_re = re.compile(
+        r"(?:"
+        r"\b(?:Pauli[- ]?)?([HXYZ])\b(?:\s*gate)?(?:\s*on\s*q(\d+))?"
+        r"|\b(RY|RZ|RX)\s*\(\s*([^)]+?)\s*\)(?:\s*on\s*q(\d+))?"
+        r"|\b(CNOT|CX)\b(?:\s*(?:gate)?\s*(?:with\s+)?(?:control\s+)?q?(\d+)\s*(?:->|→|,|and)\s*(?:target\s+)?q?(\d+))?"
+        r"|\bq(\d+)\s*:\s*([HXYZ]|RY|RZ|RX|CNOT|CX)\b"
+        r")",
+        flags=re.I,
+    )
+    for m in token_re.finditer(t):
+        g = m.groups()
+        # g0: single HXYZ, g1: wire
+        if g[0]:
+            name = g[0].upper()
+            wire = int(g[1]) if g[1] is not None else 0
+            gates.append([name.lower(), wire])
+            continue
+        # g2: RY/RZ/RX, g3: param, g4: wire
+        if g[2]:
+            name = g[2].upper()
+            param_raw = (g[3] or "").strip()
+            wire = int(g[4]) if g[4] is not None else 0
+            param = None
+            pr = param_raw
+            pr = re.sub(r"(?i)\bpi\s*/\s*2\b", "1.5707963267948966", pr)
+            pr = re.sub(r"π\s*/\s*2", "1.5707963267948966", pr)
+            pr = re.sub(r"(?i)\bpi\b", "3.141592653589793", pr)
+            pr = pr.replace("π", "3.141592653589793")
+            try:
+                param = float(pr)
+            except ValueError:
+                param = 1.5707963267948966 if (
+                    "1.5708" in pr or "pi" in param_raw.lower() or "π" in param_raw
+                ) else None
+            if param is None:
+                continue
+            gates.append([name.lower(), wire, float(param)])
+            continue
+        # g5: CNOT/CX, g6 control, g7 target
+        if g[5]:
+            c = int(g[6]) if g[6] is not None else 0
+            tgt = int(g[7]) if g[7] is not None else (1 if nq and nq >= 2 else 0)
+            gates.append(["cnot", c, tgt])
+            continue
+        # g8: qN: GATE
+        if g[8] is not None and g[9]:
+            wire = int(g[8])
+            name = g[9].upper()
+            if name in {"CNOT", "CX"}:
+                # without target info skip or assume other qubit
+                other = 1 if wire == 0 else 0
+                gates.append(["cnot", wire, other])
+            elif name in {"RY", "RZ", "RX"}:
+                # param may appear nearby — skip incomplete
+                continue
+            else:
+                gates.append([name.lower(), wire])
+
+    if not gates:
+        return None
+    # Collapse consecutive identical gate tuples (prose re-mentions)
+    collapsed: list[list[Any]] = []
+    for g in gates:
+        key = tuple(g)
+        if collapsed and tuple(collapsed[-1]) == key:
+            continue
+        collapsed.append(g)
+    # If still very long from re-description, keep first occurrence of each
+    # distinct (name, *int_wires) while preserving order (params ignored in key).
+    seen: set[tuple] = set()
+    dedup: list[list[Any]] = []
+    for g in collapsed:
+        name = str(g[0]).lower()
+        wires = tuple(x for x in g[1:] if isinstance(x, int))
+        key = (name, wires)
+        if key in seen:
+            continue
+        seen.add(key)
+        dedup.append(g)
+    gates = dedup if dedup else collapsed
+    if nq is None:
+        # infer from max wire index
+        max_w = 0
+        for g in gates:
+            for x in g[1:]:
+                if isinstance(x, int):
+                    max_w = max(max_w, x)
+        nq = max_w + 1
+    return {"n_qubits": int(nq), "gates": gates, "_parse_source": "narrative_fallback"}
+
+
+
 def parsear_propuesta(texto: str) -> dict[str, Any]:
     """Extrae el primer objeto JSON del texto del modelo (brace-balanced)."""
     texto = texto.strip()
-    try:
-        data = json.loads(texto)
-        if isinstance(data, dict) and "gates" in data:
-            return data
-    except json.JSONDecodeError:
-        pass
-
+    candidates = [texto]
     blob = _extract_balanced_json(texto)
+    if blob:
+        candidates.append(blob)
+    last_err: Exception | None = None
+    for cand in candidates:
+        for variant in (cand, _sanitize_jsonish(cand)):
+            try:
+                data = json.loads(variant)
+            except json.JSONDecodeError as exc:
+                last_err = exc
+                continue
+            if isinstance(data, dict) and "gates" in data:
+                data.setdefault("n_qubits", 2)
+                return data
+    # Narrative fallback (tip-vision-ground): prose often lists gates correctly
+    narr = parse_circuit_from_narrative(texto)
+    if narr is not None and narr.get("gates"):
+        narr.setdefault("n_qubits", 2)
+        return narr
     if not blob:
-        raise ValueError(f"No encontré JSON en la respuesta del modelo:\n{texto[:500]}")
-    data = json.loads(blob)
-    if "gates" not in data:
-        raise ValueError(f"JSON sin 'gates': {data}")
-    data.setdefault("n_qubits", 2)
-    return data
+        raise ValueError(
+            f"No encontré JSON en la respuesta del modelo:\n{texto[:500]}"
+        )
+    raise ValueError(f"JSON inválido tras sanitize ({last_err}): {blob[:240]}")
 
 
 # ---------------------------------------------------------------------------

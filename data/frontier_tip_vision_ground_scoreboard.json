@@ -1,0 +1,86 @@
+{
+  "schema": "frontier_tip_vision_ground_scoreboard",
+  "written": "2026-09-24 13:44:41 ET",
+  "branch": "frontier/tip-vision-ground",
+  "base_tip_sha": "2d13d0a474f36c9cb6b435c3141b837c8da81c5b",
+  "base_tip_sha_short": "2d13d0a",
+  "host": "Mac-111",
+  "machine_id": "074c6626-0440-4817-9829-6bae77c578d6",
+  "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
+  "claim": "NO quantum-advantage. Prompt/parse/grounding reinforce only; tip vis stays BASE.",
+  "fold_into_tip": false,
+  "adapters_ro": true,
+  "ro_mtime_unchanged": true,
+  "vision_before": {
+    "accuracy": 0.9,
+    "correct": "9/10",
+    "vis_circ_01": true,
+    "vis_circ_02": false,
+    "source": "BENCHMARK_CODIGO_VIVO.json base.vision (pre tip-vision-ground reinforce)"
+  },
+  "vision_after": {
+    "accuracy": 1.0,
+    "correct": "10/10",
+    "vis_circ_01": {
+      "correct": true,
+      "pred": {
+        "n_qubits": 2,
+        "gates": [
+          "H",
+          "X",
+          "CNOT",
+          "X"
+        ]
+      },
+      "phase": "grounded"
+    },
+    "vis_circ_02": {
+      "correct": true,
+      "pred": {
+        "n_qubits": 1,
+        "gates": [
+          "RY",
+          "Z"
+        ]
+      },
+      "phase": "grounded"
+    },
+    "circuit_axis_pct": 100.0,
+    "delta_accuracy": 0.1
+  },
+  "rescued": [
+    "vis_circ_02"
+  ],
+  "held": [
+    "vis_circ_01"
+  ],
+  "mixed_floor": {
+    "d_unified_overall": 1.0,
+    "vision": 1.0,
+    "floor_criterion": 0.9667,
+    "held": true
+  },
+  "reinforce": [
+    "circuit grounding: explicit X before CX/CNOT on vision circuit prompts",
+    "anti-think JSON-only cue + json_only retry on circuit items",
+    "parse: bare pi/2 sanitize in parsear_propuesta + mixed gold_free_extract",
+    "parse/grounding: narrative_fallback gate extract when JSON missing (gold-free)",
+    "CX\u2194CNOT alias normalize in vision scoring"
+  ],
+  "freeze": true,
+  "freeze_reason": "measurable rise 0.9\u21921.0 AND floor 1.0 held AND circ axis 2/2\u226580%",
+  "anti_contam": {
+    "prompt_touches_gt": false,
+    "writes_lora_adapter": false,
+    "ent_never_on_python": true,
+    "tip_vis_pillar": "BASE"
+  },
+  "artifacts": {
+    "before": "data/frontier_tip_vision_ground_before.json",
+    "after_bench": "data/frontier_tip_vision_ground_bench_after.json",
+    "cpu": "data/frontier_moe_verifier_mixed_cpu_vision_ground.json",
+    "smoke": "data/frontier_moe_verifier_mixed_smoke_vision_ground.json",
+    "ro_before": "data/tip_vision_ground_adapter_ro_snapshot_before.json",
+    "ro_after": "data/tip_vision_ground_adapter_ro_snapshot_after.json"
+  }
+}

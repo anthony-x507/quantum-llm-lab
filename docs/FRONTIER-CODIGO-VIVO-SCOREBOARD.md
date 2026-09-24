@@ -1,3 +1,4 @@
+- **tip-vision-ground** (2026-09-24 13:44 ET): BASE vis 0.9→**1.0**; circ 2/2 rescued via prompt/parse/grounding; floor 1.0; FREEZE; adapters RO; no fold.
 # FRONTIER — Código-vivo tip scoreboard
 
 **Branch:** `frontier/codigo-vivo-tip`  

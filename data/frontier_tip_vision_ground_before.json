@@ -1,0 +1,30 @@
+{
+  "source": "BENCHMARK_CODIGO_VIVO.json base.vision (pre tip-vision-ground reinforce)",
+  "written_src": "2026-09-24 05:00:02 ",
+  "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
+  "accuracy": 0.9,
+  "correct": "9/10",
+  "circ": {
+    "vis_circ_01": {
+      "correct": true,
+      "pred": {
+        "n_qubits": 2,
+        "gates": [
+          "H",
+          "X",
+          "CNOT"
+        ]
+      },
+      "error": null,
+      "raw_preview": "Got it, let's parse the circuit description. The circuit has 2 qubits, as stated. Now, the gates: first, q0 has an H gate (Hadamard). Then q1 has an X gate (Pauli X). Then there's a CNOT gate where q0"
+    },
+    "vis_circ_02": {
+      "correct": false,
+      "pred": null,
+      "error": "parse:JSONDecodeError",
+      "raw_preview": "Got it, let's break this down. The circuit has 1 qubit. First, apply RY(pi/2), then apply Z. \n\nFor RY gate: it's a single-qubit gate, so wires is [0] (since 1 qubit, index 0). The parameter is pi/2. S"
+    }
+  },
+  "when_snapshot": "2026-09-24 13:41:21 ET",
+  "note": "before=locked RAW bench; after=this branch BASE vision-only with circuit grounding + anti-think JSON cue"
+}

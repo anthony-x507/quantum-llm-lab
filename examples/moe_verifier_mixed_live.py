@@ -484,9 +484,13 @@ def gold_free_extract_json_obj(raw: str) -> dict[str, Any] | None:
         try:
             obj = json.loads(c)
         except json.JSONDecodeError:
-            # tolerate single quotes / trailing commas lightly
+            # tolerate single quotes / trailing commas / bare pi tokens
             try:
                 fixed = c.replace("'", '"')
+                fixed = re.sub(r"(?<![\w.])π\s*/\s*2(?![\w.])", "1.5707963267948966", fixed)
+                fixed = re.sub(r"(?<![\w.])pi\s*/\s*2(?![\w.])", "1.5707963267948966", fixed, flags=re.I)
+                fixed = re.sub(r"(?<![\w.])π(?![\w.])", "3.141592653589793", fixed)
+                fixed = re.sub(r"(?<![\w.])pi(?![\w.])", "3.141592653589793", fixed, flags=re.I)
                 fixed = re.sub(r",\s*}", "}", fixed)
                 fixed = re.sub(r",\s*]", "]", fixed)
                 obj = json.loads(fixed)

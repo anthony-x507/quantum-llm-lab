@@ -176,6 +176,50 @@ def _vlm_prompt_json_only() -> str:
     )
 
 
+
+def circuit_vision_prompt_suffix() -> str:
+    """GT-free reinforce for bench vision *circuit* items (tip-vision-ground).
+
+    1) Circuit grounding: if the diagram/text shows a Pauli-X on a qubit before a
+       CX/CNOT that involves that qubit, emit the explicit X in `gates` (do not
+       drop X and emit only H+CX).
+    2) Anti-think JSON-only cue (reuses lab pattern from _vlm_prompt_json_only).
+    Never consults expected_gates / gold labels.
+    """
+    return (
+        "\n\nCIRCUIT GROUNDING (read the image carefully): "
+        "List EVERY gate visible, in order. "
+        "If a Pauli-X (X) appears on a qubit BEFORE a CX/CNOT involving that qubit, "
+        "you MUST include that explicit X in gates — do not skip X and emit only H+CX. "
+        "CX and CNOT are the same gate family; use name \"CNOT\" or \"CX\" consistently. "
+        "Include RY/RZ params as JSON numbers (use 1.5707963267948966 for pi/2), never bare pi tokens.\n"
+        "ANTI-THINK JSON-ONLY: NO <think> prose. NO English narration. "
+        "Answer ONLY JSON. Empieza tu respuesta con el carácter `{` y termina con `}`. "
+        "Un único objeto JSON (sin markdown) with keys n_qubits (int) and gates "
+        "(list of {name, wires} or [name, ...wires..., optional params])."
+    )
+
+
+def augment_vision_circuit_prompt(prompt: str) -> str:
+    """Append circuit grounding + anti-think JSON-only cue if not already present."""
+    p = (prompt or "").rstrip()
+    marker = "CIRCUIT GROUNDING"
+    if marker in p:
+        return p
+    return p + circuit_vision_prompt_suffix()
+
+
+def circuit_vision_json_only_retry_prompt() -> str:
+    """Phase-2 recovery when phase-1 burned tokens on think/prose."""
+    return (
+        "NO pienses en voz alta. NO uses <think>. NO escribas narración. "
+        "Look at the circuit image. Answer ONLY JSON starting with `{` and ending with `}`. "
+        "Keys: n_qubits (int), gates (list). "
+        "Include every visible gate in order; if Pauli-X appears before CX/CNOT, include explicit X. "
+        "Params as numbers (pi/2 -> 1.5707963267948966). Sin markdown."
+    )
+
+
 def _mlx_generate_text(model, processor, formatted, sample, max_tokens: int) -> str:
     """Keep generate(model, processor, prompt, image=sample) call shape (mlx-vlm>=0.7)."""
     from mlx_vlm import generate

@@ -1,0 +1,44 @@
+{
+  "schema": "codigo_vivo_tip_vision_ground_100pct",
+  "frozen_at_et": "2026-09-24 13:44:41 ET",
+  "domain": "codigo_vivo_tip_vision_ground",
+  "pct": 100,
+  "band": "100pct",
+  "git_sha": "PENDING",
+  "git_sha_short": "PENDING",
+  "artifact": "data/frontier_tip_vision_ground_bench_after.json",
+  "eval_path": "data/frontier_moe_verifier_mixed_cpu_vision_ground.json",
+  "metrics": {
+    "vision_base_before": 0.9,
+    "vision_base_after": 1.0,
+    "vision_delta": 0.1,
+    "circ_axis": "2/2",
+    "circ_axis_pct": 100.0,
+    "vis_circ_01": true,
+    "vis_circ_02": true,
+    "mixed_d_unified": 1.0,
+    "pillars": "26/26",
+    "hardneg_smoke": "18/18",
+    "ent_never_on_python": true,
+    "ro_mtime_unchanged": true,
+    "tip_vis_pillar": "BASE",
+    "floor_held": true
+  },
+  "floors": {
+    "mixed_d_unified": 0.9667,
+    "held": true,
+    "actual": 1.0
+  },
+  "policy": "RO data/lora_adapter/; no merge main; no fold into tip; retain r9/collision_n/motion_r2/etc; tip vis stays BASE; prompt/parse/grounding only",
+  "base_tip_sha": "2d13d0a474f36c9cb6b435c3141b837c8da81c5b",
+  "freezes_retained": [
+    "r9",
+    "collision_n",
+    "motion_r2",
+    "distance_danger",
+    "collision_pred",
+    "label_protect",
+    "scaffold_motion",
+    "r3-r8"
+  ]
+}

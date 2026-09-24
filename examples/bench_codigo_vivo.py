@@ -24,6 +24,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "examples"))
+sys.path.insert(0, str(ROOT))
 
 from train_lora import (  # noqa: E402
     _circuit_target_from_meta,
@@ -350,8 +351,48 @@ def run_pillar_entanglement(
     }
 
 
+def _normalize_gate_name(name: str) -> str:
+    """Gold-free alias normalize for vision circuit scoring."""
+    n = str(name or "").upper().strip()
+    if n in {"CX", "CNOT", "C-NOT", "C_NOT"}:
+        return "CNOT"
+    if n.startswith("CNOT") or n.startswith("CX"):
+        return "CNOT"
+    return n
+
+
+def _score_json_gates_contain(proposal: dict, it: dict) -> tuple[bool, dict]:
+    gnames = []
+    for g in (proposal.get("gates") or []):
+        if isinstance(g, (list, tuple)) and g:
+            gnames.append(_normalize_gate_name(g[0]))
+        elif isinstance(g, dict) and g.get("name"):
+            gnames.append(_normalize_gate_name(g["name"]))
+        elif isinstance(g, str):
+            gnames.append(_normalize_gate_name(g))
+    need = [_normalize_gate_name(g) for g in (it.get("expected_gates") or [])]
+    nq_ok = int(proposal.get("n_qubits") or 0) == int(it.get("n_qubits") or 0)
+    correct = nq_ok and all(
+        any(n == g or g.startswith(n) for g in gnames)
+        for n in need
+    )
+    return correct, {"n_qubits": proposal.get("n_qubits"), "gates": gnames}
+
+
 def run_pillar_vision(model_bundle, items: list[dict], tag: str) -> dict[str, Any]:
+    """Vision pillar. Circuit items get GT-free grounding + anti-think JSON cue.
+
+    Tip policy: vision stays on BASE (adapter=null). Never writes LoRA dirs.
+    """
     from llm_quantum_bridge import parsear_propuesta
+    try:
+        from vision.grounding import (
+            augment_vision_circuit_prompt,
+            circuit_vision_json_only_retry_prompt,
+        )
+    except Exception:  # noqa: BLE001
+        augment_vision_circuit_prompt = None  # type: ignore
+        circuit_vision_json_only_retry_prompt = None  # type: ignore
 
     model, processor, config, generate, apply_chat_template = model_bundle
     details = []
@@ -367,38 +408,49 @@ def run_pillar_vision(model_bundle, items: list[dict], tag: str) -> dict[str, An
         pred = None
         correct = False
         err = None
+        phase = "single"
+        prompt = it["prompt"]
+        max_tokens = 512
+        is_circuit = (it.get("kind") == "circuit") or (it.get("match") == "json_gates_contain")
+        if is_circuit and augment_vision_circuit_prompt is not None:
+            prompt = augment_vision_circuit_prompt(prompt)
+            max_tokens = 1024  # headroom for Thinking-4bit before JSON
         try:
             raw = _generate_text(
                 model, processor, config, generate, apply_chat_template,
-                it["prompt"], img, 512,
+                prompt, img, max_tokens,
             )
             text = _strip_thinking(raw)
             if it["match"] == "exact_int":
                 pred = _extract_int_answer(text)
                 correct = pred is not None and pred == str(it["expected"])
             elif it["match"] == "json_gates_contain":
+                proposal = None
                 try:
                     proposal = parsear_propuesta(text)
-                    gnames = []
-                    for g in (proposal.get("gates") or []):
-                        if isinstance(g, (list, tuple)) and g:
-                            gnames.append(str(g[0]).upper())
-                        elif isinstance(g, dict) and g.get("name"):
-                            gnames.append(str(g["name"]).upper())
-                        elif isinstance(g, str):
-                            gnames.append(g.upper())
-                    need = [g.upper() for g in it.get("expected_gates") or []]
-                    nq_ok = int(proposal.get("n_qubits") or 0) == int(it.get("n_qubits") or 0)
-                    correct = nq_ok and all(any(n in g for g in gnames) or n in gnames for n in need)
-                    # simpler: each expected name appears as substring of some gate name
-                    correct = nq_ok and all(
-                        any(n.upper() == g.upper() or g.upper().startswith(n.upper()) for g in gnames)
-                        for n in need
-                    )
-                    pred = {"n_qubits": proposal.get("n_qubits"), "gates": gnames}
+                    correct, pred = _score_json_gates_contain(proposal, it)
+                    phase = "grounded"
                 except Exception as exc:  # noqa: BLE001
                     err = f"parse:{type(exc).__name__}"
-                    errors += 1
+                    # Phase-2 JSON-only retry (anti-think recovery)
+                    if circuit_vision_json_only_retry_prompt is not None:
+                        try:
+                            raw2 = _generate_text(
+                                model, processor, config, generate, apply_chat_template,
+                                circuit_vision_json_only_retry_prompt(), img, 512,
+                            )
+                            raw = raw + "\n---RETRY---\n" + raw2
+                            text2 = _strip_thinking(raw2)
+                            proposal = parsear_propuesta(text2)
+                            correct, pred = _score_json_gates_contain(proposal, it)
+                            err = None
+                            phase = "json_only_retry"
+                        except Exception as exc2:  # noqa: BLE001
+                            err = f"parse:{type(exc).__name__}+retry:{type(exc2).__name__}"
+                            errors += 1
+                            phase = "both_failed"
+                    else:
+                        errors += 1
             if correct:
                 correct_n += 1
         except Exception as exc:  # noqa: BLE001
@@ -411,9 +463,15 @@ def run_pillar_vision(model_bundle, items: list[dict], tag: str) -> dict[str, An
             "expected": it.get("expected") or it.get("expected_gates"),
             "pred": pred,
             "error": err,
+            "phase": phase,
+            "prompt_grounded": bool(is_circuit and augment_vision_circuit_prompt is not None),
             "raw_preview": _strip_thinking(raw)[:240] if raw else "",
         })
-        print(f"  [{tag} vision] {it['id']} correct={correct} pred={pred} err={err}", flush=True)
+        print(
+            f"  [{tag} vision] {it['id']} correct={correct} pred={pred} "
+            f"err={err} phase={phase}",
+            flush=True,
+        )
     n = max(1, len(items))
     return {
         "n": len(items),
@@ -421,6 +479,8 @@ def run_pillar_vision(model_bundle, items: list[dict], tag: str) -> dict[str, An
         "accuracy": correct_n / n,
         "errors": errors,
         "details": details,
+        "circuit_grounding": True,
+        "anti_think_json_cue": True,
     }
 
 
@@ -515,6 +575,8 @@ def main() -> int:
     p.add_argument("--skip-python", action="store_true")
     p.add_argument("--skip-ent", action="store_true")
     p.add_argument("--skip-vision", action="store_true")
+    p.add_argument("--base-only", action="store_true",
+                   help="Run BASE (adapter=null) only; skip adapter own-delta pass")
     args = p.parse_args()
 
     py_items = json.loads((ROOT / "data/bench_live/python_items.json").read_text())["items"]
@@ -530,13 +592,24 @@ def main() -> int:
 
     adapter_path = args.adapter
     if not (adapter_path / "adapters.safetensors").exists():
-        alt = ROOT / "data/lora_adapter_frozen_rebalance_20260924-041300"
-        if (alt / "adapters.safetensors").exists():
-            print(f"[warn] {adapter_path} missing; using frozen archive {alt}", flush=True)
-            adapter_path = alt
+        lab = Path(os.environ.get("QLAB_DATA", "/Users/anthony/Documents/quantum-llm-lab/data"))
+        alts = [
+            lab / "lora_adapter",
+            ROOT / "data/lora_adapter_frozen_rebalance_20260924-041300",
+            lab / "lora_adapter_frozen_rebalance_20260924-041300",
+        ]
+        for alt in alts:
+            if (alt / "adapters.safetensors").exists():
+                print(f"[warn] {adapter_path} incomplete; using RO {alt}", flush=True)
+                adapter_path = alt
+                break
         else:
-            print(f"[error] no adapter at {adapter_path}", file=sys.stderr)
-            return 1
+            if args.base_only:
+                print("[warn] no adapter found; continuing --base-only", flush=True)
+                adapter_path = args.adapter
+            else:
+                print(f"[error] no adapter at {adapter_path}", file=sys.stderr)
+                return 1
 
     # Resolve vision paths relative to ROOT
     for it in vis_items:
@@ -579,8 +652,16 @@ def main() -> int:
     t0 = time.time()
     print("=== BASE (adapter=null) ===", flush=True)
     base = run_all(None, "base")
-    print("=== ADAPTER (READ-ONLY LoRA) ===", flush=True)
-    ft = run_all(str(adapter_path), "adapter")
+    if args.base_only:
+        print("=== ADAPTER skipped (--base-only); tip vis stays BASE ===", flush=True)
+        ft = {
+            "python": empty_py(),
+            "entanglement": empty_ent(),
+            "vision": empty_vis(),
+        }
+    else:
+        print("=== ADAPTER (READ-ONLY LoRA) ===", flush=True)
+        ft = run_all(str(adapter_path), "adapter")
 
     report = {
         "written": _now(),

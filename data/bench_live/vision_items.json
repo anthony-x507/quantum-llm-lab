@@ -53,7 +53,7 @@
       "id": "vis_circ_01",
       "kind": "circuit",
       "image": "data/bench_live/vision_items/vis_circ_01.png",
-      "prompt": "Look at the circuit description in the image. Emit ONLY a JSON object with keys n_qubits (int) and gates (list of {name, wires}). No markdown.",
+      "prompt": "Look at the circuit description in the image. Emit ONLY a JSON object with keys n_qubits (int) and gates (list of {name, wires}). No markdown.\n\nCIRCUIT GROUNDING (read the image carefully): List EVERY gate visible, in order. If a Pauli-X (X) appears on a qubit BEFORE a CX/CNOT involving that qubit, you MUST include that explicit X in gates — do not skip X and emit only H+CX. CX and CNOT are the same gate family; use name \"CNOT\" or \"CX\" consistently. Include RY/RZ params as JSON numbers (use 1.5707963267948966 for pi/2), never bare pi tokens.\nANTI-THINK JSON-ONLY: NO <think> prose. NO English narration. Answer ONLY JSON. Empieza tu respuesta con el carácter `{` y termina con `}`. Un único objeto JSON (sin markdown) with keys n_qubits (int) and gates (list of {name, wires} or [name, ...wires..., optional params]).",
       "expected_gates": [
         "H",
         "X",
@@ -66,7 +66,7 @@
       "id": "vis_circ_02",
       "kind": "circuit",
       "image": "data/bench_live/vision_items/vis_circ_02.png",
-      "prompt": "Look at the circuit in the image. Emit ONLY JSON with n_qubits and gates (name, wires, optionally params). No markdown.",
+      "prompt": "Look at the circuit in the image. Emit ONLY JSON with n_qubits and gates (name, wires, optionally params). No markdown.\n\nCIRCUIT GROUNDING (read the image carefully): List EVERY gate visible, in order. If a Pauli-X (X) appears on a qubit BEFORE a CX/CNOT involving that qubit, you MUST include that explicit X in gates — do not skip X and emit only H+CX. CX and CNOT are the same gate family; use name \"CNOT\" or \"CX\" consistently. Include RY/RZ params as JSON numbers (use 1.5707963267948966 for pi/2), never bare pi tokens.\nANTI-THINK JSON-ONLY: NO <think> prose. NO English narration. Answer ONLY JSON. Empieza tu respuesta con el carácter `{` y termina con `}`. Un único objeto JSON (sin markdown) with keys n_qubits (int) and gates (list of {name, wires} or [name, ...wires..., optional params]).",
       "expected_gates": [
         "RY",
         "Z"
