@@ -21,7 +21,9 @@
   "source_sha": "1191a24",
   "source_feat_sha": "37ccc6f",
   "fold_feat_sha": "e1b12d5f4d660dd8bba51f3395cc8d68c3cc9b4f",
-  "git_sha": "e1b12d5f4d660dd8bba51f3395cc8d68c3cc9b4f",
+  "git_sha": "6a4e7165472f7402f6d7fabade2b0898632d621c",
   "fold_feat_sha_short": "e1b12d5",
-  "git_sha_short": "e1b12d5"
+  "git_sha_short": "6a4e716",
+  "fold_commit_sha": "6a4e7165472f7402f6d7fabade2b0898632d621c",
+  "fold_commit_sha_short": "6a4e716"
 }

@@ -4,7 +4,7 @@
 
 ## Hardneg R14 — FOLDED
 
-**When:** polish side ~14:15–14:18 ET · fold 2026-09-24 15:08:09 ET · Mac-111 · cherry-pick `37ccc6f`/`1191a24` onto `1d5fe3e` → `e1b12d5`  
+**When:** polish side ~14:15–14:18 ET · fold 2026-09-24 15:08:09 ET · Mac-111 · cherry-pick `37ccc6f`/`1191a24` onto `1d5fe3e` → `e1b12d5` (fold )  
 **Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-R14.md`  
 **Freeze:** `codigo_vivo_tip_r14_100pct_20260924_150809`
 

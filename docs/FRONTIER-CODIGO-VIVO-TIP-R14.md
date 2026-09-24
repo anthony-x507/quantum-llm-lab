@@ -88,7 +88,7 @@ Leave tip-cv / tip-tti / tip-distance-mid / tip-distance-far / tip-hardneg-r12 /
 
 ## Folded into tip (2026-09-24 15:08:09 ET)
 
-Cherry-pick `37ccc6f` onto tip `1d5fe3e` (post LP-expand) → `e1b12d5` (merge R12+R13+R14 gates_ops; keep tip STATUS+mixed/LP/r7–r11 JSON ours). Re-smoke on tip-cv: R14 **16/52 → 52/52 · 44/44** (side trail 8→52); mixed **1.0**; LP **64/64 · 42/42**; pillars **37/37**; circ **5/5**; R13/R12/R5/R7 held; tip vis BASE; RO adapters. Freeze `codigo_vivo_tip_r14_100pct_20260924_150809`.
+Cherry-pick `37ccc6f` onto tip `1d5fe3e` (post LP-expand) → `e1b12d5` / fold  (merge R12+R13+R14 gates_ops; keep tip STATUS+mixed/LP/r7–r11 JSON ours). Re-smoke on tip-cv: R14 **16/52 → 52/52 · 44/44** (side trail 8→52); mixed **1.0**; LP **64/64 · 42/42**; pillars **37/37**; circ **5/5**; R13/R12/R5/R7 held; tip vis BASE; RO adapters. Freeze `codigo_vivo_tip_r14_100pct_20260924_150809`.
 
 **Not folded next:** R15 / choose-n / tti-cold / R16…R23.
 

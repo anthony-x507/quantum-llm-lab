@@ -55,5 +55,7 @@
   },
   "ro_mtime_unchanged": true,
   "fold_into_tip": true,
-  "r15_plus_folded": false
+  "r15_plus_folded": false,
+  "fold_commit_sha": "6a4e7165472f7402f6d7fabade2b0898632d621c",
+  "fold_commit_sha_short": "6a4e716"
 }
