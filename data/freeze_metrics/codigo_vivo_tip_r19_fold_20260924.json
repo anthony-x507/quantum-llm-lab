@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-r19-fold",
   "written_et": "2026-09-24 15:48:57 ET",
-  "tip_sha": "FOLDSHA_PENDING",
-  "tip_sha_short": "PENDING",
+  "tip_sha": "5fd8642c69ad4b39f0cf14c3cad59994daebd53a",
+  "tip_sha_short": "5fd8642",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-hardneg-r19",
   "rebase_onto": "9c320cb",
@@ -11,8 +11,8 @@
   "pre_feat_sha_full": "f20e32765db2470b08a9864678a4a84ca47ced28",
   "pre_side_sha": "864f5b2",
   "pre_side_sha_full": "864f5b29f3a88d5821f5bdc462771f39a9790822",
-  "post_port_feat_sha": "FOLDSHA_PENDING",
-  "post_port_feat_sha_full": "FOLDSHA_PENDING",
+  "post_port_feat_sha": "5fd8642c69ad4b39f0cf14c3cad59994daebd53a",
+  "post_port_feat_sha_full": "5fd8642c69ad4b39f0cf14c3cad59994daebd53a",
   "method": "cherry-pick f20e327 onto 9c320cb; merge R12+R13+R14+R15+R16+R17+R18+R19 gates_ops; keep tip STATUS+mixed/LP/r7\u2013r12 JSON ours",
   "policy": "Fold R19 into tip; keep R18 52/52\u00b744/44 + R17 52/52\u00b744/44 + mixed 1.0 + choose_n n=80 + tti-cold freeze + pillars 37 + circ 5/5; RO lora_adapter; tip vis BASE; no merge main; do NOT fold R20+.",
   "holds": {
@@ -72,8 +72,8 @@
     "post_score_retention_vs_side": 1.0,
     "side_rise_pp": 88.46
   },
-  "fold_commit_sha": "FOLDSHA_PENDING",
-  "fold_commit_sha_short": "PENDING",
+  "fold_commit_sha": "5fd8642c69ad4b39f0cf14c3cad59994daebd53a",
+  "fold_commit_sha_short": "5fd8642",
   "freeze_id": "codigo_vivo_tip_r19_100pct_20260924_154857",
   "freeze": true,
   "adapters_ro": true,
