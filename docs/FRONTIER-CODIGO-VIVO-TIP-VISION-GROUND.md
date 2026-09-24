@@ -12,7 +12,7 @@
 |-------|-------|
 | Tip base SHA | `2d13d0a` (`2d13d0a474f36c9cb6b435c3141b837c8da81c5b`) |
 | Branch | `frontier/tip-vision-ground` |
-| Branch SHA | _(pinned after push)_ |
+| Branch SHA |  () |
 | Host | Mac-111 (`074c6626-…`) |
 | Adapters | **READ-ONLY** (`ro_mtime_unchanged=true` on `*.safetensors`) |
 | Freeze | `codigo_vivo_tip_vision_ground_100pct_20260924_134441` |

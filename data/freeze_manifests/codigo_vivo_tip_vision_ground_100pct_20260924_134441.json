@@ -4,8 +4,8 @@
   "domain": "codigo_vivo_tip_vision_ground",
   "pct": 100,
   "band": "100pct",
-  "git_sha": "PENDING",
-  "git_sha_short": "PENDING",
+  "git_sha": "5a74c4a973a3039c6f7e2762e48a72b3ad8ce891",
+  "git_sha_short": "5a74c4a",
   "artifact": "data/frontier_tip_vision_ground_bench_after.json",
   "eval_path": "data/frontier_moe_verifier_mixed_cpu_vision_ground.json",
   "metrics": {
@@ -30,7 +30,7 @@
     "actual": 1.0
   },
   "policy": "RO data/lora_adapter/; no merge main; no fold into tip; retain r9/collision_n/motion_r2/etc; tip vis stays BASE; prompt/parse/grounding only",
-  "base_tip_sha": "2d13d0a474f36c9cb6b435c3141b837c8da81c5b",
+  "base_tip_sha": "6624df1e9bdad1cdb7ddb4cb925ae018bb93968c",
   "freezes_retained": [
     "r9",
     "collision_n",
