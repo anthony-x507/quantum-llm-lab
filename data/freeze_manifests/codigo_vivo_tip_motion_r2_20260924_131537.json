@@ -4,8 +4,8 @@
   "domain": "codigo_vivo_tip_motion_r2",
   "pct": 100,
   "band": "100pct",
-  "git_sha": "c3cd0a488e2e1d694601e1f677b836d1d7ef8f94",
-  "git_sha_short": "c3cd0a4",
+  "git_sha": "bc5fb539d5ab35f9918be592dec44509d5c4d9d3",
+  "git_sha_short": "bc5fb53",
   "artifact": "data/frontier_tip_motion_r2_cue_probe.json",
   "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
   "metrics": {

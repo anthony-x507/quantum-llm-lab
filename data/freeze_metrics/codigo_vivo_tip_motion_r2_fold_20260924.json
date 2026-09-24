@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-motion-r2-fold",
   "written_et": "2026-09-24 13:23:34 ET",
-  "tip_sha": "PENDING",
-  "tip_sha_short": "PENDING",
+  "tip_sha": "bc5fb539d5ab35f9918be592dec44509d5c4d9d3",
+  "tip_sha_short": "bc5fb53",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-motion-r2",
   "rebase_onto": "4fe070e",

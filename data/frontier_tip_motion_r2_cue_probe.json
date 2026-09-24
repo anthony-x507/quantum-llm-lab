@@ -2,7 +2,7 @@
   "frontier": "tip-motion-r2",
   "written": "2026-09-24 13:23:28 ET",
   "branch": "frontier/codigo-vivo-tip",
-  "tip_base": "4fe070e",
+  "tip_base": "bc5fb53",
   "fold_reprobe": true,
   "claims": [
     "NO quantum-advantage claims",
@@ -704,5 +704,6 @@
       "track_mode": "hue_extended",
       "stage": 2
     }
-  ]
+  ],
+  "fold_sha": "bc5fb53"
 }
