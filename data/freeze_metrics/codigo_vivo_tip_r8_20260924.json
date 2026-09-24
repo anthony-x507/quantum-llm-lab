@@ -9,5 +9,7 @@
   "base": "d892398",
   "content_sha": "afd52c9",
   "ff_sha": "32b0b14",
-  "freeze_id": "codigo_vivo_tip_r8_100pct_20260924_130950"
+  "freeze_id": "codigo_vivo_tip_r8_100pct_20260924_130950",
+  "tip_sha": "2f9648aee7409288d646f298b26a81e49f899d61",
+  "tip_sha_short": "2f9648a"
 }

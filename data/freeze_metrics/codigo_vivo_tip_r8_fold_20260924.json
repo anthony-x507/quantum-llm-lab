@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-r8-fold",
   "written_et": "2026-09-24 13:09:50 ET",
-  "tip_sha": "PENDING_PIN",
-  "tip_sha_short": "PENDING",
+  "tip_sha": "2f9648aee7409288d646f298b26a81e49f899d61",
+  "tip_sha_short": "2f9648a",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-hardneg-r8",
   "rebase_onto": "d892398",
