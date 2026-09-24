@@ -13,11 +13,13 @@ Per sequence:
                           future under that action (is_safe, consequence, partners)
                           loaded POST-HOC by eval only
 
-Split default 160 train / 40 eval (n-expand beyond thin n=8). Retrieval index = train only (ids list).
+Split default 320 train / 80 eval (choose_safest-n expand beyond tip n=40).
+Hard-negative mix: unsafe-looking-but-safe / safe-looking-but-unsafe / near-miss choice.
+Retrieval index = train only (ids list).
 
 Usage:
   .venv/bin/python examples/collision_predictive/generate.py
-  .venv/bin/python examples/collision_predictive/generate.py --n-seq 200 --n-train 160 --n-eval 40 --seed 24092446
+  .venv/bin/python examples/collision_predictive/generate.py --n-seq 400 --n-train 320 --n-eval 80 --seed 24092447
 """
 from __future__ import annotations
 
@@ -43,9 +45,14 @@ from physics import (
 )
 
 HORIZONS = (1, 3, 5)
-DEFAULT_N = 200
-DEFAULT_TRAIN = 160
-DEFAULT_EVAL = 40
+DEFAULT_N = 400
+DEFAULT_TRAIN = 320
+DEFAULT_EVAL = 80
+# Hardneg mix fractions (choose_safest pressure; physics GT still elastic oracle)
+HARDNEG_UNSAFE_LOOK_SAFE = 0.22
+HARDNEG_SAFE_LOOK_UNSAFE = 0.22
+HARDNEG_NEAR_MISS = 0.16
+# remainder = baseline random merge-lane
 
 BG = (28, 32, 40)
 LANE = (50, 56, 68)
@@ -61,53 +68,188 @@ def _font(size: int = 11):
         return ImageFont.load_default()
 
 
-def _sample_agents(rng: random.Random) -> list[dict[str, Any]]:
-    """Ego on left lane heading +x; others ahead / crossing with masses."""
+def _pick_hardneg_kind(rng: random.Random) -> str:
+    """Scene style for choose_safest pressure (not GT; meta tag only)."""
+    u = rng.random()
+    if u < HARDNEG_UNSAFE_LOOK_SAFE:
+        return "unsafe_look_safe"
+    u -= HARDNEG_UNSAFE_LOOK_SAFE
+    if u < HARDNEG_SAFE_LOOK_UNSAFE:
+        return "safe_look_unsafe"
+    u -= HARDNEG_SAFE_LOOK_UNSAFE
+    if u < HARDNEG_NEAR_MISS:
+        return "near_miss_choice"
+    return "baseline"
+
+
+def _sample_agents(
+    rng: random.Random,
+    *,
+    hardneg_kind: str = "baseline",
+) -> list[dict[str, Any]]:
+    """Ego on left lane heading +x; others ahead / crossing with masses.
+
+    Hardneg kinds (visual/distance cues vs elastic truth):
+      unsafe_look_safe — close ahead but co-moving / pulling away → coast often safe
+      safe_look_unsafe — far/slow look but strong closing → coast rear-ends
+      near_miss_choice — coast/accel unsafe; brake or turn clears (planner pressure)
+      baseline — prior random merge-lane mix
+    """
     agents: list[dict[str, Any]] = []
-    # ego
-    agents.append({
-        "oid": "ego",
-        "class": "vehicle",
-        "mass": 1.0,
-        "r": 10.0,
-        "x": float(rng.uniform(40, 70)),
-        "y": float(rng.uniform(70, 130)),
-        "vx": float(rng.uniform(4.0, 9.0)),
-        "vy": float(rng.uniform(-0.6, 0.6)),
-        "color": list(EGO_COLOR),
-    })
-    n_other = rng.randint(2, 4)
-    for i in range(n_other):
-        is_ped = rng.random() < 0.35
-        if is_ped:
-            agents.append({
-                "oid": f"p{i}",
-                "class": "pedestrian",
-                "mass": 0.25,
-                "r": 5.0,
-                "x": float(rng.uniform(120, ARENA_W - 40)),
-                "y": float(rng.uniform(MARGIN + 20, ARENA_H - MARGIN - 20)),
-                "vx": float(rng.uniform(-1.5, 1.5)),
-                "vy": float(rng.uniform(-3.5, 3.5)),
-                "color": list(PED_COLOR),
-            })
-        else:
-            # vehicle ahead — often slower → rear-end if ego doesn't brake
-            agents.append({
-                "oid": f"v{i}",
-                "class": "vehicle",
-                "mass": float(rng.uniform(0.8, 1.6)),
-                "r": float(rng.uniform(8.0, 12.0)),
-                "x": float(rng.uniform(110, ARENA_W - 50)),
-                "y": float(agents[0]["y"] + rng.uniform(-25, 25)),
-                "vx": float(rng.uniform(1.0, 5.5)),
-                "vy": float(rng.uniform(-1.2, 1.2)),
-                "color": list(rng.choice(VEH_COLORS)),
-            })
+    ego_y = float(rng.uniform(70, 130))
+    if hardneg_kind == "unsafe_look_safe":
+        ego_vx = float(rng.uniform(5.0, 8.0))
+        agents.append({
+            "oid": "ego",
+            "class": "vehicle",
+            "mass": 1.0,
+            "r": 10.0,
+            "x": float(rng.uniform(40, 65)),
+            "y": ego_y,
+            "vx": ego_vx,
+            "vy": float(rng.uniform(-0.4, 0.4)),
+            "color": list(EGO_COLOR),
+        })
+        # Close ahead but matching/faster vx → looks urgent, physics often clear
+        agents.append({
+            "oid": "v0",
+            "class": "vehicle",
+            "mass": float(rng.uniform(0.9, 1.4)),
+            "r": float(rng.uniform(9.0, 11.0)),
+            "x": float(agents[0]["x"] + rng.uniform(28, 48)),  # near / DZ-looking
+            "y": float(ego_y + rng.uniform(-8, 8)),
+            "vx": float(ego_vx + rng.uniform(0.5, 2.5)),  # pulling away
+            "vy": float(rng.uniform(-0.5, 0.5)),
+            "color": list(rng.choice(VEH_COLORS)),
+        })
+        # distractor pedestrian lateral, not on collision course
+        agents.append({
+            "oid": "p1",
+            "class": "pedestrian",
+            "mass": 0.25,
+            "r": 5.0,
+            "x": float(rng.uniform(160, ARENA_W - 40)),
+            "y": float(rng.uniform(MARGIN + 15, ARENA_H - MARGIN - 15)),
+            "vx": float(rng.uniform(-1.0, 1.0)),
+            "vy": float(rng.uniform(-2.5, 2.5)),
+            "color": list(PED_COLOR),
+        })
+    elif hardneg_kind == "safe_look_unsafe":
+        ego_vx = float(rng.uniform(7.0, 10.0))
+        agents.append({
+            "oid": "ego",
+            "class": "vehicle",
+            "mass": 1.0,
+            "r": 10.0,
+            "x": float(rng.uniform(35, 55)),
+            "y": ego_y,
+            "vx": ego_vx,
+            "vy": float(rng.uniform(-0.3, 0.3)),
+            "color": list(EGO_COLOR),
+        })
+        # Far ahead / slow — looks mid/far safe but strong closing → rear-end under coast
+        agents.append({
+            "oid": "v0",
+            "class": "vehicle",
+            "mass": float(rng.uniform(1.0, 1.8)),
+            "r": float(rng.uniform(9.0, 12.0)),
+            "x": float(rng.uniform(180, min(260, ARENA_W - 40))),
+            "y": float(ego_y + rng.uniform(-6, 6)),
+            "vx": float(rng.uniform(0.2, 1.8)),  # much slower
+            "vy": float(rng.uniform(-0.4, 0.4)),
+            "color": list(rng.choice(VEH_COLORS)),
+        })
+        agents.append({
+            "oid": "v1",
+            "class": "vehicle",
+            "mass": float(rng.uniform(0.8, 1.3)),
+            "r": float(rng.uniform(8.0, 11.0)),
+            "x": float(rng.uniform(120, 170)),
+            "y": float(ego_y + rng.uniform(35, 55) * rng.choice([-1, 1])),
+            "vx": float(rng.uniform(2.0, 5.0)),
+            "vy": float(rng.uniform(-0.8, 0.8)),
+            "color": list(rng.choice(VEH_COLORS)),
+        })
+    elif hardneg_kind == "near_miss_choice":
+        ego_vx = float(rng.uniform(6.0, 9.0))
+        agents.append({
+            "oid": "ego",
+            "class": "vehicle",
+            "mass": 1.0,
+            "r": 10.0,
+            "x": float(rng.uniform(40, 60)),
+            "y": ego_y,
+            "vx": ego_vx,
+            "vy": 0.0,
+            "color": list(EGO_COLOR),
+        })
+        # Slow vehicle dead ahead — coast/accel hits; brake/turn often clears
+        agents.append({
+            "oid": "v0",
+            "class": "vehicle",
+            "mass": float(rng.uniform(1.0, 1.6)),
+            "r": float(rng.uniform(9.0, 12.0)),
+            "x": float(agents[0]["x"] + rng.uniform(55, 85)),
+            "y": float(ego_y + rng.uniform(-4, 4)),
+            "vx": float(rng.uniform(0.5, 2.0)),
+            "vy": float(rng.uniform(-0.3, 0.3)),
+            "color": list(rng.choice(VEH_COLORS)),
+        })
+        # Crossing ped offset — adds choose_safest ambiguity
+        agents.append({
+            "oid": "p1",
+            "class": "pedestrian",
+            "mass": 0.25,
+            "r": 5.0,
+            "x": float(agents[0]["x"] + rng.uniform(70, 110)),
+            "y": float(ego_y + rng.choice([-1, 1]) * rng.uniform(40, 70)),
+            "vx": float(rng.uniform(-0.5, 0.5)),
+            "vy": float(-rng.choice([-1, 1]) * rng.uniform(2.0, 4.0)),  # toward lane
+            "color": list(PED_COLOR),
+        })
+    else:
+        # baseline — prior random merge-lane mix
+        agents.append({
+            "oid": "ego",
+            "class": "vehicle",
+            "mass": 1.0,
+            "r": 10.0,
+            "x": float(rng.uniform(40, 70)),
+            "y": ego_y,
+            "vx": float(rng.uniform(4.0, 9.0)),
+            "vy": float(rng.uniform(-0.6, 0.6)),
+            "color": list(EGO_COLOR),
+        })
+        n_other = rng.randint(2, 4)
+        for i in range(n_other):
+            is_ped = rng.random() < 0.35
+            if is_ped:
+                agents.append({
+                    "oid": f"p{i}",
+                    "class": "pedestrian",
+                    "mass": 0.25,
+                    "r": 5.0,
+                    "x": float(rng.uniform(120, ARENA_W - 40)),
+                    "y": float(rng.uniform(MARGIN + 20, ARENA_H - MARGIN - 20)),
+                    "vx": float(rng.uniform(-1.5, 1.5)),
+                    "vy": float(rng.uniform(-3.5, 3.5)),
+                    "color": list(PED_COLOR),
+                })
+            else:
+                agents.append({
+                    "oid": f"v{i}",
+                    "class": "vehicle",
+                    "mass": float(rng.uniform(0.8, 1.6)),
+                    "r": float(rng.uniform(8.0, 12.0)),
+                    "x": float(rng.uniform(110, ARENA_W - 50)),
+                    "y": float(agents[0]["y"] + rng.uniform(-25, 25)),
+                    "vx": float(rng.uniform(1.0, 5.5)),
+                    "vy": float(rng.uniform(-1.2, 1.2)),
+                    "color": list(rng.choice(VEH_COLORS)),
+                })
     # de-overlap initial
     for _ in range(8):
         agents, _ = step_world(agents, substeps=1)
-        # re-seed mild drift if collapsed
     return agents
 
 
@@ -152,8 +294,15 @@ def _public_agents(agents: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return out
 
 
-def generate_sequence(seq_id: str, rng: random.Random, n_frames: int) -> dict[str, Any]:
-    agents = _sample_agents(rng)
+def generate_sequence(
+    seq_id: str,
+    rng: random.Random,
+    n_frames: int,
+    *,
+    hardneg_kind: str | None = None,
+) -> dict[str, Any]:
+    kind = hardneg_kind if hardneg_kind is not None else _pick_hardneg_kind(rng)
+    agents = _sample_agents(rng, hardneg_kind=kind)
     frames_meta = []
     frames_img = []
     full_states = []  # internal for GT rollout from each t
@@ -238,6 +387,7 @@ def generate_sequence(seq_id: str, rng: random.Random, n_frames: int) -> dict[st
         "seq_id": seq_id,
         "domain": "collision_predictive",
         "style": "topdown_merge_lane",
+        "hardneg_kind": kind,
         "n_frames": n_frames,
         "arena": {"w": ARENA_W, "h": ARENA_H, "margin": MARGIN},
         "actions": list(ACTIONS),
@@ -269,7 +419,7 @@ def main() -> None:
     ap.add_argument("--n-seq", type=int, default=DEFAULT_N)
     ap.add_argument("--n-train", type=int, default=DEFAULT_TRAIN)
     ap.add_argument("--n-eval", type=int, default=DEFAULT_EVAL)
-    ap.add_argument("--seed", type=int, default=24092446)
+    ap.add_argument("--seed", type=int, default=24092447)
     ap.add_argument("--frames-min", type=int, default=12)
     ap.add_argument("--frames-max", type=int, default=18)
     args = ap.parse_args()
@@ -286,11 +436,14 @@ def main() -> None:
     n_train = args.n_train
     assert args.n_train + args.n_eval == args.n_seq
 
+    hardneg_counts: dict[str, int] = {}
     for i in range(args.n_seq):
         seq_id = f"cp_{i:03d}"
         split = "train" if i < n_train else "eval"
         n_frames = rng.randint(args.frames_min, args.frames_max)
-        bundle = generate_sequence(seq_id, rng, n_frames)
+        kind = _pick_hardneg_kind(rng)
+        hardneg_counts[kind] = hardneg_counts.get(kind, 0) + 1
+        bundle = generate_sequence(seq_id, rng, n_frames, hardneg_kind=kind)
         dest = (train_dir if split == "train" else eval_dir) / seq_id
         dest.mkdir(parents=True, exist_ok=True)
         frames_dir = dest / "frames"
@@ -303,10 +456,15 @@ def main() -> None:
             "seq_id": seq_id,
             "split": split,
             "n_frames": n_frames,
+            "hardneg_kind": kind,
             "n_gt_futures": len(bundle["gt"]["futures"]),
             "path": str(dest.relative_to(out)),
         })
-        print(f"[gen] {seq_id} split={split} frames={n_frames} gt={len(bundle['gt']['futures'])}", flush=True)
+        print(
+            f"[gen] {seq_id} split={split} frames={n_frames} "
+            f"hardneg={kind} gt={len(bundle['gt']['futures'])}",
+            flush=True,
+        )
 
     train_ids = [e["seq_id"] for e in index if e["split"] == "train"]
     eval_ids = [e["seq_id"] for e in index if e["split"] == "eval"]
@@ -330,21 +488,35 @@ def main() -> None:
         "actions": list(ACTIONS),
         "emit_schema": ["chosen_action", "predicted_consequence", "is_safe"],
         "physics": "elastic_disk_2d_masses",
+        "hardneg_mix": {
+            "unsafe_look_safe": HARDNEG_UNSAFE_LOOK_SAFE,
+            "safe_look_unsafe": HARDNEG_SAFE_LOOK_UNSAFE,
+            "near_miss_choice": HARDNEG_NEAR_MISS,
+            "baseline_remainder": round(
+                1.0 - HARDNEG_UNSAFE_LOOK_SAFE - HARDNEG_SAFE_LOOK_UNSAFE - HARDNEG_NEAR_MISS, 4
+            ),
+            "realized_counts": hardneg_counts,
+        },
         "anti_contamination": "consequences_gt.json sidecar only; meta has no futures",
         "adapter_future": "data/lora_adapter_collision/ (empty; VLM deferred)",
         "quantum_adapter": "data/lora_adapter/ READ-ONLY — never touch",
+        "branch_tag": "tip-choose-safest-n",
     }
     (out / "SUMMARY.json").write_text(json.dumps(summary, indent=2) + "\n")
     (out / "SUMMARY.md").write_text(
         f"# Collision predictive dataset\n\n"
         f"seed={args.seed} n={args.n_seq} train={len(train_ids)} eval={len(eval_ids)}\n"
         f"actions={list(ACTIONS)} horizons={list(HORIZONS)}\n"
+        f"hardneg_counts={hardneg_counts}\n"
         f"GT = consequences_gt.json sidecars only.\n"
+        f"branch=tip-choose-safest-n\n"
     )
     (out / "SCENE_CHOICE.md").write_text(
         "# Scene choice (collision predictive)\n\n"
         "Top-down **merge lane** with ego + vehicles/pedestrians (masses + radii).\n"
         "Elastic disk collisions. Discrete hypo actions on ego.\n\n"
+        "Hardneg mix (choose_safest-n): unsafe-looking-but-safe, safe-looking-but-unsafe,\n"
+        "near-miss choice pressure — meta.hardneg_kind only; GT still post-hoc sidecar.\n\n"
         "Deliberately **not** street-F1 (no multi-light intersection render),\n"
         "**not** inverse corridor balls/boxes/signal, **not** quantum.\n"
     )

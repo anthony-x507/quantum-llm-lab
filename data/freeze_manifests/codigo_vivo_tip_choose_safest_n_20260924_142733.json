@@ -1,0 +1,56 @@
+{
+  "schema": "codigo_vivo_tip_choose_safest_n_100pct",
+  "frozen_at_et": "2026-09-24 14:27:33 ET",
+  "domain": "codigo_vivo_tip_choose_safest_n",
+  "pct": 100,
+  "band": "100pct",
+  "git_sha": "PENDING_FEAT_SHA",
+  "git_sha_short": "PENDING",
+  "artifact": "data/frontier_tip_choose_safest_n_probe.json",
+  "collision_eval": "data/collision_predictive/EVAL_COLLISION_CPU.json",
+  "base_tip_sha": "9a0de24a3dd08db36647d29f277151d14b3739d3",
+  "branch": "frontier/tip-choose-safest-n",
+  "metrics": {
+    "collision_physics_overall_pct": 100.0,
+    "collision_choose_safest_overall_pct": 100.0,
+    "collision_inverse_cv_overall_pct": 99.86,
+    "collision_ablation_pp": 0.14,
+    "collision_n_eval_seqs": 80,
+    "collision_n_queries": 5670,
+    "collision_n_eval_seqs_before": 40,
+    "collision_n_queries_before": 2850,
+    "collision_contam_passed": true,
+    "collision_retrieval_ok": true,
+    "hardneg_mix": {
+      "unsafe_look_safe": 0.22,
+      "safe_look_unsafe": 0.22,
+      "near_miss_choice": 0.16,
+      "baseline_remainder": 0.4,
+      "realized_counts": {
+        "safe_look_unsafe": 87,
+        "baseline": 154,
+        "unsafe_look_safe": 87,
+        "near_miss_choice": 72
+      }
+    },
+    "mixed_d_unified": 1.0,
+    "floor_held": true,
+    "floors_distance_DZ": "held_by_non_touch",
+    "floors_motion": "held_by_non_touch",
+    "floors_TTI": "held_by_non_touch",
+    "floor_resmoke": "N/A"
+  },
+  "floors": {
+    "mixed_d_unified": 1.0,
+    "held": true,
+    "collision_physics": 1.0,
+    "collision_choose_safest": 1.0,
+    "min_hold_pct": 80.0,
+    "distance_DZ": "held_by_non_touch (no distance_est edits)",
+    "motion": "held_by_non_touch (no motion edits)",
+    "TTI": "held_by_non_touch (no TTI edits)"
+  },
+  "policy": "RO data/lora_adapter/; no merge main; side-branch only; avoid tip-cv / tip-distance-mid/far / tip-hardneg-r12..r15 / tip-inverse-r3 / tip-circ-expand / tip-future-track* / tip-tti; GT never at inference",
+  "note": "choose_safest-n expand eval 40\u219280 seqs / 2850\u21925670 queries with hardneg mix; physics+choose_safest oracle held 100%; CPU synth seed 24092447",
+  "prior_freeze_retained": "codigo_vivo_tip_collision_n_100pct_20260924_132559"
+}

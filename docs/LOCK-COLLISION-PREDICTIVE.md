@@ -51,3 +51,11 @@ CPU physics + synth GT OK now. Do **not** kill screens
 Side branch `frontier/tip-collision-n` @ tip `763fb8c` scales eval **8 → 40** seqs
 (**555 → 2850** queries), seed `24092446`, split 160/40. Physics oracle must stay
 ≥80% (held **100%**). See `docs/FRONTIER-CODIGO-VIVO-TIP-COLLISION-N.md`.
+
+
+## choose_safest-n expand (2026-09-24 tip-choose-safest-n)
+
+Side branch `frontier/tip-choose-safest-n` @ tip `9a0de24` scales eval **40 → 80** seqs
+(**2850 → 5670** queries) with hardneg mix, seed `24092447`, split 320/80.
+Physics + choose_safest oracle must stay ≥80% (held **100%**). See
+`docs/FRONTIER-CODIGO-VIVO-TIP-CHOOSE-SAFEST-N.md`. **Do not fold into tip.**

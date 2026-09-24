@@ -1,3 +1,4 @@
+- 2026-09-24 fold tip-choose-safest-n → tip; freeze `codigo_vivo_tip_choose_safest_n_fold_100pct_20260924_151818`; n 40→80 @ physics+choose_safest 100%; R15 52/52 held; mixed 1.0; RO adapters.
 - 2026-09-24: fold tip-hardneg-r15 → tip; freeze `codigo_vivo_tip_r15_100pct_20260924_151243` (15→52/52·44/44; R14 52 held; LP 64/64; pillars 37; circ 5/5; mixed 1.0).
 - 2026-09-24: fold tip-hardneg-r14 → tip; freeze `codigo_vivo_tip_r14_100pct_20260924_150809` (16→52/52·44/44; LP 64/64; pillars 37; circ 5/5; mixed 1.0).
 - 2026-09-24: fold tip-label-protect-expand → tip; LP 43→64/64 · verif 32→42/42; pillars 37/37; circ 5/5; freeze codigo_vivo_tip_label_protect_expand_fold_100pct_20260924_150306

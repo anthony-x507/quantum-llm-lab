@@ -1,0 +1,13 @@
+{
+  "when": "2026-09-24T15:18:18-0400",
+  "path": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter",
+  "files": [
+    {
+      "rel": ".gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime": 1790261820.7295232
+    }
+  ],
+  "count": 1
+}

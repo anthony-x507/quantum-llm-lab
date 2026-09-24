@@ -3,8 +3,7 @@
 
 Predictors:
   - collision_physics: elastic rollout under hypo action (or choose_safest)
-  - inverse_cv: action-aware CV + wall + mass-aware third-party bounce (inverse-r3);
-    ego overlaps geometric-only (no ego elastic / no substeps)
+  - inverse_cv: action-aware CV + wall bounce; no elastic masses (inverse-r2)
   - collision_choose_safest: pick safest action via physics, score vs GT of
     THAT chosen action (planning-ish)
 
@@ -222,7 +221,7 @@ def evaluate(root: Path, audit_path: Path, *, contam_self_test: bool = False) ->
             _ = emit_to_tool_out(pred_phys)
             sc_phys = score_emit(pred_phys, gt, agents0, k)
 
-            # --- inverse_cv (action-aware CV + TP mass bounce; ego geometric) ---
+            # --- inverse_cv (action-aware CV + wall; no elastic masses) ---
             # inverse-r2: apply hypo action kinematics then CV wall-bounce;
             # still no agent-agent elastic resolve (ablation vs collision_physics).
             pred_cv = predict_cv_no_collision(agents0, k, action=action)
@@ -320,13 +319,13 @@ def evaluate(root: Path, audit_path: Path, *, contam_self_test: bool = False) ->
         "collision_minus_inverse_cv_pp": None if cp is None or cv is None else round(cp - cv, 2),
         "note": (
             "Positive → elastic collision layer improves consequence/safety prediction "
-            "vs inverse_cv (TP mass bounce; ego geometric, no substeps). Scored on action-conditional GT."
+            "vs inverse-style CV (no mass/collision). Scored on action-conditional GT."
         ),
     }
 
     result = {
         "domain": "collision_predictive",
-        "branch_tag": "tip-collision-pred",
+        "branch_tag": "tip-choose-safest-n",
         "ts": _now(),
         "n_eval_seqs": len(seqs),
         "predictors": table,
@@ -378,7 +377,7 @@ def main() -> None:
         "distance_integration": result.get("distance_integration"),
         "predictors": result["predictors"],
         "quantum_adapter_touched": False,
-        "floor_resmoke": "mixed (d) re-smoke on tip fold",
+        "floor_resmoke": "fold tip-choose-safest-n — collision expand only; tip router non-touch; cite R15 floors",
     }
     Path("data/frontier_tip_collision_pred_probe.json").write_text(
         json.dumps(probe, indent=2) + "\n"
@@ -388,33 +387,48 @@ def main() -> None:
                     "n_expand": {"before_n_eval_seqs": 8, "before_n_queries": 555,
                                  "target_n_eval_seqs": 40}}, indent=2) + "\n"
     )
+    cs = result["predictors"]["collision_choose_safest"]["overall"]
+    Path("data/frontier_tip_choose_safest_n_probe.json").write_text(
+        json.dumps({
+            **probe,
+            "schema": "frontier_tip_choose_safest_n_probe",
+            "branch": "frontier/codigo-vivo-tip",
+            "collision_choose_safest_overall_pct": cs["collision_correct_pct"],
+            "collision_choose_safest_n": cs["n"],
+            "collision_physics_overall_pct": (
+                result["predictors"]["collision_physics"]["overall"]["collision_correct_pct"]
+            ),
+            "n_expand": {
+                "before_n_eval_seqs": 40,
+                "before_n_queries": 2850,
+                "target_n_eval_seqs": 80,
+                "hardneg": True,
+            },
+            "floors_policy": {
+                "physics": 100.0,
+                "choose_safest": 100.0,
+                "distance_DZ": "held_by_non_touch",
+                "motion": "held_by_non_touch",
+                "TTI": "held_by_non_touch",
+            },
+        }, indent=2) + "\n"
+    )
 
     inv = result["predictors"]["inverse_cv"]["overall"]["collision_correct_pct"]
-    inv_probe = {
-        **probe,
-        "schema": "frontier_tip_inverse_r3_probe",
-        "branch": "frontier/codigo-vivo-tip",
-        "base_tip_sha": "fbd2e7e",
-        "inverse_cv_overall_pct": inv,
-        "inverse_cv_overall_pct_before": 99.82,
-        "inverse_cv_delta_pp": None if inv is None else round(float(inv) - 99.82, 2),
-        "collision_choose_safest_overall_pct": (
-            result["predictors"]["collision_choose_safest"]["overall"]["collision_correct_pct"]
-        ),
-        "physics_freeze_100pct": (
-            result["predictors"]["collision_physics"]["overall"]["collision_correct_pct"] == 100.0
-        ),
-        "inverse_target_ge_95": inv is not None and inv >= 95.0,
-        "inverse_r3_method": "tp_mass_bounce_ego_geometric",
-        "not_folded_into_tip": False,
-        "quantum_adapter_touched": False,
-    }
-    Path("data/frontier_tip_inverse_r3_probe.json").write_text(
-        json.dumps(inv_probe, indent=2) + "\n"
-    )
-    # Retain r2 probe path as alias snapshot for downstream readers
     Path("data/frontier_tip_inverse_r2_probe.json").write_text(
-        json.dumps({**inv_probe, "schema": "frontier_tip_inverse_r2_probe_alias_r3"}, indent=2) + "\n"
+        json.dumps({
+            **probe,
+            "schema": "frontier_tip_inverse_r2_probe",
+            "branch": "frontier/codigo-vivo-tip",
+            "inverse_cv_overall_pct": inv,
+            "collision_choose_safest_overall_pct": (
+                result["predictors"]["collision_choose_safest"]["overall"]["collision_correct_pct"]
+            ),
+            "physics_freeze_100pct": (
+                result["predictors"]["collision_physics"]["overall"]["collision_correct_pct"] == 100.0
+            ),
+            "inverse_target_ge_95": inv >= 95.0,
+        }, indent=2) + "\n"
     )
 
     # markdown table

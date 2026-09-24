@@ -1,3 +1,23 @@
+## Choose-safest-n — FOLDED
+
+**Branch:** `frontier/tip-choose-safest-n` → **FOLDED** into `frontier/codigo-vivo-tip`  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-CHOOSE-SAFEST-N.md`  
+**Freeze:** `codigo_vivo_tip_choose_safest_n_fold_100pct_20260924_151818`
+
+| Surface | Score |
+|---------|-------|
+| collision physics / choose_safest | **100% / 100%** @ **n=80 / 5670** (was n=40 / 2850) |
+| inverse_cv @ n80 | **99.89%** |
+| mixed (d) unified | **1.0** |
+| R15 / R14 / LP | **52/52 · 52/52 · 64/64** |
+| pillars / circ | **37/37 · 5/5** |
+
+**CPU re-smoke after fold:** physics+choose_safest **100%** @ n80; R15/R14/LP hardneg re-smoke held; mixed **1.0**; pillars/circ/far/track/DZ/mid/TTI cited retained; freezes retained incl. r15 + r14 + label_protect_expand_fold + pillars + circ + future_r3 + side choose_safest_n. Adapters RO. R16+ / tti-cold not folded.
+
+**Method:** cherry-pick `d3bf164` onto tip `422a9e3` → fold freeze `codigo_vivo_tip_choose_safest_n_fold_100pct_20260924_151818`; EVAL/probes/harness → side n=80 retagged tip; rsync side frames.
+
+**Not folded:** R16 @ f3ccb0b → tti-cold @ c97e89a → R17…R25.
+
 ## Hardneg R15 — FOLDED
 
 **Branch:** `frontier/tip-hardneg-r15` → **FOLDED** into `frontier/codigo-vivo-tip`  
@@ -12,11 +32,11 @@
 | mixed (d) unified | **1.0** |
 | pillars / circ / hardneg smoke | **37/37 · 5/5 · 18/18** |
 
-**CPU re-smoke after fold:** unified **1.0**; R15 **15→52**; R14 held; LP/pillars/circ floors retained; freezes retained incl. r14 + label_protect_expand_fold + pillars + circ + future_r3 + r13 + priors. Adapters RO. choose-n / R16+ / tti-cold not folded.
+**CPU re-smoke after fold:** unified **1.0**; R15 **15→52**; R14 held; LP/pillars/circ floors retained; freezes retained incl. r14 + label_protect_expand_fold + pillars + circ + future_r3 + r13 + priors. Adapters RO. choose-n later FOLDED (see Choose-safest-n). R16+ / tti-cold not folded.
 
 **Method:** cherry-pick `7ef18ce` onto tip `bc6902f` → `a65dac6` / fold `4787c78`; merge R12+R13+R14+R15 gates_ops; keep tip STATUS+mixed/LP/r7–r11 JSON ours.
 
-**Not folded:** choose-n @ fecca86 → R16 → tti-cold → R17…R24.
+**Not folded (at R15):** choose-n was next — now FOLDED (see Choose-safest-n). Remaining: R16 → tti-cold → R17…R25.
 
 # FRONTIER — Código-vivo tip scoreboard
 

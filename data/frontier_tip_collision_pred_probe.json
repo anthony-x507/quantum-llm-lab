@@ -1,12 +1,12 @@
 {
   "schema": "frontier_tip_collision_pred_probe",
-  "ts": "2026-09-24 14:49:37 ET",
+  "ts": "2026-09-24 15:14:59 ET",
   "domain": "collision_predictive",
   "branch": "frontier/codigo-vivo-tip",
-  "n_eval_seqs": 40,
+  "n_eval_seqs": 80,
   "metric_collision_correct_pct": 100.0,
-  "metric_n_queries": 2850,
-  "ablation_pp": 0.0,
+  "metric_n_queries": 5670,
+  "ablation_pp": 0.11,
   "contam_passed": true,
   "retrieval_ok": true,
   "emit_schema": [
@@ -28,77 +28,77 @@
   "predictors": {
     "collision_physics": {
       "k=1": {
-        "n": 950,
+        "n": 1890,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=3": {
-        "n": 950,
+        "n": 1890,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=5": {
-        "n": 950,
+        "n": 1890,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
-        "physics_fail_rate": 0.0011
+        "physics_fail_rate": 0.0032
       },
       "overall": {
-        "n": 2850,
+        "n": 5670,
         "collision_correct_pct": 100.0
       }
     },
     "inverse_cv": {
       "k=1": {
-        "n": 950,
-        "collision_correct_pct": 100.0,
+        "n": 1890,
+        "collision_correct_pct": 99.95,
         "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=3": {
-        "n": 950,
-        "collision_correct_pct": 100.0,
+        "n": 1890,
+        "collision_correct_pct": 99.89,
         "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=5": {
-        "n": 950,
-        "collision_correct_pct": 100.0,
-        "safe_match_pct": 100.0,
-        "physics_fail_rate": 0.0
+        "n": 1890,
+        "collision_correct_pct": 99.84,
+        "safe_match_pct": 99.95,
+        "physics_fail_rate": 0.0026
       },
       "overall": {
-        "n": 2850,
-        "collision_correct_pct": 100.0
+        "n": 5670,
+        "collision_correct_pct": 99.89
       }
     },
     "collision_choose_safest": {
       "k=1": {
-        "n": 950,
+        "n": 1890,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=3": {
-        "n": 950,
+        "n": 1890,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=5": {
-        "n": 950,
+        "n": 1890,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
-        "physics_fail_rate": 0.0
+        "physics_fail_rate": 0.0026
       },
       "overall": {
-        "n": 2850,
+        "n": 5670,
         "collision_correct_pct": 100.0
       }
     }
   },
   "quantum_adapter_touched": false,
-  "floor_resmoke": "mixed (d) re-smoke on tip fold"
+  "floor_resmoke": "fold tip-choose-safest-n \u2014 collision expand only; tip router non-touch; cite R15 floors"
 }

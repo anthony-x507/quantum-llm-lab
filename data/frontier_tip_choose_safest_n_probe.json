@@ -1,5 +1,5 @@
 {
-  "schema": "frontier_tip_inverse_r2_probe",
+  "schema": "frontier_tip_choose_safest_n_probe",
   "ts": "2026-09-24 15:14:59 ET",
   "domain": "collision_predictive",
   "branch": "frontier/codigo-vivo-tip",
@@ -101,8 +101,20 @@
   },
   "quantum_adapter_touched": false,
   "floor_resmoke": "fold tip-choose-safest-n \u2014 collision expand only; tip router non-touch; cite R15 floors",
-  "inverse_cv_overall_pct": 99.89,
   "collision_choose_safest_overall_pct": 100.0,
-  "physics_freeze_100pct": true,
-  "inverse_target_ge_95": true
+  "collision_choose_safest_n": 5670,
+  "collision_physics_overall_pct": 100.0,
+  "n_expand": {
+    "before_n_eval_seqs": 40,
+    "before_n_queries": 2850,
+    "target_n_eval_seqs": 80,
+    "hardneg": true
+  },
+  "floors_policy": {
+    "physics": 100.0,
+    "choose_safest": 100.0,
+    "distance_DZ": "held_by_non_touch",
+    "motion": "held_by_non_touch",
+    "TTI": "held_by_non_touch"
+  }
 }
