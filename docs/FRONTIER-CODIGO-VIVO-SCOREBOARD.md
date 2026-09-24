@@ -1,7 +1,7 @@
 # FRONTIER — Código-vivo tip scoreboard
 
 **Branch:** `frontier/codigo-vivo-tip`  
-**Written:** 2026-09-24 12:31:44 ET · Mac-111 (`074c6626-…`) · tip post own-delta fold  
+**Written:** 2026-09-24 12:35:26 ET · Mac-111 (`074c6626-…`) · tip post hardneg-r5 fold  
 **Claim scope:** classical MoE router + `python -I` verifier + prior-replay ent/vision + GT-free circuit-graph scaffold on ent + mlx vision parse polish. **NO quantum-advantage claims.**
 
 ## Tip composition (merges / folds)
@@ -23,6 +23,7 @@
 | `frontier/tip-mlx-largern` | `c11ccac` | fold mlx LIVE larger-n `d65eb69`/`75f6c0a` (rebase onto `01ddabd` → `23a9b7a`+`c11ccac`); py8/ent16/vis16 unified **1.0**; CPU floor **1.0** held |
 | `frontier/tip-ent-sep-fix` | `08463a2` | fold ent-sep-fix (rebase `47975a7` onto `459f6da`); LIVE pool honest 1sep+15ent; MLX ent2 **1.0** with sep; CPU floor **1.0** held |
 | `frontier/tip-own-delta-scoreboard` | `66db30a` | fold own-delta (rebase `2382c90` onto `0a1ef4d`); honesty Py−0.062 Ent+1.0 Vis−0.200; dual-lane protects; CPU floor **1.0** held |
+| `frontier/tip-hardneg-r5` | `55bdfb7` | fold R5 polish `9a12fbc` (rebase onto `b1c7091` → `49d7ccc` + pin `55bdfb7`); R5 44/44·36/36; floor **1.0** held |
 
 **Metric policy:** Prefer vision **1.0** / overall **1.0** from `mixed-freeze-vision` over scaffold-merge / R2-port scoreboards that still show vis **0.9** / overall **0.9667**. Keep scaffold wiring + R2 reinforces + anti-think.
 
@@ -234,6 +235,39 @@
 | Mixed reconfirm | `data/frontier_moe_verifier_mixed_{smoke,cpu,unified}.json` |
 
 
+
+## FOLD — tip-hardneg-r5 → tip (overall 1.0 held)
+
+**When:** 2026-09-24 12:35:26 ET · Mac-111 (`074c6626-…`)  
+**Method:** tip free at `b1c7091` (post_polish) → rebase `frontier/tip-hardneg-r5` (`5dfaf51` / polish `9a12fbc`, parent `0a1ef4d`) onto tip → `49d7ccc` + pin `55bdfb7` (FF merge). Mixed JSON conflicts kept tip (re-smoke).  
+**Claim:** NO quantum advantage. R5 hardneg reinforce + polish_r5. Prior freezes **NOT abandoned** (incl. post_polish).
+
+| Lock | Value |
+|------|-------|
+| overall (d unified) CPU | **1.0000** (py1 / ent1 / vis1) |
+| MoE Δ overall | **+0.3334** visible |
+| pillars / hardneg smoke | **26/26 · 18/18** |
+| hardneg R1 / R2 / R3 / R4 / R5 | **18/18 · 22/22 · 35/35 · 40/40 · 44/44** |
+| R3 / R4 / R5 verifier loop | **28/28 · 32/32 · 36/36** (unified 1.0) |
+| `wired_to_vlm` | **true** (`text_scaffold_prefix`) |
+| `ent_never_on_python` | **true** |
+| `prompt_touches_gt` | **false** |
+| floor held | **yes** (≥0.967, actual 1.0) |
+| platform freeze `f0da3e7` | **retained** |
+| MLX+R3 freeze `5c67267` / `codigo_vivo_tip_mlx_r3_…` | **retained** |
+| polish_r4 `40f1d7c` / `tip_moe_verifier_polish_r4_…` | **retained** |
+| post_polish `bf58743` / `codigo_vivo_tip_post_polish_…` | **retained** |
+| polish_r5 `9a12fbc` / `tip_moe_verifier_polish_r5_…` | **retained** |
+
+| Artifact | Path |
+|----------|------|
+| R5 doc | `docs/FRONTIER-CODIGO-VIVO-TIP-R5.md` |
+| R5 fixtures | `data/bench_live/hardneg_r5_{mixed_router,python_items}.json` |
+| polish_r5 manifest | `data/freeze_manifests/tip_moe_verifier_polish_r5_100pct_20260924_123200.json` |
+| R5 metrics | `data/freeze_metrics/codigo_vivo_tip_adv_r5_20260924.json` |
+| Mixed reconfirm | `data/frontier_moe_verifier_mixed_{cpu,unified}.json` |
+
+
 ## LOCK / anti-contam
 
 - Freeze mixed unified overall **≥0.9667** (docs ~0.967); polished floor held at **1.0**. Never abandon.
@@ -314,7 +348,7 @@ Detail: `docs/FRONTIER-CODIGO-VIVO-TIP-R3.md` · metrics `data/freeze_metrics/co
 | Pillar | Baseline | Actual (tip) | Target | Gap | Next |
 |--------|----------|--------------|--------|-----|------|
 | **MoE** (mixed Δ overall vs baseline) | 0.000 (a) | **+0.333** visible; (d) **1.0** | hold Δ≥+0.30; (d)≥0.967 | **0** vs freeze; **0** vs polish | Keep router R2 + MFV vis_arith; no adapter writes |
-| **Verifier** (python loop) | 0.000 single-shot | **1.0** loop (n=8); hardneg py R1/R2 **1.0** | ≥0.875 floor; prefer 1.0 | **0** | Gold-free extractors only; expand hardneg families carefully |
+| **Verifier** (python loop) | 0.000 single-shot | **1.0** loop (n=8); hardneg py R1–R5 **1.0** | ≥0.875 floor; prefer 1.0 | **0** | Gold-free extractors only; expand hardneg families carefully |
 | **Scaffold** (circuit-graph on ent) | off / no hints | default **ON**; freeze solve **0.9**; Δsolve **0.5**; **`wired_to_vlm=true`** | solve≥0.90; Δsolve≥0.45; wire ON | **0** | Keep text_scaffold_prefix; weight_peft_injection=false; GT-free |
 | **Vision** (mixed scored prior-replay) | 0.900 (pre-polish) | **1.000** scored | ≥0.900 freeze; prefer 1.0 | **0** | Hold per-item prior; VISION_NEG + vis_arith |
 | **vision_mlx_parse** (mlx grounding n=3) | **0.0** (0/3 @ API-fix alone, max_tokens=768) | **1.0** (3/3 anti-think: tokens=1536 + strip think + JSON cue + two-phase) | ≥2/3 (~0.67); prefer 1.0 | **0** | Keep API fix + anti-think; demos/CPU unchanged |
@@ -330,6 +364,7 @@ Detail: `docs/FRONTIER-CODIGO-VIVO-TIP-R3.md` · metrics `data/freeze_metrics/co
 | `scaffold-wire-vlm` `8f5e694`→`ae62ce2` | none (rebase onto `e680271` clean) | FF into tip; re-smoke overall **1.0**; freezes retained |
 | `tip-hardneg-r4` `40f1d7c`→`11740a6` | mixed `{cpu,unified}.json` | **Ours (tip scaffold-wire smoke)**; re-smoke after FF → overall **1.0**; freezes retained |
 | `tip-mlx-largern` `75f6c0a`→`c11ccac` | `mixed_items.json` (expanded n) | **Tip CPU pool restored**; LIVE pool → `mixed_items_largern.json`; re-smoke overall **1.0**; freezes retained; sep flaky not fixed |
+| `tip-hardneg-r5` `9a12fbc`→`49d7ccc` | mixed `{cpu,unified}.json` | **Ours (tip post_polish smoke)**; re-smoke after FF → overall **1.0**; freezes retained incl. post_polish |
 
 ## Reproduce
 
@@ -347,6 +382,8 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
   --hardneg-path data/bench_live/hardneg_r3_mixed_router.json
 .venv/bin/python examples/moe_dual_lane_router.py --hardneg \
   --hardneg-path data/bench_live/hardneg_r4_mixed_router.json
+.venv/bin/python examples/moe_dual_lane_router.py --hardneg \
+  --hardneg-path data/bench_live/hardneg_r5_mixed_router.json
 ```
 
 ## Artifacts
@@ -359,6 +396,12 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `data/frontier_moe_verifier_hardneg_r3.json`
 - `data/freeze_metrics/codigo_vivo_tip_adv_r3_20260924.json`
 - `docs/FRONTIER-CODIGO-VIVO-TIP-R3.md`
+- `data/bench_live/hardneg_r5_{mixed_router,python_items}.json`
+- `data/frontier_moe_dual_lane_hardneg_r5.json`
+- `data/frontier_moe_verifier_hardneg_r5.json`
+- `data/freeze_manifests/tip_moe_verifier_polish_r5_100pct_20260924_123200.json`
+- `data/freeze_metrics/codigo_vivo_tip_adv_r5_20260924.json`
+- `docs/FRONTIER-CODIGO-VIVO-TIP-R5.md`
 - `data/FRONTIER_CIRCUIT_GRAPH_SCAFFOLD_FREEZE.json`
 - `data/frontier_circuit_graph_scaffold_hard_recheck.json`
 - `data/frontier_vision_mlx_api_fix_mac111.json`
@@ -422,3 +465,11 @@ n honest: py=8 ent=16 vis=16 · Δ vs CPU 1.0 = **0.0** · floor held · Mac-111
 **CPU re-smoke after fold:** unified **1.0**; R1–R4 **18/18·22/22·35/35·40/40**; R3/R4 verifier **28/28·32/32**; `wired_to_vlm=true`.  
 Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. Classical present, not routed on CV pillars.  
 **Key honesty:** ent2 still **+1.0**; quantum alone hurts py/vis; dual-lane protects. Platform / mlx_r3 / polish_r4 freezes **retained**.
+
+## Hardneg R5 — FOLDED
+
+**When:** 2026-09-24 12:35:26 ET · Mac-111 · rebase `5dfaf51`/`9a12fbc` onto `b1c7091` → `49d7ccc`+`55bdfb7` FF  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-R5.md`
+
+**CPU re-smoke after fold:** unified **1.0**; R1–R5 routers **18/18·22/22·35/35·40/40·44/44**; R3/R4/R5 verifier **28/28·32/32·36/36**; `wired_to_vlm=true`.  
+Anti-contam **CLEAN**. Adapters RO unchanged. Platform / mlx_r3 / polish_r4 / **post_polish** / polish_r5 freezes **retained**.

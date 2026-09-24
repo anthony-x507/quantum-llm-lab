@@ -7,6 +7,11 @@
 
 ---
 
+## Tip hardneg R5 (2026-09-24) — FOLDED
+
+Branch `frontier/tip-hardneg-r5` rebased `9a12fbc`→`49d7ccc` onto tip `b1c7091` (post_polish); FF into `frontier/codigo-vivo-tip`. CPU re-smoke unified **1.0**; R1–R5 routers 18/18·22/22·35/35·40/40·44/44; R3/R4/R5 verifier 28/28·32/32·36/36. Anti-contam CLEAN. Freezes retained incl. post_polish. See `docs/FRONTIER-CODIGO-VIVO-TIP-R5.md`.
+
+
 ## Tip own-delta (2026-09-24) — FOLDED
 
 Branch `frontier/tip-own-delta-scoreboard` rebased `2382c90`→`66db30a` onto tip `0a1ef4d` (ent-sep); FF into `frontier/codigo-vivo-tip`. Py Δ −0.062, Ent +1.0, Vis −0.200; tip dual-lane CPU re-smoke unified **1.0**. Anti-contam CLEAN. Freezes retained + post_polish. See `docs/FRONTIER-CODIGO-VIVO-TIP-OWN-DELTA-SCOREBOARD.md`.

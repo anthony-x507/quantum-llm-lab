@@ -1,7 +1,7 @@
 # Frontier — Código-vivo tip hardneg R5
 
-**Branch:** `frontier/tip-hardneg-r5` (tip fold-busy at `frontier/codigo-vivo-tip`)  
-**Base tip:** `0a1ef4d` (ent-sep-fix fold; scaffold-vlm + mlx largern + own-delta prior)  
+**Branch:** `frontier/codigo-vivo-tip` (folded from `frontier/tip-hardneg-r5`)  
+**Base tip:** `b1c7091` (post_polish) · R5 rebased from `0a1ef4d` · polish `9a12fbc` → `49d7ccc` / pin `55bdfb7`  
 **When:** 2026-09-24 ~12:28–12:32 ET · Mac-111 (`074c6626-…`)  
 **Claim:** NO quantum advantage. Classical heuristic router + `python -I` verifier only.
 
@@ -73,10 +73,12 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `data/freeze_manifests/tip_moe_verifier_polish_r5_100pct_*.json`
 - `docs/FRONTIER-CODIGO-VIVO-TIP-R5.md` (this file)
 
-## Tip fold status
+## FOLDED into tip
 
-Tip `frontier/codigo-vivo-tip` was checked out (fold-busy) at worktree `quantum-llm-lab-tip-cv`.  
-R5 lives on **`frontier/tip-hardneg-r5`** pending tip fold when free. No FF/merge performed.
+**When:** 2026-09-24 12:35:26 ET · Mac-111 (`074c6626-…`)  
+**Tip after FF:** `55bdfb7` (rebase onto `b1c7091` + FF). Fold commit follows with scoreboard/STATUS.  
+**Prior freezes retained (not abandoned):** platform `f0da3e7`, MLX+R3 `5c67267`, polish_r4 `40f1d7c`, **post_polish** `bf58743` / `codigo_vivo_tip_post_polish_100pct_20260924_123210`, polish_r5 `9a12fbc`.  
+**Re-smoke:** mixed (d) **1.0**; R1–R5 routers **18/18 · 22/22 · 35/35 · 40/40 · 44/44**; R3/R4/R5 verifier **28/28 · 32/32 · 36/36**; `wired_to_vlm=true`; `ent_never_on_python=true`.
 
 ## What this does NOT do
 
@@ -84,3 +86,4 @@ R5 lives on **`frontier/tip-hardneg-r5`** pending tip fold when free. No FF/merg
 - No writes under `data/lora_adapter/`.
 - No quantum-advantage marketing.
 - No CloudAgent. MachineId `074c6626-…` only.
+- Folded into `frontier/codigo-vivo-tip`; source branch kept for history.
