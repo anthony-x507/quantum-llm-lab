@@ -3,7 +3,8 @@
 
 Predictors:
   - collision_physics: elastic rollout under hypo action (or choose_safest)
-  - inverse_cv: action-aware CV + wall bounce; no elastic masses (inverse-r2)
+  - inverse_cv: action-aware CV + wall + mass-aware third-party bounce (inverse-r3);
+    ego overlaps geometric-only (no ego elastic / no substeps)
   - collision_choose_safest: pick safest action via physics, score vs GT of
     THAT chosen action (planning-ish)
 
@@ -221,7 +222,7 @@ def evaluate(root: Path, audit_path: Path, *, contam_self_test: bool = False) ->
             _ = emit_to_tool_out(pred_phys)
             sc_phys = score_emit(pred_phys, gt, agents0, k)
 
-            # --- inverse_cv (action-aware CV + wall; no elastic masses) ---
+            # --- inverse_cv (action-aware CV + TP mass bounce; ego geometric) ---
             # inverse-r2: apply hypo action kinematics then CV wall-bounce;
             # still no agent-agent elastic resolve (ablation vs collision_physics).
             pred_cv = predict_cv_no_collision(agents0, k, action=action)
@@ -319,7 +320,7 @@ def evaluate(root: Path, audit_path: Path, *, contam_self_test: bool = False) ->
         "collision_minus_inverse_cv_pp": None if cp is None or cv is None else round(cp - cv, 2),
         "note": (
             "Positive → elastic collision layer improves consequence/safety prediction "
-            "vs inverse-style CV (no mass/collision). Scored on action-conditional GT."
+            "vs inverse_cv (TP mass bounce; ego geometric, no substeps). Scored on action-conditional GT."
         ),
     }
 
@@ -366,7 +367,7 @@ def main() -> None:
         "schema": "frontier_tip_collision_pred_probe",
         "ts": result["ts"],
         "domain": "collision_predictive",
-        "branch": "frontier/tip-inverse-r2",
+        "branch": "frontier/tip-inverse-r3",
         "n_eval_seqs": result["n_eval_seqs"],
         "metric_collision_correct_pct": result["predictors"]["collision_physics"]["overall"]["collision_correct_pct"],
         "metric_n_queries": result["predictors"]["collision_physics"]["overall"]["n"],
@@ -389,20 +390,31 @@ def main() -> None:
     )
 
     inv = result["predictors"]["inverse_cv"]["overall"]["collision_correct_pct"]
+    inv_probe = {
+        **probe,
+        "schema": "frontier_tip_inverse_r3_probe",
+        "branch": "frontier/tip-inverse-r3",
+        "base_tip_sha": "3f5f1b1",
+        "inverse_cv_overall_pct": inv,
+        "inverse_cv_overall_pct_before": 99.82,
+        "inverse_cv_delta_pp": None if inv is None else round(float(inv) - 99.82, 2),
+        "collision_choose_safest_overall_pct": (
+            result["predictors"]["collision_choose_safest"]["overall"]["collision_correct_pct"]
+        ),
+        "physics_freeze_100pct": (
+            result["predictors"]["collision_physics"]["overall"]["collision_correct_pct"] == 100.0
+        ),
+        "inverse_target_ge_95": inv is not None and inv >= 95.0,
+        "inverse_r3_method": "tp_mass_bounce_ego_geometric",
+        "not_folded_into_tip": True,
+        "quantum_adapter_touched": False,
+    }
+    Path("data/frontier_tip_inverse_r3_probe.json").write_text(
+        json.dumps(inv_probe, indent=2) + "\n"
+    )
+    # Retain r2 probe path as alias snapshot for downstream readers
     Path("data/frontier_tip_inverse_r2_probe.json").write_text(
-        json.dumps({
-            **probe,
-            "schema": "frontier_tip_inverse_r2_probe",
-            "branch": "frontier/tip-inverse-r2",
-            "inverse_cv_overall_pct": inv,
-            "collision_choose_safest_overall_pct": (
-                result["predictors"]["collision_choose_safest"]["overall"]["collision_correct_pct"]
-            ),
-            "physics_freeze_100pct": (
-                result["predictors"]["collision_physics"]["overall"]["collision_correct_pct"] == 100.0
-            ),
-            "inverse_target_ge_95": inv >= 95.0,
-        }, indent=2) + "\n"
+        json.dumps({**inv_probe, "schema": "frontier_tip_inverse_r2_probe_alias_r3"}, indent=2) + "\n"
     )
 
     # markdown table

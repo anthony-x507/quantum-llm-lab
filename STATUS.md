@@ -25,6 +25,13 @@ Rebase `a59cb7a`/`606c66f` onto `3f5f1b1` → `753b1f7`+`a27b6fd` FF. CPU unifie
 ## 2026-09-24 — fold tip-vision-ground → codigo-vivo-tip
 Rebase `5a74c4a`/`06017ae`/`04b0738`/`810a8bf` onto `9cc5ed5` → `78ce050`+`5775665`+`2c5f1e5`+`ec65f66` FF. CPU unified **1.0** (re-smoke); vision BASE **1.000** (10/10); circ **2/2**; inverse_cv **99.82%**; collision physics **100%** (n=40/2850); choose_safest **100%**; R10 **52/52·44/44**; motion **97.5%**; pillars 26/26; hardneg 18/18; `wired_to_vlm`; freezes retained incl. inverse_r2 + r10 + motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_vision_ground_100pct_20260924_134441`. Motion-r4 / R11 / distance-mid / TTI **not** folded. See SCOREBOARD + TIP-VISION-GROUND.
 
+## tip-inverse-r3 (side, not folded) — 2026-09-24 ET
+
+- Branch `frontier/tip-inverse-r3` @ base `3f5f1b1` (tip-cv busy).
+- inverse_cv **99.82→100.0%**; collision_physics **100%** held; choose_safest **100%** held; mixed floor **1.0** assumed.
+- Method: mass-aware third-party bounce; ego geometric-only. Adapters RO. **Do not fold** until scheduled after motion-r4 / TTI / distance-mid / R11.
+- Doc: `docs/FRONTIER-CODIGO-VIVO-TIP-INVERSE-R3.md`
+
 ## 2026-09-24 — fold tip-inverse-r2 → codigo-vivo-tip
 Rebase `0a1439d`/`7db813f`/`95b1ad6` onto `fabef2b` → `6b77248`+`343d00a`+`5d4d466` FF. CPU unified **1.0** (re-smoke); collision physics **100%** (n=40/2850); inverse_cv **99.82%**; choose_safest **100%**; R10 **52/52·44/44**; motion **97.5%**; pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. r10 + motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`. Vision-ground later folded (see fold entry above); motion-r4 / R11 **not** folded. See SCOREBOARD + TIP-INVERSE-R2.
 

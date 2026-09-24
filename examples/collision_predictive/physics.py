@@ -315,19 +315,59 @@ def _cv_pair_overlaps(state: list[dict[str, Any]]) -> tuple[str | None, bool]:
     return partner, any_c
 
 
+def _cv_step_with_tp_mass(
+    state: list[dict[str, Any]],
+) -> tuple[str | None, bool]:
+    """One CV frame: wall Euler, then mass-aware third-party bounce only.
+
+    Ego overlaps are flagged geometrically and NOT elastically resolved
+    (keeps inverse_cv distinct from collision_physics oracle, which uses
+    4 substeps + ego resolve). Third-party pairs use observable ``mass``
+    from perception state (meta frames — never GT futures).
+    """
+    for o in state:
+        _cv_wall_step(o)
+    partner: str | None = None
+    any_c = False
+    n = len(state)
+    for i in range(n):
+        for j in range(i + 1, n):
+            a, b = state[i], state[j]
+            dx = float(b["x"]) - float(a["x"])
+            dy = float(b["y"]) - float(a["y"])
+            dist = math.hypot(dx, dy)
+            min_d = float(a.get("r", 8)) + float(b.get("r", 8))
+            if dist >= min_d or dist < 1e-9:
+                continue
+            ego_pair = a["oid"] == "ego" or b["oid"] == "ego"
+            if ego_pair:
+                any_c = True
+                if partner is None:
+                    partner = b["oid"] if a["oid"] == "ego" else a["oid"]
+                # geometric flag only — no ego elastic resolve (ablation vs physics)
+            else:
+                any_c = True
+                _resolve_elastic(a, b)
+    return partner, any_c
+
+
 def predict_cv_no_collision(
     agents: list[dict[str, Any]],
     k: int,
     *,
     action: str | None = None,
 ) -> dict[str, Any]:
-    """Inverse-style CV baseline (inverse-r2): action-aware + wall bounce.
+    """Inverse-style CV baseline (inverse-r3): action-aware + TP mass bounce.
 
-    Still IGNORES mass / elastic agent-agent resolution (ablation floor vs
-    collision_physics). Applies hypo action to ego velocity once, steps k
-    frames with wall bounce, and flags geometric overlaps each frame —
-    including third-party pairs so consequence family can be
-    ``third_party_collision_only`` (not only ego contact).
+    Applies hypo action to ego once, steps k frames with wall bounce.
+    **Third-party** overlaps resolve with observable masses (perception
+    state in meta — not GT futures) so redirected agents can enter/leave
+    ego's path. **Ego** overlaps stay geometric flags only (no elastic
+    ego resolve, no substeps) — still an ablation floor vs
+    ``collision_physics`` (4-substep mass-aware ego+TP oracle).
+
+    inverse-r2 was pure geometric pairwise (no TP bounce) → 99.82%;
+    residual misses were TP-redirect cases (e.g. cp_198).
     """
     state = [dict(o) for o in agents]
     if action is not None:
@@ -338,9 +378,7 @@ def predict_cv_no_collision(
     partner: str | None = None
     any_c = False
     for _ in range(int(k)):
-        for o in state:
-            _cv_wall_step(o)
-        p, ac = _cv_pair_overlaps(state)
+        p, ac = _cv_step_with_tp_mass(state)
         any_c = any_c or ac
         if p is not None and partner is None:
             partner = p
@@ -359,7 +397,7 @@ def predict_cv_no_collision(
             {"oid": o["oid"], "x": o["x"], "y": o["y"], "vx": o["vx"], "vy": o["vy"]}
             for o in state
         ],
-        "predictor": "inverse_cv_no_collision",
+        "predictor": "inverse_cv_tp_mass",
     }
 
 

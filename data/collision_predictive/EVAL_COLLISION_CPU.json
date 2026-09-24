@@ -1,7 +1,7 @@
 {
   "domain": "collision_predictive",
   "branch_tag": "tip-collision-pred",
-  "ts": "2026-09-24 14:22:44 ET",
+  "ts": "2026-09-24 14:04:40 ET",
   "n_eval_seqs": 40,
   "predictors": {
     "collision_physics": {
@@ -37,19 +37,19 @@
       },
       "k=3": {
         "n": 950,
-        "collision_correct_pct": 99.79,
-        "safe_match_pct": 99.79,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=5": {
         "n": 950,
-        "collision_correct_pct": 99.68,
-        "safe_match_pct": 99.68,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "overall": {
         "n": 2850,
-        "collision_correct_pct": 99.82
+        "collision_correct_pct": 100.0
       }
     },
     "collision_choose_safest": {
@@ -78,8 +78,8 @@
     }
   },
   "ablation": {
-    "collision_minus_inverse_cv_pp": 0.18,
-    "note": "Positive \u2192 elastic collision layer improves consequence/safety prediction vs inverse-style CV (no mass/collision). Scored on action-conditional GT."
+    "collision_minus_inverse_cv_pp": 0.0,
+    "note": "Positive \u2192 elastic collision layer improves consequence/safety prediction vs inverse_cv (TP mass bounce; ego geometric, no substeps). Scored on action-conditional GT."
   },
   "contam_self_test": {
     "test": "inject_consequence_gt_into_prompt",
@@ -91,7 +91,7 @@
     "rule": "injecting future/consequence GT \u2192 INVALID (discard; never report as clean)"
   },
   "retrieval_ok": true,
-  "audit": "data/eval_audit/collision_20260924_142243.jsonl",
+  "audit": "data/eval_audit/collision_20260924_140439.jsonl",
   "emit_schema": [
     "chosen_action",
     "predicted_consequence",
