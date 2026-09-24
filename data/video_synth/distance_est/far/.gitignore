@@ -1,10 +1,11 @@
 *
 !.gitignore
+!.gitkeep
 !SUMMARY.json
 !SUMMARY.md
 !INDEX.json
 !SPLIT.json
-!EVAL_DANGER50_CPU.json
+!EVAL_FAR_CPU.json
+!EVAL_FAR_BEFORE.json
+!EVAL_FAR_AFTER.json
 !ANTI_CONTAM_SELFTEST.json
-!EVAL_BEFORE_FAR_D50.json
-

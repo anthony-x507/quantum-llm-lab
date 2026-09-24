@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-24 14:07:04 ET",
+  "ts": "2026-09-24 14:06:57 ET",
   "domain": "distance_est",
   "data_dir": "data/video_synth/distance_est/danger50",
   "scale_lock": "FLOOR-SCALE",
@@ -9,7 +9,7 @@
     "car_height_m": 1.55,
     "ped_height_m": 1.7
   },
-  "predictor": "floor_scale_parallax_size_prior_closing_speed_v4_far",
+  "predictor": "floor_scale_parallax_size_prior_closing_speed_v2_danger_BEFORE",
   "n_eval_seq": 18,
   "distance": {
     "n": 1920,
@@ -49,9 +49,9 @@
       "light"
     ],
     "error_stats": {
-      "mae_m": 1.416,
-      "mean_rel_err": 0.0172,
-      "median_rel_err": 0.0118,
+      "mae_m": 2.449,
+      "mean_rel_err": 0.0244,
+      "median_rel_err": 0.0148,
       "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
     }
   },
@@ -105,9 +105,9 @@
     "correct": 577,
     "pct": 100.0,
     "error_stats": {
-      "mae_m": 2.684,
-      "mean_rel_err": 0.0183,
-      "median_rel_err": 0.0128,
+      "mae_m": 6.121,
+      "mean_rel_err": 0.0422,
+      "median_rel_err": 0.0268,
       "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
     }
   },
@@ -118,9 +118,9 @@
     "correct": 264,
     "pct": 100.0,
     "error_stats": {
-      "mae_m": 2.869,
-      "mean_rel_err": 0.0227,
-      "median_rel_err": 0.0168,
+      "mae_m": 6.901,
+      "mean_rel_err": 0.0545,
+      "median_rel_err": 0.0313,
       "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
     }
   },
@@ -131,9 +131,9 @@
     "correct": 313,
     "pct": 100.0,
     "error_stats": {
-      "mae_m": 2.528,
-      "mean_rel_err": 0.0146,
-      "median_rel_err": 0.0119,
+      "mae_m": 5.463,
+      "mean_rel_err": 0.0318,
+      "median_rel_err": 0.0231,
       "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
     }
   },
@@ -207,7 +207,7 @@
     "note": "Future depth prediction proxy (inverse-planning-style along camera axis); danger-zone slice reported separately."
   },
   "anti_contam": {
-    "audit_path": "data/eval_audit/danger50_20260924_140704.jsonl",
+    "audit_path": "data/eval_audit/danger50_20260924_140657.jsonl",
     "dirty_count": 0,
     "status": "CLEAN"
   },
@@ -340,7 +340,7 @@
       "id": "car_far0",
       "class": "car",
       "gt_m": 151.635,
-      "est_m": 152.911,
+      "est_m": 152.47,
       "band": "~200m",
       "in_danger_zone": false,
       "in_mid_near": false,
@@ -360,7 +360,7 @@
       "id": "car_far1",
       "class": "car",
       "gt_m": 154.427,
-      "est_m": 153.438,
+      "est_m": 152.176,
       "band": "~200m",
       "in_danger_zone": false,
       "in_mid_near": false,
@@ -400,7 +400,7 @@
       "id": "L_far",
       "class": "light",
       "gt_m": 178.859,
-      "est_m": 177.533,
+      "est_m": 170.366,
       "band": "~200m",
       "in_danger_zone": false,
       "in_mid_near": false,

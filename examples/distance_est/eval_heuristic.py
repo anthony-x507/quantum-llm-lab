@@ -30,11 +30,26 @@ from physics import (
     DEFAULT_FOCAL_PX,
     DANGER_ZONE_M_HI,
     DANGER_ZONE_M_LO,
+    FAR_M_HI,
+    FAR_M_LO,
+    FAR_NEAR_M_HI,
+    FAR_NEAR_M_LO,
+    FAR_OUTER_M_HI,
+    FAR_OUTER_M_LO,
+    MID_NEAR_M_HI,
+    MID_NEAR_M_LO,
+    MID_OUTER_M_HI,
+    MID_OUTER_M_LO,
     PRIORITY_DISTANCE_CLASSES,
     band_for_distance,
     closing_speed_tti,
     estimate_via_floor_scale,
     in_danger_zone,
+    in_far,
+    in_far_near,
+    in_far_outer,
+    in_mid_near,
+    in_mid_outer,
     parallax_signal,
     pick_building_scale,
     predict_next_distance,
@@ -318,6 +333,11 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
     all_dist_rows = []
     band_acc: dict[str, dict[str, int]] = {}
     danger_acc = {"n": 0, "correct": 0}
+    mid_near_acc = {"n": 0, "correct": 0}
+    mid_outer_acc = {"n": 0, "correct": 0}
+    far_acc = {"n": 0, "correct": 0}
+    far_near_acc = {"n": 0, "correct": 0}
+    far_outer_acc = {"n": 0, "correct": 0}
     band50_acc = {"n": 0, "correct": 0}  # ~50m band for delta vs baseline
     dirty = 0
     track_only = {"n": 0, "correct": 0}
@@ -369,6 +389,26 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
                     danger_acc["n"] += 1
                     if ok:
                         danger_acc["correct"] += 1
+                if in_mid_near(gt_m):
+                    mid_near_acc["n"] += 1
+                    if ok:
+                        mid_near_acc["correct"] += 1
+                if in_mid_outer(gt_m):
+                    mid_outer_acc["n"] += 1
+                    if ok:
+                        mid_outer_acc["correct"] += 1
+                if in_far(gt_m):
+                    far_acc["n"] += 1
+                    if ok:
+                        far_acc["correct"] += 1
+                if in_far_near(gt_m):
+                    far_near_acc["n"] += 1
+                    if ok:
+                        far_near_acc["correct"] += 1
+                if in_far_outer(gt_m):
+                    far_outer_acc["n"] += 1
+                    if ok:
+                        far_outer_acc["correct"] += 1
                 if band == "~50m":
                     band50_acc["n"] += 1
                     if ok:
@@ -379,6 +419,11 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
                     "seq_id": sid, "t": t, "id": p["id"], "class": g["class"],
                     "gt_m": g["gt_m"], "est_m": p["est_m"], "band": band,
                     "in_danger_zone": in_danger_zone(gt_m),
+                    "in_mid_near": in_mid_near(gt_m),
+                    "in_mid_outer": in_mid_outer(gt_m),
+                    "in_far": in_far(gt_m),
+                    "in_far_near": in_far_near(gt_m),
+                    "in_far_outer": in_far_outer(gt_m),
                     "correct": ok, "method": p.get("method"), "parallax": p.get("parallax"),
                     "closing_speed_mps": p.get("closing_speed_mps"),
                     "tti_s": p.get("tti_s"),
@@ -451,6 +496,16 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
 
     err_all = _err_stats(all_dist_rows)
     err_dz = _err_stats([r for r in all_dist_rows if r.get("in_danger_zone")])
+    err_mid_near = _err_stats([r for r in all_dist_rows if r.get("in_mid_near")])
+    err_mid_outer = _err_stats([r for r in all_dist_rows if r.get("in_mid_outer")])
+    err_far = _err_stats([r for r in all_dist_rows if r.get("in_far")])
+    err_far_near = _err_stats([r for r in all_dist_rows if r.get("in_far_near")])
+    err_far_outer = _err_stats([r for r in all_dist_rows if r.get("in_far_outer")])
+    mid_near_pct = pct(mid_near_acc["n"], mid_near_acc["correct"])
+    mid_outer_pct = pct(mid_outer_acc["n"], mid_outer_acc["correct"])
+    far_pct = pct(far_acc["n"], far_acc["correct"])
+    far_near_pct = pct(far_near_acc["n"], far_near_acc["correct"])
+    far_outer_pct = pct(far_outer_acc["n"], far_outer_acc["correct"])
 
     result = {
         "ts": _now(),
@@ -459,7 +514,7 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
         "scale_lock": "FLOOR-SCALE",
         "no_fixed_object_heights": True,
         "soft_size_priors": {"car_length_m": 4.5, "car_height_m": 1.55, "ped_height_m": 1.7},
-        "predictor": "floor_scale_parallax_size_prior_closing_speed_v2_danger",
+        "predictor": "floor_scale_parallax_size_prior_closing_speed_v4_far",
         "n_eval_seq": len(eval_ids),
         "distance": {
             "n": n, "correct": c, "pct": pct(n, c),
@@ -476,6 +531,49 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
             "pct": dz_pct,
             "delta_pp_vs_baseline_50m": delta_dz_vs_baseline,
             "error_stats": err_dz,
+            "frozen": True,
+        },
+        "mid_near_5_30m": {
+            "lo_m": MID_NEAR_M_LO,
+            "hi_m": MID_NEAR_M_HI,
+            "n": mid_near_acc["n"],
+            "correct": mid_near_acc["correct"],
+            "pct": mid_near_pct,
+            "error_stats": err_mid_near,
+            "held_floor": True,
+        },
+        "mid_outer_70_100m": {
+            "lo_m": MID_OUTER_M_LO,
+            "hi_m": MID_OUTER_M_HI,
+            "n": mid_outer_acc["n"],
+            "correct": mid_outer_acc["correct"],
+            "pct": mid_outer_pct,
+            "error_stats": err_mid_outer,
+            "held_floor": True,
+        },
+        "far_100_200m": {
+            "lo_m": FAR_M_LO,
+            "hi_m": FAR_M_HI,
+            "n": far_acc["n"],
+            "correct": far_acc["correct"],
+            "pct": far_pct,
+            "error_stats": err_far,
+        },
+        "far_near_100_150m": {
+            "lo_m": FAR_NEAR_M_LO,
+            "hi_m": FAR_NEAR_M_HI,
+            "n": far_near_acc["n"],
+            "correct": far_near_acc["correct"],
+            "pct": far_near_pct,
+            "error_stats": err_far_near,
+        },
+        "far_outer_150_200m": {
+            "lo_m": FAR_OUTER_M_LO,
+            "hi_m": FAR_OUTER_M_HI,
+            "n": far_outer_acc["n"],
+            "correct": far_outer_acc["correct"],
+            "pct": far_outer_pct,
+            "error_stats": err_far_outer,
         },
         "band_50m_vs_baseline": {
             "baseline_pct": BASELINE_50M_PCT,
@@ -577,6 +675,11 @@ def main(argv=None):
         "distance_pct": r["distance"]["pct"],
         "by_band": r["distance"]["by_band"],
         "danger_zone_30_70m": r["danger_zone_30_70m"],
+        "mid_near_5_30m": r.get("mid_near_5_30m"),
+        "mid_outer_70_100m": r.get("mid_outer_70_100m"),
+        "far_100_200m": r.get("far_100_200m"),
+        "far_near_100_150m": r.get("far_near_100_150m"),
+        "far_outer_150_200m": r.get("far_outer_150_200m"),
         "band_50m_vs_baseline": r["band_50m_vs_baseline"],
         "ablation_tracking": r["ablation_tracking"],
         "ablation_future_pred": {

@@ -1,0 +1,7041 @@
+{
+  "domain": "distance_est",
+  "family": "video_synth_temporal_far",
+  "far_near_m": [
+    100.0,
+    150.0
+  ],
+  "far_outer_m": [
+    150.0,
+    200.0
+  ],
+  "danger_zone_m_frozen": [
+    30.0,
+    70.0
+  ],
+  "scale_lock": "FLOOR-SCALE",
+  "floor_height_m": {
+    "min": 2.4,
+    "max": 3.0,
+    "default": 2.7
+  },
+  "no_fixed_object_heights": true,
+  "soft_size_priors_eval_only": {
+    "car_length_m": 4.5,
+    "ped_height_m": 1.7
+  },
+  "light_true_height_range_m": [
+    3.0,
+    5.0
+  ],
+  "priority_distance_classes": [
+    "car",
+    "intersection",
+    "light",
+    "pedestrian",
+    "stop_sign"
+  ],
+  "n_sequences": 96,
+  "n_near_sequences": 48,
+  "n_outer_sequences": 48,
+  "n_sequences_with_critical_target_t0": 96,
+  "n_frames_each": 12,
+  "seed": 24092480,
+  "split": {
+    "n_train": 77,
+    "n_eval": 19
+  },
+  "band_observation_counts": {
+    "~5m": 1152,
+    "~50m": 2508,
+    "~100m": 4803,
+    "~200m": 4209
+  },
+  "far_near_observations": 3554,
+  "far_outer_observations": 3383,
+  "danger_zone_observations": 2303,
+  "priority_far_near_observations": 2685,
+  "priority_far_outer_observations": 2632,
+  "approach_recede_counts": {
+    "approach": 4128,
+    "recede": 4344,
+    "stable": 4200
+  },
+  "class_observation_counts": {
+    "building": 2304,
+    "car": 3840,
+    "pedestrian": 2304,
+    "light": 2304,
+    "intersection": 1152,
+    "stop_sign": 768
+  },
+  "focal_px": 420.0,
+  "dz_frozen": true,
+  "adapter_target": "data/lora_adapter_distance/",
+  "quantum_adapter_ro": "data/lora_adapter/",
+  "anti_contam": "meta.json has no gt_m; distances_gt.json sidecar only",
+  "sequences": [
+    {
+      "seq_id": "fn_000_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "near",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 104.829,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 108.658,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 143.461,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 143.461,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.998
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.935
+        }
+      ],
+      "dir": "fn_000_oak_ave"
+    },
+    {
+      "seq_id": "fo_001_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "outer",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 172.176,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 174.372,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 193.212,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 193.212,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 187.396,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.603
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.687
+        }
+      ],
+      "dir": "fo_001_pine_st"
+    },
+    {
+      "seq_id": "fn_002_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "near",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 117.806,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 127.499,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 148.528,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 148.528,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 119.864,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 143.345,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.856
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.605
+        }
+      ],
+      "dir": "fn_002_maple_blvd"
+    },
+    {
+      "seq_id": "fo_003_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "outer",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 162.52,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 176.977,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 152.368,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 152.368,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.602
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.66
+        }
+      ],
+      "dir": "fo_003_cedar_rd"
+    },
+    {
+      "seq_id": "fn_004_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "near",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 145.861,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 137.116,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 116.643,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 116.643,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 132.049,
+          "approach_recede": "recede",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.784
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.546
+        }
+      ],
+      "dir": "fn_004_elm_way"
+    },
+    {
+      "seq_id": "fo_005_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "outer",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 197.471,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 151.208,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 169.26,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 169.26,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 187.254,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 190.498,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.459
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.558
+        }
+      ],
+      "dir": "fo_005_birch_ln"
+    },
+    {
+      "seq_id": "fn_006_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "near",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 134.122,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 135.338,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 107.365,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 107.365,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.684
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.772
+        }
+      ],
+      "dir": "fn_006_willow_dr"
+    },
+    {
+      "seq_id": "fo_007_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "outer",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 185.778,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 177.0,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 188.397,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 188.397,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 193.136,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.971
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.904
+        }
+      ],
+      "dir": "fo_007_ash_ct"
+    },
+    {
+      "seq_id": "fn_008_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "near",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 129.386,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 100.937,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 137.816,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 137.816,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 131.579,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 128.405,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.536
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.89
+        }
+      ],
+      "dir": "fn_008_oak_ave"
+    },
+    {
+      "seq_id": "fo_009_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "outer",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 156.501,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 193.988,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 188.671,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 188.671,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.413
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.756
+        }
+      ],
+      "dir": "fo_009_pine_st"
+    },
+    {
+      "seq_id": "fn_010_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "near",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 112.367,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 135.899,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 119.287,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 119.287,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 138.392,
+          "approach_recede": "recede",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.541
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 6,
+          "floor_height_m": 2.544
+        }
+      ],
+      "dir": "fn_010_maple_blvd"
+    },
+    {
+      "seq_id": "fo_011_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "outer",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 187.379,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 152.716,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 156.571,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 156.571,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 176.611,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 169.465,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.975
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.696
+        }
+      ],
+      "dir": "fo_011_cedar_rd"
+    },
+    {
+      "seq_id": "fn_012_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "near",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 102.34,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 148.318,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 140.953,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 140.953,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.97
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.737
+        }
+      ],
+      "dir": "fn_012_elm_way"
+    },
+    {
+      "seq_id": "fo_013_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "outer",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 158.692,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 165.305,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 155.883,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 155.883,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 154.448,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.665
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.888
+        }
+      ],
+      "dir": "fo_013_birch_ln"
+    },
+    {
+      "seq_id": "fn_014_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "near",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 102.229,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 128.78,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 148.084,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 148.084,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 104.875,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 109.505,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.978
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.829
+        }
+      ],
+      "dir": "fn_014_willow_dr"
+    },
+    {
+      "seq_id": "fo_015_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "outer",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 167.303,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 163.629,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 192.381,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 192.381,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.553
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.502
+        }
+      ],
+      "dir": "fo_015_ash_ct"
+    },
+    {
+      "seq_id": "fn_016_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "near",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 115.092,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 145.593,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 114.088,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 114.088,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 135.82,
+          "approach_recede": "recede",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.619
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.879
+        }
+      ],
+      "dir": "fn_016_oak_ave"
+    },
+    {
+      "seq_id": "fo_017_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "outer",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 166.927,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 150.013,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 186.678,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 186.678,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 192.552,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 195.708,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.917
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.497
+        }
+      ],
+      "dir": "fo_017_pine_st"
+    },
+    {
+      "seq_id": "fn_018_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "near",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 127.605,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 144.009,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 110.465,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 110.465,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.794
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 6,
+          "floor_height_m": 2.71
+        }
+      ],
+      "dir": "fn_018_maple_blvd"
+    },
+    {
+      "seq_id": "fo_019_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "outer",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 156.791,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 182.151,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 158.293,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 158.293,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 191.805,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.623
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.935
+        }
+      ],
+      "dir": "fo_019_cedar_rd"
+    },
+    {
+      "seq_id": "fn_020_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "near",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 111.775,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 128.56,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 132.365,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 132.365,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 134.15,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 128.06,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.787
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.773
+        }
+      ],
+      "dir": "fn_020_elm_way"
+    },
+    {
+      "seq_id": "fo_021_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "outer",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 198.228,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 155.491,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 190.257,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 190.257,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.873
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.932
+        }
+      ],
+      "dir": "fo_021_birch_ln"
+    },
+    {
+      "seq_id": "fn_022_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "near",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 131.473,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 123.23,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 137.635,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 137.635,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 106.774,
+          "approach_recede": "recede",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.427
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.571
+        }
+      ],
+      "dir": "fn_022_willow_dr"
+    },
+    {
+      "seq_id": "fo_023_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "outer",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 167.57,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 184.016,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 159.737,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 159.737,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 156.669,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 176.592,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.549
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.629
+        }
+      ],
+      "dir": "fo_023_ash_ct"
+    },
+    {
+      "seq_id": "fn_024_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "near",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 132.964,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 142.755,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 135.196,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 135.196,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.885
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.751
+        }
+      ],
+      "dir": "fn_024_oak_ave"
+    },
+    {
+      "seq_id": "fo_025_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "outer",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 195.85,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 172.321,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 152.275,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 152.275,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 171.701,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.554
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.659
+        }
+      ],
+      "dir": "fo_025_pine_st"
+    },
+    {
+      "seq_id": "fn_026_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "near",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 146.057,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 115.393,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 105.448,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 105.448,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 139.906,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 138.423,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.71
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.932
+        }
+      ],
+      "dir": "fn_026_maple_blvd"
+    },
+    {
+      "seq_id": "fo_027_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "outer",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 180.748,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 159.262,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 164.082,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 164.082,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.709
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.549
+        }
+      ],
+      "dir": "fo_027_cedar_rd"
+    },
+    {
+      "seq_id": "fn_028_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "near",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 131.514,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 126.686,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 146.033,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 146.033,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 128.393,
+          "approach_recede": "recede",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.712
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.574
+        }
+      ],
+      "dir": "fn_028_elm_way"
+    },
+    {
+      "seq_id": "fo_029_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "outer",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 150.473,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 199.46,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 172.303,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 172.303,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 196.76,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 192.924,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.991
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.71
+        }
+      ],
+      "dir": "fo_029_birch_ln"
+    },
+    {
+      "seq_id": "fn_030_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "near",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 104.514,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 120.679,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 121.363,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 121.363,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.6
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.528
+        }
+      ],
+      "dir": "fn_030_willow_dr"
+    },
+    {
+      "seq_id": "fo_031_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "outer",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 161.907,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 150.579,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 176.363,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 176.363,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 188.784,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.922
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.863
+        }
+      ],
+      "dir": "fo_031_ash_ct"
+    },
+    {
+      "seq_id": "fn_032_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "near",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 139.117,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 119.855,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 105.218,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 105.218,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 104.108,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 129.443,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.705
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.818
+        }
+      ],
+      "dir": "fn_032_oak_ave"
+    },
+    {
+      "seq_id": "fo_033_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "outer",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 163.726,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 168.6,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 167.576,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 167.576,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.609
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.496
+        }
+      ],
+      "dir": "fo_033_pine_st"
+    },
+    {
+      "seq_id": "fn_034_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "near",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 102.051,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 136.021,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 100.619,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 100.619,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 125.512,
+          "approach_recede": "recede",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.426
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.407
+        }
+      ],
+      "dir": "fn_034_maple_blvd"
+    },
+    {
+      "seq_id": "fo_035_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "outer",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 177.179,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 160.375,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 191.826,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 191.826,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 155.073,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 177.564,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.605
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.418
+        }
+      ],
+      "dir": "fo_035_cedar_rd"
+    },
+    {
+      "seq_id": "fn_036_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "near",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 121.484,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 115.454,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 104.13,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 104.13,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.76
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.407
+        }
+      ],
+      "dir": "fn_036_elm_way"
+    },
+    {
+      "seq_id": "fo_037_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "outer",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 195.086,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 153.959,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 186.606,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 186.606,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 164.846,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.469
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.535
+        }
+      ],
+      "dir": "fo_037_birch_ln"
+    },
+    {
+      "seq_id": "fn_038_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "near",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 144.75,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 125.854,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 124.3,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 124.3,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 148.349,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 138.973,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.524
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.467
+        }
+      ],
+      "dir": "fn_038_willow_dr"
+    },
+    {
+      "seq_id": "fo_039_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "outer",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 184.835,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 158.543,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 177.474,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 177.474,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.522
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.77
+        }
+      ],
+      "dir": "fo_039_ash_ct"
+    },
+    {
+      "seq_id": "fn_040_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "near",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 126.733,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 139.768,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 125.999,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 125.999,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 129.808,
+          "approach_recede": "recede",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.434
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.672
+        }
+      ],
+      "dir": "fn_040_oak_ave"
+    },
+    {
+      "seq_id": "fo_041_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "outer",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 172.609,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 185.178,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 195.594,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 195.594,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 199.81,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 160.203,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.426
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.951
+        }
+      ],
+      "dir": "fo_041_pine_st"
+    },
+    {
+      "seq_id": "fn_042_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "near",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 143.773,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 106.437,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 149.972,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 149.972,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.972
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.865
+        }
+      ],
+      "dir": "fn_042_maple_blvd"
+    },
+    {
+      "seq_id": "fo_043_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "outer",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 158.799,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 190.633,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 153.907,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 153.907,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 171.556,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.745
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.664
+        }
+      ],
+      "dir": "fo_043_cedar_rd"
+    },
+    {
+      "seq_id": "fn_044_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "near",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 114.842,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 116.112,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 118.865,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 118.865,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 126.815,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 107.019,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.84
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.938
+        }
+      ],
+      "dir": "fn_044_elm_way"
+    },
+    {
+      "seq_id": "fo_045_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "outer",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 170.379,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 153.999,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 150.026,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 150.026,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.729
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.83
+        }
+      ],
+      "dir": "fo_045_birch_ln"
+    },
+    {
+      "seq_id": "fn_046_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "near",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 143.727,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 147.587,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 101.071,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 101.071,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 130.937,
+          "approach_recede": "recede",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.867
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 6,
+          "floor_height_m": 2.978
+        }
+      ],
+      "dir": "fn_046_willow_dr"
+    },
+    {
+      "seq_id": "fo_047_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "outer",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 153.602,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 176.961,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 152.178,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 152.178,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 180.592,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 166.627,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.817
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.533
+        }
+      ],
+      "dir": "fo_047_ash_ct"
+    },
+    {
+      "seq_id": "fn_048_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "near",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 107.672,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 128.47,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 136.963,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 136.963,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.839
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.646
+        }
+      ],
+      "dir": "fn_048_oak_ave"
+    },
+    {
+      "seq_id": "fo_049_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "outer",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 156.649,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 160.526,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 169.538,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 169.538,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 166.301,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.766
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.651
+        }
+      ],
+      "dir": "fo_049_pine_st"
+    },
+    {
+      "seq_id": "fn_050_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "near",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 146.597,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 143.164,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 140.825,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 140.825,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 107.731,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 132.059,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.895
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.509
+        }
+      ],
+      "dir": "fn_050_maple_blvd"
+    },
+    {
+      "seq_id": "fo_051_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "outer",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 172.545,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 161.302,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 152.464,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 152.464,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.494
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.998
+        }
+      ],
+      "dir": "fo_051_cedar_rd"
+    },
+    {
+      "seq_id": "fn_052_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "near",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 146.514,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 138.436,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 127.87,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 127.87,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 129.28,
+          "approach_recede": "recede",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.721
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 6,
+          "floor_height_m": 2.557
+        }
+      ],
+      "dir": "fn_052_elm_way"
+    },
+    {
+      "seq_id": "fo_053_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "outer",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 179.649,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 153.216,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 168.239,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 168.239,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 154.586,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 168.784,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.751
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.58
+        }
+      ],
+      "dir": "fo_053_birch_ln"
+    },
+    {
+      "seq_id": "fn_054_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "near",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 145.136,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 124.973,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 106.863,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 106.863,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.92
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.821
+        }
+      ],
+      "dir": "fn_054_willow_dr"
+    },
+    {
+      "seq_id": "fo_055_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "outer",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 156.23,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 153.301,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 190.5,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 190.5,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 155.812,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.93
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.773
+        }
+      ],
+      "dir": "fo_055_ash_ct"
+    },
+    {
+      "seq_id": "fn_056_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "near",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 142.097,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 137.741,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 119.964,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 119.964,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 123.702,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 113.702,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.914
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.833
+        }
+      ],
+      "dir": "fn_056_oak_ave"
+    },
+    {
+      "seq_id": "fo_057_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "outer",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 196.965,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 189.79,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 195.328,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 195.328,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.914
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.604
+        }
+      ],
+      "dir": "fo_057_pine_st"
+    },
+    {
+      "seq_id": "fn_058_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "near",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 108.614,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 122.181,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 140.257,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 140.257,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 127.129,
+          "approach_recede": "recede",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.989
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.525
+        }
+      ],
+      "dir": "fn_058_maple_blvd"
+    },
+    {
+      "seq_id": "fo_059_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "outer",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 166.072,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 154.961,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 182.016,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 182.016,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 161.211,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 192.624,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.583
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.903
+        }
+      ],
+      "dir": "fo_059_cedar_rd"
+    },
+    {
+      "seq_id": "fn_060_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "near",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 105.971,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 112.126,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 119.394,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 119.394,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.459
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.736
+        }
+      ],
+      "dir": "fn_060_elm_way"
+    },
+    {
+      "seq_id": "fo_061_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "outer",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 188.051,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 164.074,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 179.501,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 179.501,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 182.34,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.424
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.932
+        }
+      ],
+      "dir": "fo_061_birch_ln"
+    },
+    {
+      "seq_id": "fn_062_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "near",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 128.16,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 109.925,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 117.973,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 117.973,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 105.53,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 136.264,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.478
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.667
+        }
+      ],
+      "dir": "fn_062_willow_dr"
+    },
+    {
+      "seq_id": "fo_063_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "outer",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 192.289,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 152.035,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 177.628,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 177.628,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.873
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.574
+        }
+      ],
+      "dir": "fo_063_ash_ct"
+    },
+    {
+      "seq_id": "fn_064_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "near",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 118.177,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 106.583,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 114.267,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 114.267,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 110.493,
+          "approach_recede": "recede",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.969
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.962
+        }
+      ],
+      "dir": "fn_064_oak_ave"
+    },
+    {
+      "seq_id": "fo_065_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "outer",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 152.963,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 189.388,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 150.42,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 150.42,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 172.309,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 182.953,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.985
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.859
+        }
+      ],
+      "dir": "fo_065_pine_st"
+    },
+    {
+      "seq_id": "fn_066_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "near",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 138.815,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 145.793,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 142.042,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 142.042,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.472
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.825
+        }
+      ],
+      "dir": "fn_066_maple_blvd"
+    },
+    {
+      "seq_id": "fo_067_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "outer",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 162.85,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 181.782,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 178.326,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 178.326,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 190.087,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.888
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.813
+        }
+      ],
+      "dir": "fo_067_cedar_rd"
+    },
+    {
+      "seq_id": "fn_068_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "near",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 119.146,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 144.747,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 145.329,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 145.329,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 145.838,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 109.352,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.537
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 6,
+          "floor_height_m": 2.809
+        }
+      ],
+      "dir": "fn_068_elm_way"
+    },
+    {
+      "seq_id": "fo_069_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "outer",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 188.714,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 196.539,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 175.046,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 175.046,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.946
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.545
+        }
+      ],
+      "dir": "fo_069_birch_ln"
+    },
+    {
+      "seq_id": "fn_070_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "near",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 147.415,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 117.918,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 134.64,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 134.64,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 124.591,
+          "approach_recede": "recede",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.498
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.861
+        }
+      ],
+      "dir": "fn_070_willow_dr"
+    },
+    {
+      "seq_id": "fo_071_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "outer",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 191.007,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 152.818,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 177.982,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 177.982,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 158.092,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 193.818,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.522
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 6,
+          "floor_height_m": 2.996
+        }
+      ],
+      "dir": "fo_071_ash_ct"
+    },
+    {
+      "seq_id": "fn_072_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "near",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 118.88,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 109.801,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 111.121,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 111.121,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.643
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.669
+        }
+      ],
+      "dir": "fn_072_oak_ave"
+    },
+    {
+      "seq_id": "fo_073_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "outer",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 156.667,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 171.743,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 164.666,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 164.666,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 172.478,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.671
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.632
+        }
+      ],
+      "dir": "fo_073_pine_st"
+    },
+    {
+      "seq_id": "fn_074_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "near",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 104.557,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 106.847,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 105.149,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 105.149,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 108.648,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 103.718,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 4,
+          "floor_height_m": 2.638
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.603
+        }
+      ],
+      "dir": "fn_074_maple_blvd"
+    },
+    {
+      "seq_id": "fo_075_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "outer",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 152.112,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 154.656,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 165.811,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 165.811,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.466
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.866
+        }
+      ],
+      "dir": "fo_075_cedar_rd"
+    },
+    {
+      "seq_id": "fn_076_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "near",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 128.601,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 130.917,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 123.676,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 123.676,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 136.359,
+          "approach_recede": "recede",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.859
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.806
+        }
+      ],
+      "dir": "fn_076_elm_way"
+    },
+    {
+      "seq_id": "fo_077_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "outer",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 169.626,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 174.774,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 171.861,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 171.861,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 192.082,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 164.475,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.552
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.448
+        }
+      ],
+      "dir": "fo_077_birch_ln"
+    },
+    {
+      "seq_id": "fn_078_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "near",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 106.23,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 109.293,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 134.728,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 134.728,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.963
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.584
+        }
+      ],
+      "dir": "fn_078_willow_dr"
+    },
+    {
+      "seq_id": "fo_079_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "outer",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 172.233,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 181.348,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 167.635,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 167.635,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 150.751,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.917
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.694
+        }
+      ],
+      "dir": "fo_079_ash_ct"
+    },
+    {
+      "seq_id": "fn_080_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "near",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 108.78,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 132.791,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 139.446,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 139.446,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 117.562,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 143.862,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.747
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.524
+        }
+      ],
+      "dir": "fn_080_oak_ave"
+    },
+    {
+      "seq_id": "fo_081_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "outer",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 176.817,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 160.678,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 199.926,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 199.926,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.861
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.527
+        }
+      ],
+      "dir": "fo_081_pine_st"
+    },
+    {
+      "seq_id": "fn_082_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "near",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 111.295,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 113.849,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 135.923,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 135.923,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 132.962,
+          "approach_recede": "recede",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.851
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.603
+        }
+      ],
+      "dir": "fn_082_maple_blvd"
+    },
+    {
+      "seq_id": "fo_083_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "outer",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 178.543,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 169.818,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 186.476,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 186.476,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 181.167,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 175.113,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.732
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.573
+        }
+      ],
+      "dir": "fo_083_cedar_rd"
+    },
+    {
+      "seq_id": "fn_084_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "near",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 132.483,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 144.04,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 144.965,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 144.965,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.763
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.502
+        }
+      ],
+      "dir": "fn_084_elm_way"
+    },
+    {
+      "seq_id": "fo_085_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "outer",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 180.138,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 163.539,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 170.448,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 170.448,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 181.657,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 8,
+          "floor_height_m": 2.47
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.418
+        }
+      ],
+      "dir": "fo_085_birch_ln"
+    },
+    {
+      "seq_id": "fn_086_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "near",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 119.497,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 147.396,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 148.374,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 148.374,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 105.274,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 106.447,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.79
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 3,
+          "floor_height_m": 2.75
+        }
+      ],
+      "dir": "fn_086_willow_dr"
+    },
+    {
+      "seq_id": "fo_087_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "outer",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 180.474,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 167.899,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 155.776,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 155.776,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 5,
+          "floor_height_m": 2.94
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.675
+        }
+      ],
+      "dir": "fo_087_ash_ct"
+    },
+    {
+      "seq_id": "fn_088_oak_ave",
+      "street_name": "Oak Ave",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "near",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 102.339,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 110.109,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 130.724,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 130.724,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 126.021,
+          "approach_recede": "recede",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.699
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.821
+        }
+      ],
+      "dir": "fn_088_oak_ave"
+    },
+    {
+      "seq_id": "fo_089_pine_st",
+      "street_name": "Pine St",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "outer",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 187.918,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 184.948,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 197.982,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 197.982,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 155.41,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 161.228,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.568
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.421
+        }
+      ],
+      "dir": "fo_089_pine_st"
+    },
+    {
+      "seq_id": "fn_090_maple_blvd",
+      "street_name": "Maple Blvd",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "near",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 100.465,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 105.593,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 147.28,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 147.28,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.681
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.858
+        }
+      ],
+      "dir": "fn_090_maple_blvd"
+    },
+    {
+      "seq_id": "fo_091_cedar_rd",
+      "street_name": "Cedar Rd",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "outer",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 178.767,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 179.567,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 182.652,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 182.652,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 194.454,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.478
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 8,
+          "floor_height_m": 2.865
+        }
+      ],
+      "dir": "fo_091_cedar_rd"
+    },
+    {
+      "seq_id": "fn_092_elm_way",
+      "street_name": "Elm Way",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "near",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 137.586,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 117.84,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 106.668,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 106.668,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 126.262,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 116.162,
+          "approach_recede": "approach",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.899
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.579
+        }
+      ],
+      "dir": "fn_092_elm_way"
+    },
+    {
+      "seq_id": "fo_093_birch_ln",
+      "street_name": "Birch Ln",
+      "n_frames": 12,
+      "density": "low",
+      "n_objects": 10,
+      "target_band": "outer",
+      "n_critical_target_t0": 4,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 173.903,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 171.136,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 195.618,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 195.618,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 3,
+          "floor_height_m": 2.504
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 5,
+          "floor_height_m": 2.423
+        }
+      ],
+      "dir": "fo_093_birch_ln"
+    },
+    {
+      "seq_id": "fn_094_willow_dr",
+      "street_name": "Willow Dr",
+      "n_frames": 12,
+      "density": "med",
+      "n_objects": 11,
+      "target_band": "near",
+      "n_critical_target_t0": 5,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 149.962,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 117.177,
+          "approach_recede": "recede",
+          "target_band": "near"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 106.185,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 106.185,
+          "approach_recede": "approach",
+          "target_band": "near"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 117.065,
+          "approach_recede": "recede",
+          "target_band": "near"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 6,
+          "floor_height_m": 2.848
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 4,
+          "floor_height_m": 2.698
+        }
+      ],
+      "dir": "fn_094_willow_dr"
+    },
+    {
+      "seq_id": "fo_095_ash_ct",
+      "street_name": "Ash Ct",
+      "n_frames": 12,
+      "density": "high",
+      "n_objects": 12,
+      "target_band": "outer",
+      "n_critical_target_t0": 6,
+      "critical_t0": [
+        {
+          "id": "car_red0",
+          "class": "car",
+          "gt_m": 159.831,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ped_1",
+          "class": "pedestrian",
+          "gt_m": 192.853,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "L3",
+          "class": "light",
+          "gt_m": 157.742,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "ix_3",
+          "class": "intersection",
+          "gt_m": 157.742,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        },
+        {
+          "id": "stop_3",
+          "class": "stop_sign",
+          "gt_m": 179.562,
+          "approach_recede": "approach",
+          "target_band": "outer"
+        },
+        {
+          "id": "car_whi4",
+          "class": "car",
+          "gt_m": 158.883,
+          "approach_recede": "recede",
+          "target_band": "outer"
+        }
+      ],
+      "classes": [
+        "building",
+        "car",
+        "intersection",
+        "light",
+        "pedestrian",
+        "stop_sign"
+      ],
+      "bands_t0": [
+        "~100m",
+        "~200m",
+        "~50m",
+        "~5m"
+      ],
+      "buildings": [
+        {
+          "id": "bld_0",
+          "n_floors": 7,
+          "floor_height_m": 2.87
+        },
+        {
+          "id": "bld_1",
+          "n_floors": 7,
+          "floor_height_m": 2.621
+        }
+      ],
+      "dir": "fo_095_ash_ct"
+    }
+  ]
+}

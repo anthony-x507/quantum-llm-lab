@@ -1,3 +1,6 @@
+## 2026-09-24 — tip-distance-far (SIDE ONLY, not folded)
+Branch `frontier/tip-distance-far` @ tip `f70faa1` (motion-r4). Far 100–200 m MAE: far-set **4.653→2.600 m**; original 5.440→4.563; danger50 6.121→2.684. DZ 30–70 **100% held**; mid_near/outer **100% held**. Freeze `codigo_vivo_tip_distance_far_100pct`. Adapters RO. See `docs/FRONTIER-CODIGO-VIVO-TIP-DISTANCE-FAR.md`.
+
 ## 2026-09-24 — fold tip-motion-r4 → codigo-vivo-tip
 Rebase `a59cb7a`/`606c66f` onto `3f5f1b1` → `753b1f7`+`a27b6fd` FF. CPU unified **1.0** (re-smoke); motion coverage **100%** (141 ind + 59 corr; +2.5 pp vs 97.5%); vision BASE **1.000** (10/10); circ **2/2**; inverse_cv **99.82%**; collision physics **100%** (n=40/2850); choose_safest **100%**; R10 **52/52·44/44**; pillars 26/26; hardneg 18/18; `wired_to_vlm`; freezes retained incl. vision_ground + inverse_r2 + r10 + motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_motion_r4_100pct_20260924_135017`. R11 / distance-mid / TTI **not** folded. See SCOREBOARD + TIP-MOTION-R4.
 
