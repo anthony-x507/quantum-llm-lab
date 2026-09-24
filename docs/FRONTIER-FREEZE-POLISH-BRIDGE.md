@@ -18,6 +18,7 @@ Freeze at **80–100%**. Polish upward / reinforce around. **Never abandon an 80
 | `data/freeze_manifests/bridge_moe_verifier_unified_87.5pct_20260924_104703.json` | 87.5 | verifier+unified loop **0.875** n=16; smoke 1.0; `ent_never_on_python` |
 | `data/freeze_manifests/bridge_moe_verifier_smoke_100pct_20260924_104708.json` | 100 | smoke loop 1.0 n=5; router 12/12 |
 | `data/freeze_manifests/bridge_moe_verifier_unified_polished_*pct_*.json` | 100 | post-polish n16 loop **1.0** (Δ +0.125 vs freeze) |
+| `data/freeze_manifests/bridge_moe_verifier_polish_r2_*pct_*.json` | 100 | R2 adv post-reinforce: router 22/22 + unified **1.0**; floor held |
 
 Evidence logger: `examples/evidence_run_logger.py` (pattern from `d418ee6`).
 
@@ -75,6 +76,53 @@ python examples/evidence_run_logger.py freeze --domain bridge_moe_verifier_unifi
 - `data/frontier_moe_dual_lane_hardneg.json`
 - `data/freeze_manifests/bridge_moe_verifier_*.json`
 - `docs/FRONTIER-FREEZE-POLISH-BRIDGE.md`
+
+
+## Round-2 adversarial (2026-09-24 ~10:51–10:55 ET)
+
+**Claim:** still no quantum advantage. Classical heuristic router + `python -I` verifier only.  
+**Policy:** KEEP freeze floor ≥0.875 (n16) / smoke 1.0. Invent NEW traps (not R1). One reinforce max.
+
+### New fixtures (R2 families ≠ R1)
+
+| File | n | Families |
+|------|---|----------|
+| `data/bench_live/hardneg_r2_mixed_router.json` | 22 | bilingual_trap, measure_in_comment, vision_words_no_image, ent_metaphor_crud, json_looking_physics |
+| `data/bench_live/hardneg_r2_python_items.json` | 20 | same themes; GT stdout harness-only |
+
+### Scores
+
+| Surface | Pre-reinforce | Post-reinforce (1 layer) |
+|---------|---------------|---------------------------|
+| R2 router | 20/22 (**0.909**) — bil ES chat→ent; ES vision miss | **22/22 (1.0)** |
+| R2 verifier / unified loop | **0.75** (15/20) | **1.0** (20/20) |
+| Original freeze n16 unified | **1.0 (held ≥0.875)** | **1.0 (held)** |
+| R1 hardneg router / python | 18/18 · 1.0 | 18/18 · 1.0 |
+| smoke router | 12/12 | 12/12 |
+| `ent_never_on_python` | true | true |
+
+### Reinforce layer (gold-free, once)
+
+1. **Router** — `ENT_NEG_RE` cancels ent on explicit "no circuit" chat; bilingual `VISION_RE` adds `observa la imagen` / `foto` / `imagen adjunta`.
+2. **Proposer** — Spanish `imprima EXPR`, bare `print(N)`, `len([list])`, `import math` embeds (sqrt etc.), `name={...}; print(sum(name.values()))`.
+
+### Freeze polish_r2
+
+| Manifest | pct |
+|----------|-----|
+| `data/freeze_manifests/bridge_moe_verifier_polish_r2_100pct_*.json` | 100 |
+
+Evidence: `data/freeze_metrics/bridge_moe_verifier_adv_r2_20260924.json`  
+Artifacts: `data/frontier_moe_dual_lane_hardneg_r2.json`, `data/frontier_moe_verifier_hardneg_r2.json`, `data/frontier_moe_verifier_cpu_n16_post_r2.json`
+
+### CLI (R2)
+
+```bash
+python examples/moe_dual_lane_router.py --hardneg --hardneg-path data/bench_live/hardneg_r2_mixed_router.json
+python examples/moe_verifier_codigo_vivo.py --hardneg-only \
+  --hardneg-items data/bench_live/hardneg_r2_python_items.json \
+  --hardneg-router data/bench_live/hardneg_r2_mixed_router.json
+```
 
 ## What this does NOT do
 

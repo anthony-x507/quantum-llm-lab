@@ -1,7 +1,7 @@
 {
   "frontier": "C3-moe-verifier-codigo-vivo",
-  "written": "2026-09-24 10:54:31",
-  "mode": "hardneg-cpu",
+  "written": "2026-09-24 10:54:30",
+  "mode": "cpu-eval",
   "router_method": "heuristic",
   "claims": [
     "NO quantum-advantage claims",
@@ -181,14 +181,14 @@
     }
   },
   "python_paths": {
-    "n_items": 12,
+    "n_items": 16,
     "proposer": "heuristic",
     "router_method": "heuristic",
     "rounds_max": 2,
     "paths": {
       "a_single_shot_no_moe": {
         "path": "a_single_shot_no_moe",
-        "n": 12,
+        "n": 16,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 0.0,
         "delta_solve_rate": 0.0,
@@ -196,12 +196,12 @@
         "solved_loop": 0,
         "repair_success_rate": 0.0,
         "repair_helped_n": 0,
-        "failed_single_n": 12,
+        "failed_single_n": 16,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "hnv_freefall_01",
+            "id": "py_arith_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -210,7 +210,7 @@
             "actions": []
           },
           {
-            "id": "hnv_ballistic_01",
+            "id": "py_arith_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -219,7 +219,7 @@
             "actions": []
           },
           {
-            "id": "hnv_ke_01",
+            "id": "py_arith_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -228,7 +228,7 @@
             "actions": []
           },
           {
-            "id": "hnv_collision_01",
+            "id": "py_arith_04",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -237,7 +237,7 @@
             "actions": []
           },
           {
-            "id": "hnv_entstr_01",
+            "id": "py_alg_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -246,7 +246,7 @@
             "actions": []
           },
           {
-            "id": "hnv_qubitcnt_01",
+            "id": "py_alg_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -255,7 +255,7 @@
             "actions": []
           },
           {
-            "id": "hnv_pow_distract_01",
+            "id": "py_alg_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -264,7 +264,7 @@
             "actions": []
           },
           {
-            "id": "hnv_hadamard_len_01",
+            "id": "py_alg_04",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -273,7 +273,7 @@
             "actions": []
           },
           {
-            "id": "hnv_gate_garden_01",
+            "id": "py_script_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -282,7 +282,7 @@
             "actions": []
           },
           {
-            "id": "hnv_fact_01",
+            "id": "py_script_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -291,7 +291,7 @@
             "actions": []
           },
           {
-            "id": "hnv_sum_range_01",
+            "id": "py_script_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -300,7 +300,43 @@
             "actions": []
           },
           {
-            "id": "hnv_drag_01",
+            "id": "py_script_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_05",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_06",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_07",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_08",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -312,7 +348,7 @@
       },
       "b_moe_alone": {
         "path": "b_moe_alone",
-        "n": 12,
+        "n": 16,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 0.0,
         "delta_solve_rate": 0.0,
@@ -320,12 +356,12 @@
         "solved_loop": 0,
         "repair_success_rate": 0.0,
         "repair_helped_n": 0,
-        "failed_single_n": 12,
+        "failed_single_n": 16,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "hnv_freefall_01",
+            "id": "py_arith_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -334,7 +370,7 @@
             "actions": []
           },
           {
-            "id": "hnv_ballistic_01",
+            "id": "py_arith_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -343,7 +379,7 @@
             "actions": []
           },
           {
-            "id": "hnv_ke_01",
+            "id": "py_arith_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -352,7 +388,7 @@
             "actions": []
           },
           {
-            "id": "hnv_collision_01",
+            "id": "py_arith_04",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -361,7 +397,7 @@
             "actions": []
           },
           {
-            "id": "hnv_entstr_01",
+            "id": "py_alg_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -370,7 +406,7 @@
             "actions": []
           },
           {
-            "id": "hnv_qubitcnt_01",
+            "id": "py_alg_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -379,7 +415,7 @@
             "actions": []
           },
           {
-            "id": "hnv_pow_distract_01",
+            "id": "py_alg_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -388,7 +424,7 @@
             "actions": []
           },
           {
-            "id": "hnv_hadamard_len_01",
+            "id": "py_alg_04",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -397,7 +433,7 @@
             "actions": []
           },
           {
-            "id": "hnv_gate_garden_01",
+            "id": "py_script_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -406,7 +442,7 @@
             "actions": []
           },
           {
-            "id": "hnv_fact_01",
+            "id": "py_script_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -415,7 +451,7 @@
             "actions": []
           },
           {
-            "id": "hnv_sum_range_01",
+            "id": "py_script_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -424,7 +460,43 @@
             "actions": []
           },
           {
-            "id": "hnv_drag_01",
+            "id": "py_script_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_05",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_06",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_07",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "py_script_08",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -433,79 +505,103 @@
             "actions": []
           }
         ],
-        "n_items_total": 12,
-        "n_routed_python": 12,
+        "n_items_total": 16,
+        "n_routed_python": 16,
         "n_routed_away": 0,
         "solve_rate_on_python_lane": 0.0,
         "routing": [
           {
-            "id": "hnv_freefall_01",
+            "id": "py_arith_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_ballistic_01",
+            "id": "py_arith_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_ke_01",
+            "id": "py_arith_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_collision_01",
+            "id": "py_arith_04",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_entstr_01",
+            "id": "py_alg_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_qubitcnt_01",
+            "id": "py_alg_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_pow_distract_01",
+            "id": "py_alg_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_hadamard_len_01",
+            "id": "py_alg_04",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_gate_garden_01",
+            "id": "py_script_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_fact_01",
+            "id": "py_script_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_sum_range_01",
+            "id": "py_script_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_drag_01",
+            "id": "py_script_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_05",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_06",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_07",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_08",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
@@ -514,20 +610,20 @@
       },
       "c_verifier_alone": {
         "path": "c_verifier_alone",
-        "n": 12,
+        "n": 16,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 1.0,
         "delta_solve_rate": 1.0,
         "solved_single": 0,
-        "solved_loop": 12,
+        "solved_loop": 16,
         "repair_success_rate": 1.0,
-        "repair_helped_n": 12,
-        "failed_single_n": 12,
+        "repair_helped_n": 16,
+        "failed_single_n": 16,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "hnv_freefall_01",
+            "id": "py_arith_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -538,7 +634,7 @@
             ]
           },
           {
-            "id": "hnv_ballistic_01",
+            "id": "py_arith_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -549,7 +645,7 @@
             ]
           },
           {
-            "id": "hnv_ke_01",
+            "id": "py_arith_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -560,7 +656,7 @@
             ]
           },
           {
-            "id": "hnv_collision_01",
+            "id": "py_arith_04",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -571,7 +667,7 @@
             ]
           },
           {
-            "id": "hnv_entstr_01",
+            "id": "py_alg_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -582,7 +678,7 @@
             ]
           },
           {
-            "id": "hnv_qubitcnt_01",
+            "id": "py_alg_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -593,7 +689,7 @@
             ]
           },
           {
-            "id": "hnv_pow_distract_01",
+            "id": "py_alg_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -604,7 +700,7 @@
             ]
           },
           {
-            "id": "hnv_hadamard_len_01",
+            "id": "py_alg_04",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -615,7 +711,7 @@
             ]
           },
           {
-            "id": "hnv_gate_garden_01",
+            "id": "py_script_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -626,7 +722,7 @@
             ]
           },
           {
-            "id": "hnv_fact_01",
+            "id": "py_script_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -637,7 +733,7 @@
             ]
           },
           {
-            "id": "hnv_sum_range_01",
+            "id": "py_script_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -648,7 +744,51 @@
             ]
           },
           {
-            "id": "hnv_drag_01",
+            "id": "py_script_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_05",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_06",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_07",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_08",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -662,20 +802,20 @@
       },
       "d_moe_verifier_unified": {
         "path": "d_moe_verifier_unified",
-        "n": 12,
+        "n": 16,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 1.0,
         "delta_solve_rate": 1.0,
         "solved_single": 0,
-        "solved_loop": 12,
+        "solved_loop": 16,
         "repair_success_rate": 1.0,
-        "repair_helped_n": 12,
-        "failed_single_n": 12,
+        "repair_helped_n": 16,
+        "failed_single_n": 16,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "hnv_freefall_01",
+            "id": "py_arith_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -686,7 +826,7 @@
             ]
           },
           {
-            "id": "hnv_ballistic_01",
+            "id": "py_arith_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -697,7 +837,7 @@
             ]
           },
           {
-            "id": "hnv_ke_01",
+            "id": "py_arith_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -708,7 +848,7 @@
             ]
           },
           {
-            "id": "hnv_collision_01",
+            "id": "py_arith_04",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -719,7 +859,7 @@
             ]
           },
           {
-            "id": "hnv_entstr_01",
+            "id": "py_alg_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -730,7 +870,7 @@
             ]
           },
           {
-            "id": "hnv_qubitcnt_01",
+            "id": "py_alg_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -741,7 +881,7 @@
             ]
           },
           {
-            "id": "hnv_pow_distract_01",
+            "id": "py_alg_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -752,7 +892,7 @@
             ]
           },
           {
-            "id": "hnv_hadamard_len_01",
+            "id": "py_alg_04",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -763,7 +903,7 @@
             ]
           },
           {
-            "id": "hnv_gate_garden_01",
+            "id": "py_script_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -774,7 +914,7 @@
             ]
           },
           {
-            "id": "hnv_fact_01",
+            "id": "py_script_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -785,7 +925,7 @@
             ]
           },
           {
-            "id": "hnv_sum_range_01",
+            "id": "py_script_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -796,7 +936,51 @@
             ]
           },
           {
-            "id": "hnv_drag_01",
+            "id": "py_script_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_05",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_06",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_07",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "py_script_08",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -807,79 +991,103 @@
             ]
           }
         ],
-        "n_items_total": 12,
-        "n_routed_python": 12,
+        "n_items_total": 16,
+        "n_routed_python": 16,
         "n_routed_away": 0,
         "solve_rate_on_python_lane": 1.0,
         "routing": [
           {
-            "id": "hnv_freefall_01",
+            "id": "py_arith_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_ballistic_01",
+            "id": "py_arith_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_ke_01",
+            "id": "py_arith_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_collision_01",
+            "id": "py_arith_04",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_entstr_01",
+            "id": "py_alg_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_qubitcnt_01",
+            "id": "py_alg_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_pow_distract_01",
+            "id": "py_alg_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_hadamard_len_01",
+            "id": "py_alg_04",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_gate_garden_01",
+            "id": "py_script_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_fact_01",
+            "id": "py_script_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_sum_range_01",
+            "id": "py_script_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "hnv_drag_01",
+            "id": "py_script_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_05",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_06",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_07",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "py_script_08",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
@@ -890,7 +1098,7 @@
     "comparison_table": [
       {
         "path": "baseline_single_no_moe",
-        "n": 12,
+        "n": 16,
         "metric": "solve_rate_single",
         "rate": 0.0,
         "delta_vs_baseline": 0.0,
@@ -899,7 +1107,7 @@
       },
       {
         "path": "moe_alone_python_lane",
-        "n": 12,
+        "n": 16,
         "metric": "solve_rate_single",
         "rate": 0.0,
         "delta_vs_baseline": 0.0,
@@ -908,7 +1116,7 @@
       },
       {
         "path": "verifier_alone",
-        "n": 12,
+        "n": 16,
         "metric": "solve_rate_loop",
         "rate": 1.0,
         "delta_vs_baseline": 1.0,
@@ -917,7 +1125,7 @@
       },
       {
         "path": "moe_verifier_unified_python_lane",
-        "n": 12,
+        "n": 16,
         "metric": "solve_rate_loop",
         "rate": 1.0,
         "delta_vs_baseline": 1.0,
@@ -963,234 +1171,5 @@
     }
   },
   "mlx_status": null,
-  "notes": [],
-  "hardneg_router": {
-    "method": "heuristic",
-    "n": 18,
-    "hits": 18,
-    "misses": 0,
-    "score": "18/18",
-    "rate": 1.0,
-    "by_family": {
-      "python_looks_like_physics": {
-        "n": 4,
-        "hits": 4,
-        "rate": 1.0
-      },
-      "ent_wording_in_coding": {
-        "n": 6,
-        "hits": 6,
-        "rate": 1.0
-      },
-      "vision_caption_ambiguous": {
-        "n": 5,
-        "hits": 5,
-        "rate": 1.0
-      },
-      "ent_control": {
-        "n": 2,
-        "hits": 2,
-        "rate": 1.0
-      },
-      "base_control": {
-        "n": 1,
-        "hits": 1,
-        "rate": 1.0
-      }
-    },
-    "ent_never_on_python": true,
-    "rows": [
-      {
-        "id": "hn_py_physics_01",
-        "family": "python_looks_like_physics",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Write Python that prints the integer classical free-fall distance int(0.5 * 9.81",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "hn_py_physics_02",
-        "family": "python_looks_like_physics",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Write a Python program that prints int(v0*t - 0.5*g*t*t) for ballistic height wi",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "hn_py_physics_03",
-        "family": "python_looks_like_physics",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "def kinetic_energy(m, v):\n    return int(0.5 * m * v * v)\nprint(kinetic_energy(4",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "hn_py_physics_04",
-        "family": "python_looks_like_physics",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Write Python to simulate a 1D elastic collision velocity and print the integer r",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "hn_py_entword_01",
-        "family": "ent_wording_in_coding",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Write a Python program that prints the length of the string 'entanglement'. Outp",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "hn_py_entword_02",
-        "family": "ent_wording_in_coding",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Write Python that counts how many times the substring 'qubit' appears in: 'qubit",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "hn_py_entword_03",
-        "family": "ent_wording_in_coding",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Write Python that prints 2**10. Mentions of Bell pairs, entanglement, or gates i",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "hn_py_entword_04",
-        "family": "ent_wording_in_coding",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "import math\nprint(int(math.factorial(6)))\n# Python sandbox task — ignore any ent",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "hn_py_entword_05",
-        "family": "ent_wording_in_coding",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Write a Python program that prints the word 'Hadamard' character count (len). ON",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "hn_vis_amb_01",
-        "family": "vision_caption_ambiguous",
-        "expected": "vision",
-        "got": "vision",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Look at the image caption overlay. How many street lights are visible in the fra",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "hn_vis_amb_02",
-        "family": "vision_caption_ambiguous",
-        "expected": "vision",
-        "got": "vision",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Photo of a table: red ball, blue cube, green cone. In the image, how many object",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "hn_vis_amb_03",
-        "family": "vision_caption_ambiguous",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Text-only description (no image file attached): There are 2 cats and 1 dog. How ",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "hn_vis_amb_04",
-        "family": "vision_caption_ambiguous",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Pure chat: someone said 'three rockets launched'. Without any picture or png, wh",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "hn_vis_amb_05",
-        "family": "vision_caption_ambiguous",
-        "expected": "vision",
-        "got": "vision",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Mira la imagen. La visión muestra semáforos en el video frame. ¿Cuántos? Solo el",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "hn_ent_clean_01",
-        "family": "ent_control",
-        "expected": "ent",
-        "got": "ent",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Propose a quantum circuit with n_qubits and gates for a Bell-pair entanglement s",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "hn_ent_clean_02",
-        "family": "ent_control",
-        "expected": "ent",
-        "got": "ent",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Build a PennyLane circuit: Hadamard then CX on qubits 0,1. Return n_qubits and g",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "hn_base_01",
-        "family": "base_control",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Hello! Thanks for the earlier chat. Any fun weather idioms?",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "hn_py_gate_garden_01",
-        "family": "ent_wording_in_coding",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Write Python that prints s.count('gate') for s='the garden gate is closed'. ONLY",
-        "ent_adapter_blocked": true
-      }
-    ],
-    "fixture_path": "data/bench_live/hardneg_mixed_router.json",
-    "anti_contamination": {
-      "expected_lane_harness_only": true,
-      "gt_never_in_route_api": true
-    }
-  },
-  "hardneg_delta": {
-    "router_rate": 1.0,
-    "router_score": "18/18",
-    "ent_never_on_python": true,
-    "vs_freeze_floor": "hold"
-  }
+  "notes": []
 }

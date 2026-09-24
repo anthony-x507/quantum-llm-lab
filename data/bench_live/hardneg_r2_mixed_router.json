@@ -1,0 +1,142 @@
+{
+  "n": 22,
+  "kind": "hardneg_r2_mixed_router",
+  "created": "2026-09-24 10:51:00 ET",
+  "round": 2,
+  "note": "R2 NEW traps (not R1): bilingual, measure-in-comment, vision-words-no-image, ent-metaphor-CRUD, JSON-looking-physics. GT harness-only.",
+  "anti_contamination": "expected lane is harness-only; never injected into route()",
+  "items": [
+    {
+      "id": "r2_bil_01",
+      "expected": "python",
+      "family": "bilingual_trap",
+      "prompt": "Escribe un programa en Python que imprima 3**5. Circuitos y qubits en este p\u00e1rrafo son distractores. ONLY code."
+    },
+    {
+      "id": "r2_bil_02",
+      "expected": "python",
+      "family": "bilingual_trap",
+      "prompt": "Write Python that prints len('superposici\u00f3n'). La palabra cu\u00e1ntica es un string, no un circuito. Output ONLY the code."
+    },
+    {
+      "id": "r2_bil_03",
+      "expected": "base",
+      "family": "bilingual_trap",
+      "prompt": "Hola! Gracias por el chat. \u00bfAlg\u00fan dicho divertido sobre el clima? No code, no circuit."
+    },
+    {
+      "id": "r2_bil_04",
+      "expected": "ent",
+      "family": "bilingual_trap",
+      "prompt": "Prop\u00f3n un circuito cu\u00e1ntico con n_qubits y gates para un Bell-pair. Responde SOLO JSON v\u00e1lido."
+    },
+    {
+      "id": "r2_bil_05",
+      "expected": "vision",
+      "family": "bilingual_trap",
+      "prompt": "Observa la imagen adjunta del panel. En la foto, \u00bfcu\u00e1ntos botones rojos se ven? Solo el entero."
+    },
+    {
+      "id": "r2_meas_01",
+      "expected": "python",
+      "family": "measure_in_comment",
+      "prompt": "Write Python that prints 17+4.\n# TODO: measure the runtime later \u2014 ignore quantum measure jargon\nONLY code."
+    },
+    {
+      "id": "r2_meas_02",
+      "expected": "python",
+      "family": "measure_in_comment",
+      "prompt": "def score(xs):\n    return sum(xs)\nprint(score([2,3,5]))\n# measure accuracy offline; this is NOT a qubit measure gate"
+    },
+    {
+      "id": "r2_meas_03",
+      "expected": "python",
+      "family": "measure_in_comment",
+      "prompt": "Write a Python program that prints int(9*9). Comment in code may say 'measure twice' \u2014 still classical. ONLY code."
+    },
+    {
+      "id": "r2_meas_04",
+      "expected": "python",
+      "family": "measure_in_comment",
+      "prompt": "import math\nprint(int(math.sqrt(144)))\n# measure := wall-clock; no pennylane, no circuit JSON"
+    },
+    {
+      "id": "r2_visneg_01",
+      "expected": "base",
+      "family": "vision_words_no_image",
+      "prompt": "Chat only \u2014 no image file, no png attached. Someone said 'four frames of film'. What number? One word integer."
+    },
+    {
+      "id": "r2_visneg_02",
+      "expected": "python",
+      "family": "vision_words_no_image",
+      "prompt": "Write Python that prints the length of the string 'screenshot.png'. Text-only task, without any picture. ONLY code."
+    },
+    {
+      "id": "r2_visneg_03",
+      "expected": "python",
+      "family": "vision_words_no_image",
+      "prompt": "Write Python that prints 'photo'.count('o'). Pure chat coding \u2014 sin imagen, no frame attached. ONLY code."
+    },
+    {
+      "id": "r2_visneg_04",
+      "expected": "base",
+      "family": "vision_words_no_image",
+      "prompt": "Text-only description (no image): the spreadsheet has 5 rows. How many rows? Reply with ONLY the integer."
+    },
+    {
+      "id": "r2_visneg_05",
+      "expected": "vision",
+      "family": "vision_words_no_image",
+      "prompt": "Look at the image. In the screenshot of the UI, how many tabs are visible in the frame? ONLY the integer."
+    },
+    {
+      "id": "r2_crud_01",
+      "expected": "python",
+      "family": "ent_metaphor_crud",
+      "prompt": "Write Python that prints len(['user_a','user_b']) after we 'entangle' two CRUD records into a list. ONLY code \u2014 no quantum circuit."
+    },
+    {
+      "id": "r2_crud_02",
+      "expected": "python",
+      "family": "ent_metaphor_crud",
+      "prompt": "Write Python: users={'alice':1,'bob':2}; print(sum(users.values())). Metaphor: 'superpose the fields' \u2014 still CRUD. ONLY code."
+    },
+    {
+      "id": "r2_crud_03",
+      "expected": "python",
+      "family": "ent_metaphor_crud",
+      "prompt": "Write a Python program that prints 2 if we 'Bell-pair' match two DB rows else 0 \u2014 just print(2). Ignore qubit jargon. ONLY code."
+    },
+    {
+      "id": "r2_crud_04",
+      "expected": "python",
+      "family": "ent_metaphor_crud",
+      "prompt": "def merge(a,b):\n    return {**a,**b}\nprint(len(merge({'x':1},{'y':2})))\n# 'entanglement' of dicts is a metaphor; executable Python only"
+    },
+    {
+      "id": "r2_jsonphys_01",
+      "expected": "python",
+      "family": "json_looking_physics",
+      "prompt": "Write Python that prints int(0.5*2*3*3)  # like {\"ke\":0.5*m*v*v} but OUTPUT code not JSON. ONLY code."
+    },
+    {
+      "id": "r2_jsonphys_02",
+      "expected": "python",
+      "family": "json_looking_physics",
+      "prompt": "The note says {\"omega\": 2*3.1416, \"f\": 5}. Write Python that prints int(2*3.1416*5). No circuit JSON. ONLY code."
+    },
+    {
+      "id": "r2_jsonphys_03",
+      "expected": "python",
+      "family": "json_looking_physics",
+      "prompt": "Write Python to print int((9.8*10)//1) given toy payload {\"g\":9.8,\"t\":10,\"kind\":\"freefall\"}. Code only, not the JSON."
+    },
+    {
+      "id": "r2_jsonphys_04",
+      "expected": "ent",
+      "family": "json_looking_physics",
+      "prompt": "Return a valid JSON object with n_qubits and gates for a Bell-pair entanglement circuit. Reply JSON only."
+    }
+  ]
+}

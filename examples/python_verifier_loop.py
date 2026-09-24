@@ -461,10 +461,34 @@ def propose_heuristic(item: dict[str, Any], *, fault: str = "prose_tail") -> str
     )
     m2 = re.search(r"prints?\s+(2\s*\*\*\s*10)", prompt, re.I)
     m3 = re.search(r"floor of\s+([0-9]+\s*/\s*[0-9]+)", prompt, re.I)
+    # R2: Spanish imprima/imprime EXPR (power/arith), bare prints N, just print(N)
+    m_es_print = re.search(
+        r"imprim[ae]\s+([0-9]+(?:\s*\*\*\s*[0-9]+|\s*[+\-*/%]\s*[0-9]+(?:\s*[+\-*/%]\s*[0-9]+)*))",
+        prompt,
+        re.I,
+    )
+    m_bare_num = re.search(
+        r"(?:prints?|print)\s+(\d+)\b|(?:just\s+)?print\(\s*(\d+)\s*\)",
+        prompt,
+        re.I,
+    )
+    m_pow = re.search(r"(?:prints?|imprim[ae])\s+(\d+\s*\*\*\s*\d+)", prompt, re.I)
     # Hard-neg: explicit int(expr) / len('s') / str.count / sum(range) in prompt
     m_int_args = _extract_call_args(prompt, "int")
     m_len = re.search(r"\blen\s*\(\s*'([^']*)'\s*\)", prompt) or re.search(
         r"length of the string\s+'([^']*)'", prompt, re.I
+    )
+    # R2: len([list literal]) / len(['a','b'])
+    m_len_list = re.search(r"\blen\s*\(\s*(\[[^\]]*\])\s*\)", prompt)
+    # R2: embedded import math + print(int(math.sqrt(...))) or similar
+    m_math_embed = re.search(
+        r"(import\s+math\s*\n\s*print\s*\(\s*int\s*\(\s*math\.\w+\s*\(\s*[^)]+\s*\)\s*\)\s*\))",
+        prompt,
+    )
+    # R2: name={...}; print(sum(name.values()))
+    m_dict_sum = re.search(
+        r"(\w+)\s*=\s*(\{[^}]+\})\s*;\s*print\s*\(\s*sum\s*\(\s*\1\.values\s*\(\s*\)\s*\)\s*\)",
+        prompt,
     )
     m_count = re.search(
         r"(?:prints?\s+)?(?:['\"])([^'\"]+)['\"]\.count\(\s*['\"]([^'\"]*)['\"]\s*\)",
@@ -500,6 +524,19 @@ def propose_heuristic(item: dict[str, Any], *, fault: str = "prose_tail") -> str
         code = f"print({m3.group(1).replace('/', '//').replace(' ', '')})"
     elif m:
         code = f"print({m.group(1)})"
+    elif m_math_embed:
+        code = m_math_embed.group(1)
+    elif m_dict_sum:
+        code = f"{m_dict_sum.group(1)} = {m_dict_sum.group(2)}\nprint(sum({m_dict_sum.group(1)}.values()))"
+    elif m_pow:
+        code = f"print({m_pow.group(1).replace(' ', '')})"
+    elif m_es_print:
+        code = f"print({m_es_print.group(1).replace(' ', '')})"
+    elif m_bare_num:
+        n = m_bare_num.group(1) or m_bare_num.group(2)
+        code = f"print({n})"
+    elif m_len_list:
+        code = f"print(len({m_len_list.group(1)}))"
     elif m_def_block:
         code = m_def_block.group(1).rstrip()
     elif m_fact_embed:
@@ -517,6 +554,8 @@ def propose_heuristic(item: dict[str, Any], *, fault: str = "prose_tail") -> str
         )
     elif m_int_args is not None:
         code = f"print(int({m_int_args}))"
+        if re.search(r"\bmath\.", m_int_args) and "import math" not in code:
+            code = "import math\n" + code
     elif m_count:
         code = f"print({m_count.group(1)!r}.count({m_count.group(2)!r}))"
     elif m_count2:
