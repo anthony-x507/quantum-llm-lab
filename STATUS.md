@@ -1,4 +1,12 @@
 ## 2026-09-24 — fold tip-distance-far → codigo-vivo-tip
+## Tip hardneg R19 (side; not folded) — 2026-09-24
+
+- Branch `frontier/tip-hardneg-r19` from tip `845a292` (R13 on tip; ≥`f052420`).
+- Router **6/52→52/52**; verifier **44/44**; mixed (d) **1.0**; R7–R13+LP held.
+- Families: Mage/Spark/ActiveMQ/Helmfile/Semaphore/Please/Django/Laravel/Akka/DuckDB/Calico/Longhorn/Loki/OTel.
+- Freeze `polish_r19` 100pct; `data/lora_adapter/` RO; **not folded**.
+- Doc: `docs/FRONTIER-CODIGO-VIVO-TIP-R19.md`.
+
 Merge-port side feat `8b4779c`/`bd2e8b4` onto tip `34c696f` → `a2e3eb1` (keep mid+TTI; layer far GP-heavy). CPU unified **1.0** (re-smoke); far-set MAE **4.653→2.600 m** (100% 1053/1053); DZ 30–70 **100%** (orig 527/527 · danger50 915/915 · mid 55/55 · far 456/456); mid_near/outer **100%** (684/684·374/374; outer MAE 1.534 m); TTI scorable **100%** (orig 691/691 · d50 725/725); inv_cv **100%**; collision physics **100%** (n=40/2850); choose_safest **100%**; R12 **52/52·44/44**; pillars 26/26; hardneg 18/18; `wired_to_vlm`; freezes retained incl. inverse_r3 + r12 + distance_mid + tti + r11 + motion_r4 + vision_ground + inverse_r2 + r10 + priors. Freeze `codigo_vivo_tip_distance_far_fold_100pct_20260924_143716`. Hardneg-r13 **not** folded. Tip vis stays BASE. RO `data/lora_adapter/`. See SCOREBOARD + TIP-DISTANCE-FAR.
 
 ## 2026-09-24 — fold tip-inverse-r3 → codigo-vivo-tip

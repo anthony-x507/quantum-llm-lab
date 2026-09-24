@@ -1,0 +1,317 @@
+{
+  "n": 44,
+  "kind": "python_hardneg_items",
+  "created": "2026-09-24T18:46:00Z",
+  "round": "r19",
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R19.md",
+  "items": [
+    {
+      "id": "r19v_mge_01",
+      "kind": "mage_block_gates",
+      "prompt": "Write Python that prints len('gates: data_exporter'). Mage AI. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_mge_02",
+      "kind": "mage_block_gates",
+      "prompt": "t='gates: data_exporter'\nprint(t.count('gates'))\n# Mage AI gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_mge_03",
+      "kind": "mage_block_gates",
+      "prompt": "Write Python that prints 80. Mage AI gates: data_exporter is orchestration only. ONLY code.",
+      "expected_stdout": "80\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_spk_01",
+      "kind": "spark_conf_gates",
+      "prompt": "Write Python that prints len('gates: spark.sql.adaptive'). Apache Spark. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_spk_02",
+      "kind": "spark_conf_gates",
+      "prompt": "t='gates: spark.sql.adaptive'\nprint(t.count('gates'))\n# Apache Spark gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_spk_03",
+      "kind": "spark_conf_gates",
+      "prompt": "Write Python that prints 81. Apache Spark gates: spark.sql.adaptive is compute only. ONLY code.",
+      "expected_stdout": "81\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_amq_01",
+      "kind": "activemq_destination_gates",
+      "prompt": "Write Python that prints len('gates: queuePriority'). Apache ActiveMQ. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_amq_02",
+      "kind": "activemq_destination_gates",
+      "prompt": "t='gates: queuePriority'\nprint(t.count('gates'))\n# Apache ActiveMQ gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_amq_03",
+      "kind": "activemq_destination_gates",
+      "prompt": "Write Python that prints 82. Apache ActiveMQ gates: queuePriority is messaging only. ONLY code.",
+      "expected_stdout": "82\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_hmf_01",
+      "kind": "helmfile_release_gates",
+      "prompt": "Write Python that prints len('gates: installed'). Helmfile. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_hmf_02",
+      "kind": "helmfile_release_gates",
+      "prompt": "t='gates: installed'\nprint(t.count('gates'))\n# Helmfile gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_hmf_03",
+      "kind": "helmfile_release_gates",
+      "prompt": "Write Python that prints 83. Helmfile gates: installed is GitOps only. ONLY code.",
+      "expected_stdout": "83\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_sem_01",
+      "kind": "semaphore_block_gates",
+      "prompt": "Write Python that prints len('gates: prologue'). Semaphore CI. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_sem_02",
+      "kind": "semaphore_block_gates",
+      "prompt": "t='gates: prologue'\nprint(t.count('gates'))\n# Semaphore CI gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_sem_03",
+      "kind": "semaphore_block_gates",
+      "prompt": "Write Python that prints 84. Semaphore CI gates: prologue is CI only. ONLY code.",
+      "expected_stdout": "84\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_plz_01",
+      "kind": "please_build_gates",
+      "prompt": "Write Python that prints len('gates: plz'). Please Build. ONLY code.",
+      "expected_stdout": "10\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_plz_02",
+      "kind": "please_build_gates",
+      "prompt": "t='gates: plz'\nprint(t.count('gates'))\n# Please Build gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_plz_03",
+      "kind": "please_build_gates",
+      "prompt": "Write Python that prints 85. Please Build gates: plz is build only. ONLY code.",
+      "expected_stdout": "85\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_djn_01",
+      "kind": "django_middleware_gates",
+      "prompt": "Write Python that prints len('gates: MIDDLEWARE'). Django. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_djn_02",
+      "kind": "django_middleware_gates",
+      "prompt": "t='gates: MIDDLEWARE'\nprint(t.count('gates'))\n# Django gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_djn_03",
+      "kind": "django_middleware_gates",
+      "prompt": "Write Python that prints 86. Django gates: MIDDLEWARE is framework only. ONLY code.",
+      "expected_stdout": "86\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_lrv_01",
+      "kind": "laravel_middleware_gates",
+      "prompt": "Write Python that prints len('gates: terminate'). Laravel. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_lrv_02",
+      "kind": "laravel_middleware_gates",
+      "prompt": "t='gates: terminate'\nprint(t.count('gates'))\n# Laravel gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_lrv_03",
+      "kind": "laravel_middleware_gates",
+      "prompt": "Write Python that prints 87. Laravel gates: terminate is framework only. ONLY code.",
+      "expected_stdout": "87\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_akk_01",
+      "kind": "akka_receive_gates",
+      "prompt": "Write Python that prints len('gates: Receive'). Akka. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_akk_02",
+      "kind": "akka_receive_gates",
+      "prompt": "t='gates: Receive'\nprint(t.count('gates'))\n# Akka gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_akk_03",
+      "kind": "akka_receive_gates",
+      "prompt": "Write Python that prints 88. Akka gates: Receive is actor only. ONLY code.",
+      "expected_stdout": "88\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_ddb_01",
+      "kind": "duckdb_pragma_gates",
+      "prompt": "Write Python that prints len('gates: threads'). DuckDB. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_ddb_02",
+      "kind": "duckdb_pragma_gates",
+      "prompt": "t='gates: threads'\nprint(t.count('gates'))\n# DuckDB gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_ddb_03",
+      "kind": "duckdb_pragma_gates",
+      "prompt": "Write Python that prints 89. DuckDB gates: threads is DB only. ONLY code.",
+      "expected_stdout": "89\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_cal_01",
+      "kind": "calico_network_gates",
+      "prompt": "Write Python that prints len('gates: selectorExpr'). Calico. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_cal_02",
+      "kind": "calico_network_gates",
+      "prompt": "t='gates: selectorExpr'\nprint(t.count('gates'))\n# Calico gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_cal_03",
+      "kind": "calico_network_gates",
+      "prompt": "Write Python that prints 90. Calico gates: selectorExpr is network only. ONLY code.",
+      "expected_stdout": "90\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_lhr_01",
+      "kind": "longhorn_replica_gates",
+      "prompt": "Write Python that prints len('gates: SoftAntiAffinity'). Longhorn. ONLY code.",
+      "expected_stdout": "23\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_lhr_02",
+      "kind": "longhorn_replica_gates",
+      "prompt": "t='gates: SoftAntiAffinity'\nprint(t.count('gates'))\n# Longhorn gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_lhr_03",
+      "kind": "longhorn_replica_gates",
+      "prompt": "Write Python that prints 91. Longhorn gates: SoftAntiAffinity is storage only. ONLY code.",
+      "expected_stdout": "91\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_lki_01",
+      "kind": "loki_pipeline_gates",
+      "prompt": "Write Python that prints len('gates: pipeline_stages'). Grafana Loki. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_lki_02",
+      "kind": "loki_pipeline_gates",
+      "prompt": "t='gates: pipeline_stages'\nprint(t.count('gates'))\n# Grafana Loki gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_lki_03",
+      "kind": "loki_pipeline_gates",
+      "prompt": "Write Python that prints 92. Grafana Loki gates: pipeline_stages is observability only. ONLY code.",
+      "expected_stdout": "92\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_otl_01",
+      "kind": "otelcol_processor_gates",
+      "prompt": "Write Python that prints len('gates: memory_limiter'). OpenTelemetry Collector. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_otl_02",
+      "kind": "otelcol_processor_gates",
+      "prompt": "t='gates: memory_limiter'\nprint(t.count('gates'))\n# OpenTelemetry Collector gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_otl_03",
+      "kind": "otelcol_processor_gates",
+      "prompt": "Write Python that prints 93. OpenTelemetry Collector gates: memory_limiter is observability only. ONLY code.",
+      "expected_stdout": "93\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_ctrl_01",
+      "kind": "base_python_control_r19",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r19v_ctrl_02",
+      "kind": "base_python_control_r19",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}

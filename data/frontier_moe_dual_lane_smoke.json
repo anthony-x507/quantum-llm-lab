@@ -1,6 +1,6 @@
 {
   "frontier": "C1-moe-dual-lane",
-  "written": "2026-09-24 14:00:58",
+  "written": "2026-09-24 14:44:11",
   "router_method": "heuristic",
   "claims": "No quantum-advantage claims.",
   "adapter_map": {
@@ -9,7 +9,7 @@
     "vision": null,
     "base": null
   },
-  "ro_lock": "/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r12/data/lora_adapter",
+  "ro_lock": "/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r19/data/lora_adapter",
   "smoke": {
     "method": "heuristic",
     "n": 12,

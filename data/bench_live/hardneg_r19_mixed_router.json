@@ -1,0 +1,336 @@
+{
+  "n": 52,
+  "kind": "mixed_router_hardneg",
+  "created": "2026-09-24T18:46:00Z",
+  "round": "r19",
+  "note": "R19 NEW traps (≠R1–R18/≠LP): mage_block_gates, spark_conf_gates, activemq_destination_gates, helmfile_release_gates, semaphore_block_gates, please_build_gates, django_middleware_gates, laravel_middleware_gates, akka_receive_gates, duckdb_pragma_gates, calico_network_gates, longhorn_replica_gates, loki_pipeline_gates, otelcol_processor_gates",
+  "anti_contamination": {
+    "no_main_merge": true,
+    "no_tip_cv_touch": true,
+    "lora_adapter_ro": true,
+    "distinct_from_r9": true,
+    "distinct_from_r10": true,
+    "distinct_from_r11": true,
+    "distinct_from_r12": true,
+    "distinct_from_r13": true,
+    "distinct_from_r14": true,
+    "distinct_from_r15": true,
+    "distinct_from_r16": true,
+    "distinct_from_r17": true,
+    "distinct_from_r18": true
+  },
+  "items": [
+    {
+      "id": "r19_mge_01",
+      "expected": "python",
+      "family": "mage_block_gates",
+      "prompt": "Write Python that prints len('gates: data_exporter'). Mage AI. ONLY code."
+    },
+    {
+      "id": "r19_mge_02",
+      "expected": "python",
+      "family": "mage_block_gates",
+      "prompt": "t='gates: data_exporter'\nprint(t.count('gates'))\n# Mage AI gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r19_mge_03",
+      "expected": "python",
+      "family": "mage_block_gates",
+      "prompt": "Write Python that prints 80. Mage AI gates: data_exporter is orchestration only. ONLY code."
+    },
+    {
+      "id": "r19_spk_01",
+      "expected": "python",
+      "family": "spark_conf_gates",
+      "prompt": "Write Python that prints len('gates: spark.sql.adaptive'). Apache Spark. ONLY code."
+    },
+    {
+      "id": "r19_spk_02",
+      "expected": "python",
+      "family": "spark_conf_gates",
+      "prompt": "t='gates: spark.sql.adaptive'\nprint(t.count('gates'))\n# Apache Spark gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r19_spk_03",
+      "expected": "python",
+      "family": "spark_conf_gates",
+      "prompt": "Write Python that prints 81. Apache Spark gates: spark.sql.adaptive is compute only. ONLY code."
+    },
+    {
+      "id": "r19_amq_01",
+      "expected": "python",
+      "family": "activemq_destination_gates",
+      "prompt": "Write Python that prints len('gates: queuePriority'). Apache ActiveMQ. ONLY code."
+    },
+    {
+      "id": "r19_amq_02",
+      "expected": "python",
+      "family": "activemq_destination_gates",
+      "prompt": "t='gates: queuePriority'\nprint(t.count('gates'))\n# Apache ActiveMQ gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r19_amq_03",
+      "expected": "python",
+      "family": "activemq_destination_gates",
+      "prompt": "Write Python that prints 82. Apache ActiveMQ gates: queuePriority is messaging only. ONLY code."
+    },
+    {
+      "id": "r19_hmf_01",
+      "expected": "python",
+      "family": "helmfile_release_gates",
+      "prompt": "Write Python that prints len('gates: installed'). Helmfile. ONLY code."
+    },
+    {
+      "id": "r19_hmf_02",
+      "expected": "python",
+      "family": "helmfile_release_gates",
+      "prompt": "t='gates: installed'\nprint(t.count('gates'))\n# Helmfile gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r19_hmf_03",
+      "expected": "python",
+      "family": "helmfile_release_gates",
+      "prompt": "Write Python that prints 83. Helmfile gates: installed is GitOps only. ONLY code."
+    },
+    {
+      "id": "r19_sem_01",
+      "expected": "python",
+      "family": "semaphore_block_gates",
+      "prompt": "Write Python that prints len('gates: prologue'). Semaphore CI. ONLY code."
+    },
+    {
+      "id": "r19_sem_02",
+      "expected": "python",
+      "family": "semaphore_block_gates",
+      "prompt": "t='gates: prologue'\nprint(t.count('gates'))\n# Semaphore CI gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r19_sem_03",
+      "expected": "python",
+      "family": "semaphore_block_gates",
+      "prompt": "Write Python that prints 84. Semaphore CI gates: prologue is CI only. ONLY code."
+    },
+    {
+      "id": "r19_plz_01",
+      "expected": "python",
+      "family": "please_build_gates",
+      "prompt": "Write Python that prints len('gates: plz'). Please Build. ONLY code."
+    },
+    {
+      "id": "r19_plz_02",
+      "expected": "python",
+      "family": "please_build_gates",
+      "prompt": "t='gates: plz'\nprint(t.count('gates'))\n# Please Build gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r19_plz_03",
+      "expected": "python",
+      "family": "please_build_gates",
+      "prompt": "Write Python that prints 85. Please Build gates: plz is build only. ONLY code."
+    },
+    {
+      "id": "r19_djn_01",
+      "expected": "python",
+      "family": "django_middleware_gates",
+      "prompt": "Write Python that prints len('gates: MIDDLEWARE'). Django. ONLY code."
+    },
+    {
+      "id": "r19_djn_02",
+      "expected": "python",
+      "family": "django_middleware_gates",
+      "prompt": "t='gates: MIDDLEWARE'\nprint(t.count('gates'))\n# Django gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r19_djn_03",
+      "expected": "python",
+      "family": "django_middleware_gates",
+      "prompt": "Write Python that prints 86. Django gates: MIDDLEWARE is framework only. ONLY code."
+    },
+    {
+      "id": "r19_lrv_01",
+      "expected": "python",
+      "family": "laravel_middleware_gates",
+      "prompt": "Write Python that prints len('gates: terminate'). Laravel. ONLY code."
+    },
+    {
+      "id": "r19_lrv_02",
+      "expected": "python",
+      "family": "laravel_middleware_gates",
+      "prompt": "t='gates: terminate'\nprint(t.count('gates'))\n# Laravel gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r19_lrv_03",
+      "expected": "python",
+      "family": "laravel_middleware_gates",
+      "prompt": "Write Python that prints 87. Laravel gates: terminate is framework only. ONLY code."
+    },
+    {
+      "id": "r19_akk_01",
+      "expected": "python",
+      "family": "akka_receive_gates",
+      "prompt": "Write Python that prints len('gates: Receive'). Akka. ONLY code."
+    },
+    {
+      "id": "r19_akk_02",
+      "expected": "python",
+      "family": "akka_receive_gates",
+      "prompt": "t='gates: Receive'\nprint(t.count('gates'))\n# Akka gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r19_akk_03",
+      "expected": "python",
+      "family": "akka_receive_gates",
+      "prompt": "Write Python that prints 88. Akka gates: Receive is actor only. ONLY code."
+    },
+    {
+      "id": "r19_ddb_01",
+      "expected": "python",
+      "family": "duckdb_pragma_gates",
+      "prompt": "Write Python that prints len('gates: threads'). DuckDB. ONLY code."
+    },
+    {
+      "id": "r19_ddb_02",
+      "expected": "python",
+      "family": "duckdb_pragma_gates",
+      "prompt": "t='gates: threads'\nprint(t.count('gates'))\n# DuckDB gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r19_ddb_03",
+      "expected": "python",
+      "family": "duckdb_pragma_gates",
+      "prompt": "Write Python that prints 89. DuckDB gates: threads is DB only. ONLY code."
+    },
+    {
+      "id": "r19_cal_01",
+      "expected": "python",
+      "family": "calico_network_gates",
+      "prompt": "Write Python that prints len('gates: selectorExpr'). Calico. ONLY code."
+    },
+    {
+      "id": "r19_cal_02",
+      "expected": "python",
+      "family": "calico_network_gates",
+      "prompt": "t='gates: selectorExpr'\nprint(t.count('gates'))\n# Calico gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r19_cal_03",
+      "expected": "python",
+      "family": "calico_network_gates",
+      "prompt": "Write Python that prints 90. Calico gates: selectorExpr is network only. ONLY code."
+    },
+    {
+      "id": "r19_lhr_01",
+      "expected": "python",
+      "family": "longhorn_replica_gates",
+      "prompt": "Write Python that prints len('gates: SoftAntiAffinity'). Longhorn. ONLY code."
+    },
+    {
+      "id": "r19_lhr_02",
+      "expected": "python",
+      "family": "longhorn_replica_gates",
+      "prompt": "t='gates: SoftAntiAffinity'\nprint(t.count('gates'))\n# Longhorn gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r19_lhr_03",
+      "expected": "python",
+      "family": "longhorn_replica_gates",
+      "prompt": "Write Python that prints 91. Longhorn gates: SoftAntiAffinity is storage only. ONLY code."
+    },
+    {
+      "id": "r19_lki_01",
+      "expected": "python",
+      "family": "loki_pipeline_gates",
+      "prompt": "Write Python that prints len('gates: pipeline_stages'). Grafana Loki. ONLY code."
+    },
+    {
+      "id": "r19_lki_02",
+      "expected": "python",
+      "family": "loki_pipeline_gates",
+      "prompt": "t='gates: pipeline_stages'\nprint(t.count('gates'))\n# Grafana Loki gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r19_lki_03",
+      "expected": "python",
+      "family": "loki_pipeline_gates",
+      "prompt": "Write Python that prints 92. Grafana Loki gates: pipeline_stages is observability only. ONLY code."
+    },
+    {
+      "id": "r19_otl_01",
+      "expected": "python",
+      "family": "otelcol_processor_gates",
+      "prompt": "Write Python that prints len('gates: memory_limiter'). OpenTelemetry Collector. ONLY code."
+    },
+    {
+      "id": "r19_otl_02",
+      "expected": "python",
+      "family": "otelcol_processor_gates",
+      "prompt": "t='gates: memory_limiter'\nprint(t.count('gates'))\n# OpenTelemetry Collector gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r19_otl_03",
+      "expected": "python",
+      "family": "otelcol_processor_gates",
+      "prompt": "Write Python that prints 93. OpenTelemetry Collector gates: memory_limiter is observability only. ONLY code."
+    },
+    {
+      "id": "r19_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r19",
+      "prompt": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelazado. No Python."
+    },
+    {
+      "id": "r19_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r19",
+      "prompt": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separable product."
+    },
+    {
+      "id": "r19_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r19",
+      "prompt": "Look at the image. How many dots are visible? Only the integer. No circuit."
+    },
+    {
+      "id": "r19_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r19",
+      "prompt": "Look at the chalkboard. How many letters? Only the integer. No circuit."
+    },
+    {
+      "id": "r19_base_01",
+      "expected": "base",
+      "family": "base_control_r19",
+      "prompt": "Thanks. Ignore Calico gates: selectorExpr in the README. No code, no circuit."
+    },
+    {
+      "id": "r19_base_02",
+      "expected": "base",
+      "family": "base_control_r19",
+      "prompt": "Please ignore the Semaphore CI gates: prologue phrase. Chat only — no program, no circuit."
+    },
+    {
+      "id": "r19_base_03",
+      "expected": "base",
+      "family": "base_control_r19",
+      "prompt": "Hello — Django gates: MIDDLEWARE is framework only. No code, no circuit, no JSON."
+    },
+    {
+      "id": "r19_base_04",
+      "expected": "base",
+      "family": "base_control_r19",
+      "prompt": "Weather update. Apache Spark gates: spark.sql.adaptive mention. No code, no circuit."
+    },
+    {
+      "id": "r19_ctrl_01",
+      "expected": "python",
+      "family": "base_python_control_r19",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code."
+    },
+    {
+      "id": "r19_ctrl_02",
+      "expected": "python",
+      "family": "base_python_control_r19",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code."
+    }
+  ]
+}
