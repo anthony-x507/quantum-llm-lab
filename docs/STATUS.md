@@ -1,7 +1,7 @@
 # Estado de avance — Agent Lab / quantum-llm-lab
 
 **Repo:** https://github.com/anthony-x507/quantum-llm-lab  
-**Actualizado:** 2026-09-24 ~05:12 ET  
+**Actualizado:** 2026-09-24 ~10:57 ET  
 **SSOT del plan:** [`PLAN-MAESTRO-PARTE-1.md`](PLAN-MAESTRO-PARTE-1.md)  
 **Regla:** solo números de registro limpio (anti-contam). Sin claims de ventaja cuántica.
 
@@ -111,6 +111,15 @@ Set ~220 escenas + scripts adapter `data/lora_adapter_classical/`. **Own-delta B
 6. Actualizar scoreboard 10× en Plan Maestro al caer números VLM.
 
 ---
+
+
+### Visión (MLX grounding)
+
+| Hecho | Registro |
+|-------|----------|
+| mlx_vlm API kwargs | `62843ad` — `generate(…, image=)` PASS |
+| Anti-think JSON parse | **3/3** (was 0/3 @768) — `max_tokens=1536` + strip think + JSON cue + phase-2; evidence `data/frontier_vision_mlx_anti_think_mac111.json` |
+| Doc | [`FRONTIER-VISION-MLX-ANTI-THINK.md`](FRONTIER-VISION-MLX-ANTI-THINK.md) |
 
 ## Links útiles
 

@@ -89,18 +89,33 @@ def _narrative_from_structured(s: dict[str, Any]) -> str:
 
 
 def _strip_think_and_extract(text_out: str) -> str:
-    """Remove <think> blocks; prefer text after last </think>; else keep JSON span."""
+    """Remove think/thinking blocks; prefer text after last close tag; else JSON span.
+
+    Reuses lab anti-think pattern from examples/run_jev_experiment.py +
+    examples/train_lora._strip_thinking (also strips <thinking>).
+    """
     import re
 
     if not text_out:
         return ""
+    # Closed think / thinking tags (Qwen3 Thinking + variants)
     cleaned = re.sub(r"<think>[\s\S]*?</think>", "", text_out, flags=re.I)
+    cleaned = re.sub(r"<thinking>[\s\S]*?</thinking>", "", cleaned, flags=re.I)
     lower_orig = text_out.lower()
-    if "</think>" in lower_orig:
-        idx = lower_orig.rfind("</think>")
-        cleaned = text_out[idx + len("</think>") :]
-    elif "<think>" in lower_orig and "{" in text_out:
-        cleaned = text_out[text_out.find("{") :]
+    # Prefer content after last closing tag (even if open tag missing)
+    for closer in ("</think>", "</thinking>"):
+        if closer in lower_orig:
+            idx = lower_orig.rfind(closer)
+            cleaned = text_out[idx + len(closer) :]
+            break
+    else:
+        # Unclosed think: keep from first '{' if present
+        if ("<think>" in lower_orig or "<thinking>" in lower_orig) and "{" in text_out:
+            cleaned = text_out[text_out.find("{") :]
+    cleaned = cleaned.strip()
+    # Drop common markdown fences around JSON
+    cleaned = re.sub(r"^```(?:json)?\s*", "", cleaned, flags=re.I)
+    cleaned = re.sub(r"\s*```\s*$", "", cleaned)
     cleaned = cleaned.strip()
     if "{" in cleaned:
         start = cleaned.find("{")
@@ -133,17 +148,80 @@ def _strip_think_and_extract(text_out: str) -> str:
     return cleaned
 
 
+_JSON_SCHEMA_KEYS = (
+    "objeto, trayectoria, aceleracion_aprox_px_s2, rebotes (lista de enteros frame), "
+    "perdida_energia_por_rebote (0-1), nota"
+)
+
+
+def _vlm_prompt_think_then_json() -> str:
+    """Phase-1: allow short think, then force JSON (jev-style anti-think cue)."""
+    return (
+        "Describe en español lo que ves en estos frames de un objeto en movimiento. "
+        "Si tienes modo think/reasoning, cierra el thinking YA (máximo 2 oraciones) y "
+        "después emite SOLO el JSON. "
+        "DEBES responder ÚNICAMENTE con UN objeto JSON que empiece inmediatamente con `{`. "
+        "Sin cadena de pensamiento en inglés. Sin markdown. Sin texto antes ni después del JSON. "
+        f"Claves requeridas: {_JSON_SCHEMA_KEYS}."
+    )
+
+
+def _vlm_prompt_json_only() -> str:
+    """Phase-2: no think; JSON-only recovery when phase-1 burned tokens on prose."""
+    return (
+        "NO pienses en voz alta. NO uses <think>. NO escribas inglés narrativo. "
+        "Answer ONLY JSON. Empieza tu respuesta con el carácter `{` y termina con `}`. "
+        "Un único objeto JSON (sin markdown) con claves: "
+        f"{_JSON_SCHEMA_KEYS}."
+    )
+
+
+def _mlx_generate_text(model, processor, formatted, sample, max_tokens: int) -> str:
+    """Keep generate(model, processor, prompt, image=sample) call shape (mlx-vlm>=0.7)."""
+    from mlx_vlm import generate
+
+    result = generate(
+        model,
+        processor,
+        formatted,
+        image=sample,
+        max_tokens=max_tokens,
+        verbose=False,
+    )
+    return result.text if hasattr(result, "text") else (
+        result if isinstance(result, str) else str(result)
+    )
+
+
+def _try_parse_vlm_json(text: str) -> dict | None:
+    import re
+
+    cleaned = _strip_think_and_extract(text)
+    m = re.search(r"\{[\s\S]*\}", cleaned)
+    blob = m.group(0) if m else cleaned
+    try:
+        data = json.loads(blob)
+        return data if isinstance(data, dict) else None
+    except Exception:
+        return None
+
+
 def _ground_with_mlx_vlm(
     paths: list[Path],
     model_id: str,
     fallback: PhysicsTrace,
+    *,
+    max_tokens: int = 1536,
+    json_only_max_tokens: int = 512,
 ) -> tuple[dict[str, Any], str]:
     """
     Intenta mlx_vlm. Si no hay Mac/MLX, falla con mensaje claro.
-    Pide JSON estructurado; si el parse falla, mezcla con fallback físico.
+    Anti-think (Thinking-4bit): max_tokens≥1536 + strip think + force JSON cue;
+    two-phase JSON-only retry if phase-1 burns budget on prose.
+    Si el parse falla, mezcla con fallback físico.
     """
     try:
-        from mlx_vlm import load, generate
+        from mlx_vlm import load
         from mlx_vlm.prompt_utils import apply_chat_template
         from mlx_vlm.utils import load_config
     except ImportError as exc:
@@ -158,43 +236,57 @@ def _ground_with_mlx_vlm(
     idxs = sorted({0, len(paths) // 3, len(paths) // 2, max(0, len(paths) - 1)})
     sample = [str(paths[i]) for i in idxs if i < len(paths)]
 
-    prompt = (
-        "Describe en español lo que ves en estos frames de un objeto en movimiento. "
-        "Si tienes modo think/reasoning, limita el thinking a máximo 2 oraciones y luego "
-        "emite el JSON. Responde ÚNICAMENTE con UN objeto JSON (sin markdown) con claves: "
-        "objeto, trayectoria, aceleracion_aprox_px_s2, rebotes (lista de enteros frame), "
-        "perdida_energia_por_rebote (0-1), nota."
-    )
-
     model, processor = load(model_id)
     config = load_config(model_id)
-    formatted = apply_chat_template(processor, config, prompt, num_images=len(sample))
+
+    # Phase 1: short-think + JSON (headroom for Thinking-4bit)
+    prompt1 = _vlm_prompt_think_then_json()
+    formatted1 = apply_chat_template(
+        processor, config, prompt1, num_images=len(sample)
+    )
     # mlx-vlm>=0.7: generate(model, processor, prompt, image=..., max_tokens=...)
     # Do NOT pass image paths as positional prompt (breaks as "prompt mistaken for image").
-    result = generate(
-        model,
-        processor,
-        formatted,
-        image=sample,
-        max_tokens=768,
-        verbose=False,
-    )
-    text = result.text if hasattr(result, "text") else (
-        result if isinstance(result, str) else str(result)
-    )
+    text = _mlx_generate_text(model, processor, formatted1, sample, max_tokens)
+    parsed = _try_parse_vlm_json(text)
+    phase = "think_then_json"
+    tokens_budget = max_tokens
 
-    try:
-        import re
+    # Phase 2: JSON-only recovery (no think allowed)
+    if parsed is None:
+        prompt2 = _vlm_prompt_json_only()
+        formatted2 = apply_chat_template(
+            processor, config, prompt2, num_images=len(sample)
+        )
+        text2 = _mlx_generate_text(
+            model, processor, formatted2, sample, json_only_max_tokens
+        )
+        parsed2 = _try_parse_vlm_json(text2)
+        if parsed2 is not None:
+            parsed = parsed2
+            text = text2
+            phase = "json_only_retry"
+            tokens_budget = json_only_max_tokens
+        else:
+            # Keep longer raw for diagnostics; note both attempts
+            text = (
+                f"[phase1 max_tokens={max_tokens}] {text}\n"
+                f"[phase2 max_tokens={json_only_max_tokens}] {text2}"
+            )
+            phase = "both_failed"
+            tokens_budget = max_tokens + json_only_max_tokens
 
-        cleaned = _strip_think_and_extract(text)
-        m = re.search(r"\{[\s\S]*\}", cleaned)
-        structured = json.loads(m.group(0) if m else cleaned)
+    if parsed is not None:
+        structured = parsed
         structured["_vlm_parse"] = "ok"
+        structured["_vlm_phase"] = phase
+        structured["_vlm_max_tokens"] = tokens_budget
         structured["_vlm_raw_preview"] = text[:240]
-    except Exception:
+    else:
         structured = fallback.to_structured()
         structured["nota_vlm"] = f"Parse falló; se usó traza física. Raw: {text[:400]}"
         structured["_vlm_parse"] = "fallback_physics"
+        structured["_vlm_phase"] = phase
+        structured["_vlm_max_tokens"] = tokens_budget
 
     narrative = _narrative_from_structured(structured)
     narrative += f"\n(Fuente VLM: {model_id})"
