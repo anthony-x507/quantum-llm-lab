@@ -1,6 +1,6 @@
 {
   "frontier": "C3-moe-verifier-codigo-vivo",
-  "written": "2026-09-24 15:55:15",
+  "written": "2026-09-24 15:54:44",
   "mode": "hardneg-cpu",
   "router_method": "heuristic",
   "claims": [
@@ -183,14 +183,14 @@
     }
   },
   "python_paths": {
-    "n_items": 42,
+    "n_items": 44,
     "proposer": "heuristic",
     "router_method": "heuristic",
     "rounds_max": 2,
     "paths": {
       "a_single_shot_no_moe": {
         "path": "a_single_shot_no_moe",
-        "n": 42,
+        "n": 44,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 0.0,
         "delta_solve_rate": 0.0,
@@ -198,12 +198,12 @@
         "solved_loop": 0,
         "repair_success_rate": 0.0,
         "repair_helped_n": 0,
-        "failed_single_n": 42,
+        "failed_single_n": 44,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "lpv_negjson_01",
+            "id": "r32v_gino_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -212,7 +212,7 @@
             "actions": []
           },
           {
-            "id": "lpv_negjson_02",
+            "id": "r32v_gino_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -221,7 +221,7 @@
             "actions": []
           },
           {
-            "id": "lpv_negjson_03",
+            "id": "r32v_gino_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -230,7 +230,7 @@
             "actions": []
           },
           {
-            "id": "lpv_gateseq_01",
+            "id": "r32v_emmett_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -239,7 +239,7 @@
             "actions": []
           },
           {
-            "id": "lpv_gateseq_02",
+            "id": "r32v_emmett_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -248,7 +248,7 @@
             "actions": []
           },
           {
-            "id": "lpv_gateseq_03",
+            "id": "r32v_emmett_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -257,7 +257,7 @@
             "actions": []
           },
           {
-            "id": "lpv_enum_01",
+            "id": "r32v_morepa_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -266,7 +266,7 @@
             "actions": []
           },
           {
-            "id": "lpv_enum_02",
+            "id": "r32v_morepa_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -275,7 +275,7 @@
             "actions": []
           },
           {
-            "id": "lpv_enum_03",
+            "id": "r32v_morepa_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -284,7 +284,7 @@
             "actions": []
           },
           {
-            "id": "lpv_enum_04",
+            "id": "r32v_laminas_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -293,7 +293,7 @@
             "actions": []
           },
           {
-            "id": "lpv_fall_01",
+            "id": "r32v_laminas_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -302,7 +302,7 @@
             "actions": []
           },
           {
-            "id": "lpv_fall_02",
+            "id": "r32v_laminas_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -311,7 +311,7 @@
             "actions": []
           },
           {
-            "id": "lpv_fall_03",
+            "id": "r32v_yii_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -320,7 +320,7 @@
             "actions": []
           },
           {
-            "id": "lpv_super_01",
+            "id": "r32v_yii_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -329,7 +329,7 @@
             "actions": []
           },
           {
-            "id": "lpv_super_02",
+            "id": "r32v_yii_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -338,7 +338,7 @@
             "actions": []
           },
           {
-            "id": "lpv_super_03",
+            "id": "r32v_codeig_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -347,7 +347,7 @@
             "actions": []
           },
           {
-            "id": "lpv_sql_01",
+            "id": "r32v_codeig_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -356,7 +356,7 @@
             "actions": []
           },
           {
-            "id": "lpv_yaml_01",
+            "id": "r32v_codeig_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -365,7 +365,7 @@
             "actions": []
           },
           {
-            "id": "lpv_json_01",
+            "id": "r32v_phalco_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -374,7 +374,7 @@
             "actions": []
           },
           {
-            "id": "lpv_re_01",
+            "id": "r32v_phalco_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -383,7 +383,7 @@
             "actions": []
           },
           {
-            "id": "lpv_var_01",
+            "id": "r32v_phalco_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -392,7 +392,7 @@
             "actions": []
           },
           {
-            "id": "lpv_var_02",
+            "id": "r32v_padrin_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -401,7 +401,7 @@
             "actions": []
           },
           {
-            "id": "lpv_var_03",
+            "id": "r32v_padrin_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -410,7 +410,7 @@
             "actions": []
           },
           {
-            "id": "lpv_api_01",
+            "id": "r32v_padrin_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -419,7 +419,7 @@
             "actions": []
           },
           {
-            "id": "lpv_api_02",
+            "id": "r32v_roda_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -428,7 +428,7 @@
             "actions": []
           },
           {
-            "id": "lpv_api_03",
+            "id": "r32v_roda_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -437,7 +437,7 @@
             "actions": []
           },
           {
-            "id": "lpv_met_01",
+            "id": "r32v_roda_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -446,7 +446,7 @@
             "actions": []
           },
           {
-            "id": "lpv_met_02",
+            "id": "r32v_feathe_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -455,7 +455,7 @@
             "actions": []
           },
           {
-            "id": "lpv_met_03",
+            "id": "r32v_feathe_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -464,7 +464,7 @@
             "actions": []
           },
           {
-            "id": "lpv_ctrl_01",
+            "id": "r32v_feathe_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -473,7 +473,7 @@
             "actions": []
           },
           {
-            "id": "lpv_ctrl_02",
+            "id": "r32v_molecu_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -482,7 +482,7 @@
             "actions": []
           },
           {
-            "id": "lpv_ctrl_03",
+            "id": "r32v_molecu_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -491,7 +491,7 @@
             "actions": []
           },
           {
-            "id": "lpv_dlchat_01",
+            "id": "r32v_molecu_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -500,7 +500,7 @@
             "actions": []
           },
           {
-            "id": "lpv_dlsnake_01",
+            "id": "r32v_delaye_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -509,7 +509,7 @@
             "actions": []
           },
           {
-            "id": "lpv_dlsnake_02",
+            "id": "r32v_delaye_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -518,7 +518,7 @@
             "actions": []
           },
           {
-            "id": "lpv_taxapi_01",
+            "id": "r32v_delaye_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -527,7 +527,7 @@
             "actions": []
           },
           {
-            "id": "lpv_taxapi_02",
+            "id": "r32v_vertx_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -536,7 +536,7 @@
             "actions": []
           },
           {
-            "id": "lpv_gedocs_01",
+            "id": "r32v_vertx_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -545,7 +545,7 @@
             "actions": []
           },
           {
-            "id": "lpv_negvj_01",
+            "id": "r32v_vertx_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -554,7 +554,7 @@
             "actions": []
           },
           {
-            "id": "lpv_negvj_02",
+            "id": "r32v_helido_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -563,7 +563,7 @@
             "actions": []
           },
           {
-            "id": "lpv_qbmeta_01",
+            "id": "r32v_helido_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -572,7 +572,25 @@
             "actions": []
           },
           {
-            "id": "lpv_ctrl_dl_01",
+            "id": "r32v_helido_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r32v_ctrl_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r32v_ctrl_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -584,7 +602,7 @@
       },
       "b_moe_alone": {
         "path": "b_moe_alone",
-        "n": 42,
+        "n": 44,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 0.0,
         "delta_solve_rate": 0.0,
@@ -592,12 +610,12 @@
         "solved_loop": 0,
         "repair_success_rate": 0.0,
         "repair_helped_n": 0,
-        "failed_single_n": 42,
+        "failed_single_n": 44,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "lpv_negjson_01",
+            "id": "r32v_gino_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -606,7 +624,7 @@
             "actions": []
           },
           {
-            "id": "lpv_negjson_02",
+            "id": "r32v_gino_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -615,7 +633,7 @@
             "actions": []
           },
           {
-            "id": "lpv_negjson_03",
+            "id": "r32v_gino_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -624,7 +642,7 @@
             "actions": []
           },
           {
-            "id": "lpv_gateseq_01",
+            "id": "r32v_emmett_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -633,7 +651,7 @@
             "actions": []
           },
           {
-            "id": "lpv_gateseq_02",
+            "id": "r32v_emmett_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -642,7 +660,7 @@
             "actions": []
           },
           {
-            "id": "lpv_gateseq_03",
+            "id": "r32v_emmett_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -651,7 +669,7 @@
             "actions": []
           },
           {
-            "id": "lpv_enum_01",
+            "id": "r32v_morepa_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -660,7 +678,7 @@
             "actions": []
           },
           {
-            "id": "lpv_enum_02",
+            "id": "r32v_morepa_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -669,7 +687,7 @@
             "actions": []
           },
           {
-            "id": "lpv_enum_03",
+            "id": "r32v_morepa_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -678,7 +696,7 @@
             "actions": []
           },
           {
-            "id": "lpv_enum_04",
+            "id": "r32v_laminas_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -687,7 +705,7 @@
             "actions": []
           },
           {
-            "id": "lpv_fall_01",
+            "id": "r32v_laminas_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -696,7 +714,7 @@
             "actions": []
           },
           {
-            "id": "lpv_fall_02",
+            "id": "r32v_laminas_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -705,7 +723,7 @@
             "actions": []
           },
           {
-            "id": "lpv_fall_03",
+            "id": "r32v_yii_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -714,7 +732,7 @@
             "actions": []
           },
           {
-            "id": "lpv_super_01",
+            "id": "r32v_yii_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -723,7 +741,7 @@
             "actions": []
           },
           {
-            "id": "lpv_super_02",
+            "id": "r32v_yii_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -732,7 +750,7 @@
             "actions": []
           },
           {
-            "id": "lpv_super_03",
+            "id": "r32v_codeig_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -741,7 +759,7 @@
             "actions": []
           },
           {
-            "id": "lpv_sql_01",
+            "id": "r32v_codeig_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -750,7 +768,7 @@
             "actions": []
           },
           {
-            "id": "lpv_yaml_01",
+            "id": "r32v_codeig_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -759,7 +777,7 @@
             "actions": []
           },
           {
-            "id": "lpv_json_01",
+            "id": "r32v_phalco_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -768,7 +786,7 @@
             "actions": []
           },
           {
-            "id": "lpv_re_01",
+            "id": "r32v_phalco_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -777,7 +795,7 @@
             "actions": []
           },
           {
-            "id": "lpv_var_01",
+            "id": "r32v_phalco_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -786,7 +804,7 @@
             "actions": []
           },
           {
-            "id": "lpv_var_02",
+            "id": "r32v_padrin_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -795,7 +813,7 @@
             "actions": []
           },
           {
-            "id": "lpv_var_03",
+            "id": "r32v_padrin_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -804,7 +822,7 @@
             "actions": []
           },
           {
-            "id": "lpv_api_01",
+            "id": "r32v_padrin_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -813,7 +831,7 @@
             "actions": []
           },
           {
-            "id": "lpv_api_02",
+            "id": "r32v_roda_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -822,7 +840,7 @@
             "actions": []
           },
           {
-            "id": "lpv_api_03",
+            "id": "r32v_roda_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -831,7 +849,7 @@
             "actions": []
           },
           {
-            "id": "lpv_met_01",
+            "id": "r32v_roda_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -840,7 +858,7 @@
             "actions": []
           },
           {
-            "id": "lpv_met_02",
+            "id": "r32v_feathe_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -849,7 +867,7 @@
             "actions": []
           },
           {
-            "id": "lpv_met_03",
+            "id": "r32v_feathe_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -858,7 +876,7 @@
             "actions": []
           },
           {
-            "id": "lpv_ctrl_01",
+            "id": "r32v_feathe_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -867,7 +885,7 @@
             "actions": []
           },
           {
-            "id": "lpv_ctrl_02",
+            "id": "r32v_molecu_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -876,7 +894,7 @@
             "actions": []
           },
           {
-            "id": "lpv_ctrl_03",
+            "id": "r32v_molecu_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -885,7 +903,7 @@
             "actions": []
           },
           {
-            "id": "lpv_dlchat_01",
+            "id": "r32v_molecu_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -894,7 +912,7 @@
             "actions": []
           },
           {
-            "id": "lpv_dlsnake_01",
+            "id": "r32v_delaye_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -903,7 +921,7 @@
             "actions": []
           },
           {
-            "id": "lpv_dlsnake_02",
+            "id": "r32v_delaye_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -912,7 +930,7 @@
             "actions": []
           },
           {
-            "id": "lpv_taxapi_01",
+            "id": "r32v_delaye_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -921,7 +939,7 @@
             "actions": []
           },
           {
-            "id": "lpv_taxapi_02",
+            "id": "r32v_vertx_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -930,7 +948,7 @@
             "actions": []
           },
           {
-            "id": "lpv_gedocs_01",
+            "id": "r32v_vertx_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -939,7 +957,7 @@
             "actions": []
           },
           {
-            "id": "lpv_negvj_01",
+            "id": "r32v_vertx_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -948,7 +966,7 @@
             "actions": []
           },
           {
-            "id": "lpv_negvj_02",
+            "id": "r32v_helido_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -957,7 +975,7 @@
             "actions": []
           },
           {
-            "id": "lpv_qbmeta_01",
+            "id": "r32v_helido_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -966,7 +984,25 @@
             "actions": []
           },
           {
-            "id": "lpv_ctrl_dl_01",
+            "id": "r32v_helido_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r32v_ctrl_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r32v_ctrl_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -975,259 +1011,271 @@
             "actions": []
           }
         ],
-        "n_items_total": 42,
-        "n_routed_python": 42,
+        "n_items_total": 44,
+        "n_routed_python": 44,
         "n_routed_away": 0,
         "solve_rate_on_python_lane": 0.0,
         "routing": [
           {
-            "id": "lpv_negjson_01",
+            "id": "r32v_gino_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_negjson_02",
+            "id": "r32v_gino_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_negjson_03",
+            "id": "r32v_gino_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_gateseq_01",
+            "id": "r32v_emmett_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_gateseq_02",
+            "id": "r32v_emmett_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_gateseq_03",
+            "id": "r32v_emmett_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_enum_01",
+            "id": "r32v_morepa_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_enum_02",
+            "id": "r32v_morepa_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_enum_03",
+            "id": "r32v_morepa_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_enum_04",
+            "id": "r32v_laminas_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_fall_01",
+            "id": "r32v_laminas_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_fall_02",
+            "id": "r32v_laminas_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_fall_03",
+            "id": "r32v_yii_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_super_01",
+            "id": "r32v_yii_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_super_02",
+            "id": "r32v_yii_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_super_03",
+            "id": "r32v_codeig_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_sql_01",
+            "id": "r32v_codeig_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_yaml_01",
+            "id": "r32v_codeig_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_json_01",
+            "id": "r32v_phalco_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_re_01",
+            "id": "r32v_phalco_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_var_01",
+            "id": "r32v_phalco_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_var_02",
+            "id": "r32v_padrin_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_var_03",
+            "id": "r32v_padrin_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_api_01",
+            "id": "r32v_padrin_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_api_02",
+            "id": "r32v_roda_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_api_03",
+            "id": "r32v_roda_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_met_01",
+            "id": "r32v_roda_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_met_02",
+            "id": "r32v_feathe_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_met_03",
+            "id": "r32v_feathe_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_ctrl_01",
+            "id": "r32v_feathe_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_ctrl_02",
+            "id": "r32v_molecu_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_ctrl_03",
+            "id": "r32v_molecu_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_dlchat_01",
+            "id": "r32v_molecu_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_dlsnake_01",
+            "id": "r32v_delaye_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_dlsnake_02",
+            "id": "r32v_delaye_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_taxapi_01",
+            "id": "r32v_delaye_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_taxapi_02",
+            "id": "r32v_vertx_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_gedocs_01",
+            "id": "r32v_vertx_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_negvj_01",
+            "id": "r32v_vertx_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_negvj_02",
+            "id": "r32v_helido_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_qbmeta_01",
+            "id": "r32v_helido_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_ctrl_dl_01",
+            "id": "r32v_helido_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r32v_ctrl_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r32v_ctrl_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
@@ -1236,20 +1284,20 @@
       },
       "c_verifier_alone": {
         "path": "c_verifier_alone",
-        "n": 42,
+        "n": 44,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 1.0,
         "delta_solve_rate": 1.0,
         "solved_single": 0,
-        "solved_loop": 42,
+        "solved_loop": 44,
         "repair_success_rate": 1.0,
-        "repair_helped_n": 42,
-        "failed_single_n": 42,
+        "repair_helped_n": 44,
+        "failed_single_n": 44,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "lpv_negjson_01",
+            "id": "r32v_gino_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1260,7 +1308,7 @@
             ]
           },
           {
-            "id": "lpv_negjson_02",
+            "id": "r32v_gino_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1271,7 +1319,7 @@
             ]
           },
           {
-            "id": "lpv_negjson_03",
+            "id": "r32v_gino_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1282,7 +1330,7 @@
             ]
           },
           {
-            "id": "lpv_gateseq_01",
+            "id": "r32v_emmett_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1293,7 +1341,7 @@
             ]
           },
           {
-            "id": "lpv_gateseq_02",
+            "id": "r32v_emmett_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1304,7 +1352,7 @@
             ]
           },
           {
-            "id": "lpv_gateseq_03",
+            "id": "r32v_emmett_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1315,7 +1363,7 @@
             ]
           },
           {
-            "id": "lpv_enum_01",
+            "id": "r32v_morepa_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1326,7 +1374,7 @@
             ]
           },
           {
-            "id": "lpv_enum_02",
+            "id": "r32v_morepa_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1337,7 +1385,7 @@
             ]
           },
           {
-            "id": "lpv_enum_03",
+            "id": "r32v_morepa_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1348,7 +1396,7 @@
             ]
           },
           {
-            "id": "lpv_enum_04",
+            "id": "r32v_laminas_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1359,7 +1407,7 @@
             ]
           },
           {
-            "id": "lpv_fall_01",
+            "id": "r32v_laminas_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1370,7 +1418,7 @@
             ]
           },
           {
-            "id": "lpv_fall_02",
+            "id": "r32v_laminas_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1381,7 +1429,7 @@
             ]
           },
           {
-            "id": "lpv_fall_03",
+            "id": "r32v_yii_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1392,7 +1440,7 @@
             ]
           },
           {
-            "id": "lpv_super_01",
+            "id": "r32v_yii_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1403,7 +1451,7 @@
             ]
           },
           {
-            "id": "lpv_super_02",
+            "id": "r32v_yii_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1414,7 +1462,7 @@
             ]
           },
           {
-            "id": "lpv_super_03",
+            "id": "r32v_codeig_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1425,7 +1473,7 @@
             ]
           },
           {
-            "id": "lpv_sql_01",
+            "id": "r32v_codeig_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1436,7 +1484,7 @@
             ]
           },
           {
-            "id": "lpv_yaml_01",
+            "id": "r32v_codeig_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1447,7 +1495,7 @@
             ]
           },
           {
-            "id": "lpv_json_01",
+            "id": "r32v_phalco_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1458,7 +1506,7 @@
             ]
           },
           {
-            "id": "lpv_re_01",
+            "id": "r32v_phalco_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1469,7 +1517,7 @@
             ]
           },
           {
-            "id": "lpv_var_01",
+            "id": "r32v_phalco_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1480,7 +1528,7 @@
             ]
           },
           {
-            "id": "lpv_var_02",
+            "id": "r32v_padrin_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1491,7 +1539,7 @@
             ]
           },
           {
-            "id": "lpv_var_03",
+            "id": "r32v_padrin_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1502,7 +1550,7 @@
             ]
           },
           {
-            "id": "lpv_api_01",
+            "id": "r32v_padrin_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1513,7 +1561,7 @@
             ]
           },
           {
-            "id": "lpv_api_02",
+            "id": "r32v_roda_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1524,7 +1572,7 @@
             ]
           },
           {
-            "id": "lpv_api_03",
+            "id": "r32v_roda_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1535,7 +1583,7 @@
             ]
           },
           {
-            "id": "lpv_met_01",
+            "id": "r32v_roda_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1546,7 +1594,7 @@
             ]
           },
           {
-            "id": "lpv_met_02",
+            "id": "r32v_feathe_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1557,7 +1605,7 @@
             ]
           },
           {
-            "id": "lpv_met_03",
+            "id": "r32v_feathe_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1568,7 +1616,7 @@
             ]
           },
           {
-            "id": "lpv_ctrl_01",
+            "id": "r32v_feathe_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1579,7 +1627,7 @@
             ]
           },
           {
-            "id": "lpv_ctrl_02",
+            "id": "r32v_molecu_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1590,7 +1638,7 @@
             ]
           },
           {
-            "id": "lpv_ctrl_03",
+            "id": "r32v_molecu_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1601,7 +1649,7 @@
             ]
           },
           {
-            "id": "lpv_dlchat_01",
+            "id": "r32v_molecu_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1612,7 +1660,7 @@
             ]
           },
           {
-            "id": "lpv_dlsnake_01",
+            "id": "r32v_delaye_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1623,7 +1671,7 @@
             ]
           },
           {
-            "id": "lpv_dlsnake_02",
+            "id": "r32v_delaye_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1634,7 +1682,7 @@
             ]
           },
           {
-            "id": "lpv_taxapi_01",
+            "id": "r32v_delaye_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1645,7 +1693,7 @@
             ]
           },
           {
-            "id": "lpv_taxapi_02",
+            "id": "r32v_vertx_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1656,7 +1704,7 @@
             ]
           },
           {
-            "id": "lpv_gedocs_01",
+            "id": "r32v_vertx_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1667,7 +1715,7 @@
             ]
           },
           {
-            "id": "lpv_negvj_01",
+            "id": "r32v_vertx_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1678,7 +1726,7 @@
             ]
           },
           {
-            "id": "lpv_negvj_02",
+            "id": "r32v_helido_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1689,7 +1737,7 @@
             ]
           },
           {
-            "id": "lpv_qbmeta_01",
+            "id": "r32v_helido_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1700,7 +1748,29 @@
             ]
           },
           {
-            "id": "lpv_ctrl_dl_01",
+            "id": "r32v_helido_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r32v_ctrl_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r32v_ctrl_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1714,20 +1784,20 @@
       },
       "d_moe_verifier_unified": {
         "path": "d_moe_verifier_unified",
-        "n": 42,
+        "n": 44,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 1.0,
         "delta_solve_rate": 1.0,
         "solved_single": 0,
-        "solved_loop": 42,
+        "solved_loop": 44,
         "repair_success_rate": 1.0,
-        "repair_helped_n": 42,
-        "failed_single_n": 42,
+        "repair_helped_n": 44,
+        "failed_single_n": 44,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "lpv_negjson_01",
+            "id": "r32v_gino_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1738,7 +1808,7 @@
             ]
           },
           {
-            "id": "lpv_negjson_02",
+            "id": "r32v_gino_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1749,7 +1819,7 @@
             ]
           },
           {
-            "id": "lpv_negjson_03",
+            "id": "r32v_gino_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1760,7 +1830,7 @@
             ]
           },
           {
-            "id": "lpv_gateseq_01",
+            "id": "r32v_emmett_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1771,7 +1841,7 @@
             ]
           },
           {
-            "id": "lpv_gateseq_02",
+            "id": "r32v_emmett_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1782,7 +1852,7 @@
             ]
           },
           {
-            "id": "lpv_gateseq_03",
+            "id": "r32v_emmett_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1793,7 +1863,7 @@
             ]
           },
           {
-            "id": "lpv_enum_01",
+            "id": "r32v_morepa_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1804,7 +1874,7 @@
             ]
           },
           {
-            "id": "lpv_enum_02",
+            "id": "r32v_morepa_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1815,7 +1885,7 @@
             ]
           },
           {
-            "id": "lpv_enum_03",
+            "id": "r32v_morepa_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1826,7 +1896,7 @@
             ]
           },
           {
-            "id": "lpv_enum_04",
+            "id": "r32v_laminas_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1837,7 +1907,7 @@
             ]
           },
           {
-            "id": "lpv_fall_01",
+            "id": "r32v_laminas_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1848,7 +1918,7 @@
             ]
           },
           {
-            "id": "lpv_fall_02",
+            "id": "r32v_laminas_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1859,7 +1929,7 @@
             ]
           },
           {
-            "id": "lpv_fall_03",
+            "id": "r32v_yii_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1870,7 +1940,7 @@
             ]
           },
           {
-            "id": "lpv_super_01",
+            "id": "r32v_yii_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1881,7 +1951,7 @@
             ]
           },
           {
-            "id": "lpv_super_02",
+            "id": "r32v_yii_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1892,7 +1962,7 @@
             ]
           },
           {
-            "id": "lpv_super_03",
+            "id": "r32v_codeig_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1903,7 +1973,7 @@
             ]
           },
           {
-            "id": "lpv_sql_01",
+            "id": "r32v_codeig_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1914,7 +1984,7 @@
             ]
           },
           {
-            "id": "lpv_yaml_01",
+            "id": "r32v_codeig_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1925,7 +1995,7 @@
             ]
           },
           {
-            "id": "lpv_json_01",
+            "id": "r32v_phalco_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1936,7 +2006,7 @@
             ]
           },
           {
-            "id": "lpv_re_01",
+            "id": "r32v_phalco_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1947,7 +2017,7 @@
             ]
           },
           {
-            "id": "lpv_var_01",
+            "id": "r32v_phalco_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1958,7 +2028,7 @@
             ]
           },
           {
-            "id": "lpv_var_02",
+            "id": "r32v_padrin_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1969,7 +2039,7 @@
             ]
           },
           {
-            "id": "lpv_var_03",
+            "id": "r32v_padrin_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1980,7 +2050,7 @@
             ]
           },
           {
-            "id": "lpv_api_01",
+            "id": "r32v_padrin_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1991,7 +2061,7 @@
             ]
           },
           {
-            "id": "lpv_api_02",
+            "id": "r32v_roda_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2002,7 +2072,7 @@
             ]
           },
           {
-            "id": "lpv_api_03",
+            "id": "r32v_roda_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2013,7 +2083,7 @@
             ]
           },
           {
-            "id": "lpv_met_01",
+            "id": "r32v_roda_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2024,7 +2094,7 @@
             ]
           },
           {
-            "id": "lpv_met_02",
+            "id": "r32v_feathe_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2035,7 +2105,7 @@
             ]
           },
           {
-            "id": "lpv_met_03",
+            "id": "r32v_feathe_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2046,7 +2116,7 @@
             ]
           },
           {
-            "id": "lpv_ctrl_01",
+            "id": "r32v_feathe_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2057,7 +2127,7 @@
             ]
           },
           {
-            "id": "lpv_ctrl_02",
+            "id": "r32v_molecu_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2068,7 +2138,7 @@
             ]
           },
           {
-            "id": "lpv_ctrl_03",
+            "id": "r32v_molecu_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2079,7 +2149,7 @@
             ]
           },
           {
-            "id": "lpv_dlchat_01",
+            "id": "r32v_molecu_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2090,7 +2160,7 @@
             ]
           },
           {
-            "id": "lpv_dlsnake_01",
+            "id": "r32v_delaye_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2101,7 +2171,7 @@
             ]
           },
           {
-            "id": "lpv_dlsnake_02",
+            "id": "r32v_delaye_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2112,7 +2182,7 @@
             ]
           },
           {
-            "id": "lpv_taxapi_01",
+            "id": "r32v_delaye_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2123,7 +2193,7 @@
             ]
           },
           {
-            "id": "lpv_taxapi_02",
+            "id": "r32v_vertx_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2134,7 +2204,7 @@
             ]
           },
           {
-            "id": "lpv_gedocs_01",
+            "id": "r32v_vertx_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2145,7 +2215,7 @@
             ]
           },
           {
-            "id": "lpv_negvj_01",
+            "id": "r32v_vertx_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2156,7 +2226,7 @@
             ]
           },
           {
-            "id": "lpv_negvj_02",
+            "id": "r32v_helido_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2167,7 +2237,7 @@
             ]
           },
           {
-            "id": "lpv_qbmeta_01",
+            "id": "r32v_helido_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2178,7 +2248,29 @@
             ]
           },
           {
-            "id": "lpv_ctrl_dl_01",
+            "id": "r32v_helido_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r32v_ctrl_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r32v_ctrl_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -2189,259 +2281,271 @@
             ]
           }
         ],
-        "n_items_total": 42,
-        "n_routed_python": 42,
+        "n_items_total": 44,
+        "n_routed_python": 44,
         "n_routed_away": 0,
         "solve_rate_on_python_lane": 1.0,
         "routing": [
           {
-            "id": "lpv_negjson_01",
+            "id": "r32v_gino_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_negjson_02",
+            "id": "r32v_gino_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_negjson_03",
+            "id": "r32v_gino_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_gateseq_01",
+            "id": "r32v_emmett_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_gateseq_02",
+            "id": "r32v_emmett_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_gateseq_03",
+            "id": "r32v_emmett_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_enum_01",
+            "id": "r32v_morepa_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_enum_02",
+            "id": "r32v_morepa_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_enum_03",
+            "id": "r32v_morepa_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_enum_04",
+            "id": "r32v_laminas_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_fall_01",
+            "id": "r32v_laminas_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_fall_02",
+            "id": "r32v_laminas_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_fall_03",
+            "id": "r32v_yii_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_super_01",
+            "id": "r32v_yii_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_super_02",
+            "id": "r32v_yii_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_super_03",
+            "id": "r32v_codeig_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_sql_01",
+            "id": "r32v_codeig_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_yaml_01",
+            "id": "r32v_codeig_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_json_01",
+            "id": "r32v_phalco_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_re_01",
+            "id": "r32v_phalco_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_var_01",
+            "id": "r32v_phalco_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_var_02",
+            "id": "r32v_padrin_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_var_03",
+            "id": "r32v_padrin_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_api_01",
+            "id": "r32v_padrin_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_api_02",
+            "id": "r32v_roda_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_api_03",
+            "id": "r32v_roda_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_met_01",
+            "id": "r32v_roda_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_met_02",
+            "id": "r32v_feathe_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_met_03",
+            "id": "r32v_feathe_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_ctrl_01",
+            "id": "r32v_feathe_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_ctrl_02",
+            "id": "r32v_molecu_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_ctrl_03",
+            "id": "r32v_molecu_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_dlchat_01",
+            "id": "r32v_molecu_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_dlsnake_01",
+            "id": "r32v_delaye_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_dlsnake_02",
+            "id": "r32v_delaye_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_taxapi_01",
+            "id": "r32v_delaye_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_taxapi_02",
+            "id": "r32v_vertx_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_gedocs_01",
+            "id": "r32v_vertx_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_negvj_01",
+            "id": "r32v_vertx_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_negvj_02",
+            "id": "r32v_helido_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_qbmeta_01",
+            "id": "r32v_helido_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "lpv_ctrl_dl_01",
+            "id": "r32v_helido_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r32v_ctrl_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r32v_ctrl_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
@@ -2452,7 +2556,7 @@
     "comparison_table": [
       {
         "path": "baseline_single_no_moe",
-        "n": 42,
+        "n": 44,
         "metric": "solve_rate_single",
         "rate": 0.0,
         "delta_vs_baseline": 0.0,
@@ -2461,7 +2565,7 @@
       },
       {
         "path": "moe_alone_python_lane",
-        "n": 42,
+        "n": 44,
         "metric": "solve_rate_single",
         "rate": 0.0,
         "delta_vs_baseline": 0.0,
@@ -2470,7 +2574,7 @@
       },
       {
         "path": "verifier_alone",
-        "n": 42,
+        "n": 44,
         "metric": "solve_rate_loop",
         "rate": 1.0,
         "delta_vs_baseline": 1.0,
@@ -2479,7 +2583,7 @@
       },
       {
         "path": "moe_verifier_unified_python_lane",
-        "n": 42,
+        "n": 44,
         "metric": "solve_rate_loop",
         "rate": 1.0,
         "delta_vs_baseline": 1.0,
@@ -2528,752 +2632,627 @@
   "notes": [],
   "hardneg_router": {
     "method": "heuristic",
-    "n": 64,
-    "hits": 64,
+    "n": 52,
+    "hits": 52,
     "misses": 0,
-    "score": "64/64",
+    "score": "52/52",
     "rate": 1.0,
     "by_family": {
-      "neg_json_valido_tax": {
-        "n": 4,
-        "hits": 4,
-        "rate": 1.0
-      },
-      "gates_empty_eq_fall": {
-        "n": 4,
-        "hits": 4,
-        "rate": 1.0
-      },
-      "taxonomy_enum_fall_super": {
-        "n": 4,
-        "hits": 4,
-        "rate": 1.0
-      },
-      "freefall_classical": {
+      "gino_loader_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "superpose_crud": {
+      "emmett_pipeline_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "sql_yaml_csv_label": {
-        "n": 4,
-        "hits": 4,
-        "rate": 1.0
-      },
-      "var_collapsed_separable": {
+      "morepath_defer_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "tax_endpoint_openapi": {
+      "laminas_middleware_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "metric_name_distract": {
+      "yii_behavior_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "base_control_tax": {
-        "n": 4,
-        "hits": 4,
-        "rate": 1.0
-      },
-      "vision_control_fall_super": {
+      "codeigniter_filter_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "ent_control_fall_super": {
-        "n": 5,
-        "hits": 5,
-        "rate": 1.0
-      },
-      "domain_label_chat": {
-        "n": 4,
-        "hits": 4,
-        "rate": 1.0
-      },
-      "domain_label_snake_cfg": {
+      "phalcon_middleware_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "tax_api_domain_labels": {
+      "padrino_before_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "gates_empty_docs_tax": {
+      "roda_plugin_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "neg_valid_json_en": {
+      "feathers_hook_gates": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "qubit_metaphor_tax": {
+      "moleculer_action_gates": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "delayed_job_gates": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "vertx_handler_gates": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "helidon_filter_gates": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "ent_control_r32": {
         "n": 2,
         "hits": 2,
         "rate": 1.0
       },
-      "ent_control_domain_label": {
-        "n": 3,
-        "hits": 3,
+      "vision_control_r32": {
+        "n": 2,
+        "hits": 2,
+        "rate": 1.0
+      },
+      "base_control_r32": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      },
+      "base_python_control_r32": {
+        "n": 2,
+        "hits": 2,
         "rate": 1.0
       }
     },
     "ent_never_on_python": true,
     "rows": [
       {
-        "id": "lp_negjson_01",
-        "family": "neg_json_valido_tax",
+        "id": "r32_gino_01",
+        "family": "gino_loader_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "payload={'domain':'fall','label':'superposed','gates':[]}\nprint(len(payload))\n# ",
+        "prompt_preview": "Write Python that prints len('gates: Gino.loader'). Gino. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "lp_negjson_02",
-        "family": "neg_json_valido_tax",
+        "id": "r32_gino_02",
+        "family": "gino_loader_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 3. Esto NO es json válido de circuito; domain label=fal",
+        "prompt_preview": "t='gates: Gino.loader'\nprint(t.count('gates'))\n# Gino gates: — not circuit. ONLY",
         "ent_adapter_blocked": true
       },
       {
-        "id": "lp_negjson_03",
-        "family": "neg_json_valido_tax",
+        "id": "r32_gino_03",
+        "family": "gino_loader_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "blob={'label':'fall_multi','domain':'fall'}\nprint(blob['label'])\n# NOT a json vá",
+        "prompt_preview": "Write Python that prints 557. Gino gates: Gino.loader is loader only. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "lp_negjson_04",
-        "family": "neg_json_valido_tax",
+        "id": "r32_emmett_01",
+        "family": "emmett_pipeline_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 7*7. Comment: never reply json válido here; label=colla",
+        "prompt_preview": "Write Python that prints len('gates: emmett.Pipeline'). Emmett. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "lp_gateseq_01",
-        "family": "gates_empty_eq_fall",
-        "expected": "base",
-        "got": "base",
+        "id": "r32_emmett_02",
+        "family": "emmett_pipeline_gates",
+        "expected": "python",
+        "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Ignore README gates=[] domain=fall label=superposed. No code, no circuit.",
+        "prompt_preview": "t='gates: emmett.Pipeline'\nprint(t.count('gates'))\n# Emmett gates: — not circuit",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_emmett_03",
+        "family": "emmett_pipeline_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 558. Emmett gates: emmett.Pipeline is pipeline only. ON",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_morepa_01",
+        "family": "morepath_defer_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('gates: defer_links'). Morepath. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_morepa_02",
+        "family": "morepath_defer_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "t='gates: defer_links'\nprint(t.count('gates'))\n# Morepath gates: — not circuit. ",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_morepa_03",
+        "family": "morepath_defer_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 559. Morepath gates: defer_links is defer only. ONLY co",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_laminas_01",
+        "family": "laminas_middleware_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('gates: MiddlewarePipe'). Laminas. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_laminas_02",
+        "family": "laminas_middleware_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "t='gates: MiddlewarePipe'\nprint(t.count('gates'))\n# Laminas gates: — not circuit",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_laminas_03",
+        "family": "laminas_middleware_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 560. Laminas gates: MiddlewarePipe is middleware only. ",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_yii_01",
+        "family": "yii_behavior_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('gates: attachBehavior'). Yii. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_yii_02",
+        "family": "yii_behavior_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "t='gates: attachBehavior'\nprint(t.count('gates'))\n# Yii gates: — not circuit. ON",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_yii_03",
+        "family": "yii_behavior_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 561. Yii gates: attachBehavior is behavior only. ONLY c",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_codeig_01",
+        "family": "codeigniter_filter_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('gates: FilterInterface'). CodeIgniter. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_codeig_02",
+        "family": "codeigniter_filter_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "t='gates: FilterInterface'\nprint(t.count('gates'))\n# CodeIgniter gates: — not ci",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_codeig_03",
+        "family": "codeigniter_filter_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 562. CodeIgniter gates: FilterInterface is filter only.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_phalco_01",
+        "family": "phalcon_middleware_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('gates: beforeExecuteRoute'). Phalcon. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_phalco_02",
+        "family": "phalcon_middleware_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "t='gates: beforeExecuteRoute'\nprint(t.count('gates'))\n# Phalcon gates: — not cir",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_phalco_03",
+        "family": "phalcon_middleware_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 563. Phalcon gates: beforeExecuteRoute is middleware on",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_padrin_01",
+        "family": "padrino_before_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('gates: Padrino.before'). Padrino. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_padrin_02",
+        "family": "padrino_before_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "t='gates: Padrino.before'\nprint(t.count('gates'))\n# Padrino gates: — not circuit",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_padrin_03",
+        "family": "padrino_before_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 564. Padrino gates: Padrino.before is before only. ONLY",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_roda_01",
+        "family": "roda_plugin_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('gates: Roda.plugin'). Roda. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_roda_02",
+        "family": "roda_plugin_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "t='gates: Roda.plugin'\nprint(t.count('gates'))\n# Roda gates: — not circuit. ONLY",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_roda_03",
+        "family": "roda_plugin_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 565. Roda gates: Roda.plugin is plugin only. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_feathe_01",
+        "family": "feathers_hook_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('gates: before.all'). Feathers. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_feathe_02",
+        "family": "feathers_hook_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "t='gates: before.all'\nprint(t.count('gates'))\n# Feathers gates: — not circuit. O",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_feathe_03",
+        "family": "feathers_hook_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 566. Feathers gates: before.all is hook only. ONLY code",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_molecu_01",
+        "family": "moleculer_action_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('gates: localAction'). Moleculer. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_molecu_02",
+        "family": "moleculer_action_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "t='gates: localAction'\nprint(t.count('gates'))\n# Moleculer gates: — not circuit.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_molecu_03",
+        "family": "moleculer_action_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 567. Moleculer gates: localAction is action only. ONLY ",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_delaye_01",
+        "family": "delayed_job_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('gates: Delayed::Worker'). DelayedJob. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_delaye_02",
+        "family": "delayed_job_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "t='gates: Delayed::Worker'\nprint(t.count('gates'))\n# DelayedJob gates: — not cir",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_delaye_03",
+        "family": "delayed_job_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 568. DelayedJob gates: Delayed::Worker is job only. ONL",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_vertx_01",
+        "family": "vertx_handler_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('gates: RoutingContext'). Vert.x. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_vertx_02",
+        "family": "vertx_handler_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "t='gates: RoutingContext'\nprint(t.count('gates'))\n# Vert.x gates: — not circuit.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_vertx_03",
+        "family": "vertx_handler_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 569. Vert.x gates: RoutingContext is handler only. ONLY",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_helido_01",
+        "family": "helidon_filter_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('gates: FilterChain'). Helidon. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_helido_02",
+        "family": "helidon_filter_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "t='gates: FilterChain'\nprint(t.count('gates'))\n# Helidon gates: — not circuit. O",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_helido_03",
+        "family": "helidon_filter_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 570. Helidon gates: FilterChain is filter only. ONLY co",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r32_ent_01",
+        "family": "ent_control_r32",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair; gates=[",
         "ent_adapter_blocked": false
       },
       {
-        "id": "lp_gateseq_02",
-        "family": "gates_empty_eq_fall",
-        "expected": "python",
-        "got": "python",
+        "id": "r32_ent_02",
+        "family": "ent_control_r32",
+        "expected": "ent",
+        "got": "ent",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "cfg='gates=[]'\nprint(len(cfg))\n# empty gates allow-list; domain label fall is ta",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_gateseq_03",
-        "family": "gates_empty_eq_fall",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Write Python that prints 0. Ops: gates = [] with label fall_multi. Not a circuit",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_gateseq_04",
-        "family": "gates_empty_eq_fall",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "line='gates=[] # fall/super taxonomy'\nprint(line.count('='))\n# empty gates=[] op",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_enum_01",
-        "family": "taxonomy_enum_fall_super",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "LABELS=['fall','fall_multi','superposed','collapsed','entangled','separable']\npr",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_enum_02",
-        "family": "taxonomy_enum_fall_super",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Write Python that prints len('fall|fall_multi|superposed|collapsed'). Domain lab",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_enum_03",
-        "family": "taxonomy_enum_fall_super",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "labels=['fall','superposed','entangled']\nprint(labels.index('fall'))\n# enum inde",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_enum_04",
-        "family": "taxonomy_enum_fall_super",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "print(len('fall,superposed,collapsed'.split(',')))\n# CSV label tokens. ONLY code",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_freefall_01",
-        "family": "freefall_classical",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "def fall_distance(t):\n    return int(0.5*9.81*t*t)\nprint(fall_distance(4))\n# cla",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_freefall_02",
-        "family": "freefall_classical",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "print(int(0.5*9.81*3*3))\n# Classical free-fall toy — domain word fall is physics",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_freefall_03",
-        "family": "freefall_classical",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "print(int(0.5*9.81*2*2))\n# Caída libre clásica — no circuito cuántico. ONLY code",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_super_01",
-        "family": "superpose_crud",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "a={'x':1}; b={'y':2}; print(len({**a,**b}))\n# superpose/merge metaphor for dicts",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_super_02",
-        "family": "superpose_crud",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "print('superposition'.count('o'))\n# Metaphor only — no circuit. ONLY code.",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_super_03",
-        "family": "superpose_crud",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "print(len('superposición'))\n# Palabra de taxonomía, no circuito. ONLY code.",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_sql_01",
-        "family": "sql_yaml_csv_label",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "q=\"SELECT COUNT(*) FROM scenes WHERE label='fall'\"\nprint(len(q))\n# SQL label fil",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_yaml_01",
-        "family": "sql_yaml_csv_label",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "print(len('label: fall'))\n# YAML taxonomy line, not quantum. ONLY code.",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_json_01",
-        "family": "sql_yaml_csv_label",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "import json\nprint(json.loads('{\"domain\":\"fall\",\"label\":\"superposed\"}')['domain']",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_re_01",
-        "family": "sql_yaml_csv_label",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "print(len(__import__('re').findall('fall|super', 'fall_multi and superposed')))\n",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_var_01",
-        "family": "var_collapsed_separable",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "collapsed_flags=[0,1,0,1]\nprint(sum(collapsed_flags))\n# classical bit flags name",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_var_02",
-        "family": "var_collapsed_separable",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "separable = True\nprint(int(separable))\n# boolean flag name — not entanglement la",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_var_03",
-        "family": "var_collapsed_separable",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "superposed_layers=['a','b','c']\nprint(len(superposed_layers))\n# list name superp",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_api_01",
-        "family": "tax_endpoint_openapi",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Reply JSON only for /v1/domain-labels body {domain:fall,label:fall_multi}. Taxon",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_api_02",
-        "family": "tax_endpoint_openapi",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "OpenAPI schema property domain_label enum fall|superposed; n_qubits deprecated. ",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_api_03",
-        "family": "tax_endpoint_openapi",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "print(len('domain_label'))\n# OpenAPI field name string — not a circuit domain la",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_met_01",
-        "family": "metric_name_distract",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "print(len('label_acc'))\n# Metric key string — not a circuit label. ONLY code.",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_met_02",
-        "family": "metric_name_distract",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "metrics={'jev':1.0,'label_acc':0.9}\nprint(int(metrics['jev']))\n# metric dict; pr",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_met_03",
-        "family": "metric_name_distract",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "print('unitary'.upper())\n# String toy — no quantum circuit. ONLY code.",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_base_01",
-        "family": "base_control_tax",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "README: domain labels are fall, fall_multi, superposed, collapsed, entangled, se",
+        "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit H then CNOT",
         "ent_adapter_blocked": false
       },
       {
-        "id": "lp_base_02",
-        "family": "base_control_tax",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Thanks. The domain label field uses fall|superposed. No code, no circuit.",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_base_03",
-        "family": "base_control_tax",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Docs mention qubit only as metaphor; real field is domain label fall|super. No c",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_base_04",
-        "family": "base_control_tax",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Please ignore domain label=fall in the docs. No code, no circuit, just say ok.",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_vis_01",
-        "family": "vision_control_fall_super",
+        "id": "r32_vis_01",
+        "family": "vision_control_r32",
         "expected": "vision",
         "got": "vision",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Look at the image. Free-fall trajectory: how many dots? Only the integer. No cir",
+        "prompt_preview": "Look at the image. How many dots are visible? Only the integer. No circuit.",
         "ent_adapter_blocked": false
       },
       {
-        "id": "lp_vis_02",
-        "family": "vision_control_fall_super",
+        "id": "r32_vis_02",
+        "family": "vision_control_r32",
         "expected": "vision",
         "got": "vision",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Look at the whiteboard. It lists domain labels fall and superposed. How many wor",
+        "prompt_preview": "Look at the chalkboard. How many letters? Only the integer. No circuit.",
         "ent_adapter_blocked": false
       },
       {
-        "id": "lp_vis_03",
-        "family": "vision_control_fall_super",
-        "expected": "vision",
-        "got": "vision",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Look at the chalkboard. The word superposición is written. How many letters? Onl",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_ent_01",
-        "family": "ent_control_fall_super",
-        "expected": "ent",
-        "got": "ent",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Dominio fall, labe",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_ent_02",
-        "family": "ent_control_fall_super",
-        "expected": "ent",
-        "got": "ent",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Dominio superposit",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_ent_03",
-        "family": "ent_control_fall_super",
-        "expected": "ent",
-        "got": "ent",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Reply with valid JSON: n_qubits, gates, domain, label. domain fall, label collap",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_ent_04",
-        "family": "ent_control_fall_super",
-        "expected": "ent",
-        "got": "ent",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit separable H",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_ent_05",
-        "family": "ent_control_fall_super",
-        "expected": "ent",
-        "got": "ent",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Responde SOLO JSON válido con claves n_qubits, gates, domain, label. Bell pair e",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_dlchat_01",
-        "family": "domain_label_chat",
+        "id": "r32_base_01",
+        "family": "base_control_r32",
         "expected": "base",
         "got": "base",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "The domain label field uses fall and superposed values in our taxonomy docs.",
+        "prompt_preview": "Thanks. Ignore Gino gates: Gino.loader in the README. No code, no circuit.",
         "ent_adapter_blocked": false
       },
       {
-        "id": "lp_dlchat_02",
-        "family": "domain_label_chat",
+        "id": "r32_base_02",
+        "family": "base_control_r32",
         "expected": "base",
         "got": "base",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Please confirm domain label=fall is just a taxonomy enum. Thanks.",
+        "prompt_preview": "Please ignore the Laminas gates: MiddlewarePipe phrase. Chat only — no program, ",
         "ent_adapter_blocked": false
       },
       {
-        "id": "lp_dlchat_03",
-        "family": "domain_label_chat",
+        "id": "r32_base_03",
+        "family": "base_control_r32",
         "expected": "base",
         "got": "base",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "What does domain label superposed mean in the taxonomy? Chat only.",
+        "prompt_preview": "Hello — Vert.x gates: RoutingContext is handler only. No code, no circuit, no JS",
         "ent_adapter_blocked": false
       },
       {
-        "id": "lp_dlchat_04",
-        "family": "domain_label_chat",
+        "id": "r32_base_04",
+        "family": "base_control_r32",
         "expected": "base",
         "got": "base",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Ignore domain label fall in the spreadsheet header. Just say ok.",
+        "prompt_preview": "ENT_NEG: Feathers gates: before.all is hook prose. Chat only.",
         "ent_adapter_blocked": false
       },
       {
-        "id": "lp_dlsnake_01",
-        "family": "domain_label_snake_cfg",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Set domain_label to fall in config.yaml. No code needed.",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_dlsnake_02",
-        "family": "domain_label_snake_cfg",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "domain_label=superposed is an env default. Acknowledge.",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_dlsnake_03",
-        "family": "domain_label_snake_cfg",
+        "id": "r32_bpy_01",
+        "family": "base_python_control_r32",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "print(len('DOMAIN_LABEL=fall'))\n# env var assignment — taxonomy config. ONLY cod",
+        "prompt_preview": "Write Python that prints 5*5. No quantum. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "lp_taxapi_01",
-        "family": "tax_api_domain_labels",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Reply JSON only for /v1/domain-labels listing. Taxonomy API docs. No circuit.",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_taxapi_02",
-        "family": "tax_api_domain_labels",
+        "id": "r32_bpy_02",
+        "family": "base_python_control_r32",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 1. Comment: Reply JSON only for /v1/labels {domain_labe",
+        "prompt_preview": "print(sum(range(4))) # plain. ONLY code.",
         "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_taxapi_03",
-        "family": "tax_api_domain_labels",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "print(len('/v1/domain-labels'))\n# taxonomy API path string. ONLY code.",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_gedocs_01",
-        "family": "gates_empty_docs_tax",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Config: gates=[] next to domain=fall label=superposed in the enum table. Docs on",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_gedocs_02",
-        "family": "gates_empty_docs_tax",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Ops marker gates = [] under fall/super taxonomy section. Documentation only.",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_gedocs_03",
-        "family": "gates_empty_docs_tax",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "print(len('gates=[] # domain label fall'))\n# empty gates ops string near taxonom",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_negvj_01",
-        "family": "neg_valid_json_en",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Do not reply with valid JSON. domain label fall is docs taxonomy only.",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_negvj_02",
-        "family": "neg_valid_json_en",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Write Python that prints 9. This is NOT valid JSON of a circuit; domain label=fa",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_negvj_03",
-        "family": "neg_valid_json_en",
-        "expected": "python",
-        "got": "python",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "print(2)\n# never emit valid JSON here; label=collapsed taxonomy only. ONLY code.",
-        "ent_adapter_blocked": true
-      },
-      {
-        "id": "lp_qbmeta_01",
-        "family": "qubit_metaphor_tax",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Docs mention qubit only as metaphor; real field is domain label fall. Chat ack.",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_qbmeta_02",
-        "family": "qubit_metaphor_tax",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Qubit wording is metaphor only; domain_label=collapsed is taxonomy. Say ok.",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_entdl_01",
-        "family": "ent_control_domain_label",
-        "expected": "ent",
-        "got": "ent",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Dominio fall, labe",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_entdl_02",
-        "family": "ent_control_domain_label",
-        "expected": "ent",
-        "got": "ent",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Reply with valid JSON: n_qubits, gates, domain, label. domain fall_multi, gates=",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "lp_entdl_03",
-        "family": "ent_control_domain_label",
-        "expected": "ent",
-        "got": "ent",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Responde SOLO JSON válido con claves n_qubits, gates, domain, label. Bell pair e",
-        "ent_adapter_blocked": false
       }
     ],
-    "fixture_path": "data/bench_live/hardneg_label_protect_mixed_router.json",
+    "fixture_path": "data/bench_live/hardneg_r32_mixed_router.json",
     "anti_contamination": {
       "expected_lane_harness_only": true,
       "gt_never_in_route_api": true
@@ -3281,7 +3260,7 @@
   },
   "hardneg_delta": {
     "router_rate": 1.0,
-    "router_score": "64/64",
+    "router_score": "52/52",
     "ent_never_on_python": true,
     "vs_freeze_floor": "hold"
   }

@@ -190,6 +190,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R17: Cloudflare/CloudFront/Vitess/Cockroach/Pinot/CircleCI/Drone/Maven/sbt/Rails/Phoenix/Flagger/ArgoRollouts/Debezium gates: scalars.
     # R18: ALB/FrontDoor/URLMap/Hudi/Iceberg/Flink/NiFi/Concourse/Woodpecker/TeamCity/Cargo/Go/Quarkus/Micronaut gates: scalars.
     # R19: Mage/Spark/ActiveMQ/Helmfile/Semaphore/Please/Django/Laravel/Akka/DuckDB/Calico/Longhorn/Loki/OTelcol gates: scalars.
+    # R32: Gino/Emmett/Morepath/Laminas/Yii/CodeIgniter/Phalcon/Padrino/Roda/Feathers/Moleculer/DelayedJob/Vert.x/Helidon gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -848,7 +849,66 @@ def route_heuristic(prompt: str) -> Lane:
             r"|otel\s+.*gates:"
             r"|processor\s+gates:\s*memory_limiter"
             # R19: mesh / scheduler / secrets / compute / messaging / GitOps / actor / DB / network / storage / observability / CI / build / orchestration / framework prose
-            r"|gates:\s+is\s+(?:mesh|scheduler|secrets|compute|messaging|GitOps|actor|DB|network|storage|observability|CI|build|orchestration|framework)\b",
+            r"|gates:\s+is\s+(?:mesh|scheduler|secrets|compute|messaging|GitOps|actor|DB|network|storage|observability|CI|build|orchestration|framework)\b"
+            # R32: Gino loader gates: Gino.loader
+            r"|gates\s*:\s*Gino\.loader\b"
+            r"|gino\s+.*gates:"
+            r"|loader\s+gates:\s*Gino\.loader"
+            # R32: Emmett pipeline gates: emmett.Pipeline
+            r"|gates\s*:\s*emmett\.Pipeline\b"
+            r"|emmett\s+.*gates:"
+            r"|pipeline\s+gates:\s*emmett\.Pipeline"
+            # R32: Morepath defer gates: defer_links
+            r"|gates\s*:\s*defer_links\b"
+            r"|morepath\s+.*gates:"
+            r"|defer\s+gates:\s*defer_links"
+            # R32: Laminas middleware gates: MiddlewarePipe
+            r"|gates\s*:\s*MiddlewarePipe\b"
+            r"|laminas\s+.*gates:"
+            r"|middleware\s+gates:\s*MiddlewarePipe"
+            # R32: Yii behavior gates: attachBehavior
+            r"|gates\s*:\s*attachBehavior\b"
+            r"|\byii\b\s+.*gates:"
+            r"|behavior\s+gates:\s*attachBehavior"
+            # R32: CodeIgniter filter gates: FilterInterface
+            r"|gates\s*:\s*FilterInterface\b"
+            r"|codeigniter\s+.*gates:"
+            r"|filter\s+gates:\s*FilterInterface"
+            # R32: Phalcon middleware gates: beforeExecuteRoute
+            r"|gates\s*:\s*beforeExecuteRoute\b"
+            r"|phalcon\s+.*gates:"
+            r"|middleware\s+gates:\s*beforeExecuteRoute"
+            # R32: Padrino before gates: Padrino.before
+            r"|gates\s*:\s*Padrino\.before\b"
+            r"|padrino\s+.*gates:"
+            r"|before\s+gates:\s*Padrino\.before"
+            # R32: Roda plugin gates: Roda.plugin
+            r"|gates\s*:\s*Roda\.plugin\b"
+            r"|roda\s+.*gates:"
+            r"|plugin\s+gates:\s*Roda\.plugin"
+            # R32: Feathers hook gates: before.all
+            r"|gates\s*:\s*before\.all\b"
+            r"|feathers\s+.*gates:"
+            r"|hook\s+gates:\s*before\.all"
+            # R32: Moleculer action gates: localAction
+            r"|gates\s*:\s*localAction\b"
+            r"|moleculer\s+.*gates:"
+            r"|action\s+gates:\s*localAction"
+            # R32: DelayedJob job gates: Delayed::Worker
+            r"|gates\s*:\s*Delayed::Worker\b"
+            r"|delayed\s*job\s+.*gates:"
+            r"|delayedjob\s+.*gates:"
+            r"|job\s+gates:\s*Delayed::Worker"
+            # R32: Vert.x handler gates: RoutingContext
+            r"|gates\s*:\s*RoutingContext\b"
+            r"|vert\.?x\s+.*gates:"
+            r"|handler\s+gates:\s*RoutingContext"
+            # R32: Helidon filter gates: FilterChain
+            r"|gates\s*:\s*FilterChain\b"
+            r"|helidon\s+.*gates:"
+            r"|filter\s+gates:\s*FilterChain"
+            # R32: loader / pipeline / defer / middleware / behavior / filter / before / plugin / hook / action / job / handler prose
+            r"|gates:\s+is\s+(?:loader|pipeline|defer|middleware|behavior|filter|before|plugin|hook|action|job|handler)\b",
             text,
             re.I,
         )
@@ -1468,6 +1528,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r32' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r32.json"
         elif 'r19' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r19.json"
         elif 'r18' in hp:

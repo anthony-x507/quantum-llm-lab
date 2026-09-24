@@ -1,0 +1,317 @@
+{
+  "n": 44,
+  "kind": "hardneg_python_items",
+  "created": "2026-09-24T15:53:24",
+  "round": "r32",
+  "note": "R32 python verifier items; GT stdout harness-only",
+  "items": [
+    {
+      "id": "r32v_gino_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: Gino.loader'). Gino. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_gino_02",
+      "kind": "python",
+      "prompt": "t='gates: Gino.loader'\nprint(t.count('gates'))\n# Gino gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_gino_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 557. Gino gates: Gino.loader is loader only. ONLY code.",
+      "expected_stdout": "557\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_emmett_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: emmett.Pipeline'). Emmett. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_emmett_02",
+      "kind": "python",
+      "prompt": "t='gates: emmett.Pipeline'\nprint(t.count('gates'))\n# Emmett gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_emmett_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 558. Emmett gates: emmett.Pipeline is pipeline only. ONLY code.",
+      "expected_stdout": "558\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_morepa_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: defer_links'). Morepath. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_morepa_02",
+      "kind": "python",
+      "prompt": "t='gates: defer_links'\nprint(t.count('gates'))\n# Morepath gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_morepa_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 559. Morepath gates: defer_links is defer only. ONLY code.",
+      "expected_stdout": "559\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_laminas_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: MiddlewarePipe'). Laminas. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_laminas_02",
+      "kind": "python",
+      "prompt": "t='gates: MiddlewarePipe'\nprint(t.count('gates'))\n# Laminas gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_laminas_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 560. Laminas gates: MiddlewarePipe is middleware only. ONLY code.",
+      "expected_stdout": "560\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_yii_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: attachBehavior'). Yii. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_yii_02",
+      "kind": "python",
+      "prompt": "t='gates: attachBehavior'\nprint(t.count('gates'))\n# Yii gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_yii_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 561. Yii gates: attachBehavior is behavior only. ONLY code.",
+      "expected_stdout": "561\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_codeig_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: FilterInterface'). CodeIgniter. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_codeig_02",
+      "kind": "python",
+      "prompt": "t='gates: FilterInterface'\nprint(t.count('gates'))\n# CodeIgniter gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_codeig_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 562. CodeIgniter gates: FilterInterface is filter only. ONLY code.",
+      "expected_stdout": "562\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_phalco_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: beforeExecuteRoute'). Phalcon. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_phalco_02",
+      "kind": "python",
+      "prompt": "t='gates: beforeExecuteRoute'\nprint(t.count('gates'))\n# Phalcon gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_phalco_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 563. Phalcon gates: beforeExecuteRoute is middleware only. ONLY code.",
+      "expected_stdout": "563\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_padrin_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: Padrino.before'). Padrino. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_padrin_02",
+      "kind": "python",
+      "prompt": "t='gates: Padrino.before'\nprint(t.count('gates'))\n# Padrino gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_padrin_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 564. Padrino gates: Padrino.before is before only. ONLY code.",
+      "expected_stdout": "564\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_roda_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: Roda.plugin'). Roda. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_roda_02",
+      "kind": "python",
+      "prompt": "t='gates: Roda.plugin'\nprint(t.count('gates'))\n# Roda gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_roda_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 565. Roda gates: Roda.plugin is plugin only. ONLY code.",
+      "expected_stdout": "565\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_feathe_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: before.all'). Feathers. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_feathe_02",
+      "kind": "python",
+      "prompt": "t='gates: before.all'\nprint(t.count('gates'))\n# Feathers gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_feathe_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 566. Feathers gates: before.all is hook only. ONLY code.",
+      "expected_stdout": "566\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_molecu_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: localAction'). Moleculer. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_molecu_02",
+      "kind": "python",
+      "prompt": "t='gates: localAction'\nprint(t.count('gates'))\n# Moleculer gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_molecu_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 567. Moleculer gates: localAction is action only. ONLY code.",
+      "expected_stdout": "567\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_delaye_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: Delayed::Worker'). DelayedJob. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_delaye_02",
+      "kind": "python",
+      "prompt": "t='gates: Delayed::Worker'\nprint(t.count('gates'))\n# DelayedJob gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_delaye_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 568. DelayedJob gates: Delayed::Worker is job only. ONLY code.",
+      "expected_stdout": "568\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_vertx_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: RoutingContext'). Vert.x. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_vertx_02",
+      "kind": "python",
+      "prompt": "t='gates: RoutingContext'\nprint(t.count('gates'))\n# Vert.x gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_vertx_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 569. Vert.x gates: RoutingContext is handler only. ONLY code.",
+      "expected_stdout": "569\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_helido_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: FilterChain'). Helidon. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_helido_02",
+      "kind": "python",
+      "prompt": "t='gates: FilterChain'\nprint(t.count('gates'))\n# Helidon gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_helido_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 570. Helidon gates: FilterChain is filter only. ONLY code.",
+      "expected_stdout": "570\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_ctrl_01",
+      "kind": "python",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r32v_ctrl_02",
+      "kind": "python",
+      "prompt": "print(sum(range(4))) # plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}

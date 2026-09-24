@@ -1,0 +1,437 @@
+{
+  "n": 52,
+  "kind": "hardneg_mixed_router",
+  "created": "2026-09-24T15:53:24",
+  "round": "r32",
+  "note": "R32 hardneg: Gino/Emmett/Morepath/Laminas/Yii/CodeIgniter/Phalcon/Padrino/Roda/Feathers/Moleculer/DelayedJob/Vert.x/Helidon gates: scalars (brief-suggested swaps for tip-brand + R9\u2013R31 collisions)",
+  "anti_contamination": {
+    "no_r9_r31_family_reuse": true,
+    "avoid_r31_set": [
+      "ormar_signal",
+      "piccolo_app",
+      "databases_hook",
+      "cherrypy_tool",
+      "masonite_middleware",
+      "hug_directive",
+      "turbogears_hook",
+      "web2py_hook",
+      "apscheduler_job",
+      "kombu_consumer",
+      "restify_middleware",
+      "swoole_middleware",
+      "spiral_interceptor",
+      "saq_job"
+    ],
+    "avoid_r30_set": [
+      "peewee_signal",
+      "tortoise_signal",
+      "pony_hook",
+      "sqlmodel_event",
+      "fiber_middleware",
+      "iris_middleware",
+      "beego_filter",
+      "buffalo_middleware",
+      "sinatra_before",
+      "quart_before",
+      "nameko_entrypoint",
+      "arq_job",
+      "slim_middleware",
+      "cakephp_middleware"
+    ],
+    "avoid_r29_set": [
+      "bookshelf_plugin",
+      "objection_hook",
+      "mikroorm_subscriber",
+      "tornado_middleware",
+      "bottle_plugin",
+      "falcon_middleware",
+      "pyramid_tween",
+      "echo_middleware",
+      "chi_middleware",
+      "hanami_middleware",
+      "resque_plugin",
+      "rq_job",
+      "blacksheep_middleware",
+      "taskiq_middleware"
+    ],
+    "avoid_r28_set": [
+      "typeorm_subscriber",
+      "knex_hook",
+      "koa_middleware",
+      "litestar_guard",
+      "aiohttp_middleware",
+      "hibernate_interceptor",
+      "mybatis_interceptor",
+      "adonis_middleware",
+      "grape_middleware",
+      "absinthe_middleware",
+      "huey_task",
+      "oban_plugin",
+      "javalin_before",
+      "jersey_filter"
+    ],
+    "avoid_r27_set": [
+      "sequelize_hook",
+      "mongoose_middleware",
+      "actix_middleware",
+      "rocket_fairing",
+      "diesel_hook",
+      "gorm_callback",
+      "fastify_hook",
+      "hapi_plugin",
+      "sanic_middleware",
+      "starlette_middleware",
+      "sidekiq_middleware",
+      "dramatiq_actor",
+      "dropwizard_filter",
+      "ktor_plugin"
+    ],
+    "brief_suggested_swaps": {
+      "prisma_middleware": "gino_loader (prisma_field R11 / prisma brand)",
+      "nestjs_guard": "emmett_pipeline (nestjs_guard_gates R13)",
+      "fastapi_dependency": "morepath_defer (fastapi tip R14)",
+      "django_signal": "laminas_middleware (django_* tip brand)",
+      "spring_aspect": "yii_behavior (spring tip brand R14)",
+      "quarkus_interceptor": "codeigniter_filter (quarkus_interceptor_gates R18)",
+      "laravel_middleware": "phalcon_middleware (laravel_mw R15 / laravel_middleware R19)",
+      "rails_concern": "padrino_before (rails_before_action / rails tip)",
+      "elixir_plug": "roda_plugin (elixir tip R12 / phoenix_plug R17)",
+      "redis_lua": "feathers_hook (redis tip brand R13)",
+      "temporal_workflow": "moleculer_action (temporal tip brand R11)",
+      "clickhouse_materialized": "delayed_job (clickhouse tip brand R12)",
+      "kafka_connect": "vertx_handler (kafka_acl / kafka_topic priors)",
+      "celery_beat": "helidon_filter (celery_task priors)"
+    },
+    "novel_r32": [
+      "gino_loader_gates",
+      "emmett_pipeline_gates",
+      "morepath_defer_gates",
+      "laminas_middleware_gates",
+      "yii_behavior_gates",
+      "codeigniter_filter_gates",
+      "phalcon_middleware_gates",
+      "padrino_before_gates",
+      "roda_plugin_gates",
+      "feathers_hook_gates",
+      "moleculer_action_gates",
+      "delayed_job_gates",
+      "vertx_handler_gates",
+      "helidon_filter_gates"
+    ],
+    "ent_never_on_python": true
+  },
+  "items": [
+    {
+      "id": "r32_gino_01",
+      "expected": "python",
+      "family": "gino_loader_gates",
+      "prompt": "Write Python that prints len('gates: Gino.loader'). Gino. ONLY code."
+    },
+    {
+      "id": "r32_gino_02",
+      "expected": "python",
+      "family": "gino_loader_gates",
+      "prompt": "t='gates: Gino.loader'\nprint(t.count('gates'))\n# Gino gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r32_gino_03",
+      "expected": "python",
+      "family": "gino_loader_gates",
+      "prompt": "Write Python that prints 557. Gino gates: Gino.loader is loader only. ONLY code."
+    },
+    {
+      "id": "r32_emmett_01",
+      "expected": "python",
+      "family": "emmett_pipeline_gates",
+      "prompt": "Write Python that prints len('gates: emmett.Pipeline'). Emmett. ONLY code."
+    },
+    {
+      "id": "r32_emmett_02",
+      "expected": "python",
+      "family": "emmett_pipeline_gates",
+      "prompt": "t='gates: emmett.Pipeline'\nprint(t.count('gates'))\n# Emmett gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r32_emmett_03",
+      "expected": "python",
+      "family": "emmett_pipeline_gates",
+      "prompt": "Write Python that prints 558. Emmett gates: emmett.Pipeline is pipeline only. ONLY code."
+    },
+    {
+      "id": "r32_morepa_01",
+      "expected": "python",
+      "family": "morepath_defer_gates",
+      "prompt": "Write Python that prints len('gates: defer_links'). Morepath. ONLY code."
+    },
+    {
+      "id": "r32_morepa_02",
+      "expected": "python",
+      "family": "morepath_defer_gates",
+      "prompt": "t='gates: defer_links'\nprint(t.count('gates'))\n# Morepath gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r32_morepa_03",
+      "expected": "python",
+      "family": "morepath_defer_gates",
+      "prompt": "Write Python that prints 559. Morepath gates: defer_links is defer only. ONLY code."
+    },
+    {
+      "id": "r32_laminas_01",
+      "expected": "python",
+      "family": "laminas_middleware_gates",
+      "prompt": "Write Python that prints len('gates: MiddlewarePipe'). Laminas. ONLY code."
+    },
+    {
+      "id": "r32_laminas_02",
+      "expected": "python",
+      "family": "laminas_middleware_gates",
+      "prompt": "t='gates: MiddlewarePipe'\nprint(t.count('gates'))\n# Laminas gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r32_laminas_03",
+      "expected": "python",
+      "family": "laminas_middleware_gates",
+      "prompt": "Write Python that prints 560. Laminas gates: MiddlewarePipe is middleware only. ONLY code."
+    },
+    {
+      "id": "r32_yii_01",
+      "expected": "python",
+      "family": "yii_behavior_gates",
+      "prompt": "Write Python that prints len('gates: attachBehavior'). Yii. ONLY code."
+    },
+    {
+      "id": "r32_yii_02",
+      "expected": "python",
+      "family": "yii_behavior_gates",
+      "prompt": "t='gates: attachBehavior'\nprint(t.count('gates'))\n# Yii gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r32_yii_03",
+      "expected": "python",
+      "family": "yii_behavior_gates",
+      "prompt": "Write Python that prints 561. Yii gates: attachBehavior is behavior only. ONLY code."
+    },
+    {
+      "id": "r32_codeig_01",
+      "expected": "python",
+      "family": "codeigniter_filter_gates",
+      "prompt": "Write Python that prints len('gates: FilterInterface'). CodeIgniter. ONLY code."
+    },
+    {
+      "id": "r32_codeig_02",
+      "expected": "python",
+      "family": "codeigniter_filter_gates",
+      "prompt": "t='gates: FilterInterface'\nprint(t.count('gates'))\n# CodeIgniter gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r32_codeig_03",
+      "expected": "python",
+      "family": "codeigniter_filter_gates",
+      "prompt": "Write Python that prints 562. CodeIgniter gates: FilterInterface is filter only. ONLY code."
+    },
+    {
+      "id": "r32_phalco_01",
+      "expected": "python",
+      "family": "phalcon_middleware_gates",
+      "prompt": "Write Python that prints len('gates: beforeExecuteRoute'). Phalcon. ONLY code."
+    },
+    {
+      "id": "r32_phalco_02",
+      "expected": "python",
+      "family": "phalcon_middleware_gates",
+      "prompt": "t='gates: beforeExecuteRoute'\nprint(t.count('gates'))\n# Phalcon gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r32_phalco_03",
+      "expected": "python",
+      "family": "phalcon_middleware_gates",
+      "prompt": "Write Python that prints 563. Phalcon gates: beforeExecuteRoute is middleware only. ONLY code."
+    },
+    {
+      "id": "r32_padrin_01",
+      "expected": "python",
+      "family": "padrino_before_gates",
+      "prompt": "Write Python that prints len('gates: Padrino.before'). Padrino. ONLY code."
+    },
+    {
+      "id": "r32_padrin_02",
+      "expected": "python",
+      "family": "padrino_before_gates",
+      "prompt": "t='gates: Padrino.before'\nprint(t.count('gates'))\n# Padrino gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r32_padrin_03",
+      "expected": "python",
+      "family": "padrino_before_gates",
+      "prompt": "Write Python that prints 564. Padrino gates: Padrino.before is before only. ONLY code."
+    },
+    {
+      "id": "r32_roda_01",
+      "expected": "python",
+      "family": "roda_plugin_gates",
+      "prompt": "Write Python that prints len('gates: Roda.plugin'). Roda. ONLY code."
+    },
+    {
+      "id": "r32_roda_02",
+      "expected": "python",
+      "family": "roda_plugin_gates",
+      "prompt": "t='gates: Roda.plugin'\nprint(t.count('gates'))\n# Roda gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r32_roda_03",
+      "expected": "python",
+      "family": "roda_plugin_gates",
+      "prompt": "Write Python that prints 565. Roda gates: Roda.plugin is plugin only. ONLY code."
+    },
+    {
+      "id": "r32_feathe_01",
+      "expected": "python",
+      "family": "feathers_hook_gates",
+      "prompt": "Write Python that prints len('gates: before.all'). Feathers. ONLY code."
+    },
+    {
+      "id": "r32_feathe_02",
+      "expected": "python",
+      "family": "feathers_hook_gates",
+      "prompt": "t='gates: before.all'\nprint(t.count('gates'))\n# Feathers gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r32_feathe_03",
+      "expected": "python",
+      "family": "feathers_hook_gates",
+      "prompt": "Write Python that prints 566. Feathers gates: before.all is hook only. ONLY code."
+    },
+    {
+      "id": "r32_molecu_01",
+      "expected": "python",
+      "family": "moleculer_action_gates",
+      "prompt": "Write Python that prints len('gates: localAction'). Moleculer. ONLY code."
+    },
+    {
+      "id": "r32_molecu_02",
+      "expected": "python",
+      "family": "moleculer_action_gates",
+      "prompt": "t='gates: localAction'\nprint(t.count('gates'))\n# Moleculer gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r32_molecu_03",
+      "expected": "python",
+      "family": "moleculer_action_gates",
+      "prompt": "Write Python that prints 567. Moleculer gates: localAction is action only. ONLY code."
+    },
+    {
+      "id": "r32_delaye_01",
+      "expected": "python",
+      "family": "delayed_job_gates",
+      "prompt": "Write Python that prints len('gates: Delayed::Worker'). DelayedJob. ONLY code."
+    },
+    {
+      "id": "r32_delaye_02",
+      "expected": "python",
+      "family": "delayed_job_gates",
+      "prompt": "t='gates: Delayed::Worker'\nprint(t.count('gates'))\n# DelayedJob gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r32_delaye_03",
+      "expected": "python",
+      "family": "delayed_job_gates",
+      "prompt": "Write Python that prints 568. DelayedJob gates: Delayed::Worker is job only. ONLY code."
+    },
+    {
+      "id": "r32_vertx_01",
+      "expected": "python",
+      "family": "vertx_handler_gates",
+      "prompt": "Write Python that prints len('gates: RoutingContext'). Vert.x. ONLY code."
+    },
+    {
+      "id": "r32_vertx_02",
+      "expected": "python",
+      "family": "vertx_handler_gates",
+      "prompt": "t='gates: RoutingContext'\nprint(t.count('gates'))\n# Vert.x gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r32_vertx_03",
+      "expected": "python",
+      "family": "vertx_handler_gates",
+      "prompt": "Write Python that prints 569. Vert.x gates: RoutingContext is handler only. ONLY code."
+    },
+    {
+      "id": "r32_helido_01",
+      "expected": "python",
+      "family": "helidon_filter_gates",
+      "prompt": "Write Python that prints len('gates: FilterChain'). Helidon. ONLY code."
+    },
+    {
+      "id": "r32_helido_02",
+      "expected": "python",
+      "family": "helidon_filter_gates",
+      "prompt": "t='gates: FilterChain'\nprint(t.count('gates'))\n# Helidon gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r32_helido_03",
+      "expected": "python",
+      "family": "helidon_filter_gates",
+      "prompt": "Write Python that prints 570. Helidon gates: FilterChain is filter only. ONLY code."
+    },
+    {
+      "id": "r32_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r32",
+      "prompt": "Responde SOLO JSON v\u00e1lido con n_qubits, gates, domain, label. Bell pair; gates=[H, CNOT]."
+    },
+    {
+      "id": "r32_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r32",
+      "prompt": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit H then CNOT circuit."
+    },
+    {
+      "id": "r32_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r32",
+      "prompt": "Look at the image. How many dots are visible? Only the integer. No circuit."
+    },
+    {
+      "id": "r32_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r32",
+      "prompt": "Look at the chalkboard. How many letters? Only the integer. No circuit."
+    },
+    {
+      "id": "r32_base_01",
+      "expected": "base",
+      "family": "base_control_r32",
+      "prompt": "Thanks. Ignore Gino gates: Gino.loader in the README. No code, no circuit."
+    },
+    {
+      "id": "r32_base_02",
+      "expected": "base",
+      "family": "base_control_r32",
+      "prompt": "Please ignore the Laminas gates: MiddlewarePipe phrase. Chat only \u2014 no program, no circuit."
+    },
+    {
+      "id": "r32_base_03",
+      "expected": "base",
+      "family": "base_control_r32",
+      "prompt": "Hello \u2014 Vert.x gates: RoutingContext is handler only. No code, no circuit, no JSON."
+    },
+    {
+      "id": "r32_base_04",
+      "expected": "base",
+      "family": "base_control_r32",
+      "prompt": "ENT_NEG: Feathers gates: before.all is hook prose. Chat only."
+    },
+    {
+      "id": "r32_bpy_01",
+      "expected": "python",
+      "family": "base_python_control_r32",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code."
+    },
+    {
+      "id": "r32_bpy_02",
+      "expected": "python",
+      "family": "base_python_control_r32",
+      "prompt": "print(sum(range(4))) # plain. ONLY code."
+    }
+  ]
+}

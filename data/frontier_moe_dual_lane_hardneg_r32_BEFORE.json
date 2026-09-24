@@ -1,0 +1,628 @@
+{
+  "method": "heuristic",
+  "n": 52,
+  "hits": 7,
+  "misses": 45,
+  "score": "7/52",
+  "rate": 0.1346,
+  "by_family": {
+    "gino_loader_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "emmett_pipeline_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "morepath_defer_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "laminas_middleware_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "yii_behavior_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "codeigniter_filter_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "phalcon_middleware_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "padrino_before_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "roda_plugin_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "feathers_hook_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "moleculer_action_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "delayed_job_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "vertx_handler_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "helidon_filter_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "ent_control_r32": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r32": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r32": {
+      "n": 4,
+      "hits": 1,
+      "rate": 0.25
+    },
+    "base_python_control_r32": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "r32_gino_01",
+      "family": "gino_loader_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Gino.loader'). Gino. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_gino_02",
+      "family": "gino_loader_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: Gino.loader'\nprint(t.count('gates'))\n# Gino gates: — not circuit. ONLY",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_gino_03",
+      "family": "gino_loader_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 557. Gino gates: Gino.loader is loader only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_emmett_01",
+      "family": "emmett_pipeline_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: emmett.Pipeline'). Emmett. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_emmett_02",
+      "family": "emmett_pipeline_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: emmett.Pipeline'\nprint(t.count('gates'))\n# Emmett gates: — not circuit",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_emmett_03",
+      "family": "emmett_pipeline_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 558. Emmett gates: emmett.Pipeline is pipeline only. ON",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_morepa_01",
+      "family": "morepath_defer_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: defer_links'). Morepath. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_morepa_02",
+      "family": "morepath_defer_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: defer_links'\nprint(t.count('gates'))\n# Morepath gates: — not circuit. ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_morepa_03",
+      "family": "morepath_defer_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 559. Morepath gates: defer_links is defer only. ONLY co",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_laminas_01",
+      "family": "laminas_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: MiddlewarePipe'). Laminas. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_laminas_02",
+      "family": "laminas_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: MiddlewarePipe'\nprint(t.count('gates'))\n# Laminas gates: — not circuit",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_laminas_03",
+      "family": "laminas_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 560. Laminas gates: MiddlewarePipe is middleware only. ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_yii_01",
+      "family": "yii_behavior_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: attachBehavior'). Yii. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_yii_02",
+      "family": "yii_behavior_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: attachBehavior'\nprint(t.count('gates'))\n# Yii gates: — not circuit. ON",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_yii_03",
+      "family": "yii_behavior_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 561. Yii gates: attachBehavior is behavior only. ONLY c",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_codeig_01",
+      "family": "codeigniter_filter_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: FilterInterface'). CodeIgniter. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_codeig_02",
+      "family": "codeigniter_filter_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: FilterInterface'\nprint(t.count('gates'))\n# CodeIgniter gates: — not ci",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_codeig_03",
+      "family": "codeigniter_filter_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 562. CodeIgniter gates: FilterInterface is filter only.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_phalco_01",
+      "family": "phalcon_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: beforeExecuteRoute'). Phalcon. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_phalco_02",
+      "family": "phalcon_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: beforeExecuteRoute'\nprint(t.count('gates'))\n# Phalcon gates: — not cir",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_phalco_03",
+      "family": "phalcon_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 563. Phalcon gates: beforeExecuteRoute is middleware on",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_padrin_01",
+      "family": "padrino_before_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Padrino.before'). Padrino. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_padrin_02",
+      "family": "padrino_before_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: Padrino.before'\nprint(t.count('gates'))\n# Padrino gates: — not circuit",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_padrin_03",
+      "family": "padrino_before_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 564. Padrino gates: Padrino.before is before only. ONLY",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_roda_01",
+      "family": "roda_plugin_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Roda.plugin'). Roda. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_roda_02",
+      "family": "roda_plugin_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: Roda.plugin'\nprint(t.count('gates'))\n# Roda gates: — not circuit. ONLY",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_roda_03",
+      "family": "roda_plugin_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 565. Roda gates: Roda.plugin is plugin only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_feathe_01",
+      "family": "feathers_hook_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: before.all'). Feathers. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_feathe_02",
+      "family": "feathers_hook_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: before.all'\nprint(t.count('gates'))\n# Feathers gates: — not circuit. O",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_feathe_03",
+      "family": "feathers_hook_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 566. Feathers gates: before.all is hook only. ONLY code",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_molecu_01",
+      "family": "moleculer_action_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: localAction'). Moleculer. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_molecu_02",
+      "family": "moleculer_action_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: localAction'\nprint(t.count('gates'))\n# Moleculer gates: — not circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_molecu_03",
+      "family": "moleculer_action_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 567. Moleculer gates: localAction is action only. ONLY ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_delaye_01",
+      "family": "delayed_job_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Delayed::Worker'). DelayedJob. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_delaye_02",
+      "family": "delayed_job_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: Delayed::Worker'\nprint(t.count('gates'))\n# DelayedJob gates: — not cir",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_delaye_03",
+      "family": "delayed_job_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 568. DelayedJob gates: Delayed::Worker is job only. ONL",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_vertx_01",
+      "family": "vertx_handler_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: RoutingContext'). Vert.x. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_vertx_02",
+      "family": "vertx_handler_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: RoutingContext'\nprint(t.count('gates'))\n# Vert.x gates: — not circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_vertx_03",
+      "family": "vertx_handler_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 569. Vert.x gates: RoutingContext is handler only. ONLY",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_helido_01",
+      "family": "helidon_filter_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: FilterChain'). Helidon. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_helido_02",
+      "family": "helidon_filter_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: FilterChain'\nprint(t.count('gates'))\n# Helidon gates: — not circuit. O",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_helido_03",
+      "family": "helidon_filter_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 570. Helidon gates: FilterChain is filter only. ONLY co",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_ent_01",
+      "family": "ent_control_r32",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair; gates=[",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_ent_02",
+      "family": "ent_control_r32",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit H then CNOT",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_vis_01",
+      "family": "vision_control_r32",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. How many dots are visible? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_vis_02",
+      "family": "vision_control_r32",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the chalkboard. How many letters? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_base_01",
+      "family": "base_control_r32",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Thanks. Ignore Gino gates: Gino.loader in the README. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_base_02",
+      "family": "base_control_r32",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Please ignore the Laminas gates: MiddlewarePipe phrase. Chat only — no program, ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_base_03",
+      "family": "base_control_r32",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Hello — Vert.x gates: RoutingContext is handler only. No code, no circuit, no JS",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_base_04",
+      "family": "base_control_r32",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "ENT_NEG: Feathers gates: before.all is hook prose. Chat only.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r32_bpy_01",
+      "family": "base_python_control_r32",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(2+2)  # plain arithmetic. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r32_bpy_02",
+      "family": "base_python_control_r32",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(sum(range(4))) # plain. ONLY code.",
+      "ent_adapter_blocked": true
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_r32_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}
