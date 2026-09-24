@@ -1,7 +1,12 @@
 # Estado de avance
 
-## 2026-09-24 — tip-hardneg-r8 polish @ side branch
-Branch `frontier/tip-hardneg-r8` SHA `c964dcc` from tip `69655dd` (wt `…-tip-hardneg-r8`). R8 router **52/52** · verifier **44/44**; mixed (d) **1.0**; R1–R7+LP held; `ent_never_on_python`. Novel: Dockerfile ARG / JSON Schema / TF / md fence / unicode / Rego / CUE / TOML / GraphQL / SARIF / Nix / WASM / EDN / email. **Not folded** (tip-cv/R7/scaffold-motion left alone). See `docs/FRONTIER-CODIGO-VIVO-TIP-R8.md`.
+## 2026-09-24 — fold tip-hardneg-r8 → codigo-vivo-tip
+Rebase `270ce46`/`c964dcc` onto `d892398` → `afd52c9`+`32b0b14` FF. CPU unified **1.0** (re-smoke); R8 52/52·44/44; R7 52/52·44/44; LP 43/43·32/32; R1–R6 held; motion **44%**; `wired_to_vlm`; freezes retained incl. scaffold_motion + r7 + post_od2. Freeze `codigo_vivo_tip_r8_100pct_20260924_130950`. Distance-danger **not** folded. See SCOREBOARD + TIP-R8.
+
+
+
+## 2026-09-24 — tip-hardneg-r8 polish (pre-fold)
+Branch `frontier/tip-hardneg-r8` from tip `69655dd` → rebased onto `d892398`. R8 router **52/52** · verifier **44/44**; mixed (d) **1.0**; R1–R7+LP held. Novel: Dockerfile ARG / JSON Schema / TF / md fence / unicode / Rego / CUE / TOML / GraphQL / SARIF / Nix / WASM / EDN / email. See fold entry above + `docs/FRONTIER-CODIGO-VIVO-TIP-R8.md`.
 
 
 Ver **[`docs/STATUS.md`](docs/STATUS.md)** (Agent Lab / quantum-llm-lab).  

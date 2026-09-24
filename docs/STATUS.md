@@ -7,6 +7,9 @@
 
 ---
 
+## 2026-09-24 — fold tip-hardneg-r8 → codigo-vivo-tip
+Rebase `270ce46`/`c964dcc` onto `d892398` → `afd52c9`+`32b0b14` FF. CPU unified **1.0** (re-smoke); R8 52/52·44/44; R7 52/52·44/44; LP 43/43·32/32; R1–R6 held; motion **44%**; `wired_to_vlm`; freezes retained incl. scaffold_motion + r7 + post_od2. Freeze `codigo_vivo_tip_r8_100pct_20260924_130950`. Distance-danger **not** folded. See SCOREBOARD + TIP-R8.
+
 ## 2026-09-24 — fold tip-scaffold-motion → codigo-vivo-tip
 Rebase `9ddfaed` onto `69655dd` → `7b0c63b` FF. CPU unified **1.0** (re-smoke); motion coverage **44%**; R7 52/52·44/44; LP 43/43·32/32; R1–R6 held; `wired_to_vlm`; freezes retained incl. r7 + post_od2. Freeze `codigo_vivo_tip_scaffold_motion_100pct_20260924_130131`. See SCOREBOARD + TIP-SCAFFOLD-MOTION.
 

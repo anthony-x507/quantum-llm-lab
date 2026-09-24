@@ -1,9 +1,10 @@
 # Frontier — Código-vivo tip hardneg R8
 
-**Branch:** `frontier/tip-hardneg-r8` (side; not folded yet)  
-**Base tip:** `69655dd` (post-R7 tip freeze; preferred over `f0fe729` so R7 fixtures exist)  
-**When:** 2026-09-24 ~12:56–1:01 ET · Mac-111 (`074c6626-…`)  
-**Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r8`  
+**Status:** **FOLDED** into `frontier/codigo-vivo-tip` (rebase `270ce46` onto `d892398` → content `afd52c9` / pin `32b0b14` FF)  
+**Branch:** `frontier/tip-hardneg-r8` (rebased; source kept) · tip `frontier/codigo-vivo-tip`  
+**Base tip at fold:** `d892398` (post scaffold-motion) · R8 originally from `69655dd`  
+**When:** polish ~12:56–1:01 ET · fold 2026-09-24 13:09:50 ET · Mac-111 (`074c6626-…`)  
+**Freeze:** `codigo_vivo_tip_r8_100pct_20260924_130950`  
 **Claim:** NO quantum advantage. Classical heuristic router + `python -I` verifier only.
 
 ## LOCK
@@ -12,7 +13,7 @@
 - `data/lora_adapter/` READ-ONLY. No merge to `main`. No CloudAgent.
 - Keep `ent_never_on_python=true`, `prompt_touches_gt=false`.
 - R1 / R2 / R3 / R4 / R5 / R6 / R7 / label-protect fixtures must still hold after R8 reinforce.
-- Do **not** touch tip-cv (`/Users/anthony/Documents/quantum-llm-lab-tip-cv`), R7 fold wt, or scaffold-motion (`9ddfaed`).
+- Tip-cv is the fold destination; do **not** touch tip-scaffold-motion / tip-distance-danger / tip-hardneg-r7 worktrees. Distance-danger still in flight — **not** folded.
 
 ## R8 families (≠ R1–R7 / ≠ label-protect)
 
@@ -75,6 +76,10 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `data/freeze_manifests/tip_moe_verifier_polish_r8_100pct_*.json`
 - `docs/FRONTIER-CODIGO-VIVO-TIP-R8.md` (this file)
 
-## Not folded
+## FOLDED into tip
 
-Leave tip-cv / R7 / scaffold-motion alone until a fold brief. Side branch only.
+**When:** 2026-09-24 13:09:50 ET · Mac-111 (`074c6626-…`)  
+**Method:** rebase `frontier/tip-hardneg-r8` (`270ce46` / polish `c964dcc`) onto tip `d892398` → content `afd52c9` + polish pin `32b0b14`; FF into tip. Mixed JSON conflicts kept tip (re-smoke).  
+**Prior freezes retained (not abandoned):** platform, mlx_r3, post_polish, R5, label_protect, R6, post_od2, R7, **scaffold_motion** `codigo_vivo_tip_scaffold_motion_100pct_20260924_130131`, polish_r8.  
+**Re-smoke:** mixed (d) **1.0**; R1–R8 routers **18/18 · 22/22 · 35/35 · 40/40 · 44/44 · 48/48 · 52/52 · 52/52**; R3–R8/LP verifier **28/28 · 32/32 · 36/36 · 40/40 · 44/44 · 44/44 · 32/32**; LP **43/43**; pillars **26/26**; smoke **12/12**; motion coverage **44%**; `wired_to_vlm=true`; `gt_leak=false`; `ent_never_on_python=true`.  
+**Not folded:** tip-distance-danger (still in flight).

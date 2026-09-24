@@ -625,6 +625,26 @@ Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. 
 **Key honesty:** ent2 still **+1.0**; quantum alone hurts py/vis; dual-lane protects. Platform / mlx_r3 / polish_r4 freezes **retained**.
 
 
+## Hardneg R8 — FOLDED
+
+**When:** polish ~12:56–1:01 ET · fold 2026-09-24 13:09:50 ET · Mac-111 · rebase `270ce46`/`c964dcc` onto `d892398` → `afd52c9`+`32b0b14` FF  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-R8.md`  
+**Freeze:** `codigo_vivo_tip_r8_100pct_20260924_130950`
+
+| Surface | Result |
+|---------|--------|
+| Mixed (d) unified | **1.0** (py/ent/vis) |
+| R8 router / verifier | **52/52** / **44/44** |
+| R7 / LP | **52/52·44/44** / **43/43·32/32** |
+| R1–R6 routers | 18/18·22/22·35/35·40/40·44/44·48/48 |
+| R3–R6 verifiers | 28/28·32/32·36/36·40/40 |
+| pillars / smoke | **26/26** / **12/12** |
+| motion coverage | **44%** (held) |
+| `wired_to_vlm` / gt_leak / `ent_never_on_python` | **true** / **false** / **true** |
+
+**CPU re-smoke after fold:** unified **1.0**; R8 held; freezes retained incl. scaffold_motion + r7 + post_od2 + LP + r6 + priors. Adapters RO. **Distance-danger not folded** (in flight).
+
+
 ## Scaffold-motion (RGB cue honesty) — FOLDED
 
 **When:** measure ~12:55 ET · fold 2026-09-24 13:01:31 ET · Mac-111 · rebase `9ddfaed` onto `69655dd` → `7b0c63b` FF  
@@ -641,7 +661,7 @@ Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. 
 | pillars / smoke | **26/26** / **12/12** |
 | `ent_never_on_python` | **true** |
 
-**CPU re-smoke after fold:** unified **1.0**; motion probe held; freezes retained incl. r7 + post_od2 + LP + r6 + priors. Adapters RO. **No R8 fold.**
+**CPU re-smoke after fold:** unified **1.0**; motion probe held; freezes retained incl. r7 + post_od2 + LP + r6 + priors. Adapters RO. R8 folded later — see Hardneg R8 section.
 
 ## Hardneg R5 — FOLDED
 

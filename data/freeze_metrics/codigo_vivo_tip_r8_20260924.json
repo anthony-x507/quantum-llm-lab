@@ -4,7 +4,10 @@
   "mixed_d_unified": 1.0,
   "r8_router": "52/52",
   "r8_verifier": "44/44",
-  "written_et": "2026-09-24 1:01:00 ET",
-  "branch": "frontier/tip-hardneg-r8",
-  "base": "69655dd"
+  "written_et": "2026-09-24 13:09:50 ET",
+  "branch": "frontier/codigo-vivo-tip",
+  "base": "d892398",
+  "content_sha": "afd52c9",
+  "ff_sha": "32b0b14",
+  "freeze_id": "codigo_vivo_tip_r8_100pct_20260924_130950"
 }
