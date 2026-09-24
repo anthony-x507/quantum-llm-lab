@@ -186,6 +186,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R13: Nginx/HAProxy/Caddy/Redis/Postgres/Skaffold/Buildkite/Packer/Salt/Bazel/Dagger/Dagster/Hasura/NestJS gates: scalars.
     # R14: Apache httpd/Varnish/APISIX/Tyk/KrakenD/MongoDB/Cassandra/Jenkins/Vagrant/Chef/Pants/Prefect/FastAPI/Spring gates: scalars.
     # R15: Squid/OpenResty/Contour/Emissary/Zuul/Django/Laravel/Gin/DynamoDB/Firestore/Keycloak/Falco/OTel/Ray gates: scalars.
+    # R27: Sequelize/Mongoose/Actix/Rocket/Diesel/GORM/Fastify/Hapi/Sanic/Starlette/Sidekiq/Dramatiq/Dropwizard/Ktor gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -602,7 +603,65 @@ def route_heuristic(prompt: str) -> Lane:
             r"|ray\s+.*gates:"
             r"|actor\s+gates:\s*num_cpus"
             # R15: proxy / ingress / gateway / framework / DB / security / observability / orchestration prose
-            r"|gates:\s+is\s+(?:proxy|ingress|gateway|framework|DB|security|observability|orchestration)\b",
+            r"|gates:\s+is\s+(?:proxy|ingress|gateway|framework|DB|security|observability|orchestration)\b"
+            # R27: Sequelize hook gates: beforeFind
+            r"|gates\s*:\s*beforeFind\b"
+            r"|sequelize\s+.*gates:"
+            r"|hook\s+gates:\s*beforeFind"
+            # R27: Mongoose middleware gates: pre.save
+            r"|gates\s*:\s*pre\.save\b"
+            r"|mongoose\s+.*gates:"
+            r"|middleware\s+gates:\s*pre\.save"
+            # R27: Actix middleware gates: from_fn
+            r"|gates\s*:\s*from_fn\b"
+            r"|actix\s+.*gates:"
+            r"|middleware\s+gates:\s*from_fn"
+            # R27: Rocket fairing gates: Fairing::info
+            r"|gates\s*:\s*Fairing::info\b"
+            r"|rocket\s+.*gates:"
+            r"|fairing\s+gates:\s*Fairing"
+            # R27: Diesel hook gates: Connection::transaction
+            r"|gates\s*:\s*Connection::transaction\b"
+            r"|diesel\s+.*gates:"
+            r"|hook\s+gates:\s*Connection::transaction"
+            # R27: GORM callback gates: BeforeCreate
+            r"|gates\s*:\s*BeforeCreate\b"
+            r"|\bgorm\b\s+.*gates:"
+            r"|callback\s+gates:\s*BeforeCreate"
+            # R27: Fastify hook gates: onRequest
+            r"|gates\s*:\s*onRequest\b"
+            r"|fastify\s+.*gates:"
+            r"|hook\s+gates:\s*onRequest"
+            # R27: Hapi plugin gates: server.ext
+            r"|gates\s*:\s*server\.ext\b"
+            r"|\bhapi\b\s+.*gates:"
+            r"|plugin\s+gates:\s*server\.ext"
+            # R27: Sanic middleware gates: add_middleware
+            r"|gates\s*:\s*add_middleware\b"
+            r"|sanic\s+.*gates:"
+            r"|middleware\s+gates:\s*add_middleware"
+            # R27: Starlette middleware gates: BaseHTTPMiddleware
+            r"|gates\s*:\s*BaseHTTPMiddleware\b"
+            r"|starlette\s+.*gates:"
+            r"|middleware\s+gates:\s*BaseHTTP"
+            # R27: Sidekiq middleware gates: ServerMiddleware
+            r"|gates\s*:\s*ServerMiddleware\b"
+            r"|sidekiq\s+.*gates:"
+            r"|middleware\s+gates:\s*ServerMiddleware"
+            # R27: Dramatiq actor gates: actor.broker
+            r"|gates\s*:\s*actor\.broker\b"
+            r"|dramatiq\s+.*gates:"
+            r"|actor\s+gates:\s*actor\.broker"
+            # R27: Dropwizard filter gates: ContainerRequestFilter
+            r"|gates\s*:\s*ContainerRequestFilter\b"
+            r"|dropwizard\s+.*gates:"
+            r"|filter\s+gates:\s*ContainerRequest"
+            # R27: Ktor plugin gates: createApplicationPlugin
+            r"|gates\s*:\s*createApplicationPlugin\b"
+            r"|\bktor\b\s+.*gates:"
+            r"|plugin\s+gates:\s*createApplicationPlugin"
+            # R27: hook / middleware / fairing / callback / plugin / actor / filter prose
+            r"|gates:\s+is\s+(?:hook|middleware|fairing|callback|plugin|actor|filter)\b",
             text,
             re.I,
         )
@@ -1222,6 +1281,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r27' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r27.json"
         elif 'r15' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r15.json"
         elif 'r14' in hp:

@@ -1,0 +1,354 @@
+{
+  "n": 44,
+  "kind": "hardneg_python_items",
+  "created": "2026-09-24T15:22:56",
+  "round": "r27",
+  "note": "R27 hardneg: Sequelize/Mongoose/Actix/Rocket/Diesel/GORM/Fastify/Hapi/Sanic/Starlette/Sidekiq/Dramatiq/Dropwizard/Ktor gates: scalars (swapped tip-brand + R9\u2013R26 collisions)",
+  "anti_contamination": {
+    "no_r9_r26_family_reuse": true,
+    "brief_suggested_swaps": {
+      "nestjs_guard": "actix_middleware (nestjs_guard_gates R13)",
+      "quarkus_interceptor": "dropwizard_filter (quarkus_interceptor_gates R18)",
+      "laravel_middleware": "hapi_plugin (laravel_mw R15 / laravel_middleware R19)",
+      "prisma_middleware": "sequelize_hook (prisma brand held-by-priors / prisma_field R11)",
+      "typeorm_subscriber": "mongoose_middleware",
+      "svelte_dependency": "starlette_middleware (svelte_store R7 / sveltekit_hook R22)",
+      "django_signal": "sanic_middleware (django_* tip brand)",
+      "flask_blueprint": "fastify_hook (flask tip R16-adjacent; keep tip-clean)",
+      "spring_aspect": "gorm_callback (spring tip brand R14)",
+      "rails_concern": "sidekiq_middleware",
+      "elixir_plug": "rocket_fairing (elixir tip brand R12; phoenix_plug R17)",
+      "redis_lua": "diesel_hook (redis tip brand R13)",
+      "temporal_workflow": "dramatiq_actor (temporal tip brand R11)",
+      "clickhouse_materialized": "ktor_plugin (clickhouse tip brand R12)",
+      "helidon_filter": "kept-then-swapped-to-dropwizard for fully-free set",
+      "symfony_event": "kept-then-swapped-to-hapi for fully-free set"
+    },
+    "novel_r27": [
+      "sequelize_hook_gates",
+      "mongoose_middleware_gates",
+      "actix_middleware_gates",
+      "rocket_fairing_gates",
+      "diesel_hook_gates",
+      "gorm_callback_gates",
+      "fastify_hook_gates",
+      "hapi_plugin_gates",
+      "sanic_middleware_gates",
+      "starlette_middleware_gates",
+      "sidekiq_middleware_gates",
+      "dramatiq_actor_gates",
+      "dropwizard_filter_gates",
+      "ktor_plugin_gates"
+    ]
+  },
+  "items": [
+    {
+      "id": "r27v_seq_01",
+      "kind": "sequelize_hook_gates",
+      "prompt": "Write Python that prints len('gates: beforeFind'). Sequelize. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_seq_02",
+      "kind": "sequelize_hook_gates",
+      "prompt": "t='gates: beforeFind'\nprint(t.count('gates'))\n# Sequelize gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_seq_03",
+      "kind": "sequelize_hook_gates",
+      "prompt": "Write Python that prints 401. Sequelize gates: beforeFind is hook only. ONLY code.",
+      "expected_stdout": "401\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_mongo_01",
+      "kind": "mongoose_middleware_gates",
+      "prompt": "Write Python that prints len('gates: pre.save'). Mongoose. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_mongo_02",
+      "kind": "mongoose_middleware_gates",
+      "prompt": "t='gates: pre.save'\nprint(t.count('gates'))\n# Mongoose gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_mongo_03",
+      "kind": "mongoose_middleware_gates",
+      "prompt": "Write Python that prints 402. Mongoose gates: pre.save is middleware only. ONLY code.",
+      "expected_stdout": "402\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_actix_01",
+      "kind": "actix_middleware_gates",
+      "prompt": "Write Python that prints len('gates: from_fn'). Actix. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_actix_02",
+      "kind": "actix_middleware_gates",
+      "prompt": "t='gates: from_fn'\nprint(t.count('gates'))\n# Actix gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_actix_03",
+      "kind": "actix_middleware_gates",
+      "prompt": "Write Python that prints 403. Actix gates: from_fn is middleware only. ONLY code.",
+      "expected_stdout": "403\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_rocket_01",
+      "kind": "rocket_fairing_gates",
+      "prompt": "Write Python that prints len('gates: Fairing::info'). Rocket. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_rocket_02",
+      "kind": "rocket_fairing_gates",
+      "prompt": "t='gates: Fairing::info'\nprint(t.count('gates'))\n# Rocket gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_rocket_03",
+      "kind": "rocket_fairing_gates",
+      "prompt": "Write Python that prints 404. Rocket gates: Fairing::info is fairing only. ONLY code.",
+      "expected_stdout": "404\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_diesel_01",
+      "kind": "diesel_hook_gates",
+      "prompt": "Write Python that prints len('gates: Connection::transaction'). Diesel. ONLY code.",
+      "expected_stdout": "30\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_diesel_02",
+      "kind": "diesel_hook_gates",
+      "prompt": "t='gates: Connection::transaction'\nprint(t.count('gates'))\n# Diesel gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_diesel_03",
+      "kind": "diesel_hook_gates",
+      "prompt": "Write Python that prints 405. Diesel gates: Connection::transaction is hook only. ONLY code.",
+      "expected_stdout": "405\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_gorm_01",
+      "kind": "gorm_callback_gates",
+      "prompt": "Write Python that prints len('gates: BeforeCreate'). GORM. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_gorm_02",
+      "kind": "gorm_callback_gates",
+      "prompt": "t='gates: BeforeCreate'\nprint(t.count('gates'))\n# GORM gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_gorm_03",
+      "kind": "gorm_callback_gates",
+      "prompt": "Write Python that prints 406. GORM gates: BeforeCreate is callback only. ONLY code.",
+      "expected_stdout": "406\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_fastify_01",
+      "kind": "fastify_hook_gates",
+      "prompt": "Write Python that prints len('gates: onRequest'). Fastify. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_fastify_02",
+      "kind": "fastify_hook_gates",
+      "prompt": "t='gates: onRequest'\nprint(t.count('gates'))\n# Fastify gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_fastify_03",
+      "kind": "fastify_hook_gates",
+      "prompt": "Write Python that prints 407. Fastify gates: onRequest is hook only. ONLY code.",
+      "expected_stdout": "407\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_hapi_01",
+      "kind": "hapi_plugin_gates",
+      "prompt": "Write Python that prints len('gates: server.ext'). Hapi. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_hapi_02",
+      "kind": "hapi_plugin_gates",
+      "prompt": "t='gates: server.ext'\nprint(t.count('gates'))\n# Hapi gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_hapi_03",
+      "kind": "hapi_plugin_gates",
+      "prompt": "Write Python that prints 408. Hapi gates: server.ext is plugin only. ONLY code.",
+      "expected_stdout": "408\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_sanic_01",
+      "kind": "sanic_middleware_gates",
+      "prompt": "Write Python that prints len('gates: add_middleware'). Sanic. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_sanic_02",
+      "kind": "sanic_middleware_gates",
+      "prompt": "t='gates: add_middleware'\nprint(t.count('gates'))\n# Sanic gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_sanic_03",
+      "kind": "sanic_middleware_gates",
+      "prompt": "Write Python that prints 409. Sanic gates: add_middleware is middleware only. ONLY code.",
+      "expected_stdout": "409\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_starlt_01",
+      "kind": "starlette_middleware_gates",
+      "prompt": "Write Python that prints len('gates: BaseHTTPMiddleware'). Starlette. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_starlt_02",
+      "kind": "starlette_middleware_gates",
+      "prompt": "t='gates: BaseHTTPMiddleware'\nprint(t.count('gates'))\n# Starlette gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_starlt_03",
+      "kind": "starlette_middleware_gates",
+      "prompt": "Write Python that prints 410. Starlette gates: BaseHTTPMiddleware is middleware only. ONLY code.",
+      "expected_stdout": "410\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_sidekq_01",
+      "kind": "sidekiq_middleware_gates",
+      "prompt": "Write Python that prints len('gates: ServerMiddleware'). Sidekiq. ONLY code.",
+      "expected_stdout": "23\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_sidekq_02",
+      "kind": "sidekiq_middleware_gates",
+      "prompt": "t='gates: ServerMiddleware'\nprint(t.count('gates'))\n# Sidekiq gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_sidekq_03",
+      "kind": "sidekiq_middleware_gates",
+      "prompt": "Write Python that prints 411. Sidekiq gates: ServerMiddleware is middleware only. ONLY code.",
+      "expected_stdout": "411\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_drama_01",
+      "kind": "dramatiq_actor_gates",
+      "prompt": "Write Python that prints len('gates: actor.broker'). Dramatiq. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_drama_02",
+      "kind": "dramatiq_actor_gates",
+      "prompt": "t='gates: actor.broker'\nprint(t.count('gates'))\n# Dramatiq gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_drama_03",
+      "kind": "dramatiq_actor_gates",
+      "prompt": "Write Python that prints 412. Dramatiq gates: actor.broker is actor only. ONLY code.",
+      "expected_stdout": "412\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_dropwz_01",
+      "kind": "dropwizard_filter_gates",
+      "prompt": "Write Python that prints len('gates: ContainerRequestFilter'). Dropwizard. ONLY code.",
+      "expected_stdout": "29\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_dropwz_02",
+      "kind": "dropwizard_filter_gates",
+      "prompt": "t='gates: ContainerRequestFilter'\nprint(t.count('gates'))\n# Dropwizard gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_dropwz_03",
+      "kind": "dropwizard_filter_gates",
+      "prompt": "Write Python that prints 413. Dropwizard gates: ContainerRequestFilter is filter only. ONLY code.",
+      "expected_stdout": "413\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_ktor_01",
+      "kind": "ktor_plugin_gates",
+      "prompt": "Write Python that prints len('gates: createApplicationPlugin'). Ktor. ONLY code.",
+      "expected_stdout": "30\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_ktor_02",
+      "kind": "ktor_plugin_gates",
+      "prompt": "t='gates: createApplicationPlugin'\nprint(t.count('gates'))\n# Ktor gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_ktor_03",
+      "kind": "ktor_plugin_gates",
+      "prompt": "Write Python that prints 414. Ktor gates: createApplicationPlugin is plugin only. ONLY code.",
+      "expected_stdout": "414\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_ctrl_01",
+      "kind": "base_python_control_r27",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r27v_ctrl_02",
+      "kind": "base_python_control_r27",
+      "prompt": "print(sum(range(4))) # plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}

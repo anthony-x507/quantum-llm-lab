@@ -1,0 +1,50 @@
+{
+  "name": "codigo_vivo_tip_r27_20260924_152406",
+  "kind": "tip_moe_verifier_polish_r27",
+  "branch": "frontier/tip-hardneg-r27",
+  "base_tip": "88287bc",
+  "base_tip_full": "88287bc3d239627235502591f91bfff3cc0f9da7",
+  "when_et": "2026-09-24T15:24:06-04:00",
+  "machine": "Mac-111 (074c6626-0440-4817-9829-6bae77c578d6)",
+  "scores": {
+    "router_before": "6/52",
+    "router_after": "52/52",
+    "rise_pp": 88.46,
+    "verifier_alone": "44/44",
+    "verifier_unified": "44/44",
+    "mixed": 1.0,
+    "r7_r14": "52/52 x8",
+    "lp_router": "64/64",
+    "smoke": "12/12",
+    "pillars": "37/37",
+    "hardneg_smoke": "18/18",
+    "ent_never_on_python": true
+  },
+  "families": [
+    "sequelize_hook_gates",
+    "mongoose_middleware_gates",
+    "actix_middleware_gates",
+    "rocket_fairing_gates",
+    "diesel_hook_gates",
+    "gorm_callback_gates",
+    "fastify_hook_gates",
+    "hapi_plugin_gates",
+    "sanic_middleware_gates",
+    "starlette_middleware_gates",
+    "sidekiq_middleware_gates",
+    "dramatiq_actor_gates",
+    "dropwizard_filter_gates",
+    "ktor_plugin_gates"
+  ],
+  "floors_held": true,
+  "not_folded": true,
+  "lora_adapter_ro": true,
+  "artifacts_sha16": {
+    "hardneg_r27_mixed_router.json": "f067f5d3267f9811",
+    "hardneg_r27_python_items.json": "52fa22365b2736fc",
+    "frontier_moe_dual_lane_hardneg_r27.json": "b7f0aace9a0f64b9",
+    "frontier_moe_verifier_hardneg_r27.json": "87bd2ae293693af7",
+    "frontier_moe_verifier_mixed_unified.json": "fcf6374d25a95b58"
+  },
+  "feat_sha": "PENDING"
+}
