@@ -95,5 +95,6 @@
     "Classical heuristic router + python -I verifier only",
     "Side-only LP expand; NOT folded into tip"
   ],
-  "fold": false
+  "fold": false,
+  "feat_sha": "5890883"
 }

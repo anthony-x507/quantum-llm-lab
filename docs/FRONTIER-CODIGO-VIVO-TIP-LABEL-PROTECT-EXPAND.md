@@ -2,7 +2,7 @@
 
 **Status:** **SIDE ONLY — NOT FOLDED** into `frontier/codigo-vivo-tip`  
 **Branch:** `frontier/tip-label-protect-expand`  
-**Base tip:** `8beae21` (≥`f052420`; post R13 fold pin)  
+**Base tip:**  · **Feat SHA:** `8beae21` (≥`f052420`; post R13 fold pin)  
 **When:** 2026-09-24 ~14:47–14:50 ET · Mac-111 (`074c6626-…`)  
 **Claim:** NO quantum advantage. Expand + reinforce fall/super **domain label** protect coverage; tip vis stays BASE.
 
