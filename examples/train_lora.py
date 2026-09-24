@@ -80,6 +80,9 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
                 "bell_hycx",     # H + Y(q1) + CX
                 "bell_ryhcx",    # RY + H + CX
                 "bell_hcx_x",    # H + CX + X(q1)
+                "bell_xhcxz",    # X + H + CX + Z(q1) hardneg-near
+                "bell_zxhcx",    # Z + X + H + CX
+                "bell_yhcx_x",   # Y + H + CX + X(q1)
             ]
             if not tpl:
                 tpl = bell_map.get(str(bell)) or pool[seed % len(pool)]
@@ -102,6 +105,9 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
                 "bell_hycx": [["h", 0], ["y", 1], ["cx", 0, 1]],
                 "bell_ryhcx": [["ry", 0, 0.35], ["h", 0], ["cx", 0, 1]],
                 "bell_hcx_x": [["h", 0], ["cx", 0, 1], ["x", 1]],
+                "bell_xhcxz": [["x", 0], ["h", 0], ["cx", 0, 1], ["z", 1]],
+                "bell_zxhcx": [["z", 0], ["x", 0], ["h", 0], ["cx", 0, 1]],
+                "bell_yhcx_x": [["y", 0], ["h", 0], ["cx", 0, 1], ["x", 1]],
             }
             if tpl not in gates_by_tpl:
                 tpl = "bell_hcx"
@@ -130,6 +136,10 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
             "sep_hz",    # H Z
             "sep_yz",    # Y Z
             "sep_ryx",   # RY X
+            "sep_yy",    # Y Y hardneg product
+            "sep_zx",    # Z X
+            "sep_ryz",   # RY Z
+            "sep_xry",   # X RY
         ]
         if not tpl:
             tpl = sep_pool[seed % len(sep_pool)]
@@ -149,6 +159,10 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
             "sep_hz": [["h", 0], ["z", 1]],
             "sep_yz": [["y", 0], ["z", 1]],
             "sep_ryx": [["ry", 0, 0.45], ["x", 1]],
+            "sep_yy": [["y", 0], ["y", 1]],
+            "sep_zx": [["z", 0], ["x", 1]],
+            "sep_ryz": [["ry", 0, 0.4], ["z", 1]],
+            "sep_xry": [["x", 0], ["ry", 1, 0.4]],
         }
         if tpl not in gates_by_tpl:
             tpl = "sep_hh"
@@ -356,16 +370,24 @@ def build_chat_dataset(rows: list[dict[str, Any]], out_jsonl: Path) -> int:
 def _stage_hf_dataset_dir(dataset_path: Path) -> Path:
     """mlx_vlm.lora uses datasets.load_dataset(path); a bare .jsonl fails.
     A directory containing train.jsonl loads correctly.
+
+    IMPORTANT: only train.jsonl may live in the staged dir — stray *.jsonl
+    (e.g. 'train 2.jsonl') with a different schema cause HF CastError.
     """
     dataset_path = Path(dataset_path)
     if dataset_path.is_dir() and (dataset_path / "train.jsonl").exists():
+        # purge stray jsonl siblings that poison schema cast
+        for junk in dataset_path.glob("*.jsonl"):
+            if junk.name != "train.jsonl":
+                junk.unlink(missing_ok=True)
         return dataset_path
     if dataset_path.is_file() and dataset_path.suffix == ".jsonl":
         staged = dataset_path.parent / "lora_dataset_hf"
         staged.mkdir(parents=True, exist_ok=True)
+        # purge any prior siblings before linking
+        for junk in staged.glob("*.jsonl"):
+            junk.unlink(missing_ok=True)
         dest = staged / "train.jsonl"
-        if dest.exists() or dest.is_symlink():
-            dest.unlink()
         try:
             dest.symlink_to(dataset_path.resolve())
         except OSError:

@@ -145,13 +145,16 @@ def build_chat_dataset(rows: list[dict[str, Any]], out_jsonl: Path) -> int:
 def _stage_hf_dataset_dir(dataset_path: Path) -> Path:
     dataset_path = Path(dataset_path)
     if dataset_path.is_dir() and (dataset_path / "train.jsonl").exists():
+        for junk in dataset_path.glob("*.jsonl"):
+            if junk.name != "train.jsonl":
+                junk.unlink(missing_ok=True)
         return dataset_path
     if dataset_path.is_file() and dataset_path.suffix == ".jsonl":
         staged = dataset_path.parent / "lora_dataset_classical_hf"
         staged.mkdir(parents=True, exist_ok=True)
+        for junk in staged.glob("*.jsonl"):
+            junk.unlink(missing_ok=True)
         dest = staged / "train.jsonl"
-        if dest.exists() or dest.is_symlink():
-            dest.unlink()
         try:
             dest.symlink_to(dataset_path.resolve())
         except OSError:
@@ -303,13 +306,16 @@ def main() -> int:
     if args.skip_train:
         return 0
 
+    # Stage into classical-only HF dir so shared lora_dataset_hf (quantum/ent)
+    # cannot contaminate schema (CastError on subdomain vs label).
+    staged = _stage_hf_dataset_dir(args.dataset_jsonl)
     # Prefer shared mlx runner from train_lora (same flags as quantum lane)
     sys.path.insert(0, str(ROOT / "examples"))
     from train_lora import run_mlx_vlm_lora as shared_lora  # noqa: WPS433
 
     rc = shared_lora(
         model=args.model,
-        dataset_path=args.dataset_jsonl,
+        dataset_path=staged,
         out_dir=args.out,
         rank=args.rank,
         alpha=args.alpha,

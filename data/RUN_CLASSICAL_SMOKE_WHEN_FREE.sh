@@ -1,4 +1,6 @@
 #!/bin/bash
+# LOCK: after smoke, eval BASE vs data/lora_adapter_classical only (own-delta). No Gemini/GPT.
+
 # Wait until GPU free, then 1ep classical smoke → data/lora_adapter_classical/
 # NEVER writes to data/lora_adapter/ (quantum READ-ONLY).
 set -euo pipefail
@@ -9,9 +11,26 @@ MODEL=mlx-community/Qwen3-VL-8B-Thinking-4bit
 echo "CLASSICAL_SMOKE_WAIT start=$(date) pid=$$" | tee "$LOG"
 
 busy() {
-  pgrep -f 'mlx_vlm.lora|examples/train_lora.py|examples/train_lora_classical.py' >/dev/null \
-    || pgrep -f 'examples/eval_classical.py|examples/eval_lora.py|bench_codigo_vivo|bench_codigo' >/dev/null \
-    || pgrep -f 'examples/amplitude_embed' >/dev/null
+  # Real GPU owners: Python interpreter running train/eval.
+  # macOS `comm` is a truncated path — match on full command= instead.
+  # Exclude bash/zsh/SCREEN waiters and agent shells.
+  ps ax -o pid=,command= 2>/dev/null | awk '
+    BEGIN { found=0 }
+    {
+      line=$0
+      if (line ~ /\/bin\/(ba)?sh / || line ~ /\/bin\/zsh / || line ~ /SCREEN / || line ~ /^[[:space:]]*[0-9]+[[:space:]]+login /) next
+      if (line !~ /\/MacOS\/Python / && line !~ /\/python[0-9.]* / && line !~ /\/python /) next
+      if (line ~ /examples\/train_lora\.py/) found=1
+      else if (line ~ /mlx_vlm\.lora/) found=1
+      else if (line ~ /train_lora_classical/) found=1
+      else if (line ~ /eval_classical\.py/) found=1
+      else if (line ~ /eval_lora\.py/) found=1
+      else if (line ~ /bench_codigo/) found=1
+      else if (line ~ /amplitude_embed/) found=1
+      else if (line ~ /video_temporal_prototype\.py/ && line ~ /--(train-f1|vlm|ablate|eval-compare)/) found=1
+    }
+    END { exit found ? 0 : 1 }
+  '
 }
 
 for i in $(seq 1 360); do
@@ -55,3 +74,5 @@ if [[ $EC -eq 0 ]] && ! busy; then
     --out data/BENCHMARK_CLASSICAL.json \
     2>&1 | tee -a data/eval_classical_smoke.log || true
 fi
+
+# CONTINUOUS SELF-IMPROVE (Anthony 04:38): after smoke+own-delta eval, if match rises vs base → extend epochs or harden hard cases; if falls → diagnose subdomain fails and regenerate/fix — never exit "done forever".

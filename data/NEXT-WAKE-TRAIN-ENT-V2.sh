@@ -2,7 +2,16 @@
 # After current ent train+eval finishes: archive adapter, train on v2 enriched set.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-if pgrep -f 'mlx_vlm.lora|examples/train_lora.py' >/dev/null; then
+if ps ax -o pid=,command= 2>/dev/null | awk '
+  BEGIN { found=0 }
+  {
+    line=$0
+    if (line ~ /\/bin\/(ba)?sh / || line ~ /\/bin\/zsh / || line ~ /SCREEN /) next
+    if (line !~ /\/MacOS\/Python / && line !~ /\/python[0-9.]* / && line !~ /\/python /) next
+    if (line ~ /examples\/train_lora\.py/ || line ~ /mlx_vlm\.lora/) found=1
+  }
+  END { exit found ? 0 : 1 }
+'; then
   echo "GPU train still running — abort"; exit 1
 fi
 TS=$(date +%Y%m%d-%H%M%S)

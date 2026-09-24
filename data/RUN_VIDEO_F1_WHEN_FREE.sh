@@ -9,9 +9,26 @@ MODEL=mlx-community/Qwen3-VL-8B-Thinking-4bit
 echo "VIDEO_F1_WAIT start=$(date) pid=$$" | tee "$LOG"
 
 busy() {
-  pgrep -f 'mlx_vlm.lora|examples/train_lora.py|examples/train_lora_classical.py' >/dev/null \
-    || pgrep -f 'examples/eval_classical.py|examples/eval_lora.py|bench_codigo_vivo' >/dev/null \
-    || pgrep -f 'video_temporal_prototype.py --train-f1|video_temporal_prototype.py --vlm|video_temporal_prototype.py --ablate|video_temporal_prototype.py --eval-compare' >/dev/null
+  # Real GPU owners: Python interpreter running train/eval.
+  # macOS `comm` is a truncated path — match on full command= instead.
+  # Exclude bash/zsh/SCREEN waiters and agent shells.
+  ps ax -o pid=,command= 2>/dev/null | awk '
+    BEGIN { found=0 }
+    {
+      line=$0
+      if (line ~ /\/bin\/(ba)?sh / || line ~ /\/bin\/zsh / || line ~ /SCREEN / || line ~ /^[[:space:]]*[0-9]+[[:space:]]+login /) next
+      if (line !~ /\/MacOS\/Python / && line !~ /\/python[0-9.]* / && line !~ /\/python /) next
+      if (line ~ /examples\/train_lora\.py/) found=1
+      else if (line ~ /mlx_vlm\.lora/) found=1
+      else if (line ~ /train_lora_classical/) found=1
+      else if (line ~ /eval_classical\.py/) found=1
+      else if (line ~ /eval_lora\.py/) found=1
+      else if (line ~ /bench_codigo/) found=1
+      else if (line ~ /amplitude_embed/) found=1
+      else if (line ~ /video_temporal_prototype\.py/ && line ~ /--(train-f1|vlm|ablate|eval-compare)/) found=1
+    }
+    END { exit found ? 0 : 1 }
+  '
 }
 
 for i in $(seq 1 480); do
