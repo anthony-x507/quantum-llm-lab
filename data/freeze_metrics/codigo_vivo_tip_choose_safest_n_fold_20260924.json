@@ -5,7 +5,7 @@
   "base_tip_sha": "422a9e36c1bbe4e3a1aa8fc0f4b4b47295c3638c",
   "source_sha": "fecca864dfc06130bfedf5ecc29332bd7ac061d2",
   "source_feat_sha": "d3bf16455348c366969fdaa0cf7a0af03163e956",
-  "fold_commit_sha": "PENDING",
+  "fold_commit_sha": "6a8163ffd8bd51b73bef49eb86abe99bc84ff5c3",
   "n_before": 40,
   "n_after": 80,
   "queries_before": 2850,
@@ -19,5 +19,6 @@
   "lp": "64/64",
   "pillars": "37/37",
   "circ": "5/5",
-  "ro_mtime_unchanged": true
+  "ro_mtime_unchanged": true,
+  "fold_feat_sha": "6a8163ffd8bd51b73bef49eb86abe99bc84ff5c3"
 }

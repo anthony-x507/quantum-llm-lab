@@ -3,6 +3,7 @@
 **Branch:** `frontier/tip-choose-safest-n` → **FOLDED** into `frontier/codigo-vivo-tip`  
 **Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-CHOOSE-SAFEST-N.md`  
 **Freeze:** `codigo_vivo_tip_choose_safest_n_fold_100pct_20260924_151818`
+**Fold SHA:** `6a8163f`
 
 | Surface | Score |
 |---------|-------|
@@ -14,7 +15,7 @@
 
 **CPU re-smoke after fold:** physics+choose_safest **100%** @ n80; R15/R14/LP hardneg re-smoke held; mixed **1.0**; pillars/circ/far/track/DZ/mid/TTI cited retained; freezes retained incl. r15 + r14 + label_protect_expand_fold + pillars + circ + future_r3 + side choose_safest_n. Adapters RO. R16+ / tti-cold not folded.
 
-**Method:** cherry-pick `d3bf164` onto tip `422a9e3` → fold freeze `codigo_vivo_tip_choose_safest_n_fold_100pct_20260924_151818`; EVAL/probes/harness → side n=80 retagged tip; rsync side frames.
+**Method:** cherry-pick `d3bf164` onto tip `422a9e3` → `6a8163f`; fold freeze `codigo_vivo_tip_choose_safest_n_fold_100pct_20260924_151818`; EVAL/probes/harness → side n=80 retagged tip; rsync side frames.
 
 **Not folded:** R16 @ f3ccb0b → tti-cold @ c97e89a → R17…R25.
 

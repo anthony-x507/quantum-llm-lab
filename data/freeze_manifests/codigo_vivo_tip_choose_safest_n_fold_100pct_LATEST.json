@@ -15,10 +15,10 @@
   "source_sha_short": "fecca86",
   "source_feat_sha": "d3bf16455348c366969fdaa0cf7a0af03163e956",
   "source_feat_sha_short": "d3bf164",
-  "fold_feat_sha": "PENDING",
-  "fold_feat_sha_short": "PENDING",
-  "fold_commit_sha": "PENDING",
-  "fold_commit_sha_short": "PENDING",
+  "fold_feat_sha": "6a8163ffd8bd51b73bef49eb86abe99bc84ff5c3",
+  "fold_feat_sha_short": "6a8163f",
+  "fold_commit_sha": "6a8163ffd8bd51b73bef49eb86abe99bc84ff5c3",
+  "fold_commit_sha_short": "6a8163f",
   "method": "cherry-pick d3bf164 onto 422a9e3; conflicts EVAL/probes/harness \u2192 theirs (n=80) retagged tip; rsync side train/eval frames; re-smoke CPU eval+contam; R15/R14/LP hardneg re-smoke; router non-touch floors cited",
   "metrics": {
     "collision_physics_overall_pct": 100.0,
@@ -83,5 +83,7 @@
   "fold_into_tip": true,
   "r16_plus_folded": false,
   "tti_cold_folded": false,
-  "choose_n_folded": true
+  "choose_n_folded": true,
+  "git_sha": "6a8163ffd8bd51b73bef49eb86abe99bc84ff5c3",
+  "git_sha_short": "6a8163f"
 }

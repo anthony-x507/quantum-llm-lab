@@ -7,7 +7,7 @@
 **When (side):** 2026-09-24 ~14:27 ET · **Fold:** 2026-09-24 15:18:18 ET  
 **Side freeze:** `codigo_vivo_tip_choose_safest_n_100pct_20260924_142733`  
 **Fold freeze:** `codigo_vivo_tip_choose_safest_n_fold_100pct_20260924_151818`  
-**Fold feat SHA:** `PENDING` (filled in pin commit)  
+**Fold feat SHA:** `6a8163f` (`6a8163ffd8bd51b73bef49eb86abe99bc84ff5c3`)  
 **Feat SHA (side):** `d3bf164` / pin `fecca86`  
 **Scope:** Folded into tip-cv. R16+ / tti-cold **not** folded.
 
