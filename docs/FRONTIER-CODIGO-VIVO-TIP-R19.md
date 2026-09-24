@@ -111,6 +111,6 @@ Freeze: `codigo_vivo_tip_r19_100pct_20260924_154857`
 - `data/freeze_manifests/tip_moe_verifier_polish_r19_100pct_20260924_144642.json` (side polish retained)
 - `docs/FRONTIER-CODIGO-VIVO-TIP-R19.md` (this file)
 
-Fold SHA: `PENDING` · Base tip: `9c320cb` · Side: `864f5b2` / `f20e327`
+Fold SHA: `5fd8642` · Base tip: `9c320cb` · Side: `864f5b2` / `f20e327`
 
 R20+ not folded. Tip vis stays BASE. RO `data/lora_adapter/`.
