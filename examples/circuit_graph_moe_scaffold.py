@@ -189,9 +189,14 @@ def visual_motion_cue(scene_dir) -> dict:
     Stage 3: single-hue spatial split or chromatic connected components
     (occlusion / same-tint multi-object / approach geometry).
     Stage 4 (motion-r3 reinforce): on corr_ambiguous only — tracking continuity
-    densify (every-frame centroids + gap fill) then re-apply frozen honesty;
+    densify (every-frame centroids + gap fill, ≤16) then re-apply frozen honesty;
     if still unknown, approach/recede relative-range (drel≥0.18) ⇒ independent.
-    Never overrides a known Stage 1–3 cue. Never invents locked-distance labels.
+    Stage 5 (motion-r4 reinforce): (a) on still-corr_ambiguous only — per-axis
+    velocity correlation under locked distance using the SAME |0.75|/|0.45|
+    honesty bands (axis_locked / axis_weak), then full-window densify retry;
+    (b) on color_track_fail singleton only — one moving chroma blob with no
+    second GT-free partner ⇒ independent (singleton_mover). Never overrides a
+    known Stage 1–4 cue. Never softens |vel_corr| bands to invent correlated.
 
     Honesty rules UNCHANGED: dist_cv≥0.10⇒independent; locked dist + high
     |vel_corr|⇒correlated; else unknown. Never reads meta/GT. Never invents
@@ -470,8 +475,8 @@ def visual_motion_cue(scene_dir) -> dict:
                 nxt = out[i]
         return [p for p in out if p is not None]
 
-    def _densify_hues(chosen, min_px: int = 4, min_pts: int = 4):
-        """Re-track the same hue pair on denser frames with gap fill (stage 4)."""
+    def _densify_hues(chosen, min_px: int = 4, min_pts: int = 4, use_frames=None):
+        """Re-track the same hue pair on denser frames with gap fill (stage 4/5)."""
         if len(chosen) != 2:
             return None
         # Only real mask names (not green_a / comp0 splits).
@@ -479,7 +484,10 @@ def visual_motion_cue(scene_dir) -> dict:
         if any(h not in mask_names for h in chosen):
             return None
         series = {h: [] for h in chosen}
-        use = frames_dense if len(frames_dense) >= 4 else frames
+        if use_frames is not None:
+            use = use_frames
+        else:
+            use = frames_dense if len(frames_dense) >= 4 else frames
         for fp in use:
             arr = np.asarray(Image.open(fp).convert("RGB"), dtype=np.float32)
             ms = _extended_masks(arr)
@@ -548,6 +556,163 @@ def visual_motion_cue(scene_dir) -> dict:
                 }
         return None
 
+    def _axis_corr(a, b):
+        v0 = np.diff(a, axis=0)
+        v1 = np.diff(b, axis=0)
+        def _c(x, y):
+            x = np.asarray(x, dtype=float).ravel()
+            y = np.asarray(y, dtype=float).ravel()
+            if x.std() < 1e-6 or y.std() < 1e-6:
+                return 0.0
+            c = float(np.corrcoef(x, y)[0, 1])
+            return 0.0 if c != c else c
+        return _c(v0[:, 0], v1[:, 0]), _c(v0[:, 1], v1[:, 1])
+
+    def _stage5_axis_honesty(chosen, series, track_mode: str, stage_from: int, precomputed=None):
+        """Axis-wise honesty on corr_ambiguous leftovers; frozen |0.75|/|0.45| bands.
+
+        Flat vel_corr mid-band can be a cross-axis artifact. Same thresholds as
+        `_decide`, applied per-axis under locked distance — never softens bands.
+        """
+        if precomputed is not None:
+            a, b = precomputed
+        else:
+            if len(chosen) != 2:
+                return None
+            dense = _densify_hues(chosen)
+            if dense is not None:
+                a, b = dense
+            else:
+                n = min(len(series[0]), len(series[1]))
+                if n < 4:
+                    return None
+                a = np.asarray(series[0][:n], dtype=float)
+                b = np.asarray(series[1][:n], dtype=float)
+        cue, c, dist_cv = _decide(a, b)
+        drel = _dist_rel(a, b)
+        cx, cy = _axis_corr(a, b)
+        axis_max = max(abs(cx), abs(cy))
+        out = {
+            "cue": cue,
+            "vel_corr": round(c, 3),
+            "vel_corr_x": round(cx, 3),
+            "vel_corr_y": round(cy, 3),
+            "dist_cv": round(dist_cv, 3),
+            "dist_rel": round(drel, 3),
+            "n": int(len(a)),
+            "hues_chosen": chosen,
+            "track_mode": "axis_honesty",
+            "stage": 5,
+            "stage_from": stage_from,
+            "prior_track_mode": track_mode,
+            **honesty,
+        }
+        # Prefer axis reading under locked distance before approach/recede.
+        if dist_cv < 0.08 and axis_max > 0.75:
+            out["cue"] = "correlated"
+            out["reason"] = None
+            out["track_mode"] = "axis_locked"
+            out.pop("reason", None)
+            return out
+        if dist_cv < 0.08 and axis_max < 0.45:
+            out["cue"] = "independent"
+            out["reason"] = None
+            out["track_mode"] = "axis_weak"
+            out.pop("reason", None)
+            return out
+        if cue != "unknown":
+            return out
+        if drel >= 0.18:
+            out["cue"] = "independent"
+            out["reason"] = None
+            out["track_mode"] = "approach_recede"
+            out.pop("reason", None)
+            return out
+        # Full-window densify retry with the same axis bands (still stage 5).
+        use = frames_all[::1][:36]
+        if len(use) >= 8 and len(chosen) == 2:
+            dense_full = _densify_hues(chosen, use_frames=use, min_pts=4)
+            if dense_full is not None:
+                af, bf = dense_full
+                cue_f, c_f, dist_cv_f = _decide(af, bf)
+                drel_f = _dist_rel(af, bf)
+                cx_f, cy_f = _axis_corr(af, bf)
+                axis_max_f = max(abs(cx_f), abs(cy_f))
+                out_f = {
+                    "cue": cue_f,
+                    "vel_corr": round(c_f, 3),
+                    "vel_corr_x": round(cx_f, 3),
+                    "vel_corr_y": round(cy_f, 3),
+                    "dist_cv": round(dist_cv_f, 3),
+                    "dist_rel": round(drel_f, 3),
+                    "n": int(len(af)),
+                    "hues_chosen": chosen,
+                    "track_mode": "axis_honesty_full",
+                    "stage": 5,
+                    "stage_from": stage_from,
+                    "prior_track_mode": track_mode,
+                    **honesty,
+                }
+                if dist_cv_f < 0.08 and axis_max_f > 0.75:
+                    out_f["cue"] = "correlated"
+                    out_f["track_mode"] = "axis_locked_full"
+                    return out_f
+                if dist_cv_f < 0.08 and axis_max_f < 0.45:
+                    out_f["cue"] = "independent"
+                    out_f["track_mode"] = "axis_weak_full"
+                    return out_f
+                if cue_f != "unknown":
+                    return out_f
+                if drel_f >= 0.18:
+                    out_f["cue"] = "independent"
+                    out_f["track_mode"] = "approach_recede_full"
+                    return out_f
+                out = out_f
+        out["reason"] = "corr_ambiguous"
+        return out
+
+    def _stage5_singleton(hard_chosen, hard_mass):
+        """One moving chroma blob, no second GT-free partner ⇒ independent."""
+        if len(hard_chosen) != 1:
+            return None
+        hue = hard_chosen[0]
+        # Require real mass on that hue across frames.
+        if float(hard_mass.get(hue, 0.0)) < 50.0:
+            return None
+        cents = []
+        for fp in (frames_dense if len(frames_dense) >= 3 else frames):
+            arr = np.asarray(Image.open(fp).convert("RGB"), dtype=np.float32)
+            m = _extended_masks(arr).get(hue)
+            if m is None:
+                cents.append(None)
+                continue
+            cents.append(_cent(m, min_px=4))
+        pts = [p for p in cents if p is not None]
+        if len(pts) < 3:
+            return None
+        arrp = np.asarray(pts, dtype=float)
+        span = float(np.linalg.norm(arrp.max(axis=0) - arrp.min(axis=0)))
+        # Must actually move (not a static stain).
+        if span < 6.0:
+            return None
+        path_len = float(np.linalg.norm(np.diff(arrp, axis=0), axis=1).sum())
+        if path_len < 8.0:
+            return None
+        return {
+            "cue": "independent",
+            "vel_corr": None,
+            "dist_cv": None,
+            "dist_rel": None,
+            "n": int(len(pts)),
+            "hues_chosen": [hue],
+            "track_mode": "singleton_mover",
+            "stage": 5,
+            "stage_from": 0,
+            "motion_span": round(span, 3),
+            "path_len": round(path_len, 3),
+            **honesty,
+        }
+
     def _pack(chosen, series, track_mode: str, stage: int):
         n = min(len(series[0]), len(series[1]))
         a = np.asarray(series[0][:n], dtype=float)
@@ -568,6 +733,14 @@ def visual_motion_cue(scene_dir) -> dict:
             refined = _stage4_reinforce(chosen, series, track_mode, stage)
             if refined is not None and refined.get("cue") != "unknown":
                 return refined
+            # Stage 5a: axis-wise honesty on still-ambiguous — never override known.
+            prior_mode = (refined or {}).get("track_mode", track_mode)
+            prior_stage = (refined or {}).get("stage", stage)
+            axis = _stage5_axis_honesty(chosen, series, prior_mode, stage_from=prior_stage)
+            if axis is not None and axis.get("cue") != "unknown":
+                return axis
+            if axis is not None:
+                return axis
             if refined is not None:
                 return refined
             out["reason"] = "corr_ambiguous"
@@ -602,6 +775,11 @@ def visual_motion_cue(scene_dir) -> dict:
     pair = _component_pair()
     if pair is not None:
         return _pack(["comp0", "comp1"], list(pair), "chroma_components", 3)
+
+    # Stage 5b: singleton mover on color_track_fail only.
+    single = _stage5_singleton(hard_fail_chosen, hard_fail_mass)
+    if single is not None:
+        return single
 
     return {
         "cue": "unknown",

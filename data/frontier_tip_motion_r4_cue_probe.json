@@ -1,0 +1,411 @@
+{
+  "frontier": "tip-motion-r4",
+  "written": "2026-09-24 13:49:53 ET",
+  "branch": "frontier/tip-motion-r4",
+  "tip_base": "6624df1",
+  "claims": [
+    "NO quantum-advantage claims",
+    "GT-free RGB motion cue only",
+    "motion-r3 honesty bands retained (|vel_corr| 0.75/0.45, dist_cv 0.10/0.08)",
+    "stage5 escalate only on corr_ambiguous or color_track_fail singleton",
+    "axis-wise honesty + singleton_mover reinforce"
+  ],
+  "anti_contamination": {
+    "gt_free_all": true,
+    "reads_meta_any": false,
+    "inference_uses_gt": false,
+    "prompt_suffix_unknown_honesty": true,
+    "known_stage1to4_overrides": 0
+  },
+  "n_scenes": 200,
+  "cue_counts": {
+    "correlated": 59,
+    "independent": 141
+  },
+  "reason_counts": {},
+  "track_mode_counts": {
+    "hue_extended": 81,
+    "axis_locked": 2,
+    "hue_hard": 88,
+    "single_hue_split": 13,
+    "continuity_dense": 9,
+    "approach_recede": 4,
+    "singleton_mover": 2,
+    "axis_weak": 1
+  },
+  "stage_counts": {
+    "2": 81,
+    "5": 5,
+    "1": 88,
+    "3": 13,
+    "4": 13
+  },
+  "coverage_known": 1.0,
+  "coverage_before": 0.975,
+  "coverage_delta_pp": 2.5,
+  "special_cases": {
+    "scene_0222": {
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": 0.279,
+      "vel_corr_x": null,
+      "vel_corr_y": null,
+      "dist_cv": 0.02,
+      "dist_rel": null,
+      "n": 10,
+      "hues_chosen": [
+        "red",
+        "blue"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1,
+      "stage_from": null,
+      "gt_free": true,
+      "reads_meta": false,
+      "inference_uses_gt": false
+    },
+    "scene_0075": {
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": null,
+      "vel_corr_x": null,
+      "vel_corr_y": null,
+      "dist_cv": null,
+      "dist_rel": null,
+      "n": 16,
+      "hues_chosen": [
+        "green"
+      ],
+      "track_mode": "singleton_mover",
+      "stage": 5,
+      "stage_from": 0,
+      "gt_free": true,
+      "reads_meta": false,
+      "inference_uses_gt": false
+    },
+    "scene_0140": {
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": null,
+      "vel_corr_x": null,
+      "vel_corr_y": null,
+      "dist_cv": null,
+      "dist_rel": null,
+      "n": 16,
+      "hues_chosen": [
+        "green"
+      ],
+      "track_mode": "singleton_mover",
+      "stage": 5,
+      "stage_from": 0,
+      "gt_free": true,
+      "reads_meta": false,
+      "inference_uses_gt": false
+    },
+    "scene_0002": {
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 0.503,
+      "vel_corr_x": 0.842,
+      "vel_corr_y": -0.442,
+      "dist_cv": 0.042,
+      "dist_rel": 0.135,
+      "n": 16,
+      "hues_chosen": [
+        "green",
+        "blue"
+      ],
+      "track_mode": "axis_locked",
+      "stage": 5,
+      "stage_from": 4,
+      "gt_free": true,
+      "reads_meta": false,
+      "inference_uses_gt": false
+    },
+    "scene_0010": {
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 0.669,
+      "vel_corr_x": 0.921,
+      "vel_corr_y": 0.314,
+      "dist_cv": 0.026,
+      "dist_rel": 0.078,
+      "n": 16,
+      "hues_chosen": [
+        "green",
+        "blue"
+      ],
+      "track_mode": "axis_locked",
+      "stage": 5,
+      "stage_from": 4,
+      "gt_free": true,
+      "reads_meta": false,
+      "inference_uses_gt": false
+    },
+    "scene_0152": {
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": 0.569,
+      "vel_corr_x": 0.277,
+      "vel_corr_y": 0.341,
+      "dist_cv": 0.009,
+      "dist_rel": 0.025,
+      "n": 16,
+      "hues_chosen": [
+        "yellow",
+        "green"
+      ],
+      "track_mode": "axis_weak",
+      "stage": 5,
+      "stage_from": 4,
+      "gt_free": true,
+      "reads_meta": false,
+      "inference_uses_gt": false
+    },
+    "scene_0155": {
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -1.0,
+      "vel_corr_x": null,
+      "vel_corr_y": null,
+      "dist_cv": 0.217,
+      "dist_rel": null,
+      "n": 10,
+      "hues_chosen": [
+        "yellow",
+        "red"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1,
+      "stage_from": null,
+      "gt_free": true,
+      "reads_meta": false,
+      "inference_uses_gt": false
+    },
+    "scene_0157": {
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.985,
+      "vel_corr_x": null,
+      "vel_corr_y": null,
+      "dist_cv": 0.129,
+      "dist_rel": null,
+      "n": 10,
+      "hues_chosen": [
+        "blue",
+        "green"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1,
+      "stage_from": null,
+      "gt_free": true,
+      "reads_meta": false,
+      "inference_uses_gt": false
+    }
+  },
+  "sample_rows": [
+    {
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 1.0,
+      "vel_corr_x": null,
+      "vel_corr_y": null,
+      "dist_cv": 0.0,
+      "dist_rel": null,
+      "n": 9,
+      "hues_chosen": [
+        "soft_red",
+        "brown"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2,
+      "stage_from": null,
+      "id": "scene_0000"
+    },
+    {
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 1.0,
+      "vel_corr_x": null,
+      "vel_corr_y": null,
+      "dist_cv": 0.0,
+      "dist_rel": null,
+      "n": 10,
+      "hues_chosen": [
+        "soft_red",
+        "brown"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2,
+      "stage_from": null,
+      "id": "scene_0001"
+    },
+    {
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 0.503,
+      "vel_corr_x": 0.842,
+      "vel_corr_y": -0.442,
+      "dist_cv": 0.042,
+      "dist_rel": 0.135,
+      "n": 16,
+      "hues_chosen": [
+        "green",
+        "blue"
+      ],
+      "track_mode": "axis_locked",
+      "stage": 5,
+      "stage_from": 4,
+      "id": "scene_0002"
+    },
+    {
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": 0.0,
+      "vel_corr_x": null,
+      "vel_corr_y": null,
+      "dist_cv": 0.339,
+      "dist_rel": null,
+      "n": 10,
+      "hues_chosen": [
+        "brown",
+        "green"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2,
+      "stage_from": null,
+      "id": "scene_0003"
+    },
+    {
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": 0.626,
+      "vel_corr_x": null,
+      "vel_corr_y": null,
+      "dist_cv": 0.211,
+      "dist_rel": null,
+      "n": 10,
+      "hues_chosen": [
+        "red",
+        "yellow"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1,
+      "stage_from": null,
+      "id": "scene_0004"
+    },
+    {
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.703,
+      "vel_corr_x": null,
+      "vel_corr_y": null,
+      "dist_cv": 0.269,
+      "dist_rel": null,
+      "n": 10,
+      "hues_chosen": [
+        "green",
+        "blue"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1,
+      "stage_from": null,
+      "id": "scene_0005"
+    },
+    {
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 1.0,
+      "vel_corr_x": null,
+      "vel_corr_y": null,
+      "dist_cv": 0.0,
+      "dist_rel": null,
+      "n": 10,
+      "hues_chosen": [
+        "soft_red",
+        "brown"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2,
+      "stage_from": null,
+      "id": "scene_0006"
+    },
+    {
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.981,
+      "vel_corr_x": null,
+      "vel_corr_y": null,
+      "dist_cv": 0.136,
+      "dist_rel": null,
+      "n": 10,
+      "hues_chosen": [
+        "green",
+        "yellow"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1,
+      "stage_from": null,
+      "id": "scene_0007"
+    }
+  ],
+  "unknown_rows": [],
+  "rescued_from_r3": [
+    {
+      "id": "scene_0002",
+      "before": "unknown",
+      "after": "correlated",
+      "before_mode": "continuity_dense",
+      "after_mode": "axis_locked",
+      "vel_corr": 0.503,
+      "vel_corr_x": 0.842,
+      "vel_corr_y": -0.442,
+      "dist_cv": 0.042
+    },
+    {
+      "id": "scene_0010",
+      "before": "unknown",
+      "after": "correlated",
+      "before_mode": "continuity_dense",
+      "after_mode": "axis_locked",
+      "vel_corr": 0.669,
+      "vel_corr_x": 0.921,
+      "vel_corr_y": 0.314,
+      "dist_cv": 0.026
+    },
+    {
+      "id": "scene_0075",
+      "before": "unknown",
+      "after": "independent",
+      "before_mode": "hue_hard_fail",
+      "after_mode": "singleton_mover",
+      "vel_corr": null,
+      "vel_corr_x": null,
+      "vel_corr_y": null,
+      "dist_cv": null
+    },
+    {
+      "id": "scene_0140",
+      "before": "unknown",
+      "after": "independent",
+      "before_mode": "hue_hard_fail",
+      "after_mode": "singleton_mover",
+      "vel_corr": null,
+      "vel_corr_x": null,
+      "vel_corr_y": null,
+      "dist_cv": null
+    },
+    {
+      "id": "scene_0152",
+      "before": "unknown",
+      "after": "independent",
+      "before_mode": "continuity_dense",
+      "after_mode": "axis_weak",
+      "vel_corr": 0.569,
+      "vel_corr_x": 0.277,
+      "vel_corr_y": 0.341,
+      "dist_cv": 0.009
+    }
+  ],
+  "elapsed_s": 9.34
+}

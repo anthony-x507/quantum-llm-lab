@@ -1,0 +1,89 @@
+{
+  "schema": "codigo_vivo_tip_motion_r4_100pct",
+  "frozen_at_et": "2026-09-24 13:50:17 ET",
+  "domain": "codigo_vivo_tip_motion_r4",
+  "pct": 100,
+  "band": "100pct",
+  "git_sha": "PENDING",
+  "git_sha_short": "PENDING",
+  "artifact": "data/frontier_tip_motion_r4_cue_probe.json",
+  "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
+  "metrics": {
+    "mixed_d_unified": 1.0,
+    "python": 1.0,
+    "ent": 1.0,
+    "vision": 1.0,
+    "motion_coverage_known": 1.0,
+    "motion_coverage_before": 0.975,
+    "motion_coverage_delta_pp": 2.5,
+    "motion_counts": {
+      "correlated": 59,
+      "independent": 141
+    },
+    "reason_counts": {},
+    "track_mode_counts": {
+      "hue_extended": 81,
+      "axis_locked": 2,
+      "hue_hard": 88,
+      "single_hue_split": 13,
+      "continuity_dense": 9,
+      "approach_recede": 4,
+      "singleton_mover": 2,
+      "axis_weak": 1
+    },
+    "stage_counts": {
+      "2": 81,
+      "5": 5,
+      "1": 88,
+      "3": 13,
+      "4": 13
+    },
+    "scene_0222": "independent",
+    "rescued": [
+      "scene_0002",
+      "scene_0010",
+      "scene_0075",
+      "scene_0140",
+      "scene_0152"
+    ],
+    "wired_to_vlm": true,
+    "gt_leak": false,
+    "prompt_touches_gt": false,
+    "ent_never_on_python": true,
+    "floor_held": true,
+    "floor": 0.9667,
+    "motion_r3_retained": true,
+    "motion_r2_retained": true,
+    "scaffold_motion_retained": true,
+    "r9_router": "52/52",
+    "r9_verifier": "44/44",
+    "collision_physics_pct": 100.0,
+    "collision_n_eval_seqs": 40,
+    "floor_resmoke": "mixed (d) 1.0 @ 2026-09-24 13:50:17 ET; motion 100%; R9 retained"
+  },
+  "floors": {
+    "mixed_d_unified": 0.9667,
+    "held": true,
+    "coverage_freeze_gate": 0.8
+  },
+  "policy": "RO data/lora_adapter/; no merge main; no fold into tip; motion-r3 honesty bands frozen; stage5 escalate only on corr_ambiguous/singleton track-fail; retain motion_r3+r9+collision_n+motion_r2+collision_pred+distance_danger+scaffold_motion; AVOID tip-cv/hardneg-r10/inverse-r2/vision-ground/motion-r3 WTs",
+  "note": "Side branch tip-motion-r4 @ base 6624df1; coverage 97.5%\u2192100% (+2.5pp); rescued scene_0002/0010/0075/0140/0152; mixed d=1.0; freeze gate \u226580% met",
+  "retained_freezes": [
+    "codigo_vivo_tip_platform_100pct_20260924_111435",
+    "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",
+    "codigo_vivo_tip_post_polish_100pct_20260924_123210",
+    "codigo_vivo_tip_r5_100pct_20260924_123727",
+    "codigo_vivo_tip_label_protect_100pct_20260924_124608",
+    "codigo_vivo_tip_r6_100pct_20260924_124951",
+    "codigo_vivo_tip_post_od2_100pct_20260924_125301",
+    "codigo_vivo_tip_r7_100pct_20260924_125600",
+    "codigo_vivo_tip_scaffold_motion_100pct_20260924_130131",
+    "codigo_vivo_tip_r8_100pct_20260924_130950",
+    "codigo_vivo_tip_distance_danger_100pct_20260924_131243",
+    "codigo_vivo_tip_collision_pred_100pct_20260924_131846",
+    "codigo_vivo_tip_motion_r2_100pct_20260924_131537",
+    "codigo_vivo_tip_collision_n_100pct_20260924_132559",
+    "codigo_vivo_tip_r9_100pct_20260924_133405",
+    "codigo_vivo_tip_motion_r3_100pct_20260924_133333"
+  ]
+}
