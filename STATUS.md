@@ -3,6 +3,9 @@
 Ver **[`docs/STATUS.md`](docs/STATUS.md)** (Agent Lab / quantum-llm-lab).  
 Plan SSOT: [`docs/PLAN-MAESTRO-PARTE-1.md`](docs/PLAN-MAESTRO-PARTE-1.md).
 
+## 2026-09-24 — fold tip-scaffold-motion → codigo-vivo-tip
+Rebase `9ddfaed` onto `69655dd` → `7b0c63b` FF. CPU unified **1.0** (re-smoke); motion coverage **44%**; R7 52/52·44/44; LP 43/43·32/32; R1–R6 held; `wired_to_vlm`; freezes retained incl. r7 + post_od2. Freeze `codigo_vivo_tip_scaffold_motion_100pct_20260924_130131`. See SCOREBOARD + TIP-SCAFFOLD-MOTION.
+
 ## 2026-09-24 — tip-scaffold-motion (RGB cue honesty)
 Branch `frontier/tip-scaffold-motion` from tip `f0fe729` (rebase onto tip post-R7). Multi-hue GT-free motion cue + scaffold→VLM meta; coverage↑; mixed (d) **1.0** held; wired_to_vlm. See `docs/FRONTIER-CODIGO-VIVO-TIP-SCAFFOLD-MOTION.md`.
 

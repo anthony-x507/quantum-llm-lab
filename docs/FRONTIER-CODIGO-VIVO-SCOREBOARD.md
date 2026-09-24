@@ -624,6 +624,25 @@ n honest: py=8 ent=16 vis=16 · Δ vs CPU 1.0 = **0.0** · floor held · Mac-111
 Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. Classical present, not routed on CV pillars.  
 **Key honesty:** ent2 still **+1.0**; quantum alone hurts py/vis; dual-lane protects. Platform / mlx_r3 / polish_r4 freezes **retained**.
 
+
+## Scaffold-motion (RGB cue honesty) — FOLDED
+
+**When:** measure ~12:55 ET · fold 2026-09-24 13:01:31 ET · Mac-111 · rebase `9ddfaed` onto `69655dd` → `7b0c63b` FF  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-SCAFFOLD-MOTION.md`  
+**Freeze:** `codigo_vivo_tip_scaffold_motion_100pct_20260924_130131`
+
+| Surface | Result |
+|---------|--------|
+| Mixed (d) unified | **1.0** (py/ent/vis) |
+| Motion known coverage (n=200) | **44%** (73 ind + 15 corr) |
+| `wired_to_vlm` / gt_leak | **true** / **false** |
+| R7 / LP | **52/52·44/44** / **43/43·32/32** |
+| R1–R6 routers | 18/18·22/22·35/35·40/40·44/44·48/48 |
+| pillars / smoke | **26/26** / **12/12** |
+| `ent_never_on_python` | **true** |
+
+**CPU re-smoke after fold:** unified **1.0**; motion probe held; freezes retained incl. r7 + post_od2 + LP + r6 + priors. Adapters RO. **No R8 fold.**
+
 ## Hardneg R5 — FOLDED
 
 **When:** 2026-09-24 12:35:26 ET · Mac-111 · rebase `5dfaf51`/`9a12fbc` onto `b1c7091` → `49d7ccc`+`55bdfb7` FF  

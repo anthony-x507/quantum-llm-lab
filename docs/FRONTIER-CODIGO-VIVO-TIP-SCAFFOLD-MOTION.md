@@ -1,7 +1,9 @@
 # Frontier — tip scaffold→VLM + motion/RGB cue honesty
 
-**Branch:** `frontier/tip-scaffold-motion` (from tip `f0fe729` post-od2)  
-**When:** 2026-09-24 ~12:55 ET · Mac-111 (`074c6626-…`)  
+**Status:** **FOLDED** into `frontier/codigo-vivo-tip` @ `7b0c63b` (2026-09-24 13:01:31 ET)  
+**Branch:** `frontier/tip-scaffold-motion` (rebased `9ddfaed` → `7b0c63b` onto tip post-R7 `69655dd`)  
+**When:** measure ~12:55 ET · fold 2026-09-24 13:01:31 ET · Mac-111 (`074c6626-…`)  
+**Freeze:** `codigo_vivo_tip_scaffold_motion_100pct_20260924_130131`  
 **Claim:** NO quantum advantage. GT-free RGB centroid motion cue + text scaffold → VLM only.
 
 ## LOCK
@@ -10,7 +12,7 @@
 - `wired_to_vlm=true` (`channel=text_scaffold_prefix`); `weight_peft_injection=false`.
 - `ent_never_on_python=true`; `prompt_touches_gt=false`; motion cue **never** reads `meta` labels.
 - `data/lora_adapter/` READ-ONLY. No merge to `main`.
-- Freezes retained: post_od2 `codigo_vivo_tip_post_od2_100pct_20260924_125301` + r6 + LP + priors.
+- Freezes retained: post_od2 + r7 `codigo_vivo_tip_r7_100pct_20260924_125600` + r6 + LP + priors + **this** scaffold_motion freeze.
 
 ## What changed (small reinforce)
 
@@ -60,9 +62,16 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `data/frontier_scaffold_wire_vlm.json`
 - `docs/FRONTIER-CODIGO-VIVO-TIP-SCAFFOLD-MOTION.md` (this file)
 
+## Fold
+
+- Path: rebase `9ddfaed` onto tip `69655dd` → `7b0c63b`, then FF into `frontier/codigo-vivo-tip`.
+- Re-smoke: mixed (d) unified **1.0**; R1–R7 routers+verifiers held; LP **43/43·32/32**; R7 **52/52·44/44**; pillars **26/26**; smoke **12/12**; `wired_to_vlm=true`; `ent_never_on_python=true`; motion coverage **44%** (73 ind + 15 corr / n=200); gt_leak=false.
+- Freezes **retained** (never abandoned): platform / mlx_r3 / post_polish / r5 / label_protect / r6 / post_od2 / r7.
+- Tip freeze: `codigo_vivo_tip_scaffold_motion_100pct_20260924_130131`.
+
 ## What this does NOT do
 
-- No merge to `main` / no tip FF yet.
-- No `lora_adapter` writes.
-- No CloudAgent. Leaves tip-cv and R7 worktrees alone.
+- No merge to `main`.
+- No `lora_adapter` writes (RO mtime held).
+- No CloudAgent. Does **not** fold R8 (still running on side).
 - No quantum-advantage marketing.

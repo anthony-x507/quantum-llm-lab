@@ -1,7 +1,7 @@
 {
   "frontier": "scaffold-wire-vlm",
-  "written": "2026-09-24 12:55:26",
-  "parent_sha": "f0fe729",
+  "written": "2026-09-24 12:58:56",
+  "parent_sha": "7b0c63b",
   "branch": "frontier/scaffold-wire-vlm",
   "wired_to_vlm": true,
   "channel": "text_scaffold_prefix",
@@ -210,7 +210,7 @@
     ]
   },
   "ablation": {
-    "written": "2026-09-24 12:55:24",
+    "written": "2026-09-24 12:58:54",
     "router_method": "heuristic",
     "polish_features": true,
     "n_fixtures": 24,
