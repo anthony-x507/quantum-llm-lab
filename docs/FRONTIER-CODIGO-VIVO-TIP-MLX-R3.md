@@ -86,3 +86,22 @@ Detail: `docs/FRONTIER-SCAFFOLD-WIRE-VLM.md` · scoreboard fold section.
 - No writes under `data/lora_adapter/`.
 - No delete of prior freeze manifests.
 - No quantum-advantage marketing.
+
+
+## Post-freeze fold — tip-hardneg-r4 (does NOT abandon this freeze)
+
+**When:** 2026-09-24 11:31:30 ET · Mac-111 (`074c6626-…`)  
+**Tip after fold FF:** `0dd7b79` (rebase R4 `40f1d7c` onto `4e36548` → `11740a6` + sync)  
+**This freeze SHA `5c67267` / id `codigo_vivo_tip_mlx_r3_100pct_20260924_112131`:** **RETAINED** (not abandoned).  
+**Platform freeze `f0da3e7`:** **RETAINED**.  
+**polish_r4 `40f1d7c`:** **RETAINED**.
+
+| Check | Result |
+|-------|--------|
+| CPU (d) unified re-smoke | **py 1.0 / ent 1.0 / vis 1.0 / overall 1.0** |
+| Smoke pillars / hardneg | **26/26 · 18/18** |
+| R1–R4 routers | **18/18 · 22/22 · 35/35 · 40/40** |
+| `wired_to_vlm` | **true** (`text_scaffold_prefix`) |
+| Floor ≥0.967 | **held at 1.0** |
+| `ent_never_on_python` | **true** |
+

@@ -1,7 +1,7 @@
 # Frontier — Código-vivo tip hardneg R4
 
-**Branch:** `frontier/tip-hardneg-r4` (from tip HEAD; tip occupied by fold)  
-**Base tip:** `e680271` (MLX+R3 freeze consolidate)  
+**Branch:** `frontier/codigo-vivo-tip` (folded from `frontier/tip-hardneg-r4`)  
+**Base tip:** `4e36548` (scaffold-wire-vlm fold) · R4 rebased from `e680271` · polish `40f1d7c` → `11740a6` / sync `0dd7b79`  
 **When:** 2026-09-24 ~11:25–11:35 ET · Mac-111 (`074c6626-…`)  
 **Claim:** NO quantum advantage. Classical heuristic router + `python -I` verifier only.
 
@@ -73,9 +73,18 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `data/freeze_manifests/tip_moe_verifier_polish_r4_100pct_*.json`
 - `docs/FRONTIER-CODIGO-VIVO-TIP-R4.md` (this file)
 
+
+
+## FOLDED into tip
+
+**When:** 2026-09-24 11:31:30 ET · Mac-111 (`074c6626-…`)  
+**Tip after FF:** `0dd7b79` (rebase onto `4e36548` + FF).  
+**Prior freezes retained (not abandoned):** platform `f0da3e7`, MLX+R3 `5c67267` / `codigo_vivo_tip_mlx_r3_…`, polish_r4 `40f1d7c`.  
+**Re-smoke:** mixed (d) **1.0**; R1–R4 routers **18/18 · 22/22 · 35/35 · 40/40**; R3/R4 verifier **28/28 · 32/32**; `wired_to_vlm=true`; `ent_never_on_python=true`.
+
 ## What this does NOT do
 
 - No merge to `main`.
 - No writes under `data/lora_adapter/`.
 - No quantum-advantage marketing.
-- Does not replace tip `frontier/codigo-vivo-tip` (fold-occupied); lives on `frontier/tip-hardneg-r4`.
+- Folded into `frontier/codigo-vivo-tip`; source branch kept for history.
