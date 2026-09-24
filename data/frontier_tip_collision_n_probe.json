@@ -117,5 +117,7 @@
   "freeze_update": true,
   "physics_freeze_held": true,
   "physics_freeze_100pct": true,
-  "base_tip_sha": "763fb8c"
+  "base_tip_sha": "763fb8c",
+  "freeze_sha": "c79ab1a0f99ad6784144f2e6c21771edacb8f59b",
+  "freeze_id": "codigo_vivo_tip_collision_n_100pct_20260924_132559"
 }

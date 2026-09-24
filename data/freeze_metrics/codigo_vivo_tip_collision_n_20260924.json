@@ -12,5 +12,6 @@
   "floor_held": true,
   "adapters_ro": true,
   "freeze_update": true,
-  "freeze_id": "codigo_vivo_tip_collision_n_100pct_20260924_132559"
+  "freeze_id": "codigo_vivo_tip_collision_n_100pct_20260924_132559",
+  "feat_sha": "c79ab1a0f99ad6784144f2e6c21771edacb8f59b"
 }
