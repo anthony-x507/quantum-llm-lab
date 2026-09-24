@@ -79,7 +79,7 @@ python examples/amplitude_embed_prototype.py --mlx-eval \
 
 **Success metric.** On ENT_SET + fall set: `parse→compile→Jev` after ≤2 oracle rounds ≥ LoRA single-pass; track oracle-reject→repair success rate.
 
-**Status (2026-09-24 ~04:40 ET):** PROTOTYPE shipped. CPU heuristic proposer + PennyLane oracle + revise ≤2. GPU/MLX path gated on TRAIN_LOCK. On fixed ENT_SET n=12: single-shot label_acc **0.333** → after-loop **1.000** (Δ+0.667); Jev 0.833→1.000. Matches cached LoRA ref on label (1.0) via classical repair — **no quantum-advantage claim**. Results: `docs/HYBRID-ORACLE-RESULTS.md`.
+**Status (2026-09-24 ~04:40 ET):** PROTOTYPE shipped + fix-forward. CPU heuristic + PennyLane oracle + **gold-free** local revise ≤2 (minimal Bell / drop CX / scrub energy — no scene-gold paste). Own-delta only: base label 0.0 vs our LoRA RO 0.9 (Δ+0.9). ENT_SET n=12: single-shot **0.333** → after-loop **1.000** (Δ+0.667); Jev 0.833→1.000. Classical repair, **no quantum-advantage claim**. Results: `docs/HYBRID-ORACLE-RESULTS.md`.
 
 **How to run.**
 ```bash

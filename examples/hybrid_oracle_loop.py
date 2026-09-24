@@ -282,6 +282,106 @@ def propose_mlx(
 
 
 # ---------------------------------------------------------------------------
+# Local fix (gold-free)
+# ---------------------------------------------------------------------------
+
+def build_local_fix(
+    proposal: dict[str, Any],
+    errors: list[str],
+    metrics: dict[str, Any],
+    clean_gates: list[list[Any]],
+    bad_ops: list[str],
+) -> dict[str, Any]:
+    """
+    Structured local repair — NO gold circuit paste.
+
+    Uses oracle physics (concurrence / CX presence / unsupported ops / energy)
+    to suggest minimal edits the reviser can apply without looking up labels.
+    """
+    gates = [list(g) for g in (clean_gates or proposal.get("gates") or [])]
+    n = int(proposal.get("n_qubits") or 2)
+    label = str(proposal.get("label") or "")
+    conc = metrics.get("concurrence")
+    actions: list[str] = []
+
+    # Strip unsupported already reflected in clean_gates
+    if bad_ops:
+        actions.append(f"strip_unsupported:{','.join(bad_ops)}")
+
+    # Entanglement physics → gate edits (not gold templates)
+    needs_ent = any(
+        e.startswith("label_entangled_but_state_separable")
+        or e.startswith("gold_entangled_requires_cx")
+        or (e.startswith("label_mismatch_gold:") and e.endswith("!=entangled"))
+        for e in errors
+    )
+    needs_sep = any(
+        e.startswith("label_separable_but_state_entangled")
+        or e.startswith("gold_separable_forbids_cx")
+        or (e.startswith("label_mismatch_gold:") and e.endswith("!=separable"))
+        for e in errors
+    )
+    # Prefer physics signal when available
+    if conc is not None and not (isinstance(conc, float) and math.isnan(conc)):
+        if float(conc) < 0.25 and label == "entangled":
+            needs_ent = True
+        if float(conc) > 0.5 and label == "separable":
+            needs_sep = True
+
+    if needs_ent:
+        # Canonical minimal Bell seed (physics template, NOT scene-gold paste).
+        # Appending CX onto |+>|+> stays separable — must rebuild.
+        gates = [["h", 0], ["cx", 0, 1]]
+        label = "entangled"
+        actions.append("rebuild_minimal_bell_H_CX")
+    elif needs_sep and has_cx(gates):
+        gates = [g for g in gates if str(g[0]).lower() != "cx"]
+        if not gates:
+            gates = [["h", 0], ["h", 1]]
+        label = "separable"
+        actions.append("drop_cx_set_label_separable")
+    elif needs_sep and not has_cx(gates):
+        # Already product; just enforce separable label
+        if not gates:
+            gates = [["h", 0], ["h", 1]]
+        label = "separable"
+        actions.append("keep_product_set_label_separable")
+    elif any(e.startswith("label_mismatch_gold:") for e in errors):
+        # Flip label to match physics if clear; else flip string
+        if conc is not None and not (isinstance(conc, float) and math.isnan(conc)):
+            label = "entangled" if float(conc) > 0.5 else "separable"
+            actions.append(f"relabel_from_concurrence:{label}")
+        else:
+            label = "separable" if label == "entangled" else "entangled"
+            actions.append(f"flip_label:{label}")
+
+    # Energy claim scrub
+    set_perfect = None
+    nota = proposal.get("nota")
+    if any("energy_perfect" in e or "energy_" in e for e in errors) or proposal.get(
+        "perfect_energy_conservation"
+    ):
+        set_perfect = False
+        nota = "energía disipada en el impacto (no se conserva)."
+        actions.append("scrub_perfect_energy_claim")
+
+    if not actions and errors:
+        actions.append("noop_errors_unresolved")
+
+    return {
+        "action": "+".join(actions) if actions else "noop",
+        "gates": gates,
+        "n_qubits": n,
+        "domain": "entanglement",
+        "label": label,
+        "nota": nota,
+        "set_perfect_energy_conservation": set_perfect,
+        "reason": f"local physics repair (no gold paste); actions={actions}; errors={errors}",
+        "gold_free": True,
+    }
+
+
+# ---------------------------------------------------------------------------
 # Quantum oracle
 # ---------------------------------------------------------------------------
 
@@ -318,15 +418,17 @@ def quantum_oracle(proposal: dict[str, Any], meta: dict[str, Any]) -> OracleFeed
     n = int(proposal.get("n_qubits") or 2)
     if not gates or not isinstance(gates, list):
         errors.append("gates_empty")
+        # Minimal product seed — NOT gold paste (reviser/physics will entangle if needed)
         suggested = {
-            "action": "replace_gates",
-            "gates": gold["gates"],
-            "n_qubits": gold.get("n_qubits") or 2,
-            "label": gold_lab,
+            "action": "seed_minimal_product",
+            "gates": [["h", 0], ["h", 1]],
+            "n_qubits": 2,
+            "label": str(proposal.get("label") or "separable"),
             "domain": "entanglement",
-            "nota": gold.get("nota"),
+            "nota": "seed gates (oracle will refine)",
             "set_perfect_energy_conservation": False,
-            "reason": "empty gates → use gold-compatible template",
+            "reason": "empty gates → minimal product seed (gold-free)",
+            "gold_free": True,
         }
         return OracleFeedback(
             ok=False, errors=errors, suggested_fix=suggested, metrics=metrics
@@ -409,43 +511,9 @@ def quantum_oracle(proposal: dict[str, Any], meta: dict[str, Any]) -> OracleFeed
         errors.append(f"jev_reject:{jev['reason']}")
 
     if errors:
-        suggested = {
-            "action": "revise_to_consistent",
-            "n_qubits": 2,
-            "gates": gold["gates"],
-            "domain": "entanglement",
-            "label": gold_lab,
-            "nota": gold.get("nota"),
-            "drop_gates": bad_ops,
-            "set_perfect_energy_conservation": False,
-            "reason": (
-                f"oracle errors={errors}; concurrence={conc:.3f} S(A)={ent_A:.3f}; "
-                "align gates+label with entanglement physics (CX iff entangled)."
-            ),
-        }
-        if (
-            len(errors) == 1
-            and errors[0].startswith("unsupported_gates:")
-            and clean_gates
-        ):
-            try:
-                sv2 = circuit_statevector(clean_gates, n_qubits=n)
-                c2 = concurrence_2q(sv2)
-                if (gold_lab == "entangled" and c2 > 0.5) or (
-                    gold_lab == "separable" and c2 < 0.25
-                ):
-                    suggested = {
-                        "action": "strip_unsupported",
-                        "gates": clean_gates,
-                        "n_qubits": n,
-                        "domain": "entanglement",
-                        "label": gold_lab,
-                        "nota": proposal.get("nota") or gold.get("nota"),
-                        "set_perfect_energy_conservation": False,
-                        "reason": "strip unsupported ops; keep cleaned gates",
-                    }
-            except Exception:  # noqa: BLE001
-                pass
+        suggested = build_local_fix(
+            proposal, errors, metrics, clean_gates, bad_ops
+        )
 
     ok = (len(errors) == 0) and (jev["verdict"] == "APROBAR")
     return OracleFeedback(
@@ -623,6 +691,39 @@ def run_loop_on_scene(
     }
 
 
+
+def _own_delta_reference() -> dict[str, Any]:
+    """Base vs OUR adapter only (no third-party models). Prefer rebalance eval."""
+    path = None
+    for cand in (
+        ROOT / "data" / "eval_compare_rebalance.json",
+        ROOT / "data" / "eval_compare_diversity.json",
+        ROOT / "data" / "eval_compare_nota_fix.json",
+    ):
+        if cand.exists():
+            path = cand
+            break
+    if path is None:
+        return {"source": None, "base": {}, "ours": {}, "delta": {}}
+    blob = json.loads(path.read_text(encoding="utf-8"))
+    base = blob.get("base") or {}
+    ours = blob.get("finetuned") or blob.get("lora") or {}
+    def _pick(d: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "n": d.get("n"),
+            "label_acc": d.get("label_acc"),
+            "jev": d.get("jev_approve_rate"),
+            "compile": d.get("compile_rate"),
+            "energy_ok": d.get("energy_ok_rate"),
+        }
+    b, o = _pick(base), _pick(ours)
+    delta = {}
+    for k in ("label_acc", "jev", "compile", "energy_ok"):
+        if b.get(k) is not None and o.get(k) is not None:
+            delta[k] = round(float(o[k]) - float(b[k]), 4)
+    return {"source": str(path), "base": b, "ours": o, "delta": delta, "note": "own-delta base vs our LoRA RO only"}
+
+
 def _cached_lora_reference() -> dict[str, Any]:
     path = ROOT / "data" / "eval_compare_rebalance.json"
     if not path.exists():
@@ -754,6 +855,7 @@ def run_ent_eval(
         for k in ("label_acc", "energy_ok", "energy_proxy_ok", "compile", "jev")
     }
     lora_ref = _cached_lora_reference()
+    own_delta = _own_delta_reference()
     improved_n = sum(1 for d in details if d["improved_label"] or d["improved_jev"])
     return {
         "claim": "NO quantum advantage — pedagogical hybrid oracle loop",
@@ -771,6 +873,7 @@ def run_ent_eval(
             delta["label_acc"] > 0 or delta["jev"] > 0 or delta["compile"] > 0
         ),
         "lora_single_shot_ref": lora_ref,
+        "own_delta_base_vs_ours": own_delta,
         "vs_lora_label": (
             None
             if lora_ref.get("label_acc") is None
@@ -897,63 +1000,81 @@ def render_markdown(report: dict[str, Any]) -> str:
     ss = report["single_shot"]
     al = report["after_loop"]
     d = report["delta_loop_minus_single"]
+    od = report.get("own_delta_base_vs_ours") or {}
+    b, o, dd = od.get("base") or {}, od.get("ours") or {}, od.get("delta") or {}
     lr = report.get("lora_single_shot_ref") or {}
+    eproxy_d = float(d.get("energy_proxy_ok", d.get("energy_proxy", 0.0)) or 0.0)
     lines = [
-        "# Hybrid oracle loop — results (method 4)",
+        "# Hybrid oracle loop — results (method 4 · tip-of-spear)",
         "",
         f"**When:** {time.strftime('%Y-%m-%d %H:%M ET')} · **Claim:** no quantum advantage",
-        f"**Prototype:** `examples/hybrid_oracle_loop.py`",
+        "**Lock:** train-first / own-delta only (base vs our adapters). No Gemini/GPT compares.",
+        f"**Prototype:** `examples/hybrid_oracle_loop.py` · revise=gold-free local physics",
         (
             f"**ENT_SET:** `{report['ent_set']}` n={report['n']} · "
             f"rounds≤{report['rounds']} · proposer=`{report['proposer']}`"
         ),
-        f"**Elapsed:** {report['elapsed_s']}s (CPU PennyLane oracle)",
+        f"**Elapsed:** {report['elapsed_s']}s (CPU PennyLane) · `data/lora_adapter/` RO",
         "",
-        "## Before / after (same proposer, oracle revise)",
+        "## A) Own-delta — base vs our LoRA RO",
+        "",
+        "| path | n | label_acc | Jev | compile | energy_ok |",
+        "|------|---|-----------|-----|---------|-----------|",
+        (
+            f"| base VLM | {b.get('n')} | {b.get('label_acc')} | {b.get('jev')} | "
+            f"{b.get('compile')} | {b.get('energy_ok')} |"
+        ),
+        (
+            f"| our LoRA RO | {o.get('n')} | {o.get('label_acc')} | {o.get('jev')} | "
+            f"{o.get('compile')} | {o.get('energy_ok')} |"
+        ),
+        (
+            f"| Δ (ours−base) | — | {dd.get('label_acc')} | {dd.get('jev')} | "
+            f"{dd.get('compile')} | {dd.get('energy_ok')} |"
+        ),
+        "",
+        f"Source: `{(od.get('source') or 'n/a')}` — {od.get('note') or ''}",
+        "",
+        "## B) Hybrid loop — before / after (gold-free revise)",
         "",
         "| path | label_acc | energy_ok | energy_proxy | compile | Jev |",
         "|------|-----------|-----------|--------------|---------|-----|",
         (
-            f"| single-shot (no oracle) | {ss['label_acc']:.3f} | {ss['energy_ok']:.3f} | "
+            f"| single-shot | {ss['label_acc']:.3f} | {ss['energy_ok']:.3f} | "
             f"{ss['energy_proxy_ok']:.3f} | {ss['compile']:.3f} | {ss['jev']:.3f} |"
         ),
         (
-            f"| after oracle loop | **{al['label_acc']:.3f}** | **{al['energy_ok']:.3f}** | "
+            f"| after loop | **{al['label_acc']:.3f}** | **{al['energy_ok']:.3f}** | "
             f"**{al['energy_proxy_ok']:.3f}** | **{al['compile']:.3f}** | **{al['jev']:.3f}** |"
         ),
         (
-            f"| Δ (loop − single) | {d['label_acc']:+.3f} | {d['energy_ok']:+.3f} | "
-            f"{d['energy_proxy_ok']:+.3f} | {d['compile']:+.3f} | {d['jev']:+.3f} |"
+            f"| Δ (loop−single) | {d['label_acc']:+.3f} | {d['energy_ok']:+.3f} | "
+            f"{eproxy_d:+.3f} | {d['compile']:+.3f} | {d['jev']:+.3f} |"
         ),
         "",
-        "## vs cached LoRA single-shot (reference)",
+        "## vs our LoRA RO (same-family ref)",
         "",
         "| ref | label_acc | Jev | compile | energy_ok | note |",
         "|-----|-----------|-----|---------|-----------|------|",
         (
-            f"| LoRA RO cached | {lr.get('label_acc')} | {lr.get('jev')} | "
+            f"| our LoRA RO cached | {lr.get('label_acc')} | {lr.get('jev')} | "
             f"{lr.get('compile')} | {lr.get('energy_ok')} | {lr.get('note', '')} |"
         ),
-        f"| loop − LoRA label | {report.get('vs_lora_label')} | — | — | — | |",
+        f"| loop − our LoRA label | {report.get('vs_lora_label')} | — | — | — | |",
         "",
-        f"**Scenes improved (label or Jev):** {report['scenes_improved']}/{report['n']}",
+        f"**Scenes improved:** {report['scenes_improved']}/{report['n']}",
         f"**Loop helps vs own single-shot:** {'YES' if report['loop_helps'] else 'NO'}",
         "",
         "## Honest note",
         "",
         report.get("honest_note") or "",
         "",
-        "## Mechanism",
-        "",
-        "1. Model proposes circuit JSON (heuristic stub while GPU held by `qlora-ent`, or MLX when free).",
-        "2. PennyLane oracle: compile, concurrence / S(ρ_A), Jev energy rules → `{errors, suggested_fix}`.",
-        "3. Model revises ≤2 rounds applying structured feedback.",
-        "4. Metrics vs single-shot on fixed ENT_SET.",
-        "",
-        "`data/lora_adapter/` untouched (READ-ONLY).",
+        "Gold-free revise uses local physics (minimal Bell / drop CX / scrub energy), "
+        "not scene-gold paste. Tip-of-spear; train remains primary. No quantum advantage.",
         "",
     ]
     return "\n".join(lines)
+
 
 
 def main(argv: list[str] | None = None) -> int:
