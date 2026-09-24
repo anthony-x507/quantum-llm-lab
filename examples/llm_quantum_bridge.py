@@ -69,9 +69,37 @@ def proponer_circuito_mlx(prompt: str, model_id: str) -> dict[str, Any]:
     return parsear_propuesta(raw)
 
 
+def _extract_balanced_json(texto: str) -> str | None:
+    """Find first '{' ... matching '}' with brace balance (not greedy regex)."""
+    start = texto.find("{")
+    while start != -1:
+        depth = 0
+        in_str = False
+        escape = False
+        for i in range(start, len(texto)):
+            ch = texto[i]
+            if in_str:
+                if escape:
+                    escape = False
+                elif ch == "\\":
+                    escape = True
+                elif ch == '"':
+                    in_str = False
+                continue
+            if ch == '"':
+                in_str = True
+            elif ch == "{":
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0:
+                    return texto[start : i + 1]
+        start = texto.find("{", start + 1)
+    return None
+
+
 def parsear_propuesta(texto: str) -> dict[str, Any]:
-    """Extrae el primer objeto JSON del texto del modelo."""
-    # Intento directo
+    """Extrae el primer objeto JSON del texto del modelo (brace-balanced)."""
     texto = texto.strip()
     try:
         data = json.loads(texto)
@@ -80,10 +108,10 @@ def parsear_propuesta(texto: str) -> dict[str, Any]:
     except json.JSONDecodeError:
         pass
 
-    match = re.search(r"\{[\s\S]*\}", texto)
-    if not match:
+    blob = _extract_balanced_json(texto)
+    if not blob:
         raise ValueError(f"No encontré JSON en la respuesta del modelo:\n{texto[:500]}")
-    data = json.loads(match.group(0))
+    data = json.loads(blob)
     if "gates" not in data:
         raise ValueError(f"JSON sin 'gates': {data}")
     data.setdefault("n_qubits", 2)
