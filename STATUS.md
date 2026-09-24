@@ -1,3 +1,6 @@
+## 2026-09-24 — tip-hardneg-r30 polish (side; NOT folded)
+Branch `frontier/tip-hardneg-r30` from tip `2e5c484` (post R17 fold; ≥a54b74c). R30 router **6→52/52** · verifier **44/44**; mixed (d) **1.0**; R7–R14+R17+LP held; `ent_never_on_python`. Novel: Peewee / Tortoise / Pony / SQLModel / Fiber / Iris / Beego / Buffalo / Sinatra / Quart / Nameko / ARQ / Slim / CakePHP (brief-suggested swaps for tip-brand + R9–R29 collisions). Rise **+88.46 pp** → freeze polish_r30 100%. See `docs/FRONTIER-CODIGO-VIVO-TIP-R30.md`.
+
 ## 2026-09-24 — fold tip-hardneg-r17 → codigo-vivo-tip
 Cherry-pick `297fba1` onto `a54b74c` → fold feat `40f2c69`. Conflicts: STATUS+mixed/LP/r7–r12 JSON ours; router/verifier merged R12+R13+R14+R15+R16+R17 gates_ops. Re-smoke R17 **8→52/52** · **44/44** (side 8→52; rise retained **100%** ≥80%); R16 52/52·44/44; R15 52/52; LP 64/64·42/42; pillars 37/37; circ 5/5; mixed (d) 1.0; choose_n n=80 @100% freeze retained; tti-cold ~95% freeze retained (no residual chase); freezes retained incl. tti_cold_fold+r16+choose_safest_n_fold+r15+r14+LP+pillars+circ+future_r3+side polish_r17. Freeze `codigo_vivo_tip_r17_100pct_20260924_153921`. R18+ not folded. Tip vis stays BASE. RO data/lora_adapter/.
 

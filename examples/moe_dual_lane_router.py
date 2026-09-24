@@ -188,6 +188,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R15: Squid/OpenResty/Contour/Emissary/Zuul/Django/Laravel/Gin/DynamoDB/Firestore/Keycloak/Falco/OTel/Ray gates: scalars.
     # R16: ATS/CoreDNS/Pulsar/Redpanda/GHA/GitLab/Terraform/Nix/Express/Flask/Knative/KEDA/Dapr/Gatekeeper gates: scalars.
     # R17: Cloudflare/CloudFront/Vitess/Cockroach/Pinot/CircleCI/Drone/Maven/sbt/Rails/Phoenix/Flagger/ArgoRollouts/Debezium gates: scalars.
+    # R30: Peewee/Tortoise/Pony/SQLModel/Fiber/Iris/Beego/Buffalo/Sinatra/Quart/Nameko/ARQ/Slim/CakePHP gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -724,7 +725,65 @@ def route_heuristic(prompt: str) -> Lane:
             r"|cdc\s+gates:\s*op"
             r"|filter\s+gates:\s*op"
             # R17: edge / CDN / DB / CI / build / framework / canary / CDC prose
-            r"|gates:\s+is\s+(?:edge|CDN|DB|CI|build|framework|canary|CDC)\b",
+            r"|gates:\s+is\s+(?:edge|CDN|DB|CI|build|framework|canary|CDC)\b"
+            # R30: Peewee signal gates: DatabaseProxy
+            r"|gates\s*:\s*DatabaseProxy\b"
+            r"|peewee\s+.*gates:"
+            r"|signal\s+gates:\s*DatabaseProxy"
+            # R30: Tortoise signal gates: Tortoise.init
+            r"|gates\s*:\s*Tortoise\.init\b"
+            r"|tortoise\s+.*gates:"
+            r"|signal\s+gates:\s*Tortoise"
+            # R30: Pony hook gates: db_session
+            r"|gates\s*:\s*db_session\b"
+            r"|\bpony\b\s+.*gates:"
+            r"|hook\s+gates:\s*db_session"
+            # R30: SQLModel event gates: SQLModelConfig
+            r"|gates\s*:\s*SQLModelConfig\b"
+            r"|sqlmodel\s+.*gates:"
+            r"|event\s+gates:\s*SQLModelConfig"
+            # R30: Fiber middleware gates: fiber.Ctx
+            r"|gates\s*:\s*fiber\.Ctx\b"
+            r"|\bfiber\b\s+.*gates:"
+            r"|middleware\s+gates:\s*fiber\.Ctx"
+            # R30: Iris middleware gates: iris.Context
+            r"|gates\s*:\s*iris\.Context\b"
+            r"|\biris\b\s+.*gates:"
+            r"|middleware\s+gates:\s*iris\.Context"
+            # R30: Beego filter gates: InsertFilter
+            r"|gates\s*:\s*InsertFilter\b"
+            r"|beego\s+.*gates:"
+            r"|filter\s+gates:\s*InsertFilter"
+            # R30: Buffalo middleware gates: buffalo.Context
+            r"|gates\s*:\s*buffalo\.Context\b"
+            r"|buffalo\s+.*gates:"
+            r"|middleware\s+gates:\s*buffalo\.Context"
+            # R30: Sinatra before gates: before!
+            r"|gates\s*:\s*before!"
+            r"|sinatra\s+.*gates:"
+            r"|before\s+gates:\s*before!"
+            # R30: Quart before gates: before_serving
+            r"|gates\s*:\s*before_serving\b"
+            r"|\bquart\b\s+.*gates:"
+            r"|before\s+gates:\s*before_serving"
+            # R30: Nameko entrypoint gates: entrypoint.rpc
+            r"|gates\s*:\s*entrypoint\.rpc\b"
+            r"|nameko\s+.*gates:"
+            r"|entrypoint\s+gates:\s*entrypoint\.rpc"
+            # R30: ARQ job gates: arq.cron
+            r"|gates\s*:\s*arq\.cron\b"
+            r"|\barq\b\s+.*gates:"
+            r"|job\s+gates:\s*arq\.cron"
+            # R30: Slim middleware gates: MiddlewareDispatcher
+            r"|gates\s*:\s*MiddlewareDispatcher\b"
+            r"|\bslim\b\s+.*gates:"
+            r"|middleware\s+gates:\s*MiddlewareDispatcher"
+            # R30: CakePHP middleware gates: MiddlewareQueue
+            r"|gates\s*:\s*MiddlewareQueue\b"
+            r"|cakephp\s+.*gates:"
+            r"|middleware\s+gates:\s*MiddlewareQueue"
+            # R30: signal / hook / event / middleware / filter / before / entrypoint / job prose
+            r"|gates:\s+is\s+(?:signal|hook|event|middleware|filter|before|entrypoint|job)\b",
             text,
             re.I,
         )
@@ -1344,6 +1403,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r30' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r30.json"
         elif 'r17' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r17.json"
         elif 'r16' in hp:

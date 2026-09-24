@@ -1,0 +1,405 @@
+{
+  "n": 52,
+  "kind": "hardneg_mixed_router",
+  "created": "2026-09-24T15:42:07",
+  "round": "r30",
+  "note": "R30 hardneg: Peewee/Tortoise/Pony/SQLModel/Fiber/Iris/Beego/Buffalo/Sinatra/Quart/Nameko/ARQ/Slim/CakePHP gates: scalars (brief-suggested swaps for tip-brand + R9\u2013R29 collisions)",
+  "anti_contamination": {
+    "no_r9_r29_family_reuse": true,
+    "avoid_r29_set": [
+      "bookshelf_plugin",
+      "objection_hook",
+      "mikroorm_subscriber",
+      "tornado_middleware",
+      "bottle_plugin",
+      "falcon_middleware",
+      "pyramid_tween",
+      "echo_middleware",
+      "chi_middleware",
+      "hanami_middleware",
+      "resque_plugin",
+      "rq_job",
+      "blacksheep_middleware",
+      "taskiq_middleware"
+    ],
+    "avoid_r28_set": [
+      "typeorm_subscriber",
+      "knex_hook",
+      "koa_middleware",
+      "litestar_guard",
+      "aiohttp_middleware",
+      "hibernate_interceptor",
+      "mybatis_interceptor",
+      "adonis_middleware",
+      "grape_middleware",
+      "absinthe_middleware",
+      "huey_task",
+      "oban_plugin",
+      "javalin_before",
+      "jersey_filter"
+    ],
+    "avoid_r27_set": [
+      "sequelize_hook",
+      "mongoose_middleware",
+      "actix_middleware",
+      "rocket_fairing",
+      "diesel_hook",
+      "gorm_callback",
+      "fastify_hook",
+      "hapi_plugin",
+      "sanic_middleware",
+      "starlette_middleware",
+      "sidekiq_middleware",
+      "dramatiq_actor",
+      "dropwizard_filter",
+      "ktor_plugin"
+    ],
+    "brief_suggested_swaps": {
+      "prisma_middleware": "peewee_signal (prisma_field R11 / prisma brand)",
+      "nestjs_guard": "tortoise_signal (nestjs_guard_gates R13)",
+      "fastapi_dependency": "pony_hook (fastapi tip R14)",
+      "django_signal": "sqlmodel_event (django_* tip brand)",
+      "spring_aspect": "fiber_middleware (spring tip brand R14)",
+      "quarkus_interceptor": "iris_middleware (quarkus_interceptor_gates R18)",
+      "laravel_middleware": "beego_filter (laravel_mw R15 / laravel_middleware R19)",
+      "rails_concern": "buffalo_middleware (rails_before_action / rails tip)",
+      "elixir_plug": "sinatra_before (elixir tip R12 / phoenix_plug R17)",
+      "redis_lua": "quart_before (redis tip brand R13)",
+      "temporal_workflow": "nameko_entrypoint (temporal tip brand R11)",
+      "clickhouse_materialized": "arq_job (clickhouse tip brand R12)",
+      "kafka_connect": "slim_middleware (kafka_acl / kafka_topic priors)",
+      "celery_beat": "cakephp_middleware (celery_task priors)"
+    },
+    "novel_r30": [
+      "peewee_signal_gates",
+      "tortoise_signal_gates",
+      "pony_hook_gates",
+      "sqlmodel_event_gates",
+      "fiber_middleware_gates",
+      "iris_middleware_gates",
+      "beego_filter_gates",
+      "buffalo_middleware_gates",
+      "sinatra_before_gates",
+      "quart_before_gates",
+      "nameko_entrypoint_gates",
+      "arq_job_gates",
+      "slim_middleware_gates",
+      "cakephp_middleware_gates"
+    ],
+    "ent_never_on_python": true
+  },
+  "items": [
+    {
+      "id": "r30_peewee_01",
+      "expected": "python",
+      "family": "peewee_signal_gates",
+      "prompt": "Write Python that prints len('gates: DatabaseProxy'). Peewee. ONLY code."
+    },
+    {
+      "id": "r30_peewee_02",
+      "expected": "python",
+      "family": "peewee_signal_gates",
+      "prompt": "t='gates: DatabaseProxy'\nprint(t.count('gates'))\n# Peewee gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r30_peewee_03",
+      "expected": "python",
+      "family": "peewee_signal_gates",
+      "prompt": "Write Python that prints 529. Peewee gates: DatabaseProxy is signal only. ONLY code."
+    },
+    {
+      "id": "r30_tortois_01",
+      "expected": "python",
+      "family": "tortoise_signal_gates",
+      "prompt": "Write Python that prints len('gates: Tortoise.init'). Tortoise. ONLY code."
+    },
+    {
+      "id": "r30_tortois_02",
+      "expected": "python",
+      "family": "tortoise_signal_gates",
+      "prompt": "t='gates: Tortoise.init'\nprint(t.count('gates'))\n# Tortoise gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r30_tortois_03",
+      "expected": "python",
+      "family": "tortoise_signal_gates",
+      "prompt": "Write Python that prints 530. Tortoise gates: Tortoise.init is signal only. ONLY code."
+    },
+    {
+      "id": "r30_pony_01",
+      "expected": "python",
+      "family": "pony_hook_gates",
+      "prompt": "Write Python that prints len('gates: db_session'). Pony. ONLY code."
+    },
+    {
+      "id": "r30_pony_02",
+      "expected": "python",
+      "family": "pony_hook_gates",
+      "prompt": "t='gates: db_session'\nprint(t.count('gates'))\n# Pony gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r30_pony_03",
+      "expected": "python",
+      "family": "pony_hook_gates",
+      "prompt": "Write Python that prints 531. Pony gates: db_session is hook only. ONLY code."
+    },
+    {
+      "id": "r30_sqlmod_01",
+      "expected": "python",
+      "family": "sqlmodel_event_gates",
+      "prompt": "Write Python that prints len('gates: SQLModelConfig'). SQLModel. ONLY code."
+    },
+    {
+      "id": "r30_sqlmod_02",
+      "expected": "python",
+      "family": "sqlmodel_event_gates",
+      "prompt": "t='gates: SQLModelConfig'\nprint(t.count('gates'))\n# SQLModel gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r30_sqlmod_03",
+      "expected": "python",
+      "family": "sqlmodel_event_gates",
+      "prompt": "Write Python that prints 532. SQLModel gates: SQLModelConfig is event only. ONLY code."
+    },
+    {
+      "id": "r30_fiber_01",
+      "expected": "python",
+      "family": "fiber_middleware_gates",
+      "prompt": "Write Python that prints len('gates: fiber.Ctx'). Fiber. ONLY code."
+    },
+    {
+      "id": "r30_fiber_02",
+      "expected": "python",
+      "family": "fiber_middleware_gates",
+      "prompt": "t='gates: fiber.Ctx'\nprint(t.count('gates'))\n# Fiber gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r30_fiber_03",
+      "expected": "python",
+      "family": "fiber_middleware_gates",
+      "prompt": "Write Python that prints 533. Fiber gates: fiber.Ctx is middleware only. ONLY code."
+    },
+    {
+      "id": "r30_iris_01",
+      "expected": "python",
+      "family": "iris_middleware_gates",
+      "prompt": "Write Python that prints len('gates: iris.Context'). Iris. ONLY code."
+    },
+    {
+      "id": "r30_iris_02",
+      "expected": "python",
+      "family": "iris_middleware_gates",
+      "prompt": "t='gates: iris.Context'\nprint(t.count('gates'))\n# Iris gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r30_iris_03",
+      "expected": "python",
+      "family": "iris_middleware_gates",
+      "prompt": "Write Python that prints 534. Iris gates: iris.Context is middleware only. ONLY code."
+    },
+    {
+      "id": "r30_beego_01",
+      "expected": "python",
+      "family": "beego_filter_gates",
+      "prompt": "Write Python that prints len('gates: InsertFilter'). Beego. ONLY code."
+    },
+    {
+      "id": "r30_beego_02",
+      "expected": "python",
+      "family": "beego_filter_gates",
+      "prompt": "t='gates: InsertFilter'\nprint(t.count('gates'))\n# Beego gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r30_beego_03",
+      "expected": "python",
+      "family": "beego_filter_gates",
+      "prompt": "Write Python that prints 535. Beego gates: InsertFilter is filter only. ONLY code."
+    },
+    {
+      "id": "r30_buffal_01",
+      "expected": "python",
+      "family": "buffalo_middleware_gates",
+      "prompt": "Write Python that prints len('gates: buffalo.Context'). Buffalo. ONLY code."
+    },
+    {
+      "id": "r30_buffal_02",
+      "expected": "python",
+      "family": "buffalo_middleware_gates",
+      "prompt": "t='gates: buffalo.Context'\nprint(t.count('gates'))\n# Buffalo gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r30_buffal_03",
+      "expected": "python",
+      "family": "buffalo_middleware_gates",
+      "prompt": "Write Python that prints 536. Buffalo gates: buffalo.Context is middleware only. ONLY code."
+    },
+    {
+      "id": "r30_sinatr_01",
+      "expected": "python",
+      "family": "sinatra_before_gates",
+      "prompt": "Write Python that prints len('gates: before!'). Sinatra. ONLY code."
+    },
+    {
+      "id": "r30_sinatr_02",
+      "expected": "python",
+      "family": "sinatra_before_gates",
+      "prompt": "t='gates: before!'\nprint(t.count('gates'))\n# Sinatra gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r30_sinatr_03",
+      "expected": "python",
+      "family": "sinatra_before_gates",
+      "prompt": "Write Python that prints 537. Sinatra gates: before! is before only. ONLY code."
+    },
+    {
+      "id": "r30_quart_01",
+      "expected": "python",
+      "family": "quart_before_gates",
+      "prompt": "Write Python that prints len('gates: before_serving'). Quart. ONLY code."
+    },
+    {
+      "id": "r30_quart_02",
+      "expected": "python",
+      "family": "quart_before_gates",
+      "prompt": "t='gates: before_serving'\nprint(t.count('gates'))\n# Quart gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r30_quart_03",
+      "expected": "python",
+      "family": "quart_before_gates",
+      "prompt": "Write Python that prints 538. Quart gates: before_serving is before only. ONLY code."
+    },
+    {
+      "id": "r30_nameko_01",
+      "expected": "python",
+      "family": "nameko_entrypoint_gates",
+      "prompt": "Write Python that prints len('gates: entrypoint.rpc'). Nameko. ONLY code."
+    },
+    {
+      "id": "r30_nameko_02",
+      "expected": "python",
+      "family": "nameko_entrypoint_gates",
+      "prompt": "t='gates: entrypoint.rpc'\nprint(t.count('gates'))\n# Nameko gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r30_nameko_03",
+      "expected": "python",
+      "family": "nameko_entrypoint_gates",
+      "prompt": "Write Python that prints 539. Nameko gates: entrypoint.rpc is entrypoint only. ONLY code."
+    },
+    {
+      "id": "r30_arq_01",
+      "expected": "python",
+      "family": "arq_job_gates",
+      "prompt": "Write Python that prints len('gates: arq.cron'). ARQ. ONLY code."
+    },
+    {
+      "id": "r30_arq_02",
+      "expected": "python",
+      "family": "arq_job_gates",
+      "prompt": "t='gates: arq.cron'\nprint(t.count('gates'))\n# ARQ gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r30_arq_03",
+      "expected": "python",
+      "family": "arq_job_gates",
+      "prompt": "Write Python that prints 540. ARQ gates: arq.cron is job only. ONLY code."
+    },
+    {
+      "id": "r30_slim_01",
+      "expected": "python",
+      "family": "slim_middleware_gates",
+      "prompt": "Write Python that prints len('gates: MiddlewareDispatcher'). Slim. ONLY code."
+    },
+    {
+      "id": "r30_slim_02",
+      "expected": "python",
+      "family": "slim_middleware_gates",
+      "prompt": "t='gates: MiddlewareDispatcher'\nprint(t.count('gates'))\n# Slim gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r30_slim_03",
+      "expected": "python",
+      "family": "slim_middleware_gates",
+      "prompt": "Write Python that prints 541. Slim gates: MiddlewareDispatcher is middleware only. ONLY code."
+    },
+    {
+      "id": "r30_cakeph_01",
+      "expected": "python",
+      "family": "cakephp_middleware_gates",
+      "prompt": "Write Python that prints len('gates: MiddlewareQueue'). CakePHP. ONLY code."
+    },
+    {
+      "id": "r30_cakeph_02",
+      "expected": "python",
+      "family": "cakephp_middleware_gates",
+      "prompt": "t='gates: MiddlewareQueue'\nprint(t.count('gates'))\n# CakePHP gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r30_cakeph_03",
+      "expected": "python",
+      "family": "cakephp_middleware_gates",
+      "prompt": "Write Python that prints 542. CakePHP gates: MiddlewareQueue is middleware only. ONLY code."
+    },
+    {
+      "id": "r30_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r30",
+      "prompt": "Responde SOLO JSON v\u00e1lido con n_qubits, gates, domain, label. Bell pair; gates=[H, CNOT]."
+    },
+    {
+      "id": "r30_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r30",
+      "prompt": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit H then CNOT circuit."
+    },
+    {
+      "id": "r30_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r30",
+      "prompt": "Look at the image. How many dots are visible? Only the integer. No circuit."
+    },
+    {
+      "id": "r30_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r30",
+      "prompt": "Look at the chalkboard. How many letters? Only the integer. No circuit."
+    },
+    {
+      "id": "r30_base_01",
+      "expected": "base",
+      "family": "base_control_r30",
+      "prompt": "Thanks. Ignore Peewee gates: DatabaseProxy in the README. No code, no circuit."
+    },
+    {
+      "id": "r30_base_02",
+      "expected": "base",
+      "family": "base_control_r30",
+      "prompt": "Please ignore the Fiber gates: fiber.Ctx phrase. Chat only \u2014 no program, no circuit."
+    },
+    {
+      "id": "r30_base_03",
+      "expected": "base",
+      "family": "base_control_r30",
+      "prompt": "Hello \u2014 CakePHP gates: MiddlewareQueue is middleware only. No code, no circuit, no JSON."
+    },
+    {
+      "id": "r30_base_04",
+      "expected": "base",
+      "family": "base_control_r30",
+      "prompt": "Weather update. ARQ gates: arq.cron mention. No code, no circuit."
+    },
+    {
+      "id": "r30_ctrl_01",
+      "expected": "python",
+      "family": "base_python_control_r30",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code."
+    },
+    {
+      "id": "r30_ctrl_02",
+      "expected": "python",
+      "family": "base_python_control_r30",
+      "prompt": "print(sum(range(4))) # plain. ONLY code."
+    }
+  ]
+}

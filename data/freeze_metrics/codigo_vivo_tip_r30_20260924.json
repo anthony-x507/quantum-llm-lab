@@ -1,0 +1,29 @@
+{
+  "name": "codigo_vivo_tip_r30_20260924",
+  "kind": "tip_moe_verifier_polish_r30",
+  "branch": "frontier/tip-hardneg-r30",
+  "base_tip": "2e5c484",
+  "when_et": "2026-09-24T15:45:06-04:00",
+  "router": "52/52",
+  "verifier": "44/44",
+  "mixed": 1.0,
+  "rise_pp": 88.46,
+  "families": [
+    "peewee_signal_gates",
+    "tortoise_signal_gates",
+    "pony_hook_gates",
+    "sqlmodel_event_gates",
+    "fiber_middleware_gates",
+    "iris_middleware_gates",
+    "beego_filter_gates",
+    "buffalo_middleware_gates",
+    "sinatra_before_gates",
+    "quart_before_gates",
+    "nameko_entrypoint_gates",
+    "arq_job_gates",
+    "slim_middleware_gates",
+    "cakephp_middleware_gates"
+  ],
+  "not_folded": true,
+  "feat_sha": "PENDING"
+}

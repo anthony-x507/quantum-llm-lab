@@ -1,0 +1,53 @@
+{
+  "name": "codigo_vivo_tip_adv_r30_20260924",
+  "kind": "tip_moe_verifier_polish_r30",
+  "branch": "frontier/tip-hardneg-r30",
+  "base_tip": "2e5c484",
+  "base_tip_full": "2e5c4849f717c9079ba26f42912988e3699899fd",
+  "when_et": "2026-09-24T15:45:06-04:00",
+  "machine": "Mac-111 (074c6626-0440-4817-9829-6bae77c578d6)",
+  "scores": {
+    "router_before": "6/52",
+    "router_after": "52/52",
+    "rise_pp": 88.46,
+    "verifier_alone": "44/44",
+    "verifier_unified": "44/44",
+    "mixed": 1.0,
+    "r7_r14": "52/52 x8",
+    "r17": "52/52",
+    "lp_router": "64/64",
+    "r12_verifier": "44/44",
+    "lp_verifier": "42/42",
+    "smoke": "12/12",
+    "pillars": "37/37",
+    "hardneg_smoke": "18/18",
+    "ent_never_on_python": true
+  },
+  "families": [
+    "peewee_signal_gates",
+    "tortoise_signal_gates",
+    "pony_hook_gates",
+    "sqlmodel_event_gates",
+    "fiber_middleware_gates",
+    "iris_middleware_gates",
+    "beego_filter_gates",
+    "buffalo_middleware_gates",
+    "sinatra_before_gates",
+    "quart_before_gates",
+    "nameko_entrypoint_gates",
+    "arq_job_gates",
+    "slim_middleware_gates",
+    "cakephp_middleware_gates"
+  ],
+  "floors_held": true,
+  "not_folded": true,
+  "lora_adapter_ro": true,
+  "artifacts_sha16": {
+    "hardneg_r30_mixed_router.json": "9813aced7ebab31d",
+    "hardneg_r30_python_items.json": "3e3044a09e2587b5",
+    "frontier_moe_dual_lane_hardneg_r30.json": "c3f4ac4dbab4d371",
+    "frontier_moe_verifier_hardneg_r30.json": "d4a6258d5fb1bef0",
+    "frontier_moe_verifier_mixed_unified.json": "b2e13f9a3d5d5131"
+  },
+  "feat_sha": "PENDING"
+}
