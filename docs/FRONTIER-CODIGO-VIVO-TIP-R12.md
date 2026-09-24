@@ -96,6 +96,7 @@ Cherry-pick rebase `eb58bb8`/`28d658f` onto tip `9a0de24` → `b4a3999`+`6013c2a
 | mid / TTI / motion / inverse / collision | **retained** |
 | pillars / hardneg smoke | **26/26 · 18/18** |
 | Freeze | `codigo_vivo_tip_r12_100pct_20260924_142830` |
+| Tip fold SHA | `db6d93e` |
 | RO adapters | **unchanged mtime** |
 
 CLI (tip-cv):

@@ -12,7 +12,7 @@
 | inverse_cv · collision · choose_safest | **99.82% · 100% · 100%** |
 | pillars / hardneg smoke | **26/26 · 18/18** |
 | Freeze | `codigo_vivo_tip_r12_100pct_20260924_142830` |
-| Tip SHA (fold) |  |
+| Tip SHA (fold) | `db6d93e` |
 | Policy | RO `data/lora_adapter/`; no main; mid floors + R12 hardneg; distance-far/R13/inverse-r3 not folded |
 
 
