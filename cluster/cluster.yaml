@@ -1,0 +1,96 @@
+# quantum-llm-lab — config fijada del clúster (Apple Silicon, MLX)
+# Actualizado: 2026-09-23
+
+cluster:
+  name: quantum-llm-lab
+  topology: m4_primary + studio_verifier
+
+machines:
+  m4:
+    host_label: Mac M4
+    ram_gb: 128
+    disk_gb: 1000
+    role: primary_reasoner
+    model:
+      id: mlx-community/Qwen3-VL-8B-Thinking-4bit
+      family: Qwen3-VL-Thinking
+      params: 8B
+      quant: 4bit
+      approx_vram_gb: 12
+      capabilities:
+        - vision_image
+        - vision_video
+        - native_thinking
+        - decision_branches
+    colocated:
+      - quantum_simulator  # cabe junto al 8B en 128 GB
+    tasks:
+      - generate_or_ingest_synthetic_fall_frames
+      - propose_hypotheses_with_cot
+      - emit_decision_branches_json
+      - receive_studio_rank_and_quantum_feedback
+
+  studio:
+    host_label: Mac Studio
+    ram_gb: 36
+    disk_gb: 500
+    role: visual_verifier_ranker
+    model:
+      preferred: mlx-community/Qwen3-VL-2B-Thinking-4bit
+      alternate: mlx-community/Qwen3-VL-4B-Thinking-4bit
+      family: Qwen3-VL-Thinking
+      params_options: [2B, 4B]
+      quant: 4bit
+      approx_vram_gb:
+        "2B": 3
+        "4B": 6
+      capabilities:
+        - vision_image
+        - native_thinking
+        - rank_branches
+    tasks:
+      - visually_verify_m4_branches
+      - rank_hypotheses_before_simulator
+      - optional_run_pennylane_if_m4_busy
+
+loop:
+  name: vision_reason_rank_quantum_feedback
+  steps:
+    - id: vision
+      where: m4  # o cualquiera; frames sintéticos son baratos
+      action: generate_synthetic_fall_frames
+      script: examples/vision_grounding.py
+      outputs: [examples/out_frames/, grounding.json]
+    - id: reason_8b
+      where: m4
+      model: Qwen3-VL-8B-Thinking
+      action: propose_branches_with_thinking
+      inputs: [grounding.json]
+      outputs: [cluster/out/branches_m4.json]
+    - id: rank_studio
+      where: studio
+      model: Qwen3-VL-2B-Thinking  # o 4B si cabe
+      action: visual_verify_and_rank
+      inputs: [branches_m4.json, frames]
+      outputs: [cluster/out/ranked_studio.json]
+    - id: quantum
+      where: m4  # preferido; Studio si M4 saturada
+      engines: [PennyLane, Qiskit]
+      action: physical_consistency_check
+      script: examples/llm_quantum_bridge.py
+      inputs: [ranked_studio.json]
+      outputs: [cluster/out/quantum_report.json]
+    - id: feedback
+      where: m4
+      model: Qwen3-VL-8B-Thinking
+      action: correct_hypotheses_from_quantum
+      inputs: [quantum_report.json]
+      outputs: [cluster/out/revised_branches.json]
+
+transfer:
+  artifacts:
+    - grounding.json
+    - branches_m4.json
+    - ranked_studio.json
+    - quantum_report.json
+  methods: [scp, AirDrop, SMB, NFS]
