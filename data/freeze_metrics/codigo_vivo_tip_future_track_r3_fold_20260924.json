@@ -1,7 +1,6 @@
 {
   "frontier": "codigo-vivo-tip-future-track-r3-fold",
   "written_et": "2026-09-24 14:49:46 ET",
-  "tip_sha_placeholder": "PENDING_FEAT",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-future-track-r3",
   "source_sha": "2d6788c",
@@ -90,5 +89,7 @@
   "worktree": "/Users/anthony/Documents/quantum-llm-lab-tip-cv",
   "machine": "Mac-111",
   "machine_id": "074c6626-0440-4817-9829-6bae77c578d6",
-  "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit"
+  "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
+  "tip_sha": "c6389e59185dc5ce8b00de50b962422f1fde9248",
+  "tip_sha_short": "c6389e5"
 }

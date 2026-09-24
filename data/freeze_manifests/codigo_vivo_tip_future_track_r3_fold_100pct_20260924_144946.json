@@ -5,8 +5,6 @@
   "domain": "codigo_vivo_tip_future_track_r3",
   "pct": 100,
   "band": "100pct",
-  "git_sha_placeholder": "PENDING_FEAT",
-  "git_sha_short_placeholder": "PENDING",
   "artifact": "data/video_synth/distance_est/EVAL_FUTURE_R3_FOLD_AFTER.json",
   "eval_path": "data/video_synth/distance_est/EVAL_FUTURE_R3_FOLD_AFTER.json",
   "danger50_eval": "data/video_synth/distance_est/danger50/EVAL_FUTURE_R3_FOLD_AFTER.json",
@@ -104,5 +102,9 @@
   "worktree": "/Users/anthony/Documents/quantum-llm-lab-tip-cv",
   "machine": "Mac-111",
   "machine_id": "074c6626-0440-4817-9829-6bae77c578d6",
-  "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit"
+  "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
+  "git_sha": "c6389e59185dc5ce8b00de50b962422f1fde9248",
+  "git_sha_short": "c6389e5",
+  "post_port_feat_sha": "c6389e5",
+  "post_port_feat_sha_full": "c6389e59185dc5ce8b00de50b962422f1fde9248"
 }

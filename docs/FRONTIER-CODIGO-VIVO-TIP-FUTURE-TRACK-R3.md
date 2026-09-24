@@ -5,7 +5,8 @@
 **Fold worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-cv` (Mac-111)  
 **When (side):** 2026-09-24 ~14:28 ET · **Fold:** 2026-09-24 ~14:49 ET  
 **Side freeze:** `codigo_vivo_tip_future_track_r3_100pct_20260924_142834`  
-**Fold freeze:** `codigo_vivo_tip_future_track_r3_fold_100pct_20260924_144946`  
+**Fold freeze:**   
+**Fold feat SHA:**  ()`codigo_vivo_tip_future_track_r3_fold_100pct_20260924_144946`  
 **Feat SHA (side):** `6da80e5` (`6da80e5361607209aa19fbe44467f9a663a26c64`)  
 **Scope:** Folded into tip-cv (prefer r3 over r2/r1). Circ / R14+ / pillars **not** folded.
 
