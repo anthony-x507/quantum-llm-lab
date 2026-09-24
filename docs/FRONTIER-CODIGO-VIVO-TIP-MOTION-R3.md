@@ -3,7 +3,7 @@
 **Status:** SIDE BRANCH `frontier/tip-motion-r3` (NOT folded; tip-cv / tip-collision-n / tip-hardneg-r9 / tip-motion-r2 / tip-distance-danger / tip-collision-pred AVOIDED)  
 **Base tip:** `3d05cbe` (`frontier/codigo-vivo-tip` with collision-n folded; motion-r2 already on tip)  
 **When:** measure 2026-09-24 13:33:33 ET · Mac-111 (`074c6626-…`)  
-**Freeze:** `codigo_vivo_tip_motion_r3_100pct_20260924_133333` (≥80% coverage)  
+**Freeze:** `codigo_vivo_tip_motion_r3_100pct_20260924_133333` (≥80% coverage; sha 1d2ca87)  
 **Claim:** NO quantum advantage. GT-free RGB centroid motion cue reinforce only.
 
 ## LOCK
