@@ -37,3 +37,8 @@ python examples/video_temporal_prototype.py --ablate
 ## Inverse-planning
 
 Separate domain (other executor). Not part of this prototype.
+
+## Smoke CPU (2026-09-24)
+
+`python examples/smoke_three_layers.py` → `data/video_synth/fase1/SMOKE_THREE_LAYERS.json`.
+Layers in `examples/video_temporal_prototype.py` (`WorkingMemory`, `RetrievalIndex` numpy NN train-only, `TrafficPhysicsTool`). No faiss/chromadb required.

@@ -1,0 +1,50 @@
+{
+  "ok": true,
+  "index_n": 40,
+  "retrieval_hit": {
+    "hit_seq_id": "f1_000_oak_ave",
+    "distance": 2.0,
+    "query_features": {
+      "n_cars": 1,
+      "n_peds": 1,
+      "density": "low",
+      "near_miss": false,
+      "street_token": "oak"
+    }
+  },
+  "memory_snapshot": {
+    "street_name": "Oak Ave",
+    "n_objects": 3,
+    "object_ids": [
+      "C0",
+      "L0",
+      "P0"
+    ],
+    "light_states": {
+      "L0": "G"
+    },
+    "relations_tail": [
+      "car approaching light"
+    ],
+    "preds_n": 3,
+    "tool_notes_tail": [
+      "numpy tool: n_pred=3 min_pair_d=65.14598989960932 risk=low"
+    ]
+  },
+  "tool": {
+    "note": "numpy tool: n_pred=3 min_pair_d=65.14598989960932 risk=low",
+    "light_next": {
+      "L0": "G"
+    },
+    "source": "TrafficPhysicsTool/numpy"
+  },
+  "packages": [
+    "stdlib",
+    "numpy"
+  ],
+  "not_required": [
+    "faiss",
+    "chromadb",
+    "sentence_transformers"
+  ]
+}
