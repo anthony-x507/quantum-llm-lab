@@ -1,5 +1,6 @@
+- 2026-09-24 13:55:13 ET — fold tip-vision-ground → codigo-vivo-tip; freeze `codigo_vivo_tip_vision_ground_100pct_20260924_134441`; mixed 1.0; vision BASE 1.000; circ 2/2; inverse_cv 99.82%; collision 100%.
 - 2026-09-24 13:49:42 ET — fold tip-inverse-r2 → codigo-vivo-tip; freeze `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`; mixed 1.0; inverse_cv 99.82%; collision 100%; R10 52/52·44/44; motion 97.5%.
-- 2026-09-24 13:44 ET — tip-vision-ground polish (side): BASE vis 0.9→**1.0**; circ 2/2; floor 1.0; FREEZE `codigo_vivo_tip_vision_ground_100pct_20260924_134441`; adapters RO.
+- 2026-09-24 13:44 ET — tip-vision-ground polish (pre-fold): BASE vis 0.9→**1.0**; circ 2/2; floor 1.0; see fold entry above.
 - 2026-09-24 13:46:15 ET — fold tip-hardneg-r10 → codigo-vivo-tip; freeze `codigo_vivo_tip_r10_100pct_20260924_134615`; mixed 1.0; R10 52/52·44/44; motion 97.5%.
 # Estado de avance — Agent Lab / quantum-llm-lab
 

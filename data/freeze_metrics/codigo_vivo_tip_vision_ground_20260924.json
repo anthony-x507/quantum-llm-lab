@@ -1,0 +1,43 @@
+{
+  "frontier": "codigo-vivo-tip-vision-ground",
+  "written_et": "2026-09-24 13:55:13 ET",
+  "branch": "frontier/codigo-vivo-tip",
+  "source_branch": "frontier/tip-vision-ground",
+  "rebase_onto": "9cc5ed5",
+  "pre_feat_sha": "5a74c4a",
+  "post_rebase_feat_sha": "78ce050",
+  "post_rebase_pin_shas": [
+    "5775665",
+    "2c5f1e5",
+    "ec65f66"
+  ],
+  "metrics": {
+    "mixed_d_unified": 1.0,
+    "vision_base_after": 1.0,
+    "circ_axis": "2/2",
+    "collision_physics_overall_pct": 100.0,
+    "collision_inverse_cv_overall_pct": 99.82,
+    "collision_choose_safest_overall_pct": 100.0,
+    "collision_n_eval_seqs": 40,
+    "collision_n_queries": 2850,
+    "r10_router": "52/52",
+    "r10_verifier": "44/44",
+    "motion_coverage_known": 0.975,
+    "motion_counts": {
+      "independent": 138,
+      "correlated": 57,
+      "unknown": 5
+    },
+    "pillars": "26/26",
+    "hardneg_smoke": "18/18",
+    "wired_to_vlm": true,
+    "gt_leak": false,
+    "ent_never_on_python": true,
+    "tip_vis_pillar": "BASE",
+    "floor_held": true,
+    "contam_passed": true,
+    "retrieval_ok": true,
+    "ro_mtime_unchanged": true
+  },
+  "freeze_id": "codigo_vivo_tip_vision_ground_100pct_20260924_134441"
+}

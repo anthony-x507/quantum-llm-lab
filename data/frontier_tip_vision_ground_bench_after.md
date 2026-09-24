@@ -1,6 +1,6 @@
 # BENCHMARK_CODIGO_VIVO — three pillars
 
-**Written:** 2026-09-24 13:44:02 
+**Written:** 2026-09-24 13:54:13 
 **Model:** `mlx-community/Qwen3-VL-8B-Thinking-4bit`
 **Adapter (READ-ONLY):** `/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter`
 **Base:** adapter=null

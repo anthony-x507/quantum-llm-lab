@@ -87,5 +87,17 @@
   "branch_sha": "04b0738d8bf1b4e6945b07a47532db258b48d712",
   "branch_sha_short": "04b0738",
   "feat_sha": "5a74c4a973a3039c6f7e2762e48a72b3ad8ce891",
-  "feat_sha_short": "5a74c4a"
+  "feat_sha_short": "5a74c4a",
+  "folded": true,
+  "folded_at_et": "2026-09-24 13:55:13 ET",
+  "fold_base_tip_sha": "9cc5ed5",
+  "post_rebase_feat_sha": "78ce050",
+  "re_smoke": {
+    "mixed_d_unified": 1.0,
+    "vision_base": 1.0,
+    "circ_axis": "2/2",
+    "inverse_cv": 99.82,
+    "collision_physics": 100.0,
+    "choose_safest": 100.0
+  }
 }

@@ -1,8 +1,11 @@
-## 2026-09-24 — fold tip-inverse-r2 → codigo-vivo-tip
-Rebase `0a1439d`/`7db813f`/`95b1ad6` onto `fabef2b` → `6b77248`+`343d00a`+`5d4d466` FF. CPU unified **1.0** (re-smoke); collision physics **100%** (n=40/2850); inverse_cv **99.82%**; choose_safest **100%**; R10 **52/52·44/44**; motion **97.5%**; pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. r10 + motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`. Vision-ground / motion-r4 / R11 **not** folded. See SCOREBOARD + TIP-INVERSE-R2.
+## 2026-09-24 — fold tip-vision-ground → codigo-vivo-tip
+Rebase `5a74c4a`/`06017ae`/`04b0738`/`810a8bf` onto `9cc5ed5` → `78ce050`+`5775665`+`2c5f1e5`+`ec65f66` FF. CPU unified **1.0** (re-smoke); vision BASE **1.000** (10/10); circ **2/2**; inverse_cv **99.82%**; collision physics **100%** (n=40/2850); choose_safest **100%**; R10 **52/52·44/44**; motion **97.5%**; pillars 26/26; hardneg 18/18; `wired_to_vlm`; freezes retained incl. inverse_r2 + r10 + motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_vision_ground_100pct_20260924_134441`. Motion-r4 / R11 / distance-mid / TTI **not** folded. See SCOREBOARD + TIP-VISION-GROUND.
 
-## 2026-09-24 — tip-vision-ground polish (side)
-Branch `frontier/tip-vision-ground` from tip `6624df1`. BASE vis 0.9→**1.0**; circ **2/2** rescued via prompt/parse/grounding; floor **1.0**; FREEZE `codigo_vivo_tip_vision_ground_100pct_20260924_134441`; adapters RO; tip vis stays BASE. See `docs/FRONTIER-CODIGO-VIVO-TIP-VISION-GROUND.md`.
+## 2026-09-24 — fold tip-inverse-r2 → codigo-vivo-tip
+Rebase `0a1439d`/`7db813f`/`95b1ad6` onto `fabef2b` → `6b77248`+`343d00a`+`5d4d466` FF. CPU unified **1.0** (re-smoke); collision physics **100%** (n=40/2850); inverse_cv **99.82%**; choose_safest **100%**; R10 **52/52·44/44**; motion **97.5%**; pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. r10 + motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`. Vision-ground later folded (see fold entry above); motion-r4 / R11 **not** folded. See SCOREBOARD + TIP-INVERSE-R2.
+
+## 2026-09-24 — tip-vision-ground polish (pre-fold)
+Branch `frontier/tip-vision-ground` from tip `6624df1` → rebased onto `9cc5ed5`. BASE vis 0.9→**1.0**; circ **2/2**; floor **1.0**. See fold entry above + TIP-VISION-GROUND.
 
 ## 2026-09-24 — fold tip-hardneg-r10 → codigo-vivo-tip
 Rebase `b281e88`/`677c7ce` onto `6624df1` → `d4b2d4f`+`06fcc67` FF (skipped redundant R9-priors `c65cc04`). CPU unified **1.0** (re-smoke); R10 **52/52·44/44**; R9 **52/52·44/44**; motion **97.5%**; collision physics **100%** (n=40); pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_r10_100pct_20260924_134615`. Vision-ground / inverse-r2 **not** folded. See SCOREBOARD + TIP-R10.

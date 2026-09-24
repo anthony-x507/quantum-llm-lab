@@ -1,6 +1,6 @@
 {
   "frontier": "C3b-moe-verifier-mixed-live",
-  "written": "2026-09-24 13:49:16",
+  "written": "2026-09-24 13:53:42",
   "primary": "data/frontier_moe_verifier_mixed_cpu.json",
   "scoreboard": {
     "table": [
@@ -97,7 +97,7 @@
     },
     "moe_delta_visible": true,
     "priors_used": [
-      "/Users/anthony/Documents/quantum-llm-lab-tip-vision-ground/data/BENCHMARK_CODIGO_VIVO.json",
+      "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/BENCHMARK_CODIGO_VIVO.json",
       "docs/FRONTIER-MOE-VERIFIER-UNIFIED.md#prior-live"
     ]
   },

@@ -1,10 +1,11 @@
 # FRONTIER — Código-vivo tip vision-ground
 
-**Branch:** `frontier/tip-vision-ground` (from tip `6624df1` (motion-r3 folded; brief allowed newer than `2d13d0a`))  
-**Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-vision-ground` · Mac-111  
-**Written:** 2026-09-24 13:44:41 ET  
-**Claim scope:** BASE vision bench reinforce via **prompt / parse / grounding only**. Tip vis pillar stays **BASE**. **NO quantum-advantage claims.**  
-**Fold into tip:** **NO** (side branch only; do not fold yourself).
+**Status:** **FOLDED** into `frontier/codigo-vivo-tip` (rebase `5a74c4a`/`06017ae`/`04b0738`/`810a8bf` onto `9cc5ed5` → content `78ce050` / pins `5775665`+`2c5f1e5`+`ec65f66` FF)  
+**Branch:** `frontier/tip-vision-ground` (rebased; source kept) · tip `frontier/codigo-vivo-tip`  
+**Base tip at fold:** `9cc5ed5` (post inverse-r2) · vision originally from `6624df1`  
+**When:** polish ~13:44 ET · fold 2026-09-24 13:55:13 ET · Mac-111 (`074c6626-…`)  
+**Freeze:** `codigo_vivo_tip_vision_ground_100pct_20260924_134441`  
+**Claim:** NO quantum advantage. BASE vision prompt/parse/grounding only; tip vis stays BASE.
 
 ## SHA / setup
 
@@ -121,9 +122,21 @@ unset PYTHONPATH
 - `docs/FRONTIER-CODIGO-VIVO-TIP-VISION-GROUND.md` (this file)
 - `data/freeze_manifests/codigo_vivo_tip_vision_ground_100pct_20260924_134441.json`
 
+
+
+## FOLDED into tip
+
+**When:** 2026-09-24 13:55:13 ET · Mac-111 (`074c6626-…`)  
+**Method:** rebase `frontier/tip-vision-ground` (`810a8bf` / feat `5a74c4a`; pins `06017ae`+`04b0738`+`810a8bf`) onto tip `9cc5ed5` → `78ce050`+`5775665`+`2c5f1e5`+`ec65f66`; FF into tip (STATUS kept inverse-r2 fold + vision side note; relative mixed_unified primary kept).  
+**Prior freezes retained (not abandoned):** platform, mlx_r3, post_polish, R5, label_protect, R6, post_od2, R7, **scaffold_motion**, **R8**, **distance_danger**, **collision_pred**, **motion_r2**, **collision_n**, **R9**, **motion_r3**, **R10**, **inverse_r2** `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`.  
+**Re-smoke:** mixed (d) **1.0**; vision BASE **1.000** (10/10); circ **2/2**; inverse_cv **99.82%**; collision physics **100%** (n=40 / 2850); choose_safest **100%**; R10 **52/52·44/44**; motion coverage **97.5%** (138 ind + 57 corr); pillars **26/26**; hardneg **18/18**; `wired_to_vlm=true`; `gt_leak=false`; `ent_never_on_python=true`.  
+**Not folded:** tip-motion-r4 / tip-hardneg-r11 / tip-distance-mid / tip-tti (active — do not fold).  
+**Adapters:** `data/lora_adapter/` RO mtime unchanged (2026-09-24 00:58:09). Tip vis pillar stays **BASE**.  
+**Freeze:** `codigo_vivo_tip_vision_ground_100pct_20260924_134441` (pinned on tip after fold).
+
 ## What this does NOT do
 
 - No write to `data/lora_adapter/` or any new LoRA directory (Anthony may authorize a vision LoRA later — not this brief).
-- No merge to `main` / no tip FF (side branch only).
-- No checkout of tip-cv / tip-hardneg-r10 / tip-vision-delta / tip-motion-r3 / tip-hardneg-r9.
+- No merge to `main`. Fold destination is tip-cv only.
+- No tip-motion-r4 / tip-hardneg-r11 / tip-distance-mid / tip-tti worktree writes.
 - No quantum-advantage marketing.

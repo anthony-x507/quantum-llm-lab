@@ -1,6 +1,6 @@
 {
   "schema": "frontier_tip_collision_n_probe",
-  "ts": "2026-09-24 13:43:03 ET",
+  "ts": "2026-09-24 13:53:41 ET",
   "domain": "collision_predictive",
   "branch": "frontier/tip-inverse-r2",
   "n_eval_seqs": 40,
@@ -100,14 +100,10 @@
     }
   },
   "quantum_adapter_touched": false,
-  "floor_resmoke": "N/A \u2014 side-branch collision_predictive / inverse_cv + choose_safest polish only; tip router / mixed untouched; mixed floor 1.0 assumed held",
-  "note": "refreshed by tip-inverse-r2; physics 100% held; inverse_cv raised",
-  "inverse_r2_probe": "data/frontier_tip_inverse_r2_probe.json",
+  "floor_resmoke": "N/A \u2014 side-branch collision_predictive only; tip router untouched",
   "n_expand": {
     "before_n_eval_seqs": 8,
     "before_n_queries": 555,
-    "after_n_eval_seqs": 40,
-    "after_n_queries": 2850,
     "target_n_eval_seqs": 40
   }
 }
