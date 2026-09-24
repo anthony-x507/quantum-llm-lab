@@ -2,12 +2,13 @@
   "frontier": "codigo-vivo-tip-r9",
   "written_et": "2026-09-24 13:34:05 ET",
   "branch": "frontier/codigo-vivo-tip",
-  "tip_sha": "0096a6ec95d80485ef733fffe06beb626e14b60a",
+  "tip_sha": "eefc61711bbd321fe72fd21c43b88a0082eb6dba",
   "base_tip": "3d05cbe",
   "r9_router": "52/52",
   "r9_verifier": "44/44",
   "mixed_d_unified": 1.0,
   "ent_never_on_python": true,
   "fold": true,
-  "freeze_id": "codigo_vivo_tip_r9_100pct_20260924_133405"
+  "freeze_id": "codigo_vivo_tip_r9_100pct_20260924_133405",
+  "tip_sha_short": "eefc617"
 }

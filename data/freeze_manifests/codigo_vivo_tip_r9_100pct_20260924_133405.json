@@ -4,8 +4,8 @@
   "domain": "codigo_vivo_tip_r9",
   "pct": 100,
   "band": "100pct",
-  "git_sha": "0096a6ec95d80485ef733fffe06beb626e14b60a",
-  "git_sha_short": "0096a6e",
+  "git_sha": "eefc61711bbd321fe72fd21c43b88a0082eb6dba",
+  "git_sha_short": "eefc617",
   "artifact": "data/frontier_moe_verifier_hardneg_r9.json",
   "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
   "metrics": {
@@ -50,5 +50,6 @@
   "rebase_pin_sha": "0096a6ec95d80485ef733fffe06beb626e14b60a",
   "source_branch": "frontier/tip-hardneg-r9",
   "note": "Fold tip-hardneg-r9 into codigo-vivo-tip post collision-n; re-smoke held floor 1.0",
-  "freeze_id": "codigo_vivo_tip_r9_100pct_20260924_133405"
+  "freeze_id": "codigo_vivo_tip_r9_100pct_20260924_133405",
+  "fold_commit": "eefc617"
 }

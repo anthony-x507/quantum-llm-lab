@@ -7,7 +7,7 @@
 ## R9 TIP FREEZE / FOLD (overall 1.0) — tip HEAD after hardneg-r9 fold
 
 **Freeze id:** `codigo_vivo_tip_r9_100pct_20260924_133405`  
-**Tip HEAD (pre-pin):** fold commit after FF `0096a6e` (rebase `eec0a8a`/`b33c2b0` onto `3d05cbe` → `ea2f450`+`0096a6e`)  
+**Frozen SHA:** `eefc61711bbd321fe72fd21c43b88a0082eb6dba` (`eefc617`) · branch `frontier/codigo-vivo-tip` · rebase `eec0a8a`/`b33c2b0` onto `3d05cbe` → `ea2f450`+`0096a6e` FF then fold  
 **When:** 2026-09-24 13:34:05 ET · Mac-111 (`074c6626-…`)  
 **Claim:** NO quantum advantage. Cites tip HEAD after R9 fold; **prior platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2 / R7 / scaffold_motion / R8 / distance_danger / collision_pred / motion_r2 / collision_n freezes NOT abandoned**.
 
