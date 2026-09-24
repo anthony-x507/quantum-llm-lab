@@ -4,7 +4,7 @@
 **Base tip:** `e1b12d5` (`frontier/codigo-vivo-tip` post tip hardneg R14 polish)  
 **When:** 2026-09-24T15:09:16-04:00 ET · Mac-111 (`074c6626-0440-4817-9829-6bae77c578d6`)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r24`  
-**Feat sha:** `PENDING`  
+**Feat sha:** `e31acfb781c0db97d81ef31b304ba3600a5ca8f0`  
 **Claim:** NO quantum advantage. Classical heuristic router + `python -I` verifier only.
 
 ## LOCK
