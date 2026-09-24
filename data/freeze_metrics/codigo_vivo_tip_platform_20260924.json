@@ -1,0 +1,96 @@
+{
+  "frontier": "codigo-vivo-tip-platform",
+  "freeze_id": "codigo_vivo_tip_platform_100pct_20260924_111435",
+  "written_et": "2026-09-24 11:14:35 ET",
+  "branch": "frontier/codigo-vivo-tip",
+  "frozen_sha": "f0da3e70eba5bebd82d9d07bf2668e042ec250f1",
+  "frozen_sha_short": "f0da3e7",
+  "tip_head_at_write": "368b42963da4d2cb647da6f2b01520a32aa557b0",
+  "host": "Mac-139",
+  "machine_id": "074c6626-0440-4817-9829-6bae77c578d6",
+  "policy": "PLATFORM freeze overall=1.0 @ f0da3e7. Never abandon. RO data/lora_adapter/. No merge main. NO Q-advantage claims.",
+  "scoreboard": {
+    "a_baseline": 0.3333,
+    "b_moe_alone": 0.6667,
+    "c_verifier_on_python": 0.6667,
+    "d_unified": 1.0
+  },
+  "delta_moe_overall": 0.3334,
+  "moe_delta_visible": true,
+  "pillars": {
+    "moe": {
+      "baseline": 0.0,
+      "actual_delta": 0.3334,
+      "actual_unified": 1.0,
+      "target": "\u0394\u2265+0.30; (d)\u22650.967",
+      "gap": 0
+    },
+    "verifier": {
+      "actual": 1.0,
+      "hardneg_py_r1_r2": 1.0,
+      "target": "\u22650.875 prefer 1.0",
+      "gap": 0
+    },
+    "scaffold": {
+      "default_on_ent": true,
+      "freeze_held": true,
+      "solve": 0.9,
+      "delta_solve": 0.5,
+      "clear_win": true,
+      "target": "solve\u22650.90; \u0394solve\u22650.45",
+      "gap": 0
+    },
+    "vision": {
+      "actual_scored": 1.0,
+      "target": "\u22650.900 prefer 1.0",
+      "gap": 0
+    },
+    "vision_mlx_parse": {
+      "actual": 1.0,
+      "n": "3/3",
+      "target": "\u22652/3 prefer 1.0",
+      "gap": 0
+    }
+  },
+  "hardneg_r1_router": {
+    "score": "18/18",
+    "rate": 1.0,
+    "ent_never_on_python": true
+  },
+  "hardneg_r2_router": {
+    "score": "22/22",
+    "rate": 1.0,
+    "ent_never_on_python": true
+  },
+  "smoke_reconfirm": {
+    "et": "2026-09-24 11:14:35 ET",
+    "elapsed_s": 1.35,
+    "pillars": "26/26",
+    "hardneg_embedded": "18/18",
+    "ent_never_on_python": true,
+    "circuit_scaffold_default_on_ent": true,
+    "scaffold_injected_n": 10,
+    "result": "PASS"
+  },
+  "anti_contamination": {
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false,
+    "scaffold_gt_leaks": 0,
+    "lora_adapter_writes": false
+  },
+  "floor_held": true,
+  "prior_floor_09667_retained": true,
+  "artifacts": [
+    "data/frontier_moe_verifier_mixed_unified.json",
+    "data/frontier_moe_verifier_mixed_smoke.json",
+    "data/frontier_moe_verifier_mixed_cpu.json",
+    "data/frontier_moe_dual_lane_hardneg.json",
+    "data/frontier_moe_dual_lane_hardneg_r2.json",
+    "data/FRONTIER_CIRCUIT_GRAPH_SCAFFOLD_FREEZE.json",
+    "data/frontier_circuit_graph_scaffold_hard_recheck.json",
+    "data/frontier_vision_mlx_anti_think_mac111.json",
+    "data/freeze_manifests/codigo_vivo_tip_platform_100pct_20260924_111435.json",
+    "data/freeze_metrics/codigo_vivo_tip_platform_20260924.json",
+    "docs/FRONTIER-CODIGO-VIVO-SCOREBOARD.md"
+  ]
+}

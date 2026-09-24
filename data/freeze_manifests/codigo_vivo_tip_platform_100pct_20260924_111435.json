@@ -1,0 +1,84 @@
+{
+  "schema": "qlab_freeze_manifest_v1",
+  "freeze_id": "codigo_vivo_tip_platform_100pct_20260924_111435",
+  "frozen_at_et": "2026-09-24 11:14:35 ET",
+  "domain": "codigo_vivo_tip_platform",
+  "pct": 100.0,
+  "band": "100",
+  "git_sha": "f0da3e70eba5bebd82d9d07bf2668e042ec250f1",
+  "git_sha_short": "f0da3e7",
+  "branch": "frontier/codigo-vivo-tip",
+  "host": "Mac-139",
+  "machine_id": "074c6626-0440-4817-9829-6bae77c578d6",
+  "artifact": "data/frontier_moe_verifier_mixed_unified.json",
+  "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
+  "metrics": {
+    "overall": 1.0,
+    "python": 1.0,
+    "entanglement": 1.0,
+    "vision_scored": 1.0,
+    "moe_delta_overall": 0.3334,
+    "moe_delta_visible": true,
+    "router_pillars": "26/26",
+    "hardneg_r1": "18/18",
+    "hardneg_r1_rate": 1.0,
+    "hardneg_r2": "22/22",
+    "hardneg_r2_rate": 1.0,
+    "scaffold_freeze_held": true,
+    "scaffold_solve": 0.9,
+    "scaffold_delta_solve": 0.5,
+    "circuit_scaffold_default_on_ent": true,
+    "vision_mlx_parse": 1.0,
+    "vision_mlx_parse_n": "3/3",
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false,
+    "smoke_reconfirm_et": "2026-09-24 11:14:35 ET",
+    "smoke_pillars": "26/26",
+    "smoke_hardneg_embedded": "18/18",
+    "smoke_elapsed_s": 1.35
+  },
+  "pillars": {
+    "moe": {
+      "actual": "+0.333 visible; (d) 1.0",
+      "gap": 0
+    },
+    "verifier": {
+      "actual": 1.0,
+      "gap": 0
+    },
+    "scaffold": {
+      "actual": "ON; solve 0.9; \u0394solve 0.5",
+      "gap": 0
+    },
+    "vision": {
+      "actual": 1.0,
+      "gap": 0
+    },
+    "vision_mlx_parse": {
+      "actual": 1.0,
+      "gap": 0
+    }
+  },
+  "paths": {
+    "a_baseline": 0.3333,
+    "b_moe_alone": 0.6667,
+    "c_verifier_on_python": 0.6667,
+    "d_unified": 1.0
+  },
+  "composition_sources": {
+    "mixed-freeze-vision": "c2c3988",
+    "freeze-polish-bridge": "65e5c2b",
+    "circuit-graph-scaffold-hard": "ecb7974",
+    "vision-mlx-anti-think": "d6c5cad",
+    "mixed-with-scaffold": "4d587f7",
+    "mixed-with-freeze-r2": "7211f78"
+  },
+  "note": "PLATFORM baseline overall=1.0 at tip SHA f0da3e7. Locks MoE \u0394+0.333, pillars 26/26, hardneg R1 18/18 + R2 22/22, scaffold freeze held (solve 0.9 \u0394solve 0.5), vision_mlx_parse 1.0 (3/3). Prior 0.9667 freeze retained / never abandoned.",
+  "policy": "Do not abandon; polish and/or reinforce around. RO data/lora_adapter/. No merge to main. NO quantum-advantage claims.",
+  "tip_head_at_freeze_write": "368b42963da4d2cb647da6f2b01520a32aa557b0",
+  "related_prior_freezes": [
+    "data/freeze_manifests/mixed_moe_verifier_unified_96.67pct_20260924_105328.json",
+    "data/freeze_manifests/mixed_moe_verifier_unified_vision_polish_100pct_20260924_105546.json",
+    "data/freeze_manifests/bridge_moe_verifier_polish_r2_100pct_20260924_105442.json"
+  ]
+}

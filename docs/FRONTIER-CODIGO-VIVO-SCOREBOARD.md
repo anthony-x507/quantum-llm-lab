@@ -18,6 +18,34 @@
 
 **Metric policy:** Prefer vision **1.0** / overall **1.0** from `mixed-freeze-vision` over scaffold-merge / R2-port scoreboards that still show vis **0.9** / overall **0.9667**. Keep scaffold wiring + R2 reinforces + anti-think.
 
+## PLATFORM FREEZE (overall 1.0)
+
+**Freeze id:** `codigo_vivo_tip_platform_100pct_20260924_111435`  
+**Frozen SHA:** `f0da3e70eba5bebd82d9d07bf2668e042ec250f1` (`f0da3e7`) · branch `frontier/codigo-vivo-tip`  
+**When:** 2026-09-24 11:14:35 ET · Mac-139 (`074c6626-…`)  
+**Claim:** NO quantum advantage. Classical MoE + `python -I` verifier + prior-replay ent/vision + GT-free scaffold + mlx vision parse.
+
+| Lock | Value |
+|------|-------|
+| overall (d unified) | **1.0000** |
+| MoE Δ overall | **+0.3334** visible |
+| pillars | **26/26** |
+| hardneg R1 | **18/18 (1.0)** |
+| hardneg R2 | **22/22 (1.0)** |
+| scaffold freeze | **held** solve=0.9 Δsolve=0.5 · default ON |
+| vision_mlx_parse | **1.0** (3/3 anti-think) |
+| ent_never_on_python | **true** |
+| prompt_touches_gt | **false** |
+
+**Policy:** Never abandon. Polish / reinforce around. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. Prior mixed freeze **≥0.9667** retained.
+
+| Artifact | Path |
+|----------|------|
+| Manifest | `data/freeze_manifests/codigo_vivo_tip_platform_100pct_20260924_111435.json` |
+| Metrics | `data/freeze_metrics/codigo_vivo_tip_platform_20260924.json` |
+| Unified | `data/frontier_moe_verifier_mixed_unified.json` |
+| Smoke reconfirm | PASS · ~1.35s · pillars 26/26 · hardneg 18/18 |
+
 ## LOCK / anti-contam
 
 - Freeze mixed unified overall **≥0.9667** (docs ~0.967); polished floor held at **1.0**. Never abandon.
@@ -88,6 +116,8 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `data/frontier_vision_mlx_api_fix_mac111.json`
 - `data/frontier_vision_mlx_anti_think_mac111.json`
 - `data/freeze_metrics/mixed_with_freeze_r2_20260924.json`
+- `data/freeze_manifests/codigo_vivo_tip_platform_100pct_20260924_111435.json`
+- `data/freeze_metrics/codigo_vivo_tip_platform_20260924.json`
 - `docs/FRONTIER-MIXED-FREEZE-VISION.md`
 - `docs/FRONTIER-MIXED-WITH-SCAFFOLD.md`
 - `docs/FRONTIER-MIXED-WITH-FREEZE-R2.md`
