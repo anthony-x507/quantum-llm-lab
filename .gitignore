@@ -13,3 +13,6 @@ examples/out_frames/
 # Generated synthetic dataset (keep path via .gitkeep)
 data/scenes/**
 !data/scenes/.gitkeep
+data/lora_adapter/**
+!data/lora_adapter/.gitkeep
+data/lora_dataset.jsonl
