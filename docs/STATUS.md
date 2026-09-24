@@ -7,6 +7,11 @@
 
 ---
 
+## Tip own-delta (2026-09-24)
+
+Branch `frontier/tip-own-delta-scoreboard` @ `459f6da`: Py Δ −0.062, Ent +1.0, Vis −0.200; tip MoE+verifier unified 1.0 (CPU+MLX sample). Anti-contam CLEAN. See `docs/FRONTIER-CODIGO-VIVO-TIP-OWN-DELTA-SCOREBOARD.md`.
+
+
 ## Goal
 
 Qwen **8B** (**LoRA + capas + tools**) **10×** mejor que el modelo de partida (base sin adapter ≈ **0% JSON usable** → techo **100% usable** por dominio).  

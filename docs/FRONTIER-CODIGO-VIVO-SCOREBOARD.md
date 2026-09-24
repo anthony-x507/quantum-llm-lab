@@ -376,3 +376,16 @@ Fold scaffold→VLM wire (platform + MLX+R3 freezes retained): tip `ae62ce2` · 
 
 n honest: py=8 ent=16 vis=16 · Δ vs CPU 1.0 = **0.0** · floor held · Mac-111 only · **FOLDED** @ 12:03 ET · see `docs/FRONTIER-CODIGO-VIVO-TIP-MLX-LARGERN.md`
 
+## Own-delta tip scoreboard (branch `frontier/tip-own-delta-scoreboard`)
+
+**When:** 2026-09-24 ~12:27 ET · Mac-111 · from tip `459f6da`  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-OWN-DELTA-SCOREBOARD.md`  
+**JSON:** `data/frontier_tip_own_delta_scoreboard.json`
+
+| pillar | base | adapter | Δ | tip dual-lane |
+|--------|------|---------|---|----------------|
+| Python | 0.062 | 0.000 (quantum) | **−0.062** | BASE+verifier → **1.0** (avoids adapter) |
+| Ent | 0.000 | 1.000 (ent2) | **+1.000** | ent2 → **1.0** (still helps) |
+| Vision | 0.900 | 0.700 (quantum) | **−0.200** | BASE → **1.0** (avoids adapter) |
+
+Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. Classical present, not routed on CV pillars.
