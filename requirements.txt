@@ -1,6 +1,7 @@
 # Simulador cuántico (CPU)
 pennylane>=0.38.0
 numpy>=1.26.0
+pillow>=10.0.0
 
 # LLM + VLM local en Apple Silicon (solo Darwin)
 mlx>=0.18.0; sys_platform == "darwin"

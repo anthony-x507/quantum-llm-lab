@@ -9,3 +9,7 @@ venv/
 models/
 examples/out_frames/
 .venv/
+
+# Generated synthetic dataset (keep path via .gitkeep)
+data/scenes/**
+!data/scenes/.gitkeep
