@@ -1,0 +1,105 @@
+{
+  "written": "2026-09-24 10:56:50 ET",
+  "host": "Mac-111",
+  "user": "anthony",
+  "branch": "frontier/vision-mlx-anti-think",
+  "base_sha": "62843ad",
+  "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
+  "fix": "anti-think: max_tokens=1536 + strip <think>/<thinking> + jev-style ONLY JSON cue + two-phase JSON-only retry (512)",
+  "before": {
+    "source": "data/frontier_vision_mlx_api_fix_mac111.json @ 62843ad",
+    "parse_ok": 0,
+    "n": 3,
+    "parse_rate": 0.0,
+    "max_tokens": 768
+  },
+  "smokes": {
+    "cpu_demo": {
+      "ok": true,
+      "source": "demo-physics"
+    },
+    "vision_minimal_api": {
+      "ok": true,
+      "elapsed_s": 1.55,
+      "frame": "/Users/anthony/Documents/quantum-llm-lab-vision-mlx/data/out_frames_vg_anti_think_1/frame_0000.png",
+      "gen_preview": "Got it, let's look at the image. There's a black background, a white circle at the top, and a gray horizontal bar at the bottom. So the main shapes are a circle and rectangles (the"
+    },
+    "grounding_n3_parse": {
+      "ok": true,
+      "n": 3,
+      "parse_ok": 3,
+      "parse_rate": 1.0,
+      "elapsed_s": 26.26,
+      "max_tokens_phase1": 1536,
+      "max_tokens_phase2": 512,
+      "items": [
+        {
+          "i": 0,
+          "elapsed_s": 10.84,
+          "parse": "ok",
+          "phase": "think_then_json",
+          "max_tokens": 1536,
+          "keys": [
+            "_vlm_max_tokens",
+            "_vlm_parse",
+            "_vlm_phase",
+            "_vlm_raw_preview",
+            "aceleracion_aprox_px_s2",
+            "nota",
+            "objeto",
+            "perdida_energia_por_rebote",
+            "rebotes",
+            "trayectoria"
+          ],
+          "preview": "Got it, let's see. The user provided four frames of an object moving. The object is a white dot on a black background. First, I need to describe what's happenin",
+          "json_usable": true
+        },
+        {
+          "i": 1,
+          "elapsed_s": 7.7,
+          "parse": "ok",
+          "phase": "think_then_json",
+          "max_tokens": 1536,
+          "keys": [
+            "_vlm_max_tokens",
+            "_vlm_parse",
+            "_vlm_phase",
+            "_vlm_raw_preview",
+            "aceleracion_aprox_px_s2",
+            "nota",
+            "objeto",
+            "perdida_energia_por_rebote",
+            "rebotes",
+            "trayectoria"
+          ],
+          "preview": "Got it, let's see. The user provided four frames of an object moving. The object is a white dot on a black background. First, I need to describe what's happenin",
+          "json_usable": true
+        },
+        {
+          "i": 2,
+          "elapsed_s": 7.72,
+          "parse": "ok",
+          "phase": "think_then_json",
+          "max_tokens": 1536,
+          "keys": [
+            "_vlm_max_tokens",
+            "_vlm_parse",
+            "_vlm_phase",
+            "_vlm_raw_preview",
+            "aceleracion_aprox_px_s2",
+            "nota",
+            "objeto",
+            "perdida_energia_por_rebote",
+            "rebotes",
+            "trayectoria"
+          ],
+          "preview": "Got it, let's see. The user provided four frames of an object moving. The object is a white dot on a black background. First, I need to describe what's happenin",
+          "json_usable": true
+        }
+      ]
+    }
+  },
+  "overall_api_ok": true,
+  "target": "parse>=2/3",
+  "met_target": true
+}
