@@ -13,11 +13,11 @@ Per sequence:
                           future under that action (is_safe, consequence, partners)
                           loaded POST-HOC by eval only
 
-Split default 32 train / 8 eval. Retrieval index = train only (ids list).
+Split default 160 train / 40 eval (n-expand beyond thin n=8). Retrieval index = train only (ids list).
 
 Usage:
   .venv/bin/python examples/collision_predictive/generate.py
-  .venv/bin/python examples/collision_predictive/generate.py --n-seq 40 --seed 24092445
+  .venv/bin/python examples/collision_predictive/generate.py --n-seq 200 --n-train 160 --n-eval 40 --seed 24092446
 """
 from __future__ import annotations
 
@@ -43,9 +43,9 @@ from physics import (
 )
 
 HORIZONS = (1, 3, 5)
-DEFAULT_N = 40
-DEFAULT_TRAIN = 32
-DEFAULT_EVAL = 8
+DEFAULT_N = 200
+DEFAULT_TRAIN = 160
+DEFAULT_EVAL = 40
 
 BG = (28, 32, 40)
 LANE = (50, 56, 68)
@@ -269,7 +269,7 @@ def main() -> None:
     ap.add_argument("--n-seq", type=int, default=DEFAULT_N)
     ap.add_argument("--n-train", type=int, default=DEFAULT_TRAIN)
     ap.add_argument("--n-eval", type=int, default=DEFAULT_EVAL)
-    ap.add_argument("--seed", type=int, default=24092445)
+    ap.add_argument("--seed", type=int, default=24092446)
     ap.add_argument("--frames-min", type=int, default=12)
     ap.add_argument("--frames-max", type=int, default=18)
     args = ap.parse_args()

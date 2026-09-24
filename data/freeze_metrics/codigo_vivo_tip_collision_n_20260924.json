@@ -1,0 +1,16 @@
+{
+  "frontier": "codigo-vivo-tip-collision-n",
+  "written_et": "2026-09-24 13:25:59 ET",
+  "branch": "frontier/tip-collision-n",
+  "base_tip": "763fb8c",
+  "mixed_d_unified": 1.0,
+  "collision_physics_pct": 100.0,
+  "n_eval_seqs_before": 8,
+  "n_eval_seqs_after": 40,
+  "n_queries_before": 555,
+  "n_queries_after": 2850,
+  "floor_held": true,
+  "adapters_ro": true,
+  "freeze_update": true,
+  "freeze_id": "codigo_vivo_tip_collision_n_100pct_20260924_132559"
+}

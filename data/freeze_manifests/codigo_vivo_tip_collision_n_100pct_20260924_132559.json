@@ -1,0 +1,37 @@
+{
+  "schema": "codigo_vivo_tip_collision_n_100pct",
+  "frozen_at_et": "2026-09-24 13:25:59 ET",
+  "domain": "codigo_vivo_tip_collision_n",
+  "pct": 100,
+  "band": "100pct",
+  "git_sha": "PENDING",
+  "git_sha_short": "PENDING",
+  "artifact": "data/frontier_tip_collision_n_probe.json",
+  "collision_eval": "data/collision_predictive/EVAL_COLLISION_CPU.json",
+  "base_tip_sha": "763fb8c4e813bf2333873efd3a7084d883f103ac",
+  "branch": "frontier/tip-collision-n",
+  "metrics": {
+    "collision_physics_overall_pct": 100.0,
+    "collision_choose_safest_overall_pct": 100.0,
+    "collision_inverse_cv_overall_pct": 89.82,
+    "collision_ablation_pp": 10.18,
+    "collision_n_eval_seqs": 40,
+    "collision_n_queries": 2850,
+    "collision_n_eval_seqs_before": 8,
+    "collision_n_queries_before": 555,
+    "collision_contam_passed": true,
+    "collision_retrieval_ok": true,
+    "mixed_d_unified": 1.0,
+    "floor_held": true,
+    "floor_resmoke": "N/A"
+  },
+  "floors": {
+    "mixed_d_unified": 1.0,
+    "held": true,
+    "collision_physics": 1.0,
+    "min_hold_pct": 80.0
+  },
+  "policy": "RO data/lora_adapter/; no merge main; side-branch only; avoid tip-cv / tip-hardneg-r9 / tip-motion-r2 / tip-distance-danger; GT never at inference",
+  "note": "n-expand collision-pred eval 8\u219240 seqs / 555\u21922850 queries; physics oracle held 100%; CPU synth seed 24092446",
+  "prior_freeze_retained": "codigo_vivo_tip_collision_pred_100pct_20260924_131846"
+}

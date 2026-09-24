@@ -1,84 +1,84 @@
 {
   "domain": "collision_predictive",
   "branch_tag": "tip-collision-pred",
-  "ts": "2026-09-24 13:08:58 ET",
-  "n_eval_seqs": 8,
+  "ts": "2026-09-24 13:25:53 ET",
+  "n_eval_seqs": 40,
   "predictors": {
     "collision_physics": {
       "k=1": {
-        "n": 185,
+        "n": 950,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=3": {
-        "n": 185,
+        "n": 950,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=5": {
-        "n": 185,
+        "n": 950,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
-        "physics_fail_rate": 0.0054
+        "physics_fail_rate": 0.0011
       },
       "overall": {
-        "n": 555,
+        "n": 2850,
         "collision_correct_pct": 100.0
       }
     },
     "inverse_cv": {
       "k=1": {
-        "n": 185,
-        "collision_correct_pct": 94.05,
-        "safe_match_pct": 99.46,
+        "n": 950,
+        "collision_correct_pct": 96.42,
+        "safe_match_pct": 98.53,
         "physics_fail_rate": 0.0
       },
       "k=3": {
-        "n": 185,
-        "collision_correct_pct": 85.95,
-        "safe_match_pct": 96.22,
+        "n": 950,
+        "collision_correct_pct": 89.89,
+        "safe_match_pct": 95.89,
         "physics_fail_rate": 0.0
       },
       "k=5": {
-        "n": 185,
-        "collision_correct_pct": 75.68,
-        "safe_match_pct": 90.27,
+        "n": 950,
+        "collision_correct_pct": 83.16,
+        "safe_match_pct": 92.21,
         "physics_fail_rate": 0.0
       },
       "overall": {
-        "n": 555,
-        "collision_correct_pct": 85.23
+        "n": 2850,
+        "collision_correct_pct": 89.82
       }
     },
     "collision_choose_safest": {
       "k=1": {
-        "n": 185,
+        "n": 950,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=3": {
-        "n": 185,
+        "n": 950,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=5": {
-        "n": 185,
+        "n": 950,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "overall": {
-        "n": 555,
+        "n": 2850,
         "collision_correct_pct": 100.0
       }
     }
   },
   "ablation": {
-    "collision_minus_inverse_cv_pp": 14.77,
+    "collision_minus_inverse_cv_pp": 10.18,
     "note": "Positive \u2192 elastic collision layer improves consequence/safety prediction vs inverse-style CV (no mass/collision). Scored on action-conditional GT."
   },
   "contam_self_test": {
@@ -91,7 +91,7 @@
     "rule": "injecting future/consequence GT \u2192 INVALID (discard; never report as clean)"
   },
   "retrieval_ok": true,
-  "audit": "data/eval_audit/collision_20260924_130857.jsonl",
+  "audit": "data/eval_audit/collision_20260924_132553.jsonl",
   "emit_schema": [
     "chosen_action",
     "predicted_consequence",

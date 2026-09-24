@@ -368,7 +368,7 @@ def main() -> None:
         "schema": "frontier_tip_collision_pred_probe",
         "ts": result["ts"],
         "domain": "collision_predictive",
-        "branch": "frontier/tip-collision-pred",
+        "branch": "frontier/tip-collision-n",
         "n_eval_seqs": result["n_eval_seqs"],
         "metric_collision_correct_pct": result["predictors"]["collision_physics"]["overall"]["collision_correct_pct"],
         "metric_n_queries": result["predictors"]["collision_physics"]["overall"]["n"],
@@ -383,6 +383,11 @@ def main() -> None:
     }
     Path("data/frontier_tip_collision_pred_probe.json").write_text(
         json.dumps(probe, indent=2) + "\n"
+    )
+    Path("data/frontier_tip_collision_n_probe.json").write_text(
+        json.dumps({**probe, "schema": "frontier_tip_collision_n_probe",
+                    "n_expand": {"before_n_eval_seqs": 8, "before_n_queries": 555,
+                                 "target_n_eval_seqs": 40}}, indent=2) + "\n"
     )
 
     # markdown table

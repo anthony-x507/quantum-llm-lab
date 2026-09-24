@@ -31,13 +31,20 @@ data/collision_predictive/   # frames local; SUMMARY+EVAL tracked
 data/lora_adapter_collision/ # empty — VLM deferred
 data/eval_audit/collision_*.jsonl
 data/frontier_tip_collision_pred_probe.json
+data/frontier_tip_collision_n_probe.json
 ```
 
 ## Run (CPU)
 
 ```bash
-.venv/bin/python examples/collision_predictive/generate.py --n-seq 40 --seed 24092445
+.venv/bin/python examples/collision_predictive/generate.py --n-seq 200 --n-train 160 --n-eval 40 --seed 24092446
 .venv/bin/python examples/collision_predictive/eval_harness.py --contam-self-test
 ```
 
 Quantum `data/lora_adapter/` = **READ-ONLY**. No GPU steal.
+
+## n-expand defaults (tip-collision-n)
+
+Default synth is now **200** sequences (**160** train / **40** eval), seed `24092446`.
+Prior thin set was 40 / 32 / 8 @ seed `24092445`. Physics oracle held 100% at larger n.
+

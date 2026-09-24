@@ -1,9 +1,9 @@
 {
   "domain": "collision_predictive",
-  "seed": 24092445,
-  "n_seq": 40,
-  "n_train": 32,
-  "n_eval": 8,
+  "seed": 24092446,
+  "n_seq": 200,
+  "n_train": 160,
+  "n_eval": 40,
   "horizons": [
     1,
     3,

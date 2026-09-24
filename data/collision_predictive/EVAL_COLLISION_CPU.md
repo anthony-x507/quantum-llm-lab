@@ -1,7 +1,7 @@
 # Collision predictive — CPU eval
 
-ts: 2026-09-24 13:08:58 ET
-audit: `data/eval_audit/collision_20260924_130857.jsonl`
+ts: 2026-09-24 13:25:53 ET
+audit: `data/eval_audit/collision_20260924_132553.jsonl`
 contam_self_test.passed: True
 
 ## % collision correct (post-hoc GT)
@@ -9,10 +9,10 @@ contam_self_test.passed: True
 | predictor | k=1 | k=3 | k=5 | overall |
 |-----------|-----|-----|-----|---------|
 | collision_physics | 100.0 | 100.0 | 100.0 | 100.0 |
-| inverse_cv | 94.05 | 85.95 | 75.68 | 85.23 |
+| inverse_cv | 96.42 | 89.89 | 83.16 | 89.82 |
 | collision_choose_safest | 100.0 | 100.0 | 100.0 | 100.0 |
 
-**Ablation (collision − inverse_cv):** 14.77 pp
+**Ablation (collision − inverse_cv):** 10.18 pp
 
 Positive → elastic collision layer improves consequence/safety prediction vs inverse-style CV (no mass/collision). Scored on action-conditional GT.
 

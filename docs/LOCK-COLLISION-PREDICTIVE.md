@@ -44,3 +44,10 @@ GT = real future under that action (`consequences_gt.json` sidecar) —
 CPU physics + synth GT OK now. Do **not** kill screens
 `qlora-classical`, `qlora-video-f1`, `qlab-after-ent`, `qlab-ent-v2-wait`,
 `qlab-enrich-plan`. No GPU steal.
+
+
+## n-expand (2026-09-24 tip-collision-n)
+
+Side branch `frontier/tip-collision-n` @ tip `763fb8c` scales eval **8 → 40** seqs
+(**555 → 2850** queries), seed `24092446`, split 160/40. Physics oracle must stay
+≥80% (held **100%**). See `docs/FRONTIER-CODIGO-VIVO-TIP-COLLISION-N.md`.
