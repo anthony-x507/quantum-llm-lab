@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-motion-r4-fold",
-  "written_et": "2026-09-24 14:02:26 ET",
-  "tip_sha": "a27b6fd32cb1a989e9e6a6ba12e70aaf5282f67e",
-  "tip_sha_short": "a27b6fd",
+  "written_et": "2026-09-24 14:02:48 ET",
+  "tip_sha": "2045645a6eff7b2a946adbf9638083a5c47dfde3",
+  "tip_sha_short": "2045645",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-motion-r4",
   "rebase_onto": "3f5f1b1",
@@ -74,5 +74,6 @@
   ],
   "freeze_id": "codigo_vivo_tip_motion_r4_100pct_20260924_135017",
   "blockers": [],
-  "content_sha": "753b1f7535561c5b0f834d0d97dee1a55408c03f"
+  "content_sha": "753b1f7535561c5b0f834d0d97dee1a55408c03f",
+  "fold_commit": "2045645"
 }

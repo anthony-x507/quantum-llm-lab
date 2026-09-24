@@ -1,11 +1,11 @@
 {
   "schema": "codigo_vivo_tip_motion_r4_100pct",
-  "frozen_at_et": "2026-09-24 14:02:26 ET",
+  "frozen_at_et": "2026-09-24 14:02:48 ET",
   "domain": "codigo_vivo_tip_motion_r4",
   "pct": 100,
   "band": "100pct",
-  "git_sha": "a27b6fd32cb1a989e9e6a6ba12e70aaf5282f67e",
-  "git_sha_short": "a27b6fd",
+  "git_sha": "2045645a6eff7b2a946adbf9638083a5c47dfde3",
+  "git_sha_short": "2045645",
   "artifact": "data/frontier_tip_motion_r4_cue_probe.json",
   "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
   "metrics": {

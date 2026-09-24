@@ -8,7 +8,7 @@
 ## MOTION-R4 TIP FREEZE / FOLD (overall 1.0) — tip HEAD after motion-r4 fold
 
 **Freeze id:** `codigo_vivo_tip_motion_r4_100pct_20260924_135017`  
-**Frozen SHA:** `a27b6fd32cb1a989e9e6a6ba12e70aaf5282f67e` (`a27b6fd`) · branch `frontier/codigo-vivo-tip` · rebase `a59cb7a`/`606c66f` onto `3f5f1b1` → `753b1f7`+`a27b6fd` FF then fold
+**Frozen SHA:** `2045645a6eff7b2a946adbf9638083a5c47dfde3` (`2045645`) · branch `frontier/codigo-vivo-tip` · rebase `a59cb7a`/`606c66f` onto `3f5f1b1` → `753b1f7`+`a27b6fd` FF then fold
 **When:** 2026-09-24 14:02:26 ET · Mac-111 (`074c6626-…`)  
 **Claim:** NO quantum advantage. Cites tip HEAD after motion-r4 fold; **prior platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2 / R7 / scaffold_motion / R8 / distance_danger / collision_pred / motion_r2 / collision_n / R9 / motion_r3 / R10 / inverse_r2 / vision_ground freezes NOT abandoned**.
 
