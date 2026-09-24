@@ -455,7 +455,7 @@
       "expected": "ent",
       "got": "ent",
       "ok": true,
-      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "adapter": null,
       "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Dominio fall, labe",
       "ent_adapter_blocked": false
     },
@@ -465,7 +465,7 @@
       "expected": "ent",
       "got": "ent",
       "ok": true,
-      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "adapter": null,
       "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Dominio superposit",
       "ent_adapter_blocked": false
     },
@@ -475,7 +475,7 @@
       "expected": "ent",
       "got": "ent",
       "ok": true,
-      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "adapter": null,
       "prompt_preview": "Reply with valid JSON: n_qubits, gates, domain, label. domain fall, label collap",
       "ent_adapter_blocked": false
     },
@@ -485,7 +485,7 @@
       "expected": "ent",
       "got": "ent",
       "ok": true,
-      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "adapter": null,
       "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit separable H",
       "ent_adapter_blocked": false
     },
@@ -495,7 +495,7 @@
       "expected": "ent",
       "got": "ent",
       "ok": true,
-      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "adapter": null,
       "prompt_preview": "Responde SOLO JSON válido con claves n_qubits, gates, domain, label. Bell pair e",
       "ent_adapter_blocked": false
     }

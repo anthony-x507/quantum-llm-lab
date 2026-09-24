@@ -1,0 +1,322 @@
+{
+  "n": 52,
+  "kind": "hardneg_r8_mixed_router",
+  "created": "2026-09-24 12:58:00 ET",
+  "round": 8,
+  "note": "R8 NEW traps (≠R1–R7/≠LP): dockerfile_arg_gates, json_schema_gates_prop, terraform_hcl_gates_attr, markdown_fence_gates, unicode_lookalike_gates, rego_policy_gates, cue_lang_gates, toml_gates_array, graphql_sdl_gates, sarif_rule_qubit, nix_attr_gates, wasm_export_gates, edn_keyword_gates, email_header_qubit + controls. HARD: prose gates: list; ASCII gates= near fullwidth; Rego input.gates[_]; CUE #Gates:. GT harness-only.",
+  "anti_contamination": "expected lane is harness-only; never injected into route()",
+  "items": [
+    {
+      "id": "r8_dfarg_01",
+      "expected": "python",
+      "family": "dockerfile_arg_gates",
+      "prompt": "Write Python that prints len('ARG GATES=cleanup,nightly'). Dockerfile ARG. ONLY code."
+    },
+    {
+      "id": "r8_dfarg_02",
+      "expected": "python",
+      "family": "dockerfile_arg_gates",
+      "prompt": "line='ARG gates=qubit-lint'\nprint(line.count('='))\n# Docker ARG gates= is a build-arg allow-list, not a circuit. ONLY code."
+    },
+    {
+      "id": "r8_dfarg_03",
+      "expected": "python",
+      "family": "dockerfile_arg_gates",
+      "prompt": "Write Python that prints 5*5. ENV PENNYLANE_FLAG=0 is a container env. ONLY code."
+    },
+    {
+      "id": "r8_dfarg_04",
+      "expected": "python",
+      "family": "dockerfile_arg_gates",
+      "prompt": "Write Python that prints len('ARG n_qubits=2'). Docker build-arg name only. ONLY code."
+    },
+    {
+      "id": "r8_jsch_01",
+      "expected": "python",
+      "family": "json_schema_gates_prop",
+      "prompt": "Write Python that prints len('\"gates\": {\"type\": \"array\"}'). JSON Schema property. ONLY code."
+    },
+    {
+      "id": "r8_jsch_02",
+      "expected": "python",
+      "family": "json_schema_gates_prop",
+      "prompt": "schema='{\"properties\":{\"gates\":{\"type\":\"array\"}}}'\nprint(schema.count('gates'))\n# JSON Schema property gates — not circuit emit. ONLY code."
+    },
+    {
+      "id": "r8_jsch_03",
+      "expected": "python",
+      "family": "json_schema_gates_prop",
+      "prompt": "Write Python that prints 8. JSON Schema required: [\"n_qubits\"] is a field list. ONLY code."
+    },
+    {
+      "id": "r8_jsch_04",
+      "expected": "python",
+      "family": "json_schema_gates_prop",
+      "prompt": "Write Python that prints 2+2. \"$defs\": {\"Gate\": …} is schema, not PennyLane. ONLY code."
+    },
+    {
+      "id": "r8_tfhcl_01",
+      "expected": "python",
+      "family": "terraform_hcl_gates_attr",
+      "prompt": "Write Python that prints len('gates = [\"allow\"]'). Terraform HCL attribute. ONLY code."
+    },
+    {
+      "id": "r8_tfhcl_02",
+      "expected": "python",
+      "family": "terraform_hcl_gates_attr",
+      "prompt": "hcl='gates = [\"ingress\", \"egress\"]'\nprint(hcl.count(','))\n# Terraform HCL gates = [...] ACL attr, not circuit JSON. ONLY code."
+    },
+    {
+      "id": "r8_tfhcl_03",
+      "expected": "python",
+      "family": "terraform_hcl_gates_attr",
+      "prompt": "Write Python that prints 3*3. resource \"aws_security_group\" \"qubit\" is a TF type string. ONLY code."
+    },
+    {
+      "id": "r8_md_01",
+      "expected": "python",
+      "family": "markdown_fence_gates",
+      "prompt": "Write Python that prints 2. Docs show a yaml fence with gates: list — markdown only. ONLY code."
+    },
+    {
+      "id": "r8_md_02",
+      "expected": "python",
+      "family": "markdown_fence_gates",
+      "prompt": "blob='```yaml\ngates:\n  - nightly\n```'\nprint(blob.count('-'))\n# Markdown fenced YAML gates: list is docs, not circuit. ONLY code."
+    },
+    {
+      "id": "r8_md_03",
+      "expected": "python",
+      "family": "markdown_fence_gates",
+      "prompt": "Write Python that prints len('```json'). Markdown fence marker. ONLY code."
+    },
+    {
+      "id": "r8_md_04",
+      "expected": "python",
+      "family": "markdown_fence_gates",
+      "prompt": "comment='see docs gates: list in the README fence'\nprint(len(comment))\n# Prose 'gates: list' is documentation, not YAML circuit. ONLY code."
+    },
+    {
+      "id": "r8_uni_01",
+      "expected": "python",
+      "family": "unicode_lookalike_gates",
+      "prompt": "Write Python that prints len('ｑubit'). Fullwidth lookalike string. ONLY code."
+    },
+    {
+      "id": "r8_uni_02",
+      "expected": "python",
+      "family": "unicode_lookalike_gates",
+      "prompt": "s='ｇａｔｅｓ=[cleanup]'\nprint(len(s))\n# Fullwidth latin lookalikes — not ASCII gates token. ONLY code."
+    },
+    {
+      "id": "r8_uni_03",
+      "expected": "python",
+      "family": "unicode_lookalike_gates",
+      "prompt": "Write Python that prints 7*7. String 'ｃｘ' is fullwidth, not CNOT. ONLY code."
+    },
+    {
+      "id": "r8_uni_04",
+      "expected": "python",
+      "family": "unicode_lookalike_gates",
+      "prompt": "Write Python that prints len('ｎ_qubits'). Fullwidth lookalike field name. ONLY code."
+    },
+    {
+      "id": "r8_rego_01",
+      "expected": "python",
+      "family": "rego_policy_gates",
+      "prompt": "Write Python that prints 4. Rego deny[msg] { input.gates[_] == \"qubit\" } is policy. ONLY code."
+    },
+    {
+      "id": "r8_rego_02",
+      "expected": "python",
+      "family": "rego_policy_gates",
+      "prompt": "rule='input.gates[_]'\nprint(len(rule))\n# OPA/Rego input.gates[_] path — not circuit JSON. ONLY code."
+    },
+    {
+      "id": "r8_rego_03",
+      "expected": "python",
+      "family": "rego_policy_gates",
+      "prompt": "Write Python that prints 6*2. package pennylane.auth is a Rego package name. ONLY code."
+    },
+    {
+      "id": "r8_cue_01",
+      "expected": "python",
+      "family": "cue_lang_gates",
+      "prompt": "Write Python that prints len('#Gates:'). CUE field comment. ONLY code."
+    },
+    {
+      "id": "r8_cue_02",
+      "expected": "python",
+      "family": "cue_lang_gates",
+      "prompt": "Write Python that prints 9. CUE: gates?: [...string] is a schema field. ONLY code."
+    },
+    {
+      "id": "r8_cue_03",
+      "expected": "python",
+      "family": "cue_lang_gates",
+      "prompt": "line='#Gates: optional'\nprint(line.count(':'))\n# CUE comment #Gates: — not a circuit ask. ONLY code."
+    },
+    {
+      "id": "r8_toml_01",
+      "expected": "python",
+      "family": "toml_gates_array",
+      "prompt": "Write Python that prints len('gates = [\"lint\"]'). TOML array in pyproject. ONLY code."
+    },
+    {
+      "id": "r8_toml_02",
+      "expected": "python",
+      "family": "toml_gates_array",
+      "prompt": "Write Python that prints 5. [tool.qubit] is a TOML table header. ONLY code."
+    },
+    {
+      "id": "r8_toml_03",
+      "expected": "python",
+      "family": "toml_gates_array",
+      "prompt": "t='gates = [\"fmt\", \"lint\"]'\nprint(t.count(','))\n# TOML gates array — ops tool list, not circuit. ONLY code."
+    },
+    {
+      "id": "r8_gsdl_01",
+      "expected": "python",
+      "family": "graphql_sdl_gates",
+      "prompt": "Write Python that prints len('type Gates {'). GraphQL SDL type name. ONLY code."
+    },
+    {
+      "id": "r8_gsdl_02",
+      "expected": "python",
+      "family": "graphql_sdl_gates",
+      "prompt": "Write Python that prints 11. field nQubits: Int @deprecated in SDL. ONLY code."
+    },
+    {
+      "id": "r8_gsdl_03",
+      "expected": "python",
+      "family": "graphql_sdl_gates",
+      "prompt": "s='type CircuitGate { id: ID }'\nprint(s.count('{'))\n# GraphQL SDL — not PennyLane. ONLY code."
+    },
+    {
+      "id": "r8_sarif_01",
+      "expected": "python",
+      "family": "sarif_rule_qubit",
+      "prompt": "Write Python that prints len('qubit/no-cx'). SARIF rule id. ONLY code."
+    },
+    {
+      "id": "r8_sarif_02",
+      "expected": "python",
+      "family": "sarif_rule_qubit",
+      "prompt": "Write Python that prints 3. SARIF result ruleId=pennylane/import. ONLY code."
+    },
+    {
+      "id": "r8_sarif_03",
+      "expected": "python",
+      "family": "sarif_rule_qubit",
+      "prompt": "Write Python that prints 10-1. tool.driver.name=bell-linter is SARIF metadata. ONLY code."
+    },
+    {
+      "id": "r8_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r8",
+      "prompt": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelazado."
+    },
+    {
+      "id": "r8_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r8",
+      "prompt": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separable."
+    },
+    {
+      "id": "r8_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r8",
+      "prompt": "Look at the image. How many dots are visible? Only the integer. No circuit."
+    },
+    {
+      "id": "r8_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r8",
+      "prompt": "Look at the chalkboard. How many letters? Only the integer. No circuit."
+    },
+    {
+      "id": "r8_base_01",
+      "expected": "base",
+      "family": "base_control_r8",
+      "prompt": "Thanks. Ignore Dockerfile ARG gates=cleanup in the README. No code, no circuit."
+    },
+    {
+      "id": "r8_base_02",
+      "expected": "base",
+      "family": "base_control_r8",
+      "prompt": "Please ignore the docs phrase gates: list. Chat only — no program, no circuit."
+    },
+    {
+      "id": "r8_base_03",
+      "expected": "base",
+      "family": "base_control_r8",
+      "prompt": "Hello — Rego input.gates[_] is policy only. No code, no circuit, no pennylane."
+    },
+    {
+      "id": "r8_base_04",
+      "expected": "base",
+      "family": "base_control_r8",
+      "prompt": "Weather update. Fullwidth lookalike caption. No code, no circuit."
+    },
+    {
+      "id": "r8_nix_01",
+      "expected": "python",
+      "family": "nix_attr_gates",
+      "prompt": "Write Python that prints len('gates = [ \"clippy\" ];'). Nix attr list. ONLY code."
+    },
+    {
+      "id": "r8_nix_02",
+      "expected": "python",
+      "family": "nix_attr_gates",
+      "prompt": "Write Python that prints 12. mkDerivation { pname = \"qubit-cli\"; } is Nix. ONLY code."
+    },
+    {
+      "id": "r8_wasm_01",
+      "expected": "python",
+      "family": "wasm_export_gates",
+      "prompt": "Write Python that prints len('(export \"gates\")'). WASM text export. ONLY code."
+    },
+    {
+      "id": "r8_wasm_02",
+      "expected": "python",
+      "family": "wasm_export_gates",
+      "prompt": "Write Python that prints 8*2. (func $cx) is WAT symbol, not CNOT ask. ONLY code."
+    },
+    {
+      "id": "r8_edn_01",
+      "expected": "python",
+      "family": "edn_keyword_gates",
+      "prompt": "Write Python that prints len(':gates'). EDN keyword. ONLY code."
+    },
+    {
+      "id": "r8_edn_02",
+      "expected": "python",
+      "family": "edn_keyword_gates",
+      "prompt": "Write Python that prints 5. Clojure {:gates [:lint]} is data, not circuit. ONLY code."
+    },
+    {
+      "id": "r8_spf_01",
+      "expected": "python",
+      "family": "email_header_qubit",
+      "prompt": "Write Python that prints len('X-Qubit-Ticket:'). Email header name. ONLY code."
+    },
+    {
+      "id": "r8_spf_02",
+      "expected": "python",
+      "family": "email_header_qubit",
+      "prompt": "Write Python that prints 9. Header X-Pennylane-Trace is email metadata. ONLY code."
+    },
+    {
+      "id": "r8_ctrl_01",
+      "expected": "python",
+      "family": "base_python_control_r8",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code."
+    },
+    {
+      "id": "r8_ctrl_02",
+      "expected": "python",
+      "family": "base_python_control_r8",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code."
+    }
+  ]
+}

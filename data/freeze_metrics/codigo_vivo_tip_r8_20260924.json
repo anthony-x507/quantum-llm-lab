@@ -1,0 +1,10 @@
+{
+  "frontier": "codigo-vivo-tip-r8",
+  "pct": 100,
+  "mixed_d_unified": 1.0,
+  "r8_router": "52/52",
+  "r8_verifier": "44/44",
+  "written_et": "2026-09-24 1:01:00 ET",
+  "branch": "frontier/tip-hardneg-r8",
+  "base": "69655dd"
+}

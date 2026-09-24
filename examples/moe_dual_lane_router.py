@@ -160,6 +160,7 @@ def route_heuristic(prompt: str) -> Lane:
     # label-protect: empty gates=[] ops + negated "json válido" near fall/super taxonomy are NOT ent.
     # R6: Bazel //gates:target; HTML data-gates="..."; Groovy/Jenkins gates = '...' quoted assigns.
     # R7: CI YAML multiline gates:\n  - …; Make .PHONY: gates; bare len('gates:') key tokens.
+    # R8: Dockerfile ARG gates=; JSON Schema "gates"; TF/TOML/Nix gates = [...]; markdown 'gates: list'; Rego input.gates[_]; CUE #Gates:; EDN :gates; fullwidth lookalikes.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -208,7 +209,38 @@ def route_heuristic(prompt: str) -> Lane:
             # R7: bilingual NOT gates / NO son gates disclaimers
             r"|\bnot\s+gates\b"
             r"|\bno\s+son\s+gates\b"
-            r"|esto\s+no\s+son\s+gates",
+            r"|esto\s+no\s+son\s+gates"
+            # R8: prose / docs "gates: list" (not YAML dashed list)
+            r"|gates\s*:\s*list\b"
+            r"|markdown\s+(?:fence|fenced).*gates:"
+            r"|docs?\s+.*gates:\s*list"
+            # R8: Dockerfile ARG gates= / ARG GATES=
+            r"|\bARG\s+gates\s*="
+            r"|\bARG\s+GATES\s*="
+            r"|dockerfile\s+arg\s+gates"
+            # R8: JSON Schema property "gates": { / "gates":{"type"
+            r"|[\"']gates[\"']\s*:\s*\{"
+            r"|json\s+schema\s+property\s+gates"
+            # R8: Rego/OPA input.gates[_] / input.gates[
+            r"|input\.gates\s*\["
+            r"|rego\s+.*gates"
+            r"|opa\s*/?\s*rego"
+            # R8: CUE comment/field #Gates: / gates?:
+            r"|#\s*Gates\s*:"
+            r"|gates\?\s*:"
+            r"|cue\s+(?:comment|field|schema).*gates"
+            # R8: EDN/Clojure :gates keyword / {:gates
+            r"|\{:gates\b"
+            r"|:gates\b"
+            r"|len\s*\(\s*:gates\s*\)"
+            r"|clojure\s+.*:gates"
+            # R8: TOML/Nix gates = [ already partly covered by gates\s*=\s*\[; add nix/toml hints
+            r"|toml\s+gates\s*="
+            r"|nix\s+attr\s+gates"
+            # R8: ASCII 'gates' disclaimer near fullwidth lookalikes
+            r"|fullwidth.*gates"
+            r"|not\s+ASCII\s+gates"
+            r"|lookalike.*gates",
             text,
             re.I,
         )
@@ -764,6 +796,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r8' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r8.json"
         elif 'r7' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r7.json"
         elif 'r6' in hp:

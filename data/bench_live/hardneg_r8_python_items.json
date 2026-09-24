@@ -1,0 +1,317 @@
+{
+  "n": 44,
+  "kind": "hardneg_r8_python_items",
+  "created": "2026-09-24 12:58:00 ET",
+  "round": 8,
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R8.md",
+  "items": [
+    {
+      "id": "r8v_dfarg_01",
+      "kind": "dockerfile_arg_gates",
+      "prompt": "Write Python that prints len('ARG GATES=cleanup,nightly'). Dockerfile ARG. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_dfarg_02",
+      "kind": "dockerfile_arg_gates",
+      "prompt": "line='ARG gates=qubit-lint'\nprint(line.count('='))\n# Docker ARG. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_dfarg_03",
+      "kind": "dockerfile_arg_gates",
+      "prompt": "Write Python that prints 5*5. ENV distractor. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_dfarg_04",
+      "kind": "dockerfile_arg_gates",
+      "prompt": "Write Python that prints len('ARG n_qubits=2'). ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_jsch_01",
+      "kind": "json_schema_gates_prop",
+      "prompt": "Write Python that prints len('\"gates\": {\"type\": \"array\"}'). ONLY code.",
+      "expected_stdout": "26\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_jsch_02",
+      "kind": "json_schema_gates_prop",
+      "prompt": "schema='{\"properties\":{\"gates\":{\"type\":\"array\"}}}'\nprint(schema.count('gates'))\n# schema. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_jsch_03",
+      "kind": "json_schema_gates_prop",
+      "prompt": "Write Python that prints 8. Schema distractor. ONLY code.",
+      "expected_stdout": "8\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_jsch_04",
+      "kind": "json_schema_gates_prop",
+      "prompt": "Write Python that prints 2+2. $defs distractor. ONLY code.",
+      "expected_stdout": "4\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_tf_01",
+      "kind": "terraform_hcl_gates_attr",
+      "prompt": "Write Python that prints len('gates = [\"allow\"]'). ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_tf_02",
+      "kind": "terraform_hcl_gates_attr",
+      "prompt": "hcl='gates = [\"ingress\", \"egress\"]'\nprint(hcl.count(','))\n# TF. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_tf_03",
+      "kind": "terraform_hcl_gates_attr",
+      "prompt": "Write Python that prints 3*3. TF resource. ONLY code.",
+      "expected_stdout": "9\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_md_01",
+      "kind": "markdown_fence_gates",
+      "prompt": "Write Python that prints 2. Markdown fence distractor. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_md_02",
+      "kind": "markdown_fence_gates",
+      "prompt": "Write Python that prints 1. Docs yaml fence gates: list is markdown only — ignore. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_md_03",
+      "kind": "markdown_fence_gates",
+      "prompt": "Write Python that prints len('```json'). ONLY code.",
+      "expected_stdout": "7\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_md_04",
+      "kind": "markdown_fence_gates",
+      "prompt": "comment='see docs gates: list in the README fence'\nprint(len(comment))\n# prose. ONLY code.",
+      "expected_stdout": "40\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_uni_01",
+      "kind": "unicode_lookalike_gates",
+      "prompt": "Write Python that prints len('ｑubit'). ONLY code.",
+      "expected_stdout": "5\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_uni_02",
+      "kind": "unicode_lookalike_gates",
+      "prompt": "s='ｇａｔｅｓ=[cleanup]'\nprint(len(s))\n# fullwidth. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_uni_03",
+      "kind": "unicode_lookalike_gates",
+      "prompt": "Write Python that prints 7*7. fullwidth cx. ONLY code.",
+      "expected_stdout": "49\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_uni_04",
+      "kind": "unicode_lookalike_gates",
+      "prompt": "Write Python that prints len('ｎ_qubits'). ONLY code.",
+      "expected_stdout": "8\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_rego_01",
+      "kind": "rego_policy_gates",
+      "prompt": "Write Python that prints 4. Rego distractor. ONLY code.",
+      "expected_stdout": "4\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_rego_02",
+      "kind": "rego_policy_gates",
+      "prompt": "rule='input.gates[_]'\nprint(len(rule))\n# rego. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_rego_03",
+      "kind": "rego_policy_gates",
+      "prompt": "Write Python that prints 6*2. Rego package. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_cue_01",
+      "kind": "cue_lang_gates",
+      "prompt": "Write Python that prints len('#Gates:'). ONLY code.",
+      "expected_stdout": "7\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_cue_02",
+      "kind": "cue_lang_gates",
+      "prompt": "Write Python that prints 9. CUE schema. ONLY code.",
+      "expected_stdout": "9\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_cue_03",
+      "kind": "cue_lang_gates",
+      "prompt": "line='#Gates: optional'\nprint(line.count(':'))\n# cue. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_toml_01",
+      "kind": "toml_gates_array",
+      "prompt": "Write Python that prints len('gates = [\"lint\"]'). ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_toml_02",
+      "kind": "toml_gates_array",
+      "prompt": "Write Python that prints 5. TOML table. ONLY code.",
+      "expected_stdout": "5\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_toml_03",
+      "kind": "toml_gates_array",
+      "prompt": "t='gates = [\"fmt\", \"lint\"]'\nprint(t.count(','))\n# toml. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_gsdl_01",
+      "kind": "graphql_sdl_gates",
+      "prompt": "Write Python that prints len('type Gates {'). ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_gsdl_02",
+      "kind": "graphql_sdl_gates",
+      "prompt": "Write Python that prints 11. SDL field. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_gsdl_03",
+      "kind": "graphql_sdl_gates",
+      "prompt": "s='type CircuitGate { id: ID }'\nprint(s.count('{'))\n# sdl. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_sarif_01",
+      "kind": "sarif_rule_qubit",
+      "prompt": "Write Python that prints len('qubit/no-cx'). ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_sarif_02",
+      "kind": "sarif_rule_qubit",
+      "prompt": "Write Python that prints 3. SARIF rule. ONLY code.",
+      "expected_stdout": "3\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_sarif_03",
+      "kind": "sarif_rule_qubit",
+      "prompt": "Write Python that prints 10-1. SARIF tool. ONLY code.",
+      "expected_stdout": "9\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_nix_01",
+      "kind": "nix_attr_gates",
+      "prompt": "Write Python that prints len('gates = [ \"clippy\" ];'). ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_nix_02",
+      "kind": "nix_attr_gates",
+      "prompt": "Write Python that prints 12. Nix pname. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_wasm_01",
+      "kind": "wasm_export_gates",
+      "prompt": "Write Python that prints len('(export \"gates\")'). ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_wasm_02",
+      "kind": "wasm_export_gates",
+      "prompt": "Write Python that prints 8*2. WAT symbol. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_edn_01",
+      "kind": "edn_keyword_gates",
+      "prompt": "Write Python that prints len(':gates'). ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_edn_02",
+      "kind": "edn_keyword_gates",
+      "prompt": "Write Python that prints 5. EDN map. ONLY code.",
+      "expected_stdout": "5\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_mail_01",
+      "kind": "email_header_qubit",
+      "prompt": "Write Python that prints len('X-Qubit-Ticket:'). ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_mail_02",
+      "kind": "email_header_qubit",
+      "prompt": "Write Python that prints 9. Email header. ONLY code.",
+      "expected_stdout": "9\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_ctrl_01",
+      "kind": "base_python_control_r8",
+      "prompt": "Write Python that prints 5*5. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r8v_ctrl_02",
+      "kind": "base_python_control_r8",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}
