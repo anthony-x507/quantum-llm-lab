@@ -1,8 +1,8 @@
-# Simulador cuántico (CPU) — funciona en Apple Silicon sin GPU cloud
+# Simulador cuántico (CPU)
 pennylane>=0.38.0
 numpy>=1.26.0
 
-# LLM local en Apple Silicon (M-series). Solo necesario con --mlx
-# mlx y mlx-lm requieren macOS + chip Apple. En Linux/CI usa --demo.
+# LLM + VLM local en Apple Silicon (solo Darwin)
 mlx>=0.18.0; sys_platform == "darwin"
 mlx-lm>=0.19.0; sys_platform == "darwin"
+mlx-vlm>=0.1.0; sys_platform == "darwin"

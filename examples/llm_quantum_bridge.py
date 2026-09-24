@@ -169,7 +169,24 @@ def main(argv: list[str] | None = None) -> int:
         default=DEFAULT_PROMPT,
         help="Instrucción en lenguaje natural para el LLM.",
     )
+    parser.add_argument(
+        "--context-file",
+        default=None,
+        help="JSON de visión (grounding.json): antepone llm_context al prompt.",
+    )
     args = parser.parse_args(argv)
+
+    if args.context_file:
+        from pathlib import Path
+        import json as _json
+        blob = _json.loads(Path(args.context_file).read_text(encoding="utf-8"))
+        ctx = blob.get("llm_context") or _json.dumps(blob.get("structured", blob), ensure_ascii=False)
+        args.prompt = (
+            "Contexto visual grounded:\n"
+            + ctx
+            + "\n\nTarea: "
+            + args.prompt
+        )
 
     if args.mlx and args.demo:
         print("Elige solo uno: --demo o --mlx", file=sys.stderr)

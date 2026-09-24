@@ -1,78 +1,113 @@
 # quantum-llm-lab
 
-Lab mínimo para experimentar en un **Mac Apple Silicon (M4, mucha RAM)** con:
+Lab mínimo para un **clúster de dos Macs Apple Silicon**:
 
-1. Un **LLM pequeño local** vía [MLX](https://github.com/ml-explore/mlx) (sin nube de pago).
-2. Un **simulador cuántico en CPU** ([PennyLane](https://pennylane.ai/)).
-3. Un **script puente**: el LLM propone un circuito de 2–3 qubits y el simulador lo ejecuta.
+| Máquina | RAM | Rol sugerido |
+|---------|-----|----------------|
+| **Mac M4** | 128 GB · 1 TB | Visión grande (Qwen2-VL **7B** 4-bit) + LLM 3B–7B |
+| **Mac Studio** | 36 GB · 500 GB | Visión chica (Qwen2-VL **2B** 4-bit) o solo `--demo` + simulador |
 
-No es un producto terminado: es un punto de partida para iterar.
+Todo **local**, sin nube de pago. Punto de partida para iterar — no producto terminado.
 
-## Requisitos
+## Qué incluye
 
-- macOS en chip Apple (M1/M2/M3/M4).
-- Python 3.10+ (recomendado 3.11 o 3.12).
-- Conexión a internet **solo la primera vez** si usas `--mlx` (descarga del modelo). El modo `--demo` no necesita modelo.
+1. **Simulador cuántico** (PennyLane, CPU).
+2. **Puente LLM → circuito** (`examples/llm_quantum_bridge.py`): stub `--demo` o MLX `--mlx`.
+3. **Capa de visión** (`vision/` + `examples/vision_grounding.py`):
+   - Genera **frames sintéticos** de una pelota que cae (gravedad + rebotes con pérdida de energía).
+   - Los describe en JSON estructurado (`--demo` = física conocida; `--mlx` = Qwen2-VL vía `mlx-vlm`).
+   - Ese texto grounded alimenta al LLM; el simulador cuántico ejecuta una “firma” toy del fenómeno.
 
-## Instalación paso a paso
+## Instalación
 
 ```bash
 git clone https://github.com/anthony-x507/quantum-llm-lab.git
 cd quantum-llm-lab
-
 python3 -m venv .venv
 source .venv/bin/activate
-
-# Simulador cuántico (siempre)
 pip install -U pip
 pip install -r requirements.txt
-
-# LLM local MLX (solo en Mac Apple Silicon)
-pip install mlx mlx-lm
+# En Mac Apple Silicon, además:
+pip install mlx mlx-lm mlx-vlm
 ```
 
-Si `pip install mlx` falla, confirma que estás en Darwin arm64:
+## Corridas rápidas
 
-```bash
-uname -m   # debe decir arm64
-python3 -c "import platform; print(platform.platform())"
-```
-
-## Primera corrida (sin descargar LLM)
-
-Prueba el simulador con un stub que imita la propuesta del modelo:
+### Solo simulador + LLM stub
 
 ```bash
 python examples/llm_quantum_bridge.py --demo
 ```
 
-Deberías ver probabilidades sobre estados `|00>`, `|01>`, `|10>`, `|11>` y una suma cercana a `1.0`.
-
-## Corrida con LLM local (MLX)
-
-Modelo por defecto: `mlx-community/Llama-3.2-3B-Instruct-4bit` (~3B cuantizado, razonable en M4 con mucha RAM). Puedes cambiarlo.
+### Visión sintética (sin descargar VLM)
 
 ```bash
-python examples/llm_quantum_bridge.py --mlx
+python examples/vision_grounding.py --demo
+# Frames PNG + physics_trace.json + grounding.json en examples/out_frames/
 ```
 
-Otro prompt / otro modelo:
+### Visión → puente cuántico (pipeline)
 
 ```bash
+python examples/vision_grounding.py --demo --pipeline
+```
+
+### Visión con VLM real (MLX)
+
+**En la M4 (128 GB)** — modelo grande:
+
+```bash
+python examples/vision_grounding.py --mlx \
+  --model mlx-community/Qwen2-VL-7B-Instruct-4bit
+```
+
+**En la Mac Studio (36 GB)** — modelo chico:
+
+```bash
+python examples/vision_grounding.py --mlx \
+  --model mlx-community/Qwen2-VL-2B-Instruct-4bit
+```
+
+Luego pasar el grounding al puente:
+
+```bash
+python examples/llm_quantum_bridge.py --demo \
+  --context-file examples/out_frames/grounding.json
+# o con LLM real:
 python examples/llm_quantum_bridge.py --mlx \
-  --model mlx-community/Llama-3.2-3B-Instruct-4bit \
-  --prompt "Propón un circuito de 3 qubits con Hadamard en todos y un CNOT de 0 a 1."
+  --context-file examples/out_frames/grounding.json
 ```
 
-La primera descarga del modelo puede tardar y ocupar varios GB en disco. Después queda en caché local.
+## Clúster: qué corre en cada máquina
 
-## Qué hace el script
+```
+┌─────────────────────────────┐     red local      ┌──────────────────────────┐
+│ Mac M4 (128 GB)             │ ◄───────────────► │ Mac Studio (36 GB)       │
+│ • Generar frames (opcional) │   NFS/SMB/scp     │ • Simulador PennyLane    │
+│ • VLM Qwen2-VL 7B           │   grounding.json  │ • LLM 3B o solo --demo   │
+│ • (opcional) LLM 7B         │                   │ • VLM 2B si hace falta   │
+└─────────────────────────────┘                   └──────────────────────────┘
+```
 
-1. **Propone** un circuito en JSON (`n_qubits` + lista de `gates`).
-2. **Construye** el circuito en PennyLane (`default.qubit`, CPU).
-3. **Mide** probabilidades de cada base computacional e imprime una barra ASCII.
+Flujo mínimo de clúster:
 
-Puertas soportadas en este lab: `h`, `x`, `y`, `z`, `cx`, `ry`.
+1. **M4:** `python examples/vision_grounding.py --mlx --model …7B…`
+2. Copia `examples/out_frames/grounding.json` a la Studio (AirDrop, `scp`, carpeta compartida).
+3. **Studio:** `python examples/llm_quantum_bridge.py --demo --context-file …/grounding.json`  
+   (o `--mlx` con un 3B si cabe en 36 GB junto al resto).
+
+Si no quieres repartir carga: corre `--demo` en cualquiera; no descarga modelos.
+
+## Frames sintéticos (sin video real)
+
+El generador integra caída 1D + rebotes con restitución &lt; 1 (pérdida de energía) y escribe PNG en escala de grises:
+
+```bash
+python -c "from vision.synthetic_fall import generate_falling_ball_frames; generate_falling_ball_frames('examples/out_frames', n_frames=48)"
+ls examples/out_frames/frame_*.png | head
+```
+
+Parámetros útiles en código: `g`, `restitution`, `n_frames`, tamaño `width`×`height`.
 
 ## Estructura
 
@@ -81,17 +116,22 @@ quantum-llm-lab/
 ├── README.md
 ├── requirements.txt
 ├── pyproject.toml
+├── vision/
+│   ├── synthetic_fall.py   # pelota + gravedad + PNG
+│   └── grounding.py        # demo físico o mlx-vlm
 └── examples/
-    └── llm_quantum_bridge.py
+    ├── llm_quantum_bridge.py
+    ├── vision_grounding.py
+    └── out_frames/           # generado al correr (gitignored parcialmente)
 ```
 
 ## Notas
 
-- PennyLane corre en CPU del Mac; no necesitas GPU cloud.
-- MLX usa el Neural Engine / GPU unificada del Apple Silicon.
-- Si el modelo inventa JSON inválido, el script falla con un mensaje claro: ajusta el prompt o vuelve a `--demo`.
-- Qiskit también sirve como simulador; este repo eligió PennyLane por ser liviano. Se puede añadir después.
+- PennyLane en CPU; MLX/MLX-VLM usan Apple Silicon.
+- El circuito cuántico es una **analogía toy** (correlación / atenuación), no una simulación literal de mecánica clásica.
+- Si el VLM devuelve JSON inválido, el modo MLX puede caer a la traza física sintética.
+- Qiskit se puede añadir después; este lab usa PennyLane por ser liviano.
 
 ## Licencia
 
-MIT — úsalo, rómpelo, mejóralo.
+MIT

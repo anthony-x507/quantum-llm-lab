@@ -7,3 +7,5 @@ venv/
 *.egg-info/
 .mlx/
 models/
+examples/out_frames/
+.venv/
