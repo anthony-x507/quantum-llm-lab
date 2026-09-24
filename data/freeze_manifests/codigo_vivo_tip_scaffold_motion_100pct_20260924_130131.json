@@ -4,8 +4,8 @@
   "domain": "codigo_vivo_tip_scaffold_motion",
   "pct": 100,
   "band": "100pct",
-  "git_sha": "7b0c63bdf22810f04ebc03835bf9fbef9eb8f52d",
-  "git_sha_short": "7b0c63b",
+  "git_sha": "5fac7731d369bb5a1cb2f9f87429d42eb560665f",
+  "git_sha_short": "5fac773",
   "artifact": "data/frontier_tip_scaffold_motion_cue_probe.json",
   "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
   "metrics": {
@@ -47,7 +47,7 @@
     "held": true
   },
   "policy": "RO data/lora_adapter/; no merge main; R1\u2013R7+LP held; freezes retained; no R8 fold",
-  "note": "Fold tip-scaffold-motion into tip; rebase 9ddfaed onto 69655dd \u2192 7b0c63b FF; re-smoke 2026-09-24 13:01:31 ET",
+  "note": "Fold tip-scaffold-motion into tip; rebase 9ddfaed onto 69655dd \u2192 7b0c63b FF; tip freeze pin @ 5fac773; re-smoke 2026-09-24 13:01:31 ET",
   "retained_freezes": [
     "codigo_vivo_tip_platform_100pct_20260924_111435",
     "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",

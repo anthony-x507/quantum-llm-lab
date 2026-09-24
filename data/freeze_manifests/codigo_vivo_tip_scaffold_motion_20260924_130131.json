@@ -1,6 +1,6 @@
 {
   "freeze_id": "codigo_vivo_tip_scaffold_motion_100pct_20260924_130131",
-  "git_sha": "7b0c63bdf22810f04ebc03835bf9fbef9eb8f52d",
+  "git_sha": "5fac7731d369bb5a1cb2f9f87429d42eb560665f",
   "frozen_at_et": "2026-09-24 13:01:31 ET",
   "mixed_d_unified": 1.0,
   "r7_router": "52/52",
@@ -9,5 +9,6 @@
   "motion_coverage_known": 0.44,
   "wired_to_vlm": true,
   "ent_never_on_python": true,
-  "floor_held": true
+  "floor_held": true,
+  "git_sha_short": "5fac773"
 }

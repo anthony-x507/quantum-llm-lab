@@ -1,6 +1,6 @@
 # Frontier — tip scaffold→VLM + motion/RGB cue honesty
 
-**Status:** **FOLDED** into `frontier/codigo-vivo-tip` @ `7b0c63b` (2026-09-24 13:01:31 ET)  
+**Status:** **FOLDED** into `frontier/codigo-vivo-tip` @ `5fac773` (2026-09-24 13:01:31 ET; feature `7b0c63b`)  
 **Branch:** `frontier/tip-scaffold-motion` (rebased `9ddfaed` → `7b0c63b` onto tip post-R7 `69655dd`)  
 **When:** measure ~12:55 ET · fold 2026-09-24 13:01:31 ET · Mac-111 (`074c6626-…`)  
 **Freeze:** `codigo_vivo_tip_scaffold_motion_100pct_20260924_130131`  
