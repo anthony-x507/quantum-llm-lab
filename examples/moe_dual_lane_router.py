@@ -159,6 +159,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R5: gates=[nonempty] k8s/helm allow-lists, redis gates:key paths, protobuf gates=N; are NOT ent.
     # label-protect: empty gates=[] ops + negated "json válido" near fall/super taxonomy are NOT ent.
     # R6: Bazel //gates:target; HTML data-gates="..."; Groovy/Jenkins gates = '...' quoted assigns.
+    # R7: CI YAML multiline gates:\n  - …; Make .PHONY: gates; bare len('gates:') key tokens.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -191,7 +192,23 @@ def route_heuristic(prompt: str) -> Lane:
             # R6: Groovy/Jenkins quoted assign gates = 'cleanup' / gates = "..."
             r"|gates\s*=\s*['\"][^'\"]*['\"]"
             r"|jenkins(?:file)?\s+.*gates\s*="
-            r"|groovy\s+assign\s+gates",
+            r"|groovy\s+assign\s+gates"
+            # R7: CI YAML multiline dashed list gates:\n  - item / gates:\n- item
+            r"|gates\s*:\s*\n\s*-"
+            r"|yaml\s+list\s+gates:"
+            r"|yaml\s+gates:\s+dashed"
+            r"|ci\s+yaml\s+.*gates:"
+            r"|azure\s+yaml\s+gates:"
+            # R7: Make .PHONY: gates target list
+            r"|\.PHONY\s*:\s*gates\b"
+            r"|phony\s*:\s*gates\b"
+            # R7: bare string key token len('gates:') / 'gates:' CI key
+            r"|len\s*\(\s*['\"]gates:['\"]\s*\)"
+            r"|['\"]gates:['\"]"
+            # R7: bilingual NOT gates / NO son gates disclaimers
+            r"|\bnot\s+gates\b"
+            r"|\bno\s+son\s+gates\b"
+            r"|esto\s+no\s+son\s+gates",
             text,
             re.I,
         )
@@ -747,6 +764,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r7' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r7.json"
         elif 'r6' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r6.json"
         elif 'r5' in hp:

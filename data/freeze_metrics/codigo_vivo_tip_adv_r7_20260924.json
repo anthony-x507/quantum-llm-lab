@@ -1,0 +1,106 @@
+{
+  "frontier": "codigo-vivo-tip-r7",
+  "written_et": "2026-09-24 12:53:13 ET",
+  "base_tip_sha": "4291aab",
+  "branch": "frontier/tip-hardneg-r7",
+  "tip_parent": "frontier/codigo-vivo-tip@4291aab",
+  "policy": "R7 NEW hardneg n=52/44; NEVER drop freeze floor overall>=0.967 (prefer 1.0). RO data/lora_adapter/. No merge main. R1\u2013R6+LP must hold. Tip fold-busy \u2192 side branch tip-hardneg-r7.",
+  "before": {
+    "overall_d_unified": 1.0,
+    "note": "tip @ 4291aab (R6 fold pin); own-delta may advance tip-cv separately"
+  },
+  "after": {
+    "overall_d_unified": 1.0,
+    "router_pillars": "26/26",
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false,
+    "scoreboard": {
+      "d_unified": 1.0
+    }
+  },
+  "hardneg_r7_router": {
+    "score": "52/52",
+    "rate": 1.0,
+    "n": 52,
+    "ent_never_on_python": true,
+    "pre_reinforce": {
+      "score": "48/52",
+      "rate": 0.9231
+    },
+    "post_reinforce": {
+      "score": "52/52",
+      "rate": 1.0
+    },
+    "families": [
+      "gha_yaml_gates_list",
+      "sql_comment_qubit",
+      "bilingual_not_gates",
+      "make_phony_targets",
+      "poetry_dep_pennylane",
+      "redux_selector_cx",
+      "jira_key_quantum",
+      "plantuml_actor_bell",
+      "dockerfile_stage_qubit",
+      "azure_pipeline_gates",
+      "puppet_class_n_qubits",
+      "bibtex_key_entangle",
+      "svelte_store_entangle",
+      "vim_syntax_hadamard",
+      "ent_control_r7",
+      "vision_control_r7",
+      "base_control_r7"
+    ]
+  },
+  "hardneg_r7_verifier": {
+    "router_smoke": "12/12",
+    "hardneg_router": "52/52",
+    "verifier_alone_loop": {
+      "pre": "1.0 (44/44)",
+      "post": "1.0 (44/44)"
+    },
+    "unified_loop": {
+      "pre": "1.0 (44/44)",
+      "post": "1.0 (44/44)"
+    },
+    "ent_never_on_python": true,
+    "proposer_polish_needed": false
+  },
+  "holds": {
+    "r1_router": "18/18",
+    "r2_router": "22/22",
+    "r3_router": "35/35",
+    "r3_verifier": "28/28",
+    "r4_router": "40/40",
+    "r4_verifier": "32/32",
+    "r5_router": "44/44",
+    "r5_verifier": "36/36",
+    "r6_router": "48/48",
+    "r6_verifier": "40/40",
+    "r7_router": "52/52",
+    "r7_verifier": "44/44",
+    "label_protect_router": "43/43",
+    "label_protect_verifier": "32/32",
+    "mixed_d_unified": 1.0,
+    "floor_held": true,
+    "floor": 0.9667
+  },
+  "reinforce_layer": {
+    "router": [
+      "CI YAML multiline gates:\n  - \u2026 dashed lists excluded",
+      "Make .PHONY: gates phony target lists excluded",
+      "bare 'gates:' / len('gates:') CI key tokens excluded",
+      "bilingual NOT gates / NO son gates / esto no son gates excluded"
+    ],
+    "proposer": [],
+    "max_layers": 1,
+    "layers_used": 1
+  },
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "ent_never_on_python": true,
+    "lora_adapter_writes": false,
+    "expected_lane_harness_only": true
+  },
+  "blockers": [],
+  "claims": "No quantum-advantage claims. Classical heuristic router + python -I verifier only."
+}

@@ -1,6 +1,6 @@
 {
   "frontier": "C3-moe-verifier-codigo-vivo",
-  "written": "2026-09-24 12:52:16",
+  "written": "2026-09-24 12:52:12",
   "mode": "hardneg-cpu",
   "router_method": "heuristic",
   "claims": [
@@ -183,14 +183,14 @@
     }
   },
   "python_paths": {
-    "n_items": 28,
+    "n_items": 44,
     "proposer": "heuristic",
     "router_method": "heuristic",
     "rounds_max": 2,
     "paths": {
       "a_single_shot_no_moe": {
         "path": "a_single_shot_no_moe",
-        "n": 28,
+        "n": 44,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 0.0,
         "delta_solve_rate": 0.0,
@@ -198,12 +198,12 @@
         "solved_loop": 0,
         "repair_success_rate": 0.0,
         "repair_helped_n": 0,
-        "failed_single_n": 28,
+        "failed_single_n": 44,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "r3v_cli_01",
+            "id": "r7v_yaml_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -212,7 +212,7 @@
             "actions": []
           },
           {
-            "id": "r3v_cli_02",
+            "id": "r7v_yaml_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -221,7 +221,7 @@
             "actions": []
           },
           {
-            "id": "r3v_cli_03",
+            "id": "r7v_yaml_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -230,7 +230,7 @@
             "actions": []
           },
           {
-            "id": "r3v_cli_04",
+            "id": "r7v_yaml_04",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -239,7 +239,7 @@
             "actions": []
           },
           {
-            "id": "r3v_re_01",
+            "id": "r7v_sql_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -248,7 +248,7 @@
             "actions": []
           },
           {
-            "id": "r3v_re_02",
+            "id": "r7v_sql_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -257,7 +257,7 @@
             "actions": []
           },
           {
-            "id": "r3v_re_03",
+            "id": "r7v_sql_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -266,7 +266,7 @@
             "actions": []
           },
           {
-            "id": "r3v_re_04",
+            "id": "r7v_bi_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -275,7 +275,7 @@
             "actions": []
           },
           {
-            "id": "r3v_http_01",
+            "id": "r7v_bi_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -284,7 +284,7 @@
             "actions": []
           },
           {
-            "id": "r3v_http_02",
+            "id": "r7v_bi_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -293,7 +293,7 @@
             "actions": []
           },
           {
-            "id": "r3v_http_03",
+            "id": "r7v_bi_04",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -302,7 +302,7 @@
             "actions": []
           },
           {
-            "id": "r3v_type_01",
+            "id": "r7v_mk_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -311,7 +311,7 @@
             "actions": []
           },
           {
-            "id": "r3v_type_02",
+            "id": "r7v_mk_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -320,7 +320,7 @@
             "actions": []
           },
           {
-            "id": "r3v_type_03",
+            "id": "r7v_mk_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -329,7 +329,7 @@
             "actions": []
           },
           {
-            "id": "r3v_ut_01",
+            "id": "r7v_poe_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -338,7 +338,7 @@
             "actions": []
           },
           {
-            "id": "r3v_ut_02",
+            "id": "r7v_poe_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -347,7 +347,7 @@
             "actions": []
           },
           {
-            "id": "r3v_ut_03",
+            "id": "r7v_poe_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -356,7 +356,7 @@
             "actions": []
           },
           {
-            "id": "r3v_log_01",
+            "id": "r7v_rdx_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -365,7 +365,7 @@
             "actions": []
           },
           {
-            "id": "r3v_log_02",
+            "id": "r7v_rdx_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -374,7 +374,7 @@
             "actions": []
           },
           {
-            "id": "r3v_log_03",
+            "id": "r7v_rdx_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -383,7 +383,7 @@
             "actions": []
           },
           {
-            "id": "r3v_ascii_01",
+            "id": "r7v_jir_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -392,7 +392,7 @@
             "actions": []
           },
           {
-            "id": "r3v_ascii_03",
+            "id": "r7v_jir_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -401,7 +401,7 @@
             "actions": []
           },
           {
-            "id": "r3v_fin_01",
+            "id": "r7v_jir_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -410,7 +410,7 @@
             "actions": []
           },
           {
-            "id": "r3v_fin_02",
+            "id": "r7v_pum_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -419,7 +419,7 @@
             "actions": []
           },
           {
-            "id": "r3v_env_01",
+            "id": "r7v_pum_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -428,7 +428,7 @@
             "actions": []
           },
           {
-            "id": "r3v_env_02",
+            "id": "r7v_pum_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -437,7 +437,7 @@
             "actions": []
           },
           {
-            "id": "r3v_cron_01",
+            "id": "r7v_dfs_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -446,7 +446,151 @@
             "actions": []
           },
           {
-            "id": "r3v_cron_02",
+            "id": "r7v_dfs_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_dfs_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_az_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_az_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_az_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_pup_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_pup_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_pup_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_bib_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_bib_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_bib_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_sv_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_sv_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_sv_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_vim_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_vim_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_vim_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -458,7 +602,7 @@
       },
       "b_moe_alone": {
         "path": "b_moe_alone",
-        "n": 28,
+        "n": 44,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 0.0,
         "delta_solve_rate": 0.0,
@@ -466,12 +610,12 @@
         "solved_loop": 0,
         "repair_success_rate": 0.0,
         "repair_helped_n": 0,
-        "failed_single_n": 28,
+        "failed_single_n": 44,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "r3v_cli_01",
+            "id": "r7v_yaml_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -480,7 +624,7 @@
             "actions": []
           },
           {
-            "id": "r3v_cli_02",
+            "id": "r7v_yaml_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -489,7 +633,7 @@
             "actions": []
           },
           {
-            "id": "r3v_cli_03",
+            "id": "r7v_yaml_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -498,7 +642,7 @@
             "actions": []
           },
           {
-            "id": "r3v_cli_04",
+            "id": "r7v_yaml_04",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -507,7 +651,7 @@
             "actions": []
           },
           {
-            "id": "r3v_re_01",
+            "id": "r7v_sql_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -516,7 +660,7 @@
             "actions": []
           },
           {
-            "id": "r3v_re_02",
+            "id": "r7v_sql_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -525,7 +669,7 @@
             "actions": []
           },
           {
-            "id": "r3v_re_03",
+            "id": "r7v_sql_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -534,7 +678,7 @@
             "actions": []
           },
           {
-            "id": "r3v_re_04",
+            "id": "r7v_bi_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -543,7 +687,7 @@
             "actions": []
           },
           {
-            "id": "r3v_http_01",
+            "id": "r7v_bi_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -552,7 +696,7 @@
             "actions": []
           },
           {
-            "id": "r3v_http_02",
+            "id": "r7v_bi_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -561,7 +705,7 @@
             "actions": []
           },
           {
-            "id": "r3v_http_03",
+            "id": "r7v_bi_04",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -570,7 +714,7 @@
             "actions": []
           },
           {
-            "id": "r3v_type_01",
+            "id": "r7v_mk_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -579,7 +723,7 @@
             "actions": []
           },
           {
-            "id": "r3v_type_02",
+            "id": "r7v_mk_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -588,7 +732,7 @@
             "actions": []
           },
           {
-            "id": "r3v_type_03",
+            "id": "r7v_mk_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -597,7 +741,7 @@
             "actions": []
           },
           {
-            "id": "r3v_ut_01",
+            "id": "r7v_poe_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -606,7 +750,7 @@
             "actions": []
           },
           {
-            "id": "r3v_ut_02",
+            "id": "r7v_poe_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -615,7 +759,7 @@
             "actions": []
           },
           {
-            "id": "r3v_ut_03",
+            "id": "r7v_poe_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -624,7 +768,7 @@
             "actions": []
           },
           {
-            "id": "r3v_log_01",
+            "id": "r7v_rdx_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -633,7 +777,7 @@
             "actions": []
           },
           {
-            "id": "r3v_log_02",
+            "id": "r7v_rdx_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -642,7 +786,7 @@
             "actions": []
           },
           {
-            "id": "r3v_log_03",
+            "id": "r7v_rdx_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -651,7 +795,7 @@
             "actions": []
           },
           {
-            "id": "r3v_ascii_01",
+            "id": "r7v_jir_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -660,7 +804,7 @@
             "actions": []
           },
           {
-            "id": "r3v_ascii_03",
+            "id": "r7v_jir_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -669,7 +813,7 @@
             "actions": []
           },
           {
-            "id": "r3v_fin_01",
+            "id": "r7v_jir_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -678,7 +822,7 @@
             "actions": []
           },
           {
-            "id": "r3v_fin_02",
+            "id": "r7v_pum_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -687,7 +831,7 @@
             "actions": []
           },
           {
-            "id": "r3v_env_01",
+            "id": "r7v_pum_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -696,7 +840,7 @@
             "actions": []
           },
           {
-            "id": "r3v_env_02",
+            "id": "r7v_pum_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -705,7 +849,7 @@
             "actions": []
           },
           {
-            "id": "r3v_cron_01",
+            "id": "r7v_dfs_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -714,7 +858,151 @@
             "actions": []
           },
           {
-            "id": "r3v_cron_02",
+            "id": "r7v_dfs_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_dfs_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_az_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_az_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_az_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_pup_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_pup_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_pup_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_bib_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_bib_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_bib_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_sv_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_sv_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_sv_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_vim_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_vim_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r7v_vim_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -723,175 +1011,271 @@
             "actions": []
           }
         ],
-        "n_items_total": 28,
-        "n_routed_python": 28,
+        "n_items_total": 44,
+        "n_routed_python": 44,
         "n_routed_away": 0,
         "solve_rate_on_python_lane": 0.0,
         "routing": [
           {
-            "id": "r3v_cli_01",
+            "id": "r7v_yaml_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_cli_02",
+            "id": "r7v_yaml_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_cli_03",
+            "id": "r7v_yaml_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_cli_04",
+            "id": "r7v_yaml_04",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_re_01",
+            "id": "r7v_sql_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_re_02",
+            "id": "r7v_sql_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_re_03",
+            "id": "r7v_sql_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_re_04",
+            "id": "r7v_bi_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_http_01",
+            "id": "r7v_bi_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_http_02",
+            "id": "r7v_bi_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_http_03",
+            "id": "r7v_bi_04",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_type_01",
+            "id": "r7v_mk_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_type_02",
+            "id": "r7v_mk_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_type_03",
+            "id": "r7v_mk_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_ut_01",
+            "id": "r7v_poe_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_ut_02",
+            "id": "r7v_poe_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_ut_03",
+            "id": "r7v_poe_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_log_01",
+            "id": "r7v_rdx_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_log_02",
+            "id": "r7v_rdx_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_log_03",
+            "id": "r7v_rdx_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_ascii_01",
+            "id": "r7v_jir_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_ascii_03",
+            "id": "r7v_jir_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_fin_01",
+            "id": "r7v_jir_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_fin_02",
+            "id": "r7v_pum_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_env_01",
+            "id": "r7v_pum_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_env_02",
+            "id": "r7v_pum_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_cron_01",
+            "id": "r7v_dfs_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_cron_02",
+            "id": "r7v_dfs_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_dfs_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_az_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_az_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_az_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_pup_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_pup_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_pup_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_bib_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_bib_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_bib_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_sv_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_sv_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_sv_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_vim_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_vim_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_vim_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
@@ -900,20 +1284,20 @@
       },
       "c_verifier_alone": {
         "path": "c_verifier_alone",
-        "n": 28,
+        "n": 44,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 1.0,
         "delta_solve_rate": 1.0,
         "solved_single": 0,
-        "solved_loop": 28,
+        "solved_loop": 44,
         "repair_success_rate": 1.0,
-        "repair_helped_n": 28,
-        "failed_single_n": 28,
+        "repair_helped_n": 44,
+        "failed_single_n": 44,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "r3v_cli_01",
+            "id": "r7v_yaml_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -924,7 +1308,7 @@
             ]
           },
           {
-            "id": "r3v_cli_02",
+            "id": "r7v_yaml_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -935,7 +1319,7 @@
             ]
           },
           {
-            "id": "r3v_cli_03",
+            "id": "r7v_yaml_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -946,7 +1330,7 @@
             ]
           },
           {
-            "id": "r3v_cli_04",
+            "id": "r7v_yaml_04",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -957,7 +1341,7 @@
             ]
           },
           {
-            "id": "r3v_re_01",
+            "id": "r7v_sql_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -968,7 +1352,7 @@
             ]
           },
           {
-            "id": "r3v_re_02",
+            "id": "r7v_sql_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -979,7 +1363,7 @@
             ]
           },
           {
-            "id": "r3v_re_03",
+            "id": "r7v_sql_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -990,7 +1374,7 @@
             ]
           },
           {
-            "id": "r3v_re_04",
+            "id": "r7v_bi_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1001,7 +1385,7 @@
             ]
           },
           {
-            "id": "r3v_http_01",
+            "id": "r7v_bi_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1012,7 +1396,7 @@
             ]
           },
           {
-            "id": "r3v_http_02",
+            "id": "r7v_bi_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1023,7 +1407,7 @@
             ]
           },
           {
-            "id": "r3v_http_03",
+            "id": "r7v_bi_04",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1034,7 +1418,7 @@
             ]
           },
           {
-            "id": "r3v_type_01",
+            "id": "r7v_mk_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1045,7 +1429,7 @@
             ]
           },
           {
-            "id": "r3v_type_02",
+            "id": "r7v_mk_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1056,7 +1440,7 @@
             ]
           },
           {
-            "id": "r3v_type_03",
+            "id": "r7v_mk_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1067,7 +1451,7 @@
             ]
           },
           {
-            "id": "r3v_ut_01",
+            "id": "r7v_poe_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1078,7 +1462,7 @@
             ]
           },
           {
-            "id": "r3v_ut_02",
+            "id": "r7v_poe_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1089,7 +1473,7 @@
             ]
           },
           {
-            "id": "r3v_ut_03",
+            "id": "r7v_poe_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1100,7 +1484,7 @@
             ]
           },
           {
-            "id": "r3v_log_01",
+            "id": "r7v_rdx_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1111,7 +1495,7 @@
             ]
           },
           {
-            "id": "r3v_log_02",
+            "id": "r7v_rdx_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1122,7 +1506,7 @@
             ]
           },
           {
-            "id": "r3v_log_03",
+            "id": "r7v_rdx_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1133,7 +1517,7 @@
             ]
           },
           {
-            "id": "r3v_ascii_01",
+            "id": "r7v_jir_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1144,7 +1528,7 @@
             ]
           },
           {
-            "id": "r3v_ascii_03",
+            "id": "r7v_jir_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1155,7 +1539,7 @@
             ]
           },
           {
-            "id": "r3v_fin_01",
+            "id": "r7v_jir_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1166,7 +1550,7 @@
             ]
           },
           {
-            "id": "r3v_fin_02",
+            "id": "r7v_pum_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1177,7 +1561,7 @@
             ]
           },
           {
-            "id": "r3v_env_01",
+            "id": "r7v_pum_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1188,7 +1572,7 @@
             ]
           },
           {
-            "id": "r3v_env_02",
+            "id": "r7v_pum_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1199,7 +1583,7 @@
             ]
           },
           {
-            "id": "r3v_cron_01",
+            "id": "r7v_dfs_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1210,7 +1594,183 @@
             ]
           },
           {
-            "id": "r3v_cron_02",
+            "id": "r7v_dfs_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_dfs_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_az_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_az_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_az_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_pup_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_pup_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_pup_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_bib_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_bib_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_bib_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_sv_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_sv_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_sv_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_vim_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_vim_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_vim_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1224,20 +1784,20 @@
       },
       "d_moe_verifier_unified": {
         "path": "d_moe_verifier_unified",
-        "n": 28,
+        "n": 44,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 1.0,
         "delta_solve_rate": 1.0,
         "solved_single": 0,
-        "solved_loop": 28,
+        "solved_loop": 44,
         "repair_success_rate": 1.0,
-        "repair_helped_n": 28,
-        "failed_single_n": 28,
+        "repair_helped_n": 44,
+        "failed_single_n": 44,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "r3v_cli_01",
+            "id": "r7v_yaml_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1248,7 +1808,7 @@
             ]
           },
           {
-            "id": "r3v_cli_02",
+            "id": "r7v_yaml_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1259,7 +1819,7 @@
             ]
           },
           {
-            "id": "r3v_cli_03",
+            "id": "r7v_yaml_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1270,7 +1830,7 @@
             ]
           },
           {
-            "id": "r3v_cli_04",
+            "id": "r7v_yaml_04",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1281,7 +1841,7 @@
             ]
           },
           {
-            "id": "r3v_re_01",
+            "id": "r7v_sql_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1292,7 +1852,7 @@
             ]
           },
           {
-            "id": "r3v_re_02",
+            "id": "r7v_sql_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1303,7 +1863,7 @@
             ]
           },
           {
-            "id": "r3v_re_03",
+            "id": "r7v_sql_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1314,7 +1874,7 @@
             ]
           },
           {
-            "id": "r3v_re_04",
+            "id": "r7v_bi_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1325,7 +1885,7 @@
             ]
           },
           {
-            "id": "r3v_http_01",
+            "id": "r7v_bi_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1336,7 +1896,7 @@
             ]
           },
           {
-            "id": "r3v_http_02",
+            "id": "r7v_bi_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1347,7 +1907,7 @@
             ]
           },
           {
-            "id": "r3v_http_03",
+            "id": "r7v_bi_04",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1358,7 +1918,7 @@
             ]
           },
           {
-            "id": "r3v_type_01",
+            "id": "r7v_mk_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1369,7 +1929,7 @@
             ]
           },
           {
-            "id": "r3v_type_02",
+            "id": "r7v_mk_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1380,7 +1940,7 @@
             ]
           },
           {
-            "id": "r3v_type_03",
+            "id": "r7v_mk_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1391,7 +1951,7 @@
             ]
           },
           {
-            "id": "r3v_ut_01",
+            "id": "r7v_poe_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1402,7 +1962,7 @@
             ]
           },
           {
-            "id": "r3v_ut_02",
+            "id": "r7v_poe_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1413,7 +1973,7 @@
             ]
           },
           {
-            "id": "r3v_ut_03",
+            "id": "r7v_poe_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1424,7 +1984,7 @@
             ]
           },
           {
-            "id": "r3v_log_01",
+            "id": "r7v_rdx_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1435,7 +1995,7 @@
             ]
           },
           {
-            "id": "r3v_log_02",
+            "id": "r7v_rdx_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1446,7 +2006,7 @@
             ]
           },
           {
-            "id": "r3v_log_03",
+            "id": "r7v_rdx_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1457,7 +2017,7 @@
             ]
           },
           {
-            "id": "r3v_ascii_01",
+            "id": "r7v_jir_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1468,7 +2028,7 @@
             ]
           },
           {
-            "id": "r3v_ascii_03",
+            "id": "r7v_jir_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1479,7 +2039,7 @@
             ]
           },
           {
-            "id": "r3v_fin_01",
+            "id": "r7v_jir_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1490,7 +2050,7 @@
             ]
           },
           {
-            "id": "r3v_fin_02",
+            "id": "r7v_pum_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1501,7 +2061,7 @@
             ]
           },
           {
-            "id": "r3v_env_01",
+            "id": "r7v_pum_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1512,7 +2072,7 @@
             ]
           },
           {
-            "id": "r3v_env_02",
+            "id": "r7v_pum_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1523,7 +2083,7 @@
             ]
           },
           {
-            "id": "r3v_cron_01",
+            "id": "r7v_dfs_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1534,7 +2094,183 @@
             ]
           },
           {
-            "id": "r3v_cron_02",
+            "id": "r7v_dfs_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_dfs_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_az_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_az_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_az_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_pup_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_pup_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_pup_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_bib_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_bib_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_bib_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_sv_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_sv_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_sv_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_vim_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_vim_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r7v_vim_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1545,175 +2281,271 @@
             ]
           }
         ],
-        "n_items_total": 28,
-        "n_routed_python": 28,
+        "n_items_total": 44,
+        "n_routed_python": 44,
         "n_routed_away": 0,
         "solve_rate_on_python_lane": 1.0,
         "routing": [
           {
-            "id": "r3v_cli_01",
+            "id": "r7v_yaml_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_cli_02",
+            "id": "r7v_yaml_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_cli_03",
+            "id": "r7v_yaml_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_cli_04",
+            "id": "r7v_yaml_04",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_re_01",
+            "id": "r7v_sql_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_re_02",
+            "id": "r7v_sql_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_re_03",
+            "id": "r7v_sql_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_re_04",
+            "id": "r7v_bi_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_http_01",
+            "id": "r7v_bi_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_http_02",
+            "id": "r7v_bi_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_http_03",
+            "id": "r7v_bi_04",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_type_01",
+            "id": "r7v_mk_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_type_02",
+            "id": "r7v_mk_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_type_03",
+            "id": "r7v_mk_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_ut_01",
+            "id": "r7v_poe_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_ut_02",
+            "id": "r7v_poe_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_ut_03",
+            "id": "r7v_poe_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_log_01",
+            "id": "r7v_rdx_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_log_02",
+            "id": "r7v_rdx_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_log_03",
+            "id": "r7v_rdx_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_ascii_01",
+            "id": "r7v_jir_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_ascii_03",
+            "id": "r7v_jir_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_fin_01",
+            "id": "r7v_jir_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_fin_02",
+            "id": "r7v_pum_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_env_01",
+            "id": "r7v_pum_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_env_02",
+            "id": "r7v_pum_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_cron_01",
+            "id": "r7v_dfs_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r3v_cron_02",
+            "id": "r7v_dfs_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_dfs_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_az_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_az_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_az_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_pup_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_pup_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_pup_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_bib_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_bib_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_bib_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_sv_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_sv_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_sv_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_vim_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_vim_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r7v_vim_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
@@ -1724,7 +2556,7 @@
     "comparison_table": [
       {
         "path": "baseline_single_no_moe",
-        "n": 28,
+        "n": 44,
         "metric": "solve_rate_single",
         "rate": 0.0,
         "delta_vs_baseline": 0.0,
@@ -1733,7 +2565,7 @@
       },
       {
         "path": "moe_alone_python_lane",
-        "n": 28,
+        "n": 44,
         "metric": "solve_rate_single",
         "rate": 0.0,
         "delta_vs_baseline": 0.0,
@@ -1742,7 +2574,7 @@
       },
       {
         "path": "verifier_alone",
-        "n": 28,
+        "n": 44,
         "metric": "solve_rate_loop",
         "rate": 1.0,
         "delta_vs_baseline": 1.0,
@@ -1751,7 +2583,7 @@
       },
       {
         "path": "moe_verifier_unified_python_lane",
-        "n": 28,
+        "n": 44,
         "metric": "solve_rate_loop",
         "rate": 1.0,
         "delta_vs_baseline": 1.0,
@@ -1800,432 +2632,622 @@
   "notes": [],
   "hardneg_router": {
     "method": "heuristic",
-    "n": 35,
-    "hits": 35,
+    "n": 52,
+    "hits": 52,
     "misses": 0,
-    "score": "35/35",
+    "score": "52/52",
     "rate": 1.0,
     "by_family": {
-      "cli_flag_quantum": {
+      "gha_yaml_gates_list": {
         "n": 4,
         "hits": 4,
         "rate": 1.0
       },
-      "regex_token_distract": {
+      "sql_comment_qubit": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "bilingual_not_gates": {
         "n": 4,
         "hits": 4,
         "rate": 1.0
       },
-      "http_path_qubit": {
+      "make_phony_targets": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "type_hint_circuit": {
+      "poetry_dep_pennylane": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "unittest_assert_bell": {
+      "redux_selector_cx": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "logline_hadamard": {
+      "jira_key_quantum": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "ascii_diagram_no_image": {
+      "plantuml_actor_bell": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "finance_quantum_leap": {
+      "dockerfile_stage_qubit": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "env_var_n_qubits": {
+      "azure_pipeline_gates": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "puppet_class_n_qubits": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "bibtex_key_entangle": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "svelte_store_entangle": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "vim_syntax_hadamard": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "ent_control_r7": {
         "n": 2,
         "hits": 2,
         "rate": 1.0
       },
-      "cron_cx_job": {
+      "vision_control_r7": {
         "n": 2,
         "hits": 2,
         "rate": 1.0
       },
-      "ent_control_r3": {
-        "n": 2,
-        "hits": 2,
-        "rate": 1.0
-      },
-      "vision_control_r3": {
-        "n": 2,
-        "hits": 2,
-        "rate": 1.0
-      },
-      "base_control_r3": {
-        "n": 1,
-        "hits": 1,
+      "base_control_r7": {
+        "n": 4,
+        "hits": 4,
         "rate": 1.0
       }
     },
     "ent_never_on_python": true,
     "rows": [
       {
-        "id": "r3_cli_01",
-        "family": "cli_flag_quantum",
+        "id": "r7_yaml_01",
+        "family": "gha_yaml_gates_list",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that uses argparse with --qubits as a string flag name only, then p",
+        "prompt_preview": "Write Python that prints len('gates:'). CI workflow key token only. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_cli_02",
-        "family": "cli_flag_quantum",
+        "id": "r7_yaml_02",
+        "family": "gha_yaml_gates_list",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "import argparse\np = argparse.ArgumentParser()\np.add_argument('--measure', type=i",
+        "prompt_preview": "blob = 'gates:\\n  - cleanup\\n  - nightly'\nprint(blob.count('-'))\n# GitHub Action",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_cli_03",
-        "family": "cli_flag_quantum",
+        "id": "r7_yaml_03",
+        "family": "gha_yaml_gates_list",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write a Python program that prints 2**6. Mentions of --hadamard or --cx flags in",
+        "prompt_preview": "Write Python that prints 9*2. Workflow job needs: [qubit-lint] is a job id list.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_cli_04",
-        "family": "cli_flag_quantum",
+        "id": "r7_yaml_04",
+        "family": "gha_yaml_gates_list",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python: print(sum(range(1, 6))). Ignore any CLI help text that says 'entan",
+        "prompt_preview": "Write Python that prints 11+4. Azure pipeline stage pennylane-ci is a CI name. O",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_re_01",
-        "family": "regex_token_distract",
+        "id": "r7_sql_01",
+        "family": "sql_comment_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len(__import__('re').findall(r'qubit', 'a qubit and ano",
+        "prompt_preview": "Write Python that prints len('-- qubit_id'). SQL comment fragment. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_re_02",
-        "family": "regex_token_distract",
+        "id": "r7_sql_02",
+        "family": "sql_comment_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "import re\nprint(len(re.findall(r'gate', 'the garden gate is closed')))\n# 'gate' ",
+        "prompt_preview": "c = \"-- not gates=[Hadamard] — column alias only\"\nprint(c.count('-'))\n# SQL comm",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_re_03",
-        "family": "regex_token_distract",
+        "id": "r7_sql_03",
+        "family": "sql_comment_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 'Bell'.count('l'). Pattern matching on the word Bell is",
+        "prompt_preview": "Write Python that prints 7*3. SELECT bell_pair FROM t — bell_pair is a column na",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_re_04",
-        "family": "regex_token_distract",
+        "id": "r7_bi_01",
+        "family": "bilingual_not_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints int(9*8). A comment may contain /hadamard|/cx|/ry as re",
+        "prompt_preview": "Write Python that prints len('NO son gates'). Spanish disclaimer string. ONLY co",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_http_01",
-        "family": "http_path_qubit",
+        "id": "r7_bi_02",
+        "family": "bilingual_not_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('/api/v1/qubit/status'.split('/')). URL path segmen",
+        "prompt_preview": "msg = \"these are NOT gates = 'cleanup' — ops label only\"\nprint(msg.count(\"'\"))\n#",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_http_02",
-        "family": "http_path_qubit",
+        "id": "r7_bi_03",
+        "family": "bilingual_not_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python: print('https://example.com/circuit/report'.count('/')). HTTP path ",
+        "prompt_preview": "Write Python that prints 5**2. Esto NO es un circuito; n_qubits es solo un nombr",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_http_03",
-        "family": "http_path_qubit",
+        "id": "r7_bi_04",
+        "family": "bilingual_not_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "import urllib.parse\nprint(urllib.parse.urlparse('http://x/bell').path)\n# path '/",
+        "prompt_preview": "Write Python that prints 6+6. Esto NO son gates de circuito cuántico — solo etiq",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_type_01",
-        "family": "type_hint_circuit",
+        "id": "r7_mk_01",
+        "family": "make_phony_targets",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python:\ndef run(x: 'QuantumCircuit') -> int:\n    return 5\nprint(run(None))",
+        "prompt_preview": "Write Python that prints len('.PHONY: gates'). Makefile phony declaration. ONLY ",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_type_02",
-        "family": "type_hint_circuit",
+        "id": "r7_mk_02",
+        "family": "make_phony_targets",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write a Python program that prints 11+4. Type annotations mentioning Unitary or ",
+        "prompt_preview": "line = '.PHONY: gates cleanup'\nprint(line.count(' '))\n# Make .PHONY: gates lists",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_type_03",
-        "family": "type_hint_circuit",
+        "id": "r7_mk_03",
+        "family": "make_phony_targets",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "def n_qubits_label() -> str:\n    return 'n_qubits'\nprint(len(n_qubits_label()))\n",
+        "prompt_preview": "Write Python that prints 14-5. TARGETS += qubit-smoke is a Make variable append.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_ut_01",
-        "family": "unittest_assert_bell",
+        "id": "r7_poe_01",
+        "family": "poetry_dep_pennylane",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 1 if (2+2==4) else 0. Variable names like bell_pair in ",
+        "prompt_preview": "Write Python that prints len('pennylane-ci = \"^0.1\"'). Poetry dep line. ONLY cod",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_ut_02",
-        "family": "unittest_assert_bell",
+        "id": "r7_poe_02",
+        "family": "poetry_dep_pennylane",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "bell = [1, 1, 0, 0]\nprint(sum(bell))\n# list named bell is classical data for a u",
+        "prompt_preview": "dep = 'qubit-utils = {version = \"1.0\"}'\nprint(dep.count('='))\n# Poetry/pyproject",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_ut_03",
-        "family": "unittest_assert_bell",
+        "id": "r7_poe_03",
+        "family": "poetry_dep_pennylane",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len(['hadamard_test', 'cx_test']). Test suite names onl",
+        "prompt_preview": "Write Python that prints 8+8. extras = [\"bell-dev\"] is a Poetry extra name. ONLY",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_log_01",
-        "family": "logline_hadamard",
+        "id": "r7_rdx_01",
+        "family": "redux_selector_cx",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('INFO hadamard gate applied (metaphor)'). Logging t",
+        "prompt_preview": "Write Python that prints len('selectCxMetrics'). Redux selector name. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_log_02",
-        "family": "logline_hadamard",
+        "id": "r7_rdx_02",
+        "family": "redux_selector_cx",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "msg = 'cx failed on worker-3'\nprint(msg.count('c'))\n# log line string; no pennyl",
+        "prompt_preview": "s = 'selectBellPairCount'\nprint(s.count('l'))\n# Redux selector; not Bell circuit",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_log_03",
-        "family": "logline_hadamard",
+        "id": "r7_rdx_03",
+        "family": "redux_selector_cx",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 100-37. Log noise may say 'entanglement score dropped' ",
+        "prompt_preview": "Write Python that prints 3*8. Action type ENTANGLE_USERS is a Redux constant. ON",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_ascii_01",
-        "family": "ascii_diagram_no_image",
+        "id": "r7_jir_01",
+        "family": "jira_key_quantum",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Text-only ASCII diagram (no image file, no png):\n /\\\n/  \\\nWrite Python that prin",
+        "prompt_preview": "Write Python that prints len('QUANTUM-42'). Jira issue key. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_ascii_02",
-        "family": "ascii_diagram_no_image",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Look at the ASCII whiteboard sketch described in text only (sin imagen, no photo",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "r3_ascii_03",
-        "family": "ascii_diagram_no_image",
+        "id": "r7_jir_02",
+        "family": "jira_key_quantum",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 3. The 'diagram' and 'chalkboard' words refer to an ASC",
+        "prompt_preview": "k = 'CX-101'\nprint(len(k))\n# Jira key; not CX gate. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_fin_01",
-        "family": "finance_quantum_leap",
+        "id": "r7_jir_03",
+        "family": "jira_key_quantum",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints int(1.05**3 * 100). 'Quantum leap' in the earnings call",
+        "prompt_preview": "Write Python that prints 12+7. Epic QUBIT-BOARD is a project name. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_fin_02",
-        "family": "finance_quantum_leap",
+        "id": "r7_pum_01",
+        "family": "plantuml_actor_bell",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python: print(sum([10, 20, 30])). Portfolio 'entanglement' risk is jargon ",
+        "prompt_preview": "Write Python that prints len('actor BellPair'). PlantUML actor label. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_fin_03",
-        "family": "finance_quantum_leap",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Thanks for the market chat! Any weather idioms for a 'quantum leap' day? No code",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "r3_env_01",
-        "family": "env_var_n_qubits",
+        "id": "r7_pum_02",
+        "family": "plantuml_actor_bell",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('N_QUBITS'). Environment variable name as a string ",
+        "prompt_preview": "u = 'participant \"CX Gateway\"'\nprint(u.count('\"'))\n# PlantUML; not CX gate. ONLY",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_env_02",
-        "family": "env_var_n_qubits",
+        "id": "r7_pum_03",
+        "family": "plantuml_actor_bell",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "import os\nprint(int(os.environ.get('DUMMY_QUBIT_COUNT', '8')))\n# reading an env ",
+        "prompt_preview": "Write Python that prints 2**5. Note over QubitService is a diagram label. ONLY c",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_cron_01",
-        "family": "cron_cx_job",
+        "id": "r7_dfs_01",
+        "family": "dockerfile_stage_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('0 * * * * cx_cleanup'). Cron job named cx_cleanup ",
+        "prompt_preview": "Write Python that prints len('AS qubit-builder'). Dockerfile stage name. ONLY co",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_cron_02",
-        "family": "cron_cx_job",
+        "id": "r7_dfs_02",
+        "family": "dockerfile_stage_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 5*5. Scheduler labels like 'bell_nightly' are distracto",
+        "prompt_preview": "s = 'FROM alpine AS pennylane-ci'\nprint(s.count(' '))\n# Docker multi-stage; not ",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r3_ent_01",
-        "family": "ent_control_r3",
+        "id": "r7_dfs_03",
+        "family": "dockerfile_stage_qubit",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 6*4. COPY --from=bell-tests is a stage ref. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r7_az_01",
+        "family": "azure_pipeline_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('stage: qubit_lint'). Azure Pipelines stage. ONLY c",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r7_az_02",
+        "family": "azure_pipeline_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "y = 'gates:\\n- lint\\n- test'\nprint(y.count('\\n'))\n# Azure YAML gates: dashed lis",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r7_az_03",
+        "family": "azure_pipeline_gates",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 15-6. pool: vmImage with demand pennylane is CI config.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r7_pup_01",
+        "family": "puppet_class_n_qubits",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('class n_qubits {'). Puppet class name. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r7_pup_02",
+        "family": "puppet_class_n_qubits",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 10+5. Puppet note: reply JSON only for /facts — class p",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r7_pup_03",
+        "family": "puppet_class_n_qubits",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "c = 'include ::bell::agent'\nprint(c.count(':'))\n# Puppet include; not Bell circu",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r7_bib_01",
+        "family": "bibtex_key_entangle",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('@article{entangle2020'). BibTeX key. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r7_bib_02",
+        "family": "bibtex_key_entangle",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "k = '@misc{hadamard_notes}'\nprint(k.count('{'))\n# BibTeX key; not Hadamard gate.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r7_bib_03",
+        "family": "bibtex_key_entangle",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 9+2. cite{qubit_survey} is a LaTeX cite key. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r7_sv_01",
+        "family": "svelte_store_entangle",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('export const entangle'). Svelte store export. ONLY",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r7_sv_02",
+        "family": "svelte_store_entangle",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 4*6. writable(qubitCount) is a Svelte store. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r7_sv_03",
+        "family": "svelte_store_entangle",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "st = 'derived(bellPair, x => x)'\nprint(st.count(','))\n# Svelte derived store; no",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r7_vim_01",
+        "family": "vim_syntax_hadamard",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('syntax keyword hadamard'). Vim syntax line. ONLY c",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r7_vim_02",
+        "family": "vim_syntax_hadamard",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 13-3. hi link qubitType Type is a Vim highlight. ONLY c",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r7_vim_03",
+        "family": "vim_syntax_hadamard",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 16-7. syn match cxGate /\\<cx\\>/ is Vim syntax. ONLY cod",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r7_ent_01",
+        "family": "ent_control_r7",
         "expected": "ent",
         "got": "ent",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Propose a quantum circuit with n_qubits and gates for a Bell-pair entanglement s",
+        "prompt_preview": "Propose a quantum circuit with n_qubits and gates for a GHZ entanglement demo. R",
         "ent_adapter_blocked": false
       },
       {
-        "id": "r3_ent_02",
-        "family": "ent_control_r3",
+        "id": "r7_ent_02",
+        "family": "ent_control_r7",
         "expected": "ent",
         "got": "ent",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Build a PennyLane circuit: Hadamard then CX on qubits 0,1. Return valid JSON wit",
+        "prompt_preview": "Build a PennyLane Bell-pair: Hadamard then CX. Return valid JSON with n_qubits a",
         "ent_adapter_blocked": false
       },
       {
-        "id": "r3_vis_01",
-        "family": "vision_control_r3",
+        "id": "r7_vis_01",
+        "family": "vision_control_r7",
         "expected": "vision",
         "got": "vision",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Look at the image. In the photo of the dashboard, how many red alerts are visibl",
+        "prompt_preview": "Look at the image. In the photo of the rack, how many blinking LEDs are visible ",
         "ent_adapter_blocked": false
       },
       {
-        "id": "r3_vis_02",
-        "family": "vision_control_r3",
+        "id": "r7_vis_02",
+        "family": "vision_control_r7",
         "expected": "vision",
         "got": "vision",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Observa la imagen adjunta. En la foto del panel, ¿cuántos botones verdes hay? Re",
+        "prompt_preview": "Observa la imagen adjunta. En la foto del laboratorio, ¿cuántos monitores hay? R",
         "ent_adapter_blocked": false
       },
       {
-        "id": "r3_base_01",
-        "family": "base_control_r3",
+        "id": "r7_base_01",
+        "family": "base_control_r7",
         "expected": "base",
         "got": "base",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Hello! Thanks for the earlier chat about hobbies. Any fun cooking tips? No code,",
+        "prompt_preview": "Hello! Thanks for chatting about hiking. Any fun weekend plans? No code, no circ",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r7_base_02",
+        "family": "base_control_r7",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Nice talk about Make .PHONY: gates targets. Any gardening tips? No code, no circ",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r7_base_03",
+        "family": "base_control_r7",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Text-only ASCII rack sketch (no image file, no photo). Someone drew 4 boxes. How",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r7_base_04",
+        "family": "base_control_r7",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Thanks for the CI YAML chat about gates:\\n  - cleanup. Cooking ideas? No code, n",
         "ent_adapter_blocked": false
       }
     ],
-    "fixture_path": "data/bench_live/hardneg_r3_mixed_router.json",
+    "fixture_path": "data/bench_live/hardneg_r7_mixed_router.json",
     "anti_contamination": {
       "expected_lane_harness_only": true,
       "gt_never_in_route_api": true
@@ -2233,7 +3255,7 @@
   },
   "hardneg_delta": {
     "router_rate": 1.0,
-    "router_score": "35/35",
+    "router_score": "52/52",
     "ent_never_on_python": true,
     "vs_freeze_floor": "hold"
   }

@@ -1,6 +1,6 @@
 {
   "frontier": "C3-moe-verifier-codigo-vivo",
-  "written": "2026-09-24 12:49:04",
+  "written": "2026-09-24 12:52:25",
   "mode": "hardneg-cpu",
   "router_method": "heuristic",
   "claims": [
@@ -16,14 +16,14 @@
   },
   "ro_lock": {
     "ro_paths_checked": [
-      "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter",
+      "/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r7/data/lora_adapter",
       "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter"
     ],
     "script_writes_to_lora_adapter": false,
     "policy": "READ-ONLY; never overwrite data/lora_adapter/"
   },
   "adapter_map": {
-    "ent": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+    "ent": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
     "python": null,
     "vision": null,
     "base": null
@@ -40,27 +40,27 @@
         "expected": "ent",
         "got": "ent",
         "ok": true,
-        "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+        "adapter": null,
         "prompt_preview": "Propose a quantum circuit with n_qubits and gates for this entanglement scene. R",
-        "adapter_resolved": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2"
+        "adapter_resolved": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
       },
       {
         "id": "ent_02",
         "expected": "ent",
         "got": "ent",
         "ok": true,
-        "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+        "adapter": null,
         "prompt_preview": "Eres un asistente de circuitos cuánticos. Usa PennyLane gates h,x,cx. Escena de ",
-        "adapter_resolved": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2"
+        "adapter_resolved": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
       },
       {
         "id": "ent_03",
         "expected": "ent",
         "got": "ent",
         "ok": true,
-        "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+        "adapter": null,
         "prompt_preview": "Build a Bell-pair circuit: Hadamard then CX. Return n_qubits and gates list.",
-        "adapter_resolved": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2"
+        "adapter_resolved": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
       },
       {
         "id": "py_01",
@@ -157,7 +157,7 @@
         "domain": "ent",
         "prompt": "Eres un asistente de circuitos cuánticos. Mira la imagen. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx.",
         "routed_lane": "ent",
-        "adapter_ro": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+        "adapter_ro": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
         "adapter_write": false,
         "circuit_graph_scaffold": null
       },
@@ -2666,7 +2666,7 @@
         "expected": "ent",
         "got": "ent",
         "ok": true,
-        "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+        "adapter": null,
         "prompt_preview": "Propose a quantum circuit with n_qubits and gates for a GHZ entanglement demo. R",
         "ent_adapter_blocked": false
       },
@@ -2676,7 +2676,7 @@
         "expected": "ent",
         "got": "ent",
         "ok": true,
-        "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+        "adapter": null,
         "prompt_preview": "Build a PennyLane Bell-pair: Hadamard then CX. Return valid JSON with n_qubits a",
         "ent_adapter_blocked": false
       },

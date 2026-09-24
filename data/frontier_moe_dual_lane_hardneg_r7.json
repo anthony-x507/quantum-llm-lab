@@ -1,0 +1,623 @@
+{
+  "method": "heuristic",
+  "n": 52,
+  "hits": 52,
+  "misses": 0,
+  "score": "52/52",
+  "rate": 1.0,
+  "by_family": {
+    "gha_yaml_gates_list": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "sql_comment_qubit": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "bilingual_not_gates": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "make_phony_targets": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "poetry_dep_pennylane": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "redux_selector_cx": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "jira_key_quantum": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "plantuml_actor_bell": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "dockerfile_stage_qubit": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "azure_pipeline_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "puppet_class_n_qubits": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "bibtex_key_entangle": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "svelte_store_entangle": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "vim_syntax_hadamard": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "ent_control_r7": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r7": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r7": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "r7_yaml_01",
+      "family": "gha_yaml_gates_list",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates:'). CI workflow key token only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_yaml_02",
+      "family": "gha_yaml_gates_list",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "blob = 'gates:\\n  - cleanup\\n  - nightly'\nprint(blob.count('-'))\n# GitHub Action",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_yaml_03",
+      "family": "gha_yaml_gates_list",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 9*2. Workflow job needs: [qubit-lint] is a job id list.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_yaml_04",
+      "family": "gha_yaml_gates_list",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 11+4. Azure pipeline stage pennylane-ci is a CI name. O",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_sql_01",
+      "family": "sql_comment_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('-- qubit_id'). SQL comment fragment. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_sql_02",
+      "family": "sql_comment_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "c = \"-- not gates=[Hadamard] — column alias only\"\nprint(c.count('-'))\n# SQL comm",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_sql_03",
+      "family": "sql_comment_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 7*3. SELECT bell_pair FROM t — bell_pair is a column na",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_bi_01",
+      "family": "bilingual_not_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('NO son gates'). Spanish disclaimer string. ONLY co",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_bi_02",
+      "family": "bilingual_not_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "msg = \"these are NOT gates = 'cleanup' — ops label only\"\nprint(msg.count(\"'\"))\n#",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_bi_03",
+      "family": "bilingual_not_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 5**2. Esto NO es un circuito; n_qubits es solo un nombr",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_bi_04",
+      "family": "bilingual_not_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 6+6. Esto NO son gates de circuito cuántico — solo etiq",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_mk_01",
+      "family": "make_phony_targets",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('.PHONY: gates'). Makefile phony declaration. ONLY ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_mk_02",
+      "family": "make_phony_targets",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "line = '.PHONY: gates cleanup'\nprint(line.count(' '))\n# Make .PHONY: gates lists",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_mk_03",
+      "family": "make_phony_targets",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 14-5. TARGETS += qubit-smoke is a Make variable append.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_poe_01",
+      "family": "poetry_dep_pennylane",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('pennylane-ci = \"^0.1\"'). Poetry dep line. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_poe_02",
+      "family": "poetry_dep_pennylane",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "dep = 'qubit-utils = {version = \"1.0\"}'\nprint(dep.count('='))\n# Poetry/pyproject",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_poe_03",
+      "family": "poetry_dep_pennylane",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 8+8. extras = [\"bell-dev\"] is a Poetry extra name. ONLY",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_rdx_01",
+      "family": "redux_selector_cx",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('selectCxMetrics'). Redux selector name. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_rdx_02",
+      "family": "redux_selector_cx",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "s = 'selectBellPairCount'\nprint(s.count('l'))\n# Redux selector; not Bell circuit",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_rdx_03",
+      "family": "redux_selector_cx",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 3*8. Action type ENTANGLE_USERS is a Redux constant. ON",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_jir_01",
+      "family": "jira_key_quantum",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('QUANTUM-42'). Jira issue key. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_jir_02",
+      "family": "jira_key_quantum",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "k = 'CX-101'\nprint(len(k))\n# Jira key; not CX gate. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_jir_03",
+      "family": "jira_key_quantum",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 12+7. Epic QUBIT-BOARD is a project name. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_pum_01",
+      "family": "plantuml_actor_bell",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('actor BellPair'). PlantUML actor label. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_pum_02",
+      "family": "plantuml_actor_bell",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "u = 'participant \"CX Gateway\"'\nprint(u.count('\"'))\n# PlantUML; not CX gate. ONLY",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_pum_03",
+      "family": "plantuml_actor_bell",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 2**5. Note over QubitService is a diagram label. ONLY c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_dfs_01",
+      "family": "dockerfile_stage_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('AS qubit-builder'). Dockerfile stage name. ONLY co",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_dfs_02",
+      "family": "dockerfile_stage_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "s = 'FROM alpine AS pennylane-ci'\nprint(s.count(' '))\n# Docker multi-stage; not ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_dfs_03",
+      "family": "dockerfile_stage_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 6*4. COPY --from=bell-tests is a stage ref. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_az_01",
+      "family": "azure_pipeline_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('stage: qubit_lint'). Azure Pipelines stage. ONLY c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_az_02",
+      "family": "azure_pipeline_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "y = 'gates:\\n- lint\\n- test'\nprint(y.count('\\n'))\n# Azure YAML gates: dashed lis",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_az_03",
+      "family": "azure_pipeline_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 15-6. pool: vmImage with demand pennylane is CI config.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_pup_01",
+      "family": "puppet_class_n_qubits",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('class n_qubits {'). Puppet class name. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_pup_02",
+      "family": "puppet_class_n_qubits",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 10+5. Puppet note: reply JSON only for /facts — class p",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_pup_03",
+      "family": "puppet_class_n_qubits",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "c = 'include ::bell::agent'\nprint(c.count(':'))\n# Puppet include; not Bell circu",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_bib_01",
+      "family": "bibtex_key_entangle",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('@article{entangle2020'). BibTeX key. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_bib_02",
+      "family": "bibtex_key_entangle",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "k = '@misc{hadamard_notes}'\nprint(k.count('{'))\n# BibTeX key; not Hadamard gate.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_bib_03",
+      "family": "bibtex_key_entangle",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 9+2. cite{qubit_survey} is a LaTeX cite key. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_sv_01",
+      "family": "svelte_store_entangle",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('export const entangle'). Svelte store export. ONLY",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_sv_02",
+      "family": "svelte_store_entangle",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 4*6. writable(qubitCount) is a Svelte store. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_sv_03",
+      "family": "svelte_store_entangle",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "st = 'derived(bellPair, x => x)'\nprint(st.count(','))\n# Svelte derived store; no",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_vim_01",
+      "family": "vim_syntax_hadamard",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('syntax keyword hadamard'). Vim syntax line. ONLY c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_vim_02",
+      "family": "vim_syntax_hadamard",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 13-3. hi link qubitType Type is a Vim highlight. ONLY c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_vim_03",
+      "family": "vim_syntax_hadamard",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 16-7. syn match cxGate /\\<cx\\>/ is Vim syntax. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r7_ent_01",
+      "family": "ent_control_r7",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Propose a quantum circuit with n_qubits and gates for a GHZ entanglement demo. R",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r7_ent_02",
+      "family": "ent_control_r7",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Build a PennyLane Bell-pair: Hadamard then CX. Return valid JSON with n_qubits a",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r7_vis_01",
+      "family": "vision_control_r7",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. In the photo of the rack, how many blinking LEDs are visible ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r7_vis_02",
+      "family": "vision_control_r7",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Observa la imagen adjunta. En la foto del laboratorio, ¿cuántos monitores hay? R",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r7_base_01",
+      "family": "base_control_r7",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Hello! Thanks for chatting about hiking. Any fun weekend plans? No code, no circ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r7_base_02",
+      "family": "base_control_r7",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Nice talk about Make .PHONY: gates targets. Any gardening tips? No code, no circ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r7_base_03",
+      "family": "base_control_r7",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Text-only ASCII rack sketch (no image file, no photo). Someone drew 4 boxes. How",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r7_base_04",
+      "family": "base_control_r7",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Thanks for the CI YAML chat about gates:\\n  - cleanup. Cooking ideas? No code, n",
+      "ent_adapter_blocked": false
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_r7_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}

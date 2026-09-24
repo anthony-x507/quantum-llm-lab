@@ -1,0 +1,322 @@
+{
+  "n": 52,
+  "kind": "hardneg_r7_mixed_router",
+  "created": "2026-09-24 12:52:00 ET",
+  "round": 7,
+  "note": "R7 NEW traps (not R1–R6, not label-protect): gha_yaml_gates_list, sql_comment_qubit, bilingual_not_gates, make_phony_targets, poetry_dep_pennylane, redux_selector_cx, jira_key_quantum, plantuml_actor_bell, dockerfile_stage_qubit, azure_pipeline_gates, puppet_class_n_qubits, bibtex_key_entangle, svelte_store_entangle, vim_syntax_hadamard. HARD: multiline YAML gates:\\n  - …; Make .PHONY: gates; bilingual NOT gates / no son gates near quoted ops assigns; base chat mentioning those. GT harness-only.",
+  "anti_contamination": "expected lane is harness-only; never injected into route()",
+  "items": [
+    {
+      "id": "r7_yaml_01",
+      "expected": "python",
+      "family": "gha_yaml_gates_list",
+      "prompt": "Write Python that prints len('gates:'). CI workflow key token only. ONLY code."
+    },
+    {
+      "id": "r7_yaml_02",
+      "expected": "python",
+      "family": "gha_yaml_gates_list",
+      "prompt": "blob = 'gates:\\n  - cleanup\\n  - nightly'\nprint(blob.count('-'))\n# GitHub Actions YAML list gates: with dashed items is an ops allow-list, not a circuit JSON ask. ONLY code."
+    },
+    {
+      "id": "r7_yaml_03",
+      "expected": "python",
+      "family": "gha_yaml_gates_list",
+      "prompt": "Write Python that prints 9*2. Workflow job needs: [qubit-lint] is a job id list. ONLY code."
+    },
+    {
+      "id": "r7_yaml_04",
+      "expected": "python",
+      "family": "gha_yaml_gates_list",
+      "prompt": "Write Python that prints 11+4. Azure pipeline stage pennylane-ci is a CI name. ONLY code."
+    },
+    {
+      "id": "r7_sql_01",
+      "expected": "python",
+      "family": "sql_comment_qubit",
+      "prompt": "Write Python that prints len('-- qubit_id'). SQL comment fragment. ONLY code."
+    },
+    {
+      "id": "r7_sql_02",
+      "expected": "python",
+      "family": "sql_comment_qubit",
+      "prompt": "c = \"-- not gates=[Hadamard] — column alias only\"\nprint(c.count('-'))\n# SQL comment; not a circuit JSON ask. ONLY code."
+    },
+    {
+      "id": "r7_sql_03",
+      "expected": "python",
+      "family": "sql_comment_qubit",
+      "prompt": "Write Python that prints 7*3. SELECT bell_pair FROM t — bell_pair is a column name. ONLY code."
+    },
+    {
+      "id": "r7_bi_01",
+      "expected": "python",
+      "family": "bilingual_not_gates",
+      "prompt": "Write Python that prints len('NO son gates'). Spanish disclaimer string. ONLY code."
+    },
+    {
+      "id": "r7_bi_02",
+      "expected": "python",
+      "family": "bilingual_not_gates",
+      "prompt": "msg = \"these are NOT gates = 'cleanup' — ops label only\"\nprint(msg.count(\"'\"))\n# Bilingual: NOT gates / no son gates; quoted assign is ops allow-list, not a circuit JSON ask. ONLY code."
+    },
+    {
+      "id": "r7_bi_03",
+      "expected": "python",
+      "family": "bilingual_not_gates",
+      "prompt": "Write Python that prints 5**2. Esto NO es un circuito; n_qubits es solo un nombre de variable. ONLY code."
+    },
+    {
+      "id": "r7_bi_04",
+      "expected": "python",
+      "family": "bilingual_not_gates",
+      "prompt": "Write Python that prints 6+6. Esto NO son gates de circuito cuántico — solo etiquetas ops. ONLY code."
+    },
+    {
+      "id": "r7_mk_01",
+      "expected": "python",
+      "family": "make_phony_targets",
+      "prompt": "Write Python that prints len('.PHONY: gates'). Makefile phony declaration. ONLY code."
+    },
+    {
+      "id": "r7_mk_02",
+      "expected": "python",
+      "family": "make_phony_targets",
+      "prompt": "line = '.PHONY: gates cleanup'\nprint(line.count(' '))\n# Make .PHONY: gates lists phony targets, not a circuit JSON ask. ONLY code."
+    },
+    {
+      "id": "r7_mk_03",
+      "expected": "python",
+      "family": "make_phony_targets",
+      "prompt": "Write Python that prints 14-5. TARGETS += qubit-smoke is a Make variable append. ONLY code."
+    },
+    {
+      "id": "r7_poe_01",
+      "expected": "python",
+      "family": "poetry_dep_pennylane",
+      "prompt": "Write Python that prints len('pennylane-ci = \"^0.1\"'). Poetry dep line. ONLY code."
+    },
+    {
+      "id": "r7_poe_02",
+      "expected": "python",
+      "family": "poetry_dep_pennylane",
+      "prompt": "dep = 'qubit-utils = {version = \"1.0\"}'\nprint(dep.count('='))\n# Poetry/pyproject dep; not a qubit circuit. ONLY code."
+    },
+    {
+      "id": "r7_poe_03",
+      "expected": "python",
+      "family": "poetry_dep_pennylane",
+      "prompt": "Write Python that prints 8+8. extras = [\"bell-dev\"] is a Poetry extra name. ONLY code."
+    },
+    {
+      "id": "r7_rdx_01",
+      "expected": "python",
+      "family": "redux_selector_cx",
+      "prompt": "Write Python that prints len('selectCxMetrics'). Redux selector name. ONLY code."
+    },
+    {
+      "id": "r7_rdx_02",
+      "expected": "python",
+      "family": "redux_selector_cx",
+      "prompt": "s = 'selectBellPairCount'\nprint(s.count('l'))\n# Redux selector; not Bell circuit. ONLY code."
+    },
+    {
+      "id": "r7_rdx_03",
+      "expected": "python",
+      "family": "redux_selector_cx",
+      "prompt": "Write Python that prints 3*8. Action type ENTANGLE_USERS is a Redux constant. ONLY code."
+    },
+    {
+      "id": "r7_jir_01",
+      "expected": "python",
+      "family": "jira_key_quantum",
+      "prompt": "Write Python that prints len('QUANTUM-42'). Jira issue key. ONLY code."
+    },
+    {
+      "id": "r7_jir_02",
+      "expected": "python",
+      "family": "jira_key_quantum",
+      "prompt": "k = 'CX-101'\nprint(len(k))\n# Jira key; not CX gate. ONLY code."
+    },
+    {
+      "id": "r7_jir_03",
+      "expected": "python",
+      "family": "jira_key_quantum",
+      "prompt": "Write Python that prints 12+7. Epic QUBIT-BOARD is a project name. ONLY code."
+    },
+    {
+      "id": "r7_pum_01",
+      "expected": "python",
+      "family": "plantuml_actor_bell",
+      "prompt": "Write Python that prints len('actor BellPair'). PlantUML actor label. ONLY code."
+    },
+    {
+      "id": "r7_pum_02",
+      "expected": "python",
+      "family": "plantuml_actor_bell",
+      "prompt": "u = 'participant \"CX Gateway\"'\nprint(u.count('\"'))\n# PlantUML; not CX gate. ONLY code."
+    },
+    {
+      "id": "r7_pum_03",
+      "expected": "python",
+      "family": "plantuml_actor_bell",
+      "prompt": "Write Python that prints 2**5. Note over QubitService is a diagram label. ONLY code."
+    },
+    {
+      "id": "r7_dfs_01",
+      "expected": "python",
+      "family": "dockerfile_stage_qubit",
+      "prompt": "Write Python that prints len('AS qubit-builder'). Dockerfile stage name. ONLY code."
+    },
+    {
+      "id": "r7_dfs_02",
+      "expected": "python",
+      "family": "dockerfile_stage_qubit",
+      "prompt": "s = 'FROM alpine AS pennylane-ci'\nprint(s.count(' '))\n# Docker multi-stage; not PennyLane circuit. ONLY code."
+    },
+    {
+      "id": "r7_dfs_03",
+      "expected": "python",
+      "family": "dockerfile_stage_qubit",
+      "prompt": "Write Python that prints 6*4. COPY --from=bell-tests is a stage ref. ONLY code."
+    },
+    {
+      "id": "r7_az_01",
+      "expected": "python",
+      "family": "azure_pipeline_gates",
+      "prompt": "Write Python that prints len('stage: qubit_lint'). Azure Pipelines stage. ONLY code."
+    },
+    {
+      "id": "r7_az_02",
+      "expected": "python",
+      "family": "azure_pipeline_gates",
+      "prompt": "y = 'gates:\\n- lint\\n- test'\nprint(y.count('\\n'))\n# Azure YAML gates: dashed list is an ops allow-list, not a circuit JSON ask. ONLY code."
+    },
+    {
+      "id": "r7_az_03",
+      "expected": "python",
+      "family": "azure_pipeline_gates",
+      "prompt": "Write Python that prints 15-6. pool: vmImage with demand pennylane is CI config. ONLY code."
+    },
+    {
+      "id": "r7_pup_01",
+      "expected": "python",
+      "family": "puppet_class_n_qubits",
+      "prompt": "Write Python that prints len('class n_qubits {'). Puppet class name. ONLY code."
+    },
+    {
+      "id": "r7_pup_02",
+      "expected": "python",
+      "family": "puppet_class_n_qubits",
+      "prompt": "Write Python that prints 10+5. Puppet note: reply JSON only for /facts — class param n_qubits is a seat-count integer, not a circuit emit. ONLY code."
+    },
+    {
+      "id": "r7_pup_03",
+      "expected": "python",
+      "family": "puppet_class_n_qubits",
+      "prompt": "c = 'include ::bell::agent'\nprint(c.count(':'))\n# Puppet include; not Bell circuit. ONLY code."
+    },
+    {
+      "id": "r7_bib_01",
+      "expected": "python",
+      "family": "bibtex_key_entangle",
+      "prompt": "Write Python that prints len('@article{entangle2020'). BibTeX key. ONLY code."
+    },
+    {
+      "id": "r7_bib_02",
+      "expected": "python",
+      "family": "bibtex_key_entangle",
+      "prompt": "k = '@misc{hadamard_notes}'\nprint(k.count('{'))\n# BibTeX key; not Hadamard gate. ONLY code."
+    },
+    {
+      "id": "r7_bib_03",
+      "expected": "python",
+      "family": "bibtex_key_entangle",
+      "prompt": "Write Python that prints 9+2. cite{qubit_survey} is a LaTeX cite key. ONLY code."
+    },
+    {
+      "id": "r7_sv_01",
+      "expected": "python",
+      "family": "svelte_store_entangle",
+      "prompt": "Write Python that prints len('export const entangle'). Svelte store export. ONLY code."
+    },
+    {
+      "id": "r7_sv_02",
+      "expected": "python",
+      "family": "svelte_store_entangle",
+      "prompt": "Write Python that prints 4*6. writable(qubitCount) is a Svelte store. ONLY code."
+    },
+    {
+      "id": "r7_sv_03",
+      "expected": "python",
+      "family": "svelte_store_entangle",
+      "prompt": "st = 'derived(bellPair, x => x)'\nprint(st.count(','))\n# Svelte derived store; not Bell circuit. ONLY code."
+    },
+    {
+      "id": "r7_vim_01",
+      "expected": "python",
+      "family": "vim_syntax_hadamard",
+      "prompt": "Write Python that prints len('syntax keyword hadamard'). Vim syntax line. ONLY code."
+    },
+    {
+      "id": "r7_vim_02",
+      "expected": "python",
+      "family": "vim_syntax_hadamard",
+      "prompt": "Write Python that prints 13-3. hi link qubitType Type is a Vim highlight. ONLY code."
+    },
+    {
+      "id": "r7_vim_03",
+      "expected": "python",
+      "family": "vim_syntax_hadamard",
+      "prompt": "Write Python that prints 16-7. syn match cxGate /\\<cx\\>/ is Vim syntax. ONLY code."
+    },
+    {
+      "id": "r7_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r7",
+      "prompt": "Propose a quantum circuit with n_qubits and gates for a GHZ entanglement demo. Reply JSON only."
+    },
+    {
+      "id": "r7_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r7",
+      "prompt": "Build a PennyLane Bell-pair: Hadamard then CX. Return valid JSON with n_qubits and gates list."
+    },
+    {
+      "id": "r7_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r7",
+      "prompt": "Look at the image. In the photo of the rack, how many blinking LEDs are visible in the frame? Reply with only the integer."
+    },
+    {
+      "id": "r7_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r7",
+      "prompt": "Observa la imagen adjunta. En la foto del laboratorio, ¿cuántos monitores hay? Responde solo un entero."
+    },
+    {
+      "id": "r7_base_01",
+      "expected": "base",
+      "family": "base_control_r7",
+      "prompt": "Hello! Thanks for chatting about hiking. Any fun weekend plans? No code, no circuit."
+    },
+    {
+      "id": "r7_base_02",
+      "expected": "base",
+      "family": "base_control_r7",
+      "prompt": "Nice talk about Make .PHONY: gates targets. Any gardening tips? No code, no circuit."
+    },
+    {
+      "id": "r7_base_03",
+      "expected": "base",
+      "family": "base_control_r7",
+      "prompt": "Text-only ASCII rack sketch (no image file, no photo). Someone drew 4 boxes. How is the weather?"
+    },
+    {
+      "id": "r7_base_04",
+      "expected": "base",
+      "family": "base_control_r7",
+      "prompt": "Thanks for the CI YAML chat about gates:\\n  - cleanup. Cooking ideas? No code, no circuit."
+    }
+  ]
+}
