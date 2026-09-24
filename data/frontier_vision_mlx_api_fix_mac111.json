@@ -1,0 +1,67 @@
+{
+  "written": "2026-09-24 10:53:01 ET",
+  "host": "Mac-111",
+  "user": "anthony",
+  "branch": "frontier/vision-mlx-api-fix",
+  "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
+  "fix": "mlx_vlm generate: prompt positional + image= kwarg (was: image paths as prompt)",
+  "smokes": {
+    "vision_minimal_api": {
+      "ok": true,
+      "elapsed_s": 3.39,
+      "frame": "/Users/anthony/Documents/quantum-llm-lab/data/scenes/scene_1062/frame_0028.png",
+      "gen_preview": "Got it, let's look at the image. There's a purple square, a yellow square, a green triangle, and a pink line connecting them. The background is dark. So I need to name the main shapes and colors in a "
+    },
+    "vision_grounding_mlx": {
+      "ok": true,
+      "elapsed_s": 7.59,
+      "source": "mlx-vlm",
+      "vlm_parse": "ok",
+      "json_usable": true,
+      "has_nota_vlm_fallback": false,
+      "structured_keys": [
+        "_vlm_parse",
+        "_vlm_raw_preview",
+        "aceleracion_aprox_px_s2",
+        "nota",
+        "objeto",
+        "perdida_energia_por_rebote",
+        "rebotes",
+        "trayectoria"
+      ],
+      "raw_preview": "Got it, let's analyze the frames. The object is a white dot moving leftward. Each frame shows it shifting left. The trajectory is horizontal left. Aceleracion: since it's moving left consistently, acceleration is constant? Wait, the movemen",
+      "narrative_preview": "Se observa un(a) punto blanco en horizontal izquierda. Aceleración aproximada 0 px/s² (g simulado None). Hay 0 rebote(s); en cada uno se pierde fracción 0 de energía cinética. Frames: None.\n(Fuente VLM: mlx-community/Qwen3-VL-8B-Thinking-4b"
+    },
+    "grounding_n3_parse": {
+      "ok": true,
+      "n": 3,
+      "parse_ok": 0,
+      "parse_rate": 0.0,
+      "elapsed_s": 26.55,
+      "items": [
+        {
+          "i": 0,
+          "elapsed_s": 8.68,
+          "parse": "fail:JSONDecodeError",
+          "keys": null,
+          "preview": "Got it, let's analyze the frames. First, the object is a white circle (maybe a ball) on a black background. Looking at the three frames, the position of the circle seems to be movi"
+        },
+        {
+          "i": 1,
+          "elapsed_s": 8.85,
+          "parse": "fail:JSONDecodeError",
+          "keys": null,
+          "preview": "Got it, let's analyze the frames. First, the object is a white circle (maybe a ball) on a black background. Looking at the three frames, the position of the circle seems to be movi"
+        },
+        {
+          "i": 2,
+          "elapsed_s": 9.01,
+          "parse": "fail:JSONDecodeError",
+          "keys": null,
+          "preview": "Got it, let's analyze the frames. First, the object is a white circle (maybe a ball) on a black background. Looking at the three frames, the position of the circle seems to be movi"
+        }
+      ]
+    }
+  },
+  "overall_api_ok": true
+}
