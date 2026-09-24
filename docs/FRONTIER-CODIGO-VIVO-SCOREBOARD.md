@@ -1,6 +1,21 @@
 # FRONTIER — Código-vivo tip scoreboard
 
 
+## Side — tip-pillars-reinforce (2026-09-24 14:44:25 ET) — NOT FOLDED
+
+| Field | Value |
+|-------|-------|
+| Branch | `frontier/tip-pillars-reinforce` |
+| Base tip | `f052420` |
+| Pillars before → after | **26/26 → 34/34** (gap mid 30/34) |
+| Mixed (d) | **1.0** held |
+| Hardneg smoke | **18/18** |
+| Floors R2–R12+LP | **held** |
+| Freeze | `codigo_vivo_tip_pillars_reinforce_100pct_20260924_144425` |
+| Fold | **NO** |
+
+See `docs/FRONTIER-CODIGO-VIVO-TIP-PILLARS-REINFORCE.md`.
+
 ## Fold — tip-distance-far → codigo-vivo-tip (2026-09-24 14:37:16 ET)
 
 | Surface | Score |

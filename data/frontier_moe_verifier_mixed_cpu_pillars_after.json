@@ -1,0 +1,1470 @@
+{
+  "frontier": "C3b-moe-verifier-mixed-live",
+  "written": "2026-09-24 14:43:48",
+  "claims": [
+    "NO quantum-advantage claims",
+    "MoE routing usability + classical python -I exec oracle only",
+    "Ent lane may carry Clifford–Pauli circuit-graph scaffold hints (no GT)"
+  ],
+  "frontier_lane": "mixed-with-scaffold",
+  "ro_lock": {
+    "script_writes_to_lora_adapter": false,
+    "policy": "READ-ONLY; never overwrite data/lora_adapter/",
+    "ent_adapter_ro": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
+  },
+  "mode": "cpu-eval",
+  "router_method": "heuristic",
+  "mixed_counts": {
+    "python": 12,
+    "entanglement": 10,
+    "vision_scored": 8,
+    "vision_routing_extra": 4,
+    "hardneg_router": 18,
+    "hardneg_vision_extra": 8
+  },
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "leaks": [],
+    "policy": "GT only in eval.*; never concatenated into inference prompts",
+    "locked_false": true,
+    "gt_never_in_inference_prompts": true,
+    "ent_never_on_python": true,
+    "scaffold_gt_leaks": 0,
+    "circuit_scaffold_on_ent": true,
+    "lock": "docs/LOCK-ANTI-CONTAMINATION.md"
+  },
+  "circuit_scaffold": {
+    "enabled_default_on_ent": true,
+    "polish": false,
+    "module_available": true,
+    "injected_n": 12,
+    "wired_to_vlm": true,
+    "channel": "text_scaffold_prefix",
+    "weight_peft_injection": false,
+    "freeze_path": "data/FRONTIER_CIRCUIT_GRAPH_SCAFFOLD_FREEZE.json",
+    "mixed_freeze_overall_floor": 0.9667,
+    "mixed_freeze_overall_floor_doc": 0.967,
+    "scaffold_freeze_floor": 0.9
+  },
+  "router": {
+    "method": "heuristic",
+    "circuit_scaffold_default_on_ent": true,
+    "scaffold_polish": false,
+    "scaffold_injected_n": 12,
+    "scaffold_gt_leaks": 0,
+    "wired_to_vlm": true,
+    "channel": "text_scaffold_prefix",
+    "weight_peft_injection": false,
+    "pillar_routing": {
+      "n": 34,
+      "hits": 34,
+      "score": "34/34",
+      "rows": [
+        {
+          "id": "py_arith_01",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "py_arith_02",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "py_arith_03",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "py_arith_04",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "py_alg_01",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "py_alg_02",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "py_alg_03",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "py_alg_04",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "py_es_prog_01",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "py_es_cod_01",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "py_write_code_01",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "py_exec_snip_01",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "ent_scene_0222",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "circuit_graph_scaffold": {
+            "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "hint_chars": 902,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.7557
+          }
+        },
+        {
+          "id": "ent_scene_0157",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "circuit_graph_scaffold": {
+            "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "hint_chars": 902,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.7557
+          }
+        },
+        {
+          "id": "ent_scene_0291",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "circuit_graph_scaffold": {
+            "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "hint_chars": 902,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.7557
+          }
+        },
+        {
+          "id": "ent_scene_0359",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "circuit_graph_scaffold": {
+            "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "hint_chars": 915,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
+          }
+        },
+        {
+          "id": "ent_scene_0239",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "circuit_graph_scaffold": {
+            "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "hint_chars": 915,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
+          }
+        },
+        {
+          "id": "ent_scene_0293",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "circuit_graph_scaffold": {
+            "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "hint_chars": 915,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
+          }
+        },
+        {
+          "id": "ent_scene_0317",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "circuit_graph_scaffold": {
+            "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "hint_chars": 915,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
+          }
+        },
+        {
+          "id": "ent_scene_0336",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "circuit_graph_scaffold": {
+            "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "hint_chars": 915,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
+          }
+        },
+        {
+          "id": "ent_en_bell_01",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "circuit_graph_scaffold": {
+            "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "hint_chars": 900,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.7557
+          }
+        },
+        {
+          "id": "ent_nop_y_01",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "circuit_graph_scaffold": {
+            "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "hint_chars": 902,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.7557
+          }
+        },
+        {
+          "id": "vis_math_01",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "vis_math_02",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "vis_math_03",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "vis_math_04",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "vis_math_05",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "vis_math_06",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "vis_math_07",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "vis_math_08",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "vis_circ_01",
+          "pillar": "vision",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "circuit_graph_scaffold": {
+            "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "hint_chars": 915,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
+          }
+        },
+        {
+          "id": "vis_circ_02",
+          "pillar": "vision",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "circuit_graph_scaffold": {
+            "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "hint_chars": 915,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
+          }
+        },
+        {
+          "id": "vis_es_obs_01",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        },
+        {
+          "id": "vis_board_01",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "circuit_graph_scaffold": null
+        }
+      ]
+    },
+    "hardneg_routing": {
+      "n": 18,
+      "hits": 18,
+      "score": "18/18",
+      "rows": [
+        {
+          "id": "hn_py_quantum_word",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "note": "qubits/Bell noun but code-gen → python"
+        },
+        {
+          "id": "hn_py_circuit_print",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "note": "gate token but code-gen"
+        },
+        {
+          "id": "hn_ent_no_python",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "note": "classic ent"
+        },
+        {
+          "id": "hn_ent_spanish",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "note": "spanish ent"
+        },
+        {
+          "id": "hn_vis_math",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "note": "vision math"
+        },
+        {
+          "id": "hn_vis_frame",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "note": "vision spanish"
+        },
+        {
+          "id": "hn_vis_chalkboard",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "note": "vision not ent"
+        },
+        {
+          "id": "hn_base_chat",
+          "expected_lane": "base",
+          "got": "base",
+          "ok": true,
+          "adapter": null,
+          "note": "chat → base"
+        },
+        {
+          "id": "hn_amb_py_def_quantum",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "note": "def+print dominates"
+        },
+        {
+          "id": "hn_amb_ent_image_words",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "note": "imagen present but ent JSON wins"
+        },
+        {
+          "id": "hn_vis_diagram",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "note": "diagram cue → vision"
+        },
+        {
+          "id": "hn_vis_whiteboard",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "note": "whiteboard photo → vision"
+        },
+        {
+          "id": "hn_vis_screenshot_sheet",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "note": "screenshot spreadsheet → vision"
+        },
+        {
+          "id": "hn_vis_neg_textonly",
+          "expected_lane": "base",
+          "got": "base",
+          "ok": true,
+          "adapter": null,
+          "note": "explicit no-image → base (not vision)"
+        },
+        {
+          "id": "hn_vis_neg_without_picture",
+          "expected_lane": "base",
+          "got": "base",
+          "ok": true,
+          "adapter": null,
+          "note": "without picture → base"
+        },
+        {
+          "id": "hn_vis_neg_sin_imagen",
+          "expected_lane": "base",
+          "got": "base",
+          "ok": true,
+          "adapter": null,
+          "note": "sin imagen → base"
+        },
+        {
+          "id": "hn_vis_street_overlay",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "note": "caption overlay + frame png → vision"
+        },
+        {
+          "id": "hn_vis_neg_no_visual",
+          "expected_lane": "base",
+          "got": "base",
+          "ok": true,
+          "adapter": null,
+          "note": "no visual input → base"
+        }
+      ]
+    },
+    "ent_never_on_python": true
+  },
+  "python_paths": {
+    "n_items": 12,
+    "proposer": "heuristic",
+    "router_method": "heuristic",
+    "rounds_max": 2,
+    "routing": [
+      {
+        "id": "py_arith_01",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_arith_02",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_arith_03",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_arith_04",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_alg_01",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_alg_02",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_alg_03",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_alg_04",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_es_prog_01",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_es_cod_01",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_write_code_01",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_exec_snip_01",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      }
+    ],
+    "paths": {
+      "a_baseline_single": {
+        "path": "a_baseline_single",
+        "n": 12,
+        "solve_rate_single": 0.0,
+        "solve_rate_loop": 0.0,
+        "delta_solve_rate": 0.0,
+        "solved_single": 0,
+        "solved_loop": 0,
+        "repair_success_rate": 0.0,
+        "repair_helped_n": 0,
+        "failed_single_n": 12,
+        "prompt_touches_gt": false,
+        "prompt_touches_gt_locked_false": true
+      },
+      "b_moe_alone_python_lane": {
+        "path": "b_moe_alone_python_lane",
+        "n": 12,
+        "solve_rate_single": 0.0,
+        "solve_rate_loop": 0.0,
+        "delta_solve_rate": 0.0,
+        "solved_single": 0,
+        "solved_loop": 0,
+        "repair_success_rate": 0.0,
+        "repair_helped_n": 0,
+        "failed_single_n": 12,
+        "prompt_touches_gt": false,
+        "prompt_touches_gt_locked_false": true
+      },
+      "c_verifier_alone": {
+        "path": "c_verifier_alone",
+        "n": 12,
+        "solve_rate_single": 0.0,
+        "solve_rate_loop": 1.0,
+        "delta_solve_rate": 1.0,
+        "solved_single": 0,
+        "solved_loop": 12,
+        "repair_success_rate": 1.0,
+        "repair_helped_n": 12,
+        "failed_single_n": 12,
+        "prompt_touches_gt": false,
+        "prompt_touches_gt_locked_false": true
+      },
+      "d_unified_python_lane": {
+        "path": "d_unified_python_lane",
+        "n": 12,
+        "solve_rate_single": 0.0,
+        "solve_rate_loop": 1.0,
+        "delta_solve_rate": 1.0,
+        "solved_single": 0,
+        "solved_loop": 12,
+        "repair_success_rate": 1.0,
+        "repair_helped_n": 12,
+        "failed_single_n": 12,
+        "prompt_touches_gt": false,
+        "prompt_touches_gt_locked_false": true
+      }
+    },
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false
+  },
+  "ent_vision_paths": {
+    "priors_ref": [
+      "/Users/anthony/Documents/quantum-llm-lab-tip-pillars-reinforce/data/BENCHMARK_CODIGO_VIVO.json",
+      "docs/FRONTIER-MOE-VERIFIER-UNIFIED.md#prior-live"
+    ],
+    "circuit_scaffold_on_ent": true,
+    "scaffold_polish": false,
+    "scaffold_gt_leaks": 0,
+    "scaffold_module": true,
+    "wired_to_vlm": true,
+    "channel": "text_scaffold_prefix",
+    "weight_peft_injection": false,
+    "ent_routing": [
+      {
+        "id": "ent_scene_0222",
+        "lane": "ent",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "uses_ent_adapter": true,
+        "circuit_graph_scaffold": {
+          "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 902,
+          "has_markers": true,
+          "gt_leak": false,
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.7557
+        },
+        "prompt_with_scaffold_chars": 1100
+      },
+      {
+        "id": "ent_scene_0157",
+        "lane": "ent",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "uses_ent_adapter": true,
+        "circuit_graph_scaffold": {
+          "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 902,
+          "has_markers": true,
+          "gt_leak": false,
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.7557
+        },
+        "prompt_with_scaffold_chars": 1100
+      },
+      {
+        "id": "ent_scene_0291",
+        "lane": "ent",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "uses_ent_adapter": true,
+        "circuit_graph_scaffold": {
+          "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 902,
+          "has_markers": true,
+          "gt_leak": false,
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.7557
+        },
+        "prompt_with_scaffold_chars": 1100
+      },
+      {
+        "id": "ent_scene_0359",
+        "lane": "ent",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "uses_ent_adapter": true,
+        "circuit_graph_scaffold": {
+          "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 915,
+          "has_markers": true,
+          "gt_leak": false,
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.3909
+        },
+        "prompt_with_scaffold_chars": 1113
+      },
+      {
+        "id": "ent_scene_0239",
+        "lane": "ent",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "uses_ent_adapter": true,
+        "circuit_graph_scaffold": {
+          "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 915,
+          "has_markers": true,
+          "gt_leak": false,
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.3909
+        },
+        "prompt_with_scaffold_chars": 1113
+      },
+      {
+        "id": "ent_scene_0293",
+        "lane": "ent",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "uses_ent_adapter": true,
+        "circuit_graph_scaffold": {
+          "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 915,
+          "has_markers": true,
+          "gt_leak": false,
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.3909
+        },
+        "prompt_with_scaffold_chars": 1113
+      },
+      {
+        "id": "ent_scene_0317",
+        "lane": "ent",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "uses_ent_adapter": true,
+        "circuit_graph_scaffold": {
+          "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 915,
+          "has_markers": true,
+          "gt_leak": false,
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.3909
+        },
+        "prompt_with_scaffold_chars": 1113
+      },
+      {
+        "id": "ent_scene_0336",
+        "lane": "ent",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "uses_ent_adapter": true,
+        "circuit_graph_scaffold": {
+          "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 915,
+          "has_markers": true,
+          "gt_leak": false,
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.3909
+        },
+        "prompt_with_scaffold_chars": 1113
+      },
+      {
+        "id": "ent_en_bell_01",
+        "lane": "ent",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "uses_ent_adapter": true,
+        "circuit_graph_scaffold": {
+          "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 900,
+          "has_markers": true,
+          "gt_leak": false,
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.7557
+        },
+        "prompt_with_scaffold_chars": 1042
+      },
+      {
+        "id": "ent_nop_y_01",
+        "lane": "ent",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "uses_ent_adapter": true,
+        "circuit_graph_scaffold": {
+          "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
+          "hint_chars": 902,
+          "has_markers": true,
+          "gt_leak": false,
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.7557
+        },
+        "prompt_with_scaffold_chars": 967
+      }
+    ],
+    "vision_routing": [
+      {
+        "id": "vis_math_01",
+        "lane": "vision",
+        "adapter": null
+      },
+      {
+        "id": "vis_math_02",
+        "lane": "vision",
+        "adapter": null
+      },
+      {
+        "id": "vis_math_03",
+        "lane": "vision",
+        "adapter": null
+      },
+      {
+        "id": "vis_math_04",
+        "lane": "vision",
+        "adapter": null
+      },
+      {
+        "id": "vis_math_05",
+        "lane": "vision",
+        "adapter": null
+      },
+      {
+        "id": "vis_math_06",
+        "lane": "vision",
+        "adapter": null
+      },
+      {
+        "id": "vis_math_07",
+        "lane": "vision",
+        "adapter": null
+      },
+      {
+        "id": "vis_math_08",
+        "lane": "vision",
+        "adapter": null
+      }
+    ],
+    "vision_prior_detail": {
+      "scored_n": 8,
+      "scored_hits": 8,
+      "scored_accuracy": 1.0,
+      "scored_rows": [
+        {
+          "id": "vis_math_01",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null
+        },
+        {
+          "id": "vis_math_02",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null
+        },
+        {
+          "id": "vis_math_03",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null
+        },
+        {
+          "id": "vis_math_04",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null
+        },
+        {
+          "id": "vis_math_05",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null
+        },
+        {
+          "id": "vis_math_06",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null
+        },
+        {
+          "id": "vis_math_07",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null
+        },
+        {
+          "id": "vis_math_08",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null
+        }
+      ],
+      "full_n": 10,
+      "full_hits": 10,
+      "full_accuracy": 1.0,
+      "full_rows": [
+        {
+          "id": "vis_math_01",
+          "kind": "math",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": true
+        },
+        {
+          "id": "vis_math_02",
+          "kind": "math",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": true
+        },
+        {
+          "id": "vis_math_03",
+          "kind": "math",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": true
+        },
+        {
+          "id": "vis_math_04",
+          "kind": "math",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": true
+        },
+        {
+          "id": "vis_math_05",
+          "kind": "math",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": true
+        },
+        {
+          "id": "vis_math_06",
+          "kind": "math",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": true
+        },
+        {
+          "id": "vis_circ_01",
+          "kind": "circuit",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": false
+        },
+        {
+          "id": "vis_circ_02",
+          "kind": "circuit",
+          "prior_correct": false,
+          "final_correct": true,
+          "error": "parse:JSONDecodeError",
+          "reparse": "rescued_by_gold_free_json_or_gate_extract",
+          "in_mixed_scored": false
+        },
+        {
+          "id": "vis_math_07",
+          "kind": "math",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": true
+        },
+        {
+          "id": "vis_math_08",
+          "kind": "math",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": true
+        }
+      ],
+      "metric_source": "prior_replay_per_item+gold_free_reparse",
+      "fail_analysis": [
+        {
+          "id": "vis_circ_02",
+          "kind": "circuit",
+          "prior_correct": false,
+          "final_correct": true,
+          "error": "parse:JSONDecodeError",
+          "reparse": "rescued_by_gold_free_json_or_gate_extract",
+          "in_mixed_scored": false
+        }
+      ]
+    },
+    "vision_aggregate_prior": 0.9,
+    "paths": {
+      "a_baseline": {
+        "path": "a_baseline",
+        "entanglement": {
+          "n": 10,
+          "label_acc": 0.0,
+          "metric_source": "prior_replay",
+          "router_all_ent_adapter": null
+        },
+        "vision": {
+          "n": 8,
+          "accuracy": 1.0,
+          "metric_source": "prior_replay",
+          "router_all_base": null
+        },
+        "note": "no MoE: base model all pillars (BENCHMARK base)"
+      },
+      "b_moe_alone": {
+        "path": "b_moe_alone",
+        "entanglement": {
+          "n": 10,
+          "label_acc": 1.0,
+          "metric_source": "prior_replay",
+          "router_all_ent_adapter": true
+        },
+        "vision": {
+          "n": 8,
+          "accuracy": 1.0,
+          "metric_source": "prior_replay",
+          "router_all_base": true
+        },
+        "note": "MoE: ent→ent2 RO, vision→base; rates from prior live / BENCHMARK"
+      },
+      "c_verifier_on_python": {
+        "path": "c_verifier_on_python",
+        "entanglement": {
+          "n": 10,
+          "label_acc": 0.0,
+          "metric_source": "prior_replay",
+          "router_all_ent_adapter": null
+        },
+        "vision": {
+          "n": 8,
+          "accuracy": 1.0,
+          "metric_source": "prior_replay",
+          "router_all_base": null
+        },
+        "note": "verifier only on python; ent/vis same as baseline"
+      },
+      "d_unified": {
+        "path": "d_unified",
+        "entanglement": {
+          "n": 10,
+          "label_acc": 1.0,
+          "metric_source": "prior_replay",
+          "router_all_ent_adapter": true
+        },
+        "vision": {
+          "n": 8,
+          "accuracy": 1.0,
+          "metric_source": "prior_replay",
+          "router_all_base": true
+        },
+        "note": "MoE + verifier-on-python; ent/vis as MoE"
+      }
+    }
+  },
+  "scoreboard": {
+    "table": [
+      {
+        "path": "a_baseline",
+        "python": {
+          "n": 12,
+          "rate": 0.0,
+          "metric": "solve_rate_single"
+        },
+        "entanglement": {
+          "n": 10,
+          "label_acc": 0.0,
+          "source": "prior_replay"
+        },
+        "vision": {
+          "n": 8,
+          "accuracy": 1.0,
+          "source": "prior_replay"
+        },
+        "overall_mean": 0.3333,
+        "prompt_touches_gt": false,
+        "repair_success_rate": 0.0
+      },
+      {
+        "path": "b_moe_alone",
+        "python": {
+          "n": 12,
+          "rate": 0.0,
+          "metric": "solve_rate_single"
+        },
+        "entanglement": {
+          "n": 10,
+          "label_acc": 1.0,
+          "source": "prior_replay"
+        },
+        "vision": {
+          "n": 8,
+          "accuracy": 1.0,
+          "source": "prior_replay"
+        },
+        "overall_mean": 0.6667,
+        "prompt_touches_gt": false,
+        "repair_success_rate": 0.0
+      },
+      {
+        "path": "c_verifier_on_python",
+        "python": {
+          "n": 12,
+          "rate": 1.0,
+          "metric": "solve_rate_loop"
+        },
+        "entanglement": {
+          "n": 10,
+          "label_acc": 0.0,
+          "source": "prior_replay"
+        },
+        "vision": {
+          "n": 8,
+          "accuracy": 1.0,
+          "source": "prior_replay"
+        },
+        "overall_mean": 0.6667,
+        "prompt_touches_gt": false,
+        "repair_success_rate": 1.0
+      },
+      {
+        "path": "d_unified",
+        "python": {
+          "n": 12,
+          "rate": 1.0,
+          "metric": "solve_rate_loop"
+        },
+        "entanglement": {
+          "n": 10,
+          "label_acc": 1.0,
+          "source": "prior_replay"
+        },
+        "vision": {
+          "n": 8,
+          "accuracy": 1.0,
+          "source": "prior_replay"
+        },
+        "overall_mean": 1.0,
+        "prompt_touches_gt": false,
+        "repair_success_rate": 1.0
+      }
+    ],
+    "delta_moe_vs_baseline": {
+      "python": 0.0,
+      "entanglement": 1.0,
+      "vision": 0.0,
+      "overall": 0.3334
+    },
+    "moe_delta_visible": true,
+    "priors_used": [
+      "/Users/anthony/Documents/quantum-llm-lab-tip-pillars-reinforce/data/BENCHMARK_CODIGO_VIVO.json",
+      "docs/FRONTIER-MOE-VERIFIER-UNIFIED.md#prior-live"
+    ]
+  },
+  "priors": {
+    "sources": [
+      "/Users/anthony/Documents/quantum-llm-lab-tip-pillars-reinforce/data/BENCHMARK_CODIGO_VIVO.json",
+      "docs/FRONTIER-MOE-VERIFIER-UNIFIED.md#prior-live"
+    ],
+    "baseline_base": {
+      "python_solve_rate": 0.0625,
+      "ent_label_acc": 0.0,
+      "vision_accuracy": 0.9
+    },
+    "moe_routed": {
+      "python_solve_rate": 0.0625,
+      "ent_label_acc": 1.0,
+      "vision_accuracy": 0.9,
+      "gate_pass": true,
+      "note": "fallback priors from shipped MoE dual-lane live (py0.0625/ent1.0/vis0.9)"
+    },
+    "wrong_adapter_penalty": {
+      "python_with_ent_adapter": 0.0,
+      "vision_with_quantum_adapter": 0.7,
+      "ent_with_ent_adapter": 1.0
+    }
+  },
+  "mlx_status": null,
+  "notes": []
+}

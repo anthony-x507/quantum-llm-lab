@@ -52,8 +52,10 @@ ENT_RE = re.compile(
 PYTHON_RE = re.compile(
     r"\b("
     r"python|def\s+\w+|ONLY\s+code|write\s+(a\s+)?python|"
-    r"print\s*\(|import\s+\w+|expected_stdout|markdown\s+fences?|"
-    r"factorial|executable|sandbox|programa\s+en\s+python"
+    r"write\s+code|prints?\b|print\s*\(|import\s+\w+|expected_stdout|markdown\s+fences?|"
+    r"factorial|executable(?:\s+snippet)?|sandbox|programa\s+en\s+python|"
+    # pillars-reinforce: Spanish programa:/código ejecutable/imprime without 'python' token
+    r"programa\s*:|c[oó]digo\s+ejecutable|imprim[ae]\b"
     r")\b",
     re.IGNORECASE,
 )
@@ -149,6 +151,20 @@ def route_heuristic(prompt: str) -> Lane:
     # Exception: explicit circuit+JSON asks stay ent.
     has_ent = bool(ENT_RE.search(text))
     has_py = bool(PYTHON_RE.search(text))
+    # pillars-reinforce: "No python code" / "sin código python" is an ent/vis disclaimer,
+    # not a python-lane ask (bare \bpython\b otherwise wins).
+    if re.search(
+        r"(?:"
+        r"\bno\s+python\s+code\b|"
+        r"\bnot\s+python\s+code\b|"
+        r"\bsin\s+c[oó]digo\s+python\b|"
+        r"\bsin\s+python\b|"
+        r"\bno\s+c[oó]digo\s+python\b"
+        r")",
+        text,
+        re.I,
+    ):
+        has_py = False
     has_vis = bool(VISION_RE.search(text))
     vis_negated = bool(VISION_NEG_RE.search(text))
     ent_negated = bool(ENT_NEG_RE.search(text))
@@ -410,6 +426,23 @@ def route_heuristic(prompt: str) -> Lane:
             re.I,
         )
     )
+    # pillars-reinforce: gates=[H, CNOT] / gates=[Hadamard,...] are circuit JSON asks,
+    # not k8s/helm ops allow-lists (R5 nonempty gates=[...] false positive).
+    # Keep R4/R5/R7 "not gates=[Hadamard]" disclaimers as ops labels (floor shields).
+    if (
+        gates_ops_label
+        and re.search(
+            r"gates\s*[=:]\s*\[[^\]]*\b(?:"
+            r"CNOT|CX|CY|CZ|CCX|SWAP|HADAMARD|Hadamard|Toffoli|"
+            r"RX|RY|RZ|U[123]|Pauli|[XYZIS]|H"
+            r")\b",
+            text,
+            re.I,
+        )
+        and not re.search(r"\bnot\s+gates\s*[=:\[]", text, re.I)
+        and not re.search(r"\bno\s+son\s+gates\b|\besto\s+no\s+son\s+gates\b", text, re.I)
+    ):
+        gates_ops_label = False
     # label-protect: "json válido" only when not explicitly negated (NOT/NO es/never reply)
     json_valido = bool(re.search(r"\bjson\s+v[aá]lido\b", text, re.I)) and not bool(
         re.search(
