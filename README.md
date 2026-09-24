@@ -156,7 +156,7 @@ python examples/synthetic_physics_dataset.py
 Flags útiles:
 
 ```bash
-python examples/synthetic_physics_dataset.py --n-scenes 220 --out data/scenes --seed 42
+python examples/synthetic_physics_dataset.py --n-scenes 280 --out data/scenes --seed 42
 python examples/synthetic_physics_dataset.py --n-scenes 3 --frames-per-scene 24   # smoke
 ```
 
@@ -238,12 +238,12 @@ MIT
 
 Plan: [`docs/lora_plan.md`](docs/lora_plan.md). Wrappers: `examples/train_lora.py`, `examples/eval_lora.py`.
 
-**Cuándo:** ~200+ escenas en `data/scenes/` + Qwen3-VL-8B-Thinking-4bit en la M4.
+**Cuándo:** ~200+ escenas mixtas (caídas, figuras nuevas, entrelazamiento, superposición) + 8B 4-bit en la M4.
 
 **Qué esperar:** ~2–3 h (rank 32, 3 epochs). Adapter en `data/lora_adapter/`. Éxito = +20 pts Jev APROBAR en 10 escenas vs base.
 
 ```bash
-python examples/synthetic_physics_dataset.py --n-scenes 220 --out data/scenes --seed 42
+python examples/synthetic_physics_dataset.py --n-scenes 280 --out data/scenes --seed 42
 python examples/train_lora.py --rank 32 --alpha 32 --lr 2e-4 --epochs 3
 python examples/eval_lora.py --adapter data/lora_adapter --n-test 10
 ```

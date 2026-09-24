@@ -1,6 +1,6 @@
 # Plan de fine-tune con LoRA (Agent Lab / M4)
 
-Documento listo para ejecutar cuando existan: (1) dataset sintético en `data/scenes/` (~200+ escenas) y (2) pesos locales de `mlx-community/Qwen3-VL-8B-Thinking-4bit`.
+Documento listo para ejecutar cuando existan: (1) dataset sintético mixto en `data/scenes/` (~200+ escenas) y (2) pesos locales de `mlx-community/Qwen3-VL-8B-Thinking-4bit`.
 
 ## Qué es LoRA
 
@@ -10,26 +10,55 @@ En este lab usamos **mlx-vlm** (`python -m mlx_vlm.lora` o los wrappers `example
 
 ## Por qué sirve aquí
 
-Queremos que el 8B proponga más a menudo circuitos JSON que:
+Queremos que el 8B, con **un solo adapter** entrenado en **todos los dominios juntos**, proponga más a menudo circuitos JSON que:
 
 1. **Compilen** en PennyLane (puertas h/x/y/z/cx/ry).
-2. Respeten la **pérdida de energía** de la escena (rebotes).
-3. Pasen el árbitro **Jev** (APROBAR).
+2. Respeten la **pérdida de energía** en escenas de caída.
+3. Distingan **entrelazamiento** vs estado separable y propongan Bell (H+CX) o producto.
+4. **Sostengan superposición** (no colapsar prematuramente) cuando la escena aún muestra hipótesis A|B.
+5. Pasen el árbitro **Jev** (APROBAR) en el dominio de caídas.
 
 Sin reentrenar los ~8B parámetros enteros: en la M4 128 GB cabe QLoRA 4-bit + rank 16–64 con batch pequeño.
 
-## Datos
+## Datos (mixto: un solo JSONL)
 
 Fuente: `examples/synthetic_physics_dataset.py` → `data/scenes/`.
 
-Cada escena aporta:
+`train_lora.py` mezcla **todo** en `data/lora_dataset.jsonl` con campos `domain` + `label` por fila.
 
-- PNG(s) de frames (pelota / forma que cae).
+### Dominio A — Caídas / figuras visuales
+
+- PNG(s) de frames (formas que caen, rebotan, viento, multi-objeto).
 - `meta.json` con verdad física: forma, color, gravedad efectiva, restitución, rebotes, pérdida de energía, trayectoria.
+- **Figuras ampliadas:** square, circle, triangle, rectangle, irregular_polygon, **pentagon, hexagon, star, ring**, más combinaciones (ej. cuadrado rojo + círculo azul con `lateral_wind`).
 
-El script `train_lora.py` convierte eso a un dataset tipo chat (imagen + pregunta → JSON de circuito “bueno” + nota). Los circuitos target iniciales se generan con reglas deterministas (firma toy) y/o filas `APROBAR` de `data/experiment_log.jsonl` cuando existan.
+Target toy: H + CX + RY(θ) según pérdida por rebote. Labels: `fall` / `fall_multi`.
 
-Mínimo recomendado antes de un train serio: **≥200 escenas** + **≥50** ejemplos APROBAR en el log (si el log aún es corto, el generador de circuitos-target del script basta para un primer pase).
+### Dominio B — Entrelazamiento cuántico
+
+Subconjunto (~22% de escenas) con metáfora visual de **dos partículas**:
+
+| Label | Visual | Circuito target |
+|-------|--------|-----------------|
+| `entangled` | Enlace + trayectorias anti-correlacionadas; tag violeta; `bell_state` ∈ {Φ±, Ψ±} | `[["h",0],["cx",0,1]]` |
+| `separable` | Sin enlace; trayectorias independientes | `[["h",0],["h",1]]` (producto) |
+
+El 8B debe **reconocer** si la descripción visual es sistema entrelazado vs separable y **proponer** el circuito acorde (Bell vs producto).
+
+### Dominio C — Superposición
+
+Subconjunto (~23%) con metáfora de **dos hipótesis fantasma** A|B:
+
+| Label | Visual | Circuito target |
+|-------|--------|-----------------|
+| `superposed` | Ambas formas semitransparentes + arco “brace”; sin flash de medida | `[["h",0]]` — sostener A\|B |
+| `collapsed` | Tras `measure_frame`, una sola forma + flash | H (+ X si colapsó a B) |
+
+El LoRA entrena la capacidad de **no colapsar prematuramente** cuando la escena sigue en superposición.
+
+### Tamaño mínimo
+
+**≥200 escenas** mezcladas (caídas + entrelazamiento + superposición). El generador reparte ~55% / ~22% / ~23%. Opcional: enriquecer targets de caída con filas `APROBAR` de `data/experiment_log.jsonl`.
 
 ## Hiperparámetros (punto de partida M4)
 
@@ -42,34 +71,34 @@ Mínimo recomendado antes de un train serio: **≥200 escenas** + **≥50** ejem
 | Epochs | **3–5** | Vigilancia de val loss |
 | Batch size | 1–2 | + grad accumulation 4–8 |
 | Max seq | 2048 | Escenas con 1 frame |
-| train-vision | off al inicio | Encender solo si el ground visual falla |
+| train-vision | off al inicio | Encender si falla el ground visual |
 | Dropout LoRA | 0.0–0.05 | |
+| Muestreo | **joint** | Un solo adapter; no entrenar dominios por separado |
 
-Tiempo estimado en **M4 128 GB**: **~2–3 horas** para ~200 escenas × 3–5 epochs (QLoRA). Si el dataset crece a 1k, planear 6–10 h o menos iters.
+Tiempo estimado en **M4 128 GB**: **~2–3 horas** para ~200–280 escenas × 3–5 epochs (QLoRA). Con ~400 (más figuras + quantum), planear ~3–5 h.
 
 ## Criterios de éxito
 
-Sobre un hold-out fijo de **10 escenas de prueba** (`examples/eval_lora.py`):
+Hold-out de **10 escenas** estratificadas si es posible (caída + entrelazado + superposición) vía `examples/eval_lora.py`:
 
-| Métrica | Base (sin adapter) | Éxito mínimo post-LoRA |
-|---------|--------------------|-------------------------|
-| JSON parseable | — | ≥ 8/10 |
-| Compila PennyLane | — | ≥ 8/10 |
-| Jev APROBAR | — | ≥ 7/10 |
-| Delta vs base | — | **+20 puntos** en tasa Jev APROBAR **o** compile+parse |
-
-Si no hay mejora ≥20 puntos tras 5 epochs: bajar lr a 1e-4, subir rank a 64, o mezclar más filas APROBAR del experiment_log.
+| Métrica | Éxito mínimo post-LoRA |
+|---------|-------------------------|
+| JSON parseable | ≥ 8/10 |
+| Compila PennyLane | ≥ 8/10 |
+| Jev APROBAR (subconjunto fall) | ≥ 7/10 del subset fall |
+| Label domain correcto (entangled/separable/superposed/collapsed) | ≥ 7/10 en subset quantum |
+| Delta vs base | **+20 puntos** en tasa Jev APROBAR **o** en acierto de label de dominio |
 
 ## Secuencia de ejecución
 
 ```bash
-# 1) Dataset
-python examples/synthetic_physics_dataset.py --n-scenes 220 --out data/scenes --seed 42
+# 1) Dataset mixto (caídas + entrelazamiento + superposición + figuras nuevas)
+python examples/synthetic_physics_dataset.py --n-scenes 280 --out data/scenes --seed 42
 
-# 2) (Opcional) ciclo Jev para enriquecer targets
-python examples/run_jev_experiment.py --n 5   # cuando el 8B ya cargue
+# 2) (Opcional) ciclo Jev para enriquecer targets de caída
+python examples/run_jev_experiment.py --n 5
 
-# 3) Train
+# 3) Train (TODO junto)
 python examples/train_lora.py \
   --model mlx-community/Qwen3-VL-8B-Thinking-4bit \
   --scenes data/scenes \
@@ -99,4 +128,5 @@ O CLI: `python -m mlx_vlm.generate --model ... --adapter-path data/lora_adapter 
 
 - Fine-tune completo de pesos.
 - Entrenar en la Studio (36 GB): usar 2B/4B Thinking allí, no el 8B.
+- Adapters separados por dominio (el diseño actual es **un** LoRA joint).
 - Subir adapters a la nube: todo local / este repo.

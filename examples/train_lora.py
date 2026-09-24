@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fine-tune LoRA / QLoRA del Qwen3-VL (mlx-vlm) sobre escenas sintéticas.
+Fine-tune LoRA / QLoRA del Qwen3-VL (mlx-vlm) sobre caídas + entrelazamiento + superposición.
 
 Flujo:
   1) Lee data/scenes/*/meta.json (+ frame PNG).
@@ -31,19 +31,97 @@ if str(ROOT / "examples") not in sys.path:
 
 
 def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
-    """Firma toy determinista alineada con Jev (caída + atenuación RY)."""
-    loss = float(meta.get("energy_loss_per_bounce") or meta.get("perdida_energia_por_rebote") or 0.3)
-    # map loss → ry angle in (0.2, 1.2)
+    """Target toy por dominio: fall | entanglement | superposition."""
+    domain = meta.get("domain") or meta.get("train_target_kind") or "fall"
+    if isinstance(domain, str) and domain.endswith("_circuit"):
+        domain = domain.replace("_circuit", "")
+    label = meta.get("label")
+
+    if domain == "entanglement" or meta.get("train_target_kind") in (
+        "bell_circuit",
+        "product_circuit",
+    ):
+        entangled = bool(meta.get("entangled", meta.get("train_target_kind") == "bell_circuit"))
+        if entangled:
+            bell = meta.get("bell_state") or "Phi+"
+            # Bell generator (toy): H + CX → entrelazado
+            return {
+                "n_qubits": 2,
+                "gates": [["h", 0], ["cx", 0, 1]],
+                "domain": "entanglement",
+                "label": "entangled",
+                "bell_state": bell,
+                "nota": (
+                    f"Circuito Bell ({bell}): produce entrelazamiento; "
+                    "la escena visual muestra correlación no-local (no producto separable)."
+                ),
+            }
+        # separable / product state
+        return {
+            "n_qubits": 2,
+            "gates": [["h", 0], ["h", 1]],
+            "domain": "entanglement",
+            "label": "separable",
+            "nota": (
+                "Estado producto (separable): dos H independientes; "
+                "sin CX — no hay entrelazamiento."
+            ),
+        }
+
+    if domain == "superposition" or meta.get("train_target_kind") in (
+        "superposition_circuit",
+        "collapse_circuit",
+    ):
+        collapsed = bool(meta.get("collapsed", meta.get("train_target_kind") == "collapse_circuit"))
+        if not collapsed:
+            return {
+                "n_qubits": 2,
+                "gates": [["h", 0]],
+                "domain": "superposition",
+                "label": "superposed",
+                "hypotheses": ["A", "B"],
+                "nota": (
+                    "Superposición: H en q0 mantiene hipótesis A|B; "
+                    "NO medir ni colapsar prematuramente."
+                ),
+            }
+        # collapsed: H then explicit Z-basis "measure" metaphor via X/id choice
+        chosen = meta.get("collapsed_to") or "A"
+        gates: list[list[Any]] = [["h", 0]]
+        if chosen == "B":
+            gates.append(["x", 0])  # flip to other hypothesis after "measure"
+        return {
+            "n_qubits": 2,
+            "gates": gates,
+            "domain": "superposition",
+            "label": "collapsed",
+            "collapsed_to": chosen,
+            "nota": (
+                f"Colapso ya ocurrió → hipótesis {chosen}; "
+                "no fingir superposición abierta."
+            ),
+        }
+
+    # fall / figuras (default)
+    loss = float(
+        meta.get("energy_loss_per_bounce")
+        or meta.get("perdida_energia_por_rebote")
+        or 0.3
+    )
     theta = round(0.2 + min(1.0, max(0.0, loss)) * 1.0, 3)
     n_bounce = len(meta.get("bounce_frames") or meta.get("rebotes") or [])
-    gates: list[list[Any]] = [["h", 0], ["cx", 0, 1], ["ry", 1, theta]]
+    gates = [["h", 0], ["cx", 0, 1], ["ry", 1, theta]]
     if n_bounce >= 2:
         gates.append(["ry", 0, round(theta * 0.5, 3)])
+    shape = meta.get("shape", "?")
     return {
         "n_qubits": 2,
         "gates": gates,
+        "domain": "fall",
+        "label": label or ("fall_multi" if meta.get("multi_object") else "fall"),
+        "shape": shape,
         "nota": (
-            f"Firma toy de caída con pérdida por rebote (~{loss:.2f}); "
+            f"Firma toy de caída ({shape}) con pérdida por rebote (~{loss:.2f}); "
             "no afirma conservación perfecta."
         ),
     }
@@ -79,8 +157,38 @@ def load_scenes(scenes_dir: Path) -> list[dict[str, Any]]:
     return rows
 
 
+def _user_prompt_for_domain(meta: dict[str, Any], summary: dict[str, Any]) -> str:
+    domain = meta.get("domain", "fall")
+    base = (
+        "Eres un asistente de circuitos cuánticos. Responde SOLO JSON válido "
+        'con claves n_qubits, gates, domain, label, nota. '
+    )
+    if domain == "entanglement":
+        return (
+            base
+            + "La escena es sobre ENTRELAZAMIENTO vs estado separable. "
+            "Si ves correlación no-local / enlace entre dos partículas → circuito Bell (H+CX), label=entangled. "
+            "Si son independientes → producto (H,H), label=separable. "
+            f"Escena: {json.dumps(summary, ensure_ascii=False)}"
+        )
+    if domain == "superposition":
+        return (
+            base
+            + "La escena es sobre SUPERPOSICIÓN. "
+            "Si hay dos hipótesis fantasma A|B sin medición → H en q0, label=superposed; "
+            "NO colapses. Si ya colapsó → refleja collapsed_to, label=collapsed. "
+            f"Escena: {json.dumps(summary, ensure_ascii=False)}"
+        )
+    return (
+        base
+        + "Escena de física visual (caída / figuras). "
+        "Propón circuito 2 qubits (firma toy caída + pérdida de energía). "
+        f"Escena: {json.dumps(summary, ensure_ascii=False)}"
+    )
+
+
 def build_chat_dataset(rows: list[dict[str, Any]], out_jsonl: Path) -> int:
-    """Formato compatible con pipelines VLM: messages + images."""
+    """Formato compatible con pipelines VLM: messages + images. Mezcla TODOS los dominios."""
     out_jsonl.parent.mkdir(parents=True, exist_ok=True)
     n = 0
     with out_jsonl.open("w", encoding="utf-8") as fh:
@@ -89,6 +197,8 @@ def build_chat_dataset(rows: list[dict[str, Any]], out_jsonl: Path) -> int:
             summary = {
                 k: meta.get(k)
                 for k in (
+                    "domain",
+                    "label",
                     "shape",
                     "color",
                     "surface",
@@ -98,16 +208,20 @@ def build_chat_dataset(rows: list[dict[str, Any]], out_jsonl: Path) -> int:
                     "restitution",
                     "trayectoria",
                     "objeto",
+                    "entangled",
+                    "separable",
+                    "bell_state",
+                    "superposed",
+                    "collapsed",
+                    "collapsed_to",
+                    "hypotheses",
+                    "multi_object",
+                    "objects",
+                    "correlation",
                 )
                 if meta.get(k) is not None
             }
-            user = (
-                "Eres un asistente de circuitos cuánticos. Dada esta escena de física visual, "
-                "propón un circuito de 2 qubits (firma toy de caída + pérdida de energía). "
-                "Responde SOLO JSON válido "
-                '{"n_qubits":2,"gates":[["h",0],["cx",0,1],["ry",1,0.4]],"nota":"..."}. '
-                f"Escena: {json.dumps(summary, ensure_ascii=False)}"
-            )
+            user = _user_prompt_for_domain(meta, summary)
             assistant = json.dumps(row["target"], ensure_ascii=False)
             rec: dict[str, Any] = {
                 "messages": [
@@ -115,6 +229,8 @@ def build_chat_dataset(rows: list[dict[str, Any]], out_jsonl: Path) -> int:
                     {"role": "assistant", "content": assistant},
                 ],
                 "scene_id": row["scene_id"],
+                "domain": meta.get("domain", "fall"),
+                "label": meta.get("label") or row["target"].get("label"),
             }
             if row.get("frame_path"):
                 rec["images"] = [row["frame_path"]]
@@ -311,7 +427,9 @@ def main() -> int:
         )
 
     n = build_chat_dataset(rows, args.dataset_jsonl)
-    print(f"Dataset JSONL: {args.dataset_jsonl} ({n} filas)")
+    from collections import Counter
+    dom = Counter((r["meta"].get("domain") or "fall") for r in rows)
+    print(f"Dataset JSONL: {args.dataset_jsonl} ({n} filas) dominios={dict(dom)}")
     if args.prepare_only:
         return 0 if n else 1
 
