@@ -18,8 +18,8 @@
   "source_sha_short": "f3ccb0b",
   "source_feat_sha": "d4eea500ee823a781a2f5d4bd4640f3b22bc44bb",
   "source_feat_sha_short": "d4eea50",
-  "fold_feat_sha": "PENDING",
-  "fold_feat_sha_short": "PENDING",
+  "fold_feat_sha": "36a54eb2f5cfceb961b664ba44dd820700f57063",
+  "fold_feat_sha_short": "36a54eb",
   "method": "cherry-pick d4eea50 onto 88287bc; merge R12+R13+R14+R15+R16 gates_ops; keep tip STATUS+mixed/LP/r7\u2013r12 JSON ours",
   "holds": {
     "mixed_d_unified": 1.0,
@@ -59,8 +59,8 @@
   "choose_n_freeze_retained": true,
   "r17_plus_folded": false,
   "tti_cold_folded": false,
-  "fold_commit_sha": "PENDING",
-  "fold_commit_sha_short": "PENDING",
+  "fold_commit_sha": "36a54eb2f5cfceb961b664ba44dd820700f57063",
+  "fold_commit_sha_short": "36a54eb",
   "rise_retention_vs_side": 0.8913,
   "freeze_gate_pass": true
 }

@@ -63,7 +63,7 @@
 ## Fold — tip-hardneg-r16 → codigo-vivo-tip (2026-09-24 15:22:53 ET)
 
 **Branch:** `frontier/tip-hardneg-r16` → **FOLDED** into `frontier/codigo-vivo-tip`  
-**Side:** `f3ccb0b` / feat `d4eea50` · **Base tip:** `88287bc` (post choose-safest-n)  
+**Side:** `f3ccb0b` / feat `d4eea50` · **Base tip:** `88287bc` (post choose-safest-n) · **Fold feat:** `36a54eb`  
 **Freeze:** `codigo_vivo_tip_r16_100pct_20260924_152253`
 
 | Surface | Result |
