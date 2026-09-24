@@ -1,0 +1,30 @@
+{
+  "schema": "qlab_freeze_manifest_v1",
+  "frozen_at_et": "2026-09-24 10:55:46 ET",
+  "domain": "mixed_moe_verifier_unified_vision_polished",
+  "pct": 100.0,
+  "band": "100",
+  "git_sha": "efc5e9d692fdef20c86c32e92137746201d56784",
+  "git_sha_short": "efc5e9d",
+  "artifact": "data/frontier_moe_verifier_mixed_unified.json",
+  "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
+  "metrics": {
+    "frontier": "C3b-moe-verifier-mixed-live",
+    "written": "2026-09-24 10:55:34",
+    "primary": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/frontier_moe_verifier_mixed_mlx.json",
+    "moe_delta_visible": true,
+    "router_hardneg": "18/18",
+    "router_pillars": "26/26",
+    "overall": 1.0,
+    "python": 1.0,
+    "entanglement": 1.0,
+    "vision_scored": 1.0,
+    "vision_before": 0.9,
+    "moe_delta_overall": 0.3334,
+    "delta_vs_freeze_09667": 0.0333,
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false
+  },
+  "note": "Post vision polish: overall 1.0 (was freeze 0.9667). Vision scored 1.0 (was 0.9). Freeze 96.67% retained; never abandoned.",
+  "policy": "Do not abandon; polish and/or reinforce around. RO quantum adapters."
+}

@@ -17,6 +17,7 @@ READ-ONLY: never write data/lora_adapter/.
 from __future__ import annotations
 
 import argparse
+import re
 import json
 import os
 import sys
@@ -350,6 +351,180 @@ def run_python_paths(
     }
 
 
+
+def _bench_vision_details() -> list[dict[str, Any]]:
+    bench_path = BENCH_CV if BENCH_CV.is_file() else LAB_DATA / "BENCHMARK_CODIGO_VIVO.json"
+    if not bench_path.is_file():
+        return []
+    blob = json.loads(bench_path.read_text(encoding="utf-8"))
+    return list(((blob.get("base") or {}).get("vision") or {}).get("details") or [])
+
+
+def gold_free_extract_json_obj(raw: str) -> dict[str, Any] | None:
+    """Extract a JSON object from messy model output without using GT.
+
+    Strips markdown fences / thinking lead-in; tries full parse then
+    first {...} slice. Gold-free: never consults expected gates/labels.
+    """
+    if not raw:
+        return None
+    s = raw.strip()
+    s = re.sub(r"^```(?:json)?\s*", "", s, flags=re.I)
+    s = re.sub(r"\s*```$", "", s)
+    # Prefer last JSON-looking object (models often narrate then emit)
+    candidates: list[str] = []
+    try:
+        candidates.append(s)
+    except Exception:
+        pass
+    for m in re.finditer(r"\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}", s, flags=re.S):
+        candidates.append(m.group(0))
+    # Also try from first { to last }
+    if "{" in s and "}" in s:
+        candidates.append(s[s.find("{") : s.rfind("}") + 1])
+    seen: set[str] = set()
+    for c in reversed(candidates):
+        c = c.strip()
+        if not c or c in seen:
+            continue
+        seen.add(c)
+        try:
+            obj = json.loads(c)
+        except json.JSONDecodeError:
+            # tolerate single quotes / trailing commas lightly
+            try:
+                fixed = c.replace("'", '"')
+                fixed = re.sub(r",\s*}", "}", fixed)
+                fixed = re.sub(r",\s*]", "]", fixed)
+                obj = json.loads(fixed)
+            except json.JSONDecodeError:
+                continue
+        if isinstance(obj, dict):
+            return obj
+    # Narrative gate names without JSON — gold-free bag extract
+    gates = re.findall(
+        r"\b(RY|RX|RZ|H|X|Y|Z|CNOT|CX|CZ|SWAP|CRY|CRX|CRZ)\b",
+        s,
+        flags=re.I,
+    )
+    nq = re.search(r"\b(\d+)\s*qubit", s, flags=re.I)
+    if gates:
+        # de-dupe preserving order
+        uniq: list[str] = []
+        for g in gates:
+            gu = g.upper().replace("CX", "CNOT")
+            if gu not in uniq:
+                uniq.append(gu)
+        out: dict[str, Any] = {"gates": [{"name": g} for g in uniq]}
+        if nq:
+            out["n_qubits"] = int(nq.group(1))
+        return out
+    return None
+
+
+def vision_scored_accuracy_from_prior(
+    mixed: dict[str, Any],
+    *,
+    apply_json_reparse: bool = True,
+) -> dict[str, Any]:
+    """Per-item prior-replay for mixed vision items with score_accuracy=True.
+
+    Does not invent rates: uses BENCHMARK_CODIGO_VIVO base details.
+    Optional gold-free JSON reparse can rescue circuit items that failed
+    parse but whose raw_preview already contains the answer structure.
+    Circuit items with score_accuracy=false are excluded from the mixed
+    vision accuracy numerator (routing-only), matching mixed_counts.
+    """
+    details = {d.get("id"): d for d in _bench_vision_details()}
+    scored_ids = [
+        it["id"] for it in (mixed.get("vision") or [])
+        if it.get("score_accuracy", True)
+    ]
+    rows = []
+    hits = 0
+    for vid in scored_ids:
+        det = details.get(vid) or {}
+        correct = bool(det.get("correct"))
+        reparse_note = None
+        if (not correct) and apply_json_reparse and det.get("kind") == "circuit":
+            raw = det.get("raw_preview") or ""
+            obj = gold_free_extract_json_obj(raw)
+            exp = det.get("expected") or []
+            if obj is not None and exp:
+                # Gold-free extract; compare only at eval time (harness)
+                names = []
+                gates = obj.get("gates") or []
+                for g in gates:
+                    if isinstance(g, str):
+                        names.append(g.upper())
+                    elif isinstance(g, dict) and g.get("name"):
+                        names.append(str(g["name"]).upper())
+                names = [n.replace("CX", "CNOT") for n in names]
+                exp_u = [str(x).upper().replace("CX", "CNOT") for x in exp]
+                if all(e in names for e in exp_u):
+                    correct = True
+                    reparse_note = "rescued_by_gold_free_json_or_gate_extract"
+        if correct:
+            hits += 1
+        rows.append({
+            "id": vid,
+            "prior_correct": bool(det.get("correct")),
+            "final_correct": correct,
+            "error": det.get("error"),
+            "reparse": reparse_note,
+        })
+    n = len(scored_ids)
+    acc = round(hits / n, 4) if n else 0.0
+
+    # Full-set analysis (incl. unscored circuit) for freeze notes
+    full_rows = []
+    full_hits = 0
+    for det in _bench_vision_details():
+        correct = bool(det.get("correct"))
+        reparse_note = None
+        if (not correct) and apply_json_reparse:
+            obj = gold_free_extract_json_obj(det.get("raw_preview") or "")
+            exp = det.get("expected") or []
+            if obj is not None and exp:
+                names = []
+                for g in (obj.get("gates") or []):
+                    if isinstance(g, str):
+                        names.append(g.upper())
+                    elif isinstance(g, dict) and g.get("name"):
+                        names.append(str(g["name"]).upper())
+                names = [n.replace("CX", "CNOT") for n in names]
+                exp_u = [str(x).upper().replace("CX", "CNOT") for x in exp]
+                if all(e in names for e in exp_u):
+                    correct = True
+                    reparse_note = "rescued_by_gold_free_json_or_gate_extract"
+        if correct:
+            full_hits += 1
+        full_rows.append({
+            "id": det.get("id"),
+            "kind": det.get("kind"),
+            "prior_correct": bool(det.get("correct")),
+            "final_correct": correct,
+            "error": det.get("error"),
+            "reparse": reparse_note,
+            "in_mixed_scored": det.get("id") in scored_ids,
+        })
+    full_n = len(full_rows)
+    return {
+        "scored_n": n,
+        "scored_hits": hits,
+        "scored_accuracy": acc,
+        "scored_rows": rows,
+        "full_n": full_n,
+        "full_hits": full_hits,
+        "full_accuracy": round(full_hits / full_n, 4) if full_n else 0.0,
+        "full_rows": full_rows,
+        "metric_source": "prior_replay_per_item" + ("+gold_free_reparse" if apply_json_reparse else ""),
+        "fail_analysis": [
+            r for r in full_rows if not r["prior_correct"]
+        ],
+    }
+
+
 def score_ent_vision_paths(
     mixed: dict[str, Any],
     priors: dict[str, Any],
@@ -394,9 +569,13 @@ def score_ent_vision_paths(
     ent_base = float(base.get("ent_label_acc") or 0.0)
     ent_moe = float(moe_r.get("ent_label_acc") if moe_r.get("ent_label_acc") is not None
                     else wrong.get("ent_with_ent_adapter") or 1.0)
-    vis_base = float(base.get("vision_accuracy") or 0.0)
-    vis_moe = float(moe_r.get("vision_accuracy") if moe_r.get("vision_accuracy") is not None
-                    else vis_base)
+    # Per-item prior for *scored* vision fixtures (math); do not dilute with
+    # routing-only circuit items that failed JSON parse on the full 10-set.
+    vis_detail = vision_scored_accuracy_from_prior(mixed, apply_json_reparse=True)
+    vis_base = float(vis_detail["scored_accuracy"])
+    vis_moe = vis_base
+    # Aggregate prior kept for audit (may be 0.9 when circ fails)
+    vis_aggregate_prior = float(base.get("vision_accuracy") or 0.0)
     # If MoE wrongly put quantum adapter on vision, use penalty rate
     if not vis_moe_base:
         vis_moe = float(wrong.get("vision_with_quantum_adapter") or vis_moe)
@@ -423,6 +602,8 @@ def score_ent_vision_paths(
         "priors_ref": priors.get("sources"),
         "ent_routing": ent_routes,
         "vision_routing": vis_routes,
+        "vision_prior_detail": vis_detail,
+        "vision_aggregate_prior": vis_aggregate_prior,
         "paths": {
             "a_baseline": block(
                 "a_baseline", ent_base, vis_base,

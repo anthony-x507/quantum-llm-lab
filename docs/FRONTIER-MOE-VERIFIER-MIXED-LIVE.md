@@ -89,3 +89,12 @@ python examples/moe_verifier_mixed_live.py --replay
 - No writes under `data/lora_adapter/`.
 - No quantum-advantage marketing.
 - No Cursor Cloud Agents.
+
+
+## Freeze + vision polish (follow-on)
+
+See **`docs/FRONTIER-MIXED-FREEZE-VISION.md`**.
+
+- Freeze lock: overall **0.967** (`data/freeze_manifests/mixed_moe_verifier_unified_96.67pct_20260924_105328.json`)
+- Vision fail root-cause: `vis_circ_02` JSON parse (1/10) — scored math was already 8/8
+- After polish: vision scored **1.0**, overall **1.0**, hardneg **18/18**; freeze retained

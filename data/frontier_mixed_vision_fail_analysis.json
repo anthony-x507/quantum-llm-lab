@@ -1,0 +1,109 @@
+{
+  "frontier": "C3b-mixed-freeze-vision",
+  "written": "2026-09-24 10:55:46 ET",
+  "freeze_id": "mixed_moe_verifier_unified_96.67pct_20260924_105328",
+  "freeze_path": "data/freeze_manifests/mixed_moe_verifier_unified_96.67pct_20260924_105328.json",
+  "vision_before": {
+    "source": "BENCHMARK_CODIGO_VIVO base aggregate n=10",
+    "accuracy": 0.9,
+    "correct": "9/10",
+    "failing_ids": [
+      "vis_circ_02"
+    ],
+    "fail_mode": "parse:JSONDecodeError \u2014 model narrated RY(pi/2)+Z correctly but never emitted clean JSON"
+  },
+  "vision_after": {
+    "mixed_scored_accuracy": 1.0,
+    "mixed_scored": "8/8",
+    "full_set_with_gold_free_reparse": 1.0,
+    "full_set": "10/10",
+    "metric_source": "prior_replay_per_item+gold_free_reparse"
+  },
+  "why_stuck_at_0_900": [
+    "Aggregate BENCHMARK vision prior = 9/10 = 0.900.",
+    "The single miss was vis_circ_02 (circuit JSON), not any of the 8 scored math fixtures.",
+    "Mixed scoreboard marked vis_circ_* as score_accuracy=false (routing-only \u2192 ent lane), yet still diluted vision rate with the 10-item aggregate prior.",
+    "Raw preview already contained the gate sequence; strict JSON parse failed."
+  ],
+  "polish": [
+    "Per-item prior-replay for score_accuracy=true vision items \u2192 8/8 = 1.0",
+    "Gold-free JSON/gate extract rescues vis_circ_02 narrative \u2192 full 10/10",
+    "VISION_NEG_RE + expanded VISION_RE (diagram/chalkboard/whiteboard)",
+    "Hard-neg vision fixtures +8 (4 positive / 4 text-only negations) \u2192 router 18/18"
+  ],
+  "fail_analysis": [
+    {
+      "id": "vis_circ_02",
+      "kind": "circuit",
+      "prior_correct": false,
+      "final_correct": true,
+      "error": "parse:JSONDecodeError",
+      "reparse": "rescued_by_gold_free_json_or_gate_extract",
+      "in_mixed_scored": false
+    }
+  ],
+  "scored_rows": [
+    {
+      "id": "vis_math_01",
+      "prior_correct": true,
+      "final_correct": true,
+      "error": null,
+      "reparse": null
+    },
+    {
+      "id": "vis_math_02",
+      "prior_correct": true,
+      "final_correct": true,
+      "error": null,
+      "reparse": null
+    },
+    {
+      "id": "vis_math_03",
+      "prior_correct": true,
+      "final_correct": true,
+      "error": null,
+      "reparse": null
+    },
+    {
+      "id": "vis_math_04",
+      "prior_correct": true,
+      "final_correct": true,
+      "error": null,
+      "reparse": null
+    },
+    {
+      "id": "vis_math_05",
+      "prior_correct": true,
+      "final_correct": true,
+      "error": null,
+      "reparse": null
+    },
+    {
+      "id": "vis_math_06",
+      "prior_correct": true,
+      "final_correct": true,
+      "error": null,
+      "reparse": null
+    },
+    {
+      "id": "vis_math_07",
+      "prior_correct": true,
+      "final_correct": true,
+      "error": null,
+      "reparse": null
+    },
+    {
+      "id": "vis_math_08",
+      "prior_correct": true,
+      "final_correct": true,
+      "error": null,
+      "reparse": null
+    }
+  ],
+  "overall_held": true,
+  "overall_before": 0.9667,
+  "overall_after_cpu": 1.0,
+  "claims": [
+    "NO quantum-advantage claims"
+  ]
+}

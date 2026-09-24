@@ -10,7 +10,8 @@
     "entanglement": 8,
     "vision_scored": 8,
     "vision_routing_extra": 2,
-    "hardneg_router": 10
+    "hardneg_router": 18,
+    "hardneg_vision_extra": 8
   },
   "python": [
     {
@@ -396,10 +397,59 @@
       "expected_lane": "ent",
       "prompt": "Eres un asistente de circuitos cuánticos. Mira la imagen. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx.",
       "note": "imagen present but ent JSON wins"
+    },
+    {
+      "id": "hn_vis_diagram",
+      "expected_lane": "vision",
+      "prompt": "Look at the diagram. How many nodes are visible? Reply with ONLY the integer count.",
+      "note": "diagram cue → vision"
+    },
+    {
+      "id": "hn_vis_whiteboard",
+      "expected_lane": "vision",
+      "prompt": "Look at the whiteboard photo. Solve the arithmetic. Reply with ONLY the final integer.",
+      "note": "whiteboard photo → vision"
+    },
+    {
+      "id": "hn_vis_screenshot_sheet",
+      "expected_lane": "vision",
+      "prompt": "Look at the screenshot of the spreadsheet in the image. Reply with ONLY the integer total in cell B2.",
+      "note": "screenshot spreadsheet → vision"
+    },
+    {
+      "id": "hn_vis_neg_textonly",
+      "expected_lane": "base",
+      "prompt": "Text-only description (no image file attached): There are 2 cats and 1 dog. How many animals?",
+      "note": "explicit no-image → base (not vision)"
+    },
+    {
+      "id": "hn_vis_neg_without_picture",
+      "expected_lane": "base",
+      "prompt": "Pure chat: someone said 'three rockets launched'. Without any picture or png, guess the count.",
+      "note": "without picture → base"
+    },
+    {
+      "id": "hn_vis_neg_sin_imagen",
+      "expected_lane": "base",
+      "prompt": "Describe un paisaje ficticio sin imagen ni archivo de imagen. ¿Cuántos árboles menciones? Responde en chat.",
+      "note": "sin imagen → base"
+    },
+    {
+      "id": "hn_vis_street_overlay",
+      "expected_lane": "vision",
+      "prompt": "Look at the image caption overlay. How many street lights are visible in the frame PNG?",
+      "note": "caption overlay + frame png → vision"
+    },
+    {
+      "id": "hn_vis_neg_no_visual",
+      "expected_lane": "base",
+      "prompt": "Hello. No visual input today — text-only status check. Tell me a short fun fact about dogs.",
+      "note": "no visual input → base"
     }
   ],
   "notes": [
     "Mixed set forces MoE Δ vs python-only: baseline=base-all; MoE applies ent2 on ent lane.",
-    "No quantum-advantage claims."
+    "No quantum-advantage claims.",
+    "Vision hard-neg expand +8 (hn_vis_diagram, hn_vis_whiteboard, hn_vis_screenshot_sheet, hn_vis_neg_textonly, hn_vis_neg_without_picture, hn_vis_neg_sin_imagen, hn_vis_street_overlay, hn_vis_neg_no_visual) — text-only negations + diagram/whiteboard/screenshot positives. GT harness-only."
   ]
 }

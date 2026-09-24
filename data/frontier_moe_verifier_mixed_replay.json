@@ -1,6 +1,6 @@
 {
   "frontier": "C3b-moe-verifier-mixed-live",
-  "written": "2026-09-24 10:50:20",
+  "written": "2026-09-24 10:54:49",
   "claims": [
     "NO quantum-advantage claims",
     "MoE routing usability + classical python -I exec oracle only"
@@ -17,7 +17,8 @@
     "entanglement": 8,
     "vision_scored": 8,
     "vision_routing_extra": 2,
-    "hardneg_router": 10
+    "hardneg_router": 18,
+    "hardneg_vision_extra": 8
   },
   "anti_contamination": {
     "prompt_touches_gt": false,
@@ -246,9 +247,9 @@
       ]
     },
     "hardneg_routing": {
-      "n": 10,
-      "hits": 10,
-      "score": "10/10",
+      "n": 18,
+      "hits": 18,
+      "score": "18/18",
       "rows": [
         {
           "id": "hn_py_quantum_word",
@@ -329,6 +330,70 @@
           "ok": true,
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2",
           "note": "imagen present but ent JSON wins"
+        },
+        {
+          "id": "hn_vis_diagram",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "note": "diagram cue → vision"
+        },
+        {
+          "id": "hn_vis_whiteboard",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "note": "whiteboard photo → vision"
+        },
+        {
+          "id": "hn_vis_screenshot_sheet",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "note": "screenshot spreadsheet → vision"
+        },
+        {
+          "id": "hn_vis_neg_textonly",
+          "expected_lane": "base",
+          "got": "base",
+          "ok": true,
+          "adapter": null,
+          "note": "explicit no-image → base (not vision)"
+        },
+        {
+          "id": "hn_vis_neg_without_picture",
+          "expected_lane": "base",
+          "got": "base",
+          "ok": true,
+          "adapter": null,
+          "note": "without picture → base"
+        },
+        {
+          "id": "hn_vis_neg_sin_imagen",
+          "expected_lane": "base",
+          "got": "base",
+          "ok": true,
+          "adapter": null,
+          "note": "sin imagen → base"
+        },
+        {
+          "id": "hn_vis_street_overlay",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "note": "caption overlay + frame png → vision"
+        },
+        {
+          "id": "hn_vis_neg_no_visual",
+          "expected_lane": "base",
+          "got": "base",
+          "ok": true,
+          "adapter": null,
+          "note": "no visual input → base"
         }
       ]
     },
@@ -547,6 +612,177 @@
         "adapter": null
       }
     ],
+    "vision_prior_detail": {
+      "scored_n": 8,
+      "scored_hits": 8,
+      "scored_accuracy": 1.0,
+      "scored_rows": [
+        {
+          "id": "vis_math_01",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null
+        },
+        {
+          "id": "vis_math_02",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null
+        },
+        {
+          "id": "vis_math_03",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null
+        },
+        {
+          "id": "vis_math_04",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null
+        },
+        {
+          "id": "vis_math_05",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null
+        },
+        {
+          "id": "vis_math_06",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null
+        },
+        {
+          "id": "vis_math_07",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null
+        },
+        {
+          "id": "vis_math_08",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null
+        }
+      ],
+      "full_n": 10,
+      "full_hits": 10,
+      "full_accuracy": 1.0,
+      "full_rows": [
+        {
+          "id": "vis_math_01",
+          "kind": "math",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": true
+        },
+        {
+          "id": "vis_math_02",
+          "kind": "math",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": true
+        },
+        {
+          "id": "vis_math_03",
+          "kind": "math",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": true
+        },
+        {
+          "id": "vis_math_04",
+          "kind": "math",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": true
+        },
+        {
+          "id": "vis_math_05",
+          "kind": "math",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": true
+        },
+        {
+          "id": "vis_math_06",
+          "kind": "math",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": true
+        },
+        {
+          "id": "vis_circ_01",
+          "kind": "circuit",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": false
+        },
+        {
+          "id": "vis_circ_02",
+          "kind": "circuit",
+          "prior_correct": false,
+          "final_correct": true,
+          "error": "parse:JSONDecodeError",
+          "reparse": "rescued_by_gold_free_json_or_gate_extract",
+          "in_mixed_scored": false
+        },
+        {
+          "id": "vis_math_07",
+          "kind": "math",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": true
+        },
+        {
+          "id": "vis_math_08",
+          "kind": "math",
+          "prior_correct": true,
+          "final_correct": true,
+          "error": null,
+          "reparse": null,
+          "in_mixed_scored": true
+        }
+      ],
+      "metric_source": "prior_replay_per_item+gold_free_reparse",
+      "fail_analysis": [
+        {
+          "id": "vis_circ_02",
+          "kind": "circuit",
+          "prior_correct": false,
+          "final_correct": true,
+          "error": "parse:JSONDecodeError",
+          "reparse": "rescued_by_gold_free_json_or_gate_extract",
+          "in_mixed_scored": false
+        }
+      ]
+    },
+    "vision_aggregate_prior": 0.9,
     "paths": {
       "a_baseline": {
         "path": "a_baseline",
@@ -558,7 +794,7 @@
         },
         "vision": {
           "n": 8,
-          "accuracy": 0.9,
+          "accuracy": 1.0,
           "metric_source": "prior_replay",
           "router_all_base": null
         },
@@ -574,7 +810,7 @@
         },
         "vision": {
           "n": 8,
-          "accuracy": 0.9,
+          "accuracy": 1.0,
           "metric_source": "prior_replay",
           "router_all_base": true
         },
@@ -590,7 +826,7 @@
         },
         "vision": {
           "n": 8,
-          "accuracy": 0.9,
+          "accuracy": 1.0,
           "metric_source": "prior_replay",
           "router_all_base": null
         },
@@ -606,7 +842,7 @@
         },
         "vision": {
           "n": 8,
-          "accuracy": 0.9,
+          "accuracy": 1.0,
           "metric_source": "prior_replay",
           "router_all_base": true
         },
@@ -630,10 +866,10 @@
         },
         "vision": {
           "n": 8,
-          "accuracy": 0.9,
+          "accuracy": 1.0,
           "source": "prior_replay"
         },
-        "overall_mean": 0.3417,
+        "overall_mean": 0.375,
         "prompt_touches_gt": false,
         "repair_success_rate": 0.0
       },
@@ -651,10 +887,10 @@
         },
         "vision": {
           "n": 8,
-          "accuracy": 0.9,
+          "accuracy": 1.0,
           "source": "prior_replay"
         },
-        "overall_mean": 0.675,
+        "overall_mean": 0.7083,
         "prompt_touches_gt": false,
         "repair_success_rate": 0.0
       },
@@ -672,10 +908,10 @@
         },
         "vision": {
           "n": 8,
-          "accuracy": 0.9,
+          "accuracy": 1.0,
           "source": "prior_replay"
         },
-        "overall_mean": 0.6333,
+        "overall_mean": 0.6667,
         "prompt_touches_gt": false,
         "repair_success_rate": 1.0
       },
@@ -693,10 +929,10 @@
         },
         "vision": {
           "n": 8,
-          "accuracy": 0.9,
+          "accuracy": 1.0,
           "source": "prior_replay"
         },
-        "overall_mean": 0.9667,
+        "overall_mean": 1.0,
         "prompt_touches_gt": false,
         "repair_success_rate": 1.0
       }
