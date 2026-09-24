@@ -1,10 +1,12 @@
 # FRONTIER — tip-distance-mid (5–30 m / 70–100 m outside frozen DZ)
 
-**Branch:** `frontier/tip-distance-mid`  
-**Base tip SHA:** `fabef2b` (`frontier/codigo-vivo-tip` @ R10; **avoids** inverse-r2 / tip-cv)  
-**Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-distance-mid` (Mac-111)  
-**When:** 2026-09-24 ~14:00 ET  
-**Scope:** Side-branch only — does **not** fold into tip / tip-cv / tip-hardneg-r11 / tip-motion-r4 / tip-inverse-r2 / tip-vision-ground.
+**Status:** **FOLDED** into `frontier/codigo-vivo-tip` @ `PENDING_FOLD` (2026-09-24 14:23:29 ET; pre-rebase `254393e` → post-rebase `3931307`/`156cb02`)  
+**Branch:** `frontier/tip-distance-mid` (rebased; source kept) · tip `frontier/codigo-vivo-tip`  
+**Base tip at fold:** `e0f3183` (post TTI) · originally from `fabef2b` (avoid inverse-r2)  
+**Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-distance-mid` (Mac-111) · tip-cv `/Users/anthony/Documents/quantum-llm-lab-tip-cv`  
+**When:** polish ~14:00 ET · fold 2026-09-24 14:23:29 ET · Mac-111 (`074c6626-…`)  
+**Freeze:** `codigo_vivo_tip_distance_mid_100pct_20260924_142329`  
+**Claim:** NO quantum advantage. Classical floor-scale CPU heuristic only (synth pinhole).
 
 ## LOCK (Anthony)
 
@@ -79,7 +81,7 @@ Caveat: synth pinhole invert can saturate tol@10/20% — MAE shows residual. **N
 
 - Shared tip router / scaffold paths: **not touched** → tip mixed floor re-smoke **N/A** (distance_est-only).
 - Mixed (d) 1.0 / freezes ≥80%: **not abandoned**.
-- **Freeze:** `codigo_vivo_tip_distance_mid_100pct` — mid_near & mid_outer ≥80% (actually 100%) with DZ held 100%.
+- **Freeze:** `codigo_vivo_tip_distance_mid_100pct_20260924_142329` — mid_near & mid_outer ≥80% (actually 100%) with DZ held 100%.
 
 ## Adapters RO
 
@@ -103,3 +105,14 @@ python examples/distance_est/eval_heuristic.py --contam-self-test
 - No CloudAgent.
 - No write to `data/lora_adapter/`.
 - No fold of inverse-r2 / hardneg-r11 / motion-r4 / vision-ground.
+
+
+## FOLDED into tip
+
+**When:** 2026-09-24 14:23:29 ET · Mac-111 (`074c6626-…`)  
+**Method:** rebase `frontier/tip-distance-mid` (`254393e`/`949505b`) onto tip `e0f3183` → `3931307`+`156cb02`; FF into tip (physics auto-merged with TTI; STATUS/eval_heuristic/EVAL JSON conflicts resolved).  
+**Prior freezes retained (not abandoned):** tti + r11 + motion_r4 + vision_ground + inverse_r2 + r10 + motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion + priors.  
+**Re-smoke:** mixed (d) **1.0**; mid_near **684/684** · mid_outer **374/374** (MAE 1.624 m); DZ 30–70 **100%** (orig 527/527 · danger50 915/915 · mid 55/55); TTI scorable **100%** (orig 691/691 · danger50 725/725); R11 **52/52·44/44**; motion coverage **100%** (141 ind + 59 corr); inverse_cv **99.82%**; collision physics **100.0%** n=40/2850; choose_safest **100.0%**; pillars 26/26; hardneg 18/18; `wired_to_vlm`; tip vis BASE.  
+**Not folded:** tip-distance-far / tip-hardneg-r12 / tip-hardneg-r13 / tip-inverse-r3 / tip-circ-expand / tip-future-track.  
+**Adapters:** `data/lora_adapter/` RO mtime unchanged (2026-09-24 10:57:17).
+

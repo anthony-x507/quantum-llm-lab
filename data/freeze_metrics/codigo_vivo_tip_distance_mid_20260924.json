@@ -10,5 +10,8 @@
   "written_et": "2026-09-24 14:00:14 ET",
   "base_tip_sha_short": "fabef2b",
   "git_sha_short": "949505b",
-  "git_sha": "949505b9547fb57e16ccdbc0aeedb3e66fd95ef8"
+  "git_sha": "949505b9547fb57e16ccdbc0aeedb3e66fd95ef8",
+  "folded_at_et": "2026-09-24 14:23:29 ET",
+  "fold_freeze": "codigo_vivo_tip_distance_mid_100pct_20260924_142329",
+  "status": "FOLDED"
 }

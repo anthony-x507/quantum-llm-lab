@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-24 14:10:24 ET",
+  "ts": "2026-09-24 14:21:53 ET",
   "domain": "distance_est",
   "data_dir": "data/video_synth/distance_est",
   "scale_lock": "FLOOR-SCALE",
@@ -9,7 +9,7 @@
     "car_height_m": 1.55,
     "ped_height_m": 1.7
   },
-  "predictor": "floor_scale_parallax_size_prior_closing_speed_v3_tti",
+  "predictor": "floor_scale_parallax_size_prior_closing_speed_v3_mid",
   "n_eval_seq": 11,
   "distance": {
     "n": 1812,
@@ -49,8 +49,8 @@
       "light"
     ],
     "error_stats": {
-      "mae_m": 2.789,
-      "mean_rel_err": 0.0387,
+      "mae_m": 2.704,
+      "mean_rel_err": 0.0385,
       "median_rel_err": 0.035,
       "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
     }
@@ -63,9 +63,36 @@
     "pct": 100.0,
     "delta_pp_vs_baseline_50m": 51.31,
     "error_stats": {
-      "mae_m": 1.491,
-      "mean_rel_err": 0.0311,
-      "median_rel_err": 0.0316,
+      "mae_m": 1.489,
+      "mean_rel_err": 0.031,
+      "median_rel_err": 0.0315,
+      "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
+    },
+    "frozen": true
+  },
+  "mid_near_5_30m": {
+    "lo_m": 5.0,
+    "hi_m": 30.0,
+    "n": 326,
+    "correct": 326,
+    "pct": 100.0,
+    "error_stats": {
+      "mae_m": 0.306,
+      "mean_rel_err": 0.0438,
+      "median_rel_err": 0.0407,
+      "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
+    }
+  },
+  "mid_outer_70_100m": {
+    "lo_m": 70.0,
+    "hi_m": 100.0,
+    "n": 234,
+    "correct": 234,
+    "pct": 100.0,
+    "error_stats": {
+      "mae_m": 4.662,
+      "mean_rel_err": 0.0494,
+      "median_rel_err": 0.0432,
       "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
     }
   },
@@ -164,9 +191,9 @@
   },
   "ablation_future_pred": {
     "tracking_only": {
-      "distance_pred_pct": 86.21,
+      "distance_pred_pct": 86.15,
       "n": 1661,
-      "correct": 1432,
+      "correct": 1431,
       "position_pred_pct": 99.58
     },
     "plus_distance": {
@@ -192,7 +219,7 @@
     "note": "Future depth prediction proxy (inverse-planning-style along camera axis); danger-zone slice reported separately."
   },
   "anti_contam": {
-    "audit_path": "data/eval_audit/distance_20260924_141024.jsonl",
+    "audit_path": "data/eval_audit/distance_20260924_142153.jsonl",
     "dirty_count": 0,
     "status": "CLEAN"
   },
@@ -208,6 +235,8 @@
       "est_m": 5.177,
       "band": "~5m",
       "in_danger_zone": false,
+      "in_mid_near": false,
+      "in_mid_outer": false,
       "correct": true,
       "method": "gp_honesty_span_disagree",
       "parallax": "unknown",
@@ -225,6 +254,8 @@
       "est_m": 5.177,
       "band": "~5m",
       "in_danger_zone": false,
+      "in_mid_near": false,
+      "in_mid_outer": false,
       "correct": true,
       "method": "ground_plane_floor_anchored",
       "parallax": "unknown",
@@ -242,6 +273,8 @@
       "est_m": 52.563,
       "band": "~50m",
       "in_danger_zone": true,
+      "in_mid_near": false,
+      "in_mid_outer": false,
       "correct": true,
       "method": "gp_honesty_span_disagree",
       "parallax": "unknown",
@@ -259,6 +292,8 @@
       "est_m": 52.563,
       "band": "~50m",
       "in_danger_zone": true,
+      "in_mid_near": false,
+      "in_mid_outer": false,
       "correct": true,
       "method": "ground_plane_floor_anchored",
       "parallax": "unknown",
@@ -276,6 +311,8 @@
       "est_m": 109.675,
       "band": "~100m",
       "in_danger_zone": false,
+      "in_mid_near": false,
+      "in_mid_outer": true,
       "correct": true,
       "method": "floor_span+ground_plane",
       "parallax": "unknown",
@@ -293,6 +330,8 @@
       "est_m": 101.346,
       "band": "~100m",
       "in_danger_zone": false,
+      "in_mid_near": false,
+      "in_mid_outer": true,
       "correct": true,
       "method": "ground_plane_floor_anchored",
       "parallax": "unknown",
@@ -310,6 +349,8 @@
       "est_m": 44.685,
       "band": "~50m",
       "in_danger_zone": true,
+      "in_mid_near": false,
+      "in_mid_outer": false,
       "correct": true,
       "method": "gp+car_size_prior",
       "parallax": "unknown",
@@ -324,9 +365,11 @@
       "id": "car_blu1",
       "class": "car",
       "gt_m": 92.283,
-      "est_m": 97.163,
+      "est_m": 97.129,
       "band": "~100m",
       "in_danger_zone": false,
+      "in_mid_near": false,
+      "in_mid_outer": true,
       "correct": true,
       "method": "gp+car_size_prior",
       "parallax": "unknown",
@@ -344,6 +387,8 @@
       "est_m": 4.226,
       "band": "~5m",
       "in_danger_zone": false,
+      "in_mid_near": false,
+      "in_mid_outer": false,
       "correct": true,
       "method": "gp+car_size_prior",
       "parallax": "unknown",
@@ -361,6 +406,8 @@
       "est_m": 193.794,
       "band": "~200m",
       "in_danger_zone": false,
+      "in_mid_near": false,
+      "in_mid_outer": false,
       "correct": true,
       "method": "gp+car_size_prior",
       "parallax": "unknown",
@@ -378,6 +425,8 @@
       "est_m": 4.198,
       "band": "~5m",
       "in_danger_zone": false,
+      "in_mid_near": false,
+      "in_mid_outer": false,
       "correct": true,
       "method": "gp+ped_height_prior",
       "parallax": "unknown",
@@ -395,6 +444,8 @@
       "est_m": 191.328,
       "band": "~200m",
       "in_danger_zone": false,
+      "in_mid_near": false,
+      "in_mid_outer": false,
       "correct": true,
       "method": "gp+ped_height_prior",
       "parallax": "unknown",
@@ -412,6 +463,8 @@
       "est_m": 52.51,
       "band": "~50m",
       "in_danger_zone": true,
+      "in_mid_near": false,
+      "in_mid_outer": false,
       "correct": true,
       "method": "gp+ped_height_prior",
       "parallax": "unknown",
@@ -429,6 +482,8 @@
       "est_m": 114.268,
       "band": "~100m",
       "in_danger_zone": false,
+      "in_mid_near": false,
+      "in_mid_outer": false,
       "correct": true,
       "method": "floor_span+ground_plane",
       "parallax": "unknown",
@@ -446,6 +501,8 @@
       "est_m": 5.676,
       "band": "~5m",
       "in_danger_zone": false,
+      "in_mid_near": true,
+      "in_mid_outer": false,
       "correct": true,
       "method": "gp_honesty_span_disagree",
       "parallax": "unknown",

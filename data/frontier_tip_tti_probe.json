@@ -1,6 +1,6 @@
 {
   "frontier": "codigo-vivo-tip-tti-fold",
-  "written": "2026-09-24 14:11:46 ET",
+  "written": "2026-09-24 14:23:29 ET",
   "branch": "frontier/codigo-vivo-tip",
   "tip_sha": "a99362ca3ee1272307be6365efca7b9adab01be7",
   "feat_cherry": "6665e2c9452ae815f123cc7d3e4e1225054ec87f",
@@ -21,5 +21,13 @@
   "freeze": "codigo_vivo_tip_tti_fold_100pct_20260924_141146",
   "ro_mtime_unchanged": true,
   "contam_passed": true,
-  "fold_sha": "a99362ca3ee1272307be6365efca7b9adab01be7"
+  "fold_sha": "a99362ca3ee1272307be6365efca7b9adab01be7",
+  "eval_path": "data/video_synth/distance_est/EVAL_FLOOR_SCALE_CPU.json",
+  "metrics": {
+    "tti_scorable_orig_pct": 100.0,
+    "tti_scorable_orig": "691/691",
+    "tti_scorable_danger50_pct": 100.0,
+    "tti_scorable_danger50": "725/725",
+    "held_after_distance_mid_fold": true
+  }
 }

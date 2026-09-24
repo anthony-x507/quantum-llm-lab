@@ -1,6 +1,6 @@
 {
   "schema": "frontier_tip_collision_pred_probe",
-  "ts": "2026-09-24 14:10:27 ET",
+  "ts": "2026-09-24 14:22:44 ET",
   "domain": "collision_predictive",
   "branch": "frontier/tip-inverse-r2",
   "n_eval_seqs": 40,

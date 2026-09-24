@@ -1,194 +1,46 @@
 {
-  "original": {
-    "distance": {
-      "dz_30_70": {
-        "n": 527,
-        "correct": 527,
-        "pct": 100.0,
-        "mae": 1.489,
-        "mean_rel": 0.031
-      },
-      "mid_near_5_30": {
-        "n": 326,
-        "correct": 326,
-        "pct": 100.0,
-        "mae": 0.306,
-        "mean_rel": 0.0438
-      },
-      "mid_outer_70_100": {
-        "n": 234,
-        "correct": 234,
-        "pct": 100.0,
-        "mae": 4.662,
-        "mean_rel": 0.0494
-      },
-      "other": {
-        "n": 725,
-        "correct": 725,
-        "pct": 100.0,
-        "mae": 4.034,
-        "mean_rel": 0.0382
-      }
-    },
-    "future": {
-      "mid_near_5_30_track": {
-        "n": 299,
-        "correct": 257,
-        "pct": 85.95
-      },
-      "mid_near_5_30_plus_dist": {
-        "n": 299,
-        "correct": 282,
-        "pct": 94.31
-      },
-      "mid_outer_70_100_track": {
-        "n": 216,
-        "correct": 197,
-        "pct": 91.2
-      },
-      "mid_outer_70_100_plus_dist": {
-        "n": 216,
-        "correct": 216,
-        "pct": 100.0
-      },
-      "dz_30_70_track": {
-        "n": 482,
-        "correct": 439,
-        "pct": 91.08
-      },
-      "dz_30_70_plus_dist": {
-        "n": 482,
-        "correct": 469,
-        "pct": 97.3
-      }
+  "ts": "2026-09-24 14:23:29 ET",
+  "note": "post-fold re-smoke on tip after rebase onto e0f3183",
+  "mid_near_5_30m": {
+    "lo_m": 5.0,
+    "hi_m": 30.0,
+    "n": 684,
+    "correct": 684,
+    "pct": 100.0,
+    "error_stats": {
+      "mae_m": 0.305,
+      "mean_rel_err": 0.0229,
+      "median_rel_err": 0.0156,
+      "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
     }
   },
-  "danger50": {
-    "distance": {
-      "dz_30_70": {
-        "n": 915,
-        "correct": 915,
-        "pct": 100.0,
-        "mae": 0.726,
-        "mean_rel": 0.0149
-      },
-      "mid_near_5_30": {
-        "n": 228,
-        "correct": 228,
-        "pct": 100.0,
-        "mae": 0.327,
-        "mean_rel": 0.0264
-      },
-      "mid_outer_70_100": {
-        "n": 64,
-        "correct": 64,
-        "pct": 100.0,
-        "mae": 1.048,
-        "mean_rel": 0.0144
-      },
-      "other": {
-        "n": 713,
-        "correct": 713,
-        "pct": 100.0,
-        "mae": 5.48,
-        "mean_rel": 0.0389
-      }
-    },
-    "future": {
-      "mid_near_5_30_track": {
-        "n": 204,
-        "correct": 189,
-        "pct": 92.65
-      },
-      "mid_near_5_30_plus_dist": {
-        "n": 204,
-        "correct": 202,
-        "pct": 99.02
-      },
-      "mid_outer_70_100_track": {
-        "n": 53,
-        "correct": 53,
-        "pct": 100.0
-      },
-      "mid_outer_70_100_plus_dist": {
-        "n": 53,
-        "correct": 53,
-        "pct": 100.0
-      },
-      "dz_30_70_track": {
-        "n": 851,
-        "correct": 763,
-        "pct": 89.66
-      },
-      "dz_30_70_plus_dist": {
-        "n": 851,
-        "correct": 822,
-        "pct": 96.59
-      }
+  "mid_outer_70_100m": {
+    "lo_m": 70.0,
+    "hi_m": 100.0,
+    "n": 374,
+    "correct": 374,
+    "pct": 100.0,
+    "error_stats": {
+      "mae_m": 1.624,
+      "mean_rel_err": 0.0189,
+      "median_rel_err": 0.0125,
+      "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
     }
   },
-  "mid": {
-    "distance": {
-      "dz_30_70": {
-        "n": 55,
-        "correct": 55,
-        "pct": 100.0,
-        "mae": 1.505,
-        "mean_rel": 0.0266
-      },
-      "mid_near_5_30": {
-        "n": 684,
-        "correct": 684,
-        "pct": 100.0,
-        "mae": 0.305,
-        "mean_rel": 0.0229
-      },
-      "mid_outer_70_100": {
-        "n": 374,
-        "correct": 374,
-        "pct": 100.0,
-        "mae": 1.624,
-        "mean_rel": 0.0189
-      },
-      "other": {
-        "n": 915,
-        "correct": 915,
-        "pct": 100.0,
-        "mae": 4.005,
-        "mean_rel": 0.0325
-      }
+  "danger_zone_30_70m": {
+    "lo_m": 30.0,
+    "hi_m": 70.0,
+    "n": 55,
+    "correct": 55,
+    "pct": 100.0,
+    "delta_pp_vs_baseline_50m": 51.31,
+    "error_stats": {
+      "mae_m": 1.505,
+      "mean_rel_err": 0.0266,
+      "median_rel_err": 0.0286,
+      "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
     },
-    "future": {
-      "mid_near_5_30_track": {
-        "n": 639,
-        "correct": 525,
-        "pct": 82.16
-      },
-      "mid_near_5_30_plus_dist": {
-        "n": 639,
-        "correct": 605,
-        "pct": 94.68
-      },
-      "mid_outer_70_100_track": {
-        "n": 353,
-        "correct": 317,
-        "pct": 89.8
-      },
-      "mid_outer_70_100_plus_dist": {
-        "n": 353,
-        "correct": 342,
-        "pct": 96.88
-      },
-      "dz_30_70_track": {
-        "n": 45,
-        "correct": 45,
-        "pct": 100.0
-      },
-      "dz_30_70_plus_dist": {
-        "n": 45,
-        "correct": 45,
-        "pct": 100.0
-      }
-    }
-  }
+    "frozen": true
+  },
+  "predictor": "floor_scale_parallax_size_prior_closing_speed_v3_mid"
 }

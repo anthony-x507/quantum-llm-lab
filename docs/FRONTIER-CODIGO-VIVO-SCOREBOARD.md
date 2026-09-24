@@ -7,6 +7,19 @@
 
 
 
+## Distance-mid — FOLDED
+
+**When:** polish ~14:00 ET · fold 2026-09-24 14:23:29 ET · Mac-111 · rebase `949505b`/`254393e` onto `e0f3183` → `3931307`+`156cb02` FF  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-DISTANCE-MID.md`  
+**Freeze:** `codigo_vivo_tip_distance_mid_100pct_20260924_142329` · **Frozen SHA:** `PENDING_FOLD`
+
+**Δ:** mid_near 5–30 m **100%** (684/684); mid_outer 70–100 m **100%** (374/374; MAE 1.624 m); DZ 30–70 **held 100%** (orig/danger50/mid). Outside frozen DZ only.
+
+**CPU re-smoke after fold:** unified **1.0**; mid_near/outer **100%**; DZ **100%**; TTI scorable **100%** (691/691 · 725/725); R11 **52/52·44/44**; motion **100%**; inverse_cv **99.82%**; collision physics **100.0%**; choose_safest **100.0%**; pillars 26/26; hardneg 18/18; `wired_to_vlm=true`; tip vis BASE.  
+Anti-contam **CLEAN**. Adapters RO unchanged. Freezes retained incl. tti + r11 + motion_r4 + vision_ground + inverse_r2 + r10 + distance_danger + priors. Never abandon.
+
+**Not folded:** distance-far / hardneg-r12 / hardneg-r13 / inverse-r3 / circ-expand / future-track.
+
 ## 2026-09-24 — fold tip-tti @ tip
 Cherry-pick `c483e46`→`6665e2c` onto `e70b23a`. TTI scorable **100%** (691/691 · 725/725); mixed **1.0**; R11 **52/52·44/44**; motion **100%**; inv **99.82%**; collision **100%**; freeze `codigo_vivo_tip_tti_fold_100pct_20260924_141146`. Distance-mid/R12/inv-r3 **not** folded.
 ## R11 TIP FREEZE / FOLD (overall 1.0) — tip HEAD after hardneg-r11 fold

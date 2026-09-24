@@ -1,6 +1,6 @@
 {
   "frontier": "C3-moe-verifier-codigo-vivo",
-  "written": "2026-09-24 14:11:03",
+  "written": "2026-09-24 14:23:00",
   "mode": "hardneg-cpu",
   "router_method": "heuristic",
   "claims": [
@@ -159,12 +159,7 @@
         "routed_lane": "ent",
         "adapter_ro": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
         "adapter_write": false,
-        "circuit_graph_scaffold": {
-          "injected": true,
-          "hint_chars": 902,
-          "has_markers": true,
-          "gt_leak": false
-        }
+        "circuit_graph_scaffold": null
       },
       {
         "id": "vis_sample",
