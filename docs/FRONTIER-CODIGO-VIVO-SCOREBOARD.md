@@ -1,7 +1,7 @@
 ## Fold — tip-hardneg-r21 → codigo-vivo-tip (2026-09-24)
 
 **Freeze:** `codigo_vivo_tip_r21_100pct_20260924_155831`  
-**Fold feat:** `PENDING` (cherry-pick `590e9af` onto `5ef34a7`)  
+**Fold feat:** `636c34e` (cherry-pick `590e9af` onto `5ef34a7`)  
 **Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-R21.md`
 
 | Surface | Result |
