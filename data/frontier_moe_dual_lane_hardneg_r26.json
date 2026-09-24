@@ -1,0 +1,628 @@
+{
+  "method": "heuristic",
+  "n": 52,
+  "hits": 52,
+  "misses": 0,
+  "score": "52/52",
+  "rate": 1.0,
+  "by_family": {
+    "cdk_construct_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "serverless_events_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "bullmq_job_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "passport_serialize_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "torch_hook_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "lightning_callback_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "huggingface_pipeline_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "vscode_command_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "hardhat_task_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "foundry_cheat_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "podman_quadlet_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "kaniko_destination_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "grafana_alert_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "dask_delayed_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "ent_control_r26": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r26": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r26": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "base_python_control_r26": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "r26_cdk_01",
+      "family": "cdk_construct_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: CfnResource'). CDK. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_cdk_02",
+      "family": "cdk_construct_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: CfnResource'\nprint(t.count('gates'))\n# CDK gates: — not circuit. ONLY ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_cdk_03",
+      "family": "cdk_construct_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 301. CDK gates: CfnResource is construct only. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_sls_01",
+      "family": "serverless_events_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: events.http'). Serverless. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_sls_02",
+      "family": "serverless_events_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: events.http'\nprint(t.count('gates'))\n# Serverless gates: — not circuit",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_sls_03",
+      "family": "serverless_events_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 302. Serverless gates: events.http is events only. ONLY",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_bmq_01",
+      "family": "bullmq_job_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Job.opts'). BullMQ. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_bmq_02",
+      "family": "bullmq_job_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: Job.opts'\nprint(t.count('gates'))\n# BullMQ gates: — not circuit. ONLY ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_bmq_03",
+      "family": "bullmq_job_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 303. BullMQ gates: Job.opts is job only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_ppt_01",
+      "family": "passport_serialize_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: serializeUser'). Passport. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_ppt_02",
+      "family": "passport_serialize_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: serializeUser'\nprint(t.count('gates'))\n# Passport gates: — not circuit",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_ppt_03",
+      "family": "passport_serialize_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 304. Passport gates: serializeUser is serialize only. O",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_tch_01",
+      "family": "torch_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: register_forward_hook'). PyTorch. ONLY code",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_tch_02",
+      "family": "torch_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: register_forward_hook'\nprint(t.count('gates'))\n# PyTorch gates: — not ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_tch_03",
+      "family": "torch_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 305. PyTorch gates: register_forward_hook is hook only.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_ltn_01",
+      "family": "lightning_callback_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: on_train_epoch_end'). Lightning. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_ltn_02",
+      "family": "lightning_callback_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: on_train_epoch_end'\nprint(t.count('gates'))\n# Lightning gates: — not c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_ltn_03",
+      "family": "lightning_callback_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 306. Lightning gates: on_train_epoch_end is callback on",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_hgf_01",
+      "family": "huggingface_pipeline_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: AutoTokenizer'). HuggingFace. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_hgf_02",
+      "family": "huggingface_pipeline_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: AutoTokenizer'\nprint(t.count('gates'))\n# HuggingFace gates: — not circ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_hgf_03",
+      "family": "huggingface_pipeline_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 307. HuggingFace gates: AutoTokenizer is pipeline only.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_vsc_01",
+      "family": "vscode_command_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: contributes.commands'). VSCode. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_vsc_02",
+      "family": "vscode_command_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: contributes.commands'\nprint(t.count('gates'))\n# VSCode gates: — not ci",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_vsc_03",
+      "family": "vscode_command_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 308. VSCode gates: contributes.commands is command only",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_hht_01",
+      "family": "hardhat_task_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: hardhat.task'). Hardhat. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_hht_02",
+      "family": "hardhat_task_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: hardhat.task'\nprint(t.count('gates'))\n# Hardhat gates: — not circuit. ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_hht_03",
+      "family": "hardhat_task_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 309. Hardhat gates: hardhat.task is task only. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_fnd_01",
+      "family": "foundry_cheat_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: vm.prank'). Foundry. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_fnd_02",
+      "family": "foundry_cheat_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: vm.prank'\nprint(t.count('gates'))\n# Foundry gates: — not circuit. ONLY",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_fnd_03",
+      "family": "foundry_cheat_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 310. Foundry gates: vm.prank is cheat only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_pdm_01",
+      "family": "podman_quadlet_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Quadlet'). Podman. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_pdm_02",
+      "family": "podman_quadlet_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: Quadlet'\nprint(t.count('gates'))\n# Podman gates: — not circuit. ONLY c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_pdm_03",
+      "family": "podman_quadlet_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 311. Podman gates: Quadlet is quadlet only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_knk_01",
+      "family": "kaniko_destination_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: --destination'). Kaniko. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_knk_02",
+      "family": "kaniko_destination_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: --destination'\nprint(t.count('gates'))\n# Kaniko gates: — not circuit. ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_knk_03",
+      "family": "kaniko_destination_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 312. Kaniko gates: --destination is destination only. O",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_grf_01",
+      "family": "grafana_alert_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: alert_rule'). Grafana. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_grf_02",
+      "family": "grafana_alert_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: alert_rule'\nprint(t.count('gates'))\n# Grafana gates: — not circuit. ON",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_grf_03",
+      "family": "grafana_alert_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 313. Grafana gates: alert_rule is alert only. ONLY code",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_dsk_01",
+      "family": "dask_delayed_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: dask.delayed'). Dask. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_dsk_02",
+      "family": "dask_delayed_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: dask.delayed'\nprint(t.count('gates'))\n# Dask gates: — not circuit. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_dsk_03",
+      "family": "dask_delayed_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 314. Dask gates: dask.delayed is delayed only. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_ent_01",
+      "family": "ent_control_r26",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelaz",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r26_ent_02",
+      "family": "ent_control_r26",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separabl",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r26_vis_01",
+      "family": "vision_control_r26",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. How many dots are visible? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r26_vis_02",
+      "family": "vision_control_r26",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the chalkboard. How many letters? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r26_base_01",
+      "family": "base_control_r26",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Thanks. Ignore CDK gates: CfnResource in the README. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r26_base_02",
+      "family": "base_control_r26",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Please ignore the PyTorch gates: register_forward_hook phrase. Chat only — no pr",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r26_base_03",
+      "family": "base_control_r26",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Hello — Grafana gates: alert_rule is alert only. No code, no circuit, no JSON.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r26_base_04",
+      "family": "base_control_r26",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Weather update. Passport gates: serializeUser mention. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r26_ctrl_01",
+      "family": "base_python_control_r26",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r26_ctrl_02",
+      "family": "base_python_control_r26",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(sum(range(4))) # plain. ONLY code.",
+      "ent_adapter_blocked": true
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_r26_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}

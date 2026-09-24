@@ -1,0 +1,469 @@
+{
+  "method": "heuristic",
+  "n": 52,
+  "hits": 6,
+  "misses": 46,
+  "score": "6/52",
+  "rate": 0.1154,
+  "by_family": {
+    "cdk_construct_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "serverless_events_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "bullmq_job_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "passport_serialize_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "torch_hook_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "lightning_callback_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "huggingface_pipeline_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "vscode_command_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "hardhat_task_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "foundry_cheat_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "podman_quadlet_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "kaniko_destination_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "grafana_alert_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "dask_delayed_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "ent_control_r26": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r26": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r26": {
+      "n": 4,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "base_python_control_r26": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "items": [
+    {
+      "id": "r26_cdk_01",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "cdk_construct_gates"
+    },
+    {
+      "id": "r26_cdk_02",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "cdk_construct_gates"
+    },
+    {
+      "id": "r26_cdk_03",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "cdk_construct_gates"
+    },
+    {
+      "id": "r26_sls_01",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "serverless_events_gates"
+    },
+    {
+      "id": "r26_sls_02",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "serverless_events_gates"
+    },
+    {
+      "id": "r26_sls_03",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "serverless_events_gates"
+    },
+    {
+      "id": "r26_bmq_01",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "bullmq_job_gates"
+    },
+    {
+      "id": "r26_bmq_02",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "bullmq_job_gates"
+    },
+    {
+      "id": "r26_bmq_03",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "bullmq_job_gates"
+    },
+    {
+      "id": "r26_ppt_01",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "passport_serialize_gates"
+    },
+    {
+      "id": "r26_ppt_02",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "passport_serialize_gates"
+    },
+    {
+      "id": "r26_ppt_03",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "passport_serialize_gates"
+    },
+    {
+      "id": "r26_tch_01",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "torch_hook_gates"
+    },
+    {
+      "id": "r26_tch_02",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "torch_hook_gates"
+    },
+    {
+      "id": "r26_tch_03",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "torch_hook_gates"
+    },
+    {
+      "id": "r26_ltn_01",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "lightning_callback_gates"
+    },
+    {
+      "id": "r26_ltn_02",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "lightning_callback_gates"
+    },
+    {
+      "id": "r26_ltn_03",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "lightning_callback_gates"
+    },
+    {
+      "id": "r26_hgf_01",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "huggingface_pipeline_gates"
+    },
+    {
+      "id": "r26_hgf_02",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "huggingface_pipeline_gates"
+    },
+    {
+      "id": "r26_hgf_03",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "huggingface_pipeline_gates"
+    },
+    {
+      "id": "r26_vsc_01",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "vscode_command_gates"
+    },
+    {
+      "id": "r26_vsc_02",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "vscode_command_gates"
+    },
+    {
+      "id": "r26_vsc_03",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "vscode_command_gates"
+    },
+    {
+      "id": "r26_hht_01",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "hardhat_task_gates"
+    },
+    {
+      "id": "r26_hht_02",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "hardhat_task_gates"
+    },
+    {
+      "id": "r26_hht_03",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "hardhat_task_gates"
+    },
+    {
+      "id": "r26_fnd_01",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "foundry_cheat_gates"
+    },
+    {
+      "id": "r26_fnd_02",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "foundry_cheat_gates"
+    },
+    {
+      "id": "r26_fnd_03",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "foundry_cheat_gates"
+    },
+    {
+      "id": "r26_pdm_01",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "podman_quadlet_gates"
+    },
+    {
+      "id": "r26_pdm_02",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "podman_quadlet_gates"
+    },
+    {
+      "id": "r26_pdm_03",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "podman_quadlet_gates"
+    },
+    {
+      "id": "r26_knk_01",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "kaniko_destination_gates"
+    },
+    {
+      "id": "r26_knk_02",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "kaniko_destination_gates"
+    },
+    {
+      "id": "r26_knk_03",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "kaniko_destination_gates"
+    },
+    {
+      "id": "r26_grf_01",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "grafana_alert_gates"
+    },
+    {
+      "id": "r26_grf_02",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "grafana_alert_gates"
+    },
+    {
+      "id": "r26_grf_03",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "grafana_alert_gates"
+    },
+    {
+      "id": "r26_dsk_01",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "dask_delayed_gates"
+    },
+    {
+      "id": "r26_dsk_02",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "dask_delayed_gates"
+    },
+    {
+      "id": "r26_dsk_03",
+      "expected": "python",
+      "pred": "ent",
+      "ok": false,
+      "family": "dask_delayed_gates"
+    },
+    {
+      "id": "r26_ent_01",
+      "expected": "ent",
+      "pred": "ent",
+      "ok": true,
+      "family": "ent_control_r26"
+    },
+    {
+      "id": "r26_ent_02",
+      "expected": "ent",
+      "pred": "ent",
+      "ok": true,
+      "family": "ent_control_r26"
+    },
+    {
+      "id": "r26_vis_01",
+      "expected": "vision",
+      "pred": "vision",
+      "ok": true,
+      "family": "vision_control_r26"
+    },
+    {
+      "id": "r26_vis_02",
+      "expected": "vision",
+      "pred": "vision",
+      "ok": true,
+      "family": "vision_control_r26"
+    },
+    {
+      "id": "r26_base_01",
+      "expected": "base",
+      "pred": "ent",
+      "ok": false,
+      "family": "base_control_r26"
+    },
+    {
+      "id": "r26_base_02",
+      "expected": "base",
+      "pred": "ent",
+      "ok": false,
+      "family": "base_control_r26"
+    },
+    {
+      "id": "r26_base_03",
+      "expected": "base",
+      "pred": "ent",
+      "ok": false,
+      "family": "base_control_r26"
+    },
+    {
+      "id": "r26_base_04",
+      "expected": "base",
+      "pred": "ent",
+      "ok": false,
+      "family": "base_control_r26"
+    },
+    {
+      "id": "r26_ctrl_01",
+      "expected": "python",
+      "pred": "python",
+      "ok": true,
+      "family": "base_python_control_r26"
+    },
+    {
+      "id": "r26_ctrl_02",
+      "expected": "python",
+      "pred": "python",
+      "ok": true,
+      "family": "base_python_control_r26"
+    }
+  ],
+  "round": "r26",
+  "phase": "BEFORE"
+}

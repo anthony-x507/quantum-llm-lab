@@ -186,6 +186,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R13: Nginx/HAProxy/Caddy/Redis/Postgres/Skaffold/Buildkite/Packer/Salt/Bazel/Dagger/Dagster/Hasura/NestJS gates: scalars.
     # R14: Apache httpd/Varnish/APISIX/Tyk/KrakenD/MongoDB/Cassandra/Jenkins/Vagrant/Chef/Pants/Prefect/FastAPI/Spring gates: scalars.
     # R15: Squid/OpenResty/Contour/Emissary/Zuul/Django/Laravel/Gin/DynamoDB/Firestore/Keycloak/Falco/OTel/Ray gates: scalars.
+    # R26: CDK/Serverless/BullMQ/Passport/PyTorch/Lightning/HuggingFace/VSCode/Hardhat/Foundry/Podman/Kaniko/Grafana/Dask gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -602,7 +603,68 @@ def route_heuristic(prompt: str) -> Lane:
             r"|ray\s+.*gates:"
             r"|actor\s+gates:\s*num_cpus"
             # R15: proxy / ingress / gateway / framework / DB / security / observability / orchestration prose
-            r"|gates:\s+is\s+(?:proxy|ingress|gateway|framework|DB|security|observability|orchestration)\b",
+            r"|gates:\s+is\s+(?:proxy|ingress|gateway|framework|DB|security|observability|orchestration)\b"
+            # R26: CDK construct gates: CfnResource
+            r"|gates\s*:\s*CfnResource\b"
+            r"|cdk\s+.*gates:"
+            r"|construct\s+gates:\s*Cfn"
+            # R26: Serverless events gates: events.http
+            r"|gates\s*:\s*events\.http\b"
+            r"|serverless\s+.*gates:"
+            r"|events\s+gates:\s*events"
+            # R26: BullMQ job gates: Job.opts
+            r"|gates\s*:\s*Job\.opts\b"
+            r"|bullmq\s+.*gates:"
+            r"|job\s+gates:\s*Job"
+            # R26: Passport serialize gates: serializeUser
+            r"|gates\s*:\s*serializeUser\b"
+            r"|passport\s+.*gates:"
+            r"|serialize\s+gates:\s*serializeUser"
+            # R26: PyTorch hook gates: register_forward_hook
+            r"|gates\s*:\s*register_forward_hook\b"
+            r"|pytorch\s+.*gates:"
+            r"|torch\s+.*gates:"
+            r"|hook\s+gates:\s*register_forward"
+            # R26: Lightning callback gates: on_train_epoch_end
+            r"|gates\s*:\s*on_train_epoch_end\b"
+            r"|lightning\s+.*gates:"
+            r"|callback\s+gates:\s*on_train"
+            # R26: HuggingFace pipeline gates: AutoTokenizer
+            r"|gates\s*:\s*AutoTokenizer\b"
+            r"|huggingface\s+.*gates:"
+            r"|hugging\s*face\s+.*gates:"
+            r"|pipeline\s+gates:\s*AutoTokenizer"
+            # R26: VS Code command gates: contributes.commands
+            r"|gates\s*:\s*contributes\.commands\b"
+            r"|vscode\s+.*gates:"
+            r"|vs\s*code\s+.*gates:"
+            r"|command\s+gates:\s*contributes"
+            # R26: Hardhat task gates: hardhat.task
+            r"|gates\s*:\s*hardhat\.task\b"
+            r"|hardhat\s+.*gates:"
+            r"|task\s+gates:\s*hardhat"
+            # R26: Foundry cheat gates: vm.prank
+            r"|gates\s*:\s*vm\.prank\b"
+            r"|foundry\s+.*gates:"
+            r"|cheat\s+gates:\s*vm"
+            # R26: Podman quadlet gates: Quadlet
+            r"|gates\s*:\s*Quadlet\b"
+            r"|podman\s+.*gates:"
+            r"|quadlet\s+gates:\s*Quadlet"
+            # R26: Kaniko destination gates: --destination
+            r"|gates\s*:\s*--destination\b"
+            r"|kaniko\s+.*gates:"
+            r"|destination\s+gates:\s*--"
+            # R26: Grafana alert gates: alert_rule
+            r"|gates\s*:\s*alert_rule\b"
+            r"|grafana\s+.*gates:"
+            r"|alert\s+gates:\s*alert_rule"
+            # R26: Dask delayed gates: dask.delayed
+            r"|gates\s*:\s*dask\.delayed\b"
+            r"|\bdask\b\s+.*gates:"
+            r"|delayed\s+gates:\s*dask"
+            # R26: construct / events / job / serialize / hook / callback / pipeline / command / task / cheat / quadlet / destination / alert / delayed prose
+            r"|gates:\s+is\s+(?:construct|events|job|serialize|hook|callback|pipeline|command|task|cheat|quadlet|destination|alert|delayed)\b",
             text,
             re.I,
         )
@@ -1222,6 +1284,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r26' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r26.json"
         elif 'r15' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r15.json"
         elif 'r14' in hp:

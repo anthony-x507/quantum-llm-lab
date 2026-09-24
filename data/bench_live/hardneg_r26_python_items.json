@@ -1,0 +1,368 @@
+{
+  "n": 44,
+  "kind": "hardneg_python_items",
+  "created": "2026-09-24T15:16:30",
+  "round": "r26",
+  "note": "R26 hardneg: CDK/Serverless/BullMQ/Passport/PyTorch/Lightning/HuggingFace/VSCode/Hardhat/Foundry/Podman/Kaniko/Grafana/Dask gates: scalars",
+  "anti_contamination": {
+    "no_r9_r25_family_reuse": true,
+    "blocked_r24": [
+      "wails_bind",
+      "neutralino_ext",
+      "react_native_turbo",
+      "ionic_lifecycle",
+      "webpack_pitch",
+      "parcel_transformer",
+      "swc_plugin",
+      "moonrepo_task",
+      "lage_pipeline",
+      "eslint_meta",
+      "ruff_select",
+      "sqlalchemy_column",
+      "edgedb_constraint",
+      "maui_handler"
+    ],
+    "blocked_r25": [
+      "playwright_fixture",
+      "cypress_command",
+      "vitest_mock",
+      "pytest_mark",
+      "k6_executor",
+      "locust_taskset",
+      "trpc_procedure",
+      "strapi_lifecycle",
+      "payload_hook",
+      "storybook_decorator",
+      "godot_signal",
+      "bevy_system",
+      "sentry_hook",
+      "opensearch_pipeline"
+    ],
+    "novel_r26": [
+      "cdk_construct_gates",
+      "serverless_events_gates",
+      "bullmq_job_gates",
+      "passport_serialize_gates",
+      "torch_hook_gates",
+      "lightning_callback_gates",
+      "huggingface_pipeline_gates",
+      "vscode_command_gates",
+      "hardhat_task_gates",
+      "foundry_cheat_gates",
+      "podman_quadlet_gates",
+      "kaniko_destination_gates",
+      "grafana_alert_gates",
+      "dask_delayed_gates"
+    ]
+  },
+  "items": [
+    {
+      "id": "r26v_cdk_01",
+      "kind": "cdk_construct_gates",
+      "prompt": "Write Python that prints len('gates: CfnResource'). CDK. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_cdk_02",
+      "kind": "cdk_construct_gates",
+      "prompt": "t='gates: CfnResource'\nprint(t.count('gates'))\n# CDK gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_cdk_03",
+      "kind": "cdk_construct_gates",
+      "prompt": "Write Python that prints 301. CDK gates: CfnResource is construct only. ONLY code.",
+      "expected_stdout": "301\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_sls_01",
+      "kind": "serverless_events_gates",
+      "prompt": "Write Python that prints len('gates: events.http'). Serverless. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_sls_02",
+      "kind": "serverless_events_gates",
+      "prompt": "t='gates: events.http'\nprint(t.count('gates'))\n# Serverless gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_sls_03",
+      "kind": "serverless_events_gates",
+      "prompt": "Write Python that prints 302. Serverless gates: events.http is events only. ONLY code.",
+      "expected_stdout": "302\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_bmq_01",
+      "kind": "bullmq_job_gates",
+      "prompt": "Write Python that prints len('gates: Job.opts'). BullMQ. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_bmq_02",
+      "kind": "bullmq_job_gates",
+      "prompt": "t='gates: Job.opts'\nprint(t.count('gates'))\n# BullMQ gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_bmq_03",
+      "kind": "bullmq_job_gates",
+      "prompt": "Write Python that prints 303. BullMQ gates: Job.opts is job only. ONLY code.",
+      "expected_stdout": "303\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_ppt_01",
+      "kind": "passport_serialize_gates",
+      "prompt": "Write Python that prints len('gates: serializeUser'). Passport. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_ppt_02",
+      "kind": "passport_serialize_gates",
+      "prompt": "t='gates: serializeUser'\nprint(t.count('gates'))\n# Passport gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_ppt_03",
+      "kind": "passport_serialize_gates",
+      "prompt": "Write Python that prints 304. Passport gates: serializeUser is serialize only. ONLY code.",
+      "expected_stdout": "304\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_tch_01",
+      "kind": "torch_hook_gates",
+      "prompt": "Write Python that prints len('gates: register_forward_hook'). PyTorch. ONLY code.",
+      "expected_stdout": "28\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_tch_02",
+      "kind": "torch_hook_gates",
+      "prompt": "t='gates: register_forward_hook'\nprint(t.count('gates'))\n# PyTorch gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_tch_03",
+      "kind": "torch_hook_gates",
+      "prompt": "Write Python that prints 305. PyTorch gates: register_forward_hook is hook only. ONLY code.",
+      "expected_stdout": "305\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_ltn_01",
+      "kind": "lightning_callback_gates",
+      "prompt": "Write Python that prints len('gates: on_train_epoch_end'). Lightning. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_ltn_02",
+      "kind": "lightning_callback_gates",
+      "prompt": "t='gates: on_train_epoch_end'\nprint(t.count('gates'))\n# Lightning gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_ltn_03",
+      "kind": "lightning_callback_gates",
+      "prompt": "Write Python that prints 306. Lightning gates: on_train_epoch_end is callback only. ONLY code.",
+      "expected_stdout": "306\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_hgf_01",
+      "kind": "huggingface_pipeline_gates",
+      "prompt": "Write Python that prints len('gates: AutoTokenizer'). HuggingFace. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_hgf_02",
+      "kind": "huggingface_pipeline_gates",
+      "prompt": "t='gates: AutoTokenizer'\nprint(t.count('gates'))\n# HuggingFace gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_hgf_03",
+      "kind": "huggingface_pipeline_gates",
+      "prompt": "Write Python that prints 307. HuggingFace gates: AutoTokenizer is pipeline only. ONLY code.",
+      "expected_stdout": "307\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_vsc_01",
+      "kind": "vscode_command_gates",
+      "prompt": "Write Python that prints len('gates: contributes.commands'). VSCode. ONLY code.",
+      "expected_stdout": "27\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_vsc_02",
+      "kind": "vscode_command_gates",
+      "prompt": "t='gates: contributes.commands'\nprint(t.count('gates'))\n# VSCode gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_vsc_03",
+      "kind": "vscode_command_gates",
+      "prompt": "Write Python that prints 308. VSCode gates: contributes.commands is command only. ONLY code.",
+      "expected_stdout": "308\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_hht_01",
+      "kind": "hardhat_task_gates",
+      "prompt": "Write Python that prints len('gates: hardhat.task'). Hardhat. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_hht_02",
+      "kind": "hardhat_task_gates",
+      "prompt": "t='gates: hardhat.task'\nprint(t.count('gates'))\n# Hardhat gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_hht_03",
+      "kind": "hardhat_task_gates",
+      "prompt": "Write Python that prints 309. Hardhat gates: hardhat.task is task only. ONLY code.",
+      "expected_stdout": "309\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_fnd_01",
+      "kind": "foundry_cheat_gates",
+      "prompt": "Write Python that prints len('gates: vm.prank'). Foundry. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_fnd_02",
+      "kind": "foundry_cheat_gates",
+      "prompt": "t='gates: vm.prank'\nprint(t.count('gates'))\n# Foundry gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_fnd_03",
+      "kind": "foundry_cheat_gates",
+      "prompt": "Write Python that prints 310. Foundry gates: vm.prank is cheat only. ONLY code.",
+      "expected_stdout": "310\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_pdm_01",
+      "kind": "podman_quadlet_gates",
+      "prompt": "Write Python that prints len('gates: Quadlet'). Podman. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_pdm_02",
+      "kind": "podman_quadlet_gates",
+      "prompt": "t='gates: Quadlet'\nprint(t.count('gates'))\n# Podman gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_pdm_03",
+      "kind": "podman_quadlet_gates",
+      "prompt": "Write Python that prints 311. Podman gates: Quadlet is quadlet only. ONLY code.",
+      "expected_stdout": "311\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_knk_01",
+      "kind": "kaniko_destination_gates",
+      "prompt": "Write Python that prints len('gates: --destination'). Kaniko. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_knk_02",
+      "kind": "kaniko_destination_gates",
+      "prompt": "t='gates: --destination'\nprint(t.count('gates'))\n# Kaniko gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_knk_03",
+      "kind": "kaniko_destination_gates",
+      "prompt": "Write Python that prints 312. Kaniko gates: --destination is destination only. ONLY code.",
+      "expected_stdout": "312\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_grf_01",
+      "kind": "grafana_alert_gates",
+      "prompt": "Write Python that prints len('gates: alert_rule'). Grafana. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_grf_02",
+      "kind": "grafana_alert_gates",
+      "prompt": "t='gates: alert_rule'\nprint(t.count('gates'))\n# Grafana gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_grf_03",
+      "kind": "grafana_alert_gates",
+      "prompt": "Write Python that prints 313. Grafana gates: alert_rule is alert only. ONLY code.",
+      "expected_stdout": "313\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_dsk_01",
+      "kind": "dask_delayed_gates",
+      "prompt": "Write Python that prints len('gates: dask.delayed'). Dask. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_dsk_02",
+      "kind": "dask_delayed_gates",
+      "prompt": "t='gates: dask.delayed'\nprint(t.count('gates'))\n# Dask gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_dsk_03",
+      "kind": "dask_delayed_gates",
+      "prompt": "Write Python that prints 314. Dask gates: dask.delayed is delayed only. ONLY code.",
+      "expected_stdout": "314\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_ctrl_01",
+      "kind": "base_python_control_r26",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r26v_ctrl_02",
+      "kind": "base_python_control_r26",
+      "prompt": "print(sum(range(4))) # plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}

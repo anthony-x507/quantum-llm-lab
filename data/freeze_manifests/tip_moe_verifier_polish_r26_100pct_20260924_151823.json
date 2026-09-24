@@ -1,0 +1,29 @@
+{
+  "name": "codigo_vivo_tip_polish_r26_100pct_20260924_151823",
+  "kind": "tip_moe_verifier_polish_r26",
+  "pct": 100,
+  "branch": "frontier/tip-hardneg-r26",
+  "base_tip": "422a9e3",
+  "when_et": "2026-09-24T15:18:23-04:00",
+  "machine": "Mac-111 (074c6626-0440-4817-9829-6bae77c578d6)",
+  "scores": {
+    "router": "52/52",
+    "verifier": "44/44",
+    "unified": "44/44",
+    "mixed": 1.0,
+    "pre_router": "6/52",
+    "rise_pp": 88.46
+  },
+  "floors_held": true,
+  "not_folded": true,
+  "lora_adapter_ro": true,
+  "artifacts_sha16": {
+    "hardneg_r26_mixed_router.json": "a121511915a76fd1",
+    "hardneg_r26_python_items.json": "d408862b8f9411d3",
+    "frontier_moe_dual_lane_hardneg_r26.json": "29d630c7d501cb1f",
+    "frontier_moe_verifier_hardneg_r26.json": "169bc4d6414c4095",
+    "frontier_moe_verifier_mixed_unified.json": "7ab0f237cd01bf21"
+  },
+  "evidence": "data/freeze_metrics/codigo_vivo_tip_adv_r26_20260924.json",
+  "feat_sha": "PENDING"
+}
