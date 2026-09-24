@@ -25,5 +25,5 @@
     "frontier_moe_verifier_mixed_unified.json": "17118c568ec869e3"
   },
   "evidence": "data/freeze_metrics/codigo_vivo_tip_adv_r32_20260924.json",
-  "feat_sha": "PENDING"
+  "feat_sha": "91fdaa4a07c2746efede835b4a2515f4cf301268"
 }
