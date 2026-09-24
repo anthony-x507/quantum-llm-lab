@@ -7,6 +7,9 @@
 
 ---
 
+## 2026-09-24 — fold tip-distance-danger → codigo-vivo-tip
+Rebase `110bcbc` onto `e2a950d` → `da55eac` FF. CPU unified **1.0** (re-smoke); DZ 30–70 m **100%** (orig+danger50); ~50 m **100%**; future-pred DZ ~97%/96.6%; tracking DZ **100%**; R8 52/52·44/44; LP 43/43·32/32; motion **44%**; `wired_to_vlm`; freezes retained incl. r8 + scaffold_motion + r7 + post_od2. Freeze `codigo_vivo_tip_distance_danger_100pct_20260924_131243`. Collision-pred **not** folded. See SCOREBOARD + TIP-DISTANCE-DANGER.
+
 ## 2026-09-24 — fold tip-hardneg-r8 → codigo-vivo-tip
 Rebase `270ce46`/`c964dcc` onto `d892398` → `afd52c9`+`32b0b14` FF. CPU unified **1.0** (re-smoke); R8 52/52·44/44; R7 52/52·44/44; LP 43/43·32/32; R1–R6 held; motion **44%**; `wired_to_vlm`; freezes retained incl. scaffold_motion + r7 + post_od2. Freeze `codigo_vivo_tip_r8_100pct_20260924_130950`. Distance-danger **not** folded. See SCOREBOARD + TIP-R8.
 

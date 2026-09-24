@@ -1,10 +1,12 @@
 # FRONTIER — tip-distance-danger (30–70 m DANGER ZONE polish)
 
-**Branch:** `frontier/tip-distance-danger`  
-**Base tip SHA:** `69655dd` (`frontier/codigo-vivo-tip`)  
+**Status:** **FOLDED** into `frontier/codigo-vivo-tip` @ `da55eac` (2026-09-24 13:12:43 ET; pre-rebase `110bcbc`)  
+**Branch:** `frontier/tip-distance-danger` (rebased; source kept) · tip `frontier/codigo-vivo-tip`  
+**Base tip at fold:** `e2a950d` (post scaffold-motion + R8) · originally from `69655dd`  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-distance-danger` (Mac-111)  
-**When:** 2026-09-24 ~13:05 ET  
-**Scope:** Side-branch only — does **not** touch tip-cv / tip-scaffold-motion / tip-hardneg-r7 / tip-hardneg-r8.
+**When:** polish ~13:05 ET · fold 2026-09-24 13:12:43 ET · Mac-111 (`074c6626-…`)  
+**Freeze:** `codigo_vivo_tip_distance_danger_100pct_20260924_131243`  
+**Claim:** NO quantum advantage. Classical floor-scale CPU heuristic only (synth pinhole).
 
 ## LOCK (Anthony)
 
@@ -101,3 +103,15 @@ python examples/distance_est/eval_heuristic.py --contam-self-test
 - No CloudAgent.
 - No write to `data/lora_adapter/`.
 - No inverse_planning corridor mix (ablation compare only).
+
+
+## FOLDED into tip
+
+**When:** 2026-09-24 13:12:43 ET · Mac-111 (`074c6626-…`)  
+**Method:** rebase `frontier/tip-distance-danger` (`110bcbc`) onto tip `e2a950d` → `da55eac`; FF into tip (clean; no file conflicts).  
+**Prior freezes retained (not abandoned):** platform, mlx_r3, post_polish, R5, label_protect, R6, post_od2, R7, scaffold_motion, **R8** `codigo_vivo_tip_r8_100pct_20260924_130950`.  
+**Re-smoke:** mixed (d) **1.0**; R8 **52/52·44/44**; LP **43/43·32/32**; pillars **26/26**; smoke **12/12**; motion coverage **44%**; `wired_to_vlm=true`; `gt_leak=false`; `ent_never_on_python=true`.  
+**Distance probe recheck:** 30–70 m DZ **100%** (orig 527/527 · danger50 915/915); ~50 m **100%**; future-pred DZ +dist **97.3% / 96.59%**; tracking DZ **100%**; anti-contam **CLEAN**.  
+**Not folded:** tip-collision-pred (still out).  
+**Adapters:** `data/lora_adapter/` RO mtime unchanged (2026-09-24 10:57:17).
+

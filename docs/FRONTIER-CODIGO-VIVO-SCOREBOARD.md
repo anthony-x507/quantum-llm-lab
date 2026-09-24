@@ -625,6 +625,27 @@ Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. 
 **Key honesty:** ent2 still **+1.0**; quantum alone hurts py/vis; dual-lane protects. Platform / mlx_r3 / polish_r4 freezes **retained**.
 
 
+
+## Distance-danger (30–70 m DZ) — FOLDED
+
+**When:** polish ~13:05 ET · fold 2026-09-24 13:12:43 ET · Mac-111 · rebase `110bcbc` onto `e2a950d` → `da55eac` FF  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-DISTANCE-DANGER.md`  
+**Freeze:** `codigo_vivo_tip_distance_danger_100pct_20260924_131243`
+
+| Surface | Result |
+|---------|--------|
+| Mixed (d) unified | **1.0** (py/ent/vis) |
+| 30–70 m DZ (orig / danger50) | **100%** / **100%** (MAE 1.49 / 0.73 m) |
+| ~50 m band | **100%** (+51.31 pp vs 48.69) |
+| future-pred DZ +dist | **97.3%** / **96.59%** |
+| tracking DZ | **100%** |
+| R8 / LP | **52/52·44/44** / **43/43·32/32** |
+| pillars / smoke | **26/26** / **12/12** |
+| motion coverage | **44%** (held) |
+| `wired_to_vlm` / gt_leak / `ent_never_on_python` | **true** / **false** / **true** |
+
+**CPU re-smoke after fold:** unified **1.0**; R8+LP held; DZ probe reconfirmed; freezes retained incl. r8 + scaffold_motion + r7 + post_od2 + LP + r6 + priors. Adapters RO. **Collision-pred not folded**.
+
 ## Hardneg R8 — FOLDED
 
 **When:** polish ~12:56–1:01 ET · fold 2026-09-24 13:09:50 ET · Mac-111 · rebase `270ce46`/`c964dcc` onto `d892398` → `afd52c9`+`32b0b14` FF  
@@ -642,7 +663,7 @@ Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. 
 | motion coverage | **44%** (held) |
 | `wired_to_vlm` / gt_leak / `ent_never_on_python` | **true** / **false** / **true** |
 
-**CPU re-smoke after fold:** unified **1.0**; R8 held; freezes retained incl. scaffold_motion + r7 + post_od2 + LP + r6 + priors. Adapters RO. **Distance-danger not folded** (in flight).
+**CPU re-smoke after fold:** unified **1.0**; R8 held; freezes retained incl. scaffold_motion + r7 + post_od2 + LP + r6 + priors. Adapters RO. Distance-danger folded later — see Distance-danger section.
 
 
 ## Scaffold-motion (RGB cue honesty) — FOLDED

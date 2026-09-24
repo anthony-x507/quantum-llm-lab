@@ -13,7 +13,7 @@
 - `data/lora_adapter/` READ-ONLY. No merge to `main`. No CloudAgent.
 - Keep `ent_never_on_python=true`, `prompt_touches_gt=false`.
 - R1 / R2 / R3 / R4 / R5 / R6 / R7 / label-protect fixtures must still hold after R8 reinforce.
-- Tip-cv is the fold destination; do **not** touch tip-scaffold-motion / tip-distance-danger / tip-hardneg-r7 worktrees. Distance-danger still in flight — **not** folded.
+- Tip-cv is the fold destination; do **not** touch tip-scaffold-motion / tip-distance-danger / tip-hardneg-r7 worktrees. Distance-danger later folded — see `docs/FRONTIER-CODIGO-VIVO-TIP-DISTANCE-DANGER.md`.
 
 ## R8 families (≠ R1–R7 / ≠ label-protect)
 
@@ -82,4 +82,4 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 **Method:** rebase `frontier/tip-hardneg-r8` (`270ce46` / polish `c964dcc`) onto tip `d892398` → content `afd52c9` + polish pin `32b0b14`; FF into tip. Mixed JSON conflicts kept tip (re-smoke).  
 **Prior freezes retained (not abandoned):** platform, mlx_r3, post_polish, R5, label_protect, R6, post_od2, R7, **scaffold_motion** `codigo_vivo_tip_scaffold_motion_100pct_20260924_130131`, polish_r8.  
 **Re-smoke:** mixed (d) **1.0**; R1–R8 routers **18/18 · 22/22 · 35/35 · 40/40 · 44/44 · 48/48 · 52/52 · 52/52**; R3–R8/LP verifier **28/28 · 32/32 · 36/36 · 40/40 · 44/44 · 44/44 · 32/32**; LP **43/43**; pillars **26/26**; smoke **12/12**; motion coverage **44%**; `wired_to_vlm=true`; `gt_leak=false`; `ent_never_on_python=true`.  
-**Not folded:** tip-distance-danger (still in flight).
+**Later folded:** tip-distance-danger @ `da55eac` / freeze `codigo_vivo_tip_distance_danger_100pct_20260924_131243` (was in flight at R8 fold).
