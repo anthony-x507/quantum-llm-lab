@@ -42,7 +42,7 @@ def main() -> int:
     )
     print(
         json.dumps(
-            {k: base[k] for k in ("n", "parse_rate", "compile_rate", "jev_approve_rate", "used_vlm")},
+            {k: base[k] for k in ("n", "parse_rate", "compile_rate", "jev_approve_rate", "domain_acc", "label_acc", "energy_ok_rate", "unique_gate_combos", "used_vlm")},
             indent=2,
         )
     )
@@ -62,7 +62,7 @@ def main() -> int:
         )
         print(
             json.dumps(
-                {k: ft[k] for k in ("n", "parse_rate", "compile_rate", "jev_approve_rate", "used_vlm")},
+                {k: ft[k] for k in ("n", "parse_rate", "compile_rate", "jev_approve_rate", "domain_acc", "label_acc", "energy_ok_rate", "unique_gate_combos", "used_vlm")},
                 indent=2,
             )
         )
@@ -73,9 +73,18 @@ def main() -> int:
             "parse_rate": ft["parse_rate"] - base["parse_rate"],
             "compile_rate": ft["compile_rate"] - base["compile_rate"],
             "jev_approve_rate": ft["jev_approve_rate"] - base["jev_approve_rate"],
+            "domain_acc": ft.get("domain_acc", 0) - base.get("domain_acc", 0),
+            "label_acc": ft.get("label_acc", 0) - base.get("label_acc", 0),
         }
         d = report["delta"]["jev_approve_rate"]
         print(f"\nMejora Jev APROBAR: {d:+.0%} (meta: +20 puntos)")
+        print(
+            f"FT domain_acc={ft.get('domain_acc', 0):.2f} "
+            f"label_acc={ft.get('label_acc', 0):.2f} "
+            f"energy_ok={ft.get('energy_ok_rate', 0):.2f} "
+            f"gate_combos={ft.get('unique_gate_combos', 0)} "
+            f"(meta label≥0.7)"
+        )
         ok = d >= 0.20
         print("Criterio de éxito:", "PASS" if ok else "NO PASS aún")
 

@@ -27,3 +27,14 @@ data/train_lora.log
 data/lora_dataset_hf/
 data/train_lora_smoke.pid
 data/train_lora_smoke_fg.log
+
+# Night run artifacts / archives (keep out of git)
+data/lora_adapter_pre_*/
+data/train_lora_*.log
+data/train_lora_*.pid
+data/eval_lora_*.log
+data/TRAIN_LOCK.txt
+data/EVAL_LOCK.txt
+data/experiment_scenes/
+examples/*\ 2.py
+examples/*.bak-*

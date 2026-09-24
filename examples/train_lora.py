@@ -113,7 +113,7 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
             ),
         }
 
-    # fall / figuras (default) — ≥4 plantillas distintas (PASO 5 diversity)
+    # fall / figuras (default) — ≥6 plantillas distintas (PASO 5+ diversity)
     rest = meta.get("restitution")
     if meta.get("energy_loss_per_bounce") is not None:
         loss = float(meta["energy_loss_per_bounce"])
@@ -126,23 +126,33 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
     theta = round(0.2 + min(1.0, max(0.0, loss)) * 1.0, 3)
     n_bounce = len(meta.get("bounce_frames") or meta.get("rebotes") or [])
     shape = str(meta.get("shape", "?"))
+    surface = str(meta.get("surface") or "")
     cond = str(meta.get("gravity_condition") or meta.get("condition") or "vacuum_freefall")
     multi = bool(meta.get("multi_object"))
 
     # Deterministic template pick from physics cues (not gold labels).
     # Templates stay inside Jev-allowed gates: h,x,y,z,cx,ry.
-    if cond in ("moon_g", "mars_g") or loss < 0.25:
+    # Each branch must produce a DISTINCT gate-name fingerprint.
+    if surface in ("ramp",) or shape in ("triangle",):
+        # ramp / wedge: Y then RY (tilt signature)
+        gates = [["y", 0], ["ry", 0, theta], ["h", 1]]
+        tpl = "ramp_yry"
+    elif surface in ("soft_lossy_floor",) or (loss >= 0.55 and n_bounce >= 1):
+        # soft floor / high loss: Z phase then dissipative RY
+        gates = [["h", 0], ["z", 0], ["ry", 0, theta]]
+        tpl = "soft_zry"
+    elif cond in ("moon_g", "mars_g") or loss < 0.25:
         # low-g / low-loss: soft RY only (energy almost conserved)
         gates = [["h", 0], ["ry", 0, round(theta * 0.4, 3)]]
         tpl = "soft_ry"
+    elif cond == "air_drag" or (n_bounce >= 2 and not multi):
+        # drag / rebotes: dissipative chain (no CX) — distinct from wind
+        gates = [["h", 0], ["ry", 0, theta], ["x", 1], ["ry", 1, round(theta * 0.6, 3)]]
+        tpl = "drag_bounce"
     elif cond == "lateral_wind" or multi:
-        # wind / multi-object: correlaciona con CX luego RY en ambos
+        # wind / multi-object: CX then dual RY
         gates = [["h", 0], ["cx", 0, 1], ["ry", 1, theta], ["ry", 0, round(theta * 0.5, 3)]]
         tpl = "wind_dual_ry"
-    elif cond == "air_drag" or n_bounce >= 2:
-        # drag / rebotes: H+CX+RY clásico + second RY
-        gates = [["h", 0], ["cx", 0, 1], ["ry", 1, theta], ["ry", 0, round(theta * 0.5, 3)]]
-        tpl = "drag_bounce"
     elif shape in ("star", "irregular_polygon", "ring"):
         # formas irregulares: X+RY (sin CX) — firma distinta
         gates = [["x", 0], ["ry", 0, theta], ["h", 1]]
@@ -362,6 +372,8 @@ def evaluate_subset(
             print(f"[warn] VLM no disponible ({exc}); métricas con targets gold.", file=sys.stderr)
 
     parsed = compiled = approved = 0
+    domain_hits = label_hits = energy_ok_n = energy_loss_n = 0
+    gate_combos: set[tuple[str, ...]] = set()
     details: list[dict[str, Any]] = []
     for row in sample:
         proposal: dict[str, Any]
@@ -433,6 +445,34 @@ def evaluate_subset(
         verdict = arbitrate(proposal, scene, sim)
         if verdict["verdict"] == "APROBAR":
             approved += 1
+
+        gold_dom = str((row.get("target") or {}).get("domain") or row["meta"].get("domain") or "")
+        gold_lab = str((row.get("target") or {}).get("label") or row["meta"].get("label") or "")
+        pred_dom = str(proposal.get("domain") or "")
+        pred_lab = str(proposal.get("label") or "")
+        ok_domain = bool(pred_dom) and pred_dom == gold_dom
+        ok_label = bool(pred_lab) and pred_lab == gold_lab
+        if ok_domain:
+            domain_hits += 1
+        if ok_label:
+            label_hits += 1
+        # energy consistency: when scene has bounce loss, proposal must not claim perfect conservation
+        from jev_arbiter import _scene_has_bounce_energy_loss, _claims_perfect_energy
+        has_loss = _scene_has_bounce_energy_loss(scene)
+        energy_ok = (not has_loss) or (not _claims_perfect_energy(proposal))
+        if energy_ok:
+            energy_ok_n += 1
+        if has_loss:
+            energy_loss_n += 1
+        gnames = []
+        for g in (proposal.get("gates") or []):
+            if isinstance(g, (list, tuple)) and g:
+                gnames.append(str(g[0]).lower())
+            elif isinstance(g, str):
+                gnames.append(g.lower())
+        if gnames:
+            gate_combos.add(tuple(gnames))
+
         details.append(
             {
                 "scene_id": row["scene_id"],
@@ -441,6 +481,14 @@ def evaluate_subset(
                 "compile": ok_compile,
                 "jev": verdict["verdict"],
                 "reason": verdict["reason"],
+                "gold_domain": gold_dom,
+                "pred_domain": pred_dom,
+                "ok_domain": ok_domain,
+                "gold_label": gold_lab,
+                "pred_label": pred_lab,
+                "ok_label": ok_label,
+                "energy_ok": energy_ok,
+                "gate_names": gnames,
             }
         )
 
@@ -450,6 +498,11 @@ def evaluate_subset(
         "parse_rate": parsed / n,
         "compile_rate": compiled / n,
         "jev_approve_rate": approved / n,
+        "domain_acc": domain_hits / n,
+        "label_acc": label_hits / n,
+        "energy_ok_rate": energy_ok_n / n,
+        "energy_loss_scenes": energy_loss_n,
+        "unique_gate_combos": len(gate_combos),
         "details": details,
         "used_vlm": use_vlm,
         "adapter": adapter,

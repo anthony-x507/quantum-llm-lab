@@ -1,0 +1,100 @@
+{
+  "rows": 280,
+  "fall_templates": {
+    "ramp_yry": 35,
+    "soft_ry": 34,
+    "soft_zry": 14,
+    "classic_hcxry": 3,
+    "wind_dual_ry": 11,
+    "drag_bounce": 2,
+    "irregular_xry": 3
+  },
+  "n_fall_templates": 7,
+  "unique_gate_name_combos": 11,
+  "top": [
+    {
+      "gates": [
+        "h"
+      ],
+      "n": 86
+    },
+    {
+      "gates": [
+        "h",
+        "cx"
+      ],
+      "n": 60
+    },
+    {
+      "gates": [
+        "y",
+        "ry",
+        "h"
+      ],
+      "n": 35
+    },
+    {
+      "gates": [
+        "h",
+        "ry"
+      ],
+      "n": 34
+    },
+    {
+      "gates": [
+        "h",
+        "h"
+      ],
+      "n": 23
+    },
+    {
+      "gates": [
+        "h",
+        "z",
+        "ry"
+      ],
+      "n": 14
+    },
+    {
+      "gates": [
+        "h",
+        "cx",
+        "ry",
+        "ry"
+      ],
+      "n": 11
+    },
+    {
+      "gates": [
+        "h",
+        "x"
+      ],
+      "n": 9
+    },
+    {
+      "gates": [
+        "h",
+        "cx",
+        "ry"
+      ],
+      "n": 3
+    },
+    {
+      "gates": [
+        "x",
+        "ry",
+        "h"
+      ],
+      "n": 3
+    },
+    {
+      "gates": [
+        "h",
+        "ry",
+        "x",
+        "ry"
+      ],
+      "n": 2
+    }
+  ]
+}
