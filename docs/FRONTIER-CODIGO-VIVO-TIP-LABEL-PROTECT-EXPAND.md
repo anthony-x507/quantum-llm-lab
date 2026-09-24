@@ -9,7 +9,7 @@
 **When (side):** 2026-09-24 ~14:47–14:50 ET · **Fold:** 2026-09-24 15:03:06 ET  
 **Side freeze:** `codigo_vivo_tip_label_protect_expand_100pct_20260924_145044`  
 **Fold freeze:** `codigo_vivo_tip_label_protect_expand_fold_100pct_20260924_150306`  
-**Fold feat SHA:** `PENDING`  
+**Fold feat SHA:** `703cc0f` (`703cc0f1f98d57dd4e3e8b16a3eabb2aef6de630`)
 **Claim:** NO quantum advantage. Expand + reinforce fall/super **domain label** protect coverage; tip vis stays BASE.
 
 ## SHA / setup

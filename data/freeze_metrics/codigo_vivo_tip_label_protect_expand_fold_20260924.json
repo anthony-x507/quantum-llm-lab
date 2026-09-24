@@ -19,6 +19,8 @@
   "base_tip_sha": "f0dfb11",
   "source_sha": "f2b5031",
   "source_feat_sha": "5890883",
-  "fold_feat_sha": "PENDING",
-  "git_sha": "PENDING"
+  "fold_feat_sha": "703cc0f1f98d57dd4e3e8b16a3eabb2aef6de630",
+  "git_sha": "703cc0f1f98d57dd4e3e8b16a3eabb2aef6de630",
+  "fold_feat_sha_short": "703cc0f",
+  "git_sha_short": "703cc0f"
 }

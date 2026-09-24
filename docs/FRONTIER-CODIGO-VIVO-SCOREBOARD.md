@@ -14,7 +14,7 @@
 | R13 · R12 · R5 · R7 | **52/52 · 52/52 · 44/44 · 52/52** |
 | future track · far MAE · DZ/mid/TTI/inv | **retained** (99.34% · 2.600 m · 100%) |
 | Freeze | `codigo_vivo_tip_label_protect_expand_fold_100pct_20260924_150306` |
-| Tip SHA (fold) | `PENDING` |
+| Tip SHA (fold) | `703cc0f` |
 | Policy | RO `data/lora_adapter/`; no main; pillars+circ+R13+future-r3+far floors kept; R14+ not folded |
 
 **Method:** merge-port `5890883`/`f2b5031` onto tip `f0dfb11`; +21 router/+10 python LP cases + router domain_label/tax-API/EN valid-JSON neg/gates=[] docs cancels; keep pillars PYTHON_RE/no-python/quantum-gates-vs-ops + circ routing extras; re-smoke LP+mixed CPU+smoke; R13/R12/R5/R7/pillars/circ floors.

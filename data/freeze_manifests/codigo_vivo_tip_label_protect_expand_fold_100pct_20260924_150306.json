@@ -82,8 +82,8 @@
     "codigo_vivo_tip_label_protect_expand_100pct_20260924_145044"
   ],
   "note": "LP expand fold: tip 43/43\u219264/64 router \u00b7 32/32\u219242/42 verifier (+21/+10; side was 43\u219264 \u00b7 32\u219242); mixed 1.0; pillars 37/37 retained; circ 5/5 retained; R13 52/52; R14+ not folded",
-  "fold_feat_sha": "PENDING",
-  "fold_feat_sha_short": "PENDING",
-  "git_sha": "PENDING",
-  "git_sha_short": "PENDING"
+  "fold_feat_sha": "703cc0f1f98d57dd4e3e8b16a3eabb2aef6de630",
+  "fold_feat_sha_short": "703cc0f",
+  "git_sha": "703cc0f1f98d57dd4e3e8b16a3eabb2aef6de630",
+  "git_sha_short": "703cc0f"
 }
