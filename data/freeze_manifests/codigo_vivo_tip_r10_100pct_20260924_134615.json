@@ -1,0 +1,41 @@
+{
+  "schema": "codigo_vivo_tip_rN_100pct",
+  "frozen_at_et": "2026-09-24 13:46:15 ET",
+  "domain": "codigo_vivo_tip_r10",
+  "pct": 100,
+  "band": "100pct",
+  "git_sha": "PENDING_FOLD",
+  "git_sha_short": "PENDING",
+  "artifact": "data/frontier_moe_verifier_hardneg_r10.json",
+  "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
+  "metrics": {
+    "r10_router": "52/52",
+    "r10_verifier_alone": 1.0,
+    "r10_unified": 1.0,
+    "mixed_d_unified": 1.0,
+    "r9_router": "52/52",
+    "r9_verifier": "44/44",
+    "pillars": "26/26",
+    "smoke": "12/12",
+    "motion_coverage_known": 0.975,
+    "collision_physics_pct": 100.0,
+    "collision_n_eval_seqs": 40,
+    "ent_never_on_python": true,
+    "wired_to_vlm": true,
+    "gt_leak": false,
+    "floor_held": true
+  },
+  "floors": {
+    "mixed_d_unified": 0.9667,
+    "held": true,
+    "actual": 1.0
+  },
+  "policy": "RO data/lora_adapter/; no merge main; retain motion_r3/r9/collision_n/motion_r2/collision_pred/distance_danger/r8/scaffold_motion+priors; do NOT fold vision-ground/inverse-r2; anti-contam",
+  "base_tip_sha": "6624df1e9bdad1cdb7ddb4cb925ae018bb93968c",
+  "rebase_feat_sha": "d4b2d4f01e54c28ef6937bbb4c33a27ecc71d6de",
+  "rebase_pin_sha": "06fcc676b3d6156122c246c086380121ee45adcf",
+  "source_branch": "frontier/tip-hardneg-r10",
+  "note": "Fold tip-hardneg-r10 into codigo-vivo-tip post motion-r3; re-smoke held floor 1.0; R10 52/52\u00b744/44; motion 97.5%",
+  "freeze_id": "codigo_vivo_tip_r10_100pct_20260924_134615",
+  "fold_commit": "PENDING_FOLD"
+}

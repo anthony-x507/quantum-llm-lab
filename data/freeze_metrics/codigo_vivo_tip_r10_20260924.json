@@ -1,8 +1,16 @@
 {
   "frontier": "codigo-vivo-tip-r10",
-  "overall_d_unified": 1.0,
+  "written_et": "2026-09-24 13:46:15 ET",
+  "freeze_id": "codigo_vivo_tip_r10_100pct_20260924_134615",
+  "mixed_d_unified": 1.0,
   "r10_router": "52/52",
   "r10_verifier": "44/44",
-  "freeze": true,
-  "written_et": "2026-09-24 1:45:00 ET"
+  "r9_router": "52/52",
+  "r9_verifier": "44/44",
+  "motion_coverage_known": 0.975,
+  "collision_physics_pct": 100.0,
+  "pillars": "26/26",
+  "smoke": "12/12",
+  "ent_never_on_python": true,
+  "floor_held": true
 }

@@ -1,3 +1,6 @@
+## 2026-09-24 — fold tip-hardneg-r10 → codigo-vivo-tip
+Rebase `b281e88`/`677c7ce` onto `6624df1` → `d4b2d4f`+`06fcc67` FF (skipped redundant R9-priors `c65cc04`). CPU unified **1.0** (re-smoke); R10 **52/52·44/44**; R9 **52/52·44/44**; motion **97.5%**; collision physics **100%** (n=40); pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_r10_100pct_20260924_134615`. Vision-ground / inverse-r2 **not** folded. See SCOREBOARD + TIP-R10.
+
 ## 2026-09-24 — tip-hardneg-r10 polish (side)
 Branch `frontier/tip-hardneg-r10` from tip `3d05cbe`. R10 router **52/52** · verifier **44/44**; mixed (d) **1.0**; R1–R9+LP held; `ent_never_on_python`. Novel: AsyncAPI / Nomad / Vault / Istio / ArgoCD / Tekton / FlatBuffers / Cap'n Proto / Solidity / Rust cfg / Kotlin / csproj / SPARQL / Cypher / Earthfile. See `docs/FRONTIER-CODIGO-VIVO-TIP-R10.md`.
 
