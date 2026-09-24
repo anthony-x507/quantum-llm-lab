@@ -1,3 +1,5 @@
+> **SSOT 2026-09-24:** el plan vivo es [`PLAN-MAESTRO-PARTE-1.md`](PLAN-MAESTRO-PARTE-1.md). Este archivo conserva el mapa histórico de fases 0–5.
+
 # Plan maestro — Agent Lab (visión cuántica + LoRA + QEC)
 
 Roadmap único para `anthony-x507/Agent-Lab-` (y espejo `quantum-llm-lab`). Todo **local** (M4 128 GB / Studio 36 GB). Sin Cloud Agents para este carril.
