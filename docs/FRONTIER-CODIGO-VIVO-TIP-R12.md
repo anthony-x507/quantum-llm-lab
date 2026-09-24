@@ -53,7 +53,7 @@ Rise: 6→52 hits (**+766%** rate vs pre 0.1154→1.0; **+88.46 pp**) ≥80% fre
 
 | Manifest | pct |
 |----------|-----|
-| `data/freeze_manifests/tip_moe_verifier_polish_r12_100pct_20260924_140230.json` | **100** |
+| `data/freeze_manifests/tip_moe_verifier_polish_r12_100pct_20260924_140230.json` | **100** (sha ) |
 
 Evidence: `data/freeze_metrics/codigo_vivo_tip_adv_r12_20260924.json`
 

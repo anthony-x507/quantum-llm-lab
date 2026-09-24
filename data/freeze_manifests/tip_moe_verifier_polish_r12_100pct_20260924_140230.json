@@ -1,0 +1,32 @@
+{
+  "schema": "tip_moe_verifier_polish_rN_100pct",
+  "frozen_at_et": "2026-09-24 2:02:30 ET",
+  "domain": "codigo_vivo_tip_r12",
+  "pct": 100,
+  "band": "100pct",
+  "git_sha": "eb58bb86d0a1a577e0b8fc43c3616f8e2eec2a20",
+  "git_sha_short": "eb58bb8",
+  "artifact": "data/frontier_moe_verifier_hardneg_r12.json",
+  "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
+  "metrics": {
+    "r12_router": "52/52",
+    "r12_verifier_alone": 1.0,
+    "r12_unified": 1.0,
+    "mixed_d_unified": 1.0,
+    "ent_never_on_python": true,
+    "pre_router": "6/52",
+    "rise": "6/52\u219252/52"
+  },
+  "floors": {
+    "mixed_d_unified": 0.9667,
+    "held": true,
+    "r10_router_verifier": "52/52\u00b744/44",
+    "motion_known": 1.0,
+    "collision_physics": 1.0,
+    "inverse_cv": 0.9982
+  },
+  "policy": "RO data/lora_adapter/; no merge main; R1\u2013R10+LP held; anti-contam; not-folded",
+  "polish_commit": "eb58bb8",
+  "note": "R12 hardneg polish on tip a27b6fd (post motion-r4) on frontier/tip-hardneg-r12; R11 side untouched",
+  "base_tip_sha": "a27b6fd32cb1a989e9e6a6ba12e70aaf5282f67e"
+}
