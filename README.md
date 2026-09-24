@@ -250,3 +250,4 @@ python examples/eval_lora.py --adapter data/lora_adapter --n-test 10
 
 Carga: `load(..., adapter_path="data/lora_adapter")` con mlx-vlm.
 
+QEC Fase 3: `docs/quantum_error_correction.md` — `python examples/qec_robustness.py --self-test`.

@@ -124,6 +124,36 @@ model, processor = load(
 
 O CLI: `python -m mlx_vlm.generate --model ... --adapter-path data/lora_adapter ...`
 
+
+
+## Fase 3: Corrección de errores cuánticos (después del LoRA básico)
+
+**Siguiente paso** cuando el LoRA joint (caídas + entrelazamiento + superposición) ya esté entrenado y evaluado.
+
+Documento: [`docs/quantum_error_correction.md`](quantum_error_correction.md).  
+Demo + tests: `python examples/qec_robustness.py --self-test`.
+
+### Qué aporta
+
+Capa **experimental** de robustez: inspirada en código de superficie / Shor. Trata un prompt adversarial como “error Pauli” sobre una rejilla 3×3 de representaciones internas; el **síndrome** detecta drift y el decoder **revierte** al estado coherente **antes** de generar la respuesta.
+
+### Dependencias
+
+- **PennyLane** ≥ 0.38 (ya en `requirements.txt` del lab).
+- LoRA Fase 1–2 opcional para la demo del código (la simulación QEC corre sola).
+- Cablear activaciones reales del 8B (MLX hooks) = sub-fase 3.b; la demo actual usa embedding toy del texto.
+
+### Criterios de éxito (Fase 3)
+
+| Criterio | Meta |
+|----------|------|
+| Self-test | `qec_robustness.py --self-test` exit 0 |
+| Prompt limpio | Síndrome trivial; respuesta coherente |
+| Prompt adversarial | Síndrome ≠ 0; tras corrección, respuesta = baseline coherente (no filtrada/jailbreak) |
+| PennyLane | Circuito 3×3 detecta X inyectado en qubit de datos |
+
+No bloquea el train LoRA: se puede desarrollar en paralelo, pero se **posiciona** como Fase 3 en el roadmap del adapter.
+
 ## Fuera de alcance (por ahora)
 
 - Fine-tune completo de pesos.
