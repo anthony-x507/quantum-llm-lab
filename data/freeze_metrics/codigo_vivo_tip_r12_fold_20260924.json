@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-r12-fold",
   "written_et": "2026-09-24 14:28:30 ET",
-  "tip_sha": "PENDING_FOLD",
-  "tip_sha_short": "PENDING",
+  "tip_sha": "db6d93ea9d4c3a86b6faead55353dedcc3dbf081",
+  "tip_sha_short": "db6d93e",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-hardneg-r12",
   "rebase_onto": "9a0de24",
