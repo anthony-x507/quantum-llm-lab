@@ -1,6 +1,6 @@
 {
   "frontier": "C3-moe-verifier-codigo-vivo",
-  "written": "2026-09-24 13:50:37",
+  "written": "2026-09-24 14:49:23",
   "mode": "hardneg-cpu",
   "router_method": "heuristic",
   "claims": [
@@ -16,7 +16,7 @@
   },
   "ro_lock": {
     "ro_paths_checked": [
-      "/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r11/data/lora_adapter",
+      "/Users/anthony/Documents/quantum-llm-lab-tip-label-protect-expand/data/lora_adapter",
       "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter"
     ],
     "script_writes_to_lora_adapter": false,
@@ -183,14 +183,14 @@
     }
   },
   "python_paths": {
-    "n_items": 32,
+    "n_items": 42,
     "proposer": "heuristic",
     "router_method": "heuristic",
     "rounds_max": 2,
     "paths": {
       "a_single_shot_no_moe": {
         "path": "a_single_shot_no_moe",
-        "n": 32,
+        "n": 42,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 0.0,
         "delta_solve_rate": 0.0,
@@ -198,7 +198,7 @@
         "solved_loop": 0,
         "repair_success_rate": 0.0,
         "repair_helped_n": 0,
-        "failed_single_n": 32,
+        "failed_single_n": 42,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
@@ -483,6 +483,96 @@
           },
           {
             "id": "lpv_ctrl_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_dlchat_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_dlsnake_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_dlsnake_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_taxapi_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_taxapi_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_gedocs_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_negvj_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_negvj_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_qbmeta_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_ctrl_dl_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -494,7 +584,7 @@
       },
       "b_moe_alone": {
         "path": "b_moe_alone",
-        "n": 32,
+        "n": 42,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 0.0,
         "delta_solve_rate": 0.0,
@@ -502,7 +592,7 @@
         "solved_loop": 0,
         "repair_success_rate": 0.0,
         "repair_helped_n": 0,
-        "failed_single_n": 32,
+        "failed_single_n": 42,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
@@ -793,10 +883,100 @@
             "repair_helped": false,
             "prompt_touches_gt": false,
             "actions": []
+          },
+          {
+            "id": "lpv_dlchat_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_dlsnake_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_dlsnake_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_taxapi_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_taxapi_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_gedocs_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_negvj_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_negvj_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_qbmeta_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "lpv_ctrl_dl_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
           }
         ],
-        "n_items_total": 32,
-        "n_routed_python": 32,
+        "n_items_total": 42,
+        "n_routed_python": 42,
         "n_routed_away": 0,
         "solve_rate_on_python_lane": 0.0,
         "routing": [
@@ -991,20 +1171,80 @@
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_dlchat_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_dlsnake_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_dlsnake_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_taxapi_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_taxapi_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_gedocs_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_negvj_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_negvj_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_qbmeta_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_ctrl_dl_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
           }
         ]
       },
       "c_verifier_alone": {
         "path": "c_verifier_alone",
-        "n": 32,
+        "n": 42,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 1.0,
         "delta_solve_rate": 1.0,
         "solved_single": 0,
-        "solved_loop": 32,
+        "solved_loop": 42,
         "repair_success_rate": 1.0,
-        "repair_helped_n": 32,
-        "failed_single_n": 32,
+        "repair_helped_n": 42,
+        "failed_single_n": 42,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
@@ -1351,6 +1591,116 @@
           },
           {
             "id": "lpv_ctrl_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_dlchat_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_dlsnake_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_dlsnake_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_taxapi_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_taxapi_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_gedocs_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_negvj_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_negvj_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_qbmeta_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_ctrl_dl_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1364,15 +1714,15 @@
       },
       "d_moe_verifier_unified": {
         "path": "d_moe_verifier_unified",
-        "n": 32,
+        "n": 42,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 1.0,
         "delta_solve_rate": 1.0,
         "solved_single": 0,
-        "solved_loop": 32,
+        "solved_loop": 42,
         "repair_success_rate": 1.0,
-        "repair_helped_n": 32,
-        "failed_single_n": 32,
+        "repair_helped_n": 42,
+        "failed_single_n": 42,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
@@ -1727,10 +2077,120 @@
             "actions": [
               "strip_trailing_prose"
             ]
+          },
+          {
+            "id": "lpv_dlchat_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_dlsnake_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_dlsnake_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_taxapi_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_taxapi_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_gedocs_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_negvj_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_negvj_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_qbmeta_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "lpv_ctrl_dl_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
           }
         ],
-        "n_items_total": 32,
-        "n_routed_python": 32,
+        "n_items_total": 42,
+        "n_routed_python": 42,
         "n_routed_away": 0,
         "solve_rate_on_python_lane": 1.0,
         "routing": [
@@ -1925,6 +2385,66 @@
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_dlchat_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_dlsnake_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_dlsnake_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_taxapi_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_taxapi_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_gedocs_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_negvj_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_negvj_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_qbmeta_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "lpv_ctrl_dl_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
           }
         ]
       }
@@ -1932,7 +2452,7 @@
     "comparison_table": [
       {
         "path": "baseline_single_no_moe",
-        "n": 32,
+        "n": 42,
         "metric": "solve_rate_single",
         "rate": 0.0,
         "delta_vs_baseline": 0.0,
@@ -1941,7 +2461,7 @@
       },
       {
         "path": "moe_alone_python_lane",
-        "n": 32,
+        "n": 42,
         "metric": "solve_rate_single",
         "rate": 0.0,
         "delta_vs_baseline": 0.0,
@@ -1950,7 +2470,7 @@
       },
       {
         "path": "verifier_alone",
-        "n": 32,
+        "n": 42,
         "metric": "solve_rate_loop",
         "rate": 1.0,
         "delta_vs_baseline": 1.0,
@@ -1959,7 +2479,7 @@
       },
       {
         "path": "moe_verifier_unified_python_lane",
-        "n": 32,
+        "n": 42,
         "metric": "solve_rate_loop",
         "rate": 1.0,
         "delta_vs_baseline": 1.0,
@@ -2008,10 +2528,10 @@
   "notes": [],
   "hardneg_router": {
     "method": "heuristic",
-    "n": 43,
-    "hits": 43,
+    "n": 64,
+    "hits": 64,
     "misses": 0,
-    "score": "43/43",
+    "score": "64/64",
     "rate": 1.0,
     "by_family": {
       "neg_json_valido_tax": {
@@ -2072,6 +2592,41 @@
       "ent_control_fall_super": {
         "n": 5,
         "hits": 5,
+        "rate": 1.0
+      },
+      "domain_label_chat": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      },
+      "domain_label_snake_cfg": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "tax_api_domain_labels": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "gates_empty_docs_tax": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "neg_valid_json_en": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "qubit_metaphor_tax": {
+        "n": 2,
+        "hits": 2,
+        "rate": 1.0
+      },
+      "ent_control_domain_label": {
+        "n": 3,
+        "hits": 3,
         "rate": 1.0
       }
     },
@@ -2506,6 +3061,216 @@
         "adapter": null,
         "prompt_preview": "Responde SOLO JSON válido con claves n_qubits, gates, domain, label. Bell pair e",
         "ent_adapter_blocked": false
+      },
+      {
+        "id": "lp_dlchat_01",
+        "family": "domain_label_chat",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "The domain label field uses fall and superposed values in our taxonomy docs.",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "lp_dlchat_02",
+        "family": "domain_label_chat",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Please confirm domain label=fall is just a taxonomy enum. Thanks.",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "lp_dlchat_03",
+        "family": "domain_label_chat",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "What does domain label superposed mean in the taxonomy? Chat only.",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "lp_dlchat_04",
+        "family": "domain_label_chat",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Ignore domain label fall in the spreadsheet header. Just say ok.",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "lp_dlsnake_01",
+        "family": "domain_label_snake_cfg",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Set domain_label to fall in config.yaml. No code needed.",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "lp_dlsnake_02",
+        "family": "domain_label_snake_cfg",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "domain_label=superposed is an env default. Acknowledge.",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "lp_dlsnake_03",
+        "family": "domain_label_snake_cfg",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "print(len('DOMAIN_LABEL=fall'))\n# env var assignment — taxonomy config. ONLY cod",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "lp_taxapi_01",
+        "family": "tax_api_domain_labels",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Reply JSON only for /v1/domain-labels listing. Taxonomy API docs. No circuit.",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "lp_taxapi_02",
+        "family": "tax_api_domain_labels",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 1. Comment: Reply JSON only for /v1/labels {domain_labe",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "lp_taxapi_03",
+        "family": "tax_api_domain_labels",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "print(len('/v1/domain-labels'))\n# taxonomy API path string. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "lp_gedocs_01",
+        "family": "gates_empty_docs_tax",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Config: gates=[] next to domain=fall label=superposed in the enum table. Docs on",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "lp_gedocs_02",
+        "family": "gates_empty_docs_tax",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Ops marker gates = [] under fall/super taxonomy section. Documentation only.",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "lp_gedocs_03",
+        "family": "gates_empty_docs_tax",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "print(len('gates=[] # domain label fall'))\n# empty gates ops string near taxonom",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "lp_negvj_01",
+        "family": "neg_valid_json_en",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Do not reply with valid JSON. domain label fall is docs taxonomy only.",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "lp_negvj_02",
+        "family": "neg_valid_json_en",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 9. This is NOT valid JSON of a circuit; domain label=fa",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "lp_negvj_03",
+        "family": "neg_valid_json_en",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "print(2)\n# never emit valid JSON here; label=collapsed taxonomy only. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "lp_qbmeta_01",
+        "family": "qubit_metaphor_tax",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Docs mention qubit only as metaphor; real field is domain label fall. Chat ack.",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "lp_qbmeta_02",
+        "family": "qubit_metaphor_tax",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Qubit wording is metaphor only; domain_label=collapsed is taxonomy. Say ok.",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "lp_entdl_01",
+        "family": "ent_control_domain_label",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Dominio fall, labe",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "lp_entdl_02",
+        "family": "ent_control_domain_label",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Reply with valid JSON: n_qubits, gates, domain, label. domain fall_multi, gates=",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "lp_entdl_03",
+        "family": "ent_control_domain_label",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Responde SOLO JSON válido con claves n_qubits, gates, domain, label. Bell pair e",
+        "ent_adapter_blocked": false
       }
     ],
     "fixture_path": "data/bench_live/hardneg_label_protect_mixed_router.json",
@@ -2516,7 +3281,7 @@
   },
   "hardneg_delta": {
     "router_rate": 1.0,
-    "router_score": "43/43",
+    "router_score": "64/64",
     "ent_never_on_python": true,
     "vs_freeze_floor": "hold"
   }

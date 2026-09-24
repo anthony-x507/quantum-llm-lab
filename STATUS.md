@@ -1,3 +1,6 @@
+## 2026-09-24 — tip-label-protect-expand (side · NOT FOLDED)
+Branch `frontier/tip-label-protect-expand` from tip `8beae21` (≥f052420; post R13). LP expand **43→64** router · **32→42** verifier; gap **52/64→64/64**; mixed (d) **1.0**; R2–R12 held; `ent_never_on_python`. Novel: domain_label chat / snake cfg / tax API / gates=[] docs / EN valid-JSON neg / qubit metaphor + ent controls. Adapters RO. See `docs/FRONTIER-CODIGO-VIVO-TIP-LABEL-PROTECT-EXPAND.md`.
+
 ## 2026-09-24 — fold tip-hardneg-r13 → codigo-vivo-tip
 Cherry-pick `304a45b` onto `f052420` → `845a292`. Conflicts: STATUS+mixed/r7–r10/LP JSON ours; router/verifier merged R11+R12+R13 gates. CPU unified **1.0** (re-smoke); R13 **52/52·44/44** (tip before **11/52**); R12 **52/52·44/44**; R11 **52/52**; far MAE **2.600 m** retained; DZ/mid/TTI **100%** retained; inv_cv **100%**; collision physics **100%** (n=40/2850); choose_safest **100%**; pillars 26/26; hardneg 18/18; `wired_to_vlm`; freezes retained incl. distance_far + inverse_r3 + r12 + distance_mid + tti + r11 + motion_r4 + vision_ground + inverse_r2 + r10 + priors. Freeze `codigo_vivo_tip_r13_100pct_20260924_144457`. Future-track / circ / R14+ **not** folded. Tip vis stays BASE. RO `data/lora_adapter/`. See SCOREBOARD + TIP-R13.
 
