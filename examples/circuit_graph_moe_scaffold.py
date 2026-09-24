@@ -188,6 +188,10 @@ def visual_motion_cue(scene_dir) -> dict:
     min points.
     Stage 3: single-hue spatial split or chromatic connected components
     (occlusion / same-tint multi-object / approach geometry).
+    Stage 4 (motion-r3 reinforce): on corr_ambiguous only — tracking continuity
+    densify (every-frame centroids + gap fill) then re-apply frozen honesty;
+    if still unknown, approach/recede relative-range (drel≥0.18) ⇒ independent.
+    Never overrides a known Stage 1–3 cue. Never invents locked-distance labels.
 
     Honesty rules UNCHANGED: dist_cv≥0.10⇒independent; locked dist + high
     |vel_corr|⇒correlated; else unknown. Never reads meta/GT. Never invents
@@ -207,10 +211,11 @@ def visual_motion_cue(scene_dir) -> dict:
     except Exception as exc:  # noqa: BLE001
         return {"cue": "unknown", "reason": f"deps:{type(exc).__name__}", **honesty}
     scene_dir = _P(scene_dir)
-    frames = sorted(scene_dir.glob("frame_*.png"))
-    if not frames:
-        frames = sorted(scene_dir.glob("**/frame_*.png"))
-    frames = frames[::2][:10]
+    frames_all = sorted(scene_dir.glob("frame_*.png"))
+    if not frames_all:
+        frames_all = sorted(scene_dir.glob("**/frame_*.png"))
+    frames_dense = frames_all[::1][:16]
+    frames = frames_all[::2][:10]
     if len(frames) < 3:
         return {"cue": "unknown", "reason": "few_frames", "n_frames": len(frames), **honesty}
 
@@ -445,6 +450,104 @@ def visual_motion_cue(scene_dir) -> dict:
             return None
         return b0, b1
 
+    def _dist_rel(a, b):
+        dist = np.linalg.norm(a - b, axis=1)
+        return float((dist.max() - dist.min()) / (dist.mean() + 1e-6))
+
+    def _continuity_fill(seq):
+        out = list(seq)
+        last = None
+        for i, p in enumerate(out):
+            if p is None and last is not None:
+                out[i] = last
+            elif p is not None:
+                last = p
+        nxt = None
+        for i in range(len(out) - 1, -1, -1):
+            if out[i] is None and nxt is not None:
+                out[i] = nxt
+            elif out[i] is not None:
+                nxt = out[i]
+        return [p for p in out if p is not None]
+
+    def _densify_hues(chosen, min_px: int = 4, min_pts: int = 4):
+        """Re-track the same hue pair on denser frames with gap fill (stage 4)."""
+        if len(chosen) != 2:
+            return None
+        # Only real mask names (not green_a / comp0 splits).
+        mask_names = set(_extended_masks(np.zeros((2, 2, 3), dtype=np.float32)).keys())
+        if any(h not in mask_names for h in chosen):
+            return None
+        series = {h: [] for h in chosen}
+        use = frames_dense if len(frames_dense) >= 4 else frames
+        for fp in use:
+            arr = np.asarray(Image.open(fp).convert("RGB"), dtype=np.float32)
+            ms = _extended_masks(arr)
+            for h in chosen:
+                c = _cent(ms[h], min_px=min_px)
+                series[h].append(c)
+        a = _continuity_fill(series[chosen[0]])
+        b = _continuity_fill(series[chosen[1]])
+        if len(a) < min_pts or len(b) < min_pts:
+            return None
+        n = min(len(a), len(b))
+        return np.asarray(a[:n], dtype=float), np.asarray(b[:n], dtype=float)
+
+    def _stage4_reinforce(chosen, series, track_mode: str, stage: int):
+        """Continuity densify + approach/recede; escalate only on corr_ambiguous."""
+        # 4a — denser continuity retrack of the same hues, frozen honesty.
+        dense = _densify_hues(chosen)
+        if dense is not None:
+            a, b = dense
+            cue, c, dist_cv = _decide(a, b)
+            drel = _dist_rel(a, b)
+            out = {
+                "cue": cue,
+                "vel_corr": round(c, 3),
+                "dist_cv": round(dist_cv, 3),
+                "dist_rel": round(drel, 3),
+                "n": int(len(a)),
+                "hues_chosen": chosen,
+                "track_mode": "continuity_dense",
+                "stage": 4,
+                "stage_from": stage,
+                "prior_track_mode": track_mode,
+                **honesty,
+            }
+            if cue != "unknown":
+                return out
+            # 4b — approach/recede relative range (distance not locked).
+            if drel >= 0.18:
+                out["cue"] = "independent"
+                out["reason"] = None
+                out["track_mode"] = "approach_recede"
+                out.pop("reason", None)
+                return out
+            out["reason"] = "corr_ambiguous"
+            return out
+        # No densify path (split/comp names): approach/recede on existing series.
+        n = min(len(series[0]), len(series[1]))
+        if n >= 3:
+            a = np.asarray(series[0][:n], dtype=float)
+            b = np.asarray(series[1][:n], dtype=float)
+            cue, c, dist_cv = _decide(a, b)
+            drel = _dist_rel(a, b)
+            if cue == "unknown" and drel >= 0.18:
+                return {
+                    "cue": "independent",
+                    "vel_corr": round(c, 3),
+                    "dist_cv": round(dist_cv, 3),
+                    "dist_rel": round(drel, 3),
+                    "n": int(n),
+                    "hues_chosen": chosen,
+                    "track_mode": "approach_recede",
+                    "stage": 4,
+                    "stage_from": stage,
+                    "prior_track_mode": track_mode,
+                    **honesty,
+                }
+        return None
+
     def _pack(chosen, series, track_mode: str, stage: int):
         n = min(len(series[0]), len(series[1]))
         a = np.asarray(series[0][:n], dtype=float)
@@ -461,6 +564,12 @@ def visual_motion_cue(scene_dir) -> dict:
             **honesty,
         }
         if cue == "unknown":
+            # Stage 4: escalate only on corr_ambiguous — never override known.
+            refined = _stage4_reinforce(chosen, series, track_mode, stage)
+            if refined is not None and refined.get("cue") != "unknown":
+                return refined
+            if refined is not None:
+                return refined
             out["reason"] = "corr_ambiguous"
         return out
 

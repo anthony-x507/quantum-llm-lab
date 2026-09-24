@@ -1,0 +1,71 @@
+{
+  "schema": "codigo_vivo_tip_motion_r3_100pct",
+  "frozen_at_et": "2026-09-24 13:33:33 ET",
+  "domain": "codigo_vivo_tip_motion_r3",
+  "pct": 100,
+  "band": "100pct",
+  "git_sha": "PENDING",
+  "git_sha_short": "PENDING",
+  "artifact": "data/frontier_tip_motion_r3_cue_probe.json",
+  "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
+  "metrics": {
+    "mixed_d_unified": 1.0,
+    "python": 1.0,
+    "ent": 1.0,
+    "vision": 1.0,
+    "motion_coverage_known": 0.975,
+    "motion_coverage_before": 0.91,
+    "motion_coverage_delta_pp": 6.5,
+    "motion_counts": {
+      "unknown": 5,
+      "independent": 138,
+      "correlated": 57
+    },
+    "reason_counts": {
+      "corr_ambiguous": 3,
+      "color_track_fail": 2
+    },
+    "track_mode_counts": {
+      "hue_extended": 81,
+      "continuity_dense": 12,
+      "hue_hard": 88,
+      "single_hue_split": 13,
+      "approach_recede": 4,
+      "hue_hard_fail": 2
+    },
+    "scene_0222": "independent",
+    "wired_to_vlm": true,
+    "gt_leak": false,
+    "prompt_touches_gt": false,
+    "ent_never_on_python": true,
+    "floor_held": true,
+    "floor": 0.9667,
+    "motion_r2_retained": true,
+    "scaffold_motion_retained": true
+  },
+  "floors": {
+    "mixed_d_unified": 0.9667,
+    "held": true,
+    "coverage_freeze_gate": 0.8
+  },
+  "policy": "RO data/lora_adapter/; no merge main; side branch only; motion-r2 honesty frozen; stage4 escalate only on corr_ambiguous",
+  "note": "motion-r3 continuity+approach/recede on 3d05cbe; probe n=200 cov=0.975; mixed d=1.0; freeze because cov>=0.80",
+  "retained_freezes": [
+    "codigo_vivo_tip_platform_100pct_20260924_111435",
+    "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",
+    "codigo_vivo_tip_post_polish_100pct_20260924_123210",
+    "codigo_vivo_tip_r5_100pct_20260924_123727",
+    "codigo_vivo_tip_label_protect_100pct_20260924_124608",
+    "codigo_vivo_tip_r6_100pct_20260924_124951",
+    "codigo_vivo_tip_post_od2_100pct_20260924_125301",
+    "codigo_vivo_tip_r7_100pct_20260924_125600",
+    "codigo_vivo_tip_scaffold_motion_100pct_20260924_130131",
+    "codigo_vivo_tip_r8_100pct_20260924_130950",
+    "codigo_vivo_tip_motion_r2_100pct_20260924_131537",
+    "codigo_vivo_tip_distance_danger_100pct_20260924_131243",
+    "codigo_vivo_tip_collision_pred_100pct_20260924_131846",
+    "codigo_vivo_tip_collision_n_100pct_20260924_132559"
+  ],
+  "base_tip": "3d05cbe",
+  "branch": "frontier/tip-motion-r3"
+}

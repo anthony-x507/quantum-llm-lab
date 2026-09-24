@@ -1,0 +1,45 @@
+{
+  "domain": "codigo_vivo_tip_motion_r3",
+  "frozen_at_et": "2026-09-24 13:33:33 ET",
+  "metrics": {
+    "mixed_d_unified": 1.0,
+    "python": 1.0,
+    "ent": 1.0,
+    "vision": 1.0,
+    "motion_coverage_known": 0.975,
+    "motion_coverage_before": 0.91,
+    "motion_coverage_delta_pp": 6.5,
+    "motion_counts": {
+      "unknown": 5,
+      "independent": 138,
+      "correlated": 57
+    },
+    "reason_counts": {
+      "corr_ambiguous": 3,
+      "color_track_fail": 2
+    },
+    "track_mode_counts": {
+      "hue_extended": 81,
+      "continuity_dense": 12,
+      "hue_hard": 88,
+      "single_hue_split": 13,
+      "approach_recede": 4,
+      "hue_hard_fail": 2
+    },
+    "scene_0222": "independent",
+    "wired_to_vlm": true,
+    "gt_leak": false,
+    "prompt_touches_gt": false,
+    "ent_never_on_python": true,
+    "floor_held": true,
+    "floor": 0.9667,
+    "motion_r2_retained": true,
+    "scaffold_motion_retained": true
+  },
+  "n_scenes": 200,
+  "coverage_known": 0.975,
+  "coverage_before_r2": 0.91,
+  "delta_pp_vs_r2": 6.5,
+  "mixed_d_unified": 1.0,
+  "floor_held": true
+}
