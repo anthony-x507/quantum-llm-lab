@@ -1,0 +1,63 @@
+{
+  "schema": "codigo_vivo_tip_motion_r2_100pct",
+  "frozen_at_et": "2026-09-24 13:15:37 ET",
+  "domain": "codigo_vivo_tip_motion_r2",
+  "pct": 100,
+  "band": "100pct",
+  "git_sha": "PENDING",
+  "git_sha_short": "PENDING",
+  "artifact": "data/frontier_tip_motion_r2_cue_probe.json",
+  "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
+  "metrics": {
+    "mixed_d_unified": 1.0,
+    "python": 1.0,
+    "ent": 1.0,
+    "vision": 1.0,
+    "motion_coverage_known": 0.91,
+    "motion_coverage_before": 0.44,
+    "motion_coverage_delta_pp": 47.0,
+    "motion_counts": {
+      "unknown": 18,
+      "independent": 132,
+      "correlated": 50
+    },
+    "reason_counts": {
+      "corr_ambiguous": 16,
+      "color_track_fail": 2
+    },
+    "track_mode_counts": {
+      "hue_extended": 86,
+      "hue_hard": 99,
+      "single_hue_split": 13,
+      "hue_hard_fail": 2
+    },
+    "scene_0222": "independent",
+    "wired_to_vlm": true,
+    "gt_leak": false,
+    "prompt_touches_gt": false,
+    "ent_never_on_python": true,
+    "floor_held": true,
+    "floor": 0.9667,
+    "scaffold_motion_retained": true
+  },
+  "floors": {
+    "mixed_d_unified": 0.9667,
+    "held": true,
+    "coverage_freeze_gate": 0.8
+  },
+  "policy": "RO data/lora_adapter/; no merge main; side branch only; scaffold-motion honesty frozen; escalate only on color_track_fail",
+  "note": "motion-r2 coverage reinforce on d892398; probe n=200 cov=0.91; mixed d=1.0; freeze because cov>=0.80",
+  "retained_freezes": [
+    "codigo_vivo_tip_platform_100pct_20260924_111435",
+    "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",
+    "codigo_vivo_tip_post_polish_100pct_20260924_123210",
+    "codigo_vivo_tip_r5_100pct_20260924_123727",
+    "codigo_vivo_tip_label_protect_100pct_20260924_124608",
+    "codigo_vivo_tip_r6_100pct_20260924_124951",
+    "codigo_vivo_tip_post_od2_100pct_20260924_125301",
+    "codigo_vivo_tip_r7_100pct_20260924_125600",
+    "codigo_vivo_tip_scaffold_motion_100pct_20260924_130131"
+  ],
+  "base_tip": "d892398",
+  "branch": "frontier/tip-motion-r2"
+}

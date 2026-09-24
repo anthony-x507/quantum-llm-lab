@@ -181,9 +181,17 @@ def graph_features(proposal: dict[str, Any], encoder: GNNEncoder | None = None) 
 def visual_motion_cue(scene_dir) -> dict:
     """GT-free visual cue from RGB frames: independent vs correlated blob motion.
 
-    Tracks up to two strongest color-tint centroids among {red, blue, green,
-    yellow}. Never reads meta labels / GT. Fails open to cue=unknown with an
-    honesty payload (gt_free=true, reads_meta=false).
+    Stage 1 (frozen scaffold-motion): two strongest hard hues among
+    {red, blue, green, yellow}.
+    Stage 2 (motion-r2 reinforce): on color_track_fail only — extended hues
+    (cyan/magenta/orange/white + soft_* / purple / brown) with occlusion-tolerant
+    min points.
+    Stage 3: single-hue spatial split or chromatic connected components
+    (occlusion / same-tint multi-object / approach geometry).
+
+    Honesty rules UNCHANGED: dist_cv≥0.10⇒independent; locked dist + high
+    |vel_corr|⇒correlated; else unknown. Never reads meta/GT. Never invents
+    distance labels.
     Returns {cue: independent|correlated|unknown, ...}.
     """
     from pathlib import Path as _P
@@ -206,86 +214,297 @@ def visual_motion_cue(scene_dir) -> dict:
     if len(frames) < 3:
         return {"cue": "unknown", "reason": "few_frames", "n_frames": len(frames), **honesty}
 
-    def _cent(m, np_mod):
-        yy, xx = np_mod.where(m)
-        if len(xx) < 5:
+    def _cent(m, min_px: int = 5):
+        yy, xx = np.where(m)
+        if len(xx) < min_px:
             return None
-        return np_mod.array([xx.mean(), yy.mean()])
+        return np.array([xx.mean(), yy.mean()], dtype=float)
 
-    tracks: dict[str, list] = {"red": [], "blue": [], "green": [], "yellow": []}
-    mass: dict[str, float] = {k: 0.0 for k in tracks}
-    for fp in frames:
-        arr = np.asarray(Image.open(fp).convert("RGB"), dtype=np.float32)
+    def _decide(a, b):
+        v0 = np.diff(a, axis=0).ravel()
+        v1 = np.diff(b, axis=0).ravel()
+        if v0.std() < 1e-6 or v1.std() < 1e-6:
+            c = 0.0
+        else:
+            c = float(np.corrcoef(v0, v1)[0, 1])
+            if c != c:
+                c = 0.0
+        dist = np.linalg.norm(a - b, axis=1)
+        dist_cv = float(dist.std() / (dist.mean() + 1e-6))
+        # Honesty: varying pair-distance ⇒ independent trajectories (product-like).
+        # Locked distance + high |vel_corr| ⇒ correlated (Bell-like). Else unknown.
+        if dist_cv >= 0.10:
+            cue = "independent"
+        elif abs(c) > 0.75 and dist_cv < 0.08:
+            cue = "correlated"
+        elif abs(c) < 0.45:
+            cue = "independent"
+        else:
+            cue = "unknown"
+        return cue, c, dist_cv
+
+    def _hard_masks(arr):
         R, G, B = arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]
-        masks = {
+        return {
             "red": (R > 140) & (R > G + 30) & (R > B + 30),
             "blue": (B > 140) & (B > R + 20) & (B > G + 20),
             "green": (G > 140) & (G > R + 30) & (G > B + 30),
             "yellow": (R > 150) & (G > 150) & (B < 120) & (R > B + 30) & (G > B + 30),
         }
-        for name, m in masks.items():
-            c = _cent(m, np)
-            if c is None:
-                tracks[name].append(None)
-            else:
-                tracks[name].append(c)
-                mass[name] += float(m.sum())
 
-    ranked = sorted(mass.items(), key=lambda kv: -kv[1])
-    chosen: list[str] = []
-    series: list[list] = []
-    for name, _ in ranked:
-        pts = [p for p in tracks[name] if p is not None]
-        if len(pts) >= 3:
+    def _extended_masks(arr):
+        R, G, B = arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]
+        m = _hard_masks(arr)
+        m.update({
+            "cyan": (G > 120) & (B > 120) & (R < 110) & (G > R + 20) & (B > R + 20),
+            "magenta": (R > 120) & (B > 120) & (G < 110) & (R > G + 20) & (B > G + 20),
+            "orange": (R > 155) & (G > 75) & (G < 175) & (B < 95) & (R > G + 20),
+            "white": (R > 200) & (G > 200) & (B > 200),
+            "soft_red": (R > 105) & (R > G + 15) & (R > B + 15),
+            "soft_blue": (B > 105) & (B > R + 10) & (B > G + 10),
+            "soft_green": (G > 105) & (G > R + 15) & (G > B + 15),
+            "soft_yellow": (R > 125) & (G > 125) & (B < 145) & (R > B + 15) & (G > B + 15),
+            "soft_cyan": (G > 100) & (B > 100) & (R < 120) & (G > R + 10) & (B > R + 10),
+            "soft_magenta": (R > 100) & (B > 100) & (G < 120) & (R > G + 10) & (B > G + 10),
+            "soft_orange": (R > 140) & (G > 60) & (G < 180) & (B < 100) & (R > G + 10),
+            "purple": (R > 90) & (B > 110) & (G < R) & (G < B) & (B > R - 10) & (B > 90),
+            "soft_purple": (R > 80) & (B > 90) & (G < 100) & (B > G + 10) & (R > G + 5),
+            "brown": (R > 80) & (R < 180) & (G > 40) & (G < 140) & (B < 90) & (R > G + 10) & (R > B + 20),
+        })
+        return m
+
+    def _track(mask_fn, min_px: int = 5, min_pts: int = 3):
+        tracks: dict[str, list] = {}
+        mass: dict[str, float] = {}
+        for fp in frames:
+            arr = np.asarray(Image.open(fp).convert("RGB"), dtype=np.float32)
+            for name, m in mask_fn(arr).items():
+                tracks.setdefault(name, [])
+                mass.setdefault(name, 0.0)
+                c = _cent(m, min_px=min_px)
+                tracks[name].append(c)
+                if c is not None:
+                    mass[name] += float(m.sum())
+        ranked = sorted(mass.items(), key=lambda kv: -kv[1])
+        chosen: list[str] = []
+        series: list[list] = []
+        used: set[str] = set()
+
+        def _fam(n: str) -> str:
+            return n.replace("soft_", "")
+
+        for name, _ in ranked:
+            pts = [p for p in tracks[name] if p is not None]
+            if len(pts) < min_pts:
+                continue
+            fam = _fam(name)
+            if fam in used:
+                continue
             chosen.append(name)
             series.append(pts)
-        if len(chosen) == 2:
-            break
-    if len(chosen) < 2:
-        return {
-            "cue": "unknown",
-            "reason": "color_track_fail",
-            "n": 0 if not chosen else len(series[0]),
-            "hues_seen": {k: round(v, 1) for k, v in mass.items() if v > 0},
+            used.add(fam)
+            if len(chosen) == 2:
+                break
+        return chosen, series, mass
+
+    def _components_frame(arr, min_px: int = 8):
+        R, G, B = arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]
+        chroma = np.maximum(np.maximum(R, G), B) - np.minimum(np.minimum(R, G), B)
+        for mask in (
+            chroma > 40,
+            chroma > 25,
+            ((R + G + B) / 3 > 85) & (chroma > 15),
+            ((R + G + B) / 3 > 60) & (chroma > 10),
+        ):
+            if mask.sum() < 20 or mask.mean() > 0.7:
+                continue
+            H, W = mask.shape
+            visited = np.zeros_like(mask, dtype=bool)
+            comps: list[tuple[int, float, float]] = []
+            ys, xs = np.where(mask)
+            for y0, x0 in zip(ys, xs):
+                if visited[y0, x0]:
+                    continue
+                stack = [(y0, x0)]
+                visited[y0, x0] = True
+                pts: list[tuple[int, int]] = []
+                while stack:
+                    y, x = stack.pop()
+                    pts.append((y, x))
+                    for dy, dx in ((0, 1), (0, -1), (1, 0), (-1, 0)):
+                        ny, nx = y + dy, x + dx
+                        if 0 <= ny < H and 0 <= nx < W and mask[ny, nx] and not visited[ny, nx]:
+                            visited[ny, nx] = True
+                            stack.append((ny, nx))
+                if len(pts) >= min_px:
+                    arrp = np.asarray(pts)
+                    comps.append((len(pts), float(arrp[:, 1].mean()), float(arrp[:, 0].mean())))
+            comps.sort(reverse=True)
+            if len(comps) >= 2:
+                return comps[:3]
+        return []
+
+    def _component_pair(min_sep: float = 6.0, min_pts: int = 3):
+        s0: list = []
+        s1: list = []
+        for fp in frames:
+            arr = np.asarray(Image.open(fp).convert("RGB"), dtype=np.float32)
+            comps = _components_frame(arr)
+            if len(comps) >= 2:
+                best = None
+                bestd = -1.0
+                for i in range(len(comps)):
+                    for j in range(i + 1, len(comps)):
+                        d = abs(comps[i][1] - comps[j][1]) + abs(comps[i][2] - comps[j][2])
+                        if d > bestd:
+                            bestd = d
+                            best = (comps[i], comps[j])
+                if best is not None and bestd >= min_sep:
+                    s0.append(np.array([best[0][1], best[0][2]]))
+                    s1.append(np.array([best[1][1], best[1][2]]))
+                else:
+                    s0.append(None)
+                    s1.append(None)
+            else:
+                s0.append(None)
+                s1.append(None)
+        b0 = [p for p in s0 if p is not None]
+        b1 = [p for p in s1 if p is not None]
+        if len(b0) < min_pts or len(b1) < min_pts:
+            return None
+        n = min(len(b0), len(b1))
+        d = np.linalg.norm(np.asarray(b0[:n]) - np.asarray(b1[:n]), axis=1)
+        if float(d.mean()) < min_sep:
+            return None
+        return b0, b1
+
+    def _single_hue_split(hue_name: str, min_sep: float = 8.0, min_pts: int = 3):
+        """Split one tracked hue into two spatial components (same-tint / occlusion)."""
+        s0: list = []
+        s1: list = []
+        for fp in frames:
+            arr = np.asarray(Image.open(fp).convert("RGB"), dtype=np.float32)
+            m = _extended_masks(arr).get(hue_name)
+            if m is None or int(m.sum()) < 16:
+                s0.append(None)
+                s1.append(None)
+                continue
+            H, W = m.shape
+            visited = np.zeros_like(m, dtype=bool)
+            comps: list[tuple[int, float, float]] = []
+            ys, xs = np.where(m)
+            for y0, x0 in zip(ys, xs):
+                if visited[y0, x0]:
+                    continue
+                stack = [(y0, x0)]
+                visited[y0, x0] = True
+                pts: list[tuple[int, int]] = []
+                while stack:
+                    y, x = stack.pop()
+                    pts.append((y, x))
+                    for dy, dx in ((0, 1), (0, -1), (1, 0), (-1, 0)):
+                        ny, nx = y + dy, x + dx
+                        if 0 <= ny < H and 0 <= nx < W and m[ny, nx] and not visited[ny, nx]:
+                            visited[ny, nx] = True
+                            stack.append((ny, nx))
+                if len(pts) >= 8:
+                    arrp = np.asarray(pts)
+                    comps.append((len(pts), float(arrp[:, 1].mean()), float(arrp[:, 0].mean())))
+            comps.sort(reverse=True)
+            if len(comps) >= 2:
+                d = abs(comps[0][1] - comps[1][1]) + abs(comps[0][2] - comps[1][2])
+                if d >= min_sep:
+                    s0.append(np.array([comps[0][1], comps[0][2]]))
+                    s1.append(np.array([comps[1][1], comps[1][2]]))
+                else:
+                    s0.append(None)
+                    s1.append(None)
+            else:
+                yy, xx = np.where(m)
+                med = float(np.median(xx))
+                left = m & (np.arange(W)[None, :] < med)
+                right = m & (np.arange(W)[None, :] >= med)
+                if int(left.sum()) < 8 or int(right.sum()) < 8:
+                    medy = float(np.median(yy))
+                    left = m & (np.arange(H)[:, None] < medy)
+                    right = m & (np.arange(H)[:, None] >= medy)
+                c0, c1 = _cent(left, min_px=4), _cent(right, min_px=4)
+                if c0 is not None and c1 is not None and float(np.linalg.norm(c0 - c1)) >= min_sep:
+                    s0.append(c0)
+                    s1.append(c1)
+                else:
+                    s0.append(None)
+                    s1.append(None)
+        b0 = [p for p in s0 if p is not None]
+        b1 = [p for p in s1 if p is not None]
+        if len(b0) < min_pts or len(b1) < min_pts:
+            return None
+        n = min(len(b0), len(b1))
+        d = np.linalg.norm(np.asarray(b0[:n]) - np.asarray(b1[:n]), axis=1)
+        if float(d.mean()) < min_sep:
+            return None
+        return b0, b1
+
+    def _pack(chosen, series, track_mode: str, stage: int):
+        n = min(len(series[0]), len(series[1]))
+        a = np.asarray(series[0][:n], dtype=float)
+        b = np.asarray(series[1][:n], dtype=float)
+        cue, c, dist_cv = _decide(a, b)
+        out = {
+            "cue": cue,
+            "vel_corr": round(c, 3),
+            "dist_cv": round(dist_cv, 3),
+            "n": int(n),
             "hues_chosen": chosen,
+            "track_mode": track_mode,
+            "stage": stage,
             **honesty,
         }
+        if cue == "unknown":
+            out["reason"] = "corr_ambiguous"
+        return out
 
-    n = min(len(series[0]), len(series[1]))
-    a = __import__("numpy").asarray(series[0][:n], dtype="float64")
-    b = __import__("numpy").asarray(series[1][:n], dtype="float64")
-    import numpy as np  # local for corrcoef
-    v0 = np.diff(a, axis=0).ravel()
-    v1 = np.diff(b, axis=0).ravel()
-    if v0.std() < 1e-6 or v1.std() < 1e-6:
-        c = 0.0
-    else:
-        c = float(np.corrcoef(v0, v1)[0, 1])
-        if c != c:
-            c = 0.0
-    dist = np.linalg.norm(a - b, axis=1)
-    dist_cv = float(dist.std() / (dist.mean() + 1e-6))
-    # Honesty: varying pair-distance ⇒ independent trajectories (product-like).
-    # Locked distance + high |vel_corr| ⇒ correlated (Bell-like). Else unknown.
-    if dist_cv >= 0.10:
-        cue = "independent"
-    elif abs(c) > 0.75 and dist_cv < 0.08:
-        cue = "correlated"
-    elif abs(c) < 0.45:
-        cue = "independent"
-    else:
-        cue = "unknown"
-    out = {
-        "cue": cue,
-        "vel_corr": round(c, 3),
-        "dist_cv": round(dist_cv, 3),
-        "n": int(n),
-        "hues_chosen": chosen,
+    # --- Stage 1: frozen hard multi-hue (scaffold-motion) ---
+    chosen, series, mass = _track(_hard_masks, min_px=5, min_pts=3)
+    if len(chosen) == 2:
+        return _pack(chosen, series, "hue_hard", 1)
+
+    hard_fail_chosen = list(chosen)
+    hard_fail_mass = dict(mass)
+
+    # --- Stage 2: extended + soft hues (escalate only on track fail) ---
+    for min_px, min_pts, mode in ((4, 3, "hue_extended"), (3, 2, "hue_extended_occl")):
+        chosen, series, mass = _track(_extended_masks, min_px=min_px, min_pts=min_pts)
+        if len(chosen) == 2:
+            return _pack(chosen, series, mode, 2)
+
+    # --- Stage 3a: split the single hard hue into two spatial components ---
+    if len(hard_fail_chosen) == 1:
+        pair = _single_hue_split(hard_fail_chosen[0])
+        if pair is not None:
+            return _pack(
+                [hard_fail_chosen[0] + "_a", hard_fail_chosen[0] + "_b"],
+                list(pair),
+                "single_hue_split",
+                3,
+            )
+
+    # --- Stage 3b: chromatic connected components ---
+    pair = _component_pair()
+    if pair is not None:
+        return _pack(["comp0", "comp1"], list(pair), "chroma_components", 3)
+
+    return {
+        "cue": "unknown",
+        "reason": "color_track_fail",
+        "n": 0 if not hard_fail_chosen else 0,
+        "hues_seen": {k: round(v, 1) for k, v in hard_fail_mass.items() if v > 0},
+        "hues_chosen": hard_fail_chosen,
+        "track_mode": "hue_hard_fail",
+        "stage": 0,
         **honesty,
     }
-    if cue == "unknown":
-        out["reason"] = "corr_ambiguous"
-    return out
+
 
 
 def motion_cue_prompt_suffix(cue: str) -> str:

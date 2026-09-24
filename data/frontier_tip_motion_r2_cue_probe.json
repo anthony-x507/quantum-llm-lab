@@ -1,0 +1,675 @@
+{
+  "frontier": "tip-motion-r2",
+  "written": "2026-09-24 13:15:08 ET",
+  "branch": "frontier/tip-motion-r2",
+  "tip_base": "d892398",
+  "claims": [
+    "NO quantum-advantage claims",
+    "GT-free RGB motion cue only",
+    "scaffold-motion honesty rules retained",
+    "escalate only on color_track_fail"
+  ],
+  "anti_contamination": {
+    "gt_free_all": true,
+    "reads_meta_any": false,
+    "inference_uses_gt": false,
+    "prompt_suffix_unknown_honesty": true
+  },
+  "n_scenes": 200,
+  "cue_counts": {
+    "unknown": 18,
+    "independent": 132,
+    "correlated": 50
+  },
+  "reason_counts": {
+    "corr_ambiguous": 16,
+    "color_track_fail": 2
+  },
+  "track_mode_counts": {
+    "hue_extended": 86,
+    "hue_hard": 99,
+    "single_hue_split": 13,
+    "hue_hard_fail": 2
+  },
+  "stage_counts": {
+    "2": 86,
+    "1": 99,
+    "3": 13,
+    "0": 2
+  },
+  "coverage_known": 0.91,
+  "coverage_before": 0.44,
+  "coverage_delta_pp": 47.0,
+  "special_cases": {
+    "scene_0222": {
+      "cue": "independent",
+      "vel_corr": 0.279,
+      "dist_cv": 0.02,
+      "n": 10,
+      "hues_chosen": [
+        "red",
+        "blue"
+      ],
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false,
+      "track_mode": "hue_hard",
+      "stage": 1,
+      "reason": null
+    },
+    "scene_0157": {
+      "cue": "independent",
+      "vel_corr": -0.985,
+      "dist_cv": 0.129,
+      "n": 10,
+      "hues_chosen": [
+        "blue",
+        "green"
+      ],
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false,
+      "track_mode": "hue_hard",
+      "stage": 1,
+      "reason": null
+    },
+    "scene_0291": {
+      "cue": "independent",
+      "vel_corr": -0.987,
+      "dist_cv": 0.216,
+      "n": 10,
+      "hues_chosen": [
+        "blue",
+        "green"
+      ],
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false,
+      "track_mode": "hue_hard",
+      "stage": 1,
+      "reason": null
+    },
+    "scene_0155": {
+      "cue": "independent",
+      "vel_corr": -1.0,
+      "dist_cv": 0.217,
+      "n": 10,
+      "hues_chosen": [
+        "yellow",
+        "red"
+      ],
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false,
+      "track_mode": "hue_hard",
+      "stage": 1,
+      "reason": null
+    }
+  },
+  "sample_rows": [
+    {
+      "id": "scene_0000",
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 1.0,
+      "dist_cv": 0.0,
+      "n": 9,
+      "hues_chosen": [
+        "soft_red",
+        "brown"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0001",
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 1.0,
+      "dist_cv": 0.0,
+      "n": 10,
+      "hues_chosen": [
+        "soft_red",
+        "brown"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0002",
+      "cue": "unknown",
+      "reason": "corr_ambiguous",
+      "vel_corr": 0.514,
+      "dist_cv": 0.056,
+      "n": 10,
+      "hues_chosen": [
+        "green",
+        "blue"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1
+    },
+    {
+      "id": "scene_0003",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": 0.0,
+      "dist_cv": 0.339,
+      "n": 10,
+      "hues_chosen": [
+        "brown",
+        "green"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0004",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": 0.626,
+      "dist_cv": 0.211,
+      "n": 10,
+      "hues_chosen": [
+        "red",
+        "yellow"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1
+    },
+    {
+      "id": "scene_0005",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.703,
+      "dist_cv": 0.269,
+      "n": 10,
+      "hues_chosen": [
+        "green",
+        "blue"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1
+    },
+    {
+      "id": "scene_0006",
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 1.0,
+      "dist_cv": 0.0,
+      "n": 10,
+      "hues_chosen": [
+        "soft_red",
+        "brown"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0007",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.981,
+      "dist_cv": 0.136,
+      "n": 10,
+      "hues_chosen": [
+        "green",
+        "yellow"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1
+    },
+    {
+      "id": "scene_0008",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": 0.0,
+      "dist_cv": 0.211,
+      "n": 10,
+      "hues_chosen": [
+        "brown",
+        "green"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0009",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.917,
+      "dist_cv": 0.136,
+      "n": 10,
+      "hues_chosen": [
+        "blue",
+        "red"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1
+    },
+    {
+      "id": "scene_0010",
+      "cue": "unknown",
+      "reason": "corr_ambiguous",
+      "vel_corr": 0.732,
+      "dist_cv": 0.039,
+      "n": 10,
+      "hues_chosen": [
+        "green",
+        "blue"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1
+    },
+    {
+      "id": "scene_0011",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": 0.0,
+      "dist_cv": 0.051,
+      "n": 10,
+      "hues_chosen": [
+        "brown",
+        "blue"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0012",
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 1.0,
+      "dist_cv": 0.0,
+      "n": 10,
+      "hues_chosen": [
+        "green_a",
+        "green_b"
+      ],
+      "track_mode": "single_hue_split",
+      "stage": 3
+    },
+    {
+      "id": "scene_0013",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.988,
+      "dist_cv": 0.114,
+      "n": 10,
+      "hues_chosen": [
+        "soft_blue",
+        "soft_red"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0014",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": 0.0,
+      "dist_cv": 0.162,
+      "n": 10,
+      "hues_chosen": [
+        "soft_blue",
+        "green"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0015",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": 0.0,
+      "dist_cv": 0.025,
+      "n": 10,
+      "hues_chosen": [
+        "soft_blue",
+        "cyan"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0016",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.974,
+      "dist_cv": 0.194,
+      "n": 10,
+      "hues_chosen": [
+        "soft_blue",
+        "soft_red"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0017",
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 1.0,
+      "dist_cv": 0.0,
+      "n": 10,
+      "hues_chosen": [
+        "soft_red",
+        "brown"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0018",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.986,
+      "dist_cv": 0.136,
+      "n": 10,
+      "hues_chosen": [
+        "soft_blue",
+        "soft_red"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0019",
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 1.0,
+      "dist_cv": 0.0,
+      "n": 10,
+      "hues_chosen": [
+        "soft_red",
+        "brown"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0020",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.7,
+      "dist_cv": 0.298,
+      "n": 10,
+      "hues_chosen": [
+        "red",
+        "blue"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1
+    },
+    {
+      "id": "scene_0021",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.781,
+      "dist_cv": 0.116,
+      "n": 8,
+      "hues_chosen": [
+        "soft_blue",
+        "soft_green"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0022",
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 0.988,
+      "dist_cv": 0.006,
+      "n": 10,
+      "hues_chosen": [
+        "red_a",
+        "red_b"
+      ],
+      "track_mode": "single_hue_split",
+      "stage": 3
+    },
+    {
+      "id": "scene_0023",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": 0.365,
+      "dist_cv": 0.02,
+      "n": 10,
+      "hues_chosen": [
+        "blue",
+        "red"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1
+    },
+    {
+      "id": "scene_0024",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.043,
+      "dist_cv": 0.419,
+      "n": 10,
+      "hues_chosen": [
+        "soft_blue",
+        "red"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0025",
+      "cue": "unknown",
+      "reason": "corr_ambiguous",
+      "vel_corr": 0.665,
+      "dist_cv": 0.057,
+      "n": 10,
+      "hues_chosen": [
+        "green",
+        "red"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1
+    },
+    {
+      "id": "scene_0026",
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 0.958,
+      "dist_cv": 0.009,
+      "n": 10,
+      "hues_chosen": [
+        "red_a",
+        "red_b"
+      ],
+      "track_mode": "single_hue_split",
+      "stage": 3
+    },
+    {
+      "id": "scene_0027",
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 0.88,
+      "dist_cv": 0.017,
+      "n": 10,
+      "hues_chosen": [
+        "red",
+        "blue"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1
+    },
+    {
+      "id": "scene_0028",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.111,
+      "dist_cv": 0.105,
+      "n": 10,
+      "hues_chosen": [
+        "green",
+        "blue"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1
+    },
+    {
+      "id": "scene_0029",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": 0.0,
+      "dist_cv": 0.023,
+      "n": 10,
+      "hues_chosen": [
+        "soft_blue",
+        "cyan"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0030",
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": -0.984,
+      "dist_cv": 0.057,
+      "n": 10,
+      "hues_chosen": [
+        "yellow",
+        "blue"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1
+    },
+    {
+      "id": "scene_0031",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": 0.0,
+      "dist_cv": 0.279,
+      "n": 10,
+      "hues_chosen": [
+        "brown",
+        "red"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0032",
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 1.0,
+      "dist_cv": 0.0,
+      "n": 10,
+      "hues_chosen": [
+        "soft_red",
+        "brown"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0033",
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 0.77,
+      "dist_cv": 0.055,
+      "n": 10,
+      "hues_chosen": [
+        "blue",
+        "green"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1
+    },
+    {
+      "id": "scene_0034",
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 1.0,
+      "dist_cv": 0.0,
+      "n": 10,
+      "hues_chosen": [
+        "blue_a",
+        "blue_b"
+      ],
+      "track_mode": "single_hue_split",
+      "stage": 3
+    },
+    {
+      "id": "scene_0035",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.101,
+      "dist_cv": 0.036,
+      "n": 10,
+      "hues_chosen": [
+        "yellow",
+        "blue"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1
+    },
+    {
+      "id": "scene_0036",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": -0.179,
+      "dist_cv": 0.035,
+      "n": 10,
+      "hues_chosen": [
+        "red",
+        "yellow"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1
+    },
+    {
+      "id": "scene_0037",
+      "cue": "independent",
+      "reason": null,
+      "vel_corr": 0.0,
+      "dist_cv": 0.302,
+      "n": 10,
+      "hues_chosen": [
+        "brown",
+        "yellow"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0038",
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 1.0,
+      "dist_cv": 0.0,
+      "n": 10,
+      "hues_chosen": [
+        "yellow",
+        "soft_red"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    },
+    {
+      "id": "scene_0039",
+      "cue": "correlated",
+      "reason": null,
+      "vel_corr": 1.0,
+      "dist_cv": 0.0,
+      "n": 10,
+      "hues_chosen": [
+        "soft_red",
+        "brown"
+      ],
+      "track_mode": "hue_extended",
+      "stage": 2
+    }
+  ]
+}
