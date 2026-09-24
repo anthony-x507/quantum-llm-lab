@@ -5919,16 +5919,5 @@
       ],
       "dir": "dz_087_ash_ct"
     }
-  ],
-  "eval": {
-    "danger_zone_30_70m_pct": 60.11,
-    "delta_pp_vs_baseline_50m": 11.42,
-    "band_50m_pct": 62.15,
-    "band_50m_delta_pp": 13.46,
-    "overall_pct": 73.54,
-    "future_pred_danger_tracking_only": 60.05,
-    "future_pred_danger_plus_distance": 61.69,
-    "anti_contam": "CLEAN",
-    "audit_path": "data/eval_audit/danger50_20260924_051252.jsonl"
-  }
+  ]
 }

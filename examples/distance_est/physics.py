@@ -175,43 +175,70 @@ def estimate_via_floor_scale(
     d_gp = 0.55 * d_abs + 0.45 * d_anch
 
     if cls in ("light", "stop_sign"):
-        # Same image-row as building → same depth plane; floor-span derived H.
-        # Else trust ground-plane. NEVER fixed light height.
-        if abs(cy_f - bcy) < 8 and floor_px > 1e-6 and app > 1e-3:
+        # NEVER fixed light/sign catalog height (real lights ~3–5 m vary).
+        # Floor-span is ONLY valid when object is coplanar with facade
+        # (d_gp ≈ d_building). Near lights share cy with far buildings but are
+        # NOT coplanar — floor-span then invents huge "span floors" and
+        # overshoots the 30–70 m DANGER ZONE. Prefer GP; honesty when unsure.
+        mid = DANGER_ZONE_M_LO <= d_gp <= DANGER_ZONE_M_HI
+        coplanar = abs(d_gp - d_b) / max(d_b, 1.0) < 0.28 and abs(cy_f - bcy) < 6
+        if coplanar and floor_px > 1e-6 and app > 1e-3:
             H = derived_height_from_floor_span(app, floor_px, fh)
             d_h = distance_from_derived_height(app, H, focal_px)
             if d_h is not None:
-                # Mid-band: prefer GP more (floor-span alone overshoots ~50 m lights)
-                mid = DANGER_ZONE_M_LO <= d_gp <= DANGER_ZONE_M_HI
-                w_h = 0.35 if mid else 0.75
+                # Facade-coplanar: floor-span can corroborate; still soft in mid-band
+                w_h = 0.25 if mid else 0.55
                 d = (1.0 - w_h) * d_gp + w_h * d_h
-                return max(1.0, d), 0.75, "floor_span+ground_plane"
-        return max(1.0, d_gp), 0.6, "ground_plane_floor_anchored"
+                return max(1.0, d), 0.72, "floor_span+ground_plane"
+        if floor_px > 1e-6 and app > 1e-3:
+            H = derived_height_from_floor_span(app, floor_px, fh)
+            d_h = distance_from_derived_height(app, H, focal_px)
+            if d_h is not None:
+                rel = abs(d_h - d_gp) / max(d_gp, 1.0)
+                if rel > 0.45:
+                    # Strong disagreement → honesty: GP only, low conf
+                    return max(1.0, d_gp), 0.42, "gp_honesty_span_disagree"
+                # Mild disagree: tiny span vote outside danger; none inside
+                w_h = 0.05 if mid else 0.18
+                d = (1.0 - w_h) * d_gp + w_h * d_h
+                return max(1.0, d), 0.58 if mid else 0.62, "ground_plane_floor_anchored"
+        return max(1.0, d_gp), 0.60, "ground_plane_floor_anchored"
 
     if cls == "car":
         # Triangulate GP + length prior (bbox_w ≈ length * scale * 0.5 in render)
-        # and soft height prior on apparent_px.
+        # and soft height prior on apparent_px. Danger zone: heavier GP (size
+        # prior alone often ~1.2× long at mid-band).
         d_len = distance_from_size_prior(max(bbox_w, 1e-3) / 0.5, CAR_LENGTH_M_PRIOR, focal_px)
         d_h = distance_from_size_prior(app, CAR_HEIGHT_M_PRIOR, focal_px)
+        mid = DANGER_ZONE_M_LO <= d_gp <= DANGER_ZONE_M_HI
         parts = [d_gp]
-        weights = [0.50]
+        weights = [0.62 if mid else 0.50]
         if d_len is not None:
             parts.append(d_len)
-            weights.append(0.30)
+            weights.append(0.23 if mid else 0.30)
         if d_h is not None:
             parts.append(d_h)
-            weights.append(0.20)
+            weights.append(0.15 if mid else 0.20)
         wsum = sum(weights)
         d = sum(p * w for p, w in zip(parts, weights)) / wsum
-        return max(1.0, d), 0.78, "gp+car_size_prior"
+        # Honesty: if size priors violently disagree with GP, trust GP
+        priors = [x for x in (d_len, d_h) if x is not None]
+        if priors:
+            d_prior = sum(priors) / len(priors)
+            if abs(d_prior - d_gp) / max(d_gp, 1.0) > 0.55:
+                return max(1.0, d_gp), 0.48, "gp_honesty_car_prior_disagree"
+        return max(1.0, d), 0.80 if mid else 0.78, "gp+car_size_prior"
 
     if cls == "pedestrian":
         d_h = distance_from_size_prior(app, PED_HEIGHT_M_PRIOR, focal_px)
         if d_h is not None:
             mid = DANGER_ZONE_M_LO <= d_gp <= DANGER_ZONE_M_HI
-            w_h = 0.45 if mid else 0.30
+            # Mid-band: softer height prior (apparent size noisy at 30–70 m)
+            w_h = 0.28 if mid else 0.30
+            if abs(d_h - d_gp) / max(d_gp, 1.0) > 0.55:
+                return max(1.0, d_gp), 0.48, "gp_honesty_ped_prior_disagree"
             d = (1.0 - w_h) * d_gp + w_h * d_h
-            return max(1.0, d), 0.76, "gp+ped_height_prior"
+            return max(1.0, d), 0.78 if mid else 0.76, "gp+ped_height_prior"
         return max(1.0, d_gp), 0.65, "ground_plane_floor_anchored"
 
     if cls == "intersection":
@@ -243,13 +270,13 @@ def refine_with_parallax(
     if size_prev <= 1e-6 or size_curr <= 1e-6:
         return d_est, conf
     d_par = d_est * (size_prev / size_curr)
-    # Stronger parallax weight in danger zone (30–70 m)
+    # Finer parallax weight in danger zone (30–70 m) — approach/recede cue
     if alpha is None:
         mid = DANGER_ZONE_M_LO <= d_est <= DANGER_ZONE_M_HI
         if signal in ("approach", "recede"):
-            alpha = 0.55 if mid else 0.40
+            alpha = 0.62 if mid else 0.42
         else:
-            alpha = 0.25 if mid else 0.20
+            alpha = 0.18 if mid else 0.20  # mid stable: trust GP/size more
     refined = (1 - alpha) * d_est + alpha * d_par
     if signal == "approach":
         conf = 0.82
@@ -348,13 +375,59 @@ def track_associate_greedy(
 
 
 def pick_building_scale(objects: list[dict[str, Any]], focal_px: float = DEFAULT_FOCAL_PX) -> dict[str, float] | None:
-    """Choose the best building in-frame as floor-scale reference."""
+    """Multi-building floor-scale triangulation (weighted by floors × apparent).
+
+    Primary ref = largest/most-floors facade; if ≥2 buildings, blend d_building and
+    floor_px so mid-band ground-plane anchor is stabler (danger zone 30–70 m).
+    """
     buildings = [o for o in objects if o.get("class") == "building" and o.get("apparent_px")]
     if not buildings:
         return None
-    # Prefer more floors / larger apparent for stabler floor_px
-    buildings.sort(key=lambda o: (-int(o.get("n_floors") or 1), -float(o["apparent_px"])))
-    b = buildings[0]
-    fh = float(b.get("floor_height_m") or FLOOR_HEIGHT_M_DEFAULT)
-    n = int(b.get("n_floors") or 4)
-    return floor_scale_from_building(n, float(b["apparent_px"]), fh, focal_px)
+    cals: list[tuple[float, dict[str, float], float]] = []  # weight, cal, cy
+    for b in buildings:
+        fh = float(b.get("floor_height_m") or FLOOR_HEIGHT_M_DEFAULT)
+        n = int(b.get("n_floors") or 4)
+        app = float(b["apparent_px"])
+        cal = floor_scale_from_building(n, app, fh, focal_px)
+        w = max(1.0, float(n)) * max(1.0, app)
+        cy = float(b["cy"]) if b.get("cy") is not None else 57.6
+        cals.append((w, cal, cy))
+    cals.sort(key=lambda t: -t[0])
+    primary = cals[0][1]
+    if len(cals) == 1:
+        primary["building_cy"] = cals[0][2]
+        primary["n_buildings_used"] = 1.0
+        return primary
+    wsum = sum(w for w, _, _ in cals)
+    d_blend = sum(w * cal["d_building_m"] for w, cal, _ in cals) / wsum
+    floor_px_blend = sum(w * cal["floor_px"] for w, cal, _ in cals) / wsum
+    fh_blend = sum(w * cal["floor_height_m"] for w, cal, _ in cals) / wsum
+    cy_blend = sum(w * cy for w, _, cy in cals) / wsum
+    out = dict(primary)
+    out["d_building_m"] = d_blend
+    out["floor_px"] = floor_px_blend
+    out["floor_height_m"] = fh_blend
+    out["meters_per_px"] = fh_blend / max(floor_px_blend, 1e-6)
+    out["building_cy"] = cy_blend
+    out["n_buildings_used"] = float(len(cals))
+    return out
+
+
+def temporal_ema_distance(
+    d_curr: float,
+    d_prev: float | None,
+    signal: str,
+    *,
+    beta: float | None = None,
+) -> float:
+    """Light EMA toward previous estimate; stronger hold when signal=stable."""
+    if d_prev is None or d_prev <= 0:
+        return d_curr
+    if beta is None:
+        if signal == "stable":
+            beta = 0.45  # trust history more
+        elif signal in ("approach", "recede"):
+            beta = 0.22  # follow parallax motion
+        else:
+            beta = 0.30
+    return max(0.5, (1.0 - beta) * d_curr + beta * d_prev)

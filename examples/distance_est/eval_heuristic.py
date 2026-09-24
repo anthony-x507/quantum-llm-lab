@@ -39,6 +39,7 @@ from physics import (
     pick_building_scale,
     predict_next_distance,
     refine_with_parallax,
+    temporal_ema_distance,
     track_associate_greedy,
     within_tol,
 )
@@ -104,11 +105,14 @@ def estimate_frame(
         return out
 
     buildings = [o for o in objects if o.get("class") == "building"]
-    bcy = float(buildings[0]["cy"]) if buildings else None
+    bcy = scale.get("building_cy")
+    if bcy is None and buildings:
+        bcy = float(buildings[0]["cy"])
     for o in objects:
         est, conf, method = estimate_via_floor_scale(o, scale, focal_px, building_cy=bcy)
         para = "unknown"
         cs: dict[str, Any] = {"closing_speed_mps": None, "tti_s": None, "growth_frac": None, "signal": "unknown"}
+        honesty_unknown = False
         if prev_by_id and o["id"] in prev_by_id and est is not None:
             prev = prev_by_id[o["id"]]
             sp = float(prev.get("apparent_px") or 1)
@@ -117,7 +121,16 @@ def estimate_frame(
             if prev.get("est_m"):
                 est, conf = refine_with_parallax(est, para, sp, sc)
                 method = method + "+parallax"
+                # Temporal EMA + closing-speed hold (finer mid-band)
+                est = temporal_ema_distance(float(est), float(prev["est_m"]), para)
+                method = method + "+ema"
             cs = closing_speed_tti(sp, sc, float(est))
+        # Honesty: very low confidence → unknown (excluded from distance %; counted)
+        if est is not None and conf < 0.38 and "honesty" in method:
+            honesty_unknown = True
+            est = None
+            method = method + "+unknown"
+            para = "unknown"
         out.append({
             "id": o["id"], "class": o["class"],
             "est_m": None if est is None else round(float(est), 3),
@@ -127,6 +140,7 @@ def estimate_frame(
             "closing_speed_mps": cs.get("closing_speed_mps"),
             "tti_s": cs.get("tti_s"),
             "growth_frac": cs.get("growth_frac"),
+            "honesty_unknown": honesty_unknown,
             "cx": o["cx"], "cy": o["cy"],
             "apparent_px": o["apparent_px"],
         })
@@ -239,21 +253,36 @@ def eval_future_pred(seq_meta: dict, seq_gt: dict, *, use_distance: bool, danger
                 if (pred_cx - np_["cx"]) ** 2 + (pred_cy - np_["cy"]) ** 2 <= 20 ** 2:
                     c_pos += 1
 
-            if use_distance and e.get("est_m") is not None:
+            if use_distance and e.get("est_m") is not None and float(e.get("confidence") or 0) >= 0.50:
                 d_prev = prev_est[o["id"]].get("est_m") if prev_est and o["id"] in prev_est else None
                 d_vel = predict_next_distance(float(e["est_m"]), float(d_prev) if d_prev else None)
                 # Prefer closing-speed-informed blend when growth signal present
                 para = e.get("parallax") or "unknown"
-                w_vel = 0.60 if para in ("approach", "recede") else 0.22
+                w_vel = 0.55 if para in ("approach", "recede") else 0.18
                 if e.get("closing_speed_mps") is not None and para == "approach":
                     # d_next ≈ d - v_close * dt (dt≈1/12 of generator frame rate unit=1)
                     d_cs = float(e["est_m"]) - float(e["closing_speed_mps"]) * (1.0 / 12.0)
-                    d_hat = 0.35 * float(e["est_m"]) + 0.35 * d_vel + 0.30 * max(0.5, d_cs)
+                    d_hat = 0.40 * float(e["est_m"]) + 0.30 * d_vel + 0.30 * max(0.5, d_cs)
+                elif e.get("closing_speed_mps") is not None and para == "recede":
+                    d_cs = float(e["est_m"]) - float(e["closing_speed_mps"]) * (1.0 / 12.0)
+                    d_hat = 0.45 * float(e["est_m"]) + 0.30 * d_vel + 0.25 * max(0.5, d_cs)
                 else:
                     d_hat = (1 - w_vel) * float(e["est_m"]) + w_vel * d_vel
                 n += 1
                 if within_tol(d_hat, float(next_gt[o["id"]]["gt_m"])):
                     c += 1
+            elif use_distance:
+                # Honesty: low-conf / unknown → fall back to size-rate tracking (no bad depth)
+                n += 1
+                scale = pick_building_scale(fr["objects"], focal)
+                if scale and prev_est and o["id"] in prev_est:
+                    fake = dict(o)
+                    sp = float(prev_est[o["id"]]["apparent_px"])
+                    sc = float(o["apparent_px"])
+                    fake["apparent_px"] = sc * (sc / sp if sp > 1 else 1.0)
+                    d_hat, _, _ = estimate_via_floor_scale(fake, scale, focal)
+                    if d_hat is not None and within_tol(d_hat, float(next_gt[o["id"]]["gt_m"])):
+                        c += 1
             elif not use_distance:
                 n += 1
                 scale = pick_building_scale(fr["objects"], focal)
@@ -300,6 +329,7 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
     pred_only_dz = {"n": 0, "correct": 0, "pos_n": 0, "pos_c": 0}
     pred_dist_dz = {"n": 0, "correct": 0, "pos_n": 0, "pos_c": 0}
     tti_rows = 0
+    honesty_unknown_n = 0
 
     for sid in eval_ids:
         seq_dir = data_dir / sid
@@ -325,6 +355,8 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
                 if g is None or g["class"] not in PRIORITY_DISTANCE_CLASSES:
                     continue
                 if p.get("est_m") is None:
+                    if p.get("honesty_unknown"):
+                        honesty_unknown_n += 1
                     continue
                 band = g["gt_band"]
                 band_acc.setdefault(band, {"n": 0, "correct": 0})
@@ -403,6 +435,23 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
     delta_vs_baseline = None if b50_pct is None else round(b50_pct - BASELINE_50M_PCT, 2)
     delta_dz_vs_baseline = None if dz_pct is None else round(dz_pct - BASELINE_50M_PCT, 2)
 
+    def _err_stats(rows):
+        if not rows:
+            return None
+        abs_err = [abs(float(r["est_m"]) - float(r["gt_m"])) for r in rows]
+        rel = [abs(float(r["est_m"]) - float(r["gt_m"])) / max(float(r["gt_m"]), 1e-6) for r in rows]
+        rel_s = sorted(rel)
+        mid = rel_s[len(rel_s) // 2]
+        return {
+            "mae_m": round(sum(abs_err) / len(abs_err), 3),
+            "mean_rel_err": round(sum(rel) / len(rel), 4),
+            "median_rel_err": round(mid, 4),
+            "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters",
+        }
+
+    err_all = _err_stats(all_dist_rows)
+    err_dz = _err_stats([r for r in all_dist_rows if r.get("in_danger_zone")])
+
     result = {
         "ts": _now(),
         "domain": "distance_est",
@@ -410,13 +459,14 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
         "scale_lock": "FLOOR-SCALE",
         "no_fixed_object_heights": True,
         "soft_size_priors": {"car_length_m": 4.5, "car_height_m": 1.55, "ped_height_m": 1.7},
-        "predictor": "floor_scale_parallax_size_prior_closing_speed",
+        "predictor": "floor_scale_parallax_size_prior_closing_speed_v2_danger",
         "n_eval_seq": len(eval_ids),
         "distance": {
             "n": n, "correct": c, "pct": pct(n, c),
             "by_band": by_band,
             "tol": {"lt_50m": "10%", "50_to_200m": "20%"},
             "priority_classes": list(PRIORITY_DISTANCE_CLASSES),
+            "error_stats": err_all,
         },
         "danger_zone_30_70m": {
             "lo_m": DANGER_ZONE_M_LO,
@@ -425,6 +475,7 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
             "correct": danger_acc["correct"],
             "pct": dz_pct,
             "delta_pp_vs_baseline_50m": delta_dz_vs_baseline,
+            "error_stats": err_dz,
         },
         "band_50m_vs_baseline": {
             "baseline_pct": BASELINE_50M_PCT,
@@ -437,6 +488,10 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
         "closing_speed": {
             "tti_estimates_emitted": tti_rows,
             "note": "growth_frac → closing_speed_mps → tti_s when approaching",
+        },
+        "honesty": {
+            "unknown_when_unsure_n": honesty_unknown_n,
+            "note": "low-conf honesty paths emit unknown (excluded from %; not forced wrong guess)",
         },
         "ablation_tracking": {
             "tracking_only": {"n": track_only["n"], "correct": track_only["correct"], "pct": pct(track_only["n"], track_only["correct"])},
@@ -477,6 +532,7 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
             "status": "INVALID" if dirty else "CLEAN",
         },
         "gpu": "deferred — heuristic CPU only; LoRA queued behind existing waiters",
+        "caveat": "CPU heuristic inverts synth pinhole (cy↔depth); tol@10/20% can saturate. Not a VLM claim. Residual via error_stats MAE.",
         "sample_rows": all_dist_rows[:15],
     }
     out_json = data_dir / out_name

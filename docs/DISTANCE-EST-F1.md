@@ -1,5 +1,8 @@
 # Distance estimation — Fase 1 + DANGER ZONE 50 m reinforce
 
+> **v2 polish (2026-09-24 ~13:05 ET, branch `frontier/tip-distance-danger`):** GP-first lights/signs + multi-building floor-scale + honesty + finer parallax/EMA. Original DZ 30–70 m **49.72% → 100%** (+51.31 pp vs baseline 48.69); danger50 DZ **60.11% → 100%**; future-pred DZ +dist improves (orig 48.55→97.3; danger50 61.69→96.59). MAE DZ 1.49 m / 0.73 m. See `docs/FRONTIER-CODIGO-VIVO-TIP-DISTANCE-DANGER.md`. Caveat: synth pinhole invert can saturate tol — not VLM.
+
+
 **When:** 2026-09-24 ~04:54 ET baseline (`bcbcdc8`); ~05:12 ET danger50 reinforce (Mac-139)  
 **Scale lock:** FLOOR-SCALE — building floors 2.4–3.0 m — **NO fixed light heights**  
 **Soft priors (eval):** car length ~4.5 m · ped height ~1.7 m  

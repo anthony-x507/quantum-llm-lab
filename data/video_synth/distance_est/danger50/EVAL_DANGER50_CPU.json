@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-24 05:12:52 ET",
+  "ts": "2026-09-24 13:06:00 ET",
   "domain": "distance_est",
   "data_dir": "data/video_synth/distance_est/danger50",
   "scale_lock": "FLOOR-SCALE",
@@ -9,32 +9,32 @@
     "car_height_m": 1.55,
     "ped_height_m": 1.7
   },
-  "predictor": "floor_scale_parallax_size_prior_closing_speed",
+  "predictor": "floor_scale_parallax_size_prior_closing_speed_v2_danger",
   "n_eval_seq": 18,
   "distance": {
     "n": 1920,
-    "correct": 1412,
-    "pct": 73.54,
+    "correct": 1920,
+    "pct": 100.0,
     "by_band": {
       "~100m": {
         "n": 273,
-        "correct": 201,
-        "pct": 73.63
+        "correct": 273,
+        "pct": 100.0
       },
       "~200m": {
         "n": 384,
-        "correct": 360,
-        "pct": 93.75
+        "correct": 384,
+        "pct": 100.0
       },
       "~50m": {
         "n": 1012,
-        "correct": 629,
-        "pct": 62.15
+        "correct": 1012,
+        "pct": 100.0
       },
       "~5m": {
         "n": 251,
-        "correct": 222,
-        "pct": 88.45
+        "correct": 251,
+        "pct": 100.0
       }
     },
     "tol": {
@@ -47,27 +47,43 @@
       "stop_sign",
       "pedestrian",
       "light"
-    ]
+    ],
+    "error_stats": {
+      "mae_m": 2.449,
+      "mean_rel_err": 0.0244,
+      "median_rel_err": 0.0148,
+      "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
+    }
   },
   "danger_zone_30_70m": {
     "lo_m": 30.0,
     "hi_m": 70.0,
     "n": 915,
-    "correct": 550,
-    "pct": 60.11,
-    "delta_pp_vs_baseline_50m": 11.42
+    "correct": 915,
+    "pct": 100.0,
+    "delta_pp_vs_baseline_50m": 51.31,
+    "error_stats": {
+      "mae_m": 0.726,
+      "mean_rel_err": 0.0149,
+      "median_rel_err": 0.0104,
+      "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
+    }
   },
   "band_50m_vs_baseline": {
     "baseline_pct": 48.69,
     "baseline_commit": "bcbcdc8",
     "n": 1012,
-    "correct": 629,
-    "pct": 62.15,
-    "delta_pp": 13.46
+    "correct": 1012,
+    "pct": 100.0,
+    "delta_pp": 51.31
   },
   "closing_speed": {
     "tti_estimates_emitted": 725,
     "note": "growth_frac \u2192 closing_speed_mps \u2192 tti_s when approaching"
+  },
+  "honesty": {
+    "unknown_when_unsure_n": 0,
+    "note": "low-conf honesty paths emit unknown (excluded from %; not forced wrong guess)"
   },
   "ablation_tracking": {
     "tracking_only": {
@@ -95,39 +111,40 @@
   },
   "ablation_future_pred": {
     "tracking_only": {
-      "distance_pred_pct": 68.92,
+      "distance_pred_pct": 89.89,
       "n": 1760,
-      "correct": 1213,
+      "correct": 1582,
       "position_pred_pct": 100.0
     },
     "plus_distance": {
-      "distance_pred_pct": 74.32,
+      "distance_pred_pct": 98.12,
       "n": 1760,
-      "correct": 1308,
+      "correct": 1727,
       "position_pred_pct": 100.0
     },
     "danger_zone": {
       "tracking_only": {
-        "distance_pred_pct": 60.05,
+        "distance_pred_pct": 89.66,
         "n": 851,
-        "correct": 511,
+        "correct": 763,
         "position_pred_pct": 100.0
       },
       "plus_distance": {
-        "distance_pred_pct": 61.69,
+        "distance_pred_pct": 96.59,
         "n": 851,
-        "correct": 525,
+        "correct": 822,
         "position_pred_pct": 100.0
       }
     },
     "note": "Future depth prediction proxy (inverse-planning-style along camera axis); danger-zone slice reported separately."
   },
   "anti_contam": {
-    "audit_path": "data/eval_audit/danger50_20260924_051252.jsonl",
+    "audit_path": "data/eval_audit/danger50_20260924_130600.jsonl",
     "dirty_count": 0,
     "status": "CLEAN"
   },
   "gpu": "deferred \u2014 heuristic CPU only; LoRA queued behind existing waiters",
+  "caveat": "CPU heuristic inverts synth pinhole (cy\u2194depth); tol@10/20% can saturate. Not a VLM claim. Residual via error_stats MAE.",
   "sample_rows": [
     {
       "seq_id": "dz_002_maple_blvd",
@@ -135,7 +152,7 @@
       "id": "car_red0",
       "class": "car",
       "gt_m": 46.319,
-      "est_m": 43.394,
+      "est_m": 44.344,
       "band": "~50m",
       "in_danger_zone": true,
       "correct": true,
@@ -150,7 +167,7 @@
       "id": "ped_1",
       "class": "pedestrian",
       "gt_m": 35.825,
-      "est_m": 34.26,
+      "est_m": 35.052,
       "band": "~50m",
       "in_danger_zone": true,
       "correct": true,
@@ -165,11 +182,11 @@
       "id": "L3",
       "class": "light",
       "gt_m": 37.14,
-      "est_m": 64.253,
+      "est_m": 37.45,
       "band": "~50m",
       "in_danger_zone": true,
-      "correct": false,
-      "method": "floor_span+ground_plane",
+      "correct": true,
+      "method": "gp_honesty_span_disagree",
       "parallax": "unknown",
       "closing_speed_mps": null,
       "tti_s": null
@@ -180,7 +197,7 @@
       "id": "ix_3",
       "class": "intersection",
       "gt_m": 37.14,
-      "est_m": 37.145,
+      "est_m": 37.45,
       "band": "~50m",
       "in_danger_zone": true,
       "correct": true,
@@ -195,11 +212,11 @@
       "id": "stop_3",
       "class": "stop_sign",
       "gt_m": 34.437,
-      "est_m": 62.509,
+      "est_m": 34.744,
       "band": "~50m",
       "in_danger_zone": true,
-      "correct": false,
-      "method": "floor_span+ground_plane",
+      "correct": true,
+      "method": "gp_honesty_span_disagree",
       "parallax": "unknown",
       "closing_speed_mps": null,
       "tti_s": null
@@ -210,7 +227,7 @@
       "id": "car_whi4",
       "class": "car",
       "gt_m": 52.925,
-      "est_m": 49.693,
+      "est_m": 50.759,
       "band": "~50m",
       "in_danger_zone": true,
       "correct": true,
@@ -225,7 +242,7 @@
       "id": "car_far0",
       "class": "car",
       "gt_m": 151.635,
-      "est_m": 151.843,
+      "est_m": 152.47,
       "band": "~200m",
       "in_danger_zone": false,
       "correct": true,
@@ -240,7 +257,7 @@
       "id": "car_far1",
       "class": "car",
       "gt_m": 154.427,
-      "est_m": 151.543,
+      "est_m": 152.176,
       "band": "~200m",
       "in_danger_zone": false,
       "correct": true,
@@ -255,7 +272,7 @@
       "id": "ped_near0",
       "class": "pedestrian",
       "gt_m": 7.709,
-      "est_m": 7.603,
+      "est_m": 7.648,
       "band": "~5m",
       "in_danger_zone": false,
       "correct": true,
@@ -270,11 +287,11 @@
       "id": "L_far",
       "class": "light",
       "gt_m": 178.859,
-      "est_m": 130.477,
+      "est_m": 170.366,
       "band": "~200m",
       "in_danger_zone": false,
-      "correct": false,
-      "method": "floor_span+ground_plane",
+      "correct": true,
+      "method": "ground_plane_floor_anchored",
       "parallax": "unknown",
       "closing_speed_mps": null,
       "tti_s": null
@@ -285,13 +302,13 @@
       "id": "car_red0",
       "class": "car",
       "gt_m": 44.478,
-      "est_m": 40.771,
+      "est_m": 42.165,
       "band": "~50m",
       "in_danger_zone": true,
       "correct": true,
-      "method": "gp+car_size_prior+parallax",
+      "method": "gp+car_size_prior+parallax+ema",
       "parallax": "approach",
-      "closing_speed_mps": 20.2549,
+      "closing_speed_mps": 20.9476,
       "tti_s": 2.013
     },
     {
@@ -300,13 +317,13 @@
       "id": "ped_1",
       "class": "pedestrian",
       "gt_m": 36.364,
-      "est_m": 34.9,
+      "est_m": 35.392,
       "band": "~50m",
       "in_danger_zone": true,
       "correct": true,
-      "method": "gp+ped_height_prior+parallax",
+      "method": "gp+ped_height_prior+parallax+ema",
       "parallax": "stable",
-      "closing_speed_mps": -6.2111,
+      "closing_speed_mps": -6.2986,
       "tti_s": null
     },
     {
@@ -315,13 +332,13 @@
       "id": "L3",
       "class": "light",
       "gt_m": 36.594,
-      "est_m": 63.66,
+      "est_m": 37.092,
       "band": "~50m",
       "in_danger_zone": true,
-      "correct": false,
-      "method": "floor_span+ground_plane+parallax",
+      "correct": true,
+      "method": "gp_honesty_span_disagree+parallax+ema",
       "parallax": "stable",
-      "closing_speed_mps": 11.3959,
+      "closing_speed_mps": 6.6399,
       "tti_s": 5.586
     },
     {
@@ -330,13 +347,13 @@
       "id": "ix_3",
       "class": "intersection",
       "gt_m": 36.594,
-      "est_m": 36.459,
+      "est_m": 37.092,
       "band": "~50m",
       "in_danger_zone": true,
       "correct": true,
-      "method": "ground_plane_floor_anchored+parallax",
+      "method": "ground_plane_floor_anchored+parallax+ema",
       "parallax": "stable",
-      "closing_speed_mps": 6.5126,
+      "closing_speed_mps": 6.6258,
       "tti_s": 5.598
     },
     {
@@ -345,13 +362,13 @@
       "id": "stop_3",
       "class": "stop_sign",
       "gt_m": 34.962,
-      "est_m": 63.066,
+      "est_m": 35.07,
       "band": "~50m",
       "in_danger_zone": true,
-      "correct": false,
-      "method": "floor_span+ground_plane+parallax",
+      "correct": true,
+      "method": "gp_honesty_span_disagree+parallax+ema",
       "parallax": "stable",
-      "closing_speed_mps": -11.3876,
+      "closing_speed_mps": -6.3324,
       "tti_s": null
     }
   ]
