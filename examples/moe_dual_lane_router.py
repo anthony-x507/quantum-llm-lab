@@ -187,6 +187,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R14: Apache httpd/Varnish/APISIX/Tyk/KrakenD/MongoDB/Cassandra/Jenkins/Vagrant/Chef/Pants/Prefect/FastAPI/Spring gates: scalars.
     # R15: Squid/OpenResty/Contour/Emissary/Zuul/Django/Laravel/Gin/DynamoDB/Firestore/Keycloak/Falco/OTel/Ray gates: scalars.
     # R16: ATS/CoreDNS/Pulsar/Redpanda/GHA/GitLab/Terraform/Nix/Express/Flask/Knative/KEDA/Dapr/Gatekeeper gates: scalars.
+    # R17: Cloudflare/CloudFront/Vitess/Cockroach/Pinot/CircleCI/Drone/Maven/sbt/Rails/Phoenix/Flagger/ArgoRollouts/Debezium gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -664,7 +665,66 @@ def route_heuristic(prompt: str) -> Lane:
             r"|opa\s+gatekeeper\s+.*gates:"
             r"|constraint\s+gates:\s*enforcement"
             # R16: proxy / DNS / messaging / CI / IaC / build / framework / serving / autoscaler / sidecar / policy prose
-            r"|gates:\s+is\s+(?:proxy|DNS|messaging|CI|IaC|build|framework|serving|autoscaler|sidecar|policy)\b",
+            r"|gates:\s+is\s+(?:proxy|DNS|messaging|CI|IaC|build|framework|serving|autoscaler|sidecar|policy)\b"
+            # R17: Cloudflare Worker gates: fetch
+            r"|gates\s*:\s*fetch\b"
+            r"|cloudflare\s+(?:worker\s+)?.*gates:"
+            r"|worker\s+gates:\s*fetch"
+            # R17: CloudFront behavior gates: PathPattern
+            r"|gates\s*:\s*PathPattern\b"
+            r"|cloudfront\s+.*gates:"
+            r"|behavior\s+gates:\s*PathPattern"
+            # R17: Vitess vschema gates: sharded
+            r"|gates\s*:\s*sharded\b"
+            r"|vitess\s+.*gates:"
+            r"|vschema\s+gates:\s*sharded"
+            # R17: CockroachDB grant gates: GRANT
+            r"|gates\s*:\s*GRANT\b"
+            r"|cockroach(?:db)?\s+.*gates:"
+            r"|grant\s+gates:\s*GRANT"
+            # R17: Apache Pinot table gates: ingestion
+            r"|gates\s*:\s*ingestion\b"
+            r"|pinot\s+.*gates:"
+            r"|table\s+gates:\s*ingestion"
+            # R17: CircleCI when gates: equal
+            r"|gates\s*:\s*equal\b"
+            r"|circleci\s+.*gates:"
+            r"|when\s+gates:\s*equal"
+            # R17: Drone CI when gates: event
+            r"|gates\s*:\s*event\b"
+            r"|drone\s+(?:ci\s+)?.*gates:"
+            r"|when\s+gates:\s*event"
+            # R17: Maven profile gates: activeByDefault
+            r"|gates\s*:\s*activeByDefault\b"
+            r"|maven\s+.*gates:"
+            r"|profile\s+gates:\s*activeByDefault"
+            # R17: sbt task gates: dependsOn
+            r"|gates\s*:\s*dependsOn\b"
+            r"|sbt\s+.*gates:"
+            r"|task\s+gates:\s*dependsOn"
+            # R17: Rails before_action gates: before_action
+            r"|gates\s*:\s*before_action\b"
+            r"|rails\s+.*gates:"
+            r"|before_action\s+gates:"
+            # R17: Phoenix plug gates: plug
+            r"|gates\s*:\s*plug\b"
+            r"|phoenix\s+.*gates:"
+            r"|plug\s+gates:"
+            # R17: Flagger canary gates: stepWeight
+            r"|gates\s*:\s*stepWeight\b"
+            r"|flagger\s+.*gates:"
+            r"|canary\s+gates:\s*stepWeight"
+            # R17: Argo Rollouts step gates: setWeight
+            r"|gates\s*:\s*setWeight\b"
+            r"|argo\s+rollouts?\s+.*gates:"
+            r"|rollouts?\s+gates:\s*setWeight"
+            # R17: Debezium filter gates: op
+            r"|gates\s*:\s*op\b"
+            r"|debezium\s+.*gates:"
+            r"|cdc\s+gates:\s*op"
+            r"|filter\s+gates:\s*op"
+            # R17: edge / CDN / DB / CI / build / framework / canary / CDC prose
+            r"|gates:\s+is\s+(?:edge|CDN|DB|CI|build|framework|canary|CDC)\b",
             text,
             re.I,
         )
@@ -1284,6 +1344,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r17' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r17.json"
         elif 'r16' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r16.json"
         elif 'r15' in hp:

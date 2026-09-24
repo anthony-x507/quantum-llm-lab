@@ -1,3 +1,4 @@
+- 2026-09-24 ET — fold tip-hardneg-r17 → codigo-vivo-tip; R17 8→52/52 · 44/44; freeze `codigo_vivo_tip_r17_100pct_20260924_153921`; mixed 1.0; R16/tti-cold/choose_n retained; R18+ not folded.
 - 2026-09-24 ET — fold tip-tti-cold → codigo-vivo-tip; freeze `codigo_vivo_tip_tti_cold_fold_100pct_20260924_152850`; cold 91.16→94.99 / 91.66→94.82; plateau hold; R17+ not folded.
 - 2026-09-24 ET: fold tip-hardneg-r16 → codigo-vivo-tip; R16 11→52/52 · 44/44; freeze `codigo_vivo_tip_r16_100pct_20260924_152253`; choose_n retained; tti-cold/R17+ not folded.
 - 2026-09-24 fold tip-choose-safest-n → tip; freeze `codigo_vivo_tip_choose_safest_n_fold_100pct_20260924_151818`; n 40→80 @ physics+choose_safest 100%; R15 52/52 held; mixed 1.0; RO adapters.

@@ -1,0 +1,628 @@
+{
+  "method": "heuristic",
+  "n": 52,
+  "hits": 8,
+  "misses": 44,
+  "score": "8/52",
+  "rate": 0.1538,
+  "by_family": {
+    "cloudflare_worker_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "cloudfront_behavior_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "vitess_vschema_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "cockroach_grant_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "pinot_table_gates": {
+      "n": 3,
+      "hits": 2,
+      "rate": 0.6667
+    },
+    "circleci_when_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "drone_when_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "maven_profile_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "sbt_task_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "rails_before_action_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "phoenix_plug_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "flagger_canary_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "argorollouts_step_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "debezium_filter_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "ent_control_r17": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r17": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r17": {
+      "n": 4,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "base_python_control_r17": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "r17_cfw_01",
+      "family": "cloudflare_worker_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: fetch'). Cloudflare Worker. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_cfw_02",
+      "family": "cloudflare_worker_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: fetch'\nprint(t.count('gates'))\n# Cloudflare Worker gates: \u2014 not circui",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_cfw_03",
+      "family": "cloudflare_worker_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 51. Cloudflare Worker gates: fetch is edge only. ONLY c",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_cft_01",
+      "family": "cloudfront_behavior_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: PathPattern'). CloudFront. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_cft_02",
+      "family": "cloudfront_behavior_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: PathPattern'\nprint(t.count('gates'))\n# CloudFront gates: \u2014 not circuit",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_cft_03",
+      "family": "cloudfront_behavior_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 52. CloudFront gates: PathPattern is CDN only. ONLY cod",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_vit_01",
+      "family": "vitess_vschema_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: sharded'). Vitess. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_vit_02",
+      "family": "vitess_vschema_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: sharded'\nprint(t.count('gates'))\n# Vitess gates: \u2014 not circuit. ONLY c",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_vit_03",
+      "family": "vitess_vschema_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 53. Vitess gates: sharded is DB only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_crdb_01",
+      "family": "cockroach_grant_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: GRANT'). CockroachDB. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_crdb_02",
+      "family": "cockroach_grant_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: GRANT'\nprint(t.count('gates'))\n# CockroachDB gates: \u2014 not circuit. ONL",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_crdb_03",
+      "family": "cockroach_grant_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 54. CockroachDB gates: GRANT is DB only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_pinot_01",
+      "family": "pinot_table_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: ingestion'). Apache Pinot. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_pinot_02",
+      "family": "pinot_table_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: ingestion'\nprint(t.count('gates'))\n# Apache Pinot gates: \u2014 not circuit",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r17_pinot_03",
+      "family": "pinot_table_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 55. Apache Pinot gates: ingestion is DB only. ONLY code",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r17_cci_01",
+      "family": "circleci_when_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: equal'). CircleCI. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_cci_02",
+      "family": "circleci_when_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: equal'\nprint(t.count('gates'))\n# CircleCI gates: \u2014 not circuit. ONLY c",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_cci_03",
+      "family": "circleci_when_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 56. CircleCI gates: equal is CI only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_drone_01",
+      "family": "drone_when_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: event'). Drone CI. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_drone_02",
+      "family": "drone_when_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: event'\nprint(t.count('gates'))\n# Drone CI gates: \u2014 not circuit. ONLY c",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_drone_03",
+      "family": "drone_when_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 57. Drone CI gates: event is CI only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_mvn_01",
+      "family": "maven_profile_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: activeByDefault'). Maven. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_mvn_02",
+      "family": "maven_profile_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: activeByDefault'\nprint(t.count('gates'))\n# Maven gates: \u2014 not circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_mvn_03",
+      "family": "maven_profile_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 58. Maven gates: activeByDefault is build only. ONLY co",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_sbt_01",
+      "family": "sbt_task_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: dependsOn'). sbt. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_sbt_02",
+      "family": "sbt_task_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: dependsOn'\nprint(t.count('gates'))\n# sbt gates: \u2014 not circuit. ONLY co",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_sbt_03",
+      "family": "sbt_task_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 59. sbt gates: dependsOn is build only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_rails_01",
+      "family": "rails_before_action_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: before_action'). Rails. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_rails_02",
+      "family": "rails_before_action_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: before_action'\nprint(t.count('gates'))\n# Rails gates: \u2014 not circuit. O",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_rails_03",
+      "family": "rails_before_action_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 60. Rails gates: before_action is framework only. ONLY ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_phx_01",
+      "family": "phoenix_plug_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: plug'). Phoenix. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_phx_02",
+      "family": "phoenix_plug_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: plug'\nprint(t.count('gates'))\n# Phoenix gates: \u2014 not circuit. ONLY cod",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_phx_03",
+      "family": "phoenix_plug_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 61. Phoenix gates: plug is framework only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_flg_01",
+      "family": "flagger_canary_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: stepWeight'). Flagger. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_flg_02",
+      "family": "flagger_canary_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: stepWeight'\nprint(t.count('gates'))\n# Flagger gates: \u2014 not circuit. ON",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_flg_03",
+      "family": "flagger_canary_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 62. Flagger gates: stepWeight is canary only. ONLY code",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_aro_01",
+      "family": "argorollouts_step_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: setWeight'). Argo Rollouts. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_aro_02",
+      "family": "argorollouts_step_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: setWeight'\nprint(t.count('gates'))\n# Argo Rollouts gates: \u2014 not circui",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_aro_03",
+      "family": "argorollouts_step_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 63. Argo Rollouts gates: setWeight is canary only. ONLY",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_dbz_01",
+      "family": "debezium_filter_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: op'). Debezium. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_dbz_02",
+      "family": "debezium_filter_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: op'\nprint(t.count('gates'))\n# Debezium gates: \u2014 not circuit. ONLY code",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_dbz_03",
+      "family": "debezium_filter_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 64. Debezium gates: op is CDC only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_ent_01",
+      "family": "ent_control_r17",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Responde SOLO JSON v\u00e1lido con n_qubits, gates, domain, label. Bell pair entrelaz",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_ent_02",
+      "family": "ent_control_r17",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separabl",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_vis_01",
+      "family": "vision_control_r17",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. How many dots are visible? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_vis_02",
+      "family": "vision_control_r17",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the chalkboard. How many letters? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_base_01",
+      "family": "base_control_r17",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Thanks. Ignore Cloudflare Worker gates: fetch in the README. No code, no circuit",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_base_02",
+      "family": "base_control_r17",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Please ignore the CircleCI gates: equal phrase. Chat only \u2014 no program, no circu",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_base_03",
+      "family": "base_control_r17",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Hello \u2014 Flagger gates: stepWeight is canary only. No code, no circuit, no JSON.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_base_04",
+      "family": "base_control_r17",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Weather update. Debezium gates: op mention. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r17_ctrl_01",
+      "family": "base_python_control_r17",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r17_ctrl_02",
+      "family": "base_python_control_r17",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(sum(range(4)))\n# plain. ONLY code.",
+      "ent_adapter_blocked": true
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_r17_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}

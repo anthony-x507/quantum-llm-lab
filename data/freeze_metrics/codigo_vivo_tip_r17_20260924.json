@@ -1,0 +1,14 @@
+{
+  "frontier": "codigo-vivo-tip-r17",
+  "written_et": "2026-09-24 15:39:21 ET",
+  "phase": "fold_resmoke",
+  "router": "52/52",
+  "router_rate": 1.0,
+  "verifier": "44/44",
+  "verifier_alone": 1.0,
+  "unified": 1.0,
+  "before": "8/52",
+  "before_rate": 0.15384615384615385,
+  "mixed_d": 1.0,
+  "ent_never_on_python": true
+}
