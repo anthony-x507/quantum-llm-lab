@@ -20,6 +20,7 @@ import argparse
 import json
 import math
 import random
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -213,6 +214,27 @@ def build_chat_dataset(rows: list[dict[str, Any]], out_jsonl: Path) -> int:
     return n
 
 
+def _stage_hf_dataset_dir(dataset_path: Path) -> Path:
+    """mlx_vlm.lora uses datasets.load_dataset(path); a bare .jsonl fails.
+    A directory containing train.jsonl loads correctly.
+    """
+    dataset_path = Path(dataset_path)
+    if dataset_path.is_dir() and (dataset_path / "train.jsonl").exists():
+        return dataset_path
+    if dataset_path.is_file() and dataset_path.suffix == ".jsonl":
+        staged = dataset_path.parent / "lora_dataset_hf"
+        staged.mkdir(parents=True, exist_ok=True)
+        dest = staged / "train.jsonl"
+        if dest.exists() or dest.is_symlink():
+            dest.unlink()
+        try:
+            dest.symlink_to(dataset_path.resolve())
+        except OSError:
+            shutil.copy2(dataset_path, dest)
+        return staged
+    return dataset_path
+
+
 def run_mlx_vlm_lora(
     *,
     model: str,
@@ -225,7 +247,8 @@ def run_mlx_vlm_lora(
     batch_size: int,
 ) -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
-    # mlx_vlm.lora acepta dataset HF id o ruta según versión; pasamos ruta al jsonl dir.
+    # mlx_vlm.lora → datasets.load_dataset(path); stage HF-friendly train.jsonl dir.
+    dataset_for_mlx = _stage_hf_dataset_dir(Path(dataset_path))
     cmd = [
         sys.executable,
         "-m",
@@ -233,7 +256,7 @@ def run_mlx_vlm_lora(
         "--model-path",
         model,
         "--dataset",
-        str(dataset_path),
+        str(dataset_for_mlx),
         "--lora-rank",
         str(rank),
         "--lora-alpha",

@@ -24,3 +24,4 @@ data/lora_dataset.jsonl
 data/lora_adapter_smoke/
 data/train_lora_smoke.log
 data/train_lora.log
+data/lora_dataset_hf/
