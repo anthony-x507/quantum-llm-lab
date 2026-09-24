@@ -61,6 +61,6 @@
   "choose_n_folded": false,
   "r16_plus_folded": false,
   "tti_cold_folded": false,
-  "fold_commit_sha": "PENDING",
-  "fold_commit_sha_short": "PENDING"
+  "fold_commit_sha": "4787c78c3a6d2049da7f18a6574748cd8adf3e16",
+  "fold_commit_sha_short": "4787c78"
 }

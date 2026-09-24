@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-r15-fold",
   "written_et": "2026-09-24 15:12:43 ET",
-  "tip_sha": "PENDING",
-  "tip_sha_short": "PENDING",
+  "tip_sha": "4787c78c3a6d2049da7f18a6574748cd8adf3e16",
+  "tip_sha_short": "4787c78",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-hardneg-r15",
   "rebase_onto": "bc6902f",
@@ -71,7 +71,7 @@
     "router": "15/52\u219252/52",
     "verifier": "44/44"
   },
-  "fold_commit_sha": "PENDING",
-  "fold_commit_sha_short": "PENDING",
+  "fold_commit_sha": "4787c78c3a6d2049da7f18a6574748cd8adf3e16",
+  "fold_commit_sha_short": "4787c78",
   "freeze_id": "codigo_vivo_tip_r15_100pct_20260924_151243"
 }
