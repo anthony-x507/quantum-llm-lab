@@ -62,6 +62,8 @@ No se declara dominio “10× cerrado” hasta tener **own-delta limpio** (base 
 
 **Última actualización scoreboard:** 2026-09-24 ~05:12 ET · distance danger50 reinforce (+1.9 pp ~50m; focused 30–70m 60.1%).
 
+**Código-vivo tip:** see `docs/FRONTIER-CODIGO-VIVO-SCOREBOARD.md` (`frontier/codigo-vivo-tip`) — mixed unified **overall 1.0**, hardneg R1/R2 **1.0**, scaffold freeze held, vision_mlx_parse **0→1.0** (2026-09-24 ~11:00 ET).
+
 ---
 ## 1. Visión
 

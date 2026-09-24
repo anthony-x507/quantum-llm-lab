@@ -341,6 +341,80 @@ SMOKE_FIXTURES: list[dict[str, str]] = [
 ]
 
 
+HARDNEG_ROUTER_PATH = ROOT / "data" / "bench_live" / "hardneg_mixed_router.json"
+HARDNEG_OUT = ROOT / "data" / "frontier_moe_dual_lane_hardneg.json"
+
+
+def load_hardneg_fixtures(path: Path | None = None) -> list[dict[str, str]]:
+    """Load hard-neg mixed fixtures. Expected lane is harness-only (post-hoc)."""
+    p = path or HARDNEG_ROUTER_PATH
+    blob = json.loads(p.read_text(encoding="utf-8"))
+    items = blob.get("items") or blob
+    out: list[dict[str, str]] = []
+    for it in items:
+        out.append({
+            "id": str(it["id"]),
+            "expected": str(it["expected"]),
+            "prompt": str(it["prompt"]),
+            "family": str(it.get("family") or ""),
+        })
+    return out
+
+
+def run_hardneg(method: str = "heuristic", path: Path | None = None) -> dict[str, Any]:
+    """Score hard-neg mixed fixtures; GT lane compared post-hoc only."""
+    fixtures = load_hardneg_fixtures(path)
+    rows = []
+    hits = 0
+    by_family: dict[str, dict[str, int]] = {}
+    for fx in fixtures:
+        lane = route(fx["prompt"], method=method)
+        ok = lane == fx["expected"]
+        if ok:
+            hits += 1
+        fam = fx.get("family") or "unknown"
+        by_family.setdefault(fam, {"n": 0, "hits": 0})
+        by_family[fam]["n"] += 1
+        if ok:
+            by_family[fam]["hits"] += 1
+        ap = adapter_path_for(lane)  # type: ignore[arg-type]
+        rows.append({
+            "id": fx["id"],
+            "family": fam,
+            "expected": fx["expected"],
+            "got": lane,
+            "ok": ok,
+            "adapter": str(ap) if ap else None,
+            "prompt_preview": fx["prompt"][:80],
+            "ent_adapter_blocked": lane == "python" and (
+                ap is None or "ent" not in Path(str(ap)).name
+            ),
+        })
+    n = len(fixtures)
+    return {
+        "method": method,
+        "n": n,
+        "hits": hits,
+        "misses": n - hits,
+        "score": f"{hits}/{n}",
+        "rate": round(hits / n, 4) if n else 0.0,
+        "by_family": {
+            k: {**v, "rate": round(v["hits"] / v["n"], 4) if v["n"] else 0.0}
+            for k, v in by_family.items()
+        },
+        "ent_never_on_python": all(
+            (r["got"] != "python") or r.get("ent_adapter_blocked")
+            for r in rows
+        ),
+        "rows": rows,
+        "fixture_path": str((path or HARDNEG_ROUTER_PATH).resolve().relative_to(ROOT.resolve())),
+        "anti_contamination": {
+            "expected_lane_harness_only": True,
+            "gt_never_in_route_api": True,
+        },
+    }
+
+
 def run_smoke(method: str = "heuristic") -> dict[str, Any]:
     rows = []
     hits = 0
@@ -551,6 +625,9 @@ def main() -> int:
     p.add_argument("--out", type=Path, default=SMOKE_OUT)
     p.add_argument("--route", type=str, default=None,
                    help="Route a single prompt and print lane+adapter")
+    p.add_argument("--hardneg", action="store_true",
+                   help="Score hard-neg mixed router fixtures (R1/R2)")
+    p.add_argument("--hardneg-path", type=Path, default=HARDNEG_ROUTER_PATH)
     args = p.parse_args()
 
     method = "heuristic"
@@ -563,6 +640,25 @@ def main() -> int:
         lane = route(args.route, method=method)
         ap = adapter_path_for(lane)
         print(json.dumps({"lane": lane, "adapter": str(ap) if ap else None}, indent=2))
+        return 0
+
+    if args.hardneg:
+        print(f"=== MoE hardneg method={method} ===", flush=True)
+        hn = run_hardneg(method, path=args.hardneg_path)
+        print(
+            f"Hardneg: {hn['score']} rate={hn['rate']} "
+            f"ent_never_on_python={hn['ent_never_on_python']}",
+            flush=True,
+        )
+        out = args.out if args.out != SMOKE_OUT else HARDNEG_OUT
+        if 'r2' in str(args.hardneg_path).lower():
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r2.json"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(
+            __import__('json').dumps(hn, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+        print(f"Wrote {out}", flush=True)
         return 0
 
     if not args.smoke and not args.bench_codigo_vivo:

@@ -1,13 +1,13 @@
 {
   "frontier": "C3b-moe-verifier-mixed-live",
-  "written": "2026-09-24 10:55:46",
-  "primary": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/frontier_moe_verifier_mixed_mlx.json",
+  "written": "2026-09-24 10:59:52",
+  "primary": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/frontier_moe_verifier_mixed_cpu.json",
   "scoreboard": {
     "table": [
       {
         "path": "a_baseline",
         "python": {
-          "n": 2,
+          "n": 8,
           "rate": 0.0,
           "metric": "solve_rate_single"
         },
@@ -28,7 +28,7 @@
       {
         "path": "b_moe_alone",
         "python": {
-          "n": 2,
+          "n": 8,
           "rate": 0.0,
           "metric": "solve_rate_single"
         },
@@ -49,7 +49,7 @@
       {
         "path": "c_verifier_on_python",
         "python": {
-          "n": 2,
+          "n": 8,
           "rate": 1.0,
           "metric": "solve_rate_loop"
         },
@@ -70,7 +70,7 @@
       {
         "path": "d_unified",
         "python": {
-          "n": 2,
+          "n": 8,
           "rate": 1.0,
           "metric": "solve_rate_loop"
         },
@@ -97,8 +97,8 @@
     },
     "moe_delta_visible": true,
     "priors_used": [
-      "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/BENCHMARK_CODIGO_VIVO.json",
-      "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/frontier_moe_dual_lane_smoke.json"
+      "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/BENCHMARK_CODIGO_VIVO.json",
+      "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/frontier_moe_dual_lane_smoke.json"
     ]
   },
   "anti_contamination": {
@@ -108,19 +108,11 @@
     "locked_false": true,
     "gt_never_in_inference_prompts": true,
     "ent_never_on_python": true,
+    "scaffold_gt_leaks": 0,
+    "circuit_scaffold_on_ent": true,
     "lock": "docs/LOCK-ANTI-CONTAMINATION.md"
   },
   "moe_delta_visible": true,
   "router_hardneg": "18/18",
-  "router_pillars": "26/26",
-  "vision_polish": {
-    "before": 0.9,
-    "after_scored": 1.0,
-    "analysis": "data/frontier_mixed_vision_fail_analysis.json",
-    "freeze_lock": "data/freeze_manifests/mixed_moe_verifier_unified_96.67pct_20260924_105328.json"
-  },
-  "notes": [
-    "Vision polish: per-item prior on scored math (8/8) + gold-free reparse of vis_circ_02 \u2192 scored/vis full 1.0; overall (d) 1.0 (\u2265 freeze 0.967).",
-    "Hard-neg vision expand 10\u219218; VISION_NEG_RE; router pillars 26/26 hardneg 18/18."
-  ]
+  "router_pillars": "26/26"
 }

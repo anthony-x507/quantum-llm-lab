@@ -1,0 +1,144 @@
+{
+  "frontier": "mixed-with-freeze-r2",
+  "written_et": "2026-09-24 10:58:17 ET",
+  "base_mixed_sha": "efc5e9d692fdef20c86c32e92137746201d56784",
+  "freeze_source_sha": "65e5c2bd5db2958530398c878e422907c7d0f259",
+  "branch": "frontier/mixed-with-freeze-r2",
+  "policy": "Port freeze R1/R2 reinforces onto mixed tip. Overall \u22650.967 intent (0.9667 exact). RO data/lora_adapter/. No merge main.",
+  "before": {
+    "overall_d_unified": 0.9667,
+    "router_pillars": "26/26",
+    "router_hardneg_mixed_embedded": "10/10",
+    "note": "from efc5e9d tip scoreboard prior to R1/R2 port"
+  },
+  "after": {
+    "scoreboard": {
+      "a_baseline": 0.3,
+      "b_moe_alone": 0.6333,
+      "c_verifier_on_python": 0.6333,
+      "d_unified": 0.9667
+    },
+    "delta_moe_overall": 0.3333,
+    "moe_delta_visible": true,
+    "router_pillars": "26/26",
+    "router_hardneg_mixed_embedded": "10/10",
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false
+  },
+  "hardneg_r1_router": {
+    "score": "18/18",
+    "rate": 1.0,
+    "ent_never_on_python": true,
+    "by_family": {
+      "python_looks_like_physics": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      },
+      "ent_wording_in_coding": {
+        "n": 6,
+        "hits": 6,
+        "rate": 1.0
+      },
+      "vision_caption_ambiguous": {
+        "n": 5,
+        "hits": 5,
+        "rate": 1.0
+      },
+      "ent_control": {
+        "n": 2,
+        "hits": 2,
+        "rate": 1.0
+      },
+      "base_control": {
+        "n": 1,
+        "hits": 1,
+        "rate": 1.0
+      }
+    }
+  },
+  "hardneg_r2_router": {
+    "score": "22/22",
+    "rate": 1.0,
+    "ent_never_on_python": true,
+    "by_family": {
+      "bilingual_trap": {
+        "n": 5,
+        "hits": 5,
+        "rate": 1.0
+      },
+      "measure_in_comment": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      },
+      "vision_words_no_image": {
+        "n": 5,
+        "hits": 5,
+        "rate": 1.0
+      },
+      "ent_metaphor_crud": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      },
+      "json_looking_physics": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      }
+    }
+  },
+  "hardneg_r1_verifier": {
+    "router_smoke": "12/12",
+    "hardneg_router": "18/18",
+    "hardneg_router_rate": 1.0,
+    "verifier_alone_loop": {
+      "n": 12,
+      "rate": 1.0,
+      "prompt_touches_gt": false
+    },
+    "unified_loop": {
+      "n": 12,
+      "rate": 1.0,
+      "prompt_touches_gt": false
+    },
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false
+  },
+  "hardneg_r2_verifier": {
+    "router_smoke": "12/12",
+    "hardneg_router": "22/22",
+    "hardneg_router_rate": 1.0,
+    "verifier_alone_loop": {
+      "n": 20,
+      "rate": 1.0,
+      "prompt_touches_gt": false
+    },
+    "unified_loop": {
+      "n": 20,
+      "rate": 1.0,
+      "prompt_touches_gt": false
+    },
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false
+  },
+  "reinforce_layers_ported": [
+    "VISION_NEG_RE + ENT_NEG_RE + R2 bilingual VISION_RE (observa/foto/imagen adjunta)",
+    "merged with mixed vis_arith / look-at-sequence cues (kept)",
+    "propose_heuristic R1/R2 gold-free extractors",
+    "hardneg CLI + fixtures R1 (18 router / 12 py) + R2 (22 router / 20 py)"
+  ],
+  "floor_held": true,
+  "artifacts": [
+    "data/frontier_moe_verifier_mixed_cpu.json",
+    "data/frontier_moe_verifier_mixed_unified.json",
+    "data/frontier_moe_verifier_mixed_smoke.json",
+    "data/frontier_moe_dual_lane_hardneg.json",
+    "data/frontier_moe_dual_lane_hardneg_r2.json",
+    "data/frontier_moe_verifier_hardneg.json",
+    "data/frontier_moe_verifier_hardneg_r2.json",
+    "data/freeze_metrics/mixed_with_freeze_r2_20260924.json",
+    "docs/FRONTIER-MIXED-WITH-FREEZE-R2.md"
+  ]
+}

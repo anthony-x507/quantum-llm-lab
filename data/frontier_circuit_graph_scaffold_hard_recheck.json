@@ -1,5 +1,5 @@
 {
-  "written": "2026-09-24 10:57:24",
+  "written": "2026-09-24 10:59:53",
   "freeze_still_held": true,
   "freeze_path": "data/FRONTIER_CIRCUIT_GRAPH_SCAFFOLD_FREEZE.json",
   "freeze_blob": {
@@ -42,9 +42,9 @@
     "n_ent": 20
   },
   "ablation": {
-    "written": "2026-09-24 10:57:24",
+    "written": "2026-09-24 10:59:53",
     "router_method": "heuristic",
-    "polish_features": true,
+    "polish_features": false,
     "n_fixtures": 24,
     "n_ent_evaluated": 20,
     "n_skipped_non_ent": 4,
@@ -86,5 +86,5 @@
       "lora_adapter_writes": false
     }
   },
-  "elapsed_s": 1.46
+  "elapsed_s": 1.34
 }
