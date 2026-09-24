@@ -3,14 +3,14 @@
 **Repo:** `anthony-x507/quantum-llm-lab` · **Hardware:** Mac M4 128 GB  
 **Claims:** **NO quantum advantage.** Pedagogical / experimental fusion only.  
 **Standing rule:** No Cloud Agents. `data/lora_adapter/` is **read-only** (do not fuse/overwrite).  
-**Updated:** 2026-09-24 ~04:30 ET
+**Updated:** 2026-09-24 ~04:40 ET
 
 | # | Method | Status now |
 |---|--------|------------|
 | 1 | Amplitude embedding | **BUILT** — `examples/amplitude_embed_prototype.py` |
 | 2 | MPS tensor networks | PLAN ONLY |
 | 3 | Real QEC (Steane / surface) self-correction | PLAN ONLY (toy QEC already in repo) |
-| 4 | Hybrid model→quantum oracle→model loop | PLAN ONLY (bridge exists; not closed-loop) |
+| 4 | Hybrid model→quantum oracle→model loop | **PROTOTYPE** — `examples/hybrid_oracle_loop.py` |
 | 5 | Distillation teacher→Qwen8B in quantum format | PLAN ONLY |
 
 ---
@@ -67,7 +67,7 @@ python examples/amplitude_embed_prototype.py --mlx-eval \
 
 ---
 
-## 4) Hybrid model → quantum oracle → model loop *(Piece 2 — plan only)*
+## 4) Hybrid model → quantum oracle → model loop *(Piece 2 — PROTOTYPE)*
 
 **What it is.** Close the loop already sketched in `llm_quantum_bridge.py` + Jev: LLM proposes circuit JSON → PennyLane oracle returns probs / amplitudes / energy-proxy → **structured feedback** re-enters the model for a second pass (self-consistency / repair). Optional Studio 2B/4B ranker in the middle (`cluster.yaml`).
 
@@ -78,6 +78,18 @@ python examples/amplitude_embed_prototype.py --mlx-eval \
 **Effort.** M (wire existing pieces) → L (multi-turn policy).
 
 **Success metric.** On ENT_SET + fall set: `parse→compile→Jev` after ≤2 oracle rounds ≥ LoRA single-pass; track oracle-reject→repair success rate.
+
+**Status (2026-09-24 ~04:40 ET):** PROTOTYPE shipped. CPU heuristic proposer + PennyLane oracle + revise ≤2. GPU/MLX path gated on TRAIN_LOCK. On fixed ENT_SET n=12: single-shot label_acc **0.333** → after-loop **1.000** (Δ+0.667); Jev 0.833→1.000. Matches cached LoRA ref on label (1.0) via classical repair — **no quantum-advantage claim**. Results: `docs/HYBRID-ORACLE-RESULTS.md`.
+
+**How to run.**
+```bash
+python examples/hybrid_oracle_loop.py --self-test
+python examples/hybrid_oracle_loop.py --cpu-eval \
+  --ent-set data/bench_live/ent_items.json --rounds 1
+# only when TRAIN_LOCK absent / GPU free:
+python examples/hybrid_oracle_loop.py --mlx-eval \
+  --adapter-ro data/lora_adapter --ent-set data/bench_live/ent_items.json
+```
 
 ---
 
@@ -98,7 +110,7 @@ python examples/amplitude_embed_prototype.py --mlx-eval \
 ## Sequencing recommendation
 
 1. **Now:** finish amp-embed CPU metrics; run `--mlx-eval` only when `qlora-ent` / TRAIN_LOCK clear.  
-2. **Next piece:** (4) hybrid oracle loop — highest leverage with existing bridge+Jev.  
+2. **Done (prototype):** (4) hybrid oracle loop — CPU path shipped; MLX revise when GPU free.  
 3. Then (3) Steane wire on top of oracle rejects.  
 4. (5) distill once oracle traces exist.  
 5. (2) MPS last (highest effort / uncertain LLM gain).
