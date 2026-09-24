@@ -68,5 +68,11 @@
     "overall_cold_danger50": "91.66\u219294.82",
     "rise_retention_vs_side": 1.0
   },
-  "freeze_id": "codigo_vivo_tip_tti_cold_fold_100pct_20260924_152850"
+  "freeze_id": "codigo_vivo_tip_tti_cold_fold_100pct_20260924_152850",
+  "fold_commit_sha": "04d95c0d1d4dd5d2a61780352a8ab576000df1ca",
+  "fold_commit_sha_short": "04d95c0",
+  "tip_sha": "04d95c0d1d4dd5d2a61780352a8ab576000df1ca",
+  "tip_sha_short": "04d95c0",
+  "post_port_feat_sha": "04d95c0",
+  "post_port_feat_sha_full": "04d95c0d1d4dd5d2a61780352a8ab576000df1ca"
 }

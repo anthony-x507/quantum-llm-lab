@@ -62,5 +62,11 @@
   "plateau_note": "Cold overall ~95% with ~5% residual; Anthony lock \u2014 freeze and STOP chasing (no GT/v_depth leak).",
   "claim": "NO quantum advantage. CPU heuristic TTI cold-start soft priors only.",
   "adapters_ro": true,
-  "folded": true
+  "folded": true,
+  "fold_commit_sha": "04d95c0d1d4dd5d2a61780352a8ab576000df1ca",
+  "fold_commit_sha_short": "04d95c0",
+  "tip_sha": "04d95c0d1d4dd5d2a61780352a8ab576000df1ca",
+  "tip_sha_short": "04d95c0",
+  "post_port_feat_sha": "04d95c0",
+  "post_port_feat_sha_full": "04d95c0d1d4dd5d2a61780352a8ab576000df1ca"
 }

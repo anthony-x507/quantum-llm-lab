@@ -7,7 +7,8 @@
 **Side:** `c97e89a` / feat `9ddb8f4` (based on tip `4bfc924` post inverse-r3)  
 **When:** side ~14:35 ET · fold 2026-09-24 15:28:50 ET  
 **Freeze (side):** `codigo_vivo_tip_tti_cold_100pct_20260924_143601`  
-**Freeze (fold):** `codigo_vivo_tip_tti_cold_fold_100pct_20260924_152850`  
+**Freeze (fold):**   
+**Fold feat SHA:**  ()`codigo_vivo_tip_tti_cold_fold_100pct_20260924_152850`  
 **Claim:** NO quantum advantage. CPU heuristic / soft priors only.
 
 ## LOCK (Anthony / Leader)
