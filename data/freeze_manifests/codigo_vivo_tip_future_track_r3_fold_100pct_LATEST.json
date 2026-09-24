@@ -106,5 +106,7 @@
   "git_sha": "c6389e59185dc5ce8b00de50b962422f1fde9248",
   "git_sha_short": "c6389e5",
   "post_port_feat_sha": "c6389e5",
-  "post_port_feat_sha_full": "c6389e59185dc5ce8b00de50b962422f1fde9248"
+  "post_port_feat_sha_full": "c6389e59185dc5ce8b00de50b962422f1fde9248",
+  "docs_pin_sha": "8f7c1fc47901581a115191ef437f739e8bcb81f9",
+  "docs_pin_sha_short": "8f7c1fc"
 }

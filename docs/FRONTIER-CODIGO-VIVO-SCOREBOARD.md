@@ -13,7 +13,7 @@
 | inverse_cv · collision · choose_safest | **100% · 100% · 100%** (n=40 / 2850) |
 | pillars / hardneg smoke | **26/26 · 18/18** |
 | Freeze | `codigo_vivo_tip_future_track_r3_fold_100pct_20260924_144946` |
-| Tip SHA (fold) | `PENDING` |
+| Tip SHA (fold) | `c6389e5` |
 | Policy | RO `data/lora_adapter/`; no main; R13+far+mid+inv floors kept; circ/R14+/pillars not folded |
 
 **Method:** merge-port `6da80e5`/`2d6788c` (prefer r3 over r2/r1) onto tip `8beae21` keeping mid+far+TTI estimator; layer v5/v6/v7 future helpers; eval → `v7_future_track_r3`.

@@ -91,5 +91,7 @@
   "machine_id": "074c6626-0440-4817-9829-6bae77c578d6",
   "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
   "tip_sha": "c6389e59185dc5ce8b00de50b962422f1fde9248",
-  "tip_sha_short": "c6389e5"
+  "tip_sha_short": "c6389e5",
+  "docs_pin_sha": "8f7c1fc47901581a115191ef437f739e8bcb81f9",
+  "docs_pin_sha_short": "8f7c1fc"
 }
