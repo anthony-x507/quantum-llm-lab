@@ -87,6 +87,52 @@ def _narrative_from_structured(s: dict[str, Any]) -> str:
     )
 
 
+
+def _strip_think_and_extract(text_out: str) -> str:
+    """Remove <think> blocks; prefer text after last </think>; else keep JSON span."""
+    import re
+
+    if not text_out:
+        return ""
+    cleaned = re.sub(r"<think>[\s\S]*?</think>", "", text_out, flags=re.I)
+    lower_orig = text_out.lower()
+    if "</think>" in lower_orig:
+        idx = lower_orig.rfind("</think>")
+        cleaned = text_out[idx + len("</think>") :]
+    elif "<think>" in lower_orig and "{" in text_out:
+        cleaned = text_out[text_out.find("{") :]
+    cleaned = cleaned.strip()
+    if "{" in cleaned:
+        start = cleaned.find("{")
+        depth = 0
+        in_str = False
+        escape = False
+        end = None
+        for i in range(start, len(cleaned)):
+            ch = cleaned[i]
+            if in_str:
+                if escape:
+                    escape = False
+                elif ch == "\\":
+                    escape = True
+                elif ch == '"':
+                    in_str = False
+                continue
+            if ch == '"':
+                in_str = True
+            elif ch == "{":
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0:
+                    end = i
+                    break
+        if end is not None:
+            return cleaned[start : end + 1]
+        return cleaned[start:]
+    return cleaned
+
+
 def _ground_with_mlx_vlm(
     paths: list[Path],
     model_id: str,
@@ -114,24 +160,41 @@ def _ground_with_mlx_vlm(
 
     prompt = (
         "Describe en español lo que ves en estos frames de un objeto en movimiento. "
-        "Responde SOLO JSON con claves: objeto, trayectoria, aceleracion_aprox_px_s2, "
-        "rebotes (lista de enteros frame), perdida_energia_por_rebote (0-1), nota."
+        "Si tienes modo think/reasoning, limita el thinking a máximo 2 oraciones y luego "
+        "emite el JSON. Responde ÚNICAMENTE con UN objeto JSON (sin markdown) con claves: "
+        "objeto, trayectoria, aceleracion_aprox_px_s2, rebotes (lista de enteros frame), "
+        "perdida_energia_por_rebote (0-1), nota."
     )
 
     model, processor = load(model_id)
     config = load_config(model_id)
     formatted = apply_chat_template(processor, config, prompt, num_images=len(sample))
-    raw = generate(model, processor, sample, formatted, max_tokens=300, verbose=False)
-    text = raw if isinstance(raw, str) else str(raw)
+    # mlx-vlm>=0.7: generate(model, processor, prompt, image=..., max_tokens=...)
+    # Do NOT pass image paths as positional prompt (breaks as "prompt mistaken for image").
+    result = generate(
+        model,
+        processor,
+        formatted,
+        image=sample,
+        max_tokens=768,
+        verbose=False,
+    )
+    text = result.text if hasattr(result, "text") else (
+        result if isinstance(result, str) else str(result)
+    )
 
     try:
         import re
 
-        m = re.search(r"\{[\s\S]*\}", text)
-        structured = json.loads(m.group(0) if m else text)
+        cleaned = _strip_think_and_extract(text)
+        m = re.search(r"\{[\s\S]*\}", cleaned)
+        structured = json.loads(m.group(0) if m else cleaned)
+        structured["_vlm_parse"] = "ok"
+        structured["_vlm_raw_preview"] = text[:240]
     except Exception:
         structured = fallback.to_structured()
         structured["nota_vlm"] = f"Parse falló; se usó traza física. Raw: {text[:400]}"
+        structured["_vlm_parse"] = "fallback_physics"
 
     narrative = _narrative_from_structured(structured)
     narrative += f"\n(Fuente VLM: {model_id})"
