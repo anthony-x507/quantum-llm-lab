@@ -13,7 +13,7 @@
 | R12 router · verifier | **52/52 · 44/44** (retained) |
 | pillars / hardneg smoke | **26/26 · 18/18** |
 | Freeze | `codigo_vivo_tip_distance_far_fold_100pct_20260924_143716` |
-| Tip SHA (feat port) | `5fb00e3` |
+| Tip SHA (fold) | `a2e3eb1` |
 | Policy | RO `data/lora_adapter/`; no main; mid+inv+R12 floors kept; hardneg-r13 not folded |
 
 **Method:** merge-port `8b4779c`/`bd2e8b4` onto `34c696f` keeping tip mid+TTI; layer far GP-heavy + far eval slices + `generate_far`/far dataset. Predictor `v4_far`.

@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-distance-far-fold",
   "written_et": "2026-09-24 14:37:16 ET",
-  "tip_sha": "5fb00e37ee6b175dbfbc5f60a8b09c6d944d0d60",
-  "tip_sha_short": "5fb00e3",
+  "tip_sha": "a2e3eb1bb8eecc5af2506b6c810fe89392f5f0fd",
+  "tip_sha_short": "a2e3eb1",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-distance-far",
   "rebase_onto": "34c696f",
@@ -62,5 +62,6 @@
   "machine_id": "074c6626-0440-4817-9829-6bae77c578d6",
   "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
   "freeze_name": "codigo_vivo_tip_distance_far_fold_100pct_20260924_143716",
-  "predictor": "floor_scale_parallax_size_prior_closing_speed_v4_far"
+  "predictor": "floor_scale_parallax_size_prior_closing_speed_v4_far",
+  "fold_sha": "a2e3eb1bb8eecc5af2506b6c810fe89392f5f0fd"
 }

@@ -1,6 +1,6 @@
 # FRONTIER — tip-distance-far (~100–200 m far-band polish)
 
-**Status:** **FOLDED** into `frontier/codigo-vivo-tip` @ `5fb00e3` (2026-09-24 14:35:43 ET; side feat `8b4779c` / `bd2e8b4` → tip-cv merge-port keeping mid+TTI)  
+**Status:** **FOLDED** into `frontier/codigo-vivo-tip` @ `a2e3eb1` (2026-09-24 14:35:43 ET; side feat `8b4779c` / `bd2e8b4` → tip-cv merge-port keeping mid+TTI)  
 **Branch:** `frontier/tip-distance-far` (source kept) · tip `frontier/codigo-vivo-tip`  
 **Base tip at fold:** `34c696f` (post inverse-r3) · originally from `f70faa1` (motion-r4)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-distance-far` (Mac-111) · tip-cv `/Users/anthony/Documents/quantum-llm-lab-tip-cv`  
