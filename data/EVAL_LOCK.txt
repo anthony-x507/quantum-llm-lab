@@ -1,5 +1,0 @@
-PHASE: clean re-eval (hardened, no gold inflate)
-SCREEN: qlab-eval2
-OUT: data/eval_compare_clean.json
-LOG: data/eval_lora_clean.log
-PRIOR_INFLATED: data/lora_adapter/eval_compare.json (base mostly gold fallback)
