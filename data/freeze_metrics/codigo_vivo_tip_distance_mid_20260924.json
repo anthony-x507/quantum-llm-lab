@@ -1,0 +1,12 @@
+{
+  "frontier": "codigo-vivo-tip-distance-mid",
+  "pct": 100,
+  "mixed_d_unified": 1.0,
+  "distance_dz_30_70m": 1.0,
+  "distance_mid_near_5_30m": 1.0,
+  "distance_mid_outer_70_100m": 1.0,
+  "distance_mid_outer_mae_before_m": 2.081,
+  "distance_mid_outer_mae_after_m": 1.624,
+  "written_et": "2026-09-24 14:00:14 ET",
+  "base_tip_sha_short": "fabef2b"
+}

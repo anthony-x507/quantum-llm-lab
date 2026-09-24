@@ -16,3 +16,15 @@ danger50/*
 !danger50/SPLIT.json
 !danger50/EVAL_DANGER50_CPU.json
 !danger50/ANTI_CONTAM_SELFTEST.json
+
+!mid/
+mid/*
+!mid/.gitignore
+!mid/SUMMARY.json
+!mid/SUMMARY.md
+!mid/INDEX.json
+!mid/SPLIT.json
+!mid/EVAL_MID_CPU.json
+!mid/EVAL_MID_BEFORE.json
+!mid/EVAL_MID_AFTER.json
+!mid/ANTI_CONTAM_SELFTEST.json

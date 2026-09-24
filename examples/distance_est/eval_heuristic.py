@@ -31,12 +31,18 @@ from physics import (
     DEFAULT_FOCAL_PX,
     DANGER_ZONE_M_HI,
     DANGER_ZONE_M_LO,
+    MID_NEAR_M_HI,
+    MID_NEAR_M_LO,
+    MID_OUTER_M_HI,
+    MID_OUTER_M_LO,
     PRIORITY_DISTANCE_CLASSES,
     band_for_distance,
     closing_speed_tti,
     estimate_via_floor_scale,
     gt_tti_from_depth,
     in_danger_zone,
+    in_mid_near,
+    in_mid_outer,
     parallax_signal,
     pick_building_scale,
     predict_next_distance,
@@ -333,6 +339,8 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
     all_dist_rows = []
     band_acc: dict[str, dict[str, int]] = {}
     danger_acc = {"n": 0, "correct": 0}
+    mid_near_acc = {"n": 0, "correct": 0}
+    mid_outer_acc = {"n": 0, "correct": 0}
     band50_acc = {"n": 0, "correct": 0}  # ~50m band for delta vs baseline
     dirty = 0
     track_only = {"n": 0, "correct": 0}
@@ -395,6 +403,14 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
                     danger_acc["n"] += 1
                     if ok:
                         danger_acc["correct"] += 1
+                if in_mid_near(gt_m):
+                    mid_near_acc["n"] += 1
+                    if ok:
+                        mid_near_acc["correct"] += 1
+                if in_mid_outer(gt_m):
+                    mid_outer_acc["n"] += 1
+                    if ok:
+                        mid_outer_acc["correct"] += 1
                 if band == "~50m":
                     band50_acc["n"] += 1
                     if ok:
@@ -456,6 +472,8 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
                     "seq_id": sid, "t": t, "id": p["id"], "class": g["class"],
                     "gt_m": g["gt_m"], "est_m": p["est_m"], "band": band,
                     "in_danger_zone": in_danger_zone(gt_m),
+                    "in_mid_near": in_mid_near(gt_m),
+                    "in_mid_outer": in_mid_outer(gt_m),
                     "correct": ok, "method": p.get("method"), "parallax": p.get("parallax"),
                     "closing_speed_mps": p.get("closing_speed_mps"),
                     "tti_s": p.get("tti_s"),
@@ -538,6 +556,10 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
 
     err_all = _err_stats(all_dist_rows)
     err_dz = _err_stats([r for r in all_dist_rows if r.get("in_danger_zone")])
+    err_mid_near = _err_stats([r for r in all_dist_rows if r.get("in_mid_near")])
+    err_mid_outer = _err_stats([r for r in all_dist_rows if r.get("in_mid_outer")])
+    mid_near_pct = pct(mid_near_acc["n"], mid_near_acc["correct"])
+    mid_outer_pct = pct(mid_outer_acc["n"], mid_outer_acc["correct"])
 
     result = {
         "ts": _now(),
@@ -546,7 +568,7 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
         "scale_lock": "FLOOR-SCALE",
         "no_fixed_object_heights": True,
         "soft_size_priors": {"car_length_m": 4.5, "car_height_m": 1.55, "ped_height_m": 1.7},
-        "predictor": "floor_scale_parallax_size_prior_closing_speed_v3_tti",
+"predictor": "floor_scale_parallax_size_prior_closing_speed_v3_mid",
         "n_eval_seq": len(eval_ids),
         "distance": {
             "n": n, "correct": c, "pct": pct(n, c),
@@ -563,6 +585,23 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
             "pct": dz_pct,
             "delta_pp_vs_baseline_50m": delta_dz_vs_baseline,
             "error_stats": err_dz,
+            "frozen": True,
+        },
+        "mid_near_5_30m": {
+            "lo_m": MID_NEAR_M_LO,
+            "hi_m": MID_NEAR_M_HI,
+            "n": mid_near_acc["n"],
+            "correct": mid_near_acc["correct"],
+            "pct": mid_near_pct,
+            "error_stats": err_mid_near,
+        },
+        "mid_outer_70_100m": {
+            "lo_m": MID_OUTER_M_LO,
+            "hi_m": MID_OUTER_M_HI,
+            "n": mid_outer_acc["n"],
+            "correct": mid_outer_acc["correct"],
+            "pct": mid_outer_pct,
+            "error_stats": err_mid_outer,
         },
         "band_50m_vs_baseline": {
             "baseline_pct": BASELINE_50M_PCT,

@@ -38,9 +38,15 @@ TOL_NEAR = 0.10   # GT < 50 m → ±10%
 TOL_FAR = 0.20    # GT 50–200 m → ±20%
 NEAR_CUTOFF_M = 50.0
 
-# Danger zone (reinforce mid-band)
+# Danger zone (reinforce mid-band) — FROZEN at 100% (tip-distance-danger)
 DANGER_ZONE_M_LO = 30.0
 DANGER_ZONE_M_HI = 70.0
+
+# Side polish outside DZ: near mid + outer mid (tip-distance-mid)
+MID_NEAR_M_LO = 5.0
+MID_NEAR_M_HI = 30.0
+MID_OUTER_M_LO = 70.0
+MID_OUTER_M_HI = 100.0
 
 # Priority classes for distance scoring (height is NOT the goal)
 PRIORITY_DISTANCE_CLASSES = ("car", "intersection", "stop_sign", "pedestrian", "light")
@@ -58,6 +64,21 @@ def band_for_distance(d_m: float) -> str:
 
 def in_danger_zone(d_m: float) -> bool:
     return DANGER_ZONE_M_LO <= d_m <= DANGER_ZONE_M_HI
+
+
+def in_mid_near(d_m: float) -> bool:
+    """5–30 m near/mid band (outside frozen DZ)."""
+    return MID_NEAR_M_LO <= d_m <= MID_NEAR_M_HI
+
+
+def in_mid_outer(d_m: float) -> bool:
+    """70–100 m outer/mid band (outside frozen DZ)."""
+    return MID_OUTER_M_LO <= d_m <= MID_OUTER_M_HI
+
+
+def in_gp_heavy_band(d_m: float) -> bool:
+    """GP-heavy triangulation: frozen DZ + outer mid (weak size priors)."""
+    return in_danger_zone(d_m) or in_mid_outer(d_m)
 
 
 def tolerance_for_gt(gt_m: float) -> float:
@@ -180,14 +201,22 @@ def estimate_via_floor_scale(
         # (d_gp ≈ d_building). Near lights share cy with far buildings but are
         # NOT coplanar — floor-span then invents huge "span floors" and
         # overshoots the 30–70 m DANGER ZONE. Prefer GP; honesty when unsure.
-        mid = DANGER_ZONE_M_LO <= d_gp <= DANGER_ZONE_M_HI
+        dz = in_danger_zone(d_gp)
+        outer = in_mid_outer(d_gp)
+        near = in_mid_near(d_gp)
+        gp_heavy = dz or outer  # outer mid: size/span priors weak like DZ
         coplanar = abs(d_gp - d_b) / max(d_b, 1.0) < 0.28 and abs(cy_f - bcy) < 6
         if coplanar and floor_px > 1e-6 and app > 1e-3:
             H = derived_height_from_floor_span(app, floor_px, fh)
             d_h = distance_from_derived_height(app, H, focal_px)
             if d_h is not None:
-                # Facade-coplanar: floor-span can corroborate; still soft in mid-band
-                w_h = 0.25 if mid else 0.55
+                # Facade-coplanar: soft span in DZ/outer; near trusts GP more (not coplanar usually)
+                if gp_heavy:
+                    w_h = 0.25
+                elif near:
+                    w_h = 0.15
+                else:
+                    w_h = 0.55
                 d = (1.0 - w_h) * d_gp + w_h * d_h
                 return max(1.0, d), 0.72, "floor_span+ground_plane"
         if floor_px > 1e-6 and app > 1e-3:
@@ -198,47 +227,78 @@ def estimate_via_floor_scale(
                 if rel > 0.45:
                     # Strong disagreement → honesty: GP only, low conf
                     return max(1.0, d_gp), 0.42, "gp_honesty_span_disagree"
-                # Mild disagree: tiny span vote outside danger; none inside
-                w_h = 0.05 if mid else 0.18
+                # Mild disagree: tiny span vote outside danger/outer; none inside
+                if gp_heavy:
+                    w_h = 0.05
+                    conf = 0.58
+                elif near:
+                    w_h = 0.08
+                    conf = 0.64
+                else:
+                    w_h = 0.18
+                    conf = 0.62
                 d = (1.0 - w_h) * d_gp + w_h * d_h
-                return max(1.0, d), 0.58 if mid else 0.62, "ground_plane_floor_anchored"
+                return max(1.0, d), conf, "ground_plane_floor_anchored"
         return max(1.0, d_gp), 0.60, "ground_plane_floor_anchored"
 
     if cls == "car":
         # Triangulate GP + length prior (bbox_w ≈ length * scale * 0.5 in render)
-        # and soft height prior on apparent_px. Danger zone: heavier GP (size
-        # prior alone often ~1.2× long at mid-band).
+        # and soft height prior on apparent_px.
+        # DZ + outer mid: heavier GP (size prior ~1.2× long). Near: trust size more.
         d_len = distance_from_size_prior(max(bbox_w, 1e-3) / 0.5, CAR_LENGTH_M_PRIOR, focal_px)
         d_h = distance_from_size_prior(app, CAR_HEIGHT_M_PRIOR, focal_px)
-        mid = DANGER_ZONE_M_LO <= d_gp <= DANGER_ZONE_M_HI
+        dz = in_danger_zone(d_gp)
+        outer = in_mid_outer(d_gp)
+        near = in_mid_near(d_gp)
+        gp_heavy = dz or outer
         parts = [d_gp]
-        weights = [0.62 if mid else 0.50]
+        if gp_heavy:
+            weights = [0.62]
+            w_len, w_h = 0.23, 0.15
+            conf = 0.80
+        elif near:
+            weights = [0.40]
+            w_len, w_h = 0.35, 0.25
+            conf = 0.82
+        else:
+            weights = [0.50]
+            w_len, w_h = 0.30, 0.20
+            conf = 0.78
         if d_len is not None:
             parts.append(d_len)
-            weights.append(0.23 if mid else 0.30)
+            weights.append(w_len)
         if d_h is not None:
             parts.append(d_h)
-            weights.append(0.15 if mid else 0.20)
+            weights.append(w_h)
         wsum = sum(weights)
         d = sum(p * w for p, w in zip(parts, weights)) / wsum
         # Honesty: if size priors violently disagree with GP, trust GP
         priors = [x for x in (d_len, d_h) if x is not None]
         if priors:
             d_prior = sum(priors) / len(priors)
-            if abs(d_prior - d_gp) / max(d_gp, 1.0) > 0.55:
+            # Near: allow more prior disagreement before honesty (priors sharper)
+            thr = 0.70 if near else 0.55
+            if abs(d_prior - d_gp) / max(d_gp, 1.0) > thr:
                 return max(1.0, d_gp), 0.48, "gp_honesty_car_prior_disagree"
-        return max(1.0, d), 0.80 if mid else 0.78, "gp+car_size_prior"
+        return max(1.0, d), conf, "gp+car_size_prior"
 
     if cls == "pedestrian":
         d_h = distance_from_size_prior(app, PED_HEIGHT_M_PRIOR, focal_px)
         if d_h is not None:
-            mid = DANGER_ZONE_M_LO <= d_gp <= DANGER_ZONE_M_HI
-            # Mid-band: softer height prior (apparent size noisy at 30–70 m)
-            w_h = 0.28 if mid else 0.30
-            if abs(d_h - d_gp) / max(d_gp, 1.0) > 0.55:
+            dz = in_danger_zone(d_gp)
+            outer = in_mid_outer(d_gp)
+            near = in_mid_near(d_gp)
+            # DZ/outer: softer height prior; near: trust height prior more
+            if dz or outer:
+                w_h, conf, thr = 0.28, 0.78, 0.55
+            elif near:
+                w_h, conf, thr = 0.42, 0.82, 0.70
+            else:
+                w_h, conf, thr = 0.30, 0.76, 0.55
+            if abs(d_h - d_gp) / max(d_gp, 1.0) > thr:
                 return max(1.0, d_gp), 0.48, "gp_honesty_ped_prior_disagree"
             d = (1.0 - w_h) * d_gp + w_h * d_h
-            return max(1.0, d), 0.78 if mid else 0.76, "gp+ped_height_prior"
+            return max(1.0, d), conf, "gp+ped_height_prior"
         return max(1.0, d_gp), 0.65, "ground_plane_floor_anchored"
 
     if cls == "intersection":
@@ -270,13 +330,25 @@ def refine_with_parallax(
     if size_prev <= 1e-6 or size_curr <= 1e-6:
         return d_est, conf
     d_par = d_est * (size_prev / size_curr)
-    # Finer parallax weight in danger zone (30–70 m) — approach/recede cue
+    # Finer parallax in DZ + outer mid; near also leans on motion (large Δsize)
     if alpha is None:
-        mid = DANGER_ZONE_M_LO <= d_est <= DANGER_ZONE_M_HI
+        dz = in_danger_zone(d_est)
+        outer = in_mid_outer(d_est)
+        near = in_mid_near(d_est)
         if signal in ("approach", "recede"):
-            alpha = 0.62 if mid else 0.42
+            if dz or outer:
+                alpha = 0.62
+            elif near:
+                alpha = 0.55
+            else:
+                alpha = 0.42
         else:
-            alpha = 0.18 if mid else 0.20  # mid stable: trust GP/size more
+            if dz or outer:
+                alpha = 0.18  # stable: trust GP/size more
+            elif near:
+                alpha = 0.22
+            else:
+                alpha = 0.20
     refined = (1 - alpha) * d_est + alpha * d_par
     if signal == "approach":
         conf = 0.82

@@ -1,0 +1,432 @@
+{
+  "ts": "2026-09-24 13:59:49 ET",
+  "domain": "distance_est",
+  "data_dir": "data/video_synth/distance_est/mid",
+  "scale_lock": "FLOOR-SCALE",
+  "no_fixed_object_heights": true,
+  "soft_size_priors": {
+    "car_length_m": 4.5,
+    "car_height_m": 1.55,
+    "ped_height_m": 1.7
+  },
+  "predictor": "floor_scale_parallax_size_prior_closing_speed_v3_mid",
+  "n_eval_seq": 19,
+  "distance": {
+    "n": 2028,
+    "correct": 2028,
+    "pct": 100.0,
+    "by_band": {
+      "~100m": {
+        "n": 719,
+        "correct": 719,
+        "pct": 100.0
+      },
+      "~200m": {
+        "n": 310,
+        "correct": 310,
+        "pct": 100.0
+      },
+      "~50m": {
+        "n": 181,
+        "correct": 181,
+        "pct": 100.0
+      },
+      "~5m": {
+        "n": 818,
+        "correct": 818,
+        "pct": 100.0
+      }
+    },
+    "tol": {
+      "lt_50m": "10%",
+      "50_to_200m": "20%"
+    },
+    "priority_classes": [
+      "car",
+      "intersection",
+      "stop_sign",
+      "pedestrian",
+      "light"
+    ],
+    "error_stats": {
+      "mae_m": 2.25,
+      "mean_rel_err": 0.0266,
+      "median_rel_err": 0.0181,
+      "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
+    }
+  },
+  "danger_zone_30_70m": {
+    "lo_m": 30.0,
+    "hi_m": 70.0,
+    "n": 55,
+    "correct": 55,
+    "pct": 100.0,
+    "delta_pp_vs_baseline_50m": 51.31,
+    "error_stats": {
+      "mae_m": 1.505,
+      "mean_rel_err": 0.0266,
+      "median_rel_err": 0.0286,
+      "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
+    },
+    "frozen": true
+  },
+  "mid_near_5_30m": {
+    "lo_m": 5.0,
+    "hi_m": 30.0,
+    "n": 684,
+    "correct": 684,
+    "pct": 100.0,
+    "error_stats": {
+      "mae_m": 0.305,
+      "mean_rel_err": 0.0229,
+      "median_rel_err": 0.0156,
+      "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
+    }
+  },
+  "mid_outer_70_100m": {
+    "lo_m": 70.0,
+    "hi_m": 100.0,
+    "n": 374,
+    "correct": 374,
+    "pct": 100.0,
+    "error_stats": {
+      "mae_m": 1.624,
+      "mean_rel_err": 0.0189,
+      "median_rel_err": 0.0125,
+      "note": "within-tol can saturate on synth pinhole invert; MAE shows residual meters"
+    }
+  },
+  "band_50m_vs_baseline": {
+    "baseline_pct": 48.69,
+    "baseline_commit": "bcbcdc8",
+    "n": 181,
+    "correct": 181,
+    "pct": 100.0,
+    "delta_pp": 51.31
+  },
+  "closing_speed": {
+    "tti_estimates_emitted": 753,
+    "note": "growth_frac \u2192 closing_speed_mps \u2192 tti_s when approaching"
+  },
+  "honesty": {
+    "unknown_when_unsure_n": 0,
+    "note": "low-conf honesty paths emit unknown (excluded from %; not forced wrong guess)"
+  },
+  "ablation_tracking": {
+    "tracking_only": {
+      "n": 2277,
+      "correct": 2271,
+      "pct": 99.74
+    },
+    "tracking_plus_distance": {
+      "n": 2272,
+      "correct": 2266,
+      "pct": 99.74
+    },
+    "danger_zone": {
+      "tracking_only": {
+        "n": 45,
+        "correct": 45,
+        "pct": 100.0
+      },
+      "tracking_plus_distance": {
+        "n": 45,
+        "correct": 45,
+        "pct": 100.0
+      }
+    }
+  },
+  "ablation_future_pred": {
+    "tracking_only": {
+      "distance_pred_pct": 85.05,
+      "n": 1859,
+      "correct": 1581,
+      "position_pred_pct": 98.6
+    },
+    "plus_distance": {
+      "distance_pred_pct": 94.73,
+      "n": 1859,
+      "correct": 1761,
+      "position_pred_pct": 98.6
+    },
+    "danger_zone": {
+      "tracking_only": {
+        "distance_pred_pct": 100.0,
+        "n": 45,
+        "correct": 45,
+        "position_pred_pct": 100.0
+      },
+      "plus_distance": {
+        "distance_pred_pct": 100.0,
+        "n": 45,
+        "correct": 45,
+        "position_pred_pct": 100.0
+      }
+    },
+    "note": "Future depth prediction proxy (inverse-planning-style along camera axis); danger-zone slice reported separately."
+  },
+  "anti_contam": {
+    "audit_path": "data/eval_audit/distance_20260924_135949.jsonl",
+    "dirty_count": 0,
+    "status": "CLEAN"
+  },
+  "gpu": "deferred \u2014 heuristic CPU only; LoRA queued behind existing waiters",
+  "caveat": "CPU heuristic inverts synth pinhole (cy\u2194depth); tol@10/20% can saturate. Not a VLM claim. Residual via error_stats MAE.",
+  "sample_rows": [
+    {
+      "seq_id": "mn_010_maple_blvd",
+      "t": 0,
+      "id": "car_red0",
+      "class": "car",
+      "gt_m": 12.209,
+      "est_m": 12.038,
+      "band": "~5m",
+      "in_danger_zone": false,
+      "in_mid_near": true,
+      "in_mid_outer": false,
+      "correct": true,
+      "method": "gp+car_size_prior",
+      "parallax": "unknown",
+      "closing_speed_mps": null,
+      "tti_s": null
+    },
+    {
+      "seq_id": "mn_010_maple_blvd",
+      "t": 0,
+      "id": "ped_1",
+      "class": "pedestrian",
+      "gt_m": 20.247,
+      "est_m": 19.685,
+      "band": "~5m",
+      "in_danger_zone": false,
+      "in_mid_near": true,
+      "in_mid_outer": false,
+      "correct": true,
+      "method": "gp+ped_height_prior",
+      "parallax": "unknown",
+      "closing_speed_mps": null,
+      "tti_s": null
+    },
+    {
+      "seq_id": "mn_010_maple_blvd",
+      "t": 0,
+      "id": "L3",
+      "class": "light",
+      "gt_m": 15.771,
+      "est_m": 15.768,
+      "band": "~5m",
+      "in_danger_zone": false,
+      "in_mid_near": true,
+      "in_mid_outer": false,
+      "correct": true,
+      "method": "gp_honesty_span_disagree",
+      "parallax": "unknown",
+      "closing_speed_mps": null,
+      "tti_s": null
+    },
+    {
+      "seq_id": "mn_010_maple_blvd",
+      "t": 0,
+      "id": "ix_3",
+      "class": "intersection",
+      "gt_m": 15.771,
+      "est_m": 15.768,
+      "band": "~5m",
+      "in_danger_zone": false,
+      "in_mid_near": true,
+      "in_mid_outer": false,
+      "correct": true,
+      "method": "ground_plane_floor_anchored",
+      "parallax": "unknown",
+      "closing_speed_mps": null,
+      "tti_s": null
+    },
+    {
+      "seq_id": "mn_010_maple_blvd",
+      "t": 0,
+      "id": "stop_3",
+      "class": "stop_sign",
+      "gt_m": 13.119,
+      "est_m": 13.11,
+      "band": "~5m",
+      "in_danger_zone": false,
+      "in_mid_near": true,
+      "in_mid_outer": false,
+      "correct": true,
+      "method": "gp_honesty_span_disagree",
+      "parallax": "unknown",
+      "closing_speed_mps": null,
+      "tti_s": null
+    },
+    {
+      "seq_id": "mn_010_maple_blvd",
+      "t": 0,
+      "id": "car_far0",
+      "class": "car",
+      "gt_m": 144.591,
+      "est_m": 139.218,
+      "band": "~100m",
+      "in_danger_zone": false,
+      "in_mid_near": false,
+      "in_mid_outer": false,
+      "correct": true,
+      "method": "gp+car_size_prior",
+      "parallax": "unknown",
+      "closing_speed_mps": null,
+      "tti_s": null
+    },
+    {
+      "seq_id": "mn_010_maple_blvd",
+      "t": 0,
+      "id": "car_far1",
+      "class": "car",
+      "gt_m": 183.712,
+      "est_m": 184.901,
+      "band": "~200m",
+      "in_danger_zone": false,
+      "in_mid_near": false,
+      "in_mid_outer": false,
+      "correct": true,
+      "method": "gp+car_size_prior",
+      "parallax": "unknown",
+      "closing_speed_mps": null,
+      "tti_s": null
+    },
+    {
+      "seq_id": "mn_010_maple_blvd",
+      "t": 0,
+      "id": "ped_near0",
+      "class": "pedestrian",
+      "gt_m": 4.206,
+      "est_m": 4.11,
+      "band": "~5m",
+      "in_danger_zone": false,
+      "in_mid_near": false,
+      "in_mid_outer": false,
+      "correct": true,
+      "method": "gp+ped_height_prior",
+      "parallax": "unknown",
+      "closing_speed_mps": null,
+      "tti_s": null
+    },
+    {
+      "seq_id": "mn_010_maple_blvd",
+      "t": 0,
+      "id": "L_far",
+      "class": "light",
+      "gt_m": 179.333,
+      "est_m": 171.393,
+      "band": "~200m",
+      "in_danger_zone": false,
+      "in_mid_near": false,
+      "in_mid_outer": false,
+      "correct": true,
+      "method": "floor_span+ground_plane",
+      "parallax": "unknown",
+      "closing_speed_mps": null,
+      "tti_s": null
+    },
+    {
+      "seq_id": "mn_010_maple_blvd",
+      "t": 1,
+      "id": "car_red0",
+      "class": "car",
+      "gt_m": 9.98,
+      "est_m": 9.554,
+      "band": "~5m",
+      "in_danger_zone": false,
+      "in_mid_near": true,
+      "in_mid_outer": false,
+      "correct": true,
+      "method": "gp+car_size_prior+parallax+ema",
+      "parallax": "approach",
+      "closing_speed_mps": 25.6121,
+      "tti_s": 0.373
+    },
+    {
+      "seq_id": "mn_010_maple_blvd",
+      "t": 1,
+      "id": "ped_1",
+      "class": "pedestrian",
+      "gt_m": 21.078,
+      "est_m": 20.68,
+      "band": "~5m",
+      "in_danger_zone": false,
+      "in_mid_near": true,
+      "in_mid_outer": false,
+      "correct": true,
+      "method": "gp+ped_height_prior+parallax+ema",
+      "parallax": "recede",
+      "closing_speed_mps": -9.7771,
+      "tti_s": null
+    },
+    {
+      "seq_id": "mn_010_maple_blvd",
+      "t": 1,
+      "id": "L3",
+      "class": "light",
+      "gt_m": 15.282,
+      "est_m": 15.185,
+      "band": "~5m",
+      "in_danger_zone": false,
+      "in_mid_near": true,
+      "in_mid_outer": false,
+      "correct": true,
+      "method": "gp_honesty_span_disagree+parallax+ema",
+      "parallax": "approach",
+      "closing_speed_mps": 5.8284,
+      "tti_s": 2.605
+    },
+    {
+      "seq_id": "mn_010_maple_blvd",
+      "t": 1,
+      "id": "ix_3",
+      "class": "intersection",
+      "gt_m": 15.282,
+      "est_m": 15.185,
+      "band": "~5m",
+      "in_danger_zone": false,
+      "in_mid_near": true,
+      "in_mid_outer": false,
+      "correct": true,
+      "method": "ground_plane_floor_anchored+parallax+ema",
+      "parallax": "approach",
+      "closing_speed_mps": 5.8274,
+      "tti_s": 2.606
+    },
+    {
+      "seq_id": "mn_010_maple_blvd",
+      "t": 1,
+      "id": "stop_3",
+      "class": "stop_sign",
+      "gt_m": 13.498,
+      "est_m": 13.577,
+      "band": "~5m",
+      "in_danger_zone": false,
+      "in_mid_near": true,
+      "in_mid_outer": false,
+      "correct": true,
+      "method": "gp_honesty_span_disagree+parallax+ema",
+      "parallax": "recede",
+      "closing_speed_mps": -4.5694,
+      "tti_s": null
+    },
+    {
+      "seq_id": "mn_010_maple_blvd",
+      "t": 1,
+      "id": "car_far0",
+      "class": "car",
+      "gt_m": 145.091,
+      "est_m": 139.431,
+      "band": "~100m",
+      "in_danger_zone": false,
+      "in_mid_near": false,
+      "in_mid_outer": false,
+      "correct": true,
+      "method": "gp+car_size_prior+parallax+ema",
+      "parallax": "stable",
+      "closing_speed_mps": -5.8675,
+      "tti_s": null
+    }
+  ]
+}

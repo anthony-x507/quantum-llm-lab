@@ -1,0 +1,194 @@
+{
+  "original": {
+    "distance": {
+      "dz_30_70": {
+        "n": 527,
+        "correct": 527,
+        "pct": 100.0,
+        "mae": 1.491,
+        "mean_rel": 0.0311
+      },
+      "mid_near_5_30": {
+        "n": 326,
+        "correct": 326,
+        "pct": 100.0,
+        "mae": 0.272,
+        "mean_rel": 0.0391
+      },
+      "mid_outer_70_100": {
+        "n": 234,
+        "correct": 234,
+        "pct": 100.0,
+        "mae": 5.359,
+        "mean_rel": 0.057
+      },
+      "other": {
+        "n": 725,
+        "correct": 725,
+        "pct": 100.0,
+        "mae": 4.034,
+        "mean_rel": 0.0382
+      }
+    },
+    "future": {
+      "mid_near_5_30_track": {
+        "n": 299,
+        "correct": 258,
+        "pct": 86.29
+      },
+      "mid_near_5_30_plus_dist": {
+        "n": 299,
+        "correct": 282,
+        "pct": 94.31
+      },
+      "mid_outer_70_100_track": {
+        "n": 216,
+        "correct": 197,
+        "pct": 91.2
+      },
+      "mid_outer_70_100_plus_dist": {
+        "n": 216,
+        "correct": 216,
+        "pct": 100.0
+      },
+      "dz_30_70_track": {
+        "n": 482,
+        "correct": 439,
+        "pct": 91.08
+      },
+      "dz_30_70_plus_dist": {
+        "n": 482,
+        "correct": 469,
+        "pct": 97.3
+      }
+    }
+  },
+  "danger50": {
+    "distance": {
+      "dz_30_70": {
+        "n": 915,
+        "correct": 915,
+        "pct": 100.0,
+        "mae": 0.726,
+        "mean_rel": 0.0149
+      },
+      "mid_near_5_30": {
+        "n": 228,
+        "correct": 228,
+        "pct": 100.0,
+        "mae": 0.24,
+        "mean_rel": 0.0197
+      },
+      "mid_outer_70_100": {
+        "n": 64,
+        "correct": 64,
+        "pct": 100.0,
+        "mae": 1.19,
+        "mean_rel": 0.0163
+      },
+      "other": {
+        "n": 713,
+        "correct": 713,
+        "pct": 100.0,
+        "mae": 5.48,
+        "mean_rel": 0.0389
+      }
+    },
+    "future": {
+      "mid_near_5_30_track": {
+        "n": 204,
+        "correct": 189,
+        "pct": 92.65
+      },
+      "mid_near_5_30_plus_dist": {
+        "n": 204,
+        "correct": 203,
+        "pct": 99.51
+      },
+      "mid_outer_70_100_track": {
+        "n": 53,
+        "correct": 53,
+        "pct": 100.0
+      },
+      "mid_outer_70_100_plus_dist": {
+        "n": 53,
+        "correct": 53,
+        "pct": 100.0
+      },
+      "dz_30_70_track": {
+        "n": 851,
+        "correct": 763,
+        "pct": 89.66
+      },
+      "dz_30_70_plus_dist": {
+        "n": 851,
+        "correct": 822,
+        "pct": 96.59
+      }
+    }
+  },
+  "mid": {
+    "distance": {
+      "dz_30_70": {
+        "n": 55,
+        "correct": 55,
+        "pct": 100.0,
+        "mae": 1.482,
+        "mean_rel": 0.0262
+      },
+      "mid_near_5_30": {
+        "n": 684,
+        "correct": 684,
+        "pct": 100.0,
+        "mae": 0.23,
+        "mean_rel": 0.0171
+      },
+      "mid_outer_70_100": {
+        "n": 374,
+        "correct": 374,
+        "pct": 100.0,
+        "mae": 2.081,
+        "mean_rel": 0.024
+      },
+      "other": {
+        "n": 915,
+        "correct": 915,
+        "pct": 100.0,
+        "mae": 4.006,
+        "mean_rel": 0.0324
+      }
+    },
+    "future": {
+      "mid_near_5_30_track": {
+        "n": 639,
+        "correct": 521,
+        "pct": 81.53
+      },
+      "mid_near_5_30_plus_dist": {
+        "n": 639,
+        "correct": 602,
+        "pct": 94.21
+      },
+      "mid_outer_70_100_track": {
+        "n": 353,
+        "correct": 317,
+        "pct": 89.8
+      },
+      "mid_outer_70_100_plus_dist": {
+        "n": 353,
+        "correct": 342,
+        "pct": 96.88
+      },
+      "dz_30_70_track": {
+        "n": 45,
+        "correct": 45,
+        "pct": 100.0
+      },
+      "dz_30_70_plus_dist": {
+        "n": 45,
+        "correct": 45,
+        "pct": 100.0
+      }
+    }
+  }
+}
