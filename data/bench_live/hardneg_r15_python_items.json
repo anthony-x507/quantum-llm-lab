@@ -1,0 +1,317 @@
+{
+  "n": 44,
+  "kind": "python_hardneg_items",
+  "created": "2026-09-24T18:20:00Z",
+  "round": "r15",
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R15.md",
+  "items": [
+    {
+      "id": "r15v_squid_01",
+      "kind": "squid_proxy_gates",
+      "prompt": "Write Python that prints len('gates: http_access'). Squid proxy. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_squid_02",
+      "kind": "squid_proxy_gates",
+      "prompt": "t='gates: http_access'\nprint(t.count('gates'))\n# Squid proxy gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_squid_03",
+      "kind": "squid_proxy_gates",
+      "prompt": "Write Python that prints 31. Squid proxy gates: http_access is proxy only. ONLY code.",
+      "expected_stdout": "31\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_openresty_01",
+      "kind": "openresty_lua_gates",
+      "prompt": "Write Python that prints len('gates: content_by_lua'). OpenResty Lua. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_openresty_02",
+      "kind": "openresty_lua_gates",
+      "prompt": "t='gates: content_by_lua'\nprint(t.count('gates'))\n# OpenResty Lua gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_openresty_03",
+      "kind": "openresty_lua_gates",
+      "prompt": "Write Python that prints 32. OpenResty Lua gates: content_by_lua is proxy only. ONLY code.",
+      "expected_stdout": "32\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_contour_01",
+      "kind": "contour_route_gates",
+      "prompt": "Write Python that prints len('gates: retryPolicy'). Contour HTTPProxy. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_contour_02",
+      "kind": "contour_route_gates",
+      "prompt": "t='gates: retryPolicy'\nprint(t.count('gates'))\n# Contour HTTPProxy gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_contour_03",
+      "kind": "contour_route_gates",
+      "prompt": "Write Python that prints 33. Contour HTTPProxy gates: retryPolicy is ingress only. ONLY code.",
+      "expected_stdout": "33\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_emissary_01",
+      "kind": "emissary_mapping_gates",
+      "prompt": "Write Python that prints len('gates: hostname'). Emissary Mapping. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_emissary_02",
+      "kind": "emissary_mapping_gates",
+      "prompt": "t='gates: hostname'\nprint(t.count('gates'))\n# Emissary Mapping gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_emissary_03",
+      "kind": "emissary_mapping_gates",
+      "prompt": "Write Python that prints 34. Emissary Mapping gates: hostname is gateway only. ONLY code.",
+      "expected_stdout": "34\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_zuul_01",
+      "kind": "zuul_filter_gates",
+      "prompt": "Write Python that prints len('gates: StripPrefix'). Zuul filter. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_zuul_02",
+      "kind": "zuul_filter_gates",
+      "prompt": "t='gates: StripPrefix'\nprint(t.count('gates'))\n# Zuul filter gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_zuul_03",
+      "kind": "zuul_filter_gates",
+      "prompt": "Write Python that prints 35. Zuul filter gates: StripPrefix is gateway only. ONLY code.",
+      "expected_stdout": "35\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_django_01",
+      "kind": "django_mw_gates",
+      "prompt": "Write Python that prints len('gates: AuthenticationMiddleware'). Django middleware. ONLY code.",
+      "expected_stdout": "31\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_django_02",
+      "kind": "django_mw_gates",
+      "prompt": "t='gates: AuthenticationMiddleware'\nprint(t.count('gates'))\n# Django middleware gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_django_03",
+      "kind": "django_mw_gates",
+      "prompt": "Write Python that prints 36. Django middleware gates: AuthenticationMiddleware is framework only. ONLY code.",
+      "expected_stdout": "36\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_laravel_01",
+      "kind": "laravel_mw_gates",
+      "prompt": "Write Python that prints len('gates: VerifyCsrfToken'). Laravel middleware. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_laravel_02",
+      "kind": "laravel_mw_gates",
+      "prompt": "t='gates: VerifyCsrfToken'\nprint(t.count('gates'))\n# Laravel middleware gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_laravel_03",
+      "kind": "laravel_mw_gates",
+      "prompt": "Write Python that prints 37. Laravel middleware gates: VerifyCsrfToken is framework only. ONLY code.",
+      "expected_stdout": "37\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_gin_01",
+      "kind": "gin_mw_gates",
+      "prompt": "Write Python that prints len('gates: AuthRequired'). Gin middleware. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_gin_02",
+      "kind": "gin_mw_gates",
+      "prompt": "t='gates: AuthRequired'\nprint(t.count('gates'))\n# Gin middleware gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_gin_03",
+      "kind": "gin_mw_gates",
+      "prompt": "Write Python that prints 38. Gin middleware gates: AuthRequired is framework only. ONLY code.",
+      "expected_stdout": "38\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_dynamo_01",
+      "kind": "dynamodb_cond_gates",
+      "prompt": "Write Python that prints len('gates: ConditionExpression'). DynamoDB condition. ONLY code.",
+      "expected_stdout": "26\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_dynamo_02",
+      "kind": "dynamodb_cond_gates",
+      "prompt": "t='gates: ConditionExpression'\nprint(t.count('gates'))\n# DynamoDB condition gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_dynamo_03",
+      "kind": "dynamodb_cond_gates",
+      "prompt": "Write Python that prints 39. DynamoDB condition gates: ConditionExpression is DB only. ONLY code.",
+      "expected_stdout": "39\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_firestore_01",
+      "kind": "firestore_rules_gates",
+      "prompt": "Write Python that prints len('gates: allow read'). Firestore rules. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_firestore_02",
+      "kind": "firestore_rules_gates",
+      "prompt": "t='gates: allow read'\nprint(t.count('gates'))\n# Firestore rules gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_firestore_03",
+      "kind": "firestore_rules_gates",
+      "prompt": "Write Python that prints 40. Firestore rules gates: allow read is DB only. ONLY code.",
+      "expected_stdout": "40\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_keycloak_01",
+      "kind": "keycloak_realm_gates",
+      "prompt": "Write Python that prints len('gates: realm-role'). Keycloak realm. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_keycloak_02",
+      "kind": "keycloak_realm_gates",
+      "prompt": "t='gates: realm-role'\nprint(t.count('gates'))\n# Keycloak realm gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_keycloak_03",
+      "kind": "keycloak_realm_gates",
+      "prompt": "Write Python that prints 41. Keycloak realm gates: realm-role is security only. ONLY code.",
+      "expected_stdout": "41\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_falco_01",
+      "kind": "falco_rule_gates",
+      "prompt": "Write Python that prints len('gates: evt.type'). Falco rule. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_falco_02",
+      "kind": "falco_rule_gates",
+      "prompt": "t='gates: evt.type'\nprint(t.count('gates'))\n# Falco rule gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_falco_03",
+      "kind": "falco_rule_gates",
+      "prompt": "Write Python that prints 42. Falco rule gates: evt.type is security only. ONLY code.",
+      "expected_stdout": "42\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_otel_01",
+      "kind": "otel_sampler_gates",
+      "prompt": "Write Python that prints len('gates: parentbased'). OTel sampler. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_otel_02",
+      "kind": "otel_sampler_gates",
+      "prompt": "t='gates: parentbased'\nprint(t.count('gates'))\n# OTel sampler gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_otel_03",
+      "kind": "otel_sampler_gates",
+      "prompt": "Write Python that prints 43. OTel sampler gates: parentbased is observability only. ONLY code.",
+      "expected_stdout": "43\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_ray_01",
+      "kind": "ray_actor_gates",
+      "prompt": "Write Python that prints len('gates: num_cpus'). Ray actor. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_ray_02",
+      "kind": "ray_actor_gates",
+      "prompt": "t='gates: num_cpus'\nprint(t.count('gates'))\n# Ray actor gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_ray_03",
+      "kind": "ray_actor_gates",
+      "prompt": "Write Python that prints 44. Ray actor gates: num_cpus is orchestration only. ONLY code.",
+      "expected_stdout": "44\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_ctrl_01",
+      "kind": "base_python_control_r15",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r15v_ctrl_02",
+      "kind": "base_python_control_r15",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}

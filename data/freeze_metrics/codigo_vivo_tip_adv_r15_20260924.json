@@ -1,0 +1,84 @@
+{
+  "round": "r15",
+  "branch": "frontier/tip-hardneg-r15",
+  "base_tip": "e0f3183ed4ed429591a7f4f13b1a6775c2fe47e0",
+  "when_et": "2026-09-24T14:24:10-0400",
+  "machine": "Mac-111",
+  "router_pre": {
+    "hits": 6,
+    "n": 52,
+    "rate": 0.1154
+  },
+  "router_post": {
+    "hits": 52,
+    "n": 52,
+    "rate": 1.0
+  },
+  "verifier_alone": {
+    "hits": 44,
+    "n": 44,
+    "rate": 1.0
+  },
+  "unified": {
+    "hits": 44,
+    "n": 44,
+    "rate": 1.0
+  },
+  "rise_pp": 88.46,
+  "rise_rate_pct_vs_pre": 766.6,
+  "freeze_gate_80pp": true,
+  "mixed_unified": 1.0,
+  "floors": {
+    "mixed": 1.0,
+    "motion": "100% (tip motion-r4; untouched)",
+    "tti": "100% (tip-tti fold; untouched)",
+    "collision": "100% (untouched)",
+    "inverse_cv": "≥99.82% (untouched)",
+    "r11": "52/52·44/44"
+  },
+  "held_routers": {
+    "r1": "18/18",
+    "r2": "22/22",
+    "r3": "35/35",
+    "r4": "40/40",
+    "r5": "44/44",
+    "r6": "48/48",
+    "r7": "52/52",
+    "r8": "52/52",
+    "r9": "52/52",
+    "r10": "52/52",
+    "r11": "52/52",
+    "lp": "43/43"
+  },
+  "held_verifiers": {
+    "r7": "44/44",
+    "r8": "44/44",
+    "r9": "44/44",
+    "r10": "44/44",
+    "r11": "44/44",
+    "lp": "32/32"
+  },
+  "smoke": "12/12",
+  "ent_never_on_python": true,
+  "pillars": "26/26",
+  "hardneg_smoke": "18/18",
+  "families": [
+    "squid_proxy_gates",
+    "openresty_lua_gates",
+    "contour_route_gates",
+    "emissary_mapping_gates",
+    "zuul_filter_gates",
+    "django_mw_gates",
+    "laravel_mw_gates",
+    "gin_mw_gates",
+    "dynamodb_cond_gates",
+    "firestore_rules_gates",
+    "keycloak_realm_gates",
+    "falco_rule_gates",
+    "otel_sampler_gates",
+    "ray_actor_gates"
+  ],
+  "not_folded": true,
+  "lora_adapter_ro": true,
+  "adapters_mtime_unchanged": true
+}
