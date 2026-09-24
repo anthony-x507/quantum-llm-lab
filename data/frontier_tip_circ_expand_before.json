@@ -1,0 +1,14 @@
+{
+  "schema": "frontier_tip_circ_expand_before",
+  "written": "2026-09-24 14:14:14 ET",
+  "source": "tip HEAD e70b23a post vision-ground fold",
+  "vision_base": 1.0,
+  "vision_correct": "10/10",
+  "circ_axis": "2/2",
+  "circ_items": [
+    "vis_circ_01",
+    "vis_circ_02"
+  ],
+  "mixed_d_unified": 1.0,
+  "note": "Pre circ-expand baseline on tip; circ coverage locked at 2/2 after vision-ground"
+}

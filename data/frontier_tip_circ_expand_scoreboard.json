@@ -1,0 +1,71 @@
+{
+  "schema": "frontier_tip_circ_expand_scoreboard",
+  "written": "2026-09-24 14:14:14 ET",
+  "branch": "frontier/tip-circ-expand",
+  "base_tip_sha": "e70b23a7d6bf2120dc48c10684f69e12f3918ca4",
+  "base_tip_sha_short": "e70b23a",
+  "host": "Mac-111",
+  "machine_id": "074c6626-0440-4817-9829-6bae77c578d6",
+  "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
+  "claim": "NO quantum-advantage. Expand grounded circ vision scenes; tip vis stays BASE; prompt/parse/grounding only.",
+  "fold_into_tip": false,
+  "adapters_ro": true,
+  "ro_mtime_unchanged": true,
+  "vision_before": {
+    "accuracy": 1.0,
+    "correct": "10/10",
+    "circ_axis": "2/2",
+    "source": "tip after vision-ground fold (e70b23a)"
+  },
+  "vision_after": {
+    "base_accuracy": 1.0,
+    "base_correct": "13/13",
+    "circ_axis": "5/5",
+    "circ_detail": {
+      "vis_circ_01": true,
+      "vis_circ_02": true,
+      "vis_circ_03": true,
+      "vis_circ_04": true,
+      "vis_circ_05": true
+    }
+  },
+  "coverage_rise": {
+    "circ_before": "2/2",
+    "circ_after": "5/5",
+    "new_scenes": [
+      "vis_circ_03",
+      "vis_circ_04",
+      "vis_circ_05"
+    ],
+    "clear_rise": true
+  },
+  "mixed_floor": {
+    "d_unified_overall": 1.0,
+    "vision": 1.0,
+    "floor_criterion": 0.9667,
+    "held": true
+  },
+  "reinforce": [
+    " +3 grounded circ text-card scenes (Bell-only, GHZ-3q, X+RY+CNOT)",
+    "grounding: anti-invent X when absent; emit each CNOT in chain; n_qubits match image",
+    "runtime CIRCUIT GROUNDING + anti-think JSON-only (tip-vision-ground lineage)",
+    "tip vis pillar stays BASE; no LoRA writes"
+  ],
+  "freeze": true,
+  "freeze_reason": "clear circ coverage rise 2/2\u21925/5 AND vision BASE 1.0 held AND mixed floor 1.0 held AND circ axis 100%\u226580%",
+  "anti_contam": {
+    "prompt_touches_gt": false,
+    "writes_lora_adapter": false,
+    "ent_never_on_python": true,
+    "tip_vis_pillar": "BASE"
+  },
+  "artifacts": {
+    "before": "data/frontier_tip_circ_expand_before.json",
+    "after_bench": "data/frontier_tip_circ_expand_bench_after.json",
+    "cpu": "data/frontier_moe_verifier_mixed_cpu_circ_expand.json",
+    "smoke": "data/frontier_moe_verifier_mixed_smoke_circ_expand.json",
+    "ro_before": "data/tip_circ_expand_adapter_ro_snapshot_before.json",
+    "ro_after": "data/tip_circ_expand_adapter_ro_snapshot_after.json",
+    "renderer": "examples/vision_circ/render_grounded_circ_scenes.py"
+  }
+}

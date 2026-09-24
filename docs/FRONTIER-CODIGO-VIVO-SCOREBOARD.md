@@ -1027,3 +1027,11 @@ Platform / mlx_r3 / post_polish / polish_r5 / R5 tip freezes **retained**. Never
 
 **CPU re-smoke after fold:** unified **1.0**; LP **43/43**; R5 **44/44**; R6 **48/48**; pillars **26/26**; freezes retained incl. r6 + label_protect · 2026-09-24 12:51:49 ET.
 
+
+## Circ-expand — SIDE (not folded)
+
+**When:** measure ~14:12–14:14 ET · Mac-111 · branch `frontier/tip-circ-expand` from tip `e70b23a`  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-CIRC-EXPAND.md`  
+**Δ:** circ **2/2→5/5** (+3 grounded scenes); vision BASE **1.000** held (13/13); mixed (d) **1.0** held.  
+**Honesty:** BASE prompt/parse/grounding only; tip vis stays BASE; adapters RO.  
+**Fold:** **NO** (side-only).  

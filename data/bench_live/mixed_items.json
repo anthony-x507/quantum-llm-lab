@@ -9,7 +9,7 @@
     "python": 8,
     "entanglement": 8,
     "vision_scored": 8,
-    "vision_routing_extra": 2,
+    "vision_routing_extra": 5,
     "hardneg_router": 18,
     "hardneg_vision_extra": 8
   },
@@ -108,7 +108,7 @@
       "id": "ent_scene_0222",
       "pillar": "entanglement",
       "scene_id": "scene_0222",
-      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0222. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "prompt": "Eres un asistente de circuitos cu\u00e1nticos. Escena scene_0222. Mira la imagen del circuito. Responde SOLO JSON v\u00e1lido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
       "eval": {
         "label": "separable",
         "domain": "entanglement"
@@ -119,7 +119,7 @@
       "id": "ent_scene_0157",
       "pillar": "entanglement",
       "scene_id": "scene_0157",
-      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0157. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "prompt": "Eres un asistente de circuitos cu\u00e1nticos. Escena scene_0157. Mira la imagen del circuito. Responde SOLO JSON v\u00e1lido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
       "eval": {
         "label": "entangled",
         "domain": "entanglement"
@@ -130,7 +130,7 @@
       "id": "ent_scene_0291",
       "pillar": "entanglement",
       "scene_id": "scene_0291",
-      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0291. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "prompt": "Eres un asistente de circuitos cu\u00e1nticos. Escena scene_0291. Mira la imagen del circuito. Responde SOLO JSON v\u00e1lido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
       "eval": {
         "label": "entangled",
         "domain": "entanglement"
@@ -141,7 +141,7 @@
       "id": "ent_scene_0359",
       "pillar": "entanglement",
       "scene_id": "scene_0359",
-      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0359. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "prompt": "Eres un asistente de circuitos cu\u00e1nticos. Escena scene_0359. Mira la imagen del circuito. Responde SOLO JSON v\u00e1lido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
       "eval": {
         "label": "entangled",
         "domain": "entanglement"
@@ -152,7 +152,7 @@
       "id": "ent_scene_0239",
       "pillar": "entanglement",
       "scene_id": "scene_0239",
-      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0239. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "prompt": "Eres un asistente de circuitos cu\u00e1nticos. Escena scene_0239. Mira la imagen del circuito. Responde SOLO JSON v\u00e1lido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
       "eval": {
         "label": "entangled",
         "domain": "entanglement"
@@ -163,7 +163,7 @@
       "id": "ent_scene_0293",
       "pillar": "entanglement",
       "scene_id": "scene_0293",
-      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0293. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "prompt": "Eres un asistente de circuitos cu\u00e1nticos. Escena scene_0293. Mira la imagen del circuito. Responde SOLO JSON v\u00e1lido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
       "eval": {
         "label": "entangled",
         "domain": "entanglement"
@@ -174,7 +174,7 @@
       "id": "ent_scene_0317",
       "pillar": "entanglement",
       "scene_id": "scene_0317",
-      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0317. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "prompt": "Eres un asistente de circuitos cu\u00e1nticos. Escena scene_0317. Mira la imagen del circuito. Responde SOLO JSON v\u00e1lido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
       "eval": {
         "label": "entangled",
         "domain": "entanglement"
@@ -185,7 +185,7 @@
       "id": "ent_scene_0336",
       "pillar": "entanglement",
       "scene_id": "scene_0336",
-      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0336. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "prompt": "Eres un asistente de circuitos cu\u00e1nticos. Escena scene_0336. Mira la imagen del circuito. Responde SOLO JSON v\u00e1lido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
       "eval": {
         "label": "entangled",
         "domain": "entanglement"
@@ -301,7 +301,7 @@
     {
       "id": "vis_circ_01",
       "pillar": "vision",
-      "prompt": "Look at the circuit description in the image. Emit ONLY a JSON object with keys n_qubits (int) and gates (list of {name, wires}). No markdown.\n\nCIRCUIT GROUNDING (read the image carefully): List EVERY gate visible, in order. If a Pauli-X (X) appears on a qubit BEFORE a CX/CNOT involving that qubit, you MUST include that explicit X in gates — do not skip X and emit only H+CX. CX and CNOT are the same gate family; use name \"CNOT\" or \"CX\" consistently. Include RY/RZ params as JSON numbers (use 1.5707963267948966 for pi/2), never bare pi tokens.\nANTI-THINK JSON-ONLY: NO <think> prose. NO English narration. Answer ONLY JSON. Empieza tu respuesta con el carácter `{` y termina con `}`. Un único objeto JSON (sin markdown) with keys n_qubits (int) and gates (list of {name, wires} or [name, ...wires..., optional params]).",
+      "prompt": "Look at the circuit description in the image. Emit ONLY a JSON object with keys n_qubits (int) and gates (list of {name, wires}). No markdown.\n\nCIRCUIT GROUNDING (read the image carefully): List EVERY gate visible, in order. If a Pauli-X (X) appears on a qubit BEFORE a CX/CNOT involving that qubit, you MUST include that explicit X in gates \u2014 do not skip X and emit only H+CX. CX and CNOT are the same gate family; use name \"CNOT\" or \"CX\" consistently. Include RY/RZ params as JSON numbers (use 1.5707963267948966 for pi/2), never bare pi tokens.\nANTI-THINK JSON-ONLY: NO <think> prose. NO English narration. Answer ONLY JSON. Empieza tu respuesta con el car\u00e1cter `{` y termina con `}`. Un \u00fanico objeto JSON (sin markdown) with keys n_qubits (int) and gates (list of {name, wires} or [name, ...wires..., optional params]).",
       "image": "data/bench_live/vision_items/vis_circ_01.png",
       "eval": {
         "expected": null,
@@ -310,12 +310,12 @@
       "kind": "circuit",
       "score_accuracy": false,
       "expected_lane": "ent",
-      "note": "circuit JSON from image → ent adapter (not vision-math)"
+      "note": "circuit JSON from image \u2192 ent adapter (not vision-math)"
     },
     {
       "id": "vis_circ_02",
       "pillar": "vision",
-      "prompt": "Look at the circuit in the image. Emit ONLY JSON with n_qubits and gates (name, wires, optionally params). No markdown.\n\nCIRCUIT GROUNDING (read the image carefully): List EVERY gate visible, in order. If a Pauli-X (X) appears on a qubit BEFORE a CX/CNOT involving that qubit, you MUST include that explicit X in gates — do not skip X and emit only H+CX. CX and CNOT are the same gate family; use name \"CNOT\" or \"CX\" consistently. Include RY/RZ params as JSON numbers (use 1.5707963267948966 for pi/2), never bare pi tokens.\nANTI-THINK JSON-ONLY: NO <think> prose. NO English narration. Answer ONLY JSON. Empieza tu respuesta con el carácter `{` y termina con `}`. Un único objeto JSON (sin markdown) with keys n_qubits (int) and gates (list of {name, wires} or [name, ...wires..., optional params]).",
+      "prompt": "Look at the circuit in the image. Emit ONLY JSON with n_qubits and gates (name, wires, optionally params). No markdown.\n\nCIRCUIT GROUNDING (read the image carefully): List EVERY gate visible, in order. If a Pauli-X (X) appears on a qubit BEFORE a CX/CNOT involving that qubit, you MUST include that explicit X in gates \u2014 do not skip X and emit only H+CX. CX and CNOT are the same gate family; use name \"CNOT\" or \"CX\" consistently. Include RY/RZ params as JSON numbers (use 1.5707963267948966 for pi/2), never bare pi tokens.\nANTI-THINK JSON-ONLY: NO <think> prose. NO English narration. Answer ONLY JSON. Empieza tu respuesta con el car\u00e1cter `{` y termina con `}`. Un \u00fanico objeto JSON (sin markdown) with keys n_qubits (int) and gates (list of {name, wires} or [name, ...wires..., optional params]).",
       "image": "data/bench_live/vision_items/vis_circ_02.png",
       "eval": {
         "expected": null,
@@ -324,7 +324,59 @@
       "kind": "circuit",
       "score_accuracy": false,
       "expected_lane": "ent",
-      "note": "circuit JSON from image → ent adapter (not vision-math)"
+      "note": "circuit JSON from image \u2192 ent adapter (not vision-math)"
+    },
+    {
+      "id": "vis_circ_03",
+      "pillar": "vision",
+      "prompt": "Look at the circuit description in the image. Emit ONLY a JSON object with keys n_qubits (int) and gates (list of {name, wires}). No markdown.",
+      "image": "data/bench_live/vision_items/vis_circ_03.png",
+      "eval": {
+        "expected": [
+          "H",
+          "CNOT"
+        ],
+        "match": "json_gates_contain",
+        "n_qubits": 2
+      },
+      "kind": "circuit",
+      "score_accuracy": false,
+      "expected_lane": "ent"
+    },
+    {
+      "id": "vis_circ_04",
+      "pillar": "vision",
+      "prompt": "Look at the circuit description in the image. Emit ONLY a JSON object with keys n_qubits (int) and gates (list of {name, wires}). No markdown.",
+      "image": "data/bench_live/vision_items/vis_circ_04.png",
+      "eval": {
+        "expected": [
+          "H",
+          "CNOT"
+        ],
+        "match": "json_gates_contain",
+        "n_qubits": 3
+      },
+      "kind": "circuit",
+      "score_accuracy": false,
+      "expected_lane": "ent"
+    },
+    {
+      "id": "vis_circ_05",
+      "pillar": "vision",
+      "prompt": "Look at the circuit description in the image. Emit ONLY a JSON object with keys n_qubits (int) and gates (list of {name, wires}). No markdown.",
+      "image": "data/bench_live/vision_items/vis_circ_05.png",
+      "eval": {
+        "expected": [
+          "X",
+          "RY",
+          "CNOT"
+        ],
+        "match": "json_gates_contain",
+        "n_qubits": 2
+      },
+      "kind": "circuit",
+      "score_accuracy": false,
+      "expected_lane": "ent"
     }
   ],
   "hardneg_router": [
@@ -333,7 +385,7 @@
       "pillar": "router_only",
       "expected_lane": "python",
       "prompt": "Write a Python program that prints the integer 2 (as in two qubits in a Bell pair). Output ONLY the code, no markdown fences. Do not emit JSON.",
-      "note": "qubits/Bell noun but code-gen → python"
+      "note": "qubits/Bell noun but code-gen \u2192 python"
     },
     {
       "id": "hn_py_circuit_print",
@@ -353,7 +405,7 @@
       "id": "hn_ent_spanish",
       "pillar": "router_only",
       "expected_lane": "ent",
-      "prompt": "Circuito cuántico PennyLane: arma un par de Bell (Hadamard + CX). Devuelve JSON válido n_qubits y gates.",
+      "prompt": "Circuito cu\u00e1ntico PennyLane: arma un par de Bell (Hadamard + CX). Devuelve JSON v\u00e1lido n_qubits y gates.",
       "note": "spanish ent"
     },
     {
@@ -367,7 +419,7 @@
       "id": "hn_vis_frame",
       "pillar": "router_only",
       "expected_lane": "vision",
-      "prompt": "Mira la imagen del frame PNG. ¿Cuántos objetos hay? Responde solo un entero.",
+      "prompt": "Mira la imagen del frame PNG. \u00bfCu\u00e1ntos objetos hay? Responde solo un entero.",
       "note": "vision spanish"
     },
     {
@@ -382,7 +434,7 @@
       "pillar": "router_only",
       "expected_lane": "base",
       "prompt": "Hello! Thanks for the help. Tell me a short fun fact about cats.",
-      "note": "chat → base"
+      "note": "chat \u2192 base"
     },
     {
       "id": "hn_amb_py_def_quantum",
@@ -395,61 +447,62 @@
       "id": "hn_amb_ent_image_words",
       "pillar": "router_only",
       "expected_lane": "ent",
-      "prompt": "Eres un asistente de circuitos cuánticos. Mira la imagen. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx.",
+      "prompt": "Eres un asistente de circuitos cu\u00e1nticos. Mira la imagen. Responde SOLO JSON v\u00e1lido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx.",
       "note": "imagen present but ent JSON wins"
     },
     {
       "id": "hn_vis_diagram",
       "expected_lane": "vision",
       "prompt": "Look at the diagram. How many nodes are visible? Reply with ONLY the integer count.",
-      "note": "diagram cue → vision"
+      "note": "diagram cue \u2192 vision"
     },
     {
       "id": "hn_vis_whiteboard",
       "expected_lane": "vision",
       "prompt": "Look at the whiteboard photo. Solve the arithmetic. Reply with ONLY the final integer.",
-      "note": "whiteboard photo → vision"
+      "note": "whiteboard photo \u2192 vision"
     },
     {
       "id": "hn_vis_screenshot_sheet",
       "expected_lane": "vision",
       "prompt": "Look at the screenshot of the spreadsheet in the image. Reply with ONLY the integer total in cell B2.",
-      "note": "screenshot spreadsheet → vision"
+      "note": "screenshot spreadsheet \u2192 vision"
     },
     {
       "id": "hn_vis_neg_textonly",
       "expected_lane": "base",
       "prompt": "Text-only description (no image file attached): There are 2 cats and 1 dog. How many animals?",
-      "note": "explicit no-image → base (not vision)"
+      "note": "explicit no-image \u2192 base (not vision)"
     },
     {
       "id": "hn_vis_neg_without_picture",
       "expected_lane": "base",
       "prompt": "Pure chat: someone said 'three rockets launched'. Without any picture or png, guess the count.",
-      "note": "without picture → base"
+      "note": "without picture \u2192 base"
     },
     {
       "id": "hn_vis_neg_sin_imagen",
       "expected_lane": "base",
-      "prompt": "Describe un paisaje ficticio sin imagen ni archivo de imagen. ¿Cuántos árboles menciones? Responde en chat.",
-      "note": "sin imagen → base"
+      "prompt": "Describe un paisaje ficticio sin imagen ni archivo de imagen. \u00bfCu\u00e1ntos \u00e1rboles menciones? Responde en chat.",
+      "note": "sin imagen \u2192 base"
     },
     {
       "id": "hn_vis_street_overlay",
       "expected_lane": "vision",
       "prompt": "Look at the image caption overlay. How many street lights are visible in the frame PNG?",
-      "note": "caption overlay + frame png → vision"
+      "note": "caption overlay + frame png \u2192 vision"
     },
     {
       "id": "hn_vis_neg_no_visual",
       "expected_lane": "base",
-      "prompt": "Hello. No visual input today — text-only status check. Tell me a short fun fact about dogs.",
-      "note": "no visual input → base"
+      "prompt": "Hello. No visual input today \u2014 text-only status check. Tell me a short fun fact about dogs.",
+      "note": "no visual input \u2192 base"
     }
   ],
   "notes": [
-    "Mixed set forces MoE Δ vs python-only: baseline=base-all; MoE applies ent2 on ent lane.",
+    "Mixed set forces MoE \u0394 vs python-only: baseline=base-all; MoE applies ent2 on ent lane.",
     "No quantum-advantage claims.",
-    "Vision hard-neg expand +8 (hn_vis_diagram, hn_vis_whiteboard, hn_vis_screenshot_sheet, hn_vis_neg_textonly, hn_vis_neg_without_picture, hn_vis_neg_sin_imagen, hn_vis_street_overlay, hn_vis_neg_no_visual) — text-only negations + diagram/whiteboard/screenshot positives. GT harness-only."
+    "Vision hard-neg expand +8 (hn_vis_diagram, hn_vis_whiteboard, hn_vis_screenshot_sheet, hn_vis_neg_textonly, hn_vis_neg_without_picture, hn_vis_neg_sin_imagen, hn_vis_street_overlay, hn_vis_neg_no_visual) \u2014 text-only negations + diagram/whiteboard/screenshot positives. GT harness-only.",
+    "Circ vision expand +3 grounded scenes (vis_circ_03 Bell-only, vis_circ_04 GHZ-3q, vis_circ_05 X+RY+CNOT) \u2014 routing extras; tip-circ-expand side; tip vis stays BASE."
   ]
 }
