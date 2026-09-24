@@ -89,3 +89,10 @@ python examples/moe_verifier_mixed_live.py --replay
 - No writes under `data/lora_adapter/`.
 - No quantum-advantage marketing.
 - No Cursor Cloud Agents.
+
+## Successor: freeze R1/R2 port
+
+See **`frontier/mixed-with-freeze-r2`** / `docs/FRONTIER-MIXED-WITH-FREEZE-R2.md`.
+Ports freeze-polish-bridge R1/R2 reinforces onto this tip; mixed (d) overall **0.9667 held**;
+hardneg router R1 18/18 + R2 22/22; verifier loops 1.0. Metrics:
+`data/freeze_metrics/mixed_with_freeze_r2_20260924.json`.

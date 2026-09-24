@@ -1,6 +1,6 @@
 {
   "frontier": "C3b-moe-verifier-mixed-live",
-  "written": "2026-09-24 10:50:14",
+  "written": "2026-09-24 10:57:51",
   "claims": [
     "NO quantum-advantage claims",
     "MoE routing usability + classical python -I exec oracle only"
@@ -8,7 +8,7 @@
   "ro_lock": {
     "script_writes_to_lora_adapter": false,
     "policy": "READ-ONLY; never overwrite data/lora_adapter/",
-    "ent_adapter_ro": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+    "ent_adapter_ro": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
   },
   "mode": "cpu-eval",
   "router_method": "heuristic",
@@ -105,7 +105,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
         },
         {
           "id": "ent_scene_0157",
@@ -113,7 +113,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
         },
         {
           "id": "ent_scene_0291",
@@ -121,7 +121,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
         },
         {
           "id": "ent_scene_0359",
@@ -129,7 +129,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
         },
         {
           "id": "ent_scene_0239",
@@ -137,7 +137,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
         },
         {
           "id": "ent_scene_0293",
@@ -145,7 +145,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
         },
         {
           "id": "ent_scene_0317",
@@ -153,7 +153,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
         },
         {
           "id": "ent_scene_0336",
@@ -161,7 +161,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
         },
         {
           "id": "vis_math_01",
@@ -233,7 +233,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
         },
         {
           "id": "vis_circ_02",
@@ -241,7 +241,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
         }
       ]
     },
@@ -271,7 +271,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2",
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
           "note": "classic ent"
         },
         {
@@ -279,7 +279,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2",
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
           "note": "spanish ent"
         },
         {
@@ -327,7 +327,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2",
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
           "note": "imagen present but ent JSON wins"
         }
       ]
@@ -452,56 +452,56 @@
   },
   "ent_vision_paths": {
     "priors_ref": [
-      "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/BENCHMARK_CODIGO_VIVO.json",
-      "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/frontier_moe_dual_lane_smoke.json"
+      "/Users/anthony/Documents/quantum-llm-lab/data/BENCHMARK_CODIGO_VIVO.json",
+      "/Users/anthony/Documents/quantum-llm-lab/data/frontier_moe_dual_lane_smoke.json"
     ],
     "ent_routing": [
       {
         "id": "ent_scene_0222",
         "lane": "ent",
-        "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
         "uses_ent_adapter": true
       },
       {
         "id": "ent_scene_0157",
         "lane": "ent",
-        "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
         "uses_ent_adapter": true
       },
       {
         "id": "ent_scene_0291",
         "lane": "ent",
-        "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
         "uses_ent_adapter": true
       },
       {
         "id": "ent_scene_0359",
         "lane": "ent",
-        "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
         "uses_ent_adapter": true
       },
       {
         "id": "ent_scene_0239",
         "lane": "ent",
-        "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
         "uses_ent_adapter": true
       },
       {
         "id": "ent_scene_0293",
         "lane": "ent",
-        "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
         "uses_ent_adapter": true
       },
       {
         "id": "ent_scene_0317",
         "lane": "ent",
-        "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
         "uses_ent_adapter": true
       },
       {
         "id": "ent_scene_0336",
         "lane": "ent",
-        "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2",
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
         "uses_ent_adapter": true
       }
     ],
@@ -709,14 +709,14 @@
     },
     "moe_delta_visible": true,
     "priors_used": [
-      "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/BENCHMARK_CODIGO_VIVO.json",
-      "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/frontier_moe_dual_lane_smoke.json"
+      "/Users/anthony/Documents/quantum-llm-lab/data/BENCHMARK_CODIGO_VIVO.json",
+      "/Users/anthony/Documents/quantum-llm-lab/data/frontier_moe_dual_lane_smoke.json"
     ]
   },
   "priors": {
     "sources": [
-      "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/BENCHMARK_CODIGO_VIVO.json",
-      "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/frontier_moe_dual_lane_smoke.json"
+      "/Users/anthony/Documents/quantum-llm-lab/data/BENCHMARK_CODIGO_VIVO.json",
+      "/Users/anthony/Documents/quantum-llm-lab/data/frontier_moe_dual_lane_smoke.json"
     ],
     "baseline_base": {
       "python_solve_rate": 0.0625,

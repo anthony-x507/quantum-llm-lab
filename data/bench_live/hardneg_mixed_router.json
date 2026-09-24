@@ -1,0 +1,117 @@
+{
+  "n": 18,
+  "kind": "hardneg_mixed_router",
+  "created": "2026-09-24 10:48:00 ET",
+  "note": "GT lanes for post-hoc eval only — never injected into route() prompts beyond the prompt field itself.",
+  "anti_contamination": "expected lane is harness-only; prompts contain no expected_lane field text",
+  "items": [
+    {
+      "id": "hn_py_physics_01",
+      "expected": "python",
+      "family": "python_looks_like_physics",
+      "prompt": "Write Python that prints the integer classical free-fall distance int(0.5 * 9.81 * 4 * 4). Output ONLY the code, no markdown fences."
+    },
+    {
+      "id": "hn_py_physics_02",
+      "expected": "python",
+      "family": "python_looks_like_physics",
+      "prompt": "Write a Python program that prints int(v0*t - 0.5*g*t*t) for ballistic height with v0=20, t=2, g=10. ONLY code."
+    },
+    {
+      "id": "hn_py_physics_03",
+      "expected": "python",
+      "family": "python_looks_like_physics",
+      "prompt": "def kinetic_energy(m, v):\n    return int(0.5 * m * v * v)\nprint(kinetic_energy(4, 3))\n# complete / run this Python physics helper"
+    },
+    {
+      "id": "hn_py_physics_04",
+      "expected": "python",
+      "family": "python_looks_like_physics",
+      "prompt": "Write Python to simulate a 1D elastic collision velocity and print the integer result of (u1*(m1-m2)+2*m2*u2)//(m1+m2) for m1=3 m2=1 u1=4 u2=0. ONLY code."
+    },
+    {
+      "id": "hn_py_entword_01",
+      "expected": "python",
+      "family": "ent_wording_in_coding",
+      "prompt": "Write a Python program that prints the length of the string 'entanglement'. Output ONLY the code."
+    },
+    {
+      "id": "hn_py_entword_02",
+      "expected": "python",
+      "family": "ent_wording_in_coding",
+      "prompt": "Write Python that counts how many times the substring 'qubit' appears in: 'qubit qubit circuit'. print the integer. ONLY code."
+    },
+    {
+      "id": "hn_py_entword_03",
+      "expected": "python",
+      "family": "ent_wording_in_coding",
+      "prompt": "Write Python that prints 2**10. Mentions of Bell pairs, entanglement, or gates in this sentence are distractors — do not build a quantum circuit."
+    },
+    {
+      "id": "hn_py_entword_04",
+      "expected": "python",
+      "family": "ent_wording_in_coding",
+      "prompt": "import math\nprint(int(math.factorial(6)))\n# Python sandbox task — ignore any entanglement jargon nearby"
+    },
+    {
+      "id": "hn_py_entword_05",
+      "expected": "python",
+      "family": "ent_wording_in_coding",
+      "prompt": "Write a Python program that prints the word 'Hadamard' character count (len). ONLY executable code, no circuit JSON."
+    },
+    {
+      "id": "hn_vis_amb_01",
+      "expected": "vision",
+      "family": "vision_caption_ambiguous",
+      "prompt": "Look at the image caption overlay. How many street lights are visible in the frame? Reply with ONLY the final integer."
+    },
+    {
+      "id": "hn_vis_amb_02",
+      "expected": "vision",
+      "family": "vision_caption_ambiguous",
+      "prompt": "Photo of a table: red ball, blue cube, green cone. In the image, how many objects? ONLY the integer."
+    },
+    {
+      "id": "hn_vis_amb_03",
+      "expected": "base",
+      "family": "vision_caption_ambiguous",
+      "prompt": "Text-only description (no image file attached): There are 2 cats and 1 dog. How many animals? Reply with ONLY the integer."
+    },
+    {
+      "id": "hn_vis_amb_04",
+      "expected": "base",
+      "family": "vision_caption_ambiguous",
+      "prompt": "Pure chat: someone said 'three rockets launched'. Without any picture or png, what number did they say? One word."
+    },
+    {
+      "id": "hn_vis_amb_05",
+      "expected": "vision",
+      "family": "vision_caption_ambiguous",
+      "prompt": "Mira la imagen. La visión muestra semáforos en el video frame. ¿Cuántos? Solo el entero."
+    },
+    {
+      "id": "hn_ent_clean_01",
+      "expected": "ent",
+      "family": "ent_control",
+      "prompt": "Propose a quantum circuit with n_qubits and gates for a Bell-pair entanglement scene. Reply JSON only."
+    },
+    {
+      "id": "hn_ent_clean_02",
+      "expected": "ent",
+      "family": "ent_control",
+      "prompt": "Build a PennyLane circuit: Hadamard then CX on qubits 0,1. Return n_qubits and gates list as JSON."
+    },
+    {
+      "id": "hn_base_01",
+      "expected": "base",
+      "family": "base_control",
+      "prompt": "Hello! Thanks for the earlier chat. Any fun weather idioms?"
+    },
+    {
+      "id": "hn_py_gate_garden_01",
+      "expected": "python",
+      "family": "ent_wording_in_coding",
+      "prompt": "Write Python that prints s.count('gate') for s='the garden gate is closed'. ONLY code — this is a string count, not a quantum gate list."
+    }
+  ]
+}

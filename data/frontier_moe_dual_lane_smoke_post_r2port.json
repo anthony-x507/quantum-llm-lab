@@ -1,0 +1,121 @@
+{
+  "frontier": "C1-moe-dual-lane",
+  "written": "2026-09-24 10:57:05",
+  "router_method": "heuristic",
+  "claims": "No quantum-advantage claims.",
+  "adapter_map": {
+    "ent": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+    "python": null,
+    "vision": null,
+    "base": null
+  },
+  "ro_lock": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter",
+  "smoke": {
+    "method": "heuristic",
+    "n": 12,
+    "hits": 12,
+    "misses": 0,
+    "score": "12/12",
+    "rows": [
+      {
+        "id": "ent_01",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "prompt_preview": "Propose a quantum circuit with n_qubits and gates for this entanglement scene. R"
+      },
+      {
+        "id": "ent_02",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "prompt_preview": "Eres un asistente de circuitos cuánticos. Usa PennyLane gates h,x,cx. Escena de "
+      },
+      {
+        "id": "ent_03",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "prompt_preview": "Build a Bell-pair circuit: Hadamard then CX. Return n_qubits and gates list."
+      },
+      {
+        "id": "py_01",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write a Python program that prints the integer result of 47 + 18. Output ONLY th"
+      },
+      {
+        "id": "py_02",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints the factorial of 6 as an integer. ONLY code."
+      },
+      {
+        "id": "py_03",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "def solve():\n    print(sum(range(1,11)))\n# complete this Python script"
+      },
+      {
+        "id": "vis_01",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Look at the image. Solve the arithmetic problem. Reply with ONLY the final integ"
+      },
+      {
+        "id": "vis_02",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Mira la imagen del frame. ¿Cuántos objetos hay en la visión?"
+      },
+      {
+        "id": "vis_03",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Describe the objects in this video frame image (png). Reply briefly."
+      },
+      {
+        "id": "base_01",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Hello! How are you today?"
+      },
+      {
+        "id": "base_02",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Thanks for the help earlier. What is the weather like in general terms?"
+      },
+      {
+        "id": "base_03",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Tell me a short fun fact about cats."
+      }
+    ]
+  },
+  "bench": null,
+  "gpu_skipped": false,
+  "notes": []
+}

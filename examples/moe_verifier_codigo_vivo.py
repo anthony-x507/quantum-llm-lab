@@ -484,6 +484,14 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--timeout", type=float, default=8.0)
     p.add_argument("--model", default=ver.DEFAULT_MODEL)
     p.add_argument("--out", type=Path, default=None)
+    p.add_argument("--hardneg", action="store_true",
+                   help="Also score hard-neg mixed router + hardneg python items")
+    p.add_argument("--hardneg-only", action="store_true",
+                   help="Run hard-neg python paths instead of default items")
+    p.add_argument("--hardneg-items", type=Path,
+                   default=ROOT / "data" / "bench_live" / "hardneg_python_items.json")
+    p.add_argument("--hardneg-router", type=Path,
+                   default=ROOT / "data" / "bench_live" / "hardneg_mixed_router.json")
     args = p.parse_args(argv)
 
     method = "heuristic"
@@ -500,14 +508,24 @@ def main(argv: list[str] | None = None) -> int:
     router_smoke = None
     python_eval = None
     ent_vis = None
+    hardneg_router = None
     mode = "smoke"
 
     # Always run router smoke in --smoke
-    if args.smoke or args.cpu_eval:
+    if args.smoke or args.cpu_eval or args.hardneg or args.hardneg_only:
         print(f"=== C3 router smoke method={method} ===", flush=True)
         router_smoke = run_router_smoke(method)
         print(f"Router smoke: {router_smoke['score']} ent_never_on_python={router_smoke['ent_never_on_python']}", flush=True)
         ent_vis = run_ent_vision_routing(method)
+
+    if args.hardneg or args.hardneg_only:
+        print(f"=== C3 hardneg router method={method} ===", flush=True)
+        hardneg_router = moe.run_hardneg(method, path=args.hardneg_router)
+        print(
+            f"Hardneg router: {hardneg_router['score']} rate={hardneg_router['rate']} "
+            f"ent_never_on_python={hardneg_router['ent_never_on_python']}",
+            flush=True,
+        )
 
     # Python comparative paths
     proposer = "heuristic"
@@ -532,18 +550,19 @@ def main(argv: list[str] | None = None) -> int:
             mode = "smoke_fallback_after_mlx_busy"
         else:
             mlx_status = "gpu_free_attempting"
-    elif args.cpu_eval:
-        mode = "cpu-eval"
+    elif args.cpu_eval or args.hardneg_only:
+        mode = "hardneg-cpu" if args.hardneg_only else "cpu-eval"
         proposer = "heuristic"
     else:
         mode = "smoke"
         proposer = "heuristic"
 
-    if args.smoke or args.cpu_eval or args.replay or (args.mlx_eval and proposer in ("mlx", "heuristic")):
-        items = ver.load_python_items(args.items)
+    if args.smoke or args.cpu_eval or args.replay or args.hardneg_only or (args.mlx_eval and proposer in ("mlx", "heuristic")):
+        item_path = args.hardneg_items if args.hardneg_only else args.items
+        items = ver.load_python_items(item_path)
         if args.limit and args.limit > 0:
             items = items[: args.limit]
-        elif args.smoke and not args.cpu_eval and not args.replay and not args.mlx_eval:
+        elif args.smoke and not args.cpu_eval and not args.replay and not args.mlx_eval and not args.hardneg_only:
             items = items[:5]  # smoke default n=5
 
         if args.mlx_eval and proposer == "mlx":
@@ -604,6 +623,8 @@ def main(argv: list[str] | None = None) -> int:
             out_path = ROOT / "data" / "frontier_moe_verifier_mlx_smoke.json"
         elif mode == "cpu-eval":
             out_path = ROOT / "data" / "frontier_moe_verifier_cpu_n.json"
+        elif mode == "hardneg-cpu":
+            out_path = ROOT / "data" / "frontier_moe_verifier_hardneg.json"
         else:
             out_path = SMOKE_OUT
 
@@ -616,6 +637,14 @@ def main(argv: list[str] | None = None) -> int:
         notes=notes,
         mlx_status=mlx_status,
     )
+    if hardneg_router is not None:
+        artifact["hardneg_router"] = hardneg_router
+        artifact["hardneg_delta"] = {
+            "router_rate": hardneg_router.get("rate"),
+            "router_score": hardneg_router.get("score"),
+            "ent_never_on_python": hardneg_router.get("ent_never_on_python"),
+            "vs_freeze_floor": "hold" if (hardneg_router.get("rate") or 0) >= 0.80 else "drop",
+        }
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(artifact, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Wrote {out_path}", flush=True)

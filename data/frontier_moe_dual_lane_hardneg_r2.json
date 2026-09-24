@@ -1,0 +1,280 @@
+{
+  "frontier": "C1-moe-dual-lane",
+  "written": "2026-09-24 10:57:11",
+  "router_method": "heuristic",
+  "claims": "No quantum-advantage claims.",
+  "adapter_map": {
+    "ent": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+    "python": null,
+    "vision": null,
+    "base": null
+  },
+  "ro_lock": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter",
+  "smoke": null,
+  "bench": null,
+  "gpu_skipped": false,
+  "notes": [],
+  "hardneg": {
+    "method": "heuristic",
+    "n": 22,
+    "hits": 22,
+    "misses": 0,
+    "score": "22/22",
+    "rate": 1.0,
+    "by_family": {
+      "bilingual_trap": {
+        "n": 5,
+        "hits": 5,
+        "rate": 1.0
+      },
+      "measure_in_comment": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      },
+      "vision_words_no_image": {
+        "n": 5,
+        "hits": 5,
+        "rate": 1.0
+      },
+      "ent_metaphor_crud": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      },
+      "json_looking_physics": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      }
+    },
+    "ent_never_on_python": true,
+    "rows": [
+      {
+        "id": "r2_bil_01",
+        "family": "bilingual_trap",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Escribe un programa en Python que imprima 3**5. Circuitos y qubits en este párra",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_bil_02",
+        "family": "bilingual_trap",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('superposición'). La palabra cuántica es un string,",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_bil_03",
+        "family": "bilingual_trap",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Hola! Gracias por el chat. ¿Algún dicho divertido sobre el clima? No code, no ci",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r2_bil_04",
+        "family": "bilingual_trap",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "prompt_preview": "Propón un circuito cuántico con n_qubits y gates para un Bell-pair. Responde SOL",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r2_bil_05",
+        "family": "bilingual_trap",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Observa la imagen adjunta del panel. En la foto, ¿cuántos botones rojos se ven? ",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r2_meas_01",
+        "family": "measure_in_comment",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 17+4.\n# TODO: measure the runtime later — ignore quantu",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_meas_02",
+        "family": "measure_in_comment",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "def score(xs):\n    return sum(xs)\nprint(score([2,3,5]))\n# measure accuracy offli",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_meas_03",
+        "family": "measure_in_comment",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write a Python program that prints int(9*9). Comment in code may say 'measure tw",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_meas_04",
+        "family": "measure_in_comment",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "import math\nprint(int(math.sqrt(144)))\n# measure := wall-clock; no pennylane, no",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_visneg_01",
+        "family": "vision_words_no_image",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Chat only — no image file, no png attached. Someone said 'four frames of film'. ",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r2_visneg_02",
+        "family": "vision_words_no_image",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints the length of the string 'screenshot.png'. Text-only ta",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_visneg_03",
+        "family": "vision_words_no_image",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 'photo'.count('o'). Pure chat coding — sin imagen, no f",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_visneg_04",
+        "family": "vision_words_no_image",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Text-only description (no image): the spreadsheet has 5 rows. How many rows? Rep",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r2_visneg_05",
+        "family": "vision_words_no_image",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Look at the image. In the screenshot of the UI, how many tabs are visible in the",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r2_crud_01",
+        "family": "ent_metaphor_crud",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len(['user_a','user_b']) after we 'entangle' two CRUD r",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_crud_02",
+        "family": "ent_metaphor_crud",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python: users={'alice':1,'bob':2}; print(sum(users.values())). Metaphor: '",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_crud_03",
+        "family": "ent_metaphor_crud",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write a Python program that prints 2 if we 'Bell-pair' match two DB rows else 0 ",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_crud_04",
+        "family": "ent_metaphor_crud",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "def merge(a,b):\n    return {**a,**b}\nprint(len(merge({'x':1},{'y':2})))\n# 'entan",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_jsonphys_01",
+        "family": "json_looking_physics",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints int(0.5*2*3*3)  # like {\"ke\":0.5*m*v*v} but OUTPUT code",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_jsonphys_02",
+        "family": "json_looking_physics",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "The note says {\"omega\": 2*3.1416, \"f\": 5}. Write Python that prints int(2*3.1416",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_jsonphys_03",
+        "family": "json_looking_physics",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python to print int((9.8*10)//1) given toy payload {\"g\":9.8,\"t\":10,\"kind\":",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_jsonphys_04",
+        "family": "json_looking_physics",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "prompt_preview": "Return a valid JSON object with n_qubits and gates for a Bell-pair entanglement ",
+        "ent_adapter_blocked": false
+      }
+    ],
+    "fixture_path": "data/bench_live/hardneg_r2_mixed_router.json",
+    "anti_contamination": {
+      "expected_lane_harness_only": true,
+      "gt_never_in_route_api": true
+    }
+  }
+}

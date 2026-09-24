@@ -1,0 +1,1652 @@
+{
+  "frontier": "C3-moe-verifier-codigo-vivo",
+  "written": "2026-09-24 10:57:27",
+  "mode": "hardneg-cpu",
+  "router_method": "heuristic",
+  "claims": [
+    "NO quantum-advantage claims",
+    "MoE routing usability + classical python -I exec oracle only"
+  ],
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "gt_never_in_inference_prompts": true,
+    "ent_never_on_python": true,
+    "rule": "revision gets stderr only; expected_stdout harness-only",
+    "lock": "docs/LOCK-ANTI-CONTAMINATION.md"
+  },
+  "ro_lock": {
+    "ro_paths_checked": [
+      "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter",
+      "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter"
+    ],
+    "script_writes_to_lora_adapter": false,
+    "policy": "READ-ONLY; never overwrite data/lora_adapter/"
+  },
+  "adapter_map": {
+    "ent": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+    "python": null,
+    "vision": null,
+    "base": null
+  },
+  "router_smoke": {
+    "method": "heuristic",
+    "n": 12,
+    "hits": 12,
+    "misses": 0,
+    "score": "12/12",
+    "rows": [
+      {
+        "id": "ent_01",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "prompt_preview": "Propose a quantum circuit with n_qubits and gates for this entanglement scene. R",
+        "adapter_resolved": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
+      },
+      {
+        "id": "ent_02",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "prompt_preview": "Eres un asistente de circuitos cuánticos. Usa PennyLane gates h,x,cx. Escena de ",
+        "adapter_resolved": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
+      },
+      {
+        "id": "ent_03",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "prompt_preview": "Build a Bell-pair circuit: Hadamard then CX. Return n_qubits and gates list.",
+        "adapter_resolved": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
+      },
+      {
+        "id": "py_01",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write a Python program that prints the integer result of 47 + 18. Output ONLY th",
+        "adapter_resolved": null,
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "py_02",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints the factorial of 6 as an integer. ONLY code.",
+        "adapter_resolved": null,
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "py_03",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "def solve():\n    print(sum(range(1,11)))\n# complete this Python script",
+        "adapter_resolved": null,
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "vis_01",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Look at the image. Solve the arithmetic problem. Reply with ONLY the final integ",
+        "adapter_resolved": null
+      },
+      {
+        "id": "vis_02",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Mira la imagen del frame. ¿Cuántos objetos hay en la visión?",
+        "adapter_resolved": null
+      },
+      {
+        "id": "vis_03",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Describe the objects in this video frame image (png). Reply briefly.",
+        "adapter_resolved": null
+      },
+      {
+        "id": "base_01",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Hello! How are you today?",
+        "adapter_resolved": null
+      },
+      {
+        "id": "base_02",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Thanks for the help earlier. What is the weather like in general terms?",
+        "adapter_resolved": null
+      },
+      {
+        "id": "base_03",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Tell me a short fun fact about cats.",
+        "adapter_resolved": null
+      }
+    ],
+    "ent_never_on_python": true
+  },
+  "ent_vision_routing": {
+    "note": "Ent/Vision: adapter selection READ-ONLY; no pillar re-run in CPU smoke",
+    "rows": [
+      {
+        "id": "ent_sample",
+        "domain": "ent",
+        "prompt": "Eres un asistente de circuitos cuánticos. Mira la imagen. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx.",
+        "routed_lane": "ent",
+        "adapter_ro": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "adapter_write": false
+      },
+      {
+        "id": "vis_sample",
+        "domain": "vision",
+        "prompt": "Look at the image. Solve the arithmetic problem. Reply with ONLY the final integer answer, no words.",
+        "routed_lane": "vision",
+        "adapter_ro": null,
+        "adapter_write": false
+      }
+    ],
+    "prior_live_bench": {
+      "source": "frontier_moe_dual_lane_smoke.json",
+      "python_solve_rate": 0.0625,
+      "ent_label_acc": 1.0,
+      "vision_accuracy": 0.9,
+      "gate_pass": true,
+      "n_python": 16,
+      "n_ent": 12,
+      "n_vision": 10
+    }
+  },
+  "python_paths": {
+    "n_items": 20,
+    "proposer": "heuristic",
+    "router_method": "heuristic",
+    "rounds_max": 2,
+    "paths": {
+      "a_single_shot_no_moe": {
+        "path": "a_single_shot_no_moe",
+        "n": 20,
+        "solve_rate_single": 0.0,
+        "solve_rate_loop": 0.0,
+        "delta_solve_rate": 0.0,
+        "solved_single": 0,
+        "solved_loop": 0,
+        "repair_success_rate": 0.0,
+        "repair_helped_n": 0,
+        "failed_single_n": 20,
+        "prompt_touches_gt": false,
+        "prompt_touches_gt_locked_false": true,
+        "details": [
+          {
+            "id": "r2v_bil_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_bil_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_meas_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_meas_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_meas_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_meas_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_visneg_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_visneg_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_visneg_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_crud_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_crud_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_crud_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_crud_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_jsonphys_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_jsonphys_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_jsonphys_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_jsonphys_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_bil_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_crud_05",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_meas_05",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          }
+        ]
+      },
+      "b_moe_alone": {
+        "path": "b_moe_alone",
+        "n": 20,
+        "solve_rate_single": 0.0,
+        "solve_rate_loop": 0.0,
+        "delta_solve_rate": 0.0,
+        "solved_single": 0,
+        "solved_loop": 0,
+        "repair_success_rate": 0.0,
+        "repair_helped_n": 0,
+        "failed_single_n": 20,
+        "prompt_touches_gt": false,
+        "prompt_touches_gt_locked_false": true,
+        "details": [
+          {
+            "id": "r2v_bil_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_bil_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_meas_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_meas_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_meas_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_meas_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_visneg_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_visneg_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_visneg_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_crud_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_crud_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_crud_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_crud_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_jsonphys_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_jsonphys_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_jsonphys_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_jsonphys_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_bil_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_crud_05",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r2v_meas_05",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          }
+        ],
+        "n_items_total": 20,
+        "n_routed_python": 20,
+        "n_routed_away": 0,
+        "solve_rate_on_python_lane": 0.0,
+        "routing": [
+          {
+            "id": "r2v_bil_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_bil_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_meas_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_meas_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_meas_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_meas_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_visneg_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_visneg_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_visneg_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_crud_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_crud_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_crud_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_crud_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_jsonphys_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_jsonphys_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_jsonphys_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_jsonphys_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_bil_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_crud_05",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_meas_05",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          }
+        ]
+      },
+      "c_verifier_alone": {
+        "path": "c_verifier_alone",
+        "n": 20,
+        "solve_rate_single": 0.0,
+        "solve_rate_loop": 1.0,
+        "delta_solve_rate": 1.0,
+        "solved_single": 0,
+        "solved_loop": 20,
+        "repair_success_rate": 1.0,
+        "repair_helped_n": 20,
+        "failed_single_n": 20,
+        "prompt_touches_gt": false,
+        "prompt_touches_gt_locked_false": true,
+        "details": [
+          {
+            "id": "r2v_bil_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_bil_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_meas_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_meas_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_meas_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_meas_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_visneg_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_visneg_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_visneg_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_crud_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_crud_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_crud_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_crud_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_jsonphys_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_jsonphys_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_jsonphys_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_jsonphys_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_bil_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_crud_05",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_meas_05",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          }
+        ]
+      },
+      "d_moe_verifier_unified": {
+        "path": "d_moe_verifier_unified",
+        "n": 20,
+        "solve_rate_single": 0.0,
+        "solve_rate_loop": 1.0,
+        "delta_solve_rate": 1.0,
+        "solved_single": 0,
+        "solved_loop": 20,
+        "repair_success_rate": 1.0,
+        "repair_helped_n": 20,
+        "failed_single_n": 20,
+        "prompt_touches_gt": false,
+        "prompt_touches_gt_locked_false": true,
+        "details": [
+          {
+            "id": "r2v_bil_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_bil_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_meas_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_meas_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_meas_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_meas_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_visneg_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_visneg_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_visneg_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_crud_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_crud_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_crud_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_crud_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_jsonphys_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_jsonphys_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_jsonphys_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_jsonphys_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_bil_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_crud_05",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r2v_meas_05",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          }
+        ],
+        "n_items_total": 20,
+        "n_routed_python": 20,
+        "n_routed_away": 0,
+        "solve_rate_on_python_lane": 1.0,
+        "routing": [
+          {
+            "id": "r2v_bil_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_bil_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_meas_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_meas_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_meas_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_meas_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_visneg_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_visneg_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_visneg_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_crud_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_crud_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_crud_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_crud_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_jsonphys_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_jsonphys_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_jsonphys_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_jsonphys_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_bil_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_crud_05",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r2v_meas_05",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          }
+        ]
+      }
+    },
+    "comparison_table": [
+      {
+        "path": "baseline_single_no_moe",
+        "n": 20,
+        "metric": "solve_rate_single",
+        "rate": 0.0,
+        "delta_vs_baseline": 0.0,
+        "repair_success_rate": 0.0,
+        "prompt_touches_gt": false
+      },
+      {
+        "path": "moe_alone_python_lane",
+        "n": 20,
+        "metric": "solve_rate_single",
+        "rate": 0.0,
+        "delta_vs_baseline": 0.0,
+        "repair_success_rate": 0.0,
+        "prompt_touches_gt": false
+      },
+      {
+        "path": "verifier_alone",
+        "n": 20,
+        "metric": "solve_rate_loop",
+        "rate": 1.0,
+        "delta_vs_baseline": 1.0,
+        "repair_success_rate": 1.0,
+        "prompt_touches_gt": false
+      },
+      {
+        "path": "moe_verifier_unified_python_lane",
+        "n": 20,
+        "metric": "solve_rate_loop",
+        "rate": 1.0,
+        "delta_vs_baseline": 1.0,
+        "repair_success_rate": 1.0,
+        "prompt_touches_gt": false
+      }
+    ],
+    "prompt_touches_gt": false,
+    "ent_never_on_python": true
+  },
+  "priors_from_shipped_json": {
+    "moe_alone": {
+      "source": "frontier_moe_dual_lane_smoke.json",
+      "python_solve_rate": 0.0625,
+      "ent_label_acc": 1.0,
+      "vision_accuracy": 0.9,
+      "gate_pass": true,
+      "n_python": 16,
+      "n_ent": 12,
+      "n_vision": 10
+    },
+    "baseline_no_moe": {
+      "source": "frontier_moe_dual_lane_smoke.json#gate",
+      "python_solve_rate": 0.0625,
+      "vision_accuracy": 0.9,
+      "note": "single-shot base (no MoE) from prior Código-vivo baseline gate"
+    },
+    "verifier_alone_replay_n16": {
+      "source": "frontier_python_verifier_replay_n16.json",
+      "n": 16,
+      "solve_rate_single": 0.0625,
+      "solve_rate_loop": 0.6875,
+      "repair_success_rate": 0.6666666666666666,
+      "prompt_touches_gt": false
+    },
+    "verifier_alone_mlx_smoke": {
+      "source": "frontier_python_verifier_mlx_smoke_studio.json",
+      "n": 3,
+      "solve_rate_single": 0.0,
+      "solve_rate_loop": 1.0,
+      "repair_success_rate": 1.0,
+      "prompt_touches_gt": false
+    }
+  },
+  "mlx_status": null,
+  "notes": [],
+  "hardneg_router": {
+    "method": "heuristic",
+    "n": 22,
+    "hits": 22,
+    "misses": 0,
+    "score": "22/22",
+    "rate": 1.0,
+    "by_family": {
+      "bilingual_trap": {
+        "n": 5,
+        "hits": 5,
+        "rate": 1.0
+      },
+      "measure_in_comment": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      },
+      "vision_words_no_image": {
+        "n": 5,
+        "hits": 5,
+        "rate": 1.0
+      },
+      "ent_metaphor_crud": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      },
+      "json_looking_physics": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      }
+    },
+    "ent_never_on_python": true,
+    "rows": [
+      {
+        "id": "r2_bil_01",
+        "family": "bilingual_trap",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Escribe un programa en Python que imprima 3**5. Circuitos y qubits en este párra",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_bil_02",
+        "family": "bilingual_trap",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('superposición'). La palabra cuántica es un string,",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_bil_03",
+        "family": "bilingual_trap",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Hola! Gracias por el chat. ¿Algún dicho divertido sobre el clima? No code, no ci",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r2_bil_04",
+        "family": "bilingual_trap",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "prompt_preview": "Propón un circuito cuántico con n_qubits y gates para un Bell-pair. Responde SOL",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r2_bil_05",
+        "family": "bilingual_trap",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Observa la imagen adjunta del panel. En la foto, ¿cuántos botones rojos se ven? ",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r2_meas_01",
+        "family": "measure_in_comment",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 17+4.\n# TODO: measure the runtime later — ignore quantu",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_meas_02",
+        "family": "measure_in_comment",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "def score(xs):\n    return sum(xs)\nprint(score([2,3,5]))\n# measure accuracy offli",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_meas_03",
+        "family": "measure_in_comment",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write a Python program that prints int(9*9). Comment in code may say 'measure tw",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_meas_04",
+        "family": "measure_in_comment",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "import math\nprint(int(math.sqrt(144)))\n# measure := wall-clock; no pennylane, no",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_visneg_01",
+        "family": "vision_words_no_image",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Chat only — no image file, no png attached. Someone said 'four frames of film'. ",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r2_visneg_02",
+        "family": "vision_words_no_image",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints the length of the string 'screenshot.png'. Text-only ta",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_visneg_03",
+        "family": "vision_words_no_image",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 'photo'.count('o'). Pure chat coding — sin imagen, no f",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_visneg_04",
+        "family": "vision_words_no_image",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Text-only description (no image): the spreadsheet has 5 rows. How many rows? Rep",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r2_visneg_05",
+        "family": "vision_words_no_image",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Look at the image. In the screenshot of the UI, how many tabs are visible in the",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r2_crud_01",
+        "family": "ent_metaphor_crud",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len(['user_a','user_b']) after we 'entangle' two CRUD r",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_crud_02",
+        "family": "ent_metaphor_crud",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python: users={'alice':1,'bob':2}; print(sum(users.values())). Metaphor: '",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_crud_03",
+        "family": "ent_metaphor_crud",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write a Python program that prints 2 if we 'Bell-pair' match two DB rows else 0 ",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_crud_04",
+        "family": "ent_metaphor_crud",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "def merge(a,b):\n    return {**a,**b}\nprint(len(merge({'x':1},{'y':2})))\n# 'entan",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_jsonphys_01",
+        "family": "json_looking_physics",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints int(0.5*2*3*3)  # like {\"ke\":0.5*m*v*v} but OUTPUT code",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_jsonphys_02",
+        "family": "json_looking_physics",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "The note says {\"omega\": 2*3.1416, \"f\": 5}. Write Python that prints int(2*3.1416",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_jsonphys_03",
+        "family": "json_looking_physics",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python to print int((9.8*10)//1) given toy payload {\"g\":9.8,\"t\":10,\"kind\":",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r2_jsonphys_04",
+        "family": "json_looking_physics",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+        "prompt_preview": "Return a valid JSON object with n_qubits and gates for a Bell-pair entanglement ",
+        "ent_adapter_blocked": false
+      }
+    ],
+    "fixture_path": "data/bench_live/hardneg_r2_mixed_router.json",
+    "anti_contamination": {
+      "expected_lane_harness_only": true,
+      "gt_never_in_route_api": true
+    }
+  },
+  "hardneg_delta": {
+    "router_rate": 1.0,
+    "router_score": "22/22",
+    "ent_never_on_python": true,
+    "vs_freeze_floor": "hold"
+  }
+}
