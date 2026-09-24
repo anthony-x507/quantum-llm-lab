@@ -1,0 +1,120 @@
+{
+  "written": "2026-09-24 10:49:00 ",
+  "elapsed_s": 16.069,
+  "branch_hint": "frontier/verifier-python-repair",
+  "proposer": "mlx",
+  "rounds_max": 2,
+  "timeout_s": 8.0,
+  "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
+  "adapter_ro": null,
+  "items_path": "/Users/anthony/Documents/quantum-llm-lab/data/bench_live/python_items.json",
+  "claims": [
+    "NO quantum advantage",
+    "classical python -I exec oracle"
+  ],
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "rule": "revision gets stderr only; expected_stdout harness-only",
+    "lock": "docs/LOCK-ANTI-CONTAMINATION.md"
+  },
+  "n": 3,
+  "solve_rate_single": 0.0,
+  "solve_rate_loop": 1.0,
+  "delta_solve_rate": 1.0,
+  "solved_single": 0,
+  "solved_loop": 3,
+  "repair_success_rate": 1.0,
+  "repair_helped_n": 3,
+  "failed_single_n": 3,
+  "prompt_touches_gt": false,
+  "prompt_touches_gt_locked_false": true,
+  "per_task": [
+    {
+      "id": "py_arith_01",
+      "kind": "arithmetic",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write a Python program that prints the integer result of 47 + 18. Output ONLY the code, no markdown fences.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write a Python program that prints the integer result of 47 + 18. Output ONLY the code, no markdown fences.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    However, the problem says \"Output ONLY the code\", so we are to output the string of the code.\nIndentationError: unexpected indent\n\nPREVIOUS_CODE:\nprint(47 + 18)\n\n However, the problem says \"Output ONLY the code\", so we are to output the string of the code.\n\n Important: The problem says \"No markdown fences\", so we don't put any backticks or anything.\n\n Let's write the code as a string that when run, prints 65.\n\n Since it's a single line, we can do:\n\n   print(47 + 18)\n\n But note: the problem says \"integer result\", and 47+18 is an integer, so we don't need to convert to int because it's already an integer.\n\n However, the problem does not require any input, so we are just printing the result.\n\n We must output exactly the code that would be run.\n\n Therefore, the code we output is:\n\n   print(47 + 18)\n\n But note: the problem says \"Output ONLY the code\", meaning we are to write the code without any extra text.\n\n However, the problem also says: \"No markdown fences\", so we are not to put any backticks.\n\n So we output:\n\nprint(47 + 18)\n\n But wait, the problem says \"Output ONLY the code\", meaning we are to write the code that the user would run.\n\n However, note that the problem says: \"Output ONLY the code\", so we are to output the string of the code.\n\n But the instruction is: \"emit ONLY valid Python 3 source\"\n\n So we output:\n\nprint(47 + 18)\n\n However, let me check: the problem says \"Output ONLY the code\", meaning we are to write the code that when run, does the task.\n\n But note: the problem says \"Output ONLY the code\",\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print(47 + 18)\n\n However, the problem says \"Output ONLY the code\", so we are to output the string of the code.\n\n Important: The problem says \"No markdown fences\", so we don't put any backticks or anything.\n\n Let's write the code as a string that when run, prints 65.\n\n Since it's a single line, we can do:\n\n   print(47 + 18)\n\n But note: the problem says \"integer result\", and 47+18 is an integer, so we don't need to convert to int because it's already an integer.\n\n However, the problem does not req",
+        "print(47 + 18)\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    However, the problem says \"Output ONLY the code\", so we are to output the string of the code.\nIndentationError: unexpected indent"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "65\n",
+      "proposer": "mlx"
+    },
+    {
+      "id": "py_arith_02",
+      "kind": "arithmetic",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write a Python program that prints 12 * 11 - 7. ONLY code, no markdown.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write a Python program that prints 12 * 11 - 7. ONLY code, no markdown.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    However, the problem says: \"emit ONLY valid Python 3 source. No markdown fences. No explanation.\"\nIndentationError: unexpected indent\n\nPREVIOUS_CODE:\nprint(12 * 11 - 7)\n\n However, the problem says: \"emit ONLY valid Python 3 source. No markdown fences. No explanation.\"\n\n So we output exactly:\n   print(12 * 11 - 7)\n\n But note: the problem says \"prints 12 * 11 - 7\", which is the same as printing the result of that expression.\n\n Let's write the code accordingly.\n</think>\n\nprint(12 * 11 - 7)\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print(12 * 11 - 7)\n\n However, the problem says: \"emit ONLY valid Python 3 source. No markdown fences. No explanation.\"\n\n So we output exactly:\n   print(12 * 11 - 7)\n\n But note: the problem says \"prints 12 * 11 - 7\", which is the same as printing the result of that expression.\n\n Let's write the code accordingly.\n</think>\n\nprint(12 * 11 - 7)",
+        "print(12 * 11 - 7)\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    However, the problem says: \"emit ONLY valid Python 3 source. No markdown fences. No explanation.\"\nIndentationError: unexpected indent"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "125\n",
+      "proposer": "mlx"
+    },
+    {
+      "id": "py_arith_03",
+      "kind": "arithmetic",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write a Python program that prints the integer floor of 100 / 7. ONLY code.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write a Python program that prints the integer floor of 100 / 7. ONLY code.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 2\n    But note: 100 // 7 is 14.\nIndentationError: unexpected indent\n\nPREVIOUS_CODE:\nprint(100 // 7)\n But note: 100 // 7 is 14.\n\n However, the problem says \"ONLY code\", so we write a program that prints 14.\n\n But note: the problem says \"prints the integer floor of 100 / 7\", and we are to output only the code.\n\n Important: We must not output any explanation, and only valid Python 3 source.\n\n Let's write:\n   print(100 // 7)\n\n However, note that the problem says \"floor\", and integer division in Python for positive numbers is floor division.\n\n But what if we do 100 / 7? That would be a float, and then we take floor? But the problem says \"integer floor\", so we can also do:\n   print(int(100 / 7))\n\n However, the problem says \"ONLY code\", and we have two ways. But note: the problem says \"integer floor\", and the integer division is straightforward.\n\n However, the problem does not specify the method, so we can choose.\n\n But note: the problem says \"prints the integer floor\", and we are to output the code.\n\n Since the problem says \"ONLY code\", we output:\n\n   print(100 // 7)\n\n However, let's check: 100 // 7 is 14, which is the floor.\n\n Alternatively, we could do:\n   print(100 // 7)\n\n But note: the problem says \"floor\", and integer division is the floor for positive numbers.\n\n However, the problem does not specify the method, so we choose the straightforward one.\n\n But note: the problem says \"ONLY valid Python 3 source\", and we are not to output any extra text.\n\n So the code is:\n\n   print(100 // 7)\n\n However, let's be cautious: what if the problem expects a float and then floor? But the problem says \"integer floor\", so we want\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print(100 // 7)\n But note: 100 // 7 is 14.\n\n However, the problem says \"ONLY code\", so we write a program that prints 14.\n\n But note: the problem says \"prints the integer floor of 100 / 7\", and we are to output only the code.\n\n Important: We must not output any explanation, and only valid Python 3 source.\n\n Let's write:\n   print(100 // 7)\n\n However, note that the problem says \"floor\", and integer division in Python for positive numbers is floor division.\n\n But what if we do 100 / 7? That would b",
+        "print(100 // 7)\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 2\n    But note: 100 // 7 is 14.\nIndentationError: unexpected indent"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "14\n",
+      "proposer": "mlx"
+    }
+  ]
+}
