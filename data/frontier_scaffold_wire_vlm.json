@@ -1,7 +1,7 @@
 {
   "frontier": "scaffold-wire-vlm",
-  "written": "2026-09-24 12:02:26",
-  "parent_sha": "c11ccac",
+  "written": "2026-09-24 12:24:15",
+  "parent_sha": "08463a2",
   "branch": "frontier/scaffold-wire-vlm",
   "wired_to_vlm": true,
   "channel": "text_scaffold_prefix",
@@ -50,7 +50,7 @@
           "wired_to_vlm": true,
           "channel": "text_scaffold_prefix",
           "weight_peft_injection": false,
-          "hint_chars": 802,
+          "hint_chars": 899,
           "prefix_shape": [
             4,
             64
@@ -98,7 +98,7 @@
           "wired_to_vlm": true,
           "channel": "text_scaffold_prefix",
           "weight_peft_injection": false,
-          "hint_chars": 802,
+          "hint_chars": 902,
           "prefix_shape": [
             4,
             64
@@ -122,7 +122,7 @@
           "wired_to_vlm": true,
           "channel": "text_scaffold_prefix",
           "weight_peft_injection": false,
-          "hint_chars": 821,
+          "hint_chars": 915,
           "prefix_shape": [
             4,
             64
@@ -146,7 +146,7 @@
           "wired_to_vlm": true,
           "channel": "text_scaffold_prefix",
           "weight_peft_injection": false,
-          "hint_chars": 786,
+          "hint_chars": 771,
           "prefix_shape": [
             4,
             64
@@ -170,7 +170,7 @@
           "wired_to_vlm": true,
           "channel": "text_scaffold_prefix",
           "weight_peft_injection": false,
-          "hint_chars": 786,
+          "hint_chars": 903,
           "prefix_shape": [
             4,
             64
@@ -194,7 +194,7 @@
           "wired_to_vlm": true,
           "channel": "text_scaffold_prefix",
           "weight_peft_injection": false,
-          "hint_chars": 807,
+          "hint_chars": 903,
           "prefix_shape": [
             4,
             64
@@ -210,7 +210,7 @@
     ]
   },
   "ablation": {
-    "written": "2026-09-24 12:02:24",
+    "written": "2026-09-24 12:24:13",
     "router_method": "heuristic",
     "polish_features": false,
     "n_fixtures": 24,
@@ -279,7 +279,7 @@
     "scaffold_gt_leaks": 0,
     "ent_vision_scaffold_on": true
   },
-  "elapsed_s": 3.16,
+  "elapsed_s": 3.31,
   "claims": [
     "NO quantum-advantage claims",
     "wired_to_vlm=true via text_scaffold_prefix on MoE ent lane",

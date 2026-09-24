@@ -1,6 +1,6 @@
 {
   "frontier": "C3b-moe-verifier-mixed-live",
-  "written": "2026-09-24 12:02:22",
+  "written": "2026-09-24 12:24:00",
   "claims": [
     "NO quantum-advantage claims",
     "MoE routing usability + classical python -I exec oracle only",
@@ -144,7 +144,7 @@
             "wired_to_vlm": true,
             "channel": "text_scaffold_prefix",
             "weight_peft_injection": false,
-            "hint_chars": 802,
+            "hint_chars": 902,
             "has_markers": true,
             "gt_leak": false,
             "polish": false,
@@ -167,7 +167,7 @@
             "wired_to_vlm": true,
             "channel": "text_scaffold_prefix",
             "weight_peft_injection": false,
-            "hint_chars": 802,
+            "hint_chars": 902,
             "has_markers": true,
             "gt_leak": false,
             "polish": false,
@@ -190,7 +190,7 @@
             "wired_to_vlm": true,
             "channel": "text_scaffold_prefix",
             "weight_peft_injection": false,
-            "hint_chars": 802,
+            "hint_chars": 902,
             "has_markers": true,
             "gt_leak": false,
             "polish": false,
@@ -213,7 +213,7 @@
             "wired_to_vlm": true,
             "channel": "text_scaffold_prefix",
             "weight_peft_injection": false,
-            "hint_chars": 821,
+            "hint_chars": 915,
             "has_markers": true,
             "gt_leak": false,
             "polish": false,
@@ -236,7 +236,7 @@
             "wired_to_vlm": true,
             "channel": "text_scaffold_prefix",
             "weight_peft_injection": false,
-            "hint_chars": 821,
+            "hint_chars": 915,
             "has_markers": true,
             "gt_leak": false,
             "polish": false,
@@ -259,7 +259,7 @@
             "wired_to_vlm": true,
             "channel": "text_scaffold_prefix",
             "weight_peft_injection": false,
-            "hint_chars": 821,
+            "hint_chars": 915,
             "has_markers": true,
             "gt_leak": false,
             "polish": false,
@@ -282,7 +282,7 @@
             "wired_to_vlm": true,
             "channel": "text_scaffold_prefix",
             "weight_peft_injection": false,
-            "hint_chars": 821,
+            "hint_chars": 915,
             "has_markers": true,
             "gt_leak": false,
             "polish": false,
@@ -305,7 +305,7 @@
             "wired_to_vlm": true,
             "channel": "text_scaffold_prefix",
             "weight_peft_injection": false,
-            "hint_chars": 821,
+            "hint_chars": 915,
             "has_markers": true,
             "gt_leak": false,
             "polish": false,
@@ -400,7 +400,7 @@
             "wired_to_vlm": true,
             "channel": "text_scaffold_prefix",
             "weight_peft_injection": false,
-            "hint_chars": 802,
+            "hint_chars": 902,
             "has_markers": true,
             "gt_leak": false,
             "polish": false,
@@ -423,7 +423,7 @@
             "wired_to_vlm": true,
             "channel": "text_scaffold_prefix",
             "weight_peft_injection": false,
-            "hint_chars": 802,
+            "hint_chars": 902,
             "has_markers": true,
             "gt_leak": false,
             "polish": false,
@@ -728,7 +728,7 @@
           "wired_to_vlm": true,
           "channel": "text_scaffold_prefix",
           "weight_peft_injection": false,
-          "hint_chars": 802,
+          "hint_chars": 902,
           "has_markers": true,
           "gt_leak": false,
           "polish": false,
@@ -738,7 +738,7 @@
           ],
           "embed_norm": 0.7557
         },
-        "prompt_with_scaffold_chars": 1000
+        "prompt_with_scaffold_chars": 1100
       },
       {
         "id": "ent_scene_0157",
@@ -750,7 +750,7 @@
           "wired_to_vlm": true,
           "channel": "text_scaffold_prefix",
           "weight_peft_injection": false,
-          "hint_chars": 802,
+          "hint_chars": 902,
           "has_markers": true,
           "gt_leak": false,
           "polish": false,
@@ -760,7 +760,7 @@
           ],
           "embed_norm": 0.7557
         },
-        "prompt_with_scaffold_chars": 1000
+        "prompt_with_scaffold_chars": 1100
       },
       {
         "id": "ent_scene_0291",
@@ -772,7 +772,7 @@
           "wired_to_vlm": true,
           "channel": "text_scaffold_prefix",
           "weight_peft_injection": false,
-          "hint_chars": 802,
+          "hint_chars": 902,
           "has_markers": true,
           "gt_leak": false,
           "polish": false,
@@ -782,7 +782,7 @@
           ],
           "embed_norm": 0.7557
         },
-        "prompt_with_scaffold_chars": 1000
+        "prompt_with_scaffold_chars": 1100
       },
       {
         "id": "ent_scene_0359",
@@ -794,7 +794,7 @@
           "wired_to_vlm": true,
           "channel": "text_scaffold_prefix",
           "weight_peft_injection": false,
-          "hint_chars": 821,
+          "hint_chars": 915,
           "has_markers": true,
           "gt_leak": false,
           "polish": false,
@@ -804,7 +804,7 @@
           ],
           "embed_norm": 0.3909
         },
-        "prompt_with_scaffold_chars": 1019
+        "prompt_with_scaffold_chars": 1113
       },
       {
         "id": "ent_scene_0239",
@@ -816,7 +816,7 @@
           "wired_to_vlm": true,
           "channel": "text_scaffold_prefix",
           "weight_peft_injection": false,
-          "hint_chars": 821,
+          "hint_chars": 915,
           "has_markers": true,
           "gt_leak": false,
           "polish": false,
@@ -826,7 +826,7 @@
           ],
           "embed_norm": 0.3909
         },
-        "prompt_with_scaffold_chars": 1019
+        "prompt_with_scaffold_chars": 1113
       },
       {
         "id": "ent_scene_0293",
@@ -838,7 +838,7 @@
           "wired_to_vlm": true,
           "channel": "text_scaffold_prefix",
           "weight_peft_injection": false,
-          "hint_chars": 821,
+          "hint_chars": 915,
           "has_markers": true,
           "gt_leak": false,
           "polish": false,
@@ -848,7 +848,7 @@
           ],
           "embed_norm": 0.3909
         },
-        "prompt_with_scaffold_chars": 1019
+        "prompt_with_scaffold_chars": 1113
       },
       {
         "id": "ent_scene_0317",
@@ -860,7 +860,7 @@
           "wired_to_vlm": true,
           "channel": "text_scaffold_prefix",
           "weight_peft_injection": false,
-          "hint_chars": 821,
+          "hint_chars": 915,
           "has_markers": true,
           "gt_leak": false,
           "polish": false,
@@ -870,7 +870,7 @@
           ],
           "embed_norm": 0.3909
         },
-        "prompt_with_scaffold_chars": 1019
+        "prompt_with_scaffold_chars": 1113
       },
       {
         "id": "ent_scene_0336",
@@ -882,7 +882,7 @@
           "wired_to_vlm": true,
           "channel": "text_scaffold_prefix",
           "weight_peft_injection": false,
-          "hint_chars": 821,
+          "hint_chars": 915,
           "has_markers": true,
           "gt_leak": false,
           "polish": false,
@@ -892,7 +892,7 @@
           ],
           "embed_norm": 0.3909
         },
-        "prompt_with_scaffold_chars": 1019
+        "prompt_with_scaffold_chars": 1113
       }
     ],
     "vision_routing": [

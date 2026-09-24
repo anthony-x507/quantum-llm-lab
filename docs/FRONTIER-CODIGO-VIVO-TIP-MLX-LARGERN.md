@@ -18,7 +18,7 @@ Scale honest mlx LIVE n above prior n3/8/8 → **py≥8 ent≥16 vis≥16**, com
 | Entanglement | **16** | `mlx_live_generate` base vs `lora_adapter_ent2` RO | base **0.0** → ent2 **1.0** (16/16) |
 | Vision (scored) | **16** | `mlx_live_generate` base | **1.0** (16/16); polish unused |
 
-Ent pool: **16 entangled** in-dist (train v6). Separable `scene_0222` flaky across live passes (prior n=8 OK; largern v1/v2 fail) — excluded to hold floor at n=16 (documented in pass_history). Vision: prior 8 math + **8 new** `vis_math_09..16` PNGs.
+Ent pool: **16 entangled** in-dist (train v6). Separable `scene_0222` was flaky across live passes (prior n=8 OK; largern v1/v2 fail) — v3 excluded to hold floor. **Fixed** on fold `frontier/tip-ent-sep-fix` @ `08463a2` (GT-free motion cue + scaffold diversity; ent2=1.0 with ≥1 sep kept). Vision: prior 8 math + **8 new** `vis_math_09..16` PNGs.
 
 ## Scoreboard (LIVE mlx larger-n)
 
@@ -71,7 +71,8 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 
 **When:** 2026-09-24 12:02 ET · Mac-111 (`074c6626-…`)  
 **Method:** tip advanced with R4 fold `01ddabd` → rebase `frontier/tip-mlx-largern` (`75f6c0a`/`d65eb69`) onto tip → `23a9b7a`+`c11ccac` FF.  
-**CPU re-smoke:** mixed unified overall **1.0** (py/ent/vis 1.0); tip `mixed_items.json` retained for CPU floor (largern pool → `mixed_items_largern.json`).  
+**CPU re-smoke:** mixed unified overall **1.0** (py/ent/vis 1.0); tip `mixed_items.json` retained for CPU floor (largern pool → `mixed_items_largern.json`).
+**Follow-on:** `frontier/tip-ent-sep-fix` folded @ `08463a2` — honest 1sep+15ent LIVE pool; MLX ent2 **1.0** with `scene_0222` held.  
 **Honesty retained:** separable `scene_0222` flaky — fold evidence only; not “fixed”.  
 **Freezes retained:** platform `f0da3e7` · MLX+R3 `5c67267` · polish_r4 `40f1d7c`.  
 **Anti-contam:** no `lora_adapter` writes; no merge `main`; `ent_never_on_python=true`.

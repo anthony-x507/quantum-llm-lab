@@ -1,7 +1,7 @@
 # FRONTIER — Código-vivo tip scoreboard
 
 **Branch:** `frontier/codigo-vivo-tip`  
-**Written:** 2026-09-24 12:03:20 ET · Mac-111 (`074c6626-…`) · tip `c11ccac`  
+**Written:** 2026-09-24 12:24:30 ET · Mac-111 (`074c6626-…`) · tip `08463a2`  
 **Claim scope:** classical MoE router + `python -I` verifier + prior-replay ent/vision + GT-free circuit-graph scaffold on ent + mlx vision parse polish. **NO quantum-advantage claims.**
 
 ## Tip composition (merges / folds)
@@ -21,6 +21,7 @@
 | `frontier/scaffold-wire-vlm` | `ae62ce2` | fold wire→VLM (`text_scaffold_prefix`); rebase `8f5e694`→`e680271` then FF; `wired_to_vlm=true` |
 | `frontier/tip-hardneg-r4` | `0dd7b79` | fold R4 polish `40f1d7c` (rebase onto `4e36548` → `11740a6` + sync); R4 40/40; floor **1.0** held |
 | `frontier/tip-mlx-largern` | `c11ccac` | fold mlx LIVE larger-n `d65eb69`/`75f6c0a` (rebase onto `01ddabd` → `23a9b7a`+`c11ccac`); py8/ent16/vis16 unified **1.0**; CPU floor **1.0** held |
+| `frontier/tip-ent-sep-fix` | `08463a2` | fold ent-sep-fix (rebase `47975a7` onto `459f6da`); LIVE pool honest 1sep+15ent; MLX ent2 **1.0** with sep; CPU floor **1.0** held |
 
 **Metric policy:** Prefer vision **1.0** / overall **1.0** from `mixed-freeze-vision` over scaffold-merge / R2-port scoreboards that still show vis **0.9** / overall **0.9667**. Keep scaffold wiring + R2 reinforces + anti-think.
 
@@ -172,6 +173,36 @@
 | LIVE pool | `data/bench_live/mixed_items_largern.json` |
 | Mixed reconfirm | `data/frontier_moe_verifier_mixed_{smoke,cpu,unified}.json` |
 
+## FOLD — tip-ent-sep-fix → tip (overall 1.0 held)
+
+**When:** 2026-09-24 12:24:30 ET · Mac-111 (`074c6626-…`)  
+**Method:** tip at `459f6da` (largern folded) → rebase `frontier/tip-ent-sep-fix` (`47975a7` parent `c11ccac`) onto tip → `08463a2` (FF merge). Conflict: tip CPU `mixed_items.json` kept; honest 1sep+15ent LIVE pool → `mixed_items_largern.json`; mlx runner keeps largern path + `scaffold_polish=True`.  
+**Claim:** NO quantum advantage. Honest separable-at-n=16 fix (GT-free motion cue + scaffold diversity). Prior freezes **NOT abandoned**.
+
+| Lock | Value |
+|------|-------|
+| overall (d unified) CPU | **1.0000** (py1 / ent1 / vis1) |
+| MoE Δ overall | **+0.3334** visible |
+| pillars / hardneg smoke | **26/26 · 18/18** |
+| hardneg R1 / R2 / R3 / R4 | **18/18 · 22/22 · 35/35 · 40/40** |
+| R3 / R4 verifier loop | **28/28 · 32/32** (unified 1.0) |
+| MLX LIVE ent2 with ≥1 sep | **1.0000** (16/16 · `scene_0222` held · Δ vs CPU **0**) |
+| `wired_to_vlm` | **true** (`text_scaffold_prefix`) |
+| `ent_never_on_python` | **true** |
+| `prompt_touches_gt` | **false** |
+| floor held | **yes** (≥0.967, actual 1.0) |
+| platform freeze `f0da3e7` | **retained** |
+| MLX+R3 freeze `5c67267` / `codigo_vivo_tip_mlx_r3_…` | **retained** |
+| polish_r4 `40f1d7c` / `tip_moe_verifier_polish_r4_…` | **retained** |
+
+| Artifact | Path |
+|----------|------|
+| ENT-SEP-FIX doc | `docs/FRONTIER-CODIGO-VIVO-TIP-ENT-SEP-FIX.md` |
+| Primary merged | `data/frontier_moe_verifier_mixed_mlx_live_pillars_ent_sep_fix_merged.json` |
+| LIVE pool (honest) | `data/bench_live/mixed_items_largern.json` (1 sep + 15 ent) |
+| Mixed reconfirm | `data/frontier_moe_verifier_mixed_{smoke,cpu,unified}.json` |
+
+
 ## LOCK / anti-contam
 
 - Freeze mixed unified overall **≥0.9667** (docs ~0.967); polished floor held at **1.0**. Never abandon.
@@ -180,7 +211,7 @@
 
 ## Live retest (this tip)
 
-**Re-smoke @ 2026-09-24 12:03:20 ET** (fold tip-mlx-largern @ `c11ccac`) · Mac-111
+**Re-smoke @ 2026-09-24 12:24:30 ET** (fold tip-ent-sep-fix @ `08463a2`) · Mac-111
 
 | Check | Result |
 |-------|--------|
@@ -196,8 +227,9 @@
 | Hardneg R3 router | **35/35 (1.0)** |
 | Hardneg R4 router | **40/40 (1.0)** |
 | R3 / R4 verifier loop | **28/28 · 32/32** |
-| MLX LIVE largern (d) | **1.0000** (n 8/16/16 · Δ vs CPU 0) |
+| MLX LIVE ent2 w/ sep | **1.0000** (n16 · scene_0222 held · Δ vs CPU 0) |
 | Floor ≥0.967 | **held at 1.0** |
+
 
 
 ## Hardneg R4 (this tip)

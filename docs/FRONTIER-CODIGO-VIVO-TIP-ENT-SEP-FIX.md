@@ -49,6 +49,7 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 .venv/bin/python examples/moe_verifier_mixed_mlx_live_pillars.py \
   --n-py 8 --n-ent 16 --n-vis 16 --rounds 2 --skip-py --skip-vis \
   --out data/frontier_moe_verifier_mixed_mlx_live_pillars_ent_sep_fix.json
+# After fold: LIVE pool is data/bench_live/mixed_items_largern.json (1 sep + 15 ent)
 ```
 
 ## Artifacts
@@ -65,3 +66,18 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 
 - Studio Mac-198 offline; all generate on Mac-111.
 - Motion cue is color-tint centroid heuristic — fails open (`unknown`) on many scenes (keeps balanced priors); sufficient to recover `scene_0222`.
+
+## FOLDED into tip
+
+**When:** 2026-09-24 12:24:30 ET · Mac-111 (`074c6626-…`)  
+**Method:** rebase `47975a7` (parent `c11ccac`) onto tip `459f6da` → `08463a2` FF into `frontier/codigo-vivo-tip`.  
+**Pool split (post-largern fold):** tip CPU floor stays `data/bench_live/mixed_items.json` (n=8, already includes `scene_0222`); honest LIVE 1sep+15ent → `data/bench_live/mixed_items_largern.json`. MLX runner keeps largern path + `scaffold_polish=True`.  
+**CPU re-smoke:** unified overall **1.0**; hardneg R1–R4 **18/18·22/22·35/35·40/40**; R3/R4 verifier **28/28·32/32**; `wired_to_vlm=true`. Freezes retained. No `lora_adapter` writes. No `main` merge.
+
+**Reproduce (CPU floor):**
+```bash
+export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
+.venv/bin/python examples/moe_verifier_mixed_live.py --smoke
+.venv/bin/python examples/moe_verifier_mixed_live.py --cpu-eval
+```
+
