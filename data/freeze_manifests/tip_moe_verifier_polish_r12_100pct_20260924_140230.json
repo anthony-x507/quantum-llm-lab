@@ -4,8 +4,8 @@
   "domain": "codigo_vivo_tip_r12",
   "pct": 100,
   "band": "100pct",
-  "git_sha": "eb58bb86d0a1a577e0b8fc43c3616f8e2eec2a20",
-  "git_sha_short": "eb58bb8",
+  "git_sha": "b4a3999469ed8e18e0d4b561ae38e9fc949d62f0",
+  "git_sha_short": "b4a3999",
   "artifact": "data/frontier_moe_verifier_hardneg_r12.json",
   "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
   "metrics": {
@@ -26,7 +26,8 @@
     "inverse_cv": 0.9982
   },
   "policy": "RO data/lora_adapter/; no merge main; R1\u2013R10+LP held; anti-contam; not-folded",
-  "polish_commit": "eb58bb8",
-  "note": "R12 hardneg polish on tip a27b6fd (post motion-r4) on frontier/tip-hardneg-r12; R11 side untouched",
-  "base_tip_sha": "a27b6fd32cb1a989e9e6a6ba12e70aaf5282f67e"
+  "polish_commit": "b4a3999",
+  "note": "Rebased onto tip 9a0de24; content b4a3999 (was eb58bb8). Folded into codigo-vivo-tip.",
+  "base_tip_sha": "9a0de24a3dd08db36647d29f277151d14b3739d3",
+  "folded_into_tip": true
 }

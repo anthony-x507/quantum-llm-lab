@@ -1,5 +1,21 @@
 # FRONTIER — Código-vivo tip scoreboard
 
+## Fold — tip-hardneg-r12 → codigo-vivo-tip (2026-09-24 14:28:30 ET)
+
+| Surface | Score |
+|---------|-------|
+| mixed (d) unified | **1.0** |
+| R12 router · verifier | **52/52 · 44/44** |
+| R11 router · verifier | **52/52 · 44/44** |
+| mid floors (near/outer · DZ · TTI) | **retained 100%** |
+| motion coverage | **100%** (141 ind + 59 corr) |
+| inverse_cv · collision · choose_safest | **99.82% · 100% · 100%** |
+| pillars / hardneg smoke | **26/26 · 18/18** |
+| Freeze | `codigo_vivo_tip_r12_100pct_20260924_142830` |
+| Tip SHA (fold) | pending pin |
+| Policy | RO `data/lora_adapter/`; no main; mid floors + R12 hardneg; distance-far/R13/inverse-r3 not folded |
+
+
 **Branch:** `frontier/codigo-vivo-tip`  
 **Written:** 2026-09-24 14:07:23 ET · Mac-111 (`074c6626-…`) · tip hardneg-r11 fold
 **Claim scope:** classical MoE router + `python -I` verifier + prior-replay ent/vision + GT-free circuit-graph scaffold on ent + mlx vision parse polish + vision-ground cue/parse. **NO quantum-advantage claims.**

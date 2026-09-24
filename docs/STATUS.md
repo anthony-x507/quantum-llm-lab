@@ -1,3 +1,4 @@
+- 2026-09-24 fold tip-hardneg-r12 → tip; freeze `codigo_vivo_tip_r12_100pct_20260924_142830`; mixed 1.0; R12 52/52·44/44.
 - 2026-09-24 14:23:29 ET: **FOLDED** tip-distance-mid → tip; freeze `codigo_vivo_tip_distance_mid_100pct_20260924_142329`; mid/DZ/TTI/R11/motion/collision floors held. RO adapters.
 - 2026-09-24 fold tip-tti → tip; freeze `codigo_vivo_tip_tti_fold_100pct_20260924_141146`; TTI 100% scorable; floors held.
 - 2026-09-24 14:07:23 ET — fold tip-hardneg-r11 → codigo-vivo-tip; freeze `codigo_vivo_tip_r11_100pct_20260924_140723`; mixed 1.0; R11 52/52·44/44; motion 100%; vision BASE 1.000; circ 2/2; inverse_cv 99.82%; collision 100%.

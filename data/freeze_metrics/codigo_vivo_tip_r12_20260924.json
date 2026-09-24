@@ -1,10 +1,12 @@
 {
   "schema": "codigo_vivo_tip_rN_summary",
   "round": "r12",
-  "when_et": "2026-09-24 2:02:00 ET",
+  "when_et": "2026-09-24 14:28:30 ET",
   "router": "52/52",
   "verifier": "44/44",
   "mixed_d": 1.0,
   "rise": "6/52\u219252/52",
-  "held": true
+  "held": true,
+  "folded": true,
+  "fold_freeze": "codigo_vivo_tip_r12_100pct_20260924_142830"
 }

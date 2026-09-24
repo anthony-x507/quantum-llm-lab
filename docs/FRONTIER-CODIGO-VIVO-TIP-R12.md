@@ -1,6 +1,6 @@
 # Frontier — Código-vivo tip hardneg R12
 
-**Branch:** `frontier/tip-hardneg-r12` (side; not folded)  
+**Branch:** `frontier/tip-hardneg-r12` (rebased; source kept) · tip `frontier/codigo-vivo-tip`  
 **Base tip:** `a27b6fd` (post tip motion-r4 freeze pin; tip had advanced past brief pin `3f5f1b1`)  
 **When:** 2026-09-24 ~2:00–2:03 ET · Mac-111 (`074c6626-…`)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r12`  
@@ -53,7 +53,7 @@ Rise: 6→52 hits (**+766%** rate vs pre 0.1154→1.0; **+88.46 pp**) ≥80% fre
 
 | Manifest | pct |
 |----------|-----|
-| `data/freeze_manifests/tip_moe_verifier_polish_r12_100pct_20260924_140230.json` | **100** (sha ) |
+| `data/freeze_manifests/tip_moe_verifier_polish_r12_100pct_20260924_140230.json` | **100** (sha `b4a3999`) |
 
 Evidence: `data/freeze_metrics/codigo_vivo_tip_adv_r12_20260924.json`
 
@@ -83,3 +83,31 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 ## Not folded
 
 Leave tip-cv / tip-tti / tip-distance-mid / tip-motion-r4 / tip-hardneg-r11 alone until a fold brief. Side branch only.
+
+## Fold re-smoke (2026-09-24 14:28:30 ET)
+
+Cherry-pick rebase `eb58bb8`/`28d658f` onto tip `9a0de24` → `b4a3999`+`6013c2a` (conflicts: mid floors kept; R11+R12 hardneg merged).
+
+| Surface | Score |
+|---------|-------|
+| mixed (d) unified | **1.0** |
+| R12 router · verifier | **52/52 · 44/44** |
+| R11 router · verifier | **52/52 · 44/44** |
+| mid / TTI / motion / inverse / collision | **retained** |
+| pillars / hardneg smoke | **26/26 · 18/18** |
+| Freeze | `codigo_vivo_tip_r12_100pct_20260924_142830` |
+| RO adapters | **unchanged mtime** |
+
+CLI (tip-cv):
+
+```bash
+cd /Users/anthony/Documents/quantum-llm-lab-tip-cv
+export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
+.venv/bin/python examples/moe_dual_lane_router.py --hardneg \
+  --hardneg-path data/bench_live/hardneg_r12_mixed_router.json
+.venv/bin/python examples/moe_verifier_codigo_vivo.py --hardneg-only \
+  --hardneg-items data/bench_live/hardneg_r12_python_items.json \
+  --hardneg-router data/bench_live/hardneg_r12_mixed_router.json
+.venv/bin/python examples/moe_verifier_mixed_live.py --cpu-eval
+```
+
