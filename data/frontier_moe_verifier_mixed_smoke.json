@@ -1,6 +1,6 @@
 {
   "frontier": "C3b-moe-verifier-mixed-live",
-  "written": "2026-09-24 10:59:49",
+  "written": "2026-09-24 11:21:07",
   "claims": [
     "NO quantum-advantage claims",
     "MoE routing usability + classical python -I exec oracle only",
@@ -10,7 +10,7 @@
   "ro_lock": {
     "script_writes_to_lora_adapter": false,
     "policy": "READ-ONLY; never overwrite data/lora_adapter/",
-    "ent_adapter_ro": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2"
+    "ent_adapter_ro": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2"
   },
   "mode": "smoke",
   "router_method": "heuristic",
@@ -117,7 +117,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
             "hint_chars": 802,
@@ -132,7 +132,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
             "hint_chars": 802,
@@ -147,7 +147,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
             "hint_chars": 802,
@@ -162,7 +162,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
             "hint_chars": 821,
@@ -177,7 +177,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
             "hint_chars": 821,
@@ -192,7 +192,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
             "hint_chars": 821,
@@ -207,7 +207,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
             "hint_chars": 821,
@@ -222,7 +222,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
             "hint_chars": 821,
@@ -309,7 +309,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
             "hint_chars": 802,
@@ -324,7 +324,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
             "hint_chars": 802,
@@ -361,7 +361,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "note": "classic ent"
         },
         {
@@ -369,7 +369,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "note": "spanish ent"
         },
         {
@@ -417,7 +417,7 @@
           "expected_lane": "ent",
           "got": "ent",
           "ok": true,
-          "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2",
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "note": "imagen present but ent JSON wins"
         },
         {

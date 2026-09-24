@@ -1,7 +1,7 @@
 # FRONTIER — Código-vivo tip scoreboard
 
 **Branch:** `frontier/codigo-vivo-tip`  
-**Written:** 2026-09-24 11:00 ET · Mac-139 (`074c6626-…`)  
+**Written:** 2026-09-24 11:21:31 ET · Mac-111 (`074c6626-…`) · tip `5c67267`  
 **Claim scope:** classical MoE router + `python -I` verifier + prior-replay ent/vision + GT-free circuit-graph scaffold on ent + mlx vision parse polish. **NO quantum-advantage claims.**
 
 ## Tip composition (merges / folds)
@@ -15,6 +15,9 @@
 | `frontier/vision-mlx-anti-think` | `d6c5cad` | anti-think parse 0/3→3/3 (keep API fix) |
 | `frontier/mixed-with-scaffold` | `4d587f7` | `--circuit-scaffold` **default ON** for ent |
 | `frontier/mixed-with-freeze-r2` | `7211f78` | port R1/R2 hardneg CLI + fixtures (metric floor = MFV 1.0) |
+| `frontier/codigo-vivo-tip-mlx` | `368b429` | MLX LIVE mixed pillars overall **1.0** (=CPU) |
+| PLATFORM freeze @ tip | `b114c51` | lock overall 1.0 @ **f0da3e7** (never abandon) |
+| hardneg R3 polish | `5c67267` | R3 router 35/35; floor **1.0** held |
 
 **Metric policy:** Prefer vision **1.0** / overall **1.0** from `mixed-freeze-vision` over scaffold-merge / R2-port scoreboards that still show vis **0.9** / overall **0.9667**. Keep scaffold wiring + R2 reinforces + anti-think.
 
@@ -46,6 +49,39 @@
 | Unified | `data/frontier_moe_verifier_mixed_unified.json` |
 | Smoke reconfirm | PASS · ~1.35s · pillars 26/26 · hardneg 18/18 |
 
+## MLX+R3 CONSOLIDATE FREEZE (overall 1.0)
+
+**Freeze id:** `codigo_vivo_tip_mlx_r3_100pct_20260924_112131`  
+**Frozen SHA:** `5c672671419546de7b510e793875c95e070a0e34` (`5c67267`) · branch `frontier/codigo-vivo-tip`  
+**When:** 2026-09-24 11:21:31 ET · Mac-111 (`074c6626-…`)  
+**Lineage:** `f0da3e7` → `368b429` (MLX) → `b114c51` (platform freeze) → `5c67267` (R3) — already linear; no merge needed.  
+**Claim:** NO quantum advantage. Cites MLX live + R3; **platform freeze f0da3e7 NOT abandoned**.
+
+| Lock | Value |
+|------|-------|
+| overall (d unified) CPU | **1.0000** (py1 / ent1 / vis1) |
+| MoE Δ overall | **+0.3334** visible |
+| pillars | **26/26** |
+| hardneg R1 / R2 / R3 | **18/18 · 22/22 · 35/35** |
+| MLX live (d) | **1.0000** (Δ vs CPU **0**) |
+| scaffold freeze | **held** solve=0.9 Δsolve=0.5 · default ON |
+| vision_mlx_parse | **1.0** (3/3) |
+| ent_never_on_python | **true** |
+| prompt_touches_gt | **false** |
+| floor held | **yes** (≥0.967, actual 1.0) |
+
+**Policy:** Never abandon platform freeze `f0da3e7` / `codigo_vivo_tip_platform_100pct_20260924_111435`. Prior manifests retained. `data/lora_adapter/` **READ-ONLY**. No merge to `main`.
+
+| Artifact | Path |
+|----------|------|
+| Manifest | `data/freeze_manifests/codigo_vivo_tip_mlx_r3_100pct_20260924_112131.json` |
+| Metrics | `data/freeze_metrics/codigo_vivo_tip_mlx_r3_20260924.json` |
+| Doc | `docs/FRONTIER-CODIGO-VIVO-TIP-MLX-R3.md` |
+| Platform retained | `data/freeze_manifests/codigo_vivo_tip_platform_100pct_20260924_111435.json` |
+| R3 polish retained | `data/freeze_manifests/tip_moe_verifier_polish_r3_100pct_20260924_111740.json` |
+| MLX merged | `data/frontier_moe_verifier_mixed_mlx_live_merged.json` |
+| Re-smoke | PASS · pillars 26/26 · hardneg 18/18 · cpu overall 1.0 |
+
 ## LOCK / anti-contam
 
 - Freeze mixed unified overall **≥0.9667** (docs ~0.967); polished floor held at **1.0**. Never abandon.
@@ -53,6 +89,8 @@
 - `ent_never_on_python=true`, `prompt_touches_gt=false`, scaffold `gt_leak=0`.
 
 ## Live retest (this tip)
+
+**Re-smoke @ 2026-09-24 11:21:31 ET** (MLX+R3 consolidate) · Mac-111
 
 | Check | Result |
 |-------|--------|
@@ -64,7 +102,9 @@
 | MoE Δ overall | **+0.3334** visible |
 | Hardneg R1 router | **18/18 (1.0)** |
 | Hardneg R2 router | **22/22 (1.0)** |
+| Hardneg R3 router | **35/35 (1.0)** |
 | Scaffold freeze recheck | **held** solve=0.9 Δsolve=0.5 |
+| Floor ≥0.967 | **held at 1.0** |
 
 
 ## Hardneg R3 (this tip)
@@ -140,6 +180,10 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `data/freeze_metrics/mixed_with_freeze_r2_20260924.json`
 - `data/freeze_manifests/codigo_vivo_tip_platform_100pct_20260924_111435.json`
 - `data/freeze_metrics/codigo_vivo_tip_platform_20260924.json`
+- `data/freeze_manifests/codigo_vivo_tip_mlx_r3_100pct_20260924_112131.json`
+- `data/freeze_metrics/codigo_vivo_tip_mlx_r3_20260924.json`
+- `docs/FRONTIER-CODIGO-VIVO-TIP-MLX-R3.md`
+- `data/frontier_moe_verifier_mixed_mlx_live_merged.json`
 - `docs/FRONTIER-MIXED-FREEZE-VISION.md`
 - `docs/FRONTIER-MIXED-WITH-SCAFFOLD.md`
 - `docs/FRONTIER-MIXED-WITH-FREEZE-R2.md`
@@ -159,3 +203,4 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 
 Δ MoE overall **+0.3334** · vs CPU 1.0 **Δ=0** · drops **none** · detail `docs/FRONTIER-CODIGO-VIVO-TIP-MLX.md`
 
+Consolidate freeze citing MLX+R3 (platform f0da3e7 retained): `codigo_vivo_tip_mlx_r3_100pct_20260924_112131` · `docs/FRONTIER-CODIGO-VIVO-TIP-MLX-R3.md`
