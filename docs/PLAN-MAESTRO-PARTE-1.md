@@ -3,14 +3,68 @@
 **Repo:** `anthony-x507/quantum-llm-lab`  
 **Hardware:** Mac M4 (`Qwen3-VL-8B-Thinking-4bit`)  
 **Estado:** fuente única de verdad (SSOT) — **iterar y mejorar**, no archivar  
-**Creado:** 2026-09-24 ~04:51 ET (voz Anthony → ABACO LEADER)  
+**Creado:** 2026-09-24 ~04:51 ET · **GOAL 10× añadido:** 2026-09-24 ~04:55 ET (voz Anthony → ABACO LEADER)  
 **Supersede parcial:** `docs/PLAN-MAESTRO.md` (fases 0–5 históricas) queda como archivo de fases tempranas; **este documento manda** para visión, dominios, capas y ciclo.
 
 ---
 
+## 0. GOAL — 10× sobre el modelo de partida
+
+**Meta de Anthony (2026-09-24 ~04:55 ET):** un Qwen 8B que supere **diez veces (10×)** al modelo de partida — el **base sin adapter**, que daba **~0% JSON usable**.
+
+### Definición medible de 10×
+
+El base parte en **~0% usable**. En ese régimen, **10× = 100% usable** en **todos** los dominios (cuántico, física clásica, visión temporal, planificación inversa, distancia), con label / energía / tracking en el **techo** del dominio.
+
+Si no cabe un solo cociente “10×” en una métrica (porque el base es 0 → cociente infinito), se **desglosa**:
+
+| Eje 10× | Qué mide | Techo |
+|---------|----------|-------|
+| Parseo usable | JSON/estructurado válido post-parse (sin basura Thinking) | 100% |
+| Label correcto | Etiqueta / clase / decisión de dominio correcta | 100% |
+| Tracking temporal | Objetos seguidos + resumen coherente (F1 calle) | ~≥80% gate apilar; techo 100% |
+| Predicción inversa | Posición ±tol @ k=1,3,5 + señal + physics-law | 100% pos; señal→100%; physics_fail→0 |
+| Distancia | % metros correctos por banda (tol 10%/20%) | 100% |
+
+**Compuesto:** el producto / promedio de ejes del dominio debe ser **≥10×** sobre el base del mismo eje (si base=0%, el techo 100% **cuenta como 10× cumplido** en ese eje).  
+No se declara dominio “10× cerrado” hasta tener **own-delta limpio** (base VLM vs trained) en ese dominio — no CV/heurística sola, salvo nota explícita.
+
+**Prohibido:** claims de ventaja cuántica; bancos contra modelos grandes; GT de eval en inferencia.
+
+---
+
+## 0.1 Scoreboard 10× (actualizar al salir números)
+
+> Solo números de evals **limpias** (anti-contam). `PEND` = falta own-delta VLM. Heurística/CV no cierra el goal 10× del 8B.
+
+| Dominio | Métrica clave | Baseline (base VLM, sin adapter) | Actual | Target 10× | Gap | Siguiente acción (capa) |
+|---------|---------------|----------------------------------|--------|------------|-----|-------------------------|
+| **Cuántico** — parseo usable | JSON/Jev válido | **0.0** (n=10, `eval_compare_rebalance`) | **1.0** Jev / compile (LoRA RO) | 1.0 | **0** en Jev/compile | Mantener RO; enriquecer con `lora_adapter_ent/` + ent_v2 |
+| **Cuántico** — label | label_acc | **0.0** | **0.9** LoRA RO; loop híbrido **1.0** (n=12, gold-free) | 1.0 | **0.1** vs LoRA; **0** vs loop | Apilar tools/oráculo + QEC; amplitude embed **no** apilar (perdió vs LoRA texto) |
+| **Cuántico** — energía | energy_ok | **0.0** | **1.0** LoRA RO / loop | 1.0 | **0** | Congelar práctica; no claim Q-advantage |
+| **Física clásica** | label / física visual | **PEND** (BASE VLM) | set 220 escenas; gold CPU 1.0 ≠ VLM | 1.0 | **PEND** | Smoke + own-delta BASE vs `lora_adapter_classical/` (GPU cola) |
+| **Visión temporal F1** | tracking + resumen | **PEND** | set 50×16 shipped; LoRA en cola | ≥0.80 gate / 1.0 techo | **PEND** | Train `lora_adapter_video_f1/` → own-delta → ablación 3 capas |
+| **Planif. inversa F1** | pos @k=1,3,5 | **PEND** (VLM) | CV: pos **1.0**; señal 0.50/0.00/0.51 | 1.0 pos+señal | Señal **débil** (CV); VLM **PEND** | Reforzar señal; LoRA `lora_adapter_inverse/` tras GPU; cruzar “anticipar error” con cuántico |
+| **Distancia** | % correct@tol por banda | **PEND** (VLM) | Heurística piso: **65.3%** overall (5m 76% / 50m 49% / 100m 77% / 200m 57%) | 1.0 | ~**35 pp** overall (heurística); VLM **PEND** | Diagnosticar banda ~50m; **no** apilar LoRA hasta estimar si VLM supera heurística; ablación: +dist **empeoró** future-pred (73.5→64.2) — reforzar estimador antes de creer el refuerzo |
+| **Compuesto lab** | ejes ≥10× / techo | base ~0 usable | cuántico cerca del techo en parse/label/energía; resto PEND | todos dominios en techo | **grande** fuera de cuántico | Ciclo permanente; GPU: ent → classical → video F1 → distance/inverse |
+
+### Capas que cierran cada tipo de gap
+
+| Gap típico | Capas candidatas (orden train-first) |
+|------------|--------------------------------------|
+| Parseo / JSON basura | LoRA dominio + anti-think parse; **no** más prompt theater |
+| Label / energía cuántica | LoRA (`lora_adapter` RO ya); ent_v2; hybrid oracle/tools; QEC; amplitude embed solo si supera LoRA texto |
+| Tracking temporal | LoRA video F1; memoria trabajo; retrieval train-only; tools sim |
+| Predicción inversa | LoRA inverse; memoria; tools física; cruzar con cuántico “anticipar error” |
+| Distancia | Floor-scale + parallax; luego LoRA `lora_adapter_distance/` **si** own-delta ≥ gate; Jeff **después** de tracking básico |
+| Seguridad / grants | **Jeff** (separado; post-tracking) |
+
+**Última actualización scoreboard:** 2026-09-24 ~04:55 ET · tip `bcbcdc8` + Parte 1.
+
+---
 ## 1. Visión
 
-Enseñar a **Qwen 8B** (LoRA + herramientas + memoria/retrieval) a ser más inteligente en:
+Goal medible: **§0 — 10×** sobre el base (~0% JSON usable). Enseñar a **Qwen 8B** (LoRA + herramientas + memoria/retrieval) a ser más inteligente en:
 
 - física **cuántica** (circuitos, entrelazamiento, oráculo híbrido, QEC),
 - **visión temporal** (calle, semáforos, tracking, resumen),
