@@ -1,0 +1,870 @@
+{
+  "domain": "inverse_planning_passive",
+  "source_split": "train_only",
+  "n_entries": 32,
+  "anti_contamination": "eval sequences MUST NOT appear here",
+  "entries": [
+    {
+      "seq_id": "seq_000",
+      "split": "train",
+      "t": 18,
+      "signal": "red",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "box",
+          "x": 51.01,
+          "y": 168.894
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 19.798,
+          "y": 168.225
+        },
+        {
+          "oid": "o2",
+          "shape": "ball",
+          "x": 126.471,
+          "y": 77.175
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_001",
+      "split": "train",
+      "t": 16,
+      "signal": "red",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "box",
+          "x": 213.836,
+          "y": 13.288
+        },
+        {
+          "oid": "o1",
+          "shape": "box",
+          "x": 106.49,
+          "y": 129.061
+        },
+        {
+          "oid": "o2",
+          "shape": "box",
+          "x": 135.343,
+          "y": 69.484
+        },
+        {
+          "oid": "o3",
+          "shape": "box",
+          "x": 120.385,
+          "y": 26.909
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_002",
+      "split": "train",
+      "t": 15,
+      "signal": "green",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 83.738,
+          "y": 117.74
+        },
+        {
+          "oid": "o1",
+          "shape": "box",
+          "x": 26.139,
+          "y": 110.438
+        },
+        {
+          "oid": "o2",
+          "shape": "ball",
+          "x": 112.536,
+          "y": 88.539
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_003",
+      "split": "train",
+      "t": 10,
+      "signal": "red",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "box",
+          "x": 194.253,
+          "y": 149.749
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 193.464,
+          "y": 135.186
+        },
+        {
+          "oid": "o2",
+          "shape": "ball",
+          "x": 229.994,
+          "y": 87.471
+        },
+        {
+          "oid": "o3",
+          "shape": "box",
+          "x": 150.204,
+          "y": 91.141
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_004",
+      "split": "train",
+      "t": 15,
+      "signal": "green",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 73.155,
+          "y": 142.936
+        },
+        {
+          "oid": "o1",
+          "shape": "box",
+          "x": 211.424,
+          "y": 47.918
+        },
+        {
+          "oid": "o2",
+          "shape": "ball",
+          "x": 169.04,
+          "y": 109.632
+        },
+        {
+          "oid": "o3",
+          "shape": "box",
+          "x": 212.555,
+          "y": 50.478
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_005",
+      "split": "train",
+      "t": 18,
+      "signal": "red",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 136.679,
+          "y": 82.596
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 215.226,
+          "y": 139.829
+        },
+        {
+          "oid": "o2",
+          "shape": "ball",
+          "x": 170.916,
+          "y": 166.885
+        },
+        {
+          "oid": "o3",
+          "shape": "ball",
+          "x": 175.852,
+          "y": 75.491
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_006",
+      "split": "train",
+      "t": 14,
+      "signal": "red",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "box",
+          "x": 32.477,
+          "y": 165.209
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 92.835,
+          "y": 36.322
+        },
+        {
+          "oid": "o2",
+          "shape": "ball",
+          "x": 115.931,
+          "y": 23.547
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_007",
+      "split": "train",
+      "t": 17,
+      "signal": "green",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "box",
+          "x": 97.917,
+          "y": 113.782
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 9.852,
+          "y": 20.249
+        },
+        {
+          "oid": "o2",
+          "shape": "box",
+          "x": 139.039,
+          "y": 40.362
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_008",
+      "split": "train",
+      "t": 19,
+      "signal": "amber",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 47.958,
+          "y": 70.44
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 63.039,
+          "y": 165.446
+        },
+        {
+          "oid": "o2",
+          "shape": "box",
+          "x": 213.934,
+          "y": 107.489
+        },
+        {
+          "oid": "o3",
+          "shape": "ball",
+          "x": 225.712,
+          "y": 149.579
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_009",
+      "split": "train",
+      "t": 14,
+      "signal": "green",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "box",
+          "x": 101.208,
+          "y": 119.112
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 66.399,
+          "y": 106.001
+        },
+        {
+          "oid": "o2",
+          "shape": "box",
+          "x": 146.936,
+          "y": 12.039
+        },
+        {
+          "oid": "o3",
+          "shape": "box",
+          "x": 57.221,
+          "y": 53.206
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_010",
+      "split": "train",
+      "t": 10,
+      "signal": "red",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 208.547,
+          "y": 150.805
+        },
+        {
+          "oid": "o1",
+          "shape": "box",
+          "x": 77.803,
+          "y": 137.955
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_011",
+      "split": "train",
+      "t": 11,
+      "signal": "green",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "box",
+          "x": 97.973,
+          "y": 94.795
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 84.756,
+          "y": 69.667
+        },
+        {
+          "oid": "o2",
+          "shape": "box",
+          "x": 159.687,
+          "y": 152.876
+        },
+        {
+          "oid": "o3",
+          "shape": "box",
+          "x": 70.34,
+          "y": 113.0
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_012",
+      "split": "train",
+      "t": 18,
+      "signal": "red",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 137.299,
+          "y": 87.725
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 231.217,
+          "y": 77.053
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_013",
+      "split": "train",
+      "t": 10,
+      "signal": "green",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "box",
+          "x": 15.698,
+          "y": 105.244
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 211.98,
+          "y": 31.321
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_014",
+      "split": "train",
+      "t": 17,
+      "signal": "red",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 222.217,
+          "y": 93.363
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 171.684,
+          "y": 94.718
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_015",
+      "split": "train",
+      "t": 9,
+      "signal": "amber",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "box",
+          "x": 158.338,
+          "y": 72.831
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 33.833,
+          "y": 125.81
+        },
+        {
+          "oid": "o2",
+          "shape": "box",
+          "x": 82.918,
+          "y": 60.504
+        },
+        {
+          "oid": "o3",
+          "shape": "ball",
+          "x": 88.565,
+          "y": 47.881
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_016",
+      "split": "train",
+      "t": 19,
+      "signal": "red",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 24.469,
+          "y": 47.316
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 147.57,
+          "y": 47.256
+        },
+        {
+          "oid": "o2",
+          "shape": "ball",
+          "x": 122.331,
+          "y": 121.922
+        },
+        {
+          "oid": "o3",
+          "shape": "ball",
+          "x": 121.71,
+          "y": 47.046
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_017",
+      "split": "train",
+      "t": 9,
+      "signal": "green",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 41.445,
+          "y": 43.89
+        },
+        {
+          "oid": "o1",
+          "shape": "box",
+          "x": 126.903,
+          "y": 160.846
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_018",
+      "split": "train",
+      "t": 13,
+      "signal": "amber",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 91.6,
+          "y": 158.099
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 27.411,
+          "y": 114.732
+        },
+        {
+          "oid": "o2",
+          "shape": "ball",
+          "x": 213.385,
+          "y": 51.217
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_019",
+      "split": "train",
+      "t": 17,
+      "signal": "amber",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "box",
+          "x": 80.737,
+          "y": 23.305
+        },
+        {
+          "oid": "o1",
+          "shape": "box",
+          "x": 117.873,
+          "y": 42.946
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_020",
+      "split": "train",
+      "t": 12,
+      "signal": "red",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "box",
+          "x": 145.006,
+          "y": 162.174
+        },
+        {
+          "oid": "o1",
+          "shape": "box",
+          "x": 142.359,
+          "y": 86.354
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_021",
+      "split": "train",
+      "t": 18,
+      "signal": "amber",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "box",
+          "x": 221.732,
+          "y": 104.424
+        },
+        {
+          "oid": "o1",
+          "shape": "box",
+          "x": 115.918,
+          "y": 121.851
+        },
+        {
+          "oid": "o2",
+          "shape": "box",
+          "x": 29.573,
+          "y": 111.465
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_022",
+      "split": "train",
+      "t": 9,
+      "signal": "green",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 165.998,
+          "y": 112.326
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 169.414,
+          "y": 27.335
+        },
+        {
+          "oid": "o2",
+          "shape": "ball",
+          "x": 79.772,
+          "y": 58.645
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_023",
+      "split": "train",
+      "t": 15,
+      "signal": "red",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "box",
+          "x": 27.575,
+          "y": 156.923
+        },
+        {
+          "oid": "o1",
+          "shape": "box",
+          "x": 167.762,
+          "y": 62.986
+        },
+        {
+          "oid": "o2",
+          "shape": "box",
+          "x": 209.764,
+          "y": 120.363
+        },
+        {
+          "oid": "o3",
+          "shape": "ball",
+          "x": 95.531,
+          "y": 53.046
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_024",
+      "split": "train",
+      "t": 18,
+      "signal": "red",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 65.085,
+          "y": 28.873
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 180.485,
+          "y": 19.301
+        },
+        {
+          "oid": "o2",
+          "shape": "ball",
+          "x": 46.205,
+          "y": 117.257
+        },
+        {
+          "oid": "o3",
+          "shape": "box",
+          "x": 28.003,
+          "y": 117.361
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_025",
+      "split": "train",
+      "t": 12,
+      "signal": "red",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "box",
+          "x": 53.511,
+          "y": 19.255
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 163.11,
+          "y": 43.827
+        },
+        {
+          "oid": "o2",
+          "shape": "ball",
+          "x": 109.756,
+          "y": 143.736
+        },
+        {
+          "oid": "o3",
+          "shape": "box",
+          "x": 34.021,
+          "y": 115.901
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_026",
+      "split": "train",
+      "t": 19,
+      "signal": "green",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 38.574,
+          "y": 46.99
+        },
+        {
+          "oid": "o1",
+          "shape": "box",
+          "x": 150.769,
+          "y": 136.857
+        },
+        {
+          "oid": "o2",
+          "shape": "ball",
+          "x": 62.237,
+          "y": 153.351
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_027",
+      "split": "train",
+      "t": 16,
+      "signal": "red",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "box",
+          "x": 29.302,
+          "y": 42.703
+        },
+        {
+          "oid": "o1",
+          "shape": "box",
+          "x": 44.751,
+          "y": 108.374
+        },
+        {
+          "oid": "o2",
+          "shape": "box",
+          "x": 192.159,
+          "y": 124.067
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_028",
+      "split": "train",
+      "t": 18,
+      "signal": "green",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 139.208,
+          "y": 170.679
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 89.743,
+          "y": 164.101
+        },
+        {
+          "oid": "o2",
+          "shape": "ball",
+          "x": 48.751,
+          "y": 149.148
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_029",
+      "split": "train",
+      "t": 10,
+      "signal": "red",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 60.871,
+          "y": 83.306
+        },
+        {
+          "oid": "o1",
+          "shape": "box",
+          "x": 150.541,
+          "y": 50.753
+        },
+        {
+          "oid": "o2",
+          "shape": "ball",
+          "x": 80.463,
+          "y": 157.288
+        },
+        {
+          "oid": "o3",
+          "shape": "ball",
+          "x": 73.495,
+          "y": 125.904
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_030",
+      "split": "train",
+      "t": 12,
+      "signal": "green",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 39.633,
+          "y": 165.47
+        },
+        {
+          "oid": "o1",
+          "shape": "ball",
+          "x": 132.815,
+          "y": 22.447
+        },
+        {
+          "oid": "o2",
+          "shape": "ball",
+          "x": 154.649,
+          "y": 137.0
+        }
+      ]
+    },
+    {
+      "seq_id": "seq_031",
+      "split": "train",
+      "t": 15,
+      "signal": "green",
+      "objects": [
+        {
+          "oid": "o0",
+          "shape": "ball",
+          "x": 53.822,
+          "y": 104.442
+        },
+        {
+          "oid": "o1",
+          "shape": "box",
+          "x": 59.752,
+          "y": 97.403
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "teleport_flagged": {
+    "physics_ok": false,
+    "fail_reason": "teleport",
+    "physics_fail": true,
+    "jump": 146.14336164191653,
+    "max_expected": 18.705949087122004
+  },
+  "flying_flagged": {
+    "physics_ok": false,
+    "fail_reason": "wall_phase_or_flying",
+    "physics_fail": true,
+    "pred": [
+      -50.0,
+      90.0
+    ]
+  },
+  "cv_ok": {
+    "physics_ok": true,
+    "fail_reason": null,
+    "physics_fail": false,
+    "dist_to_cv_rollout": 0.0,
+    "cv_near": true
+  },
+  "gate_selftest": "PASS"
+}

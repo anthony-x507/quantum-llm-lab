@@ -1,0 +1,10 @@
+*
+!.gitignore
+!.gitkeep
+!SUMMARY.json
+!SUMMARY.md
+!SCENE_CHOICE.md
+!INDEX.json
+!EVAL_PASSIVE_CV.json
+!PHYSICS_GATE_SELFTEST.json
+!retrieval_index_train.json

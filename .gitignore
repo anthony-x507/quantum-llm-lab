@@ -69,3 +69,18 @@ data/lora_adapter_video_f1/**
 data/TRAIN_LOCK_VIDEO_F1.txt
 data/video_synth/fase1/results_vlm_*.json
 data/video_synth/fase1/results_ablate_*.json
+
+# Inverse planning / future prediction (Fase 1) — keep summaries; ignore frames
+data/inverse_planning/**
+!data/inverse_planning/.gitignore
+!data/inverse_planning/.gitkeep
+!data/inverse_planning/SUMMARY.json
+!data/inverse_planning/SUMMARY.md
+!data/inverse_planning/SCENE_CHOICE.md
+!data/inverse_planning/INDEX.json
+!data/inverse_planning/EVAL_PASSIVE_CV.json
+!data/inverse_planning/PHYSICS_GATE_SELFTEST.json
+!data/inverse_planning/retrieval_index_train.json
+data/lora_adapter_inverse/**
+!data/lora_adapter_inverse/.gitkeep
+data/eval_audit/inverse_*.jsonl

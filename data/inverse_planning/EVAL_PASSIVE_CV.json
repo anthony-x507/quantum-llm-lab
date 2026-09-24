@@ -1,0 +1,52 @@
+{
+  "domain": "inverse_planning_passive",
+  "fase": 1,
+  "predictor": "cv_baseline",
+  "tol_px": 8.0,
+  "n_eval_seq": 8,
+  "by_horizon_k": {
+    "1": {
+      "n": 112,
+      "pos_acc": 1.0,
+      "pos_ok": 112,
+      "physics_fail_rate": 0.0,
+      "physics_fail": 0,
+      "signal_acc": 0.5,
+      "mean_dist": 0.00048422168098557664,
+      "tol_px": 8.0
+    },
+    "3": {
+      "n": 96,
+      "pos_acc": 1.0,
+      "pos_ok": 96,
+      "physics_fail_rate": 0.0,
+      "physics_fail": 0,
+      "signal_acc": 0.0,
+      "mean_dist": 0.001293370002402154,
+      "tol_px": 8.0
+    },
+    "5": {
+      "n": 80,
+      "pos_acc": 1.0,
+      "pos_ok": 80,
+      "physics_fail_rate": 0.0,
+      "physics_fail": 0,
+      "signal_acc": 0.5125,
+      "mean_dist": 0.0021064986023882582,
+      "tol_px": 8.0
+    }
+  },
+  "contam_self_test": {
+    "test": "inject_future_gt_into_prompt",
+    "verdict_if_dirty": "INVALID",
+    "dirty_detected": true,
+    "clean_prompt_ok": true,
+    "meta_has_no_futures": true,
+    "passed": true,
+    "rule": "injecting future GT into prompt \u2192 INVALID (discard; never report)"
+  },
+  "audit_log": "data/eval_audit/inverse_20260924_044542.jsonl",
+  "adapter_used": null,
+  "note": "CPU constant-velocity baseline. VLM base/LoRA deferred until GPU free; future adapter path data/lora_adapter_inverse/ only. Quantum data/lora_adapter/ READ-ONLY \u2014 not used.",
+  "ts": "2026-09-24 04:45:42 ET"
+}

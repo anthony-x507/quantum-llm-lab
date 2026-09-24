@@ -1,0 +1,324 @@
+{
+  "entries": [
+    {
+      "seq_id": "seq_000",
+      "split": "train",
+      "n_frames": 19,
+      "n_objects": 3,
+      "n_futures": 48,
+      "path": "data/inverse_planning/train/seq_000"
+    },
+    {
+      "seq_id": "seq_001",
+      "split": "train",
+      "n_frames": 17,
+      "n_objects": 4,
+      "n_futures": 42,
+      "path": "data/inverse_planning/train/seq_001"
+    },
+    {
+      "seq_id": "seq_002",
+      "split": "train",
+      "n_frames": 16,
+      "n_objects": 3,
+      "n_futures": 39,
+      "path": "data/inverse_planning/train/seq_002"
+    },
+    {
+      "seq_id": "seq_003",
+      "split": "train",
+      "n_frames": 11,
+      "n_objects": 4,
+      "n_futures": 24,
+      "path": "data/inverse_planning/train/seq_003"
+    },
+    {
+      "seq_id": "seq_004",
+      "split": "train",
+      "n_frames": 16,
+      "n_objects": 4,
+      "n_futures": 39,
+      "path": "data/inverse_planning/train/seq_004"
+    },
+    {
+      "seq_id": "seq_005",
+      "split": "train",
+      "n_frames": 19,
+      "n_objects": 4,
+      "n_futures": 48,
+      "path": "data/inverse_planning/train/seq_005"
+    },
+    {
+      "seq_id": "seq_006",
+      "split": "train",
+      "n_frames": 15,
+      "n_objects": 3,
+      "n_futures": 36,
+      "path": "data/inverse_planning/train/seq_006"
+    },
+    {
+      "seq_id": "seq_007",
+      "split": "train",
+      "n_frames": 18,
+      "n_objects": 3,
+      "n_futures": 45,
+      "path": "data/inverse_planning/train/seq_007"
+    },
+    {
+      "seq_id": "seq_008",
+      "split": "train",
+      "n_frames": 20,
+      "n_objects": 4,
+      "n_futures": 51,
+      "path": "data/inverse_planning/train/seq_008"
+    },
+    {
+      "seq_id": "seq_009",
+      "split": "train",
+      "n_frames": 15,
+      "n_objects": 4,
+      "n_futures": 36,
+      "path": "data/inverse_planning/train/seq_009"
+    },
+    {
+      "seq_id": "seq_010",
+      "split": "train",
+      "n_frames": 11,
+      "n_objects": 2,
+      "n_futures": 24,
+      "path": "data/inverse_planning/train/seq_010"
+    },
+    {
+      "seq_id": "seq_011",
+      "split": "train",
+      "n_frames": 12,
+      "n_objects": 4,
+      "n_futures": 27,
+      "path": "data/inverse_planning/train/seq_011"
+    },
+    {
+      "seq_id": "seq_012",
+      "split": "train",
+      "n_frames": 19,
+      "n_objects": 2,
+      "n_futures": 48,
+      "path": "data/inverse_planning/train/seq_012"
+    },
+    {
+      "seq_id": "seq_013",
+      "split": "train",
+      "n_frames": 11,
+      "n_objects": 2,
+      "n_futures": 24,
+      "path": "data/inverse_planning/train/seq_013"
+    },
+    {
+      "seq_id": "seq_014",
+      "split": "train",
+      "n_frames": 18,
+      "n_objects": 2,
+      "n_futures": 45,
+      "path": "data/inverse_planning/train/seq_014"
+    },
+    {
+      "seq_id": "seq_015",
+      "split": "train",
+      "n_frames": 10,
+      "n_objects": 4,
+      "n_futures": 21,
+      "path": "data/inverse_planning/train/seq_015"
+    },
+    {
+      "seq_id": "seq_016",
+      "split": "train",
+      "n_frames": 20,
+      "n_objects": 4,
+      "n_futures": 51,
+      "path": "data/inverse_planning/train/seq_016"
+    },
+    {
+      "seq_id": "seq_017",
+      "split": "train",
+      "n_frames": 10,
+      "n_objects": 2,
+      "n_futures": 21,
+      "path": "data/inverse_planning/train/seq_017"
+    },
+    {
+      "seq_id": "seq_018",
+      "split": "train",
+      "n_frames": 14,
+      "n_objects": 3,
+      "n_futures": 33,
+      "path": "data/inverse_planning/train/seq_018"
+    },
+    {
+      "seq_id": "seq_019",
+      "split": "train",
+      "n_frames": 18,
+      "n_objects": 2,
+      "n_futures": 45,
+      "path": "data/inverse_planning/train/seq_019"
+    },
+    {
+      "seq_id": "seq_020",
+      "split": "train",
+      "n_frames": 13,
+      "n_objects": 2,
+      "n_futures": 30,
+      "path": "data/inverse_planning/train/seq_020"
+    },
+    {
+      "seq_id": "seq_021",
+      "split": "train",
+      "n_frames": 19,
+      "n_objects": 3,
+      "n_futures": 48,
+      "path": "data/inverse_planning/train/seq_021"
+    },
+    {
+      "seq_id": "seq_022",
+      "split": "train",
+      "n_frames": 10,
+      "n_objects": 3,
+      "n_futures": 21,
+      "path": "data/inverse_planning/train/seq_022"
+    },
+    {
+      "seq_id": "seq_023",
+      "split": "train",
+      "n_frames": 16,
+      "n_objects": 4,
+      "n_futures": 39,
+      "path": "data/inverse_planning/train/seq_023"
+    },
+    {
+      "seq_id": "seq_024",
+      "split": "train",
+      "n_frames": 19,
+      "n_objects": 4,
+      "n_futures": 48,
+      "path": "data/inverse_planning/train/seq_024"
+    },
+    {
+      "seq_id": "seq_025",
+      "split": "train",
+      "n_frames": 13,
+      "n_objects": 4,
+      "n_futures": 30,
+      "path": "data/inverse_planning/train/seq_025"
+    },
+    {
+      "seq_id": "seq_026",
+      "split": "train",
+      "n_frames": 20,
+      "n_objects": 3,
+      "n_futures": 51,
+      "path": "data/inverse_planning/train/seq_026"
+    },
+    {
+      "seq_id": "seq_027",
+      "split": "train",
+      "n_frames": 17,
+      "n_objects": 3,
+      "n_futures": 42,
+      "path": "data/inverse_planning/train/seq_027"
+    },
+    {
+      "seq_id": "seq_028",
+      "split": "train",
+      "n_frames": 19,
+      "n_objects": 3,
+      "n_futures": 48,
+      "path": "data/inverse_planning/train/seq_028"
+    },
+    {
+      "seq_id": "seq_029",
+      "split": "train",
+      "n_frames": 11,
+      "n_objects": 4,
+      "n_futures": 24,
+      "path": "data/inverse_planning/train/seq_029"
+    },
+    {
+      "seq_id": "seq_030",
+      "split": "train",
+      "n_frames": 13,
+      "n_objects": 3,
+      "n_futures": 30,
+      "path": "data/inverse_planning/train/seq_030"
+    },
+    {
+      "seq_id": "seq_031",
+      "split": "train",
+      "n_frames": 16,
+      "n_objects": 2,
+      "n_futures": 39,
+      "path": "data/inverse_planning/train/seq_031"
+    },
+    {
+      "seq_id": "seq_032",
+      "split": "eval",
+      "n_frames": 18,
+      "n_objects": 4,
+      "n_futures": 45,
+      "path": "data/inverse_planning/eval/seq_032"
+    },
+    {
+      "seq_id": "seq_033",
+      "split": "eval",
+      "n_frames": 14,
+      "n_objects": 3,
+      "n_futures": 33,
+      "path": "data/inverse_planning/eval/seq_033"
+    },
+    {
+      "seq_id": "seq_034",
+      "split": "eval",
+      "n_frames": 19,
+      "n_objects": 4,
+      "n_futures": 48,
+      "path": "data/inverse_planning/eval/seq_034"
+    },
+    {
+      "seq_id": "seq_035",
+      "split": "eval",
+      "n_frames": 13,
+      "n_objects": 4,
+      "n_futures": 30,
+      "path": "data/inverse_planning/eval/seq_035"
+    },
+    {
+      "seq_id": "seq_036",
+      "split": "eval",
+      "n_frames": 17,
+      "n_objects": 3,
+      "n_futures": 42,
+      "path": "data/inverse_planning/eval/seq_036"
+    },
+    {
+      "seq_id": "seq_037",
+      "split": "eval",
+      "n_frames": 11,
+      "n_objects": 2,
+      "n_futures": 24,
+      "path": "data/inverse_planning/eval/seq_037"
+    },
+    {
+      "seq_id": "seq_038",
+      "split": "eval",
+      "n_frames": 14,
+      "n_objects": 4,
+      "n_futures": 33,
+      "path": "data/inverse_planning/eval/seq_038"
+    },
+    {
+      "seq_id": "seq_039",
+      "split": "eval",
+      "n_frames": 14,
+      "n_objects": 2,
+      "n_futures": 33,
+      "path": "data/inverse_planning/eval/seq_039"
+    }
+  ]
+}
