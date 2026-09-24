@@ -4,8 +4,8 @@
   "domain": "codigo_vivo_tip_motion_r4",
   "pct": 100,
   "band": "100pct",
-  "git_sha": "PENDING",
-  "git_sha_short": "PENDING",
+  "git_sha": "a59cb7a78c1e74ea9661df1c9f64860f581125d1",
+  "git_sha_short": "a59cb7a",
   "artifact": "data/frontier_tip_motion_r4_cue_probe.json",
   "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
   "metrics": {
