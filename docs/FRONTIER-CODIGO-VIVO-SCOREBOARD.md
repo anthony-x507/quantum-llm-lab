@@ -1,7 +1,7 @@
 # FRONTIER — Código-vivo tip scoreboard
 
 **Branch:** `frontier/codigo-vivo-tip`  
-**Written:** 2026-09-24 12:24:30 ET · Mac-111 (`074c6626-…`) · tip `08463a2`  
+**Written:** 2026-09-24 12:31:44 ET · Mac-111 (`074c6626-…`) · tip post own-delta fold  
 **Claim scope:** classical MoE router + `python -I` verifier + prior-replay ent/vision + GT-free circuit-graph scaffold on ent + mlx vision parse polish. **NO quantum-advantage claims.**
 
 ## Tip composition (merges / folds)
@@ -22,6 +22,7 @@
 | `frontier/tip-hardneg-r4` | `0dd7b79` | fold R4 polish `40f1d7c` (rebase onto `4e36548` → `11740a6` + sync); R4 40/40; floor **1.0** held |
 | `frontier/tip-mlx-largern` | `c11ccac` | fold mlx LIVE larger-n `d65eb69`/`75f6c0a` (rebase onto `01ddabd` → `23a9b7a`+`c11ccac`); py8/ent16/vis16 unified **1.0**; CPU floor **1.0** held |
 | `frontier/tip-ent-sep-fix` | `08463a2` | fold ent-sep-fix (rebase `47975a7` onto `459f6da`); LIVE pool honest 1sep+15ent; MLX ent2 **1.0** with sep; CPU floor **1.0** held |
+| `frontier/tip-own-delta-scoreboard` | `66db30a` | fold own-delta (rebase `2382c90` onto `0a1ef4d`); honesty Py−0.062 Ent+1.0 Vis−0.200; dual-lane protects; CPU floor **1.0** held |
 
 **Metric policy:** Prefer vision **1.0** / overall **1.0** from `mixed-freeze-vision` over scaffold-merge / R2-port scoreboards that still show vis **0.9** / overall **0.9667**. Keep scaffold wiring + R2 reinforces + anti-think.
 
@@ -376,9 +377,9 @@ Fold scaffold→VLM wire (platform + MLX+R3 freezes retained): tip `ae62ce2` · 
 
 n honest: py=8 ent=16 vis=16 · Δ vs CPU 1.0 = **0.0** · floor held · Mac-111 only · **FOLDED** @ 12:03 ET · see `docs/FRONTIER-CODIGO-VIVO-TIP-MLX-LARGERN.md`
 
-## Own-delta tip scoreboard (branch `frontier/tip-own-delta-scoreboard`)
+## Own-delta tip scoreboard — FOLDED
 
-**When:** 2026-09-24 ~12:27 ET · Mac-111 · from tip `459f6da`  
+**When:** 2026-09-24 ~12:27 ET measure · fold 2026-09-24 12:31:44 ET · Mac-111 · rebase onto `0a1ef4d` → `66db30a` FF  
 **Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-OWN-DELTA-SCOREBOARD.md`  
 **JSON:** `data/frontier_tip_own_delta_scoreboard.json`
 
@@ -388,4 +389,6 @@ n honest: py=8 ent=16 vis=16 · Δ vs CPU 1.0 = **0.0** · floor held · Mac-111
 | Ent | 0.000 | 1.000 (ent2) | **+1.000** | ent2 → **1.0** (still helps) |
 | Vision | 0.900 | 0.700 (quantum) | **−0.200** | BASE → **1.0** (avoids adapter) |
 
-Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. Classical present, not routed on CV pillars.
+**CPU re-smoke after fold:** unified **1.0**; R1–R4 **18/18·22/22·35/35·40/40**; R3/R4 verifier **28/28·32/32**; `wired_to_vlm=true`.  
+Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. Classical present, not routed on CV pillars.  
+**Key honesty:** ent2 still **+1.0**; quantum alone hurts py/vis; dual-lane protects. Platform / mlx_r3 / polish_r4 freezes **retained**.

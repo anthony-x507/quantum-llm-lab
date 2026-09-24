@@ -467,5 +467,17 @@
     "cpu": "data/frontier_moe_verifier_mixed_cpu_own_delta.json",
     "mlx_sample": "data/frontier_tip_own_delta_mlx_sample.json",
     "prior_raw": "data/BENCHMARK_CODIGO_VIVO.json"
+  },
+  "folded": {
+    "when_et": "2026-09-24 12:31:44 ET",
+    "rebase": "2382c90 onto 0a1ef4d → 66db30a",
+    "tip_branch": "frontier/codigo-vivo-tip",
+    "cpu_re_smoke_overall": 1.0,
+    "hardneg": "18/18·22/22·35/35·40/40",
+    "verifier_r3_r4": "28/28·32/32",
+    "wired_to_vlm": true,
+    "floor_held": true,
+    "floor": 0.9667,
+    "prefer": 1.0
   }
 }
