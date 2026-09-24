@@ -190,6 +190,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R17: Cloudflare/CloudFront/Vitess/Cockroach/Pinot/CircleCI/Drone/Maven/sbt/Rails/Phoenix/Flagger/ArgoRollouts/Debezium gates: scalars.
     # R18: ALB/FrontDoor/URLMap/Hudi/Iceberg/Flink/NiFi/Concourse/Woodpecker/TeamCity/Cargo/Go/Quarkus/Micronaut gates: scalars.
     # R19: Mage/Spark/ActiveMQ/Helmfile/Semaphore/Please/Django/Laravel/Akka/DuckDB/Calico/Longhorn/Loki/OTelcol gates: scalars.
+    # R20: Celery/Airbyte/Supabase/Trino/Vector/FluentBit/Thanos/Strimzi/Tilt/Mise/CUE/Nim/Hono/Axum gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -848,7 +849,67 @@ def route_heuristic(prompt: str) -> Lane:
             r"|otel\s+.*gates:"
             r"|processor\s+gates:\s*memory_limiter"
             # R19: mesh / scheduler / secrets / compute / messaging / GitOps / actor / DB / network / storage / observability / CI / build / orchestration / framework prose
-            r"|gates:\s+is\s+(?:mesh|scheduler|secrets|compute|messaging|GitOps|actor|DB|network|storage|observability|CI|build|orchestration|framework)\b",
+            r"|gates:\s+is\s+(?:mesh|scheduler|secrets|compute|messaging|GitOps|actor|DB|network|storage|observability|CI|build|orchestration|framework)\b"
+            # R20: Celery task gates: bind
+            r"|gates\s*:\s*bind\b"
+            r"|celery\s+.*gates:"
+            r"|task\s+gates:\s*bind"
+            # R20: Airbyte stream gates: syncMode
+            r"|gates\s*:\s*syncMode\b"
+            r"|airbyte\s+.*gates:"
+            r"|stream\s+gates:\s*syncMode"
+            # R20: Supabase policy gates: auth.uid
+            r"|gates\s*:\s*auth\.uid\b"
+            r"|supabase\s+.*gates:"
+            r"|policy\s+gates:\s*auth\.uid"
+            # R20: Trino session gates: catalog
+            r"|gates\s*:\s*catalog\b"
+            r"|trino\s+.*gates:"
+            r"|session\s+gates:\s*catalog"
+            # R20: Vector.dev VRL gates: parse_json
+            r"|gates\s*:\s*parse_json\b"
+            r"|vector\.dev\s+.*gates:"
+            r"|vector\s+.*gates:"
+            r"|vrl\s+gates:\s*parse_json"
+            # R20: Fluent Bit filter gates: Match
+            r"|gates\s*:\s*Match\b"
+            r"|fluent\s*bit\s+.*gates:"
+            r"|fluentbit\s+.*gates:"
+            r"|filter\s+gates:\s*Match"
+            # R20: Thanos query gates: dedup
+            r"|gates\s*:\s*dedup\b"
+            r"|thanos\s+.*gates:"
+            r"|query\s+gates:\s*dedup"
+            # R20: Strimzi topic gates: partitions
+            r"|gates\s*:\s*partitions\b"
+            r"|strimzi\s+.*gates:"
+            r"|topic\s+gates:\s*partitions"
+            # R20: Tilt resource gates: trigger_mode
+            r"|gates\s*:\s*trigger_mode\b"
+            r"|tilt\s+.*gates:"
+            r"|resource\s+gates:\s*trigger_mode"
+            # R20: Mise task gates: depends
+            r"|gates\s*:\s*depends\b"
+            r"|mise\s+.*gates:"
+            r"|task\s+gates:\s*depends"
+            # R20: CUE field gates: close
+            r"|gates\s*:\s*close\b"
+            r"|\bcue\b\s+.*gates:"
+            r"|field\s+gates:\s*close"
+            # R20: Nim pragma gates: push
+            r"|gates\s*:\s*push\b"
+            r"|\bnim\b\s+.*gates:"
+            r"|pragma\s+gates:\s*push"
+            # R20: Hono middleware gates: createMiddleware
+            r"|gates\s*:\s*createMiddleware\b"
+            r"|hono\s+.*gates:"
+            r"|middleware\s+gates:\s*createMiddleware"
+            # R20: Axum layer gates: from_fn
+            r"|gates\s*:\s*from_fn\b"
+            r"|axum\s+.*gates:"
+            r"|layer\s+gates:\s*from_fn"
+            # R20: queue / ELT / BaaS / SQL / observability / log / metrics / Kafka / build / task / config / toolchain / framework / Rust prose
+            r"|gates:\s+is\s+(?:queue|ELT|BaaS|SQL|observability|log|metrics|Kafka|build|task|config|toolchain|framework|Rust)\b",
             text,
             re.I,
         )
@@ -1468,6 +1529,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r20' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r20.json"
         elif 'r19' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r19.json"
         elif 'r18' in hp:

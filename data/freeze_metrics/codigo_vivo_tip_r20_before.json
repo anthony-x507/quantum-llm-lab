@@ -1,0 +1,12 @@
+{
+  "phase": "tip_pre_r20_gates",
+  "tip_head": "9f2afbc",
+  "hits": 7,
+  "n": 52,
+  "rate": 0.1346,
+  "score": "7/52",
+  "ent_never_on_python": true,
+  "note": "tip HEAD router (R12-R19 present, R20 absent) on hardneg_r20 bench; side trail was 6\u219252; outfile misrouted to hardneg_r2.json due to r2 prefix match (fixed in fold)",
+  "side_trail_cited": "6\u219252",
+  "written_et": "2026-09-24 15:51:32 ET"
+}

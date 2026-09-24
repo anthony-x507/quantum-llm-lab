@@ -1,0 +1,28 @@
+{
+  "check": "lora_adapter_ro",
+  "path": "data/lora_adapter/",
+  "before": {
+    "n": 1,
+    "files": [
+      {
+        "path": "data/lora_adapter/.gitkeep",
+        "sha16": "e3b0c44298fc1c14",
+        "size": 0
+      }
+    ]
+  },
+  "after": {
+    "n": 1,
+    "files": [
+      {
+        "path": "data/lora_adapter/.gitkeep",
+        "sha16": "e3b0c44298fc1c14",
+        "size": 0
+      }
+    ]
+  },
+  "unchanged": true,
+  "mtime_gitkeep": 1790261820.7295232,
+  "written_et": "2026-09-24 15:53:57 ET",
+  "note": "RO throughout R20 fold; only .gitkeep present"
+}

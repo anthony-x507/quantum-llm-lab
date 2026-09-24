@@ -1,3 +1,25 @@
+## Fold — tip-hardneg-r20 → codigo-vivo-tip (2026-09-24)
+
+**Freeze:** `codigo_vivo_tip_r20_100pct_20260924_155357`  
+**Fold feat:** `PENDING` (cherry-pick `d9528bf` onto `9f2afbc`)  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-R20.md`
+
+| Surface | Result |
+|---------|--------|
+| R20 router / verifier | **7→52/52** / **44/44** (side 6→52; post retained **100%**; tip-local rise_ret ~97.8%; side rise_pp **88.46** ≥80) |
+| R19 / R18 | **52/52·44/44** / **52/52·44/44** |
+| pillars / hardneg smoke / circ | **37/37 · 18/18 · 5/5** |
+| mixed (d) unified | **1.0** |
+| choose_n80 / tti-cold | **100%** / **~95%** freeze retained |
+
+**CPU re-smoke after fold:** R20 7→52; R19/R18/pillars/circ/mixed floors held; choose_n + tti-cold freezes retained; freezes retained incl. r19 + r18 + r17 + tti_cold_fold + r16 + choose_safest_n_fold + r15 + r14 + LP + pillars + circ + future_r3 + side polish_r20. Adapters RO. R21+ not folded.
+
+**Method:** cherry-pick `d9528bf` onto tip `9f2afbc`; merge R12+R13+R14+R15+R16+R17+R18+R19+R20 gates_ops; keep tip STATUS+mixed/LP/r7–r12 JSON ours.
+
+**Not folded:** R21+ @ side tip-hardneg-r21… 
+
+---
+
 ## Fold — tip-hardneg-r19 → codigo-vivo-tip (2026-09-24 15:48:57 ET)
 
 **Branch:** `frontier/tip-hardneg-r19` → **FOLDED** into `frontier/codigo-vivo-tip`  

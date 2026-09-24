@@ -1,0 +1,317 @@
+{
+  "n": 44,
+  "kind": "python_hardneg_items",
+  "created": "2026-09-24T18:52:01Z",
+  "round": "r20",
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R20.md",
+  "items": [
+    {
+      "id": "r20v_cel_01",
+      "kind": "celery_task_gates",
+      "prompt": "Write Python that prints len('gates: bind'). Celery. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_cel_02",
+      "kind": "celery_task_gates",
+      "prompt": "t='gates: bind'\nprint(t.count('gates'))\n# Celery gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_cel_03",
+      "kind": "celery_task_gates",
+      "prompt": "Write Python that prints 90. Celery gates: bind is task queue only. ONLY code.",
+      "expected_stdout": "90\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_aby_01",
+      "kind": "airbyte_stream_gates",
+      "prompt": "Write Python that prints len('gates: syncMode'). Airbyte. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_aby_02",
+      "kind": "airbyte_stream_gates",
+      "prompt": "t='gates: syncMode'\nprint(t.count('gates'))\n# Airbyte gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_aby_03",
+      "kind": "airbyte_stream_gates",
+      "prompt": "Write Python that prints 91. Airbyte gates: syncMode is ELT only. ONLY code.",
+      "expected_stdout": "91\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_sup_01",
+      "kind": "supabase_policy_gates",
+      "prompt": "Write Python that prints len('gates: auth.uid'). Supabase. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_sup_02",
+      "kind": "supabase_policy_gates",
+      "prompt": "t='gates: auth.uid'\nprint(t.count('gates'))\n# Supabase gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_sup_03",
+      "kind": "supabase_policy_gates",
+      "prompt": "Write Python that prints 92. Supabase gates: auth.uid is BaaS only. ONLY code.",
+      "expected_stdout": "92\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_tri_01",
+      "kind": "trino_session_gates",
+      "prompt": "Write Python that prints len('gates: catalog'). Trino. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_tri_02",
+      "kind": "trino_session_gates",
+      "prompt": "t='gates: catalog'\nprint(t.count('gates'))\n# Trino gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_tri_03",
+      "kind": "trino_session_gates",
+      "prompt": "Write Python that prints 93. Trino gates: catalog is SQL engine only. ONLY code.",
+      "expected_stdout": "93\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_vec_01",
+      "kind": "vector_vrl_gates",
+      "prompt": "Write Python that prints len('gates: parse_json'). Vector.dev. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_vec_02",
+      "kind": "vector_vrl_gates",
+      "prompt": "t='gates: parse_json'\nprint(t.count('gates'))\n# Vector.dev gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_vec_03",
+      "kind": "vector_vrl_gates",
+      "prompt": "Write Python that prints 94. Vector.dev gates: parse_json is observability only. ONLY code.",
+      "expected_stdout": "94\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_flb_01",
+      "kind": "fluentbit_filter_gates",
+      "prompt": "Write Python that prints len('gates: Match'). Fluent Bit. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_flb_02",
+      "kind": "fluentbit_filter_gates",
+      "prompt": "t='gates: Match'\nprint(t.count('gates'))\n# Fluent Bit gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_flb_03",
+      "kind": "fluentbit_filter_gates",
+      "prompt": "Write Python that prints 95. Fluent Bit gates: Match is log pipeline only. ONLY code.",
+      "expected_stdout": "95\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_thn_01",
+      "kind": "thanos_query_gates",
+      "prompt": "Write Python that prints len('gates: dedup'). Thanos. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_thn_02",
+      "kind": "thanos_query_gates",
+      "prompt": "t='gates: dedup'\nprint(t.count('gates'))\n# Thanos gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_thn_03",
+      "kind": "thanos_query_gates",
+      "prompt": "Write Python that prints 96. Thanos gates: dedup is metrics only. ONLY code.",
+      "expected_stdout": "96\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_str_01",
+      "kind": "strimzi_topic_gates",
+      "prompt": "Write Python that prints len('gates: partitions'). Strimzi. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_str_02",
+      "kind": "strimzi_topic_gates",
+      "prompt": "t='gates: partitions'\nprint(t.count('gates'))\n# Strimzi gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_str_03",
+      "kind": "strimzi_topic_gates",
+      "prompt": "Write Python that prints 97. Strimzi gates: partitions is Kafka operator only. ONLY code.",
+      "expected_stdout": "97\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_tlt_01",
+      "kind": "tilt_resource_gates",
+      "prompt": "Write Python that prints len('gates: trigger_mode'). Tilt. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_tlt_02",
+      "kind": "tilt_resource_gates",
+      "prompt": "t='gates: trigger_mode'\nprint(t.count('gates'))\n# Tilt gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_tlt_03",
+      "kind": "tilt_resource_gates",
+      "prompt": "Write Python that prints 98. Tilt gates: trigger_mode is dev loop only. ONLY code.",
+      "expected_stdout": "98\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_mse_01",
+      "kind": "mise_task_gates",
+      "prompt": "Write Python that prints len('gates: depends'). Mise. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_mse_02",
+      "kind": "mise_task_gates",
+      "prompt": "t='gates: depends'\nprint(t.count('gates'))\n# Mise gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_mse_03",
+      "kind": "mise_task_gates",
+      "prompt": "Write Python that prints 99. Mise gates: depends is task runner only. ONLY code.",
+      "expected_stdout": "99\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_cue_01",
+      "kind": "cue_field_gates",
+      "prompt": "Write Python that prints len('gates: close'). CUE. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_cue_02",
+      "kind": "cue_field_gates",
+      "prompt": "t='gates: close'\nprint(t.count('gates'))\n# CUE gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_cue_03",
+      "kind": "cue_field_gates",
+      "prompt": "Write Python that prints 100. CUE gates: close is config language only. ONLY code.",
+      "expected_stdout": "100\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_nim_01",
+      "kind": "nim_pragma_gates",
+      "prompt": "Write Python that prints len('gates: push'). Nim. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_nim_02",
+      "kind": "nim_pragma_gates",
+      "prompt": "t='gates: push'\nprint(t.count('gates'))\n# Nim gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_nim_03",
+      "kind": "nim_pragma_gates",
+      "prompt": "Write Python that prints 101. Nim gates: push is language only. ONLY code.",
+      "expected_stdout": "101\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_hno_01",
+      "kind": "hono_middleware_gates",
+      "prompt": "Write Python that prints len('gates: createMiddleware'). Hono. ONLY code.",
+      "expected_stdout": "23\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_hno_02",
+      "kind": "hono_middleware_gates",
+      "prompt": "t='gates: createMiddleware'\nprint(t.count('gates'))\n# Hono gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_hno_03",
+      "kind": "hono_middleware_gates",
+      "prompt": "Write Python that prints 102. Hono gates: createMiddleware is web framework only. ONLY code.",
+      "expected_stdout": "102\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_axm_01",
+      "kind": "axum_layer_gates",
+      "prompt": "Write Python that prints len('gates: from_fn'). Axum. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_axm_02",
+      "kind": "axum_layer_gates",
+      "prompt": "t='gates: from_fn'\nprint(t.count('gates'))\n# Axum gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_axm_03",
+      "kind": "axum_layer_gates",
+      "prompt": "Write Python that prints 103. Axum gates: from_fn is Rust web only. ONLY code.",
+      "expected_stdout": "103\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_ctrl_01",
+      "kind": "base_python_control_r20",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r20v_ctrl_02",
+      "kind": "base_python_control_r20",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}
