@@ -182,6 +182,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R11: Smithy/Ansible/Linkerd/Cilium/Airflow/Kafka/Prometheus/Kyverno/Temporal gates: scalars; Prisma/Consul/Gradle/Zig/Dart held by priors.
     # R12: Traefik/Envoy/NATS/ClickHouse/dbt/Crossplane/Flux/RabbitMQ/ES/Swift/Elixir/Julia/Kong/Spinnaker gates: scalars.
     # R13: Nginx/HAProxy/Caddy/Redis/Postgres/Skaffold/Buildkite/Packer/Salt/Bazel/Dagger/Dagster/Hasura/NestJS gates: scalars.
+    # R23: Tauri/Electron/Expo/Capacitor/Vite/esbuild/Rollup/Turborepo/Nx/Biome/Oxc/Drizzle/SurrealDB/Flutter gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -480,7 +481,65 @@ def route_heuristic(prompt: str) -> Lane:
             r"|nestjs\s+.*gates:"
             r"|guard\s+gates:"
             # R13: proxy / LB / webserver / cache / DB / k8s / CI / image / config / build / orchestration / GraphQL / framework prose
-            r"|gates:\s+is\s+(?:proxy|LB|webserver|cache|DB|k8s|CI|image|config|build|orchestration|GraphQL|framework)\b",
+            r"|gates:\s+is\s+(?:proxy|LB|webserver|cache|DB|k8s|CI|image|config|build|orchestration|GraphQL|framework)\b"
+            # R23: Tauri command gates: invoke
+            r"|gates\s*:\s*invoke\b"
+            r"|tauri\s+.*gates:"
+            r"|command\s+gates:\s*invoke"
+            # R23: Electron ipc gates: ipcMain
+            r"|gates\s*:\s*ipcMain\b"
+            r"|electron\s+.*gates:"
+            r"|ipc\s+gates:\s*ipcMain"
+            # R23: Expo plugin gates: withPlugins
+            r"|gates\s*:\s*withPlugins\b"
+            r"|\bexpo\b\s+.*gates:"
+            r"|plugin\s+gates:\s*withPlugins"
+            # R23: Capacitor plugin gates: registerPlugin
+            r"|gates\s*:\s*registerPlugin\b"
+            r"|capacitor\s+.*gates:"
+            r"|bridge\s+gates:\s*registerPlugin"
+            # R23: Vite plugin gates: configureServer
+            r"|gates\s*:\s*configureServer\b"
+            r"|\bvite\b\s+.*gates:"
+            r"|bundler\s+gates:\s*configureServer"
+            # R23: esbuild plugin gates: onLoad
+            r"|gates\s*:\s*onLoad\b"
+            r"|esbuild\s+.*gates:"
+            r"|onload\s+gates:\s*onLoad"
+            # R23: Rollup plugin gates: renderChunk
+            r"|gates\s*:\s*renderChunk\b"
+            r"|rollup\s+.*gates:"
+            r"|chunk\s+gates:\s*renderChunk"
+            # R23: Turborepo pipeline gates: persistent
+            r"|gates\s*:\s*persistent\b"
+            r"|turborepo\s+.*gates:"
+            r"|pipeline\s+gates:\s*persistent"
+            # R23: Nx executor gates: cacheable
+            r"|gates\s*:\s*cacheable\b"
+            r"|\bnx\b\s+.*gates:"
+            r"|executor\s+gates:\s*cacheable"
+            # R23: Biome rule gates: nursery
+            r"|gates\s*:\s*nursery\b"
+            r"|biome\s+.*gates:"
+            r"|linter\s+gates:\s*nursery"
+            # R23: Oxc lint gates: correctness
+            r"|gates\s*:\s*correctness\b"
+            r"|\boxc\b\s+.*gates:"
+            r"|lint\s+gates:\s*correctness"
+            # R23: Drizzle column gates: primaryKey
+            r"|gates\s*:\s*primaryKey\b"
+            r"|drizzle\s+.*gates:"
+            r"|column\s+gates:\s*primaryKey"
+            # R23: SurrealDB scope gates: SIGNUP
+            r"|gates\s*:\s*SIGNUP\b"
+            r"|surreal(?:db)?\s+.*gates:"
+            r"|scope\s+gates:\s*SIGNUP"
+            # R23: Flutter channel gates: MethodChannel
+            r"|gates\s*:\s*MethodChannel\b"
+            r"|flutter\s+.*gates:"
+            r"|channel\s+gates:\s*MethodChannel"
+            # R23: command / ipc / plugin / bridge / bundler / onload / chunk / pipeline / executor / linter / lint / column / scope / channel prose
+            r"|gates:\s+is\s+(?:command|ipc|plugin|bridge|bundler|onload|chunk|pipeline|executor|linter|lint|column|scope|channel)\b",
             text,
             re.I,
         )
@@ -1053,6 +1112,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r23' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r23.json"
         elif 'r13' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r13.json"
         elif 'r12' in hp:

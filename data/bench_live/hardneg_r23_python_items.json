@@ -1,0 +1,384 @@
+{
+  "n": 44,
+  "kind": "hardneg_python_items",
+  "created": "2026-09-24T15:01:53-04:00",
+  "round": "r23",
+  "note": "R23 python verifier items; GT stdout harness-only. Same themes as router.",
+  "anti_contamination": {
+    "no_r9_r22_family_reuse": true,
+    "blocked_r20": [
+      "celery_task",
+      "airbyte_stream",
+      "supabase_policy",
+      "trino_session",
+      "vector_vrl",
+      "fluentbit_filter",
+      "thanos_query",
+      "strimzi_topic",
+      "tilt_resource",
+      "mise_task",
+      "cue_field",
+      "nim_pragma",
+      "hono_middleware",
+      "axum_layer"
+    ],
+    "blocked_r21": [
+      "bun_plugin",
+      "deno_perm",
+      "pocketbase_hook",
+      "appwrite_schedule",
+      "neon_endpoint",
+      "planetscale_safe",
+      "flyio_autostop",
+      "railway_start",
+      "meilisearch_filter",
+      "qdrant_distance",
+      "spin_outbound",
+      "solidjs_effect",
+      "astro_onrequest",
+      "htmx_trigger"
+    ],
+    "blocked_r22": [
+      "sveltekit_hook",
+      "remix_loader",
+      "nextjs_matcher",
+      "nuxt_server",
+      "typesense_schema",
+      "weaviate_class",
+      "milvus_collection",
+      "chroma_query",
+      "render_health",
+      "vercel_cron",
+      "netlify_redirect",
+      "wasmtime_fuel",
+      "wasmer_env",
+      "leptos_resource"
+    ],
+    "novel_r23": [
+      "tauri_command_gates",
+      "electron_ipc_gates",
+      "expo_plugin_gates",
+      "capacitor_plugin_gates",
+      "vite_plugin_gates",
+      "esbuild_plugin_gates",
+      "rollup_plugin_gates",
+      "turborepo_pipeline_gates",
+      "nx_executor_gates",
+      "biome_rule_gates",
+      "oxc_lint_gates",
+      "drizzle_column_gates",
+      "surreal_scope_gates",
+      "flutter_channel_gates"
+    ]
+  },
+  "items": [
+    {
+      "id": "r23v_tau_01",
+      "kind": "tauri_command_gates",
+      "prompt": "Write Python that prints len('gates: invoke'). Tauri. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_tau_02",
+      "kind": "tauri_command_gates",
+      "prompt": "t='gates: invoke'\nprint(t.count('gates'))\n# Tauri gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_tau_03",
+      "kind": "tauri_command_gates",
+      "prompt": "Write Python that prints 101. Tauri gates: invoke is command only. ONLY code.",
+      "expected_stdout": "101\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_elc_01",
+      "kind": "electron_ipc_gates",
+      "prompt": "Write Python that prints len('gates: ipcMain'). Electron. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_elc_02",
+      "kind": "electron_ipc_gates",
+      "prompt": "t='gates: ipcMain'\nprint(t.count('gates'))\n# Electron gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_elc_03",
+      "kind": "electron_ipc_gates",
+      "prompt": "Write Python that prints 102. Electron gates: ipcMain is ipc only. ONLY code.",
+      "expected_stdout": "102\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_exp_01",
+      "kind": "expo_plugin_gates",
+      "prompt": "Write Python that prints len('gates: withPlugins'). Expo. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_exp_02",
+      "kind": "expo_plugin_gates",
+      "prompt": "t='gates: withPlugins'\nprint(t.count('gates'))\n# Expo gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_exp_03",
+      "kind": "expo_plugin_gates",
+      "prompt": "Write Python that prints 103. Expo gates: withPlugins is plugin only. ONLY code.",
+      "expected_stdout": "103\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_cap_01",
+      "kind": "capacitor_plugin_gates",
+      "prompt": "Write Python that prints len('gates: registerPlugin'). Capacitor. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_cap_02",
+      "kind": "capacitor_plugin_gates",
+      "prompt": "t='gates: registerPlugin'\nprint(t.count('gates'))\n# Capacitor gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_cap_03",
+      "kind": "capacitor_plugin_gates",
+      "prompt": "Write Python that prints 104. Capacitor gates: registerPlugin is bridge only. ONLY code.",
+      "expected_stdout": "104\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_vit_01",
+      "kind": "vite_plugin_gates",
+      "prompt": "Write Python that prints len('gates: configureServer'). Vite. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_vit_02",
+      "kind": "vite_plugin_gates",
+      "prompt": "t='gates: configureServer'\nprint(t.count('gates'))\n# Vite gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_vit_03",
+      "kind": "vite_plugin_gates",
+      "prompt": "Write Python that prints 105. Vite gates: configureServer is bundler only. ONLY code.",
+      "expected_stdout": "105\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_esb_01",
+      "kind": "esbuild_plugin_gates",
+      "prompt": "Write Python that prints len('gates: onLoad'). esbuild. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_esb_02",
+      "kind": "esbuild_plugin_gates",
+      "prompt": "t='gates: onLoad'\nprint(t.count('gates'))\n# esbuild gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_esb_03",
+      "kind": "esbuild_plugin_gates",
+      "prompt": "Write Python that prints 106. esbuild gates: onLoad is onload only. ONLY code.",
+      "expected_stdout": "106\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_rol_01",
+      "kind": "rollup_plugin_gates",
+      "prompt": "Write Python that prints len('gates: renderChunk'). Rollup. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_rol_02",
+      "kind": "rollup_plugin_gates",
+      "prompt": "t='gates: renderChunk'\nprint(t.count('gates'))\n# Rollup gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_rol_03",
+      "kind": "rollup_plugin_gates",
+      "prompt": "Write Python that prints 107. Rollup gates: renderChunk is chunk only. ONLY code.",
+      "expected_stdout": "107\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_trb_01",
+      "kind": "turborepo_pipeline_gates",
+      "prompt": "Write Python that prints len('gates: persistent'). Turborepo. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_trb_02",
+      "kind": "turborepo_pipeline_gates",
+      "prompt": "t='gates: persistent'\nprint(t.count('gates'))\n# Turborepo gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_trb_03",
+      "kind": "turborepo_pipeline_gates",
+      "prompt": "Write Python that prints 108. Turborepo gates: persistent is pipeline only. ONLY code.",
+      "expected_stdout": "108\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_nxx_01",
+      "kind": "nx_executor_gates",
+      "prompt": "Write Python that prints len('gates: cacheable'). Nx. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_nxx_02",
+      "kind": "nx_executor_gates",
+      "prompt": "t='gates: cacheable'\nprint(t.count('gates'))\n# Nx gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_nxx_03",
+      "kind": "nx_executor_gates",
+      "prompt": "Write Python that prints 109. Nx gates: cacheable is executor only. ONLY code.",
+      "expected_stdout": "109\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_bio_01",
+      "kind": "biome_rule_gates",
+      "prompt": "Write Python that prints len('gates: nursery'). Biome. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_bio_02",
+      "kind": "biome_rule_gates",
+      "prompt": "t='gates: nursery'\nprint(t.count('gates'))\n# Biome gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_bio_03",
+      "kind": "biome_rule_gates",
+      "prompt": "Write Python that prints 110. Biome gates: nursery is linter only. ONLY code.",
+      "expected_stdout": "110\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_oxc_01",
+      "kind": "oxc_lint_gates",
+      "prompt": "Write Python that prints len('gates: correctness'). Oxc. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_oxc_02",
+      "kind": "oxc_lint_gates",
+      "prompt": "t='gates: correctness'\nprint(t.count('gates'))\n# Oxc gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_oxc_03",
+      "kind": "oxc_lint_gates",
+      "prompt": "Write Python that prints 111. Oxc gates: correctness is lint only. ONLY code.",
+      "expected_stdout": "111\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_drz_01",
+      "kind": "drizzle_column_gates",
+      "prompt": "Write Python that prints len('gates: primaryKey'). Drizzle. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_drz_02",
+      "kind": "drizzle_column_gates",
+      "prompt": "t='gates: primaryKey'\nprint(t.count('gates'))\n# Drizzle gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_drz_03",
+      "kind": "drizzle_column_gates",
+      "prompt": "Write Python that prints 112. Drizzle gates: primaryKey is column only. ONLY code.",
+      "expected_stdout": "112\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_sur_01",
+      "kind": "surreal_scope_gates",
+      "prompt": "Write Python that prints len('gates: SIGNUP'). SurrealDB. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_sur_02",
+      "kind": "surreal_scope_gates",
+      "prompt": "t='gates: SIGNUP'\nprint(t.count('gates'))\n# SurrealDB gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_sur_03",
+      "kind": "surreal_scope_gates",
+      "prompt": "Write Python that prints 113. SurrealDB gates: SIGNUP is scope only. ONLY code.",
+      "expected_stdout": "113\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_flu_01",
+      "kind": "flutter_channel_gates",
+      "prompt": "Write Python that prints len('gates: MethodChannel'). Flutter. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_flu_02",
+      "kind": "flutter_channel_gates",
+      "prompt": "t='gates: MethodChannel'\nprint(t.count('gates'))\n# Flutter gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_flu_03",
+      "kind": "flutter_channel_gates",
+      "prompt": "Write Python that prints 114. Flutter gates: MethodChannel is channel only. ONLY code.",
+      "expected_stdout": "114\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_ctrl_01",
+      "kind": "base_python_control_r23",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r23v_ctrl_02",
+      "kind": "base_python_control_r23",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}
