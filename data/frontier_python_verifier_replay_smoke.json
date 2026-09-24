@@ -1,0 +1,170 @@
+{
+  "written": "2026-09-24 09:34:02 ",
+  "elapsed_s": 0.19,
+  "branch_hint": "frontier/verifier-python-repair",
+  "proposer": "replay",
+  "rounds_max": 2,
+  "timeout_s": 8.0,
+  "model": null,
+  "adapter_ro": null,
+  "items_path": "/Users/anthony/Documents/quantum-llm-lab/data/bench_live/python_items.json",
+  "claims": [
+    "NO quantum advantage",
+    "classical python -I exec oracle"
+  ],
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "rule": "revision gets stderr only; expected_stdout harness-only",
+    "lock": "docs/LOCK-ANTI-CONTAMINATION.md"
+  },
+  "n": 5,
+  "solve_rate_single": 0.2,
+  "solve_rate_loop": 1.0,
+  "delta_solve_rate": 0.8,
+  "solved_single": 1,
+  "solved_loop": 5,
+  "repair_success_rate": 1.0,
+  "repair_helped_n": 4,
+  "failed_single_n": 4,
+  "prompt_touches_gt": false,
+  "prompt_touches_gt_locked_false": true,
+  "per_task": [
+    {
+      "id": "py_arith_01",
+      "kind": "arithmetic",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write a Python program that prints the integer result of 47 + 18. Output ONLY the code, no markdown fences.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write a Python program that prints the integer result of 47 + 18. Output ONLY the code, no markdown fences.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    However, the problem says \"Output ONLY the code\", so we are to output the string of the code.\nIndentationError: unexpected indent\n\nPREVIOUS_CODE:\nprint(47 + 18)\n\n However, the problem says \"Output ONLY the code\", so we are to output the string of the code.\n\n Important: The problem says \"No markdown fences\", so we don't put any backticks or anything.\n\n Let's write the code as a string\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print(47 + 18)\n\n However, the problem says \"Output ONLY the code\", so we are to output the string of the code.\n\n Important: The problem says \"No markdown fences\", so we don't put any backticks or anything.\n\n Let's write the code as a string",
+        "print(47 + 18)\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    However, the problem says \"Output ONLY the code\", so we are to output the string of the code.\nIndentationError: unexpected indent"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "65\n",
+      "proposer": "replay"
+    },
+    {
+      "id": "py_arith_02",
+      "kind": "arithmetic",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write a Python program that prints 12 * 11 - 7. ONLY code, no markdown.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write a Python program that prints 12 * 11 - 7. ONLY code, no markdown.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    However, the problem says: \"emit ONLY valid Python 3 source. No markdown fences. No explanation.\"\nIndentationError: unexpected indent\n\nPREVIOUS_CODE:\nprint(12 * 11 - 7)\n\n However, the problem says: \"emit ONLY valid Python 3 source. No markdown fences. No explanation.\"\n\n So we output exactly:\n   print(12 * 11 - 7)\n\n But note: the problem says \"prints 12 * 11 - 7\", which is the same as pri\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print(12 * 11 - 7)\n\n However, the problem says: \"emit ONLY valid Python 3 source. No markdown fences. No explanation.\"\n\n So we output exactly:\n   print(12 * 11 - 7)\n\n But note: the problem says \"prints 12 * 11 - 7\", which is the same as pri",
+        "print(12 * 11 - 7)\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    However, the problem says: \"emit ONLY valid Python 3 source. No markdown fences. No explanation.\"\nIndentationError: unexpected indent"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "125\n",
+      "proposer": "replay"
+    },
+    {
+      "id": "py_arith_03",
+      "kind": "arithmetic",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write a Python program that prints the integer floor of 100 / 7. ONLY code.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "Write a Python program that prints the integer floor of 100 / 7. ONLY code.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 2\n    But note: 100 // 7 is 14.\nIndentationError: unexpected indent\n\nPREVIOUS_CODE:\nprint(100 // 7)\n But note: 100 // 7 is 14.\n\n However, the problem says \"ONLY code\", so we write a program that prints 14.\n\n But note: the problem says \"prints the integer floor of 100 / 7\", and we are to output only the code.\n\n Important: W\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print(100 // 7)\n But note: 100 // 7 is 14.\n\n However, the problem says \"ONLY code\", so we write a program that prints 14.\n\n But note: the problem says \"prints the integer floor of 100 / 7\", and we are to output only the code.\n\n Important: W",
+        "print(100 // 7)\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 2\n    But note: 100 // 7 is 14.\nIndentationError: unexpected indent"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "14\n",
+      "proposer": "replay"
+    },
+    {
+      "id": "py_arith_04",
+      "kind": "arithmetic",
+      "single_solved": true,
+      "loop_solved": true,
+      "rounds_used": 0,
+      "repair_helped": false,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "Write a Python program that prints 2 ** 10. ONLY code.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation."
+      ],
+      "codes": [
+        "print(2**10)"
+      ],
+      "errors": [
+        []
+      ],
+      "actions": [],
+      "final_stdout": "1024\n",
+      "proposer": "replay"
+    },
+    {
+      "id": "py_alg_01",
+      "kind": "algebra_word",
+      "single_solved": false,
+      "loop_solved": true,
+      "rounds_used": 1,
+      "repair_helped": true,
+      "prompt_touches_gt": false,
+      "prompts": [
+        "A tank starts with 40 liters. It gains 3 liters per minute for 8 minutes. Write Python that prints the final liters as an integer. ONLY code.\n\nRules: emit ONLY valid Python 3 source. No markdown fences. No explanation.",
+        "A tank starts with 40 liters. It gains 3 liters per minute for 8 minutes. Write Python that prints the final liters as an integer. ONLY code.\n\nYour previous Python program failed when executed.\nEXEC_FEEDBACK (stderr/traceback summary only — fix the code; do NOT invent a secret answer key):\nFile \"<tmp> line 3\n    But let's see: the problem says \"ONLY valid Python 3 source\". And we are not to include any markdown or explanation.\nIndentationError: unexpected indent\n\nPREVIOUS_CODE:\nprint(64)\n\n But let's see: the problem says \"ONLY valid Python 3 source\". And we are not to include any markdown or explanation.\n\n Alternatively, we could compute it to be more generic, but the problem is fixed.\n\n Since the problem states t\n\nRules: emit ONLY corrected valid Python 3 source. No markdown fences. No explanation. No expected-output guesses."
+      ],
+      "codes": [
+        "print(64)\n\n But let's see: the problem says \"ONLY valid Python 3 source\". And we are not to include any markdown or explanation.\n\n Alternatively, we could compute it to be more generic, but the problem is fixed.\n\n Since the problem states t",
+        "print(64)\n"
+      ],
+      "errors": [
+        [
+          "exit_1",
+          "tb:File \"<tmp> line 3\n    But let's see: the problem says \"ONLY valid Python 3 source\". And we are not to include any markdown or explanation.\nIndentationError: unexpected indent"
+        ],
+        []
+      ],
+      "actions": [
+        "strip_trailing_prose"
+      ],
+      "final_stdout": "64\n",
+      "proposer": "replay"
+    }
+  ]
+}
