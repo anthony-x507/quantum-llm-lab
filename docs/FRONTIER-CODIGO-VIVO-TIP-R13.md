@@ -1,6 +1,6 @@
 # Frontier — Código-vivo tip hardneg R13
 
-**Branch:** `frontier/tip-hardneg-r13` (side; not folded)  
+**Branch:** `frontier/tip-hardneg-r13` → **FOLDED** into `frontier/codigo-vivo-tip`  
 **Base tip:** `f70faa1` (`origin/frontier/codigo-vivo-tip` post motion-r4 freeze pin)  
 **When:** 2026-09-24 ~2:06–2:09 ET · Mac-111 (`074c6626-…`)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r13`  
@@ -12,7 +12,7 @@
 - `data/lora_adapter/` READ-ONLY. No merge to `main`. No CloudAgent.
 - Keep `ent_never_on_python=true`, `prompt_touches_gt=false`.
 - R1 / R2 / R3 / R4 / R5 / R6 / R7 / R8 / R9 / R10 / label-protect fixtures must still hold after R13 reinforce.
-- Do **not** touch tip-cv, tip-tti, tip-distance-mid, tip-distance-far, tip-hardneg-r11, tip-hardneg-r12, tip-inverse-r3 (other lanes / fold queue). R13 stays side-only.
+- Do **not** touch tip-cv, tip-tti, tip-distance-mid, tip-distance-far, tip-hardneg-r11, tip-hardneg-r12, tip-inverse-r3 (other lanes / fold queue). R13 folded into tip-cv; do not re-fold.
 
 ## R13 families (≠ R1–R12 / ≠ label-protect)
 
@@ -81,6 +81,22 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `data/freeze_manifests/tip_moe_verifier_polish_r13_100pct_20260924_140847.json`
 - `docs/FRONTIER-CODIGO-VIVO-TIP-R13.md` (this file)
 
-## Not folded
+## Folded into tip (2026-09-24 14:44:57 ET)
 
-Leave tip-cv / tip-tti / tip-distance-mid / tip-distance-far / tip-hardneg-r11 / tip-hardneg-r12 / tip-inverse-r3 alone (fold queue R11→TTI→mid→R12→inverse-r3). Side branch only.
+Cherry-pick `304a45b` onto tip `f052420` → `845a292` (merge R11+R12+R13). Re-smoke on tip-cv: R13 **52/52·44/44** (before **11/52**); mixed **1.0**; R12 retained; far/DZ/mid/TTI/inv/collision floors held; pillars 26/26; hardneg 18/18; tip vis BASE; RO adapters. Freeze `codigo_vivo_tip_r13_100pct_20260924_144457`.
+
+**Not folded next:** future-track-r3 / circ-expand / R14+.
+
+## Fold re-smoke (2026-09-24 14:44:57 ET)
+
+| Surface | Score |
+|---------|-------|
+| R13 router (tip before→after) | **11/52 → 52/52** |
+| R13 verifier | **44/44** |
+| R12 router · verifier | **52/52 · 44/44** |
+| mixed (d) unified | **1.0** |
+| pillars / hardneg smoke | **26/26 · 18/18** |
+| far / DZ / mid / TTI / inv_cv / collision | **retained 100%** |
+| `ent_never_on_python` | true |
+| tip vis | BASE |
+| Freeze | `codigo_vivo_tip_r13_100pct_20260924_144457` |

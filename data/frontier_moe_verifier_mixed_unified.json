@@ -1,7 +1,7 @@
 {
   "frontier": "C3b-moe-verifier-mixed-live",
-  "written": "2026-09-24 14:35:33",
-  "primary": "data/frontier_moe_verifier_mixed_cpu.json",
+  "written": "2026-09-24 14:44:34",
+  "primary": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/frontier_moe_verifier_mixed_cpu.json",
   "scoreboard": {
     "table": [
       {

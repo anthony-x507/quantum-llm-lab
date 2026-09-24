@@ -1,6 +1,27 @@
 # FRONTIER — Código-vivo tip scoreboard
 
 
+## Fold — tip-hardneg-r13 → codigo-vivo-tip (2026-09-24 14:44:57 ET)
+
+| Surface | Score |
+|---------|-------|
+| mixed (d) unified | **1.0** |
+| R13 router · verifier | **52/52 · 44/44** (was 11/52 on tip pre-fold) |
+| R12 router · verifier | **52/52 · 44/44** (retained) |
+| far MAE · DZ/mid · TTI | **retained** (2.600 m · 100% · 100%) |
+| inverse_cv · collision · choose_safest | **100% · 100% · 100%** (n=40 / 2850) |
+| pillars / hardneg smoke | **26/26 · 18/18** |
+| Freeze | `codigo_vivo_tip_r13_100pct_20260924_144457` |
+| Tip SHA (fold) | `PENDING_FOLD` |
+| Policy | RO `data/lora_adapter/`; no main; far+mid+inv+R12 floors kept; future-track/circ/R14+ not folded |
+
+**Method:** cherry-pick `304a45b`/`ca29220` onto `f052420` → `845a292`. Conflicts: STATUS+mixed/r7–r10/LP JSON ours; router/verifier merged R11+R12+R13 gates_ops.
+
+**CPU re-smoke after fold:** unified **1.0**; R13 **52/52·44/44**; R12 **52/52·44/44**; R11 **52/52**; far/DZ/mid/TTI/inv/collision retained; pillars 26/26; hardneg 18/18; `wired_to_vlm=true`; tip vis BASE.  
+Anti-contam **CLEAN**. Adapters RO unchanged. Freezes retained incl. distance_far + inverse_r3 + r12 + distance_mid + tti + r11 + motion_r4 + vision_ground + inverse_r2 + r10 + priors. Never abandon.
+
+**Not folded:** future-track-r3 / circ-expand / R14+.
+
 ## Fold — tip-distance-far → codigo-vivo-tip (2026-09-24 14:37:16 ET)
 
 | Surface | Score |
