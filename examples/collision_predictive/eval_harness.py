@@ -3,7 +3,7 @@
 
 Predictors:
   - collision_physics: elastic rollout under hypo action (or choose_safest)
-  - inverse_cv: CV translate ignore collisions (inverse-F1 style baseline)
+  - inverse_cv: action-aware CV + wall bounce; no elastic masses (inverse-r2)
   - collision_choose_safest: pick safest action via physics, score vs GT of
     THAT chosen action (planning-ish)
 
@@ -221,12 +221,10 @@ def evaluate(root: Path, audit_path: Path, *, contam_self_test: bool = False) ->
             _ = emit_to_tool_out(pred_phys)
             sc_phys = score_emit(pred_phys, gt, agents0, k)
 
-            # --- inverse_cv (ignore action / collisions; ablation baseline) ---
-            pred_cv = predict_cv_no_collision(agents0, k)
-            # Score CV against the SAME action's GT (fair: does vision-only CV
-            # correctly foresee the safety outcome of that world? Usually weaker
-            # when action≠coast). Also score against natural coast GT separately
-            # handled below via action==coast subset in table notes.
+            # --- inverse_cv (action-aware CV + wall; no elastic masses) ---
+            # inverse-r2: apply hypo action kinematics then CV wall-bounce;
+            # still no agent-agent elastic resolve (ablation vs collision_physics).
+            pred_cv = predict_cv_no_collision(agents0, k, action=action)
             sc_cv = score_emit(pred_cv, gt, agents0, k)
 
             # --- choose_safest (planning): emit action; score vs GT of chosen ---
@@ -368,7 +366,7 @@ def main() -> None:
         "schema": "frontier_tip_collision_pred_probe",
         "ts": result["ts"],
         "domain": "collision_predictive",
-        "branch": "frontier/tip-collision-n",
+        "branch": "frontier/tip-inverse-r2",
         "n_eval_seqs": result["n_eval_seqs"],
         "metric_collision_correct_pct": result["predictors"]["collision_physics"]["overall"]["collision_correct_pct"],
         "metric_n_queries": result["predictors"]["collision_physics"]["overall"]["n"],
@@ -388,6 +386,23 @@ def main() -> None:
         json.dumps({**probe, "schema": "frontier_tip_collision_n_probe",
                     "n_expand": {"before_n_eval_seqs": 8, "before_n_queries": 555,
                                  "target_n_eval_seqs": 40}}, indent=2) + "\n"
+    )
+
+    inv = result["predictors"]["inverse_cv"]["overall"]["collision_correct_pct"]
+    Path("data/frontier_tip_inverse_r2_probe.json").write_text(
+        json.dumps({
+            **probe,
+            "schema": "frontier_tip_inverse_r2_probe",
+            "branch": "frontier/tip-inverse-r2",
+            "inverse_cv_overall_pct": inv,
+            "collision_choose_safest_overall_pct": (
+                result["predictors"]["collision_choose_safest"]["overall"]["collision_correct_pct"]
+            ),
+            "physics_freeze_100pct": (
+                result["predictors"]["collision_physics"]["overall"]["collision_correct_pct"] == 100.0
+            ),
+            "inverse_target_ge_95": inv >= 95.0,
+        }, indent=2) + "\n"
     )
 
     # markdown table

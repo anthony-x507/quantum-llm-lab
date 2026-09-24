@@ -6,6 +6,9 @@ Branch `frontier/tip-hardneg-r10` from tip `3d05cbe`. R10 router **52/52** · ve
 
 # Estado de avance
 
+## 2026-09-24 — tip-inverse-r2 (side branch, pre-fold)
+Branch `frontier/tip-inverse-r2` from tip `2d13d0a` (rebase onto tip post-R10). inverse_cv **89.82→99.82**; collision physics **100%** held (n=40/2850); choose_safest **100%**; mixed **1.0** assumed (router untouched); ablation +10.18→+0.18 pp; contam PASS; adapters RO. Freeze `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`. See SCOREBOARD + TIP-INVERSE-R2.
+
 ## 2026-09-24 — fold tip-motion-r3 → codigo-vivo-tip
 Rebase `24798e3`/`1d2ca87` onto `2d13d0a` → `fbe296a`+`553b7e5` FF. CPU unified **1.0** (re-smoke); motion coverage **97.5%** (138 ind + 57 corr; +6.5 pp vs 91%); R9 **52/52·44/44**; collision physics **100%** (n=40); pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_motion_r3_100pct_20260924_133333`. Hardneg-r10 / vision-delta **not** folded. See SCOREBOARD + TIP-MOTION-R3.
 

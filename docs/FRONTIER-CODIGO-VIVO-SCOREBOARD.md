@@ -66,7 +66,7 @@
 **Freeze id:** `codigo_vivo_tip_r9_100pct_20260924_133405`  
 **Frozen SHA:** `eefc61711bbd321fe72fd21c43b88a0082eb6dba` (`eefc617`) · branch `frontier/codigo-vivo-tip` · rebase `eec0a8a`/`b33c2b0` onto `3d05cbe` → `ea2f450`+`0096a6e` FF then fold  
 **When:** 2026-09-24 13:34:05 ET · Mac-111 (`074c6626-…`)  
-**Claim:** NO quantum advantage. Cites tip HEAD after R9 fold; **prior platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2 / R7 / scaffold_motion / R8 / distance_danger / collision_pred / motion_r2 / collision_n freezes NOT abandoned**.
+**Claim:** NO quantum advantage. Cites tip HEAD after R9 fold; **prior platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2 / R7 / scaffold_motion / R8 / distance_danger / collision_pred / motion_r2 / collision_n freezes NOT abandoned**. Side-branch `frontier/tip-inverse-r2` raises inverse_cv **89.82→99.82** (not folded).
 
 | Surface | Score |
 |---------|-------|
@@ -723,6 +723,23 @@ Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. 
 
 
 ## Collision-n (eval expand 8→40) — FOLDED
+
+## tip-inverse-r2 (side branch — not folded)
+
+**Branch:** `frontier/tip-inverse-r2` @ (see freeze sha) · base tip `2d13d0a`  
+**Freeze:** `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`  
+**Doc:** [`FRONTIER-CODIGO-VIVO-TIP-INVERSE-R2.md`](FRONTIER-CODIGO-VIVO-TIP-INVERSE-R2.md)
+
+| metric | before | after |
+|--|--|--|
+| collision_physics overall | **100%** (2850 / 40) | **100%** held |
+| inverse_cv overall | 89.82% | **99.82%** (+10.00 pp) |
+| collision_choose_safest | **100%** | **100%** held |
+| ablation (phys − inv) | +10.18 pp | +0.18 pp |
+| mixed floor | **1.0** | **1.0** (router untouched) |
+| contam / retrieval | PASS / ok | PASS / ok |
+
+**Policy:** Side-branch only — **no fold** into tip / tip-cv. Avoided tip-hardneg-r10 / tip-vision-* / tip-motion-r3. Adapters RO. Retained r9 + collision_n + motion_r2 + collision_pred + distance_danger + priors.
 
 **Freeze:** `codigo_vivo_tip_collision_n_100pct_20260924_132559`  
 **Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-COLLISION-N.md`  

@@ -1,7 +1,7 @@
 {
   "domain": "collision_predictive",
-  "branch_tag": "tip-collision-pred",
-  "ts": "2026-09-24 13:25:53 ET",
+  "branch_tag": "tip-inverse-r2",
+  "ts": "2026-09-24 13:43:03 ET",
   "n_eval_seqs": 40,
   "predictors": {
     "collision_physics": {
@@ -31,25 +31,25 @@
     "inverse_cv": {
       "k=1": {
         "n": 950,
-        "collision_correct_pct": 96.42,
-        "safe_match_pct": 98.53,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=3": {
         "n": 950,
-        "collision_correct_pct": 89.89,
-        "safe_match_pct": 95.89,
+        "collision_correct_pct": 99.79,
+        "safe_match_pct": 99.79,
         "physics_fail_rate": 0.0
       },
       "k=5": {
         "n": 950,
-        "collision_correct_pct": 83.16,
-        "safe_match_pct": 92.21,
+        "collision_correct_pct": 99.68,
+        "safe_match_pct": 99.68,
         "physics_fail_rate": 0.0
       },
       "overall": {
         "n": 2850,
-        "collision_correct_pct": 89.82
+        "collision_correct_pct": 99.82
       }
     },
     "collision_choose_safest": {
@@ -78,7 +78,7 @@
     }
   },
   "ablation": {
-    "collision_minus_inverse_cv_pp": 10.18,
+    "collision_minus_inverse_cv_pp": 0.18,
     "note": "Positive \u2192 elastic collision layer improves consequence/safety prediction vs inverse-style CV (no mass/collision). Scored on action-conditional GT."
   },
   "contam_self_test": {
@@ -91,7 +91,7 @@
     "rule": "injecting future/consequence GT \u2192 INVALID (discard; never report as clean)"
   },
   "retrieval_ok": true,
-  "audit": "data/eval_audit/collision_20260924_132553.jsonl",
+  "audit": "data/eval_audit/collision_20260924_134302.jsonl",
   "emit_schema": [
     "chosen_action",
     "predicted_consequence",

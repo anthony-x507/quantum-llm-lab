@@ -1,12 +1,12 @@
 {
   "schema": "frontier_tip_collision_pred_probe",
-  "ts": "2026-09-24 13:28:39 ET",
+  "ts": "2026-09-24 13:43:03 ET",
   "domain": "collision_predictive",
-  "branch": "frontier/codigo-vivo-tip",
+  "branch": "frontier/tip-inverse-r2",
   "n_eval_seqs": 40,
   "metric_collision_correct_pct": 100.0,
   "metric_n_queries": 2850,
-  "ablation_pp": 10.18,
+  "ablation_pp": 0.18,
   "contam_passed": true,
   "retrieval_ok": true,
   "emit_schema": [
@@ -53,25 +53,25 @@
     "inverse_cv": {
       "k=1": {
         "n": 950,
-        "collision_correct_pct": 96.42,
-        "safe_match_pct": 98.53,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=3": {
         "n": 950,
-        "collision_correct_pct": 89.89,
-        "safe_match_pct": 95.89,
+        "collision_correct_pct": 99.79,
+        "safe_match_pct": 99.79,
         "physics_fail_rate": 0.0
       },
       "k=5": {
         "n": 950,
-        "collision_correct_pct": 83.16,
-        "safe_match_pct": 92.21,
+        "collision_correct_pct": 99.68,
+        "safe_match_pct": 99.68,
         "physics_fail_rate": 0.0
       },
       "overall": {
         "n": 2850,
-        "collision_correct_pct": 89.82
+        "collision_correct_pct": 99.82
       }
     },
     "collision_choose_safest": {
@@ -100,7 +100,7 @@
     }
   },
   "quantum_adapter_touched": false,
-  "floor_resmoke": "mixed (d) 1.0 held post tip-collision-n fold; physics 100% at n=40",
-  "n_expand_via": "frontier/tip-collision-n @ c79ab1a folded",
-  "prior_n8_freeze_retained": "codigo_vivo_tip_collision_pred_100pct_20260924_131846"
+  "floor_resmoke": "N/A \u2014 side-branch collision_predictive / inverse_cv + choose_safest polish only; tip router / mixed untouched; mixed floor 1.0 assumed held",
+  "note": "refreshed by tip-inverse-r2; physics 100% held; inverse_cv raised",
+  "inverse_r2_probe": "data/frontier_tip_inverse_r2_probe.json"
 }

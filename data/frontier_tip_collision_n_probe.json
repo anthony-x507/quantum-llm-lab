@@ -1,12 +1,12 @@
 {
   "schema": "frontier_tip_collision_n_probe",
-  "ts": "2026-09-24 13:28:39 ET",
+  "ts": "2026-09-24 13:43:03 ET",
   "domain": "collision_predictive",
-  "branch": "frontier/tip-collision-n",
+  "branch": "frontier/tip-inverse-r2",
   "n_eval_seqs": 40,
   "metric_collision_correct_pct": 100.0,
   "metric_n_queries": 2850,
-  "ablation_pp": 10.18,
+  "ablation_pp": 0.18,
   "contam_passed": true,
   "retrieval_ok": true,
   "emit_schema": [
@@ -53,25 +53,25 @@
     "inverse_cv": {
       "k=1": {
         "n": 950,
-        "collision_correct_pct": 96.42,
-        "safe_match_pct": 98.53,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=3": {
         "n": 950,
-        "collision_correct_pct": 89.89,
-        "safe_match_pct": 95.89,
+        "collision_correct_pct": 99.79,
+        "safe_match_pct": 99.79,
         "physics_fail_rate": 0.0
       },
       "k=5": {
         "n": 950,
-        "collision_correct_pct": 83.16,
-        "safe_match_pct": 92.21,
+        "collision_correct_pct": 99.68,
+        "safe_match_pct": 99.68,
         "physics_fail_rate": 0.0
       },
       "overall": {
         "n": 2850,
-        "collision_correct_pct": 89.82
+        "collision_correct_pct": 99.82
       }
     },
     "collision_choose_safest": {
@@ -100,29 +100,14 @@
     }
   },
   "quantum_adapter_touched": false,
-  "floor_resmoke": "mixed (d) unified 1.0 @ tip-cv fold re-smoke 2026-09-24 13:28:19 ET; collision physics recheck 100% n=40/2850",
+  "floor_resmoke": "N/A \u2014 side-branch collision_predictive / inverse_cv + choose_safest polish only; tip router / mixed untouched; mixed floor 1.0 assumed held",
+  "note": "refreshed by tip-inverse-r2; physics 100% held; inverse_cv raised",
+  "inverse_r2_probe": "data/frontier_tip_inverse_r2_probe.json",
   "n_expand": {
     "before_n_eval_seqs": 8,
     "before_n_queries": 555,
-    "before_physics_pct": 100.0,
     "after_n_eval_seqs": 40,
     "after_n_queries": 2850,
-    "after_physics_pct": 100.0,
-    "target_n_eval_seqs": 40,
-    "seed_before": 24092445,
-    "seed_after": 24092446,
-    "split_before": "32/8",
-    "split_after": "160/40"
-  },
-  "freeze_update": true,
-  "physics_freeze_held": true,
-  "physics_freeze_100pct": true,
-  "base_tip_sha": "763fb8c",
-  "freeze_sha": "77c873cc1245313e497050a760bf27a7ad20f9d6",
-  "freeze_id": "codigo_vivo_tip_collision_n_100pct_20260924_132559",
-  "folded_into_tip": true,
-  "fold_et": "2026-09-24 13:29:35 ET",
-  "mixed_d_unified": 1.0,
-  "motion_coverage_known": 0.91,
-  "fold_sha": "77c873cc1245313e497050a760bf27a7ad20f9d6"
+    "target_n_eval_seqs": 40
+  }
 }

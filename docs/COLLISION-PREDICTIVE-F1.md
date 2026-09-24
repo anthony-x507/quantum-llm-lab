@@ -87,3 +87,8 @@ Branch \`frontier/tip-collision-pred\` @ base \`d892398\` adds \`distance_consum
 | inverse_cv | 85.23 | 555 |
 
 Contam PASS. Adapter RO held. See \`docs/FRONTIER-CODIGO-VIVO-TIP-COLLISION-PRED.md\`.
+
+## tip-inverse-r2 refresh (2026-09-24)
+
+Side-branch `frontier/tip-inverse-r2` (not folded): inverse_cv **89.82% → 99.82%** via action-aware wall-bounce CV + third-party geometric overlap (still no elastic masses). choose_safest clearance rank among safe; collision_physics **100%** held @ n=40 / 2850. Ablation +10.18 → +0.18 pp. See `docs/FRONTIER-CODIGO-VIVO-TIP-INVERSE-R2.md`.
+

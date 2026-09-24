@@ -220,24 +220,37 @@ def predict_emit(
     else use given action (default coast).
     """
     if choose_safest:
-        # Prefer safe actions; among safe prefer coast then brake then others
+        # Prefer safe actions; among safe prefer larger min-clearance, then
+        # coast→brake→turn_*→accelerate (inverse-r2 polish; holds 100%).
         order = ("coast", "brake", "turn_left", "turn_right", "accelerate")
-        best = None
-        for a in order:
+        safe: list[tuple[float, int, dict[str, Any], dict[str, Any]]] = []
+        first_unsafe: dict[str, Any] | None = None
+        first_unsafe_roll: dict[str, Any] | None = None
+        for idx, a in enumerate(order):
             roll = rollout(agents, k, action=a)
             emit = {
                 "chosen_action": a,
                 "predicted_consequence": consequence_label(roll, agents),
                 "is_safe": not roll["ego_collision"],
-                "_roll": roll,
             }
             if emit["is_safe"]:
-                best = emit
-                break
-            if best is None:
-                best = emit
-        assert best is not None
-        roll = best.pop("_roll")
+                ego = next(o for o in roll["agents"] if o["oid"] == "ego")
+                gaps = []
+                for o in roll["agents"]:
+                    if o["oid"] == "ego":
+                        continue
+                    rsum = float(o.get("r", 8)) + float(ego.get("r", 8))
+                    gaps.append(math.hypot(float(o["x"]) - float(ego["x"]), float(o["y"]) - float(ego["y"])) - rsum)
+                clearance = min(gaps) if gaps else 1e9
+                safe.append((clearance, idx, emit, roll))
+            elif first_unsafe is None:
+                first_unsafe, first_unsafe_roll = emit, roll
+        if safe:
+            safe.sort(key=lambda t: (-t[0], t[1]))
+            _, _, best, roll = safe[0]
+        else:
+            assert first_unsafe is not None and first_unsafe_roll is not None
+            best, roll = first_unsafe, first_unsafe_roll
         best["partner_of_ego"] = roll["partner_of_ego"]
         best["any_collision"] = roll["any_collision"]
         best["predicted_agents"] = [
@@ -261,48 +274,90 @@ def predict_emit(
     }
 
 
+def _cv_wall_step(o: dict[str, Any]) -> None:
+    """One Euler frame of CV with elastic wall bounce (no agent-agent resolve)."""
+    r = float(o.get("r", 8))
+    lo_x, hi_x = MARGIN + r, ARENA_W - MARGIN - r
+    lo_y, hi_y = MARGIN + r, ARENA_H - MARGIN - r
+    x = float(o["x"]) + float(o["vx"])
+    y = float(o["y"]) + float(o["vy"])
+    vx, vy = float(o["vx"]), float(o["vy"])
+    if x < lo_x:
+        x = lo_x + (lo_x - x)
+        vx = -vx
+    elif x > hi_x:
+        x = hi_x - (x - hi_x)
+        vx = -vx
+    if y < lo_y:
+        y = lo_y + (lo_y - y)
+        vy = -vy
+    elif y > hi_y:
+        y = hi_y - (y - hi_y)
+        vy = -vy
+    o["x"], o["y"], o["vx"], o["vy"] = x, y, vx, vy
+
+
+def _cv_pair_overlaps(state: list[dict[str, Any]]) -> tuple[str | None, bool]:
+    """Return (ego_partner_or_None, any_pairwise_overlap). No mass/elastic resolve."""
+    partner: str | None = None
+    any_c = False
+    n = len(state)
+    for i in range(n):
+        for j in range(i + 1, n):
+            a, b = state[i], state[j]
+            if math.hypot(float(a["x"]) - float(b["x"]), float(a["y"]) - float(b["y"])) < (
+                float(a.get("r", 8)) + float(b.get("r", 8))
+            ):
+                any_c = True
+                if a["oid"] == "ego" or b["oid"] == "ego":
+                    if partner is None:
+                        partner = b["oid"] if a["oid"] == "ego" else a["oid"]
+    return partner, any_c
+
+
 def predict_cv_no_collision(
     agents: list[dict[str, Any]],
     k: int,
+    *,
+    action: str | None = None,
 ) -> dict[str, Any]:
-    """Inverse-style CV baseline: translate by v*k, IGNORE collisions/masses.
+    """Inverse-style CV baseline (inverse-r2): action-aware + wall bounce.
 
-    Then check geometric overlap at horizon as a naive 'collision' guess.
-    Used for ablation vs full elastic layer.
+    Still IGNORES mass / elastic agent-agent resolution (ablation floor vs
+    collision_physics). Applies hypo action to ego velocity once, steps k
+    frames with wall bounce, and flags geometric overlaps each frame —
+    including third-party pairs so consequence family can be
+    ``third_party_collision_only`` (not only ego contact).
     """
-    final = []
-    for o in agents:
-        d = dict(o)
-        d["x"] = float(o["x"]) + float(o["vx"]) * float(k)
-        d["y"] = float(o["y"]) + float(o["vy"]) * float(k)
-        # soft clamp to arena (no bounce modeling in naive CV)
-        r = float(o.get("r", 8))
-        d["x"] = float(np.clip(d["x"], MARGIN + r, ARENA_W - MARGIN - r))
-        d["y"] = float(np.clip(d["y"], MARGIN + r, ARENA_H - MARGIN - r))
-        final.append(d)
-    partner = None
-    ego = next(o for o in final if o["oid"] == "ego")
-    for o in final:
-        if o["oid"] == "ego":
-            continue
-        if math.hypot(o["x"] - ego["x"], o["y"] - ego["y"]) < float(o.get("r", 8)) + float(ego.get("r", 8)):
-            partner = o["oid"]
-            break
-    # consequence from t0 agents for label consistency
+    state = [dict(o) for o in agents]
+    if action is not None:
+        for i, o in enumerate(state):
+            if o["oid"] == "ego":
+                state[i] = apply_action(o, action)
+                break
+    partner: str | None = None
+    any_c = False
+    for _ in range(int(k)):
+        for o in state:
+            _cv_wall_step(o)
+        p, ac = _cv_pair_overlaps(state)
+        any_c = any_c or ac
+        if p is not None and partner is None:
+            partner = p
     fake_roll = {
         "ego_collision": partner is not None,
-        "any_collision": partner is not None,
+        "any_collision": any_c or partner is not None,
         "partner_of_ego": partner,
     }
     return {
-        "chosen_action": "coast",  # CV has no action branching
-        "predicted_consequence": consequence_label(fake_roll, agents) if partner else "clear",
+        "chosen_action": action if action is not None else "coast",
+        "predicted_consequence": consequence_label(fake_roll, agents),
         "is_safe": partner is None,
         "partner_of_ego": partner,
-        "any_collision": partner is not None,
+        "any_collision": fake_roll["any_collision"],
         "predicted_agents": [
             {"oid": o["oid"], "x": o["x"], "y": o["y"], "vx": o["vx"], "vy": o["vy"]}
-            for o in final
+            for o in state
         ],
         "predictor": "inverse_cv_no_collision",
     }

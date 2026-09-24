@@ -1,0 +1,206 @@
+{
+  "schema": "frontier_tip_inverse_r2_probe",
+  "ts": "2026-09-24 13:43:03 ET",
+  "domain": "collision_predictive",
+  "branch": "frontier/tip-inverse-r2",
+  "base_tip_sha": "2d13d0a",
+  "n_eval_seqs": 40,
+  "metric_collision_correct_pct": 100.0,
+  "metric_n_queries": 2850,
+  "inverse_cv_overall_pct": 99.82,
+  "inverse_cv_overall_pct_before": 89.82,
+  "inverse_cv_delta_pp": 10.0,
+  "collision_choose_safest_overall_pct": 100.0,
+  "ablation_pp": 0.18,
+  "ablation_pp_before": 10.18,
+  "contam_passed": true,
+  "retrieval_ok": true,
+  "emit_schema": [
+    "chosen_action",
+    "predicted_consequence",
+    "is_safe"
+  ],
+  "distance_integration": {
+    "consumer": "examples/collision_predictive/distance_consumer.py",
+    "provider": "arena_px_proxy_stub",
+    "imports_unmerged_distance_branch": false,
+    "gt_meters_at_inference": false,
+    "danger_zone_m": [
+      30,
+      70
+    ],
+    "note": "Consumes perception est_m as urgency cues; physics oracle unchanged"
+  },
+  "predictors": {
+    "collision_physics": {
+      "k=1": {
+        "n": 950,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0
+      },
+      "k=3": {
+        "n": 950,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0
+      },
+      "k=5": {
+        "n": 950,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0011
+      },
+      "overall": {
+        "n": 2850,
+        "collision_correct_pct": 100.0
+      }
+    },
+    "inverse_cv": {
+      "k=1": {
+        "n": 950,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0
+      },
+      "k=3": {
+        "n": 950,
+        "collision_correct_pct": 99.79,
+        "safe_match_pct": 99.79,
+        "physics_fail_rate": 0.0
+      },
+      "k=5": {
+        "n": 950,
+        "collision_correct_pct": 99.68,
+        "safe_match_pct": 99.68,
+        "physics_fail_rate": 0.0
+      },
+      "overall": {
+        "n": 2850,
+        "collision_correct_pct": 99.82
+      }
+    },
+    "collision_choose_safest": {
+      "k=1": {
+        "n": 950,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0
+      },
+      "k=3": {
+        "n": 950,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0
+      },
+      "k=5": {
+        "n": 950,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0
+      },
+      "overall": {
+        "n": 2850,
+        "collision_correct_pct": 100.0
+      }
+    }
+  },
+  "predictors_before": {
+    "collision_physics": {
+      "k=1": {
+        "n": 950,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0
+      },
+      "k=3": {
+        "n": 950,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0
+      },
+      "k=5": {
+        "n": 950,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0011
+      },
+      "overall": {
+        "n": 2850,
+        "collision_correct_pct": 100.0
+      }
+    },
+    "inverse_cv": {
+      "k=1": {
+        "n": 950,
+        "collision_correct_pct": 96.42,
+        "safe_match_pct": 98.53,
+        "physics_fail_rate": 0.0
+      },
+      "k=3": {
+        "n": 950,
+        "collision_correct_pct": 89.89,
+        "safe_match_pct": 95.89,
+        "physics_fail_rate": 0.0
+      },
+      "k=5": {
+        "n": 950,
+        "collision_correct_pct": 83.16,
+        "safe_match_pct": 92.21,
+        "physics_fail_rate": 0.0
+      },
+      "overall": {
+        "n": 2850,
+        "collision_correct_pct": 89.82
+      }
+    },
+    "collision_choose_safest": {
+      "k=1": {
+        "n": 950,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0
+      },
+      "k=3": {
+        "n": 950,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0
+      },
+      "k=5": {
+        "n": 950,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
+        "physics_fail_rate": 0.0
+      },
+      "overall": {
+        "n": 2850,
+        "collision_correct_pct": 100.0
+      }
+    }
+  },
+  "quantum_adapter_touched": false,
+  "floor_resmoke": "N/A \u2014 side-branch collision_predictive / inverse_cv + choose_safest polish only; tip router / mixed untouched; mixed floor 1.0 assumed held",
+  "physics_freeze_held": true,
+  "physics_freeze_100pct": true,
+  "inverse_target_ge_95": true,
+  "choose_safest_held_100": true,
+  "polish": {
+    "inverse_cv": "action-aware CV + wall bounce + third-party pairwise geometric overlap; still no elastic masses",
+    "choose_safest": "among physics-safe actions prefer max min-clearance then coast\u2192brake\u2192turn\u2192accel order"
+  },
+  "avoided": [
+    "tip-cv",
+    "tip-hardneg-r10",
+    "tip-vision-ground",
+    "tip-motion-r3",
+    "tip-vision-delta"
+  ],
+  "retained_freezes": [
+    "codigo_vivo_tip_r9_100pct_20260924_133405",
+    "codigo_vivo_tip_collision_n_100pct_20260924_132559",
+    "codigo_vivo_tip_motion_r2_100pct_20260924_131537",
+    "codigo_vivo_tip_collision_pred_100pct_20260924_131846",
+    "codigo_vivo_tip_distance_danger_100pct_20260924_131243"
+  ]
+}
