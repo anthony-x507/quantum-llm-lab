@@ -1,0 +1,628 @@
+{
+  "method": "heuristic",
+  "n": 52,
+  "hits": 52,
+  "misses": 0,
+  "score": "52/52",
+  "rate": 1.0,
+  "by_family": {
+    "mage_block_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "spark_conf_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "activemq_destination_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "helmfile_release_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "semaphore_block_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "please_build_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "django_middleware_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "laravel_middleware_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "akka_receive_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "duckdb_pragma_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "calico_network_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "longhorn_replica_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "loki_pipeline_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "otelcol_processor_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "ent_control_r19": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r19": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r19": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "base_python_control_r19": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "r19_mge_01",
+      "family": "mage_block_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: data_exporter'). Mage AI. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_mge_02",
+      "family": "mage_block_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: data_exporter'\nprint(t.count('gates'))\n# Mage AI gates: — not circuit.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_mge_03",
+      "family": "mage_block_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 80. Mage AI gates: data_exporter is orchestration only.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_spk_01",
+      "family": "spark_conf_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: spark.sql.adaptive'). Apache Spark. ONLY co",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_spk_02",
+      "family": "spark_conf_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: spark.sql.adaptive'\nprint(t.count('gates'))\n# Apache Spark gates: — no",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_spk_03",
+      "family": "spark_conf_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 81. Apache Spark gates: spark.sql.adaptive is compute o",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_amq_01",
+      "family": "activemq_destination_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: queuePriority'). Apache ActiveMQ. ONLY code",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_amq_02",
+      "family": "activemq_destination_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: queuePriority'\nprint(t.count('gates'))\n# Apache ActiveMQ gates: — not ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_amq_03",
+      "family": "activemq_destination_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 82. Apache ActiveMQ gates: queuePriority is messaging o",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_hmf_01",
+      "family": "helmfile_release_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: installed'). Helmfile. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_hmf_02",
+      "family": "helmfile_release_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: installed'\nprint(t.count('gates'))\n# Helmfile gates: — not circuit. ON",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_hmf_03",
+      "family": "helmfile_release_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 83. Helmfile gates: installed is GitOps only. ONLY code",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_sem_01",
+      "family": "semaphore_block_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: prologue'). Semaphore CI. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_sem_02",
+      "family": "semaphore_block_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: prologue'\nprint(t.count('gates'))\n# Semaphore CI gates: — not circuit.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_sem_03",
+      "family": "semaphore_block_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 84. Semaphore CI gates: prologue is CI only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_plz_01",
+      "family": "please_build_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: plz'). Please Build. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_plz_02",
+      "family": "please_build_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: plz'\nprint(t.count('gates'))\n# Please Build gates: — not circuit. ONLY",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_plz_03",
+      "family": "please_build_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 85. Please Build gates: plz is build only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_djn_01",
+      "family": "django_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: MIDDLEWARE'). Django. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_djn_02",
+      "family": "django_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: MIDDLEWARE'\nprint(t.count('gates'))\n# Django gates: — not circuit. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_djn_03",
+      "family": "django_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 86. Django gates: MIDDLEWARE is framework only. ONLY co",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_lrv_01",
+      "family": "laravel_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: terminate'). Laravel. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_lrv_02",
+      "family": "laravel_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: terminate'\nprint(t.count('gates'))\n# Laravel gates: — not circuit. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_lrv_03",
+      "family": "laravel_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 87. Laravel gates: terminate is framework only. ONLY co",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_akk_01",
+      "family": "akka_receive_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Receive'). Akka. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_akk_02",
+      "family": "akka_receive_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: Receive'\nprint(t.count('gates'))\n# Akka gates: — not circuit. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_akk_03",
+      "family": "akka_receive_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 88. Akka gates: Receive is actor only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_ddb_01",
+      "family": "duckdb_pragma_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: threads'). DuckDB. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_ddb_02",
+      "family": "duckdb_pragma_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: threads'\nprint(t.count('gates'))\n# DuckDB gates: — not circuit. ONLY c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_ddb_03",
+      "family": "duckdb_pragma_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 89. DuckDB gates: threads is DB only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_cal_01",
+      "family": "calico_network_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: selectorExpr'). Calico. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_cal_02",
+      "family": "calico_network_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: selectorExpr'\nprint(t.count('gates'))\n# Calico gates: — not circuit. O",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_cal_03",
+      "family": "calico_network_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 90. Calico gates: selectorExpr is network only. ONLY co",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_lhr_01",
+      "family": "longhorn_replica_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: SoftAntiAffinity'). Longhorn. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_lhr_02",
+      "family": "longhorn_replica_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: SoftAntiAffinity'\nprint(t.count('gates'))\n# Longhorn gates: — not circ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_lhr_03",
+      "family": "longhorn_replica_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 91. Longhorn gates: SoftAntiAffinity is storage only. O",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_lki_01",
+      "family": "loki_pipeline_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: pipeline_stages'). Grafana Loki. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_lki_02",
+      "family": "loki_pipeline_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: pipeline_stages'\nprint(t.count('gates'))\n# Grafana Loki gates: — not c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_lki_03",
+      "family": "loki_pipeline_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 92. Grafana Loki gates: pipeline_stages is observabilit",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_otl_01",
+      "family": "otelcol_processor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: memory_limiter'). OpenTelemetry Collector. ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_otl_02",
+      "family": "otelcol_processor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: memory_limiter'\nprint(t.count('gates'))\n# OpenTelemetry Collector gate",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_otl_03",
+      "family": "otelcol_processor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 93. OpenTelemetry Collector gates: memory_limiter is ob",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_ent_01",
+      "family": "ent_control_r19",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelaz",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r19_ent_02",
+      "family": "ent_control_r19",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separabl",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r19_vis_01",
+      "family": "vision_control_r19",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. How many dots are visible? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r19_vis_02",
+      "family": "vision_control_r19",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the chalkboard. How many letters? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r19_base_01",
+      "family": "base_control_r19",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Thanks. Ignore Calico gates: selectorExpr in the README. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r19_base_02",
+      "family": "base_control_r19",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Please ignore the Semaphore CI gates: prologue phrase. Chat only — no program, n",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r19_base_03",
+      "family": "base_control_r19",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Hello — Django gates: MIDDLEWARE is framework only. No code, no circuit, no JSON",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r19_base_04",
+      "family": "base_control_r19",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Weather update. Apache Spark gates: spark.sql.adaptive mention. No code, no circ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r19_ctrl_01",
+      "family": "base_python_control_r19",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r19_ctrl_02",
+      "family": "base_python_control_r19",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(sum(range(4)))\n# plain. ONLY code.",
+      "ent_adapter_blocked": true
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_r19_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}

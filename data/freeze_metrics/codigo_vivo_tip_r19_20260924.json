@@ -1,0 +1,11 @@
+{
+  "round": "r19-fold",
+  "router": "52/52",
+  "verifier": "44/44",
+  "router_before": "18/52",
+  "mixed": 1.0,
+  "rise_pp_side": 88.46,
+  "rise_retention_vs_side": 0.7391,
+  "freeze": true,
+  "written_et": "2026-09-24 15:48:57 ET"
+}

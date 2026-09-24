@@ -189,6 +189,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R16: ATS/CoreDNS/Pulsar/Redpanda/GHA/GitLab/Terraform/Nix/Express/Flask/Knative/KEDA/Dapr/Gatekeeper gates: scalars.
     # R17: Cloudflare/CloudFront/Vitess/Cockroach/Pinot/CircleCI/Drone/Maven/sbt/Rails/Phoenix/Flagger/ArgoRollouts/Debezium gates: scalars.
     # R18: ALB/FrontDoor/URLMap/Hudi/Iceberg/Flink/NiFi/Concourse/Woodpecker/TeamCity/Cargo/Go/Quarkus/Micronaut gates: scalars.
+    # R19: Mage/Spark/ActiveMQ/Helmfile/Semaphore/Please/Django/Laravel/Akka/DuckDB/Calico/Longhorn/Loki/OTelcol gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -782,7 +783,72 @@ def route_heuristic(prompt: str) -> Lane:
             r"|micronaut\s+.*gates:"
             r"|filter\s+gates:\s*Filter"
             # R12–R18: edge/CDN/DB/CI/build/framework/canary/CDC/cloud/lake/stream/ETL/language prose
-            r"|gates:\s+is\s+(?:edge|CDN|DB|CI|build|framework|canary|CDC|cloud|lake|stream|ETL|language)\b",
+            r"|gates:\s+is\s+(?:edge|CDN|DB|CI|build|framework|canary|CDC|cloud|lake|stream|ETL|language)\b"
+            # R19: Mage AI block gates: data_exporter
+            r"|gates\s*:\s*data_exporter\b"
+            r"|mage\s+ai\s+.*gates:"
+            r"|mage\s+.*gates:"
+            r"|block\s+gates:\s*data_exporter"
+            # R19: Apache Spark conf gates: spark.sql.adaptive
+            r"|gates\s*:\s*spark\.sql\.adaptive\b"
+            r"|apache\s+spark\s+.*gates:"
+            r"|spark\s+.*gates:"
+            r"|conf\s+gates:\s*spark\.sql"
+            # R19: Apache ActiveMQ destination gates: queuePriority
+            r"|gates\s*:\s*queuePriority\b"
+            r"|apache\s+activemq\s+.*gates:"
+            r"|activemq\s+.*gates:"
+            r"|destination\s+gates:\s*queuePriority"
+            # R19: Helmfile release gates: installed
+            r"|gates\s*:\s*installed\b"
+            r"|helmfile\s+.*gates:"
+            r"|release\s+gates:\s*installed"
+            # R19: Semaphore CI block gates: prologue
+            r"|gates\s*:\s*prologue\b"
+            r"|semaphore\s+(?:ci\s+)?.*gates:"
+            r"|block\s+gates:\s*prologue"
+            # R19: Please Build gates: plz
+            r"|gates\s*:\s*plz\b"
+            r"|please\s+build\s+.*gates:"
+            r"|please\s+.*gates:"
+            r"|build\s+gates:\s*plz"
+            # R19: Django middleware gates: MIDDLEWARE
+            r"|gates\s*:\s*MIDDLEWARE\b"
+            r"|django\s+.*gates:"
+            r"|middleware\s+gates:\s*MIDDLEWARE"
+            # R19: Laravel middleware gates: terminate
+            r"|gates\s*:\s*terminate\b"
+            r"|laravel\s+.*gates:"
+            r"|middleware\s+gates:\s*terminate"
+            # R19: Akka receive gates: Receive
+            r"|gates\s*:\s*Receive\b"
+            r"|akka\s+.*gates:"
+            r"|receive\s+gates:\s*Receive"
+            # R19: DuckDB pragma gates: threads
+            r"|gates\s*:\s*threads\b"
+            r"|duckdb\s+.*gates:"
+            r"|pragma\s+gates:\s*threads"
+            # R19: Calico network gates: selectorExpr
+            r"|gates\s*:\s*selectorExpr\b"
+            r"|calico\s+.*gates:"
+            r"|network\s+policy\s+gates:\s*selectorExpr"
+            # R19: Longhorn replica gates: SoftAntiAffinity
+            r"|gates\s*:\s*SoftAntiAffinity\b"
+            r"|longhorn\s+.*gates:"
+            r"|replica\s+gates:\s*SoftAntiAffinity"
+            # R19: Grafana Loki pipeline gates: pipeline_stages
+            r"|gates\s*:\s*pipeline_stages\b"
+            r"|grafana\s+loki\s+.*gates:"
+            r"|loki\s+.*gates:"
+            r"|pipeline\s+gates:\s*pipeline_stages"
+            # R19: OpenTelemetry Collector processor gates: memory_limiter
+            r"|gates\s*:\s*memory_limiter\b"
+            r"|opentelemetry\s+(?:collector\s+)?.*gates:"
+            r"|otelcol\s+.*gates:"
+            r"|otel\s+.*gates:"
+            r"|processor\s+gates:\s*memory_limiter"
+            # R19: mesh / scheduler / secrets / compute / messaging / GitOps / actor / DB / network / storage / observability / CI / build / orchestration / framework prose
+            r"|gates:\s+is\s+(?:mesh|scheduler|secrets|compute|messaging|GitOps|actor|DB|network|storage|observability|CI|build|orchestration|framework)\b",
             text,
             re.I,
         )
@@ -1402,6 +1468,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r19' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r19.json"
         elif 'r18' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r18.json"
         elif 'r17' in hp:

@@ -1,0 +1,12 @@
+{
+  "phase": "tip_pre_r19_gates",
+  "tip_head": "9c320cb",
+  "hits": 18,
+  "n": 52,
+  "rate": 0.3462,
+  "score": "18/52",
+  "ent_never_on_python": true,
+  "note": "tip HEAD router (R12-R18 present, R19 absent) on hardneg_r19 bench; side trail was 6\u219252",
+  "side_trail_cited": "6\u219252",
+  "written_et": "2026-09-24 15:46:19 ET"
+}

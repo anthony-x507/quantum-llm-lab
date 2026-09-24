@@ -1,3 +1,6 @@
+## 2026-09-24 — fold tip-hardneg-r19 → codigo-vivo-tip
+Cherry-pick `f20e327` onto `9c320cb` → fold feat `PENDING`. Conflicts: STATUS+mixed/LP/r7–r12 JSON ours; router/verifier merged R12+R13+R14+R15+R16+R17+R18+R19 gates_ops. Re-smoke R19 **18→52/52** · **44/44** (side 6→52; post-score retained **100%**; tip-local rise_ret ~73.9% of side trail; side rise_pp **88.46** ≥80 → freeze); R18 52/52·44/44; R17 52/52·44/44; pillars 37/37; circ 5/5 cited; mixed (d) 1.0; choose_n n=80 @100% freeze retained; tti-cold ~95% freeze retained (no residual chase); freezes retained incl. r18+r17+tti_cold_fold+r16+choose_safest_n_fold+r15+r14+LP+pillars+circ+future_r3+side polish_r19. Freeze `codigo_vivo_tip_r19_100pct_20260924_154857`. R20+ not folded. Tip vis stays BASE. RO data/lora_adapter/.
+
 - Fold tip-hardneg-r18 → codigo-vivo-tip @ e62cb61 (freeze codigo_vivo_tip_r18_100pct_20260924_154419); R19+ not folded.
 - 2026-09-24 ET — fold tip-hardneg-r17 → codigo-vivo-tip; R17 8→52/52 · 44/44; freeze `codigo_vivo_tip_r17_100pct_20260924_153921`; mixed 1.0; R16/tti-cold/choose_n retained; R18+ not folded.
 - 2026-09-24 ET — fold tip-tti-cold → codigo-vivo-tip; freeze `codigo_vivo_tip_tti_cold_fold_100pct_20260924_152850`; cold 91.16→94.99 / 91.66→94.82; plateau hold; R17+ not folded.
