@@ -13,5 +13,7 @@
   "git_sha": "949505b9547fb57e16ccdbc0aeedb3e66fd95ef8",
   "folded_at_et": "2026-09-24 14:23:29 ET",
   "fold_freeze": "codigo_vivo_tip_distance_mid_100pct_20260924_142329",
-  "status": "FOLDED"
+  "status": "FOLDED",
+  "tip_sha": "05c70db77f2ed5f99d2b8bee8fc1574ecf8cb941",
+  "tip_sha_short": "05c70db"
 }

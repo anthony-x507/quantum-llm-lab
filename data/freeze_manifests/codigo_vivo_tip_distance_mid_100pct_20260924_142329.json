@@ -4,8 +4,8 @@
   "domain": "codigo_vivo_tip_distance_mid",
   "pct": 100,
   "band": "100pct",
-  "git_sha": "PENDING_FOLD",
-  "git_sha_short": "PENDING",
+  "git_sha": "05c70db77f2ed5f99d2b8bee8fc1574ecf8cb941",
+  "git_sha_short": "05c70db",
   "artifact": "data/video_synth/distance_est/mid/EVAL_MID_CPU.json",
   "eval_path": "data/video_synth/distance_est/mid/EVAL_MID_CPU.json",
   "metrics": {
@@ -96,5 +96,6 @@
   "pre_rebase_sha": "254393e",
   "post_rebase_feat_sha": "3931307",
   "post_rebase_pin_sha": "156cb02",
-  "rebase_onto": "e0f3183"
+  "rebase_onto": "e0f3183",
+  "fold_commit": "05c70db77f2ed5f99d2b8bee8fc1574ecf8cb941"
 }

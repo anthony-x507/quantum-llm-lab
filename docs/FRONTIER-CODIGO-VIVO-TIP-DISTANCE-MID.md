@@ -1,6 +1,6 @@
 # FRONTIER — tip-distance-mid (5–30 m / 70–100 m outside frozen DZ)
 
-**Status:** **FOLDED** into `frontier/codigo-vivo-tip` @ `PENDING_FOLD` (2026-09-24 14:23:29 ET; pre-rebase `254393e` → post-rebase `3931307`/`156cb02`)  
+**Status:** **FOLDED** into `frontier/codigo-vivo-tip` @ `05c70db` (2026-09-24 14:23:29 ET; pre-rebase `254393e` → post-rebase `3931307`/`156cb02`)  
 **Branch:** `frontier/tip-distance-mid` (rebased; source kept) · tip `frontier/codigo-vivo-tip`  
 **Base tip at fold:** `e0f3183` (post TTI) · originally from `fabef2b` (avoid inverse-r2)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-distance-mid` (Mac-111) · tip-cv `/Users/anthony/Documents/quantum-llm-lab-tip-cv`  

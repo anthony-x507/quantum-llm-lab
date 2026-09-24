@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-distance-mid-fold",
   "written_et": "2026-09-24 14:23:29 ET",
-  "tip_sha": "PENDING_FOLD",
-  "tip_sha_short": "PENDING",
+  "tip_sha": "05c70db77f2ed5f99d2b8bee8fc1574ecf8cb941",
+  "tip_sha_short": "05c70db",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-distance-mid",
   "rebase_onto": "e0f3183",
@@ -99,5 +99,6 @@
     "dz_danger50": "915/915 (100.0%)",
     "tti_scorable": "orig 691/691 \u00b7 d50 725/725",
     "anti_contam": "CLEAN"
-  }
+  },
+  "content_sha": "05c70db77f2ed5f99d2b8bee8fc1574ecf8cb941"
 }

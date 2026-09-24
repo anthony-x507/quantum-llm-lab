@@ -11,7 +11,7 @@
 
 **When:** polish ~14:00 ET · fold 2026-09-24 14:23:29 ET · Mac-111 · rebase `949505b`/`254393e` onto `e0f3183` → `3931307`+`156cb02` FF  
 **Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-DISTANCE-MID.md`  
-**Freeze:** `codigo_vivo_tip_distance_mid_100pct_20260924_142329` · **Frozen SHA:** `PENDING_FOLD`
+**Freeze:** `codigo_vivo_tip_distance_mid_100pct_20260924_142329` · **Frozen SHA:** `05c70db77f2ed5f99d2b8bee8fc1574ecf8cb941` (`05c70db`)
 
 **Δ:** mid_near 5–30 m **100%** (684/684); mid_outer 70–100 m **100%** (374/374; MAE 1.624 m); DZ 30–70 **held 100%** (orig/danger50/mid). Outside frozen DZ only.
 
