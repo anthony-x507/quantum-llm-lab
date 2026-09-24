@@ -1,7 +1,10 @@
 # Estado de avance
 
+## 2026-09-24 — fold tip-hardneg-r9 → codigo-vivo-tip
+Rebase `eec0a8a`/`b33c2b0` onto `3d05cbe` → `ea2f450`+`0096a6e` FF. CPU unified **1.0** (re-smoke); R9 **52/52·44/44**; R1–R8+LP held; collision physics **100%** (n=40); motion **91%**; pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_r9_100pct_20260924_133405`. Motion-r3 **not** folded. See SCOREBOARD + TIP-R9.
+
 ## 2026-09-24 — tip-hardneg-r9 polish @ side branch
-Branch `frontier/tip-hardneg-r9` SHA `ea2f450` (rebased onto tip post collision-n `3d05cbe`; wt `…-tip-hardneg-r9`). R9 router **52/52** · verifier **44/44**; mixed (d) **1.0**; R1–R8+LP held; `ent_never_on_python`. Novel: OpenAPI / Helm / Pulumi / CFN / Bicep / Thrift / Avro / Go build-tag / Java anno / PowerShell / LaTeX / gRPC / Dhall / Justfile / Cedar. See `docs/FRONTIER-CODIGO-VIVO-TIP-R9.md`.
+Branch `frontier/tip-hardneg-r9` SHA `ea2f450` (rebased onto tip post collision-n `3d05cbe`; wt `…-tip-hardneg-r9`). R9 router **52/52** · verifier **44/44**; mixed (d) **1.0**; R1–R8+LP held; `ent_never_on_python`. Novel: OpenAPI / Helm / Pulumi / CFN / Bicep / Thrift / Avro / Go build-tag / Java anno / PowerShell / LaTeX / gRPC / Dhall / Justfile / Cedar. See fold entry above + `docs/FRONTIER-CODIGO-VIVO-TIP-R9.md`.
 
 ## 2026-09-24 — fold tip-collision-n → codigo-vivo-tip
 Rebase `55277d9`/`c79ab1a` onto `763fb8c` → already up to date; FF. CPU unified **1.0** (re-smoke); collision physics **100%** (2850 queries / **40** eval); motion **91%**; R8 52/52·44/44; LP 43/43·32/32; pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_collision_n_100pct_20260924_132559`. See SCOREBOARD + TIP-COLLISION-N.

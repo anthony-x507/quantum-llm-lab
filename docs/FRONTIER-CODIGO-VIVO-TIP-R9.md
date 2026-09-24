@@ -1,9 +1,10 @@
 # Frontier — Código-vivo tip hardneg R9
 
-**Branch:** `frontier/tip-hardneg-r9` (side; not folded yet)  
-**Base tip:** `763fb8c` (post motion-r2 tip freeze)  
-**When:** 2026-09-24 ~1:25–1:30 ET · Mac-111 (`074c6626-…`)  
-**Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r9`  
+**Status:** **FOLDED** into `frontier/codigo-vivo-tip` (rebase `eec0a8a`/`b33c2b0` onto `3d05cbe` → content `ea2f450` / pin `0096a6e` FF)  
+**Branch:** `frontier/tip-hardneg-r9` (rebased; source kept) · tip `frontier/codigo-vivo-tip`  
+**Base tip at fold:** `3d05cbe` (post collision-n) · R9 originally from `763fb8c`  
+**When:** polish ~1:25–1:30 ET · fold 2026-09-24 13:34:05 ET · Mac-111 (`074c6626-…`)  
+**Freeze:** `codigo_vivo_tip_r9_100pct_20260924_133405`  
 **Claim:** NO quantum advantage. Classical heuristic router + `python -I` verifier only.
 
 ## LOCK
@@ -12,7 +13,7 @@
 - `data/lora_adapter/` READ-ONLY. No merge to `main`. No CloudAgent.
 - Keep `ent_never_on_python=true`, `prompt_touches_gt=false`.
 - R1 / R2 / R3 / R4 / R5 / R6 / R7 / R8 / label-protect fixtures must still hold after R9 reinforce.
-- Do **not** touch tip-cv (`/Users/anthony/Documents/quantum-llm-lab-tip-cv`), tip-motion-r2, tip-collision-pred, tip-distance-danger, tip-hardneg-r8.
+- Tip-cv is the fold destination; do **not** touch tip-motion-r3 / tip-collision-n / tip-motion-r2 / tip-distance-danger / tip-collision-pred worktrees (active/avoid).
 
 ## R9 families (≠ R1–R8 / ≠ label-protect)
 
@@ -73,6 +74,18 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `data/freeze_manifests/tip_moe_verifier_polish_r9_100pct_*.json`
 - `docs/FRONTIER-CODIGO-VIVO-TIP-R9.md` (this file)
 
-## Not folded
+## FOLDED into tip
 
-Leave tip-cv / motion-r2 / collision-pred / distance-danger / hardneg-r8 alone until a fold brief. Side branch only.
+**When:** 2026-09-24 13:34:05 ET · Mac-111 (`074c6626-…`)  
+**Method:** rebase `frontier/tip-hardneg-r9` (`eec0a8a` / feat `b33c2b0`) onto tip `3d05cbe` → `ea2f450`+`0096a6e`; FF into tip (STATUS + smoke JSON timestamp conflicts resolved; relative mixed_unified primary kept).  
+**Prior freezes retained (not abandoned):** platform, mlx_r3, post_polish, R5, label_protect, R6, post_od2, R7, **scaffold_motion**, **R8**, **distance_danger**, **collision_pred**, **motion_r2**, **collision_n** `codigo_vivo_tip_collision_n_100pct_20260924_132559`, polish_r9.  
+**Re-smoke:** mixed (d) **1.0**; R9 **52/52·44/44**; R1–R8 **18/18 · 22/22 · 35/35 · 40/40 · 44/44 · 48/48 · 52/52 · 52/52**; R3–R8 verifiers **28/28 · 32/32 · 36/36 · 40/40 · 44/44 · 44/44**; LP **43/43·32/32**; pillars **26/26**; smoke **12/12**; motion coverage **91%**; collision physics **100%** (n=40 / 2850); `wired_to_vlm=true`; `gt_leak=false`; `ent_never_on_python=true`.  
+**Not folded:** tip-motion-r3 (active — do not fold).  
+**Adapters:** `data/lora_adapter/` RO mtime unchanged (2026-09-24 01:51:13).  
+**Freeze:** `codigo_vivo_tip_r9_100pct_20260924_133405`.
+
+## Non-goals / avoided
+
+- No merge to `main`.
+- No write to `data/lora_adapter/`.
+- No tip-motion-r3 / tip-collision-n / tip-motion-r2 / tip-distance-danger / tip-collision-pred worktree writes.

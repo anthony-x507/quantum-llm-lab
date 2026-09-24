@@ -4,6 +4,36 @@
 **Written:** 2026-09-24 12:37:27 ET · Mac-111 (`074c6626-…`) · tip R5 100pct freeze @ `6dce7b6`  
 **Claim scope:** classical MoE router + `python -I` verifier + prior-replay ent/vision + GT-free circuit-graph scaffold on ent + mlx vision parse polish. **NO quantum-advantage claims.**
 
+## R9 TIP FREEZE / FOLD (overall 1.0) — tip HEAD after hardneg-r9 fold
+
+**Freeze id:** `codigo_vivo_tip_r9_100pct_20260924_133405`  
+**Tip HEAD (pre-pin):** fold commit after FF `0096a6e` (rebase `eec0a8a`/`b33c2b0` onto `3d05cbe` → `ea2f450`+`0096a6e`)  
+**When:** 2026-09-24 13:34:05 ET · Mac-111 (`074c6626-…`)  
+**Claim:** NO quantum advantage. Cites tip HEAD after R9 fold; **prior platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2 / R7 / scaffold_motion / R8 / distance_danger / collision_pred / motion_r2 / collision_n freezes NOT abandoned**.
+
+| Surface | Score |
+|---------|-------|
+| mixed (d) unified | **1.0** |
+| hardneg R1–R9 | **18/18 · 22/22 · 35/35 · 40/40 · 44/44 · 48/48 · 52/52 · 52/52 · 52/52** |
+| R3–R9 verifier | **28/28 · 32/32 · 36/36 · 40/40 · 44/44 · 44/44 · 44/44** |
+| label-protect | **43/43 · 32/32** |
+| router smoke / pillars | **12/12 · 26/26** |
+| collision physics (n=40) | **100%** (2850/2850) |
+| motion coverage | **91%** |
+| `ent_never_on_python` | **true** |
+| `wired_to_vlm` | **true** |
+
+**Policy:** Never abandon collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. **Do not fold motion-r3**.
+
+| Artifact | Path |
+|----------|------|
+| Manifest | `data/freeze_manifests/codigo_vivo_tip_r9_100pct_20260924_133405.json` |
+| Metrics | `data/freeze_metrics/codigo_vivo_tip_r9_20260924.json` |
+| Fold metrics | `data/freeze_metrics/codigo_vivo_tip_r9_fold_20260924.json` |
+| R9 doc | `docs/FRONTIER-CODIGO-VIVO-TIP-R9.md` |
+| Re-smoke | PASS · R9 52/52·44/44 · R1–R8+LP held · cpu overall 1.0 |
+
+
 ## Tip composition (merges / folds)
 
 | Source tip | SHA | Role |

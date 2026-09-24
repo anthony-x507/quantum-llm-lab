@@ -1,5 +1,8 @@
 # Estado de avance — Agent Lab / quantum-llm-lab
 
+## 2026-09-24 — fold tip-hardneg-r9 → codigo-vivo-tip
+Rebase onto `3d05cbe` → FF `ea2f450`+`0096a6e`. Mixed (d) **1.0**; R9 **52/52·44/44**; R1–R8+LP held; collision_n/motion_r2 retained. Freeze `codigo_vivo_tip_r9_100pct_20260924_133405`. Motion-r3 not folded. See TIP-R9 + SCOREBOARD.
+
 **Repo:** https://github.com/anthony-x507/quantum-llm-lab  
 **Actualizado:** 2026-09-24 ~10:57 ET  
 **SSOT del plan:** [`PLAN-MAESTRO-PARTE-1.md`](PLAN-MAESTRO-PARTE-1.md)  

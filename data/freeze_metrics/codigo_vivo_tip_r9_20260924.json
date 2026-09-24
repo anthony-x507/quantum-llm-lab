@@ -1,10 +1,13 @@
 {
   "frontier": "codigo-vivo-tip-r9",
-  "written_et": "2026-09-24 1:29:00 ET",
-  "branch": "frontier/tip-hardneg-r9",
-  "base_tip": "763fb8c",
+  "written_et": "2026-09-24 13:34:05 ET",
+  "branch": "frontier/codigo-vivo-tip",
+  "tip_sha": "0096a6ec95d80485ef733fffe06beb626e14b60a",
+  "base_tip": "3d05cbe",
   "r9_router": "52/52",
   "r9_verifier": "44/44",
   "mixed_d_unified": 1.0,
-  "ent_never_on_python": true
+  "ent_never_on_python": true,
+  "fold": true,
+  "freeze_id": "codigo_vivo_tip_r9_100pct_20260924_133405"
 }
