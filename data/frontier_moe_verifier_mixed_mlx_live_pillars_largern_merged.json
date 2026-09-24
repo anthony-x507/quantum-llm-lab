@@ -10,7 +10,7 @@
   "branch": "frontier/tip-mlx-largern",
   "tip_sha_at_run": "01ddabdc8e7f61445d4efa73fc23c3fa8b3903e7",
   "tip_sha_origin": "01ddabdc8e7f61445d4efa73fc23c3fa8b3903e7",
-  "evidence_sha": "f3de7226c0351d5a6a13f8b3029086e61c0c50ef",
+  "evidence_sha": "d65eb69199d67d7b39b2fcb3fc69c55ef9e5f142",
   "base_note": "branched from local tip (R4 folded @ tip); origin tip still ~4e36548; MLX+R3 retained",
   "claims": [
     "NO quantum-advantage claims",
