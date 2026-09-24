@@ -1,0 +1,38 @@
+{
+  "schema": "codigo_vivo_tip_distance_mid_100pct",
+  "frozen_at_et": "2026-09-24 14:00:41 ET",
+  "domain": "codigo_vivo_tip_distance_mid",
+  "pct": 100,
+  "band": "100pct",
+  "git_sha": "949505b9547fb57e16ccdbc0aeedb3e66fd95ef8",
+  "git_sha_short": "949505b",
+  "artifact": "data/video_synth/distance_est/mid/EVAL_MID_CPU.json",
+  "metrics": {
+    "mixed_d_unified": 1.0,
+    "distance_dz_30_70m_original": 1.0,
+    "distance_dz_30_70m_danger50": 1.0,
+    "distance_dz_30_70m_mid": 1.0,
+    "distance_mid_near_5_30m": 1.0,
+    "distance_mid_outer_70_100m": 1.0,
+    "distance_mid_outer_mae_before_m": 2.081,
+    "distance_mid_outer_mae_after_m": 1.624,
+    "distance_future_pred_dz_original": 0.973,
+    "anti_contam": "CLEAN",
+    "floor_held": true
+  },
+  "floors": {
+    "mixed_d_unified": 0.9667,
+    "held": true,
+    "distance_dz_30_70m": 1.0,
+    "distance_mid_near_5_30m": 1.0,
+    "distance_mid_outer_70_100m": 1.0
+  },
+  "policy": "RO data/lora_adapter/; no merge main/tip; DZ freeze retained; no fold inverse-r2/hardneg-r11/motion-r4/vision-ground",
+  "note": "Mid polish outside frozen DZ; base tip fabef2b; freeze when mid bands ≥80% (hit 100%) with DZ held",
+  "retained_freezes": [
+    "codigo_vivo_tip_distance_danger_100pct_20260924_131243",
+    "codigo_vivo_tip_r10_100pct"
+  ],
+  "base_tip": "fabef2b",
+  "branch": "frontier/tip-distance-mid"
+}
