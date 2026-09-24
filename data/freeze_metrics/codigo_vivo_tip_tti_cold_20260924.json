@@ -1,0 +1,19 @@
+{
+  "freeze_id": "codigo_vivo_tip_tti_cold_100pct_20260924_143601",
+  "before_overall_cold": [
+    91.16,
+    91.66
+  ],
+  "after_overall_cold": [
+    94.99,
+    94.82
+  ],
+  "scorable": [
+    100.0,
+    100.0
+  ],
+  "delta_pp": {
+    "orig_overall_cold": 3.83,
+    "danger50_overall_cold": 3.16
+  }
+}

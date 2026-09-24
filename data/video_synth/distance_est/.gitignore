@@ -28,3 +28,5 @@ mid/*
 !mid/EVAL_MID_BEFORE.json
 !mid/EVAL_MID_AFTER.json
 !mid/ANTI_CONTAM_SELFTEST.json
+!EVAL_TTI_COLD_AFTER.json
+!EVAL_TTI_COLD_BEFORE.json

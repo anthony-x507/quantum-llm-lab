@@ -9,7 +9,7 @@ Anti-contam audit every eval; dirty → INVALID.
 Metrics:
   - % correct distance by range band (tol 10% if GT<50m, 20% if 50–200m)
   - % correct in DANGER ZONE 30–70 m (+ delta vs baseline 48.69% ~50m)
-  - % correct TTI (time-to-impact seconds) vs GT — growth%→v_close→tti; bands <2/2-5/5-15/>15s
+  - % correct TTI (time-to-impact seconds) vs GT — growth%→v_close→tti; bands <2/2-5/5-15/>15s; cold-start soft class priors
   - Ablation: tracking±distance; future-pred±distance — overall AND in danger zone
 
 Usage:
@@ -38,6 +38,7 @@ from physics import (
     PRIORITY_DISTANCE_CLASSES,
     band_for_distance,
     closing_speed_tti,
+    cold_start_tti,
     estimate_via_floor_scale,
     gt_tti_from_depth,
     in_danger_zone,
@@ -145,6 +146,12 @@ def estimate_frame(
             )
             if cs.get("tti_s") is not None:
                 method = method + "+tti"
+        elif est is not None:
+            # Cold-start: no prev observation — soft class v_close prior + motion_hint
+            cs = cold_start_tti(float(est), str(o.get("class") or ""), o.get("motion_hint"))
+            if cs.get("tti_s") is not None:
+                method = method + "+tti_cold"
+                para = str(cs.get("signal") or para)
         # Honesty: very low confidence → unknown (excluded from distance %; counted)
         if est is not None and conf < 0.38 and "honesty" in method:
             honesty_unknown = True
@@ -568,7 +575,7 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
         "scale_lock": "FLOOR-SCALE",
         "no_fixed_object_heights": True,
         "soft_size_priors": {"car_length_m": 4.5, "car_height_m": 1.55, "ped_height_m": 1.7},
-"predictor": "floor_scale_parallax_size_prior_closing_speed_v3_mid",
+"predictor": "floor_scale_parallax_size_prior_closing_speed_v4_tti_cold",
         "n_eval_seq": len(eval_ids),
         "distance": {
             "n": n, "correct": c, "pct": pct(n, c),
@@ -616,9 +623,9 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
             "note": "growth_frac → closing_speed_mps → tti_s when approaching",
         },
         "tti": {
-            "predictor": "growth_invariant_dist_rate_fallback_v3",
+            "predictor": "growth_invariant_dist_rate_fallback_v4_tti_cold",
             "tol": {"rel": 0.20, "abs_s": 0.50},
-            "formula": "growth% /frame → v_close → tti_s; size-invariant + dist-rate fallback",
+            "formula": "growth%/frame → v_close → tti_s (scorable); cold-start = soft class v_prior + motion_hint",
             "n": tti_scorable["n"],
             "correct": tti_scorable["correct"],
             "pct": pct(tti_scorable["n"], tti_scorable["correct"]),
@@ -629,7 +636,7 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
                 "pct": pct(tti_acc["n"], tti_acc["correct"]),
                 "missed_emit": tti_acc["missed_emit"],
                 "cold_start_n": tti_acc["cold_start_n"],
-                "note": "cold-start counted as miss (no temporal signal yet)",
+                "note": "cold-start uses soft class closing-speed priors + motion_hint (no temporal growth)",
             },
             "missed_emit": tti_acc["missed_emit"],
             "false_emit": tti_acc["false_emit"],

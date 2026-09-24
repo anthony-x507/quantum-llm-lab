@@ -1,0 +1,86 @@
+{
+  "branch": "frontier/tip-tti-cold",
+  "base_tip_sha": "4bfc92432d7d55ab3cd305bf45d285fa03533117",
+  "worktree_sha_at_probe": "4bfc92432d7d55ab3cd305bf45d285fa03533117",
+  "feat_worktree": "/Users/anthony/Documents/quantum-llm-lab-tip-tti-cold",
+  "ts": "2026-09-24 14:36:01 ET",
+  "predictor": "floor_scale_parallax_size_prior_closing_speed_v4_tti_cold",
+  "tti_predictor": "growth_invariant_dist_rate_fallback_v4_tti_cold",
+  "before": {
+    "orig_overall_incl_cold_pct": 91.16,
+    "danger50_overall_incl_cold_pct": 91.66,
+    "orig_scorable": "100% (691/691)",
+    "danger50_scorable": "100% (725/725)"
+  },
+  "after": {
+    "orig_overall_incl_cold": {
+      "n": 758,
+      "correct": 720,
+      "pct": 94.99,
+      "missed_emit": 0,
+      "cold_start_n": 67,
+      "note": "cold-start uses soft class closing-speed priors + motion_hint (no temporal growth)"
+    },
+    "danger50_overall_incl_cold": {
+      "n": 791,
+      "correct": 750,
+      "pct": 94.82,
+      "missed_emit": 0,
+      "cold_start_n": 66,
+      "note": "cold-start uses soft class closing-speed priors + motion_hint (no temporal growth)"
+    },
+    "orig_scorable": {
+      "pct": 100.0,
+      "frac": "691/691"
+    },
+    "danger50_scorable": {
+      "pct": 100.0,
+      "frac": "725/725"
+    },
+    "orig_dz_tti_pct": 100.0,
+    "danger50_dz_tti_pct": 100.0,
+    "orig_distance_dz_pct": 100.0,
+    "danger50_distance_dz_pct": 100.0,
+    "false_emit": {
+      "orig": 0,
+      "danger50": 0
+    }
+  },
+  "delta_pp": {
+    "orig_overall_cold": 3.83,
+    "danger50_overall_cold": 3.16
+  },
+  "floors_held": {
+    "tti_scorable_100": true,
+    "distance_dz_100": true,
+    "mid_near_outer_100": true,
+    "collision_physics_100": true,
+    "inverse_cv_100": true,
+    "choose_safest_100": true,
+    "motion_100": "untouched (distance_est-only; tip retained 100%)"
+  },
+  "collision_re_smoke": {
+    "collision_physics_pct": 100.0,
+    "inverse_cv_pct": 100.0,
+    "choose_safest_pct": 100.0,
+    "n": 2850
+  },
+  "method": {
+    "cold_start": "soft class closing-speed priors + motion_hint==approach; near movable short TTI",
+    "priors_mps": {
+      "car": 18.0,
+      "pedestrian": 8.0,
+      "light": 6.0,
+      "intersection": 6.0,
+      "stop_sign": 2.4
+    },
+    "near_m": 8.0,
+    "near_tti_s": 0.8
+  },
+  "plateau_note": "Residual cold gap without temporal signal or GT leak \u2014 class prior cannot resolve multi-modal v_close.",
+  "adapters_ro": true,
+  "adapter_gitkeep_mtime": 1790274737.763645,
+  "no_fold": true,
+  "freeze_id": "codigo_vivo_tip_tti_cold_100pct_20260924_143601",
+  "anti_contam": "CLEAN"
+}

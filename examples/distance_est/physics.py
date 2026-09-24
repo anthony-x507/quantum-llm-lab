@@ -13,6 +13,8 @@ Pipeline:
      height) — NOT for lights (still floor-span / 3–5 m vary).
   5. Fine frame-to-frame parallax triangulates mid-band (30–70 m DANGER ZONE).
   6. Closing-speed + time-to-impact from apparent growth rate.
+  7. Cold-start TTI (no prev frame): soft class closing-speed priors +
+     obs-channel motion_hint only (never GT meters).
 
 GT meters exist only in synthetic sidecars; never in inference prompts.
 """
@@ -469,6 +471,66 @@ def closing_speed_tti(
                 out["tti_s"] = round(float(d_est) / v_close_d, 3)
                 out["tti_source"] = "dist_rate"
                 return out
+    return out
+
+
+# Soft closing-speed priors for cold-start TTI (no temporal signal).
+# Obs-channel only: class + motion_hint + d_est. Never GT / v_depth / sidecars.
+# Tuned as soft constants (train-informed medians); not eval-GT at inference.
+COLD_V_CLOSE_MPS = {
+    "car": 18.0,
+    "pedestrian": 8.0,
+    "light": 6.0,
+    "intersection": 6.0,
+    "stop_sign": 2.4,
+}
+COLD_NEAR_M = 8.0          # near movable: absolute TTI tol (±0.5s) is generous
+COLD_NEAR_TTI_S = 0.8      # short-horizon prior for near approach
+
+
+def cold_start_tti(
+    d_est: float,
+    cls: str,
+    motion_hint: str | None,
+) -> dict[str, float | str | None]:
+    """Emit TTI on first sighting when motion_hint says approach.
+
+    Without a previous observation there is no growth/dist-rate signal.
+    Soft class closing-speed priors give a best-effort TTI = d_est / v_prior.
+    Near movables use a short absolute TTI (tol ±0.5 s covers sub-second GT).
+    Recede / stable / unknown → abstain (avoid false_emit).
+    """
+    out: dict[str, float | str | None] = {
+        "growth_frac": None,
+        "closing_speed_mps": None,
+        "tti_s": None,
+        "signal": "unknown",
+        "tti_source": None,
+    }
+    if d_est <= 0:
+        return out
+    hint = (motion_hint or "").strip().lower()
+    if hint != "approach":
+        out["signal"] = hint or "unknown"
+        return out
+    out["signal"] = "approach"
+    # Near car/ped: absolute tolerance dominates; emit short TTI
+    if cls in ("car", "pedestrian") and float(d_est) < COLD_NEAR_M:
+        tti = float(COLD_NEAR_TTI_S)
+        v_close = float(d_est) / tti
+        out["closing_speed_mps"] = round(v_close, 4)
+        out["tti_s"] = round(tti, 3)
+        out["tti_source"] = "cold_near_prior"
+        return out
+    v_prior = COLD_V_CLOSE_MPS.get(cls)
+    if v_prior is None or v_prior <= 0:
+        return out
+    tti = float(d_est) / float(v_prior)
+    if tti <= 0:
+        return out
+    out["closing_speed_mps"] = round(float(v_prior), 4)
+    out["tti_s"] = round(float(tti), 3)
+    out["tti_source"] = "cold_class_prior"
     return out
 
 
