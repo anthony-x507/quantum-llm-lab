@@ -648,7 +648,13 @@ def main(argv: list[str] | None = None) -> int:
         elif mode == "cpu-eval":
             out_path = ROOT / "data" / "frontier_moe_verifier_cpu_n.json"
         elif mode == "hardneg-cpu":
-            out_path = ROOT / "data" / "frontier_moe_verifier_hardneg.json"
+            hp = str(args.hardneg_items).lower() + str(args.hardneg_router).lower()
+            if 'r3' in hp:
+                out_path = ROOT / "data" / "frontier_moe_verifier_hardneg_r3.json"
+            elif 'r2' in hp:
+                out_path = ROOT / "data" / "frontier_moe_verifier_hardneg_r2.json"
+            else:
+                out_path = ROOT / "data" / "frontier_moe_verifier_hardneg.json"
         else:
             out_path = SMOKE_OUT
 

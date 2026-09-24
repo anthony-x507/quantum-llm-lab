@@ -1,0 +1,157 @@
+{
+  "frontier": "codigo-vivo-tip-r3",
+  "written_et": "2026-09-24 11:20:00 ET",
+  "base_tip_sha": "f0da3e70eba5bebd82d9d07bf2668e042ec250f1",
+  "branch": "frontier/codigo-vivo-tip",
+  "policy": "R3 NEW hardneg n>=24; NEVER drop freeze floor overall>=0.967 (prefer 1.0). RO data/lora_adapter/. No merge main.",
+  "before": {
+    "overall_d_unified": 1.0,
+    "hardneg_r1_router": "18/18",
+    "hardneg_r2_router": "22/22",
+    "note": "tip @ f0da3e7 MFV overall 1.0 prior to R3"
+  },
+  "after": {
+    "overall_d_unified": 1.0,
+    "router_pillars": "26/26",
+    "router_hardneg_mixed_embedded": "18/18",
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false,
+    "circuit_scaffold_default": true,
+    "scoreboard": {
+      "a_baseline": 0.3333,
+      "b_moe_alone": 0.6667,
+      "c_verifier_on_python": 0.6667,
+      "d_unified": 1.0
+    },
+    "delta_moe_overall": 0.3334
+  },
+  "hardneg_r3_router": {
+    "score": "35/35",
+    "rate": 1.0,
+    "n": 35,
+    "ent_never_on_python": true,
+    "by_family": {
+      "cli_flag_quantum": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      },
+      "regex_token_distract": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      },
+      "http_path_qubit": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "type_hint_circuit": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "unittest_assert_bell": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "logline_hadamard": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "ascii_diagram_no_image": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "finance_quantum_leap": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "env_var_n_qubits": {
+        "n": 2,
+        "hits": 2,
+        "rate": 1.0
+      },
+      "cron_cx_job": {
+        "n": 2,
+        "hits": 2,
+        "rate": 1.0
+      },
+      "ent_control_r3": {
+        "n": 2,
+        "hits": 2,
+        "rate": 1.0
+      },
+      "vision_control_r3": {
+        "n": 2,
+        "hits": 2,
+        "rate": 1.0
+      },
+      "base_control_r3": {
+        "n": 1,
+        "hits": 1,
+        "rate": 1.0
+      }
+    },
+    "pre_reinforce": {
+      "score": "33/35",
+      "rate": 0.9429
+    },
+    "post_reinforce": {
+      "score": "35/35",
+      "rate": 1.0
+    }
+  },
+  "hardneg_r3_verifier": {
+    "router_smoke": "12/12",
+    "hardneg_router": "35/35",
+    "hardneg_router_rate": 1.0,
+    "verifier_alone_loop": {
+      "n": 28,
+      "rate": 1.0,
+      "prompt_touches_gt": false
+    },
+    "unified_loop": {
+      "n": 28,
+      "rate": 1.0,
+      "prompt_touches_gt": false
+    },
+    "ent_never_on_python": true,
+    "pre_reinforce": {
+      "verifier_loop": 0.6429,
+      "unified_loop": 0.6538
+    },
+    "post_reinforce": {
+      "verifier_loop": 1.0,
+      "unified_loop": 1.0
+    }
+  },
+  "hardneg_r1_router_held": {
+    "score": "18/18",
+    "rate": 1.0
+  },
+  "hardneg_r2_router_held": {
+    "score": "22/22",
+    "rate": 1.0
+  },
+  "reinforce_applied": true,
+  "reinforce_layers": [
+    "router: ent_json_ask — bare n_qubits/N_QUBITS in strings no longer forces ent over python; require JSON-reply intent",
+    "proposer: def return-annot; argparse/import/assign embeds; sum([list]); prints sum([...]); len(__import__('re').findall)"
+  ],
+  "floor_held": true,
+  "floor_value": 1.0,
+  "artifacts": [
+    "data/bench_live/hardneg_r3_mixed_router.json",
+    "data/bench_live/hardneg_r3_python_items.json",
+    "data/frontier_moe_dual_lane_hardneg_r3.json",
+    "data/frontier_moe_verifier_hardneg_r3.json",
+    "data/frontier_moe_verifier_mixed_cpu.json",
+    "data/frontier_moe_verifier_mixed_unified.json",
+    "docs/FRONTIER-CODIGO-VIVO-TIP-R3.md"
+  ]
+}

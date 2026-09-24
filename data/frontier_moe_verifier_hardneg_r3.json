@@ -1,0 +1,2240 @@
+{
+  "frontier": "C3-moe-verifier-codigo-vivo",
+  "written": "2026-09-24 11:17:22",
+  "mode": "hardneg-cpu",
+  "router_method": "heuristic",
+  "claims": [
+    "NO quantum-advantage claims",
+    "MoE routing usability + classical python -I exec oracle only"
+  ],
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "gt_never_in_inference_prompts": true,
+    "ent_never_on_python": true,
+    "rule": "revision gets stderr only; expected_stdout harness-only",
+    "lock": "docs/LOCK-ANTI-CONTAMINATION.md"
+  },
+  "ro_lock": {
+    "ro_paths_checked": [
+      "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter",
+      "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter"
+    ],
+    "script_writes_to_lora_adapter": false,
+    "policy": "READ-ONLY; never overwrite data/lora_adapter/"
+  },
+  "adapter_map": {
+    "ent": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+    "python": null,
+    "vision": null,
+    "base": null
+  },
+  "router_smoke": {
+    "method": "heuristic",
+    "n": 12,
+    "hits": 12,
+    "misses": 0,
+    "score": "12/12",
+    "rows": [
+      {
+        "id": "ent_01",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+        "prompt_preview": "Propose a quantum circuit with n_qubits and gates for this entanglement scene. R",
+        "adapter_resolved": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2"
+      },
+      {
+        "id": "ent_02",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+        "prompt_preview": "Eres un asistente de circuitos cuánticos. Usa PennyLane gates h,x,cx. Escena de ",
+        "adapter_resolved": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2"
+      },
+      {
+        "id": "ent_03",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+        "prompt_preview": "Build a Bell-pair circuit: Hadamard then CX. Return n_qubits and gates list.",
+        "adapter_resolved": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2"
+      },
+      {
+        "id": "py_01",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write a Python program that prints the integer result of 47 + 18. Output ONLY th",
+        "adapter_resolved": null,
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "py_02",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints the factorial of 6 as an integer. ONLY code.",
+        "adapter_resolved": null,
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "py_03",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "def solve():\n    print(sum(range(1,11)))\n# complete this Python script",
+        "adapter_resolved": null,
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "vis_01",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Look at the image. Solve the arithmetic problem. Reply with ONLY the final integ",
+        "adapter_resolved": null
+      },
+      {
+        "id": "vis_02",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Mira la imagen del frame. ¿Cuántos objetos hay en la visión?",
+        "adapter_resolved": null
+      },
+      {
+        "id": "vis_03",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Describe the objects in this video frame image (png). Reply briefly.",
+        "adapter_resolved": null
+      },
+      {
+        "id": "base_01",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Hello! How are you today?",
+        "adapter_resolved": null
+      },
+      {
+        "id": "base_02",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Thanks for the help earlier. What is the weather like in general terms?",
+        "adapter_resolved": null
+      },
+      {
+        "id": "base_03",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Tell me a short fun fact about cats.",
+        "adapter_resolved": null
+      }
+    ],
+    "ent_never_on_python": true
+  },
+  "ent_vision_routing": {
+    "note": "Ent/Vision: adapter selection READ-ONLY; no pillar re-run in CPU smoke",
+    "rows": [
+      {
+        "id": "ent_sample",
+        "domain": "ent",
+        "prompt": "Eres un asistente de circuitos cuánticos. Mira la imagen. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx.",
+        "routed_lane": "ent",
+        "adapter_ro": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+        "adapter_write": false,
+        "circuit_graph_scaffold": null
+      },
+      {
+        "id": "vis_sample",
+        "domain": "vision",
+        "prompt": "Look at the image. Solve the arithmetic problem. Reply with ONLY the final integer answer, no words.",
+        "routed_lane": "vision",
+        "adapter_ro": null,
+        "adapter_write": false,
+        "circuit_graph_scaffold": null
+      }
+    ],
+    "prior_live_bench": {
+      "source": "frontier_moe_dual_lane_smoke.json",
+      "python_solve_rate": 0.0625,
+      "ent_label_acc": 1.0,
+      "vision_accuracy": 0.9,
+      "gate_pass": true,
+      "n_python": 16,
+      "n_ent": 12,
+      "n_vision": 10
+    }
+  },
+  "python_paths": {
+    "n_items": 28,
+    "proposer": "heuristic",
+    "router_method": "heuristic",
+    "rounds_max": 2,
+    "paths": {
+      "a_single_shot_no_moe": {
+        "path": "a_single_shot_no_moe",
+        "n": 28,
+        "solve_rate_single": 0.0,
+        "solve_rate_loop": 0.0,
+        "delta_solve_rate": 0.0,
+        "solved_single": 0,
+        "solved_loop": 0,
+        "repair_success_rate": 0.0,
+        "repair_helped_n": 0,
+        "failed_single_n": 28,
+        "prompt_touches_gt": false,
+        "prompt_touches_gt_locked_false": true,
+        "details": [
+          {
+            "id": "r3v_cli_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_cli_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_cli_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_cli_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_re_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_re_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_re_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_re_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_http_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_http_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_http_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_type_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_type_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_type_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_ut_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_ut_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_ut_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_log_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_log_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_log_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_ascii_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_ascii_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_fin_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_fin_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_env_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_env_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_cron_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_cron_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          }
+        ]
+      },
+      "b_moe_alone": {
+        "path": "b_moe_alone",
+        "n": 28,
+        "solve_rate_single": 0.0,
+        "solve_rate_loop": 0.0,
+        "delta_solve_rate": 0.0,
+        "solved_single": 0,
+        "solved_loop": 0,
+        "repair_success_rate": 0.0,
+        "repair_helped_n": 0,
+        "failed_single_n": 28,
+        "prompt_touches_gt": false,
+        "prompt_touches_gt_locked_false": true,
+        "details": [
+          {
+            "id": "r3v_cli_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_cli_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_cli_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_cli_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_re_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_re_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_re_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_re_04",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_http_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_http_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_http_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_type_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_type_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_type_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_ut_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_ut_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_ut_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_log_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_log_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_log_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_ascii_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_ascii_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_fin_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_fin_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_env_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_env_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_cron_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r3v_cron_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          }
+        ],
+        "n_items_total": 28,
+        "n_routed_python": 28,
+        "n_routed_away": 0,
+        "solve_rate_on_python_lane": 0.0,
+        "routing": [
+          {
+            "id": "r3v_cli_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_cli_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_cli_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_cli_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_re_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_re_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_re_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_re_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_http_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_http_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_http_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_type_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_type_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_type_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_ut_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_ut_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_ut_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_log_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_log_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_log_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_ascii_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_ascii_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_fin_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_fin_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_env_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_env_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_cron_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_cron_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          }
+        ]
+      },
+      "c_verifier_alone": {
+        "path": "c_verifier_alone",
+        "n": 28,
+        "solve_rate_single": 0.0,
+        "solve_rate_loop": 1.0,
+        "delta_solve_rate": 1.0,
+        "solved_single": 0,
+        "solved_loop": 28,
+        "repair_success_rate": 1.0,
+        "repair_helped_n": 28,
+        "failed_single_n": 28,
+        "prompt_touches_gt": false,
+        "prompt_touches_gt_locked_false": true,
+        "details": [
+          {
+            "id": "r3v_cli_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_cli_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_cli_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_cli_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_re_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_re_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_re_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_re_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_http_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_http_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_http_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_type_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_type_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_type_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_ut_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_ut_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_ut_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_log_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_log_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_log_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_ascii_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_ascii_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_fin_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_fin_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_env_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_env_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_cron_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_cron_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          }
+        ]
+      },
+      "d_moe_verifier_unified": {
+        "path": "d_moe_verifier_unified",
+        "n": 28,
+        "solve_rate_single": 0.0,
+        "solve_rate_loop": 1.0,
+        "delta_solve_rate": 1.0,
+        "solved_single": 0,
+        "solved_loop": 28,
+        "repair_success_rate": 1.0,
+        "repair_helped_n": 28,
+        "failed_single_n": 28,
+        "prompt_touches_gt": false,
+        "prompt_touches_gt_locked_false": true,
+        "details": [
+          {
+            "id": "r3v_cli_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_cli_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_cli_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_cli_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_re_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_re_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_re_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_re_04",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_http_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_http_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_http_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_type_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_type_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_type_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_ut_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_ut_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_ut_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_log_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_log_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_log_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_ascii_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_ascii_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_fin_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_fin_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_env_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_env_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_cron_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r3v_cron_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          }
+        ],
+        "n_items_total": 28,
+        "n_routed_python": 28,
+        "n_routed_away": 0,
+        "solve_rate_on_python_lane": 1.0,
+        "routing": [
+          {
+            "id": "r3v_cli_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_cli_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_cli_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_cli_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_re_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_re_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_re_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_re_04",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_http_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_http_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_http_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_type_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_type_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_type_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_ut_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_ut_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_ut_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_log_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_log_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_log_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_ascii_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_ascii_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_fin_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_fin_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_env_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_env_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_cron_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r3v_cron_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          }
+        ]
+      }
+    },
+    "comparison_table": [
+      {
+        "path": "baseline_single_no_moe",
+        "n": 28,
+        "metric": "solve_rate_single",
+        "rate": 0.0,
+        "delta_vs_baseline": 0.0,
+        "repair_success_rate": 0.0,
+        "prompt_touches_gt": false
+      },
+      {
+        "path": "moe_alone_python_lane",
+        "n": 28,
+        "metric": "solve_rate_single",
+        "rate": 0.0,
+        "delta_vs_baseline": 0.0,
+        "repair_success_rate": 0.0,
+        "prompt_touches_gt": false
+      },
+      {
+        "path": "verifier_alone",
+        "n": 28,
+        "metric": "solve_rate_loop",
+        "rate": 1.0,
+        "delta_vs_baseline": 1.0,
+        "repair_success_rate": 1.0,
+        "prompt_touches_gt": false
+      },
+      {
+        "path": "moe_verifier_unified_python_lane",
+        "n": 28,
+        "metric": "solve_rate_loop",
+        "rate": 1.0,
+        "delta_vs_baseline": 1.0,
+        "repair_success_rate": 1.0,
+        "prompt_touches_gt": false
+      }
+    ],
+    "prompt_touches_gt": false,
+    "ent_never_on_python": true
+  },
+  "priors_from_shipped_json": {
+    "moe_alone": {
+      "source": "frontier_moe_dual_lane_smoke.json",
+      "python_solve_rate": 0.0625,
+      "ent_label_acc": 1.0,
+      "vision_accuracy": 0.9,
+      "gate_pass": true,
+      "n_python": 16,
+      "n_ent": 12,
+      "n_vision": 10
+    },
+    "baseline_no_moe": {
+      "source": "frontier_moe_dual_lane_smoke.json#gate",
+      "python_solve_rate": 0.0625,
+      "vision_accuracy": 0.9,
+      "note": "single-shot base (no MoE) from prior Código-vivo baseline gate"
+    },
+    "verifier_alone_replay_n16": {
+      "source": "frontier_python_verifier_replay_n16.json",
+      "n": 16,
+      "solve_rate_single": 0.0625,
+      "solve_rate_loop": 0.6875,
+      "repair_success_rate": 0.6666666666666666,
+      "prompt_touches_gt": false
+    },
+    "verifier_alone_mlx_smoke": {
+      "source": "frontier_python_verifier_mlx_smoke_studio.json",
+      "n": 3,
+      "solve_rate_single": 0.0,
+      "solve_rate_loop": 1.0,
+      "repair_success_rate": 1.0,
+      "prompt_touches_gt": false
+    }
+  },
+  "mlx_status": null,
+  "notes": [],
+  "hardneg_router": {
+    "method": "heuristic",
+    "n": 35,
+    "hits": 35,
+    "misses": 0,
+    "score": "35/35",
+    "rate": 1.0,
+    "by_family": {
+      "cli_flag_quantum": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      },
+      "regex_token_distract": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      },
+      "http_path_qubit": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "type_hint_circuit": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "unittest_assert_bell": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "logline_hadamard": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "ascii_diagram_no_image": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "finance_quantum_leap": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "env_var_n_qubits": {
+        "n": 2,
+        "hits": 2,
+        "rate": 1.0
+      },
+      "cron_cx_job": {
+        "n": 2,
+        "hits": 2,
+        "rate": 1.0
+      },
+      "ent_control_r3": {
+        "n": 2,
+        "hits": 2,
+        "rate": 1.0
+      },
+      "vision_control_r3": {
+        "n": 2,
+        "hits": 2,
+        "rate": 1.0
+      },
+      "base_control_r3": {
+        "n": 1,
+        "hits": 1,
+        "rate": 1.0
+      }
+    },
+    "ent_never_on_python": true,
+    "rows": [
+      {
+        "id": "r3_cli_01",
+        "family": "cli_flag_quantum",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that uses argparse with --qubits as a string flag name only, then p",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_cli_02",
+        "family": "cli_flag_quantum",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "import argparse\np = argparse.ArgumentParser()\np.add_argument('--measure', type=i",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_cli_03",
+        "family": "cli_flag_quantum",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write a Python program that prints 2**6. Mentions of --hadamard or --cx flags in",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_cli_04",
+        "family": "cli_flag_quantum",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python: print(sum(range(1, 6))). Ignore any CLI help text that says 'entan",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_re_01",
+        "family": "regex_token_distract",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len(__import__('re').findall(r'qubit', 'a qubit and ano",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_re_02",
+        "family": "regex_token_distract",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "import re\nprint(len(re.findall(r'gate', 'the garden gate is closed')))\n# 'gate' ",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_re_03",
+        "family": "regex_token_distract",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 'Bell'.count('l'). Pattern matching on the word Bell is",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_re_04",
+        "family": "regex_token_distract",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints int(9*8). A comment may contain /hadamard|/cx|/ry as re",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_http_01",
+        "family": "http_path_qubit",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('/api/v1/qubit/status'.split('/')). URL path segmen",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_http_02",
+        "family": "http_path_qubit",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python: print('https://example.com/circuit/report'.count('/')). HTTP path ",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_http_03",
+        "family": "http_path_qubit",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "import urllib.parse\nprint(urllib.parse.urlparse('http://x/bell').path)\n# path '/",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_type_01",
+        "family": "type_hint_circuit",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python:\ndef run(x: 'QuantumCircuit') -> int:\n    return 5\nprint(run(None))",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_type_02",
+        "family": "type_hint_circuit",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write a Python program that prints 11+4. Type annotations mentioning Unitary or ",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_type_03",
+        "family": "type_hint_circuit",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "def n_qubits_label() -> str:\n    return 'n_qubits'\nprint(len(n_qubits_label()))\n",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_ut_01",
+        "family": "unittest_assert_bell",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 1 if (2+2==4) else 0. Variable names like bell_pair in ",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_ut_02",
+        "family": "unittest_assert_bell",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "bell = [1, 1, 0, 0]\nprint(sum(bell))\n# list named bell is classical data for a u",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_ut_03",
+        "family": "unittest_assert_bell",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len(['hadamard_test', 'cx_test']). Test suite names onl",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_log_01",
+        "family": "logline_hadamard",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('INFO hadamard gate applied (metaphor)'). Logging t",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_log_02",
+        "family": "logline_hadamard",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "msg = 'cx failed on worker-3'\nprint(msg.count('c'))\n# log line string; no pennyl",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_log_03",
+        "family": "logline_hadamard",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 100-37. Log noise may say 'entanglement score dropped' ",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_ascii_01",
+        "family": "ascii_diagram_no_image",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Text-only ASCII diagram (no image file, no png):\n /\\\n/  \\\nWrite Python that prin",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_ascii_02",
+        "family": "ascii_diagram_no_image",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Look at the ASCII whiteboard sketch described in text only (sin imagen, no photo",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r3_ascii_03",
+        "family": "ascii_diagram_no_image",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 3. The 'diagram' and 'chalkboard' words refer to an ASC",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_fin_01",
+        "family": "finance_quantum_leap",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints int(1.05**3 * 100). 'Quantum leap' in the earnings call",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_fin_02",
+        "family": "finance_quantum_leap",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python: print(sum([10, 20, 30])). Portfolio 'entanglement' risk is jargon ",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_fin_03",
+        "family": "finance_quantum_leap",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Thanks for the market chat! Any weather idioms for a 'quantum leap' day? No code",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r3_env_01",
+        "family": "env_var_n_qubits",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('N_QUBITS'). Environment variable name as a string ",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_env_02",
+        "family": "env_var_n_qubits",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "import os\nprint(int(os.environ.get('DUMMY_QUBIT_COUNT', '8')))\n# reading an env ",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_cron_01",
+        "family": "cron_cx_job",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('0 * * * * cx_cleanup'). Cron job named cx_cleanup ",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_cron_02",
+        "family": "cron_cx_job",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 5*5. Scheduler labels like 'bell_nightly' are distracto",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r3_ent_01",
+        "family": "ent_control_r3",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+        "prompt_preview": "Propose a quantum circuit with n_qubits and gates for a Bell-pair entanglement s",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r3_ent_02",
+        "family": "ent_control_r3",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+        "prompt_preview": "Build a PennyLane circuit: Hadamard then CX on qubits 0,1. Return valid JSON wit",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r3_vis_01",
+        "family": "vision_control_r3",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Look at the image. In the photo of the dashboard, how many red alerts are visibl",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r3_vis_02",
+        "family": "vision_control_r3",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Observa la imagen adjunta. En la foto del panel, ¿cuántos botones verdes hay? Re",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r3_base_01",
+        "family": "base_control_r3",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Hello! Thanks for the earlier chat about hobbies. Any fun cooking tips? No code,",
+        "ent_adapter_blocked": false
+      }
+    ],
+    "fixture_path": "data/bench_live/hardneg_r3_mixed_router.json",
+    "anti_contamination": {
+      "expected_lane_harness_only": true,
+      "gt_never_in_route_api": true
+    }
+  },
+  "hardneg_delta": {
+    "router_rate": 1.0,
+    "router_score": "35/35",
+    "ent_never_on_python": true,
+    "vs_freeze_floor": "hold"
+  }
+}

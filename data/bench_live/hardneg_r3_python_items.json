@@ -1,0 +1,205 @@
+{
+  "n": 28,
+  "kind": "hardneg_r3_python_items",
+  "created": "2026-09-24 11:15:00 ET",
+  "round": 3,
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R3.md",
+  "items": [
+    {
+      "id": "r3v_cli_01",
+      "kind": "cli_flag_quantum",
+      "prompt": "Write Python that prints int(3*4). Argparse docs mentioning --qubits are distractors. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_cli_02",
+      "kind": "cli_flag_quantum",
+      "prompt": "import argparse\np = argparse.ArgumentParser()\np.add_argument('--measure', type=int, default=7)\nprint(p.parse_args([]).measure)\n# CLI flag, not quantum measure. ONLY code.",
+      "expected_stdout": "7\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_cli_03",
+      "kind": "cli_flag_quantum",
+      "prompt": "Write a Python program that prints 2**6. Mentions of --hadamard flags are distractors. ONLY code.",
+      "expected_stdout": "64\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_cli_04",
+      "kind": "cli_flag_quantum",
+      "prompt": "Write Python that prints sum(range(1, 6)). Ignore 'entangle workers' help text. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_re_01",
+      "kind": "regex_token_distract",
+      "prompt": "Write Python that prints len(__import__('re').findall(r'qubit', 'a qubit and another qubit')). ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_re_02",
+      "kind": "regex_token_distract",
+      "prompt": "import re\nprint(len(re.findall(r'gate', 'the garden gate is closed')))\n# regex token not quantum gate. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_re_03",
+      "kind": "regex_token_distract",
+      "prompt": "Write Python that prints 'Bell'.count('l'). ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_re_04",
+      "kind": "regex_token_distract",
+      "prompt": "Write Python that prints int(9*8). Regex alternatives /hadamard|/cx are distractors. ONLY code.",
+      "expected_stdout": "72\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_http_01",
+      "kind": "http_path_qubit",
+      "prompt": "Write Python that prints len('/api/v1/qubit/status'.split('/')). ONLY code.",
+      "expected_stdout": "5\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_http_02",
+      "kind": "http_path_qubit",
+      "prompt": "Write Python that prints 'https://example.com/circuit/report'.count('/'). ONLY code.",
+      "expected_stdout": "4\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_http_03",
+      "kind": "http_path_qubit",
+      "prompt": "import urllib.parse\nprint(urllib.parse.urlparse('http://x/bell').path)\n# URL path, not Bell-pair. ONLY code.",
+      "expected_stdout": "/bell\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_type_01",
+      "kind": "type_hint_circuit",
+      "prompt": "def run(x: 'QuantumCircuit') -> int:\n    return 5\nprint(run(None))\n# unused type-hint string. ONLY code.",
+      "expected_stdout": "5\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_type_02",
+      "kind": "type_hint_circuit",
+      "prompt": "Write a Python program that prints 11+4. Type hints with Unitary/Circuit are distractors. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_type_03",
+      "kind": "type_hint_circuit",
+      "prompt": "def n_qubits_label() -> str:\n    return 'n_qubits'\nprint(len(n_qubits_label()))\n# string label only. ONLY code.",
+      "expected_stdout": "8\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_ut_01",
+      "kind": "unittest_assert_bell",
+      "prompt": "Write Python that prints 1 if (2+2==4) else 0. Variable bell_pair is a distractor. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_ut_02",
+      "kind": "unittest_assert_bell",
+      "prompt": "bell = [1, 1, 0, 0]\nprint(sum(bell))\n# classical list for unit test. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_ut_03",
+      "kind": "unittest_assert_bell",
+      "prompt": "Write Python that prints len(['hadamard_test', 'cx_test']). Test names only. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_log_01",
+      "kind": "logline_hadamard",
+      "prompt": "Write Python that prints len('INFO hadamard gate applied (metaphor)'). ONLY code.",
+      "expected_stdout": "37\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_log_02",
+      "kind": "logline_hadamard",
+      "prompt": "msg = 'cx failed on worker-3'\nprint(msg.count('c'))\n# log line. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_log_03",
+      "kind": "logline_hadamard",
+      "prompt": "Write Python that prints 100-37. Log noise about entanglement is a distractor. ONLY code.",
+      "expected_stdout": "63\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_ascii_01",
+      "kind": "ascii_diagram_no_image",
+      "prompt": "Text-only ASCII (no image file): Write Python that prints '/\\\\'.count('/'). ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_ascii_03",
+      "kind": "ascii_diagram_no_image",
+      "prompt": "Write Python that prints 3. Words diagram/chalkboard refer to ASCII mock — without any picture. ONLY code.",
+      "expected_stdout": "3\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_fin_01",
+      "kind": "finance_quantum_leap",
+      "prompt": "Write Python that prints int(1.05**3 * 100). Quantum leap is a finance metaphor. ONLY code.",
+      "expected_stdout": "115\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_fin_02",
+      "kind": "finance_quantum_leap",
+      "prompt": "Write Python that prints sum([10, 20, 30]). Portfolio entanglement is jargon. ONLY code.",
+      "expected_stdout": "60\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_env_01",
+      "kind": "env_var_n_qubits",
+      "prompt": "Write Python that prints len('N_QUBITS'). Env var name as string. ONLY code.",
+      "expected_stdout": "8\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_env_02",
+      "kind": "env_var_n_qubits",
+      "prompt": "import os\nprint(int(os.environ.get('DUMMY_QUBIT_COUNT', '8')))\n# env default. ONLY code.",
+      "expected_stdout": "8\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_cron_01",
+      "kind": "cron_cx_job",
+      "prompt": "Write Python that prints len('0 * * * * cx_cleanup'). Cron name not CNOT. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r3v_cron_02",
+      "kind": "cron_cx_job",
+      "prompt": "Write Python that prints 5*5. Scheduler label bell_nightly is a distractor. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    }
+  ]
+}

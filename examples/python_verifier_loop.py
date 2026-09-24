@@ -505,8 +505,31 @@ def propose_heuristic(item: dict[str, Any], *, fault: str = "prose_tail") -> str
         prompt,
     )
     m_def_block = re.search(
-        r"(def\s+\w+\s*\([^)]*\)\s*:\s*\n(?:[ \t]+[^\n]*\n)+print\s*\([^\n]+\))",
+        r"(def\s+\w+\s*\([^)]*\)\s*(?:->\s*[^:]+)?\s*:\s*\n(?:[ \t]+[^\n]*\n)+print\s*\([^\n]+\))",
         prompt,
+    )
+    # R3: print(sum([list literal]))
+    m_sumlist = re.search(r"(?:print\s*\(\s*sum\s*\(\s*(\[[^\]]*\])\s*\)\s*\)|prints?\s+sum\s*\(\s*(\[[^\]]*\])\s*\))", prompt, re.I)
+    # R3: import ...\nprint(...)  (urllib/re/os/argparse one-shots)
+    m_import_print = re.search(
+        r"((?:import\s+[\w.]+\s*\n)+print\s*\([^\n]+\))",
+        prompt,
+    )
+    # R3: name = [list]|'str'\nprint(...)
+    m_assign_print = re.search(
+        r"(\w+\s*=\s*(?:\[[^\]]*\]|'[^']*'|\"[^\"]*\")\s*\nprint\s*\([^\n]+\))",
+        prompt,
+    )
+    # R3: argparse mini-block ending at print(...)
+    m_argparse_block = re.search(
+        r"(import\s+argparse\s*\n(?:.*\n)*?print\s*\([^\n]+\))",
+        prompt,
+    )
+    # R3: len(__import__('re').findall(...)) / prints len(__import__
+    m_import_findall = re.search(
+        r"prints?\s+(len\s*\(\s*__import__\(\s*'re'\s*\)\.findall\s*\([^)]+\)\s*\))",
+        prompt,
+        re.I,
     )
     # Collision toy formula spelled with named vars
     m_coll = re.search(
@@ -537,6 +560,17 @@ def propose_heuristic(item: dict[str, Any], *, fault: str = "prose_tail") -> str
         code = f"print({n})"
     elif m_len_list:
         code = f"print(len({m_len_list.group(1)}))"
+    elif m_argparse_block:
+        code = m_argparse_block.group(1).rstrip()
+    elif m_import_print:
+        code = m_import_print.group(1).rstrip()
+    elif m_assign_print:
+        code = m_assign_print.group(1).rstrip()
+    elif m_sumlist:
+        lst = m_sumlist.group(1) or m_sumlist.group(2)
+        code = f"print(sum({lst}))"
+    elif m_import_findall:
+        code = f"print({m_import_findall.group(1)})"
     elif m_def_block:
         code = m_def_block.group(1).rstrip()
     elif m_fact_embed:

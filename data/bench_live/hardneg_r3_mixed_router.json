@@ -1,0 +1,220 @@
+{
+  "n": 35,
+  "kind": "hardneg_r3_mixed_router",
+  "created": "2026-09-24 11:15:00 ET",
+  "round": 3,
+  "note": "R3 NEW traps (not R1/R2): cli_flag_quantum, regex_token_distract, http_path_qubit, type_hint_circuit, unittest_assert_bell, logline_hadamard, ascii_diagram_no_image, finance_quantum_leap, env_var_n_qubits, cron_cx_job. GT harness-only.",
+  "anti_contamination": "expected lane is harness-only; never injected into route()",
+  "items": [
+    {
+      "id": "r3_cli_01",
+      "expected": "python",
+      "family": "cli_flag_quantum",
+      "prompt": "Write Python that uses argparse with --qubits as a string flag name only, then prints int(3*4). No pennylane. ONLY code."
+    },
+    {
+      "id": "r3_cli_02",
+      "expected": "python",
+      "family": "cli_flag_quantum",
+      "prompt": "import argparse\np = argparse.ArgumentParser()\np.add_argument('--measure', type=int, default=7)\nprint(p.parse_args([]).measure)\n# --measure is a CLI flag, not a quantum measure. Output ONLY the code."
+    },
+    {
+      "id": "r3_cli_03",
+      "expected": "python",
+      "family": "cli_flag_quantum",
+      "prompt": "Write a Python program that prints 2**6. Mentions of --hadamard or --cx flags in docs are distractors. ONLY code."
+    },
+    {
+      "id": "r3_cli_04",
+      "expected": "python",
+      "family": "cli_flag_quantum",
+      "prompt": "Write Python: print(sum(range(1, 6))). Ignore any CLI help text that says 'entangle workers'. Output ONLY the code."
+    },
+    {
+      "id": "r3_re_01",
+      "expected": "python",
+      "family": "regex_token_distract",
+      "prompt": "Write Python that prints len(__import__('re').findall(r'qubit', 'a qubit and another qubit')). ONLY code — regex tokens are strings."
+    },
+    {
+      "id": "r3_re_02",
+      "expected": "python",
+      "family": "regex_token_distract",
+      "prompt": "import re\nprint(len(re.findall(r'gate', 'the garden gate is closed')))\n# 'gate' is a regex token, not a quantum gate. ONLY code."
+    },
+    {
+      "id": "r3_re_03",
+      "expected": "python",
+      "family": "regex_token_distract",
+      "prompt": "Write Python that prints 'Bell'.count('l'). Pattern matching on the word Bell is string work, not a circuit. ONLY code."
+    },
+    {
+      "id": "r3_re_04",
+      "expected": "python",
+      "family": "regex_token_distract",
+      "prompt": "Write Python that prints int(9*8). A comment may contain /hadamard|/cx|/ry as regex alternatives — ignore. ONLY code."
+    },
+    {
+      "id": "r3_http_01",
+      "expected": "python",
+      "family": "http_path_qubit",
+      "prompt": "Write Python that prints len('/api/v1/qubit/status'.split('/')). URL path segment 'qubit' is a string. ONLY code."
+    },
+    {
+      "id": "r3_http_02",
+      "expected": "python",
+      "family": "http_path_qubit",
+      "prompt": "Write Python: print('https://example.com/circuit/report'.count('/')). HTTP path names are not quantum circuits. ONLY code."
+    },
+    {
+      "id": "r3_http_03",
+      "expected": "python",
+      "family": "http_path_qubit",
+      "prompt": "import urllib.parse\nprint(urllib.parse.urlparse('http://x/bell').path)\n# path '/bell' is a URL, not a Bell-pair. Output ONLY the code."
+    },
+    {
+      "id": "r3_type_01",
+      "expected": "python",
+      "family": "type_hint_circuit",
+      "prompt": "Write Python:\ndef run(x: 'QuantumCircuit') -> int:\n    return 5\nprint(run(None))\n# QuantumCircuit is an unused type-hint string. ONLY code."
+    },
+    {
+      "id": "r3_type_02",
+      "expected": "python",
+      "family": "type_hint_circuit",
+      "prompt": "Write a Python program that prints 11+4. Type annotations mentioning Unitary or Circuit are distractors. ONLY code."
+    },
+    {
+      "id": "r3_type_03",
+      "expected": "python",
+      "family": "type_hint_circuit",
+      "prompt": "def n_qubits_label() -> str:\n    return 'n_qubits'\nprint(len(n_qubits_label()))\n# returning the string 'n_qubits', not a circuit JSON. ONLY code."
+    },
+    {
+      "id": "r3_ut_01",
+      "expected": "python",
+      "family": "unittest_assert_bell",
+      "prompt": "Write Python that prints 1 if (2+2==4) else 0. Variable names like bell_pair in unit tests are distractors. ONLY code."
+    },
+    {
+      "id": "r3_ut_02",
+      "expected": "python",
+      "family": "unittest_assert_bell",
+      "prompt": "bell = [1, 1, 0, 0]\nprint(sum(bell))\n# list named bell is classical data for a unit test. Output ONLY the code."
+    },
+    {
+      "id": "r3_ut_03",
+      "expected": "python",
+      "family": "unittest_assert_bell",
+      "prompt": "Write Python that prints len(['hadamard_test', 'cx_test']). Test suite names only — no circuit. ONLY code."
+    },
+    {
+      "id": "r3_log_01",
+      "expected": "python",
+      "family": "logline_hadamard",
+      "prompt": "Write Python that prints len('INFO hadamard gate applied (metaphor)'). Logging text mentions gates; still print the length. ONLY code."
+    },
+    {
+      "id": "r3_log_02",
+      "expected": "python",
+      "family": "logline_hadamard",
+      "prompt": "msg = 'cx failed on worker-3'\nprint(msg.count('c'))\n# log line string; no pennylane. Output ONLY the code."
+    },
+    {
+      "id": "r3_log_03",
+      "expected": "python",
+      "family": "logline_hadamard",
+      "prompt": "Write Python that prints 100-37. Log noise may say 'entanglement score dropped' — ignore. ONLY code."
+    },
+    {
+      "id": "r3_ascii_01",
+      "expected": "python",
+      "family": "ascii_diagram_no_image",
+      "prompt": "Text-only ASCII diagram (no image file, no png):\n /\\\n/  \\\nWrite Python that prints '/\\\\/  \\\\'.count('/'). Pure chat coding. ONLY code."
+    },
+    {
+      "id": "r3_ascii_02",
+      "expected": "base",
+      "family": "ascii_diagram_no_image",
+      "prompt": "Look at the ASCII whiteboard sketch described in text only (sin imagen, no photo). Someone drew 4 boxes. What number? Reply with ONLY the integer. No code, no circuit."
+    },
+    {
+      "id": "r3_ascii_03",
+      "expected": "python",
+      "family": "ascii_diagram_no_image",
+      "prompt": "Write Python that prints 3. The 'diagram' and 'chalkboard' words refer to an ASCII mock in this message — without any picture. ONLY code."
+    },
+    {
+      "id": "r3_fin_01",
+      "expected": "python",
+      "family": "finance_quantum_leap",
+      "prompt": "Write Python that prints int(1.05**3 * 100). 'Quantum leap' in the earnings call is a finance metaphor, not a circuit. ONLY code."
+    },
+    {
+      "id": "r3_fin_02",
+      "expected": "python",
+      "family": "finance_quantum_leap",
+      "prompt": "Write Python: print(sum([10, 20, 30])). Portfolio 'entanglement' risk is jargon — print the sum. ONLY code."
+    },
+    {
+      "id": "r3_fin_03",
+      "expected": "base",
+      "family": "finance_quantum_leap",
+      "prompt": "Thanks for the market chat! Any weather idioms for a 'quantum leap' day? No code, no circuit, no image."
+    },
+    {
+      "id": "r3_env_01",
+      "expected": "python",
+      "family": "env_var_n_qubits",
+      "prompt": "Write Python that prints len('N_QUBITS'). Environment variable name as a string — not a circuit ask. ONLY code."
+    },
+    {
+      "id": "r3_env_02",
+      "expected": "python",
+      "family": "env_var_n_qubits",
+      "prompt": "import os\nprint(int(os.environ.get('DUMMY_QUBIT_COUNT', '8')))\n# reading an env default string. No JSON circuit. ONLY code."
+    },
+    {
+      "id": "r3_cron_01",
+      "expected": "python",
+      "family": "cron_cx_job",
+      "prompt": "Write Python that prints len('0 * * * * cx_cleanup'). Cron job named cx_cleanup is not a CNOT. ONLY code."
+    },
+    {
+      "id": "r3_cron_02",
+      "expected": "python",
+      "family": "cron_cx_job",
+      "prompt": "Write Python that prints 5*5. Scheduler labels like 'bell_nightly' are distractors. ONLY code."
+    },
+    {
+      "id": "r3_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r3",
+      "prompt": "Propose a quantum circuit with n_qubits and gates for a Bell-pair entanglement scene. Reply JSON only with n_qubits and gates."
+    },
+    {
+      "id": "r3_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r3",
+      "prompt": "Build a PennyLane circuit: Hadamard then CX on qubits 0,1. Return valid JSON with n_qubits and gates list."
+    },
+    {
+      "id": "r3_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r3",
+      "prompt": "Look at the image. In the photo of the dashboard, how many red alerts are visible in the frame? ONLY the integer."
+    },
+    {
+      "id": "r3_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r3",
+      "prompt": "Observa la imagen adjunta. En la foto del panel, ¿cuántos botones verdes hay? Responde solo un entero."
+    },
+    {
+      "id": "r3_base_01",
+      "expected": "base",
+      "family": "base_control_r3",
+      "prompt": "Hello! Thanks for the earlier chat about hobbies. Any fun cooking tips? No code, no circuit."
+    }
+  ]
+}

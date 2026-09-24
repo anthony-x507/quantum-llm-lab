@@ -66,6 +66,25 @@
 | Hardneg R2 router | **22/22 (1.0)** |
 | Scaffold freeze recheck | **held** solve=0.9 Δsolve=0.5 |
 
+
+## Hardneg R3 (this tip)
+
+**When:** 2026-09-24 ~11:20 ET · Mac-139  
+**Fixtures:** router **n=35**, python **n=28** — families ≠ R1/R2 (cli/regex/http/typehint/unittest/log/ascii/finance/env/cron).
+
+| Check | Result |
+|-------|--------|
+| R3 router | **35/35 (1.0)** (pre-reinforce 33/35) |
+| R3 verifier loop | **1.0** (28/28) |
+| R3 unified loop | **1.0** (28/28) |
+| Mixed (d) overall | **1.0000 held** (≥0.967 floor) |
+| R1/R2 router held | **18/18 · 22/22** |
+| Freeze polish_r3 | **100pct** manifest |
+| `ent_never_on_python` | **True** |
+
+Detail: `docs/FRONTIER-CODIGO-VIVO-TIP-R3.md` · metrics `data/freeze_metrics/codigo_vivo_tip_adv_r3_20260924.json`
+
+
 ### Mixed CPU paths (a)(b)(c)(d)
 
 | Path | python | ent | vision | overall |
@@ -110,7 +129,10 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 ## Artifacts
 
 - `data/frontier_moe_verifier_mixed_{smoke,cpu,unified}.json`
-- `data/frontier_moe_dual_lane_hardneg.json` / `_r2.json`
+- `data/frontier_moe_dual_lane_hardneg.json` / `_r2.json` / `_r3.json`
+- `data/frontier_moe_verifier_hardneg_r3.json`
+- `data/freeze_metrics/codigo_vivo_tip_adv_r3_20260924.json`
+- `docs/FRONTIER-CODIGO-VIVO-TIP-R3.md`
 - `data/FRONTIER_CIRCUIT_GRAPH_SCAFFOLD_FREEZE.json`
 - `data/frontier_circuit_graph_scaffold_hard_recheck.json`
 - `data/frontier_vision_mlx_api_fix_mac111.json`

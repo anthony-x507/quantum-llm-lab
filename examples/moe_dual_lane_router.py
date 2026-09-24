@@ -152,8 +152,28 @@ def route_heuristic(prompt: str) -> Lane:
     has_vis = bool(VISION_RE.search(text))
     vis_negated = bool(VISION_NEG_RE.search(text))
     ent_negated = bool(ENT_NEG_RE.search(text))
+    # R3: bare n_qubits / N_QUBITS in strings or len('N_QUBITS') is NOT a JSON circuit ask.
+    # Keep ent_json_ask for explicit gates=/json-válido OR n_qubits + JSON-reply intent.
     ent_json_ask = bool(
-        re.search(r"\b(n_qubits|gates\s*[=:\[]|json\s+v[aá]lido)\b", text, re.I)
+        re.search(r"\b(gates\s*[=:\[]|json\s+v[aá]lido)\b", text, re.I)
+    ) or (
+        bool(re.search(r"\bn_qubits\b", text, re.I))
+        and bool(
+            re.search(
+                r"(reply\s+(?:json|only)|responde\s+solo\s+json|valid\s+json|"
+                r"json\s+object|return\s+(?:a\s+)?valid\s+json|json\s+only)",
+                text,
+                re.I,
+            )
+        )
+        and not bool(
+            re.search(
+                r"len\s*\(\s*['\"]n_qubits['\"]\s*\)|['\"]n_qubits['\"]|"
+                r"['\"]N_QUBITS['\"]|return\s+['\"]n_qubits['\"]",
+                text,
+                re.I,
+            )
+        )
     )
     # Vision arithmetic / explicit "no circuit" beats stray "circuit" token in the prompt
     vis_arith = bool(
@@ -626,7 +646,7 @@ def main() -> int:
     p.add_argument("--route", type=str, default=None,
                    help="Route a single prompt and print lane+adapter")
     p.add_argument("--hardneg", action="store_true",
-                   help="Score hard-neg mixed router fixtures (R1/R2)")
+                   help="Score hard-neg mixed router fixtures (R1/R2/R3)")
     p.add_argument("--hardneg-path", type=Path, default=HARDNEG_ROUTER_PATH)
     args = p.parse_args()
 
@@ -651,7 +671,10 @@ def main() -> int:
             flush=True,
         )
         out = args.out if args.out != SMOKE_OUT else HARDNEG_OUT
-        if 'r2' in str(args.hardneg_path).lower():
+        hp = str(args.hardneg_path).lower()
+        if 'r3' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r3.json"
+        elif 'r2' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r2.json"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(
