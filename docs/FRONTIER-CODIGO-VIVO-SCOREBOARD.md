@@ -3,7 +3,7 @@
 **Branch:** `frontier/tip-hardneg-r17` → **FOLDED** into `frontier/codigo-vivo-tip`  
 **Side:** `970fc4a` / feat `297fba1` · **Base tip:** `a54b74c` (post tti-cold)  
 **Freeze:** `codigo_vivo_tip_r17_100pct_20260924_153921`  
-**Fold SHA:** 5cc6587  
+**Fold SHA:** 40f2c69  
 **Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-R17.md`
 
 | Surface | Result |
