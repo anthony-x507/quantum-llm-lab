@@ -4,8 +4,8 @@
 **Base:** `frontier/tip-future-track` @ `0a1c9b5` (easier than tip HEAD `e0f3183` — TTI conflicts in same `distance_est` files)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-future-track-r2` (Mac-111)  
 **When:** 2026-09-24 ~14:20 ET  
-**Freeze:** 
-**Feat SHA:**  ()`codigo_vivo_tip_future_track_r2_100pct_20260924_142016`  
+**Freeze:** `codigo_vivo_tip_future_track_r2_100pct_20260924_142016`
+**Feat SHA:** `ba5f2cf` (`ba5f2cf55c12434df57268f28bc20c565670507f`)  
 **Scope:** Side-branch only — does **not** fold into tip / tip-cv / tip-tti / tip-distance-mid / tip-distance-far / tip-hardneg-r12/r13/r14 / tip-inverse-r3 / tip-circ-expand / tip-future-track.
 
 ## LOCK (Anthony)
@@ -73,8 +73,7 @@ Residual gap (~0.66 pp track): mostly cold-start frames where motion magnitude e
 
 - Shared tip router / scaffold / motion / collision paths: **not touched** → tip mixed / motion / collision re-smoke **N/A** (distance_est-only).
 - Mixed (d) 1.0 / motion 100% / collision 100% / DZ 100% / future DZ 100%: **held**.
-- **Freeze:** 
-**Feat SHA:**  ()`codigo_vivo_tip_future_track_r2_100pct` — clear future % win; floors held.
+- **Freeze:** `codigo_vivo_tip_future_track_r2_100pct` — clear future % win; floors held.
 
 ## Adapters RO
 
