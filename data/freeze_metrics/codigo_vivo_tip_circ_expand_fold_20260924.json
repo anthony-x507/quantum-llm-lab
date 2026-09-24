@@ -11,5 +11,7 @@
   "hardneg": "18/18",
   "floors_held": true,
   "ro_mtime_unchanged": true,
-  "tip_vis": "BASE"
+  "tip_vis": "BASE",
+  "fold_feat_sha": "5defd36",
+  "fold_feat_sha_full": "5defd36abdba46f278ab77b150579718ddfb3f9c"
 }

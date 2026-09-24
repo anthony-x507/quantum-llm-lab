@@ -12,7 +12,7 @@
 | R13 · future track · far MAE | **retained** (52/52 · 99.34% · 2.600 m) |
 | DZ/mid/TTI · inv/collision | **retained 100%** |
 | Freeze | `codigo_vivo_tip_circ_expand_fold_100pct_20260924_145451` |
-| Tip SHA (fold) | `PENDING` |
+| Tip SHA (fold) | `5defd36` |
 | Policy | RO `data/lora_adapter/`; no main; future-r3+R13+far+mid+inv floors kept; pillars/R14+/LP not folded |
 
 **Method:** merge-port `bf906f9`/`2631d83` onto tip `abf0d25`; +3 grounded circ scenes + grounding anti-invent/multi-CNOT + bridge qubit regex; re-smoke MLX BASE + mixed CPU.

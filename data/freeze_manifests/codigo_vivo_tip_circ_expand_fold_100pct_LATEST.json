@@ -75,6 +75,8 @@
   ],
   "note": "circ expand fold: circ 2/2\u21925/5; vision BASE 1.0 (13/13); mixed 1.0 held; pillars/R14+/LP not folded",
   "source_sha_short": "2631d83",
-  "fold_feat_sha": "PENDING",
-  "fold_feat_sha_short": "PENDING"
+  "fold_feat_sha": "5defd36abdba46f278ab77b150579718ddfb3f9c",
+  "fold_feat_sha_short": "5defd36",
+  "git_sha": "5defd36abdba46f278ab77b150579718ddfb3f9c",
+  "git_sha_short": "5defd36"
 }

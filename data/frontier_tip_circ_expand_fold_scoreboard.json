@@ -86,5 +86,9 @@
     "renderer": "examples/vision_circ/render_grounded_circ_scenes.py",
     "freeze": "data/freeze_manifests/codigo_vivo_tip_circ_expand_fold_100pct_20260924_145451.json"
   },
-  "source_sha_short": "2631d83"
+  "source_sha_short": "2631d83",
+  "fold_feat_sha": "5defd36abdba46f278ab77b150579718ddfb3f9c",
+  "fold_feat_sha_short": "5defd36",
+  "branch_sha": "5defd36abdba46f278ab77b150579718ddfb3f9c",
+  "branch_sha_short": "5defd36"
 }

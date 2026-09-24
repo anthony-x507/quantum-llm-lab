@@ -6,7 +6,7 @@
 **When (side):** 2026-09-24 ~14:12–14:14 ET · **Fold:** 2026-09-24 ~14:54 ET  
 **Side freeze:** `codigo_vivo_tip_circ_expand_100pct_20260924_141414`  
 **Fold freeze:** `codigo_vivo_tip_circ_expand_fold_100pct_20260924_145451`  
-**Fold feat SHA:** `PENDING` (filled in pin commit)  
+**Fold feat SHA:** `5defd36` (`5defd36abdba46f278ab77b150579718ddfb3f9c`)  
 **Feat SHA (side):** `bf906f9` (`bf906f9e609c81e0880d29ca168680714edd9b9d`)  
 **Scope:** Folded into tip-cv. Pillars / R14+ / LP **not** folded.
 
