@@ -1,6 +1,6 @@
 {
-  "written": "2026-09-24 13:54:13 ",
-  "elapsed_s": 26.6,
+  "written": "2026-09-24 14:01:07 ",
+  "elapsed_s": 25.6,
   "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
   "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter",
   "adapter_null_for_base": true,

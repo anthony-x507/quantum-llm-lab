@@ -1,8 +1,8 @@
 {
   "schema": "frontier_tip_collision_n_probe",
-  "ts": "2026-09-24 13:53:41 ET",
+  "ts": "2026-09-24 14:00:42 ET",
   "domain": "collision_predictive",
-  "branch": "frontier/tip-inverse-r2",
+  "branch": "frontier/codigo-vivo-tip",
   "n_eval_seqs": 40,
   "metric_collision_correct_pct": 100.0,
   "metric_n_queries": 2850,
@@ -100,7 +100,7 @@
     }
   },
   "quantum_adapter_touched": false,
-  "floor_resmoke": "N/A \u2014 side-branch collision_predictive only; tip router untouched",
+  "floor_resmoke": "motion-r4 fold 2026-09-24 14:02:26 ET: mixed 1.0; motion 100%; vision BASE 1.0; inverse_cv 99.82%; collision 100%; R10 52/52\u00b744/44",
   "n_expand": {
     "before_n_eval_seqs": 8,
     "before_n_queries": 555,

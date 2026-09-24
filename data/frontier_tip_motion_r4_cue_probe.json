@@ -1,8 +1,8 @@
 {
-  "frontier": "tip-motion-r4",
-  "written": "2026-09-24 13:49:53 ET",
-  "branch": "frontier/tip-motion-r4",
-  "tip_base": "6624df1",
+  "frontier": "codigo-vivo-tip-motion-r4-fold",
+  "written": "2026-09-24 14:00:44 ET",
+  "branch": "frontier/codigo-vivo-tip",
+  "tip_base": "3f5f1b1",
   "claims": [
     "NO quantum-advantage claims",
     "GT-free RGB motion cue only",
@@ -353,59 +353,34 @@
   "rescued_from_r3": [
     {
       "id": "scene_0002",
-      "before": "unknown",
-      "after": "correlated",
-      "before_mode": "continuity_dense",
-      "after_mode": "axis_locked",
-      "vel_corr": 0.503,
-      "vel_corr_x": 0.842,
-      "vel_corr_y": -0.442,
-      "dist_cv": 0.042
+      "cue": "correlated",
+      "track_mode": "axis_locked",
+      "stage": 5
     },
     {
       "id": "scene_0010",
-      "before": "unknown",
-      "after": "correlated",
-      "before_mode": "continuity_dense",
-      "after_mode": "axis_locked",
-      "vel_corr": 0.669,
-      "vel_corr_x": 0.921,
-      "vel_corr_y": 0.314,
-      "dist_cv": 0.026
+      "cue": "correlated",
+      "track_mode": "axis_locked",
+      "stage": 5
     },
     {
       "id": "scene_0075",
-      "before": "unknown",
-      "after": "independent",
-      "before_mode": "hue_hard_fail",
-      "after_mode": "singleton_mover",
-      "vel_corr": null,
-      "vel_corr_x": null,
-      "vel_corr_y": null,
-      "dist_cv": null
+      "cue": "independent",
+      "track_mode": "singleton_mover",
+      "stage": 5
     },
     {
       "id": "scene_0140",
-      "before": "unknown",
-      "after": "independent",
-      "before_mode": "hue_hard_fail",
-      "after_mode": "singleton_mover",
-      "vel_corr": null,
-      "vel_corr_x": null,
-      "vel_corr_y": null,
-      "dist_cv": null
+      "cue": "independent",
+      "track_mode": "singleton_mover",
+      "stage": 5
     },
     {
       "id": "scene_0152",
-      "before": "unknown",
-      "after": "independent",
-      "before_mode": "continuity_dense",
-      "after_mode": "axis_weak",
-      "vel_corr": 0.569,
-      "vel_corr_x": 0.277,
-      "vel_corr_y": 0.341,
-      "dist_cv": 0.009
+      "cue": "independent",
+      "track_mode": "axis_weak",
+      "stage": 5
     }
   ],
-  "elapsed_s": 9.34
+  "elapsed_s": 3.14
 }

@@ -1,17 +1,20 @@
 {
   "domain": "codigo_vivo_tip_motion_r4",
-  "written": "2026-09-24 13:50:17 ET",
+  "written": "2026-09-24 14:02:26 ET",
   "metrics": {
     "mixed_d_unified": 1.0,
     "python": 1.0,
     "ent": 1.0,
     "vision": 1.0,
+    "vision_base_after": 1.0,
+    "circ_axis": "2/2",
     "motion_coverage_known": 1.0,
     "motion_coverage_before": 0.975,
     "motion_coverage_delta_pp": 2.5,
     "motion_counts": {
+      "independent": 141,
       "correlated": 59,
-      "independent": 141
+      "unknown": 0
     },
     "reason_counts": {},
     "track_mode_counts": {
@@ -39,20 +42,31 @@
       "scene_0140",
       "scene_0152"
     ],
+    "collision_physics_overall_pct": 100.0,
+    "collision_inverse_cv_overall_pct": 99.82,
+    "collision_choose_safest_overall_pct": 100.0,
+    "collision_n_eval_seqs": 40,
+    "collision_n_queries": 2850,
+    "r10_router": "52/52",
+    "r10_verifier": "44/44",
+    "pillars": "26/26",
+    "hardneg_smoke": "18/18",
     "wired_to_vlm": true,
     "gt_leak": false,
     "prompt_touches_gt": false,
     "ent_never_on_python": true,
+    "tip_vis_pillar": "BASE",
     "floor_held": true,
     "floor": 0.9667,
+    "contam_passed": true,
+    "retrieval_ok": true,
+    "ro_mtime_unchanged": true,
+    "vision_ground_retained": true,
+    "inverse_r2_retained": true,
     "motion_r3_retained": true,
     "motion_r2_retained": true,
     "scaffold_motion_retained": true,
-    "r9_router": "52/52",
-    "r9_verifier": "44/44",
-    "collision_physics_pct": 100.0,
-    "collision_n_eval_seqs": 40,
-    "floor_resmoke": "mixed (d) 1.0 @ 2026-09-24 13:50:17 ET; motion 100%; R9 retained"
+    "floor_resmoke": "mixed (d) 1.0 @ 2026-09-24 14:02:26 ET; motion 100%; vision BASE 1.0 circ 2/2; inverse_cv 99.82%; collision 100%; R10 52/52\u00b744/44"
   },
   "probe": "data/frontier_tip_motion_r4_cue_probe.json"
 }

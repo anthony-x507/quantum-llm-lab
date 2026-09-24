@@ -1,17 +1,40 @@
 # Frontier — tip motion-r4 (coverage reinforce UPWARD)
 
-**Status:** SIDE BRANCH `frontier/tip-motion-r4` (NOT folded; tip-cv / tip-hardneg-r10 / tip-inverse-r2 / tip-vision-ground / tip-motion-r3 AVOIDED)  
-**Base tip:** `6624df1` (`origin/frontier/codigo-vivo-tip` post motion-r3 fold)  
-**When:** measure 2026-09-24 13:50:17 ET · Mac-111 (`074c6626-…`)  
-**Freeze:** `codigo_vivo_tip_motion_r4_100pct_20260924_135017` (≥80% coverage; sha a59cb7a)  
+**Status:** **FOLDED** into `frontier/codigo-vivo-tip` (rebase `a59cb7a`/`606c66f` onto `3f5f1b1` → content `753b1f7` / pin `a27b6fd` FF)  
+**Branch:** `frontier/tip-motion-r4` (rebased; source kept) · tip `frontier/codigo-vivo-tip`  
+**Base tip at fold:** `3f5f1b1` (post vision-ground) · motion originally from `6624df1`  
+**When:** polish ~13:50 ET · fold 2026-09-24 14:02:26 ET · Mac-111 (`074c6626-…`)  
+**Freeze:** `codigo_vivo_tip_motion_r4_100pct_20260924_135017`  
 **Claim:** NO quantum advantage. GT-free RGB centroid motion cue reinforce only.
+
+## SHA / setup
+
+| Field | Value |
+|-------|-------|
+| Tip base SHA | `3f5f1b1` (`3f5f1b16cd31b7c5cbbd1d48a0eda7006a18a1f1`) |
+| Branch | `frontier/tip-motion-r4` |
+| Pre-rebase SHA | `606c66f` · feat `a59cb7a` |
+| Post-rebase | feat `753b1f7` · pin `a27b6fd` |
+| Host | Mac-111 (`074c6626-…`) |
+| Adapters | **READ-ONLY** (`ro_mtime_unchanged=true` on `*.safetensors`) |
+| Freeze | `codigo_vivo_tip_motion_r4_100pct_20260924_135017` |
+
+### Adapter RO mtimes (ET)
+
+| Adapter | adapters.safetensors mtime | Role on tip |
+|---------|---------------------------|-------------|
+| `data/lora_adapter/` (QLAB_DATA) | 2026-09-24 **00:58** | quantum RO |
+| `data/lora_adapter_ent2/` | 2026-09-24 **09:02** | MoE **ent** lane |
+| `data/lora_adapter_classical/` | 2026-09-24 **05:29** | present; not routed on CV pillars |
+
+## LOCK (post-fold)
 
 ## LOCK
 
 - Mixed (d) unified **≥0.9667** prefer **1.0** — held **1.0** (re-smoke --cpu-eval).
 - Motion-r3 / motion-r2 / scaffold-motion freezes **retained** — polish UPWARD only; honesty bands unchanged.
 - `wired_to_vlm` / `ent_never_on_python` / `prompt_touches_gt=false` unchanged.
-- `data/lora_adapter/` READ-ONLY. No merge to `main`. No fold into tip. No CloudAgent.
+- `data/lora_adapter/` READ-ONLY. No merge to `main`. No CloudAgent.
 - Escalate **only** on `corr_ambiguous` (Stage 5a) or `color_track_fail` singleton (Stage 5b) — never overrides a known Stage 1–4 cue.
 
 ## What changed (reinforce)
@@ -65,6 +88,22 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 .venv/bin/python examples/moe_verifier_mixed_live.py --cpu-eval
 ```
 
+
+## Fold re-smoke (2026-09-24 14:02:26 ET)
+
+| Surface | Result |
+|---------|--------|
+| mixed (d) unified | **1.0** |
+| motion known coverage (n=200) | **100%** (141 ind + 59 corr) |
+| scene_0222 | **independent** |
+| vision BASE | **1.000** (10/10) · circ **2/2** |
+| inverse_cv | **99.82%** |
+| collision physics | **100%** (n=40 / 2850) |
+| choose_safest | **100%** |
+| R10 | **52/52 · 44/44** |
+| pillars / hardneg smoke | **26/26 · 18/18** |
+| adapters RO | **held** |
+
 ## Artifacts
 
 - `examples/circuit_graph_moe_scaffold.py` — Stage 5 axis honesty + singleton_mover inside `visual_motion_cue`
@@ -74,7 +113,7 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 
 ## What this does NOT do
 
-- No merge to `main` / no tip FF (side branch only).
+- Folded into tip; no merge to `main`.
 - No `lora_adapter` writes.
 - No CloudAgent. Does **not** touch tip-cv / tip-hardneg-r10 / tip-inverse-r2 / tip-vision-ground / tip-motion-r3 WTs.
 - No quantum-advantage marketing.

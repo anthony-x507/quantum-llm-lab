@@ -99,5 +99,12 @@
     "inverse_cv": 99.82,
     "collision_physics": 100.0,
     "choose_safest": 100.0
-  }
+  },
+  "motion_coverage_known": 1.0,
+  "motion_counts": {
+    "independent": 141,
+    "correlated": 59,
+    "unknown": 0
+  },
+  "note_post_motion_r4_fold": "motion-r4 folded; coverage 100%; vision BASE held"
 }

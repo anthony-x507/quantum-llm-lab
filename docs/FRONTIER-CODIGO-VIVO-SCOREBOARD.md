@@ -1,8 +1,41 @@
 # FRONTIER — Código-vivo tip scoreboard
 
 **Branch:** `frontier/codigo-vivo-tip`  
-**Written:** 2026-09-24 13:55:13 ET · Mac-111 (`074c6626-…`) · tip vision-ground fold
+**Written:** 2026-09-24 14:02:26 ET · Mac-111 (`074c6626-…`) · tip motion-r4 fold
 **Claim scope:** classical MoE router + `python -I` verifier + prior-replay ent/vision + GT-free circuit-graph scaffold on ent + mlx vision parse polish + vision-ground cue/parse. **NO quantum-advantage claims.**
+
+
+## MOTION-R4 TIP FREEZE / FOLD (overall 1.0) — tip HEAD after motion-r4 fold
+
+**Freeze id:** `codigo_vivo_tip_motion_r4_100pct_20260924_135017`  
+**Frozen SHA:** `a27b6fd32cb1a989e9e6a6ba12e70aaf5282f67e` (`a27b6fd`) · branch `frontier/codigo-vivo-tip` · rebase `a59cb7a`/`606c66f` onto `3f5f1b1` → `753b1f7`+`a27b6fd` FF then fold
+**When:** 2026-09-24 14:02:26 ET · Mac-111 (`074c6626-…`)  
+**Claim:** NO quantum advantage. Cites tip HEAD after motion-r4 fold; **prior platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2 / R7 / scaffold_motion / R8 / distance_danger / collision_pred / motion_r2 / collision_n / R9 / motion_r3 / R10 / inverse_r2 / vision_ground freezes NOT abandoned**.
+
+| Surface | Score |
+|---------|-------|
+| mixed (d) unified | **1.0** |
+| motion coverage | **100%** (141 ind + 59 corr; was 97.5%) |
+| vision BASE | **1.000** (10/10) |
+| circ axis | **2/2** |
+| collision physics (n=40) | **100%** (2850/2850) |
+| inverse_cv | **99.82%** |
+| collision_choose_safest | **100%** |
+| hardneg R10 | **52/52 · 44/44** |
+| router pillars / hardneg | **26/26 · 18/18** |
+| `ent_never_on_python` | **true** |
+| `wired_to_vlm` | **true** |
+| tip vis pillar | **BASE** |
+
+**Policy:** Never abandon vision_ground / inverse_r2 / r10 / motion_r3 / r9 / collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. **Do not fold hardneg-r11 / distance-mid / TTI**. Tip vis stays BASE.
+
+| Artifact | Path |
+|----------|------|
+| Manifest | `data/freeze_manifests/codigo_vivo_tip_motion_r4_100pct_20260924_135017.json` |
+| Metrics | `data/freeze_metrics/codigo_vivo_tip_motion_r4_20260924.json` |
+| Fold metrics | `data/freeze_metrics/codigo_vivo_tip_motion_r4_fold_20260924.json` |
+| Motion-r4 doc | `docs/FRONTIER-CODIGO-VIVO-TIP-MOTION-R4.md` |
+| Re-smoke | PASS · motion 100% · vision BASE 1.000 · circ 2/2 · inverse_cv 99.82% · collision 100% · choose_safest 100% · R10 52/52·44/44 · cpu overall 1.0 |
 
 
 ## VISION-GROUND TIP FREEZE / FOLD (overall 1.0) — tip HEAD after vision-ground fold
@@ -27,7 +60,7 @@
 | `wired_to_vlm` | **true** |
 | tip vis pillar | **BASE** |
 
-**Policy:** Never abandon inverse_r2 / r10 / motion_r3 / r9 / collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. **Do not fold motion-r4 / hardneg-r11 / distance-mid / TTI**. Tip vis stays BASE.
+**Policy:** Never abandon inverse_r2 / r10 / motion_r3 / r9 / collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. **Motion-r4 FOLDED** (see MOTION-R4 section above). Do not fold hardneg-r11 / distance-mid / TTI. Tip vis stays BASE.
 
 | Artifact | Path |
 |----------|------|
@@ -57,7 +90,7 @@
 | `ent_never_on_python` | **true** |
 | `wired_to_vlm` | **true** |
 
-**Policy:** Never abandon r10 / motion_r3 / r9 / collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. **Vision-ground FOLDED** (see VISION-GROUND section above). Do not fold motion-r4 / hardneg-r11 / distance-mid / TTI.
+**Policy:** Never abandon r10 / motion_r3 / r9 / collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. **Vision-ground FOLDED** (see VISION-GROUND section above). Motion-r4 FOLDED (see above). Do not fold hardneg-r11 / distance-mid / TTI.
 
 | Artifact | Path |
 |----------|------|
@@ -86,7 +119,7 @@
 | `ent_never_on_python` | **true** |
 | `wired_to_vlm` | **true** |
 
-**Policy:** Never abandon motion_r3 / r9 / collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. **Inverse-r2 folded** (see INVERSE-R2 section above). **Vision-ground FOLDED** (see VISION-GROUND). Do not fold motion-r4 / hardneg-r11 / distance-mid / TTI.
+**Policy:** Never abandon motion_r3 / r9 / collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. **Inverse-r2 folded** (see INVERSE-R2 section above). **Vision-ground FOLDED** (see VISION-GROUND). Motion-r4 FOLDED (see above). Do not fold hardneg-r11 / distance-mid / TTI.
 
 | Artifact | Path |
 |----------|------|
