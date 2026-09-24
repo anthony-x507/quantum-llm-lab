@@ -206,6 +206,15 @@ def run_pillar_entanglement(
             if meta.get(k) is not None
         }
         prompt = _user_prompt_for_domain(meta, summary)
+        # GT-free visual motion cue -> scaffold keywords (never reads meta labels)
+        try:
+            from circuit_graph_moe_scaffold import visual_motion_cue, motion_cue_prompt_suffix
+            _mc = visual_motion_cue(scene_dir)
+            _suf = motion_cue_prompt_suffix(str(_mc.get('cue') or 'unknown'))
+            if _suf:
+                prompt = prompt.rstrip() + '\n' + _suf
+        except Exception:
+            _mc = {'cue': 'unknown'}
         scaffold_meta: dict[str, Any] | None = None
         if circuit_scaffold:
             try:

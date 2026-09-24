@@ -131,7 +131,7 @@ def run_ent_live(n: int) -> dict[str, Any]:
     # base (no adapter)
     print(f"=== LIVE ent BASE n={len(sids)} ===", flush=True)
     base_bundle = bench._load_vlm(MODEL, None)
-    base = bench.run_pillar_entanglement(base_bundle, sids, "mlx-live-ent-base", circuit_scaffold=True)
+    base = bench.run_pillar_entanglement(base_bundle, sids, "mlx-live-ent-base", circuit_scaffold=True, scaffold_polish=True)
     del base_bundle
     # MoE ent2 RO
     print(f"=== LIVE ent ENT2 adapter={adapter} ===", flush=True)
@@ -144,7 +144,7 @@ def run_ent_live(n: int) -> dict[str, Any]:
         }
     else:
         ent_bundle = bench._load_vlm(MODEL, str(adapter))
-        moe_ent = bench.run_pillar_entanglement(ent_bundle, sids, "mlx-live-ent-ent2", circuit_scaffold=True)
+        moe_ent = bench.run_pillar_entanglement(ent_bundle, sids, "mlx-live-ent-ent2", circuit_scaffold=True, scaffold_polish=True)
         del ent_bundle
     elapsed = round(time.time() - t0, 2)
     return {

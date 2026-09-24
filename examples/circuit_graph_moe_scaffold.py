@@ -90,6 +90,8 @@ def prior_templates() -> list[dict[str, Any]]:
          "gates": [["h", 0]]},
         {"id": "product_x0_x1", "tags": ("product", "separable"), "n_qubits": 2,
          "gates": [["x", 0], ["x", 1]]},
+        {"id": "product_hh", "tags": ("product", "separable", "product-state"), "n_qubits": 2,
+         "gates": [["h", 0], ["h", 1]]},
         {"id": "ghz_like", "tags": ("ghz", "entangle", "3"), "n_qubits": 3,
          "gates": [["h", 0], ["cx", 0, 1], ["cx", 1, 2]]},
         {"id": "ry_cx", "tags": ("rotation", "entangle", "ry"), "n_qubits": 2,
@@ -175,6 +177,75 @@ def graph_features(proposal: dict[str, Any], encoder: GNNEncoder | None = None) 
     return feat
 
 
+
+def visual_motion_cue(scene_dir) -> dict:
+    """GT-free visual cue from RGB frames: independent vs correlated blob motion.
+
+    Uses color-tinted centroids (red-ish / blue-ish). Never reads meta labels.
+    Returns {cue: independent|correlated|unknown, ...}.
+    """
+    from pathlib import Path as _P
+    try:
+        import numpy as np
+        from PIL import Image
+    except Exception as exc:  # noqa: BLE001
+        return {"cue": "unknown", "reason": f"deps:{type(exc).__name__}"}
+    scene_dir = _P(scene_dir)
+    frames = sorted(scene_dir.glob("frame_*.png"))[::2][:10]
+    if len(frames) < 3:
+        return {"cue": "unknown", "reason": "few_frames"}
+    red_c, blue_c = [], []
+    for fp in frames:
+        arr = np.asarray(Image.open(fp).convert("RGB"), dtype=np.float32)
+        R, G, B = arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]
+        red_m = (R > 140) & (R > G + 30) & (R > B + 30)
+        blue_m = (B > 140) & (B > R + 20) & (B > G + 20)
+
+        def _cent(m):
+            yy, xx = np.where(m)
+            if len(xx) < 5:
+                return None
+            return np.array([xx.mean(), yy.mean()])
+
+        cr, cb = _cent(red_m), _cent(blue_m)
+        if cr is None or cb is None:
+            continue
+        red_c.append(cr)
+        blue_c.append(cb)
+    if len(red_c) < 3:
+        return {"cue": "unknown", "reason": "color_track_fail", "n": len(red_c)}
+    v0 = np.diff(red_c, axis=0).ravel()
+    v1 = np.diff(blue_c, axis=0).ravel()
+    if v0.std() < 1e-6 or v1.std() < 1e-6:
+        c = 0.0
+    else:
+        c = float(np.corrcoef(v0, v1)[0, 1])
+    dist = np.array([np.linalg.norm(a - b) for a, b in zip(red_c, blue_c)])
+    dist_cv = float(dist.std() / (dist.mean() + 1e-6))
+    if abs(c) < 0.45:
+        cue = "independent"
+    elif abs(c) > 0.75 and dist_cv < 0.08:
+        cue = "correlated"
+    else:
+        cue = "unknown"
+    return {"cue": cue, "vel_corr": round(c, 3), "dist_cv": round(dist_cv, 3), "n": len(red_c)}
+
+
+def motion_cue_prompt_suffix(cue: str) -> str:
+    """Map cue → GT-free prompt keywords that steer scaffold priors."""
+    if cue == "independent":
+        return (
+            "Visual motion cue (structure only): colored objects appear on "
+            "independent trajectories (product-state / no CX prior)."
+        )
+    if cue == "correlated":
+        return (
+            "Visual motion cue (structure only): colored objects appear on "
+            "correlated trajectories (Bell-pair / CX prior)."
+        )
+    return ""
+
+
 def format_scaffold_hint(
     prompt: str,
     *,
@@ -199,6 +270,17 @@ def format_scaffold_hint(
         if any(k in low for k in ("product", "separable", "separab")):
             if "product" in t["tags"] or "separable" in t["tags"]:
                 score += 2
+        # GT-free visual motion keywords (from frame centroids, not meta labels)
+        if any(k in low for k in ("independent trajectory", "independent trajectories", "product-state")):
+            if "product" in t["tags"] or "separable" in t["tags"]:
+                score += 3
+            if "bell" in t["id"] or t["id"].startswith("ghz"):
+                score -= 2
+        if any(k in low for k in ("correlated trajectory", "correlated trajectories", "bell-pair")):
+            if t["id"].startswith("bell") or "entangle" in t["tags"]:
+                score += 3
+            if "product" in t["tags"] or "separable" in t["tags"]:
+                score -= 2
         # Hard-family boosts (keyword → prior family); never GT labels.
         if any(k in low for k in ("teleport", "teleportation")):
             if "teleport" in t["id"] or "teleport" in t["tags"]:
@@ -227,6 +309,34 @@ def format_scaffold_hint(
     scored.sort(key=lambda x: (-x[0], x[1]["id"]))
     top = scored[:3] if polish else scored[:2]
 
+    # Diversity: when keyword signal is weak/absent, default alphabetical order
+    # is Bell-only (bell_* before product_*). Entanglement-domain scenes are
+    # BOTH entangled and separable — surface ≥1 product prior beside ≥1 Bell/CX
+    # prior so MoE is not scaffold-biased toward CX. If a GT-free visual motion
+    # cue already steers (independent→product / correlated→Bell), do NOT
+    # cross-inject the opposite family (would undo the cue).
+    def _has_cx_feat(item: tuple) -> bool:
+        return bool(item[2].get("has_cx"))
+
+    k = 3 if polish else 2
+    cue_independent = any(
+        s in low
+        for s in ("independent trajectory", "independent trajectories", "product-state")
+    )
+    cue_correlated = any(
+        s in low for s in ("correlated trajectory", "correlated trajectories", "bell-pair")
+    )
+    if top and all(_has_cx_feat(it) for it in top) and not cue_correlated:
+        prod = next((it for it in scored if not _has_cx_feat(it)), None)
+        if prod is not None:
+            top = list(top[:-1]) + [prod]
+    elif top and all(not _has_cx_feat(it) for it in top) and not cue_independent:
+        bell = next((it for it in scored if _has_cx_feat(it)), None)
+        if bell is not None:
+            top = list(top[:-1]) + [bell]
+    top = top[:k]
+
+
     lines = [
         SCAFFOLD_BEGIN,
         "# Clifford–Pauli circuit-graph scaffold (structure only; no eval targets).",
@@ -252,11 +362,21 @@ def format_scaffold_hint(
             lines.append(f"#   sketch_gates={json.dumps(t['gates'], ensure_ascii=False)}")
     # Aggregate guidance
     best = top[0][2]
-    lines.append(
-        f"# guidance: prefer n_qubits≈{best['n_qubits']}, "
-        f"anticomm_density≈{best['anticomm_density']}, "
-        f"include_cx={best['has_cx']}, target_bell_like={best['bell_like']}"
-    )
+    cx_vals = [bool(it[2].get("has_cx")) for it in top]
+    mixed_cx = any(cx_vals) and not all(cx_vals)
+    if mixed_cx:
+        lines.append(
+            f"# guidance: prefer n_qubits≈{best['n_qubits']}; "
+            "image may be product-state (no CX) OR Bell-pair (with CX) — "
+            "choose prior by visual structure; JSON domain+class must match gates "
+            "(no CX → product-state class; CX → Bell-pair class)"
+        )
+    else:
+        lines.append(
+            f"# guidance: prefer n_qubits≈{best['n_qubits']}, "
+            f"anticomm_density≈{best.get('anticomm_density', best.get('anticomm_density'))}, "
+            f"include_cx={best['has_cx']}, target_bell_like={best['bell_like']}"
+        )
     lines.append(SCAFFOLD_END)
     block = "\n".join(lines)
     if _FORBIDDEN_HINT.search(block):

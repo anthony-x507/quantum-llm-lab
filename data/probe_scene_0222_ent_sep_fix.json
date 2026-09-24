@@ -1,0 +1,82 @@
+{
+  "n": 1,
+  "parse_ok": 1,
+  "compile_ok": 1,
+  "circuit_ran": 1,
+  "label_correct": 1,
+  "domain_correct": 1,
+  "energy_ok": 1,
+  "parse_rate": 1.0,
+  "compile_rate": 1.0,
+  "label_acc": 1.0,
+  "domain_acc": 1.0,
+  "energy_ok_rate": 1.0,
+  "unique_gate_combos": 1,
+  "wired_to_vlm": true,
+  "scaffold_wired_n": 1,
+  "scaffold_gt_leaks": 0,
+  "channel": "text_scaffold_prefix",
+  "weight_peft_injection": false,
+  "details": [
+    {
+      "scene_id": "scene_0222",
+      "source": "vlm",
+      "parse": true,
+      "compile": true,
+      "circuit_ran": true,
+      "jev": "APROBAR",
+      "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+      "ok_domain": true,
+      "ok_label": true,
+      "energy_ok": true,
+      "gate_names": [
+        "h",
+        "h"
+      ],
+      "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"h\", 1]], \"domain\": \"entanglement\", \"label\": \"separable\", \"template\": \"sep_hh\", \"nota\": \"Estado producto (separable/sep_hh): sin CX — no hay entrelazamie",
+      "circuit_graph_scaffold": {
+        "wired_to_vlm": true,
+        "channel": "text_scaffold_prefix",
+        "weight_peft_injection": false,
+        "injected": true,
+        "hint_chars": 1281,
+        "has_markers": true,
+        "gt_leak": false,
+        "polish": true,
+        "prefix_shape": [
+          4,
+          64
+        ],
+        "cross_attn_keys_shape": [
+          4,
+          64
+        ],
+        "embed_norm": 0.3909,
+        "companion_conditioning": {
+          "prefix": {
+            "kind": "prefix",
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "role": "companion_prefix_stub"
+          },
+          "cross_attn": {
+            "kind": "cross_attn",
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "role": "companion_cross_attn_stub"
+          },
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "cross_attn_keys_shape": [
+            4,
+            64
+          ]
+        }
+      }
+    }
+  ]
+}

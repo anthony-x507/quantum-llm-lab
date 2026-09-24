@@ -1,9 +1,16 @@
 {
-  "name": "mixed_items_largern",
+  "name": "mixed_items_largern_largern_ent_sep_fix",
   "created": "2026-09-24 11:32:13 ET",
   "anti_contamination": {
     "prompt_touches_gt": false,
-    "rule": "eval.* fields harness-only; never concatenated into inference prompts"
+    "rule": "eval.* fields harness-only; never concatenated into inference prompts",
+    "separable_honesty": {
+      "n_separable": 1,
+      "scene_ids": [
+        "scene_0222"
+      ],
+      "dropped_hard_cases": false
+    }
   },
   "counts": {
     "python": 8,
@@ -103,6 +110,17 @@
     }
   ],
   "entanglement": [
+    {
+      "id": "ent_scene_0222",
+      "pillar": "entanglement",
+      "scene_id": "scene_0222",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0222. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "separable",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
     {
       "id": "ent_scene_0157",
       "pillar": "entanglement",
@@ -262,17 +280,6 @@
       "pillar": "entanglement",
       "scene_id": "scene_0121",
       "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0121. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
-      "eval": {
-        "label": "entangled",
-        "domain": "entanglement"
-      },
-      "expected_lane": "ent"
-    },
-    {
-      "id": "ent_scene_0128",
-      "pillar": "entanglement",
-      "scene_id": "scene_0128",
-      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0128. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
       "eval": {
         "label": "entangled",
         "domain": "entanglement"
@@ -644,6 +651,8 @@
     "Vision hard-neg expand +8 (hn_vis_diagram, hn_vis_whiteboard, hn_vis_screenshot_sheet, hn_vis_neg_textonly, hn_vis_neg_without_picture, hn_vis_neg_sin_imagen, hn_vis_street_overlay, hn_vis_neg_no_visual) — text-only negations + diagram/whiteboard/screenshot positives. GT harness-only.",
     "largern expansion: ent n=16 (12 ENT_SET + 4 separable), vision scored n=16 (8 prior + 8 new math PNGs), python n=8",
     "largern ent v2: 1 separable (scene_0222 prior-bench) + 15 entangled in-dist — hold floor while n=16",
-    "largern ent v3: 16 entangled in-dist (separable scene_0222 flaky across live runs; excluded to hold floor at n=16)"
+    "largern ent v3: 16 entangled in-dist (separable scene_0222 flaky across live runs; excluded to hold floor at n=16)",
+    "ent-sep-fix: restore ≥1 separable (scene_0222) at n=16; scaffold diversity (product+Bell) + polish — honesty: do not drop hard separable to fake 1.0",
+    "ent-sep-fix: restore scene_0222 (separable) + 15 entangled; replaces v3 all-ent pool. Hard case kept."
   ]
 }
