@@ -31,6 +31,16 @@ if str(ROOT / "examples") not in sys.path:
     sys.path.insert(0, str(ROOT / "examples"))
 
 
+
+def _strip_thinking(text: str) -> str:
+    """Remove Qwen3 Thinking blocks before JSON parse (PASO 4)."""
+    import re
+
+    cleaned = re.sub(r"<think>.*?</think>", "", text, flags=re.IGNORECASE | re.DOTALL)
+    cleaned = re.sub(r"<thinking>.*?</thinking>", "", cleaned, flags=re.IGNORECASE | re.DOTALL)
+    return cleaned.strip()
+
+
 def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
     """Target toy por dominio: fall | entanglement | superposition."""
     domain = meta.get("domain") or meta.get("train_target_kind") or "fall"
@@ -103,26 +113,54 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
             ),
         }
 
-    # fall / figuras (default)
-    loss = float(
-        meta.get("energy_loss_per_bounce")
-        or meta.get("perdida_energia_por_rebote")
-        or 0.3
-    )
+    # fall / figuras (default) — ≥4 plantillas distintas (PASO 5 diversity)
+    rest = meta.get("restitution")
+    if meta.get("energy_loss_per_bounce") is not None:
+        loss = float(meta["energy_loss_per_bounce"])
+    elif meta.get("perdida_energia_por_rebote") is not None:
+        loss = float(meta["perdida_energia_por_rebote"])
+    elif rest is not None:
+        loss = float(max(0.0, min(1.0, 1.0 - float(rest))))
+    else:
+        loss = 0.3
     theta = round(0.2 + min(1.0, max(0.0, loss)) * 1.0, 3)
     n_bounce = len(meta.get("bounce_frames") or meta.get("rebotes") or [])
-    gates = [["h", 0], ["cx", 0, 1], ["ry", 1, theta]]
-    if n_bounce >= 2:
-        gates.append(["ry", 0, round(theta * 0.5, 3)])
-    shape = meta.get("shape", "?")
+    shape = str(meta.get("shape", "?"))
+    cond = str(meta.get("gravity_condition") or meta.get("condition") or "vacuum_freefall")
+    multi = bool(meta.get("multi_object"))
+
+    # Deterministic template pick from physics cues (not gold labels).
+    # Templates stay inside Jev-allowed gates: h,x,y,z,cx,ry.
+    if cond in ("moon_g", "mars_g") or loss < 0.25:
+        # low-g / low-loss: soft RY only (energy almost conserved)
+        gates = [["h", 0], ["ry", 0, round(theta * 0.4, 3)]]
+        tpl = "soft_ry"
+    elif cond == "lateral_wind" or multi:
+        # wind / multi-object: correlaciona con CX luego RY en ambos
+        gates = [["h", 0], ["cx", 0, 1], ["ry", 1, theta], ["ry", 0, round(theta * 0.5, 3)]]
+        tpl = "wind_dual_ry"
+    elif cond == "air_drag" or n_bounce >= 2:
+        # drag / rebotes: H+CX+RY clásico + second RY
+        gates = [["h", 0], ["cx", 0, 1], ["ry", 1, theta], ["ry", 0, round(theta * 0.5, 3)]]
+        tpl = "drag_bounce"
+    elif shape in ("star", "irregular_polygon", "ring"):
+        # formas irregulares: X+RY (sin CX) — firma distinta
+        gates = [["x", 0], ["ry", 0, theta], ["h", 1]]
+        tpl = "irregular_xry"
+    else:
+        # vacuum / default: H+CX+RY
+        gates = [["h", 0], ["cx", 0, 1], ["ry", 1, theta]]
+        tpl = "classic_hcxry"
+
     return {
         "n_qubits": 2,
         "gates": gates,
         "domain": "fall",
-        "label": label or ("fall_multi" if meta.get("multi_object") else "fall"),
+        "label": label or ("fall_multi" if multi else "fall"),
         "shape": shape,
+        "template": tpl,
         "nota": (
-            f"Firma toy de caída ({shape}) con pérdida por rebote (~{loss:.2f}); "
+            f"Firma toy de caída ({shape}/{cond}/{tpl}) con pérdida por rebote (~{loss:.2f}); "
             "no afirma conservación perfecta."
         ),
     }
@@ -328,37 +366,53 @@ def evaluate_subset(
         proposal: dict[str, Any]
         source = "gold"
         if use_vlm and model is not None:
-            summary = json.dumps(
-                {k: row["meta"].get(k) for k in row["meta"] if k in (
-                    "shape", "color", "energy_loss_per_bounce", "perdida_energia_por_rebote",
-                    "trayectoria", "surface",
-                )},
-                ensure_ascii=False,
-            )
-            prompt = (
-                "Propón SOLO JSON de circuito 2 qubits con gates h/cx/ry "
-                f"para esta escena: {summary}"
-            )
+            # Align with train prompt (PASO1 anti-leak + PASO4 eval parity)
+            prompt = _user_prompt_for_domain(row["meta"], {
+                k: row["meta"].get(k)
+                for k in (
+                    "shape", "color", "surface", "gravity_condition",
+                    "energy_loss_per_bounce", "perdida_energia_por_rebote",
+                    "restitution", "trayectoria", "objeto", "multi_object", "objects",
+                )
+                if row["meta"].get(k) is not None
+            })
             image = row.get("frame_path")
             formatted = apply_chat_template(
                 processor, config, prompt, num_images=1 if image else 0
             )
             try:
                 result = generate(
-                    model, processor, formatted, image=image, max_tokens=220, verbose=False
+                    model, processor, formatted, image=image, max_tokens=512, verbose=False
                 )
-                text = result.text if hasattr(result, "text") else str(result)
-                proposal = parsear_propuesta(text) if parsear_propuesta else row["target"]
+                raw = result.text if hasattr(result, "text") else str(result)
+                text = _strip_thinking(raw)
+                if parsear_propuesta is None:
+                    raise RuntimeError("parsear_propuesta unavailable")
+                proposal = parsear_propuesta(text)
                 source = "vlm"
             except Exception as exc:  # noqa: BLE001
-                proposal = row["target"]
-                source = f"fallback:{exc}"
+                # Do NOT inflate metrics with gold fallback (PASO 4)
+                proposal = {"n_qubits": 2, "gates": []}
+                source = f"fail:{type(exc).__name__}"
+                details.append({
+                    "scene_id": row.get("scene_id"),
+                    "source": source,
+                    "error": str(exc)[:240],
+                    "ok_parse": False,
+                    "ok_compile": False,
+                    "jev": None,
+                })
+                continue
         else:
             proposal = row["target"]
+            source = "gold_dry"
 
-        ok_parse = "gates" in proposal and "n_qubits" in proposal
-        if ok_parse:
+        ok_parse = "gates" in proposal and "n_qubits" in proposal and bool(proposal.get("gates"))
+        # gold_dry is only for --dry-metrics style; live VLM path never counts gold as win
+        if ok_parse and source != "gold_dry":
             parsed += 1
+        elif ok_parse and source == "gold_dry":
+            parsed += 1  # explicit dry path only
         sim = None
         ok_compile = False
         if ok_parse and ejecutar_circuito:
