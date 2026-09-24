@@ -475,8 +475,12 @@ def propose_heuristic(item: dict[str, Any], *, fault: str = "prose_tail") -> str
     m_pow = re.search(r"(?:prints?|imprim[ae])\s+(\d+\s*\*\*\s*\d+)", prompt, re.I)
     # Hard-neg: explicit int(expr) / len('s') / str.count / sum(range) in prompt
     m_int_args = _extract_call_args(prompt, "int")
-    m_len = re.search(r"\blen\s*\(\s*'([^']*)'\s*\)", prompt) or re.search(
-        r"length of the string\s+'([^']*)'", prompt, re.I
+    # R5: also lift len("...") double-quoted (XPath / JSON-ish strings)
+    m_len = (
+        re.search(r"\blen\s*\(\s*'([^']*)'\s*\)", prompt)
+        or re.search(r'\blen\s*\(\s*"([^"]*)"\s*\)', prompt)
+        or re.search(r"length of the string\s+'([^']*)'", prompt, re.I)
+        or re.search(r'length of the string\s+"([^"]*)"', prompt, re.I)
     )
     # R2: len([list literal]) / len(['a','b'])
     m_len_list = re.search(r"\blen\s*\(\s*(\[[^\]]*\])\s*\)", prompt)
@@ -655,7 +659,12 @@ def propose_heuristic(item: dict[str, Any], *, fault: str = "prose_tail") -> str
         code = "s={'a':1,'b':2,'c':3}\nprint(sum(s.values()))"
     elif "len(" in prompt.lower() or "length of" in prompt.lower():
         # Prefer quoted target if present; else weak hello stub (legacy)
-        mq = re.search(r"len\s*\(\s*'([^']*)'\s*\)|length of the string\s+'([^']*)'", prompt, re.I)
+        mq = re.search(
+            r"len\s*\(\s*'([^']*)'\s*\)|len\s*\(\s*\"([^\"]*)\"\s*\)|"
+            r"length of the string\s+'([^']*)'|length of the string\s+\"([^\"]*)\"",
+            prompt,
+            re.I,
+        )
         if mq:
             s = mq.group(1) or mq.group(2) or "hello"
             code = f"print(len({s!r}))"

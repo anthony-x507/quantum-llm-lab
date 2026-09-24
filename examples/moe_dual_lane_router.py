@@ -156,6 +156,7 @@ def route_heuristic(prompt: str) -> Lane:
     # Keep ent_json_ask for explicit gates=/json-válido OR n_qubits + JSON-reply intent.
     # R4: gates=hadamard_cleanup / gates: [] ops-config labels are NOT circuit asks.
     # R4: OpenAPI/schema "reply JSON only" near a deprecated n_qubits *field* is NOT ent.
+    # R5: gates=[nonempty] k8s/helm allow-lists, redis gates:key paths, protobuf gates=N; are NOT ent.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -164,7 +165,19 @@ def route_heuristic(prompt: str) -> Lane:
             r"|ops\s+config\s+line\s+gates="
             r"|config\s+(?:line\s+)?gates="
             r"|not\s+gates\s*[=:\[]"  # R4 schema/comment disclaimer
-            r"|property\s+list",
+            r"|property\s+list"
+            # R5: nonempty gates=[...] / gates: [...] ops allow-lists (k8s/helm)
+            r"|gates\s*=\s*\[[^\]]+\]"
+            r"|gates\s*:\s*\[[^\]]+\]"
+            # R5: redis/key path gates:session:42 (colon key, not JSON)
+            r"|gates\s*:\s*[A-Za-z_][\w\-]*(?:\s*:\s*[\w\-]+)+"
+            # R5: protobuf field "gates = 2;" / "Gate gates = N"
+            r"|\bgates\s*=\s*\d+\s*;"
+            r"|repeated\s+\w+\s+gates\s*="
+            # R5: annotation/chat mention of gates=[cleanup] ops lists
+            r"|annotation(?:\s+value)?\s+gates\s*="
+            r"|k8s\s+annotation"
+            r"|helm\s+value\s+gates",
             text,
             re.I,
         )
@@ -223,10 +236,13 @@ def route_heuristic(prompt: str) -> Lane:
     # R4: bare n_qubits *field/property* mention no longer blocks ENT_NEG cancel.
     if has_ent and ent_negated and not (
         ent_json_ask
-        or re.search(
-            r"\b(gates\s*[=:\[]|json\s+v[aá]lido|reply\s+json|responde\s+solo\s+json)\b",
-            text,
-            re.I,
+        or (
+            re.search(
+                r"\b(gates\s*[=:\[]|json\s+v[aá]lido|reply\s+json|responde\s+solo\s+json)\b",
+                text,
+                re.I,
+            )
+            and not gates_ops_label  # R5: ops allow-list gates=[...] must not block ENT_NEG cancel
         )
     ):
         has_ent = False
@@ -703,7 +719,9 @@ def main() -> int:
         )
         out = args.out if args.out != SMOKE_OUT else HARDNEG_OUT
         hp = str(args.hardneg_path).lower()
-        if 'r4' in hp:
+        if 'r5' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r5.json"
+        elif 'r4' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r4.json"
         elif 'r3' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r3.json"

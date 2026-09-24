@@ -1,0 +1,274 @@
+{
+  "n": 44,
+  "kind": "hardneg_r5_mixed_router",
+  "created": "2026-09-24 12:30:00 ET",
+  "round": 5,
+  "note": "R5 NEW traps (not R1–R4): k8s_label_qubit, prometheus_metric_cx, graphql_field_entangle, terraform_resource_quantum, jwt_claim_n_qubits, makefile_target_bell, css_class_qubit, protobuf_message_circuit, redis_key_gates, npm_package_cx, xpath_qubit, ansible_role_pennylane. HARD: gates=[nonempty] K8s/Helm annotations; JWT/proto reply-JSON-only near seat-count n_qubits; Make 'not gates=[Hadamard]'. GT harness-only.",
+  "anti_contamination": "expected lane is harness-only; never injected into route()",
+  "items": [
+    {
+      "id": "r5_k8s_01",
+      "expected": "python",
+      "family": "k8s_label_qubit",
+      "prompt": "Write Python that prints len('app.kubernetes.io/name=qubit-proxy'). K8s label only. ONLY code."
+    },
+    {
+      "id": "r5_k8s_02",
+      "expected": "python",
+      "family": "k8s_label_qubit",
+      "prompt": "ann = 'gates=[cleanup,nightly]'\nprint(ann.count(','))\n# K8s annotation value gates=[...] is an ops allow-list, not a circuit JSON ask. ONLY code."
+    },
+    {
+      "id": "r5_k8s_03",
+      "expected": "python",
+      "family": "k8s_label_qubit",
+      "prompt": "Write Python that prints 5*5. Pod annotation pennylane.io/enabled=false is a feature flag. ONLY code."
+    },
+    {
+      "id": "r5_k8s_04",
+      "expected": "python",
+      "family": "k8s_label_qubit",
+      "prompt": "Write Python that prints int(8+2). Helm value gates: [cleanup] is a list of CronJob names, not PennyLane. ONLY code."
+    },
+    {
+      "id": "r5_prom_01",
+      "expected": "python",
+      "family": "prometheus_metric_cx",
+      "prompt": "Write Python that prints len('cx_total{job=\"api\"}'). Prometheus metric name cx_total is classical. ONLY code."
+    },
+    {
+      "id": "r5_prom_02",
+      "expected": "python",
+      "family": "prometheus_metric_cx",
+      "prompt": "m = 'bell_pair_latency_ms'\nprint(m.count('_'))\n# metric name only; not a Bell-pair circuit. ONLY code."
+    },
+    {
+      "id": "r5_prom_03",
+      "expected": "python",
+      "family": "prometheus_metric_cx",
+      "prompt": "Write Python that prints 12+7. Alert rule hadamard_error_rate is SRE jargon. ONLY code."
+    },
+    {
+      "id": "r5_gql_01",
+      "expected": "python",
+      "family": "graphql_field_entangle",
+      "prompt": "Write Python that prints len('entangleUsers'). GraphQL field name only. ONLY code."
+    },
+    {
+      "id": "r5_gql_02",
+      "expected": "python",
+      "family": "graphql_field_entangle",
+      "prompt": "q = 'query { n_qubits }'\nprint(len(q))\n# GraphQL selection set; field n_qubits is a product SKU count, not a circuit ask. ONLY code."
+    },
+    {
+      "id": "r5_gql_03",
+      "expected": "python",
+      "family": "graphql_field_entangle",
+      "prompt": "Write Python that prints 4**2. GraphQL type CircuitConfig is a billing schema name. ONLY code."
+    },
+    {
+      "id": "r5_tf_01",
+      "expected": "python",
+      "family": "terraform_resource_quantum",
+      "prompt": "Write Python that prints len('aws_quantum_ledger'). Terraform resource type string. ONLY code."
+    },
+    {
+      "id": "r5_tf_02",
+      "expected": "python",
+      "family": "terraform_resource_quantum",
+      "prompt": "name = 'module.entangle_vpc'\nprint(name.count('.'))\n# Terraform module path; not entanglement. ONLY code."
+    },
+    {
+      "id": "r5_tf_03",
+      "expected": "python",
+      "family": "terraform_resource_quantum",
+      "prompt": "Write Python that prints 9*3. HCL attribute qubit_count is an integer tag, not n_qubits JSON. ONLY code."
+    },
+    {
+      "id": "r5_jwt_01",
+      "expected": "python",
+      "family": "jwt_claim_n_qubits",
+      "prompt": "Write Python that prints len('n_qubits'). JWT claim key string only. ONLY code."
+    },
+    {
+      "id": "r5_jwt_02",
+      "expected": "python",
+      "family": "jwt_claim_n_qubits",
+      "prompt": "Write Python that prints 6+5. Auth note: reply JSON only for /session — JWT claim n_qubits is a seat count, not a circuit. ONLY code."
+    },
+    {
+      "id": "r5_jwt_03",
+      "expected": "python",
+      "family": "jwt_claim_n_qubits",
+      "prompt": "claims = ['sub','gates','aud']\nprint(len(claims))\n# JWT claim names; gates is a permission scope, not gates=[]. ONLY code."
+    },
+    {
+      "id": "r5_make_01",
+      "expected": "python",
+      "family": "makefile_target_bell",
+      "prompt": "Write Python that prints len('bell:'). Makefile target label. ONLY code."
+    },
+    {
+      "id": "r5_make_02",
+      "expected": "python",
+      "family": "makefile_target_bell",
+      "prompt": "t = 'cx-lint: ## run cx linter'\nprint(t.count('-'))\n# Make target; not CX gate. ONLY code."
+    },
+    {
+      "id": "r5_make_03",
+      "expected": "python",
+      "family": "makefile_target_bell",
+      "prompt": "Write Python that prints 15-4. Recipe comment # not gates=[Hadamard] — that would be wrong Make syntax. ONLY code."
+    },
+    {
+      "id": "r5_css_01",
+      "expected": "python",
+      "family": "css_class_qubit",
+      "prompt": "Write Python that prints len('.qubit-grid'). CSS class selector string. ONLY code."
+    },
+    {
+      "id": "r5_css_02",
+      "expected": "python",
+      "family": "css_class_qubit",
+      "prompt": "cls = 'circuit-board--dark'\nprint(cls.count('-'))\n# CSS BEM class; not a quantum circuit ask. ONLY code."
+    },
+    {
+      "id": "r5_css_03",
+      "expected": "python",
+      "family": "css_class_qubit",
+      "prompt": "Write Python that prints 2**5. HTML class='hadamard-btn' is UI chrome. ONLY code."
+    },
+    {
+      "id": "r5_proto_01",
+      "expected": "python",
+      "family": "protobuf_message_circuit",
+      "prompt": "Write Python that prints len('message Circuit'). Protobuf IDL fragment. ONLY code."
+    },
+    {
+      "id": "r5_proto_02",
+      "expected": "python",
+      "family": "protobuf_message_circuit",
+      "prompt": "Write Python that prints 7+6. Proto field int32 n_qubits = 1 is a seat counter; reply JSON only for the gRPC gateway envelope, not PennyLane. ONLY code."
+    },
+    {
+      "id": "r5_proto_03",
+      "expected": "python",
+      "family": "protobuf_message_circuit",
+      "prompt": "idl = 'repeated Gate gates = 2;'\nprint(len(idl))\n# protobuf field; not a circuit JSON ask. ONLY code."
+    },
+    {
+      "id": "r5_redis_01",
+      "expected": "python",
+      "family": "redis_key_gates",
+      "prompt": "Write Python that prints len('gates:session:42'). Redis key pattern. ONLY code."
+    },
+    {
+      "id": "r5_redis_02",
+      "expected": "python",
+      "family": "redis_key_gates",
+      "prompt": "k = 'qubit:cache:v1'\nprint(k.count(':'))\n# Redis key; not a qubit circuit. ONLY code."
+    },
+    {
+      "id": "r5_redis_03",
+      "expected": "python",
+      "family": "redis_key_gates",
+      "prompt": "Write Python that prints 11*2. SET bell_pair 1 is a Redis command, not entanglement. ONLY code."
+    },
+    {
+      "id": "r5_npm_01",
+      "expected": "python",
+      "family": "npm_package_cx",
+      "prompt": "Write Python that prints len('@org/cx-utils'). npm package name. ONLY code."
+    },
+    {
+      "id": "r5_npm_02",
+      "expected": "python",
+      "family": "npm_package_cx",
+      "prompt": "dep = 'pennylane-ci-helper'\nprint(dep.count('-'))\n# npm dep name; not PennyLane circuit. ONLY code."
+    },
+    {
+      "id": "r5_npm_03",
+      "expected": "python",
+      "family": "npm_package_cx",
+      "prompt": "Write Python that prints 18+1. package.json script 'entangle:build' is a bundler alias. ONLY code."
+    },
+    {
+      "id": "r5_xpath_01",
+      "expected": "python",
+      "family": "xpath_qubit",
+      "prompt": "Write Python that prints len(\"//qubit[@id]\"). XPath string only. ONLY code."
+    },
+    {
+      "id": "r5_xpath_02",
+      "expected": "python",
+      "family": "xpath_qubit",
+      "prompt": "xp = \"//gate[@name='cx']\"\nprint(len(xp))\n# XPath; XML tag gate is UI markup. ONLY code."
+    },
+    {
+      "id": "r5_xpath_03",
+      "expected": "python",
+      "family": "xpath_qubit",
+      "prompt": "Write Python that prints 3*9. XPath //circuit/node is DOM navigation, not a quantum circuit. ONLY code."
+    },
+    {
+      "id": "r5_ans_01",
+      "expected": "python",
+      "family": "ansible_role_pennylane",
+      "prompt": "Write Python that prints len('role: pennylane.ci'). Ansible role ref. ONLY code."
+    },
+    {
+      "id": "r5_ans_02",
+      "expected": "python",
+      "family": "ansible_role_pennylane",
+      "prompt": "Write Python that prints 10+10. Vars file n_qubits: 0 disables a feature flag in Ansible. ONLY code."
+    },
+    {
+      "id": "r5_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r5",
+      "prompt": "Propose a quantum circuit with n_qubits and gates for a GHZ entanglement demo. Reply JSON only."
+    },
+    {
+      "id": "r5_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r5",
+      "prompt": "Build a PennyLane Bell-pair: Hadamard then CX. Return valid JSON with n_qubits and gates list."
+    },
+    {
+      "id": "r5_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r5",
+      "prompt": "Look at the image. In the photo of the rack, how many blinking LEDs are visible in the frame? ONLY the integer."
+    },
+    {
+      "id": "r5_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r5",
+      "prompt": "Observa la imagen adjunta. En la foto del laboratorio, ¿cuántos monitores hay? Responde solo un entero."
+    },
+    {
+      "id": "r5_base_01",
+      "expected": "base",
+      "family": "base_control_r5",
+      "prompt": "Hello! Thanks for chatting about hiking. Any fun weekend plans? No code, no circuit."
+    },
+    {
+      "id": "r5_base_02",
+      "expected": "base",
+      "family": "base_control_r5",
+      "prompt": "Nice talk about JWT seat-count claims named n_qubits. Any gardening tips? No code, no circuit, no image."
+    },
+    {
+      "id": "r5_base_03",
+      "expected": "base",
+      "family": "base_control_r5",
+      "prompt": "Text-only ASCII rack sketch (no image file, no photo). Someone drew 4 boxes. How is the weather?"
+    },
+    {
+      "id": "r5_base_04",
+      "expected": "base",
+      "family": "base_control_r5",
+      "prompt": "Thanks for the K8s annotation chat about gates=[cleanup]. Cooking ideas? No code, no circuit."
+    }
+  ]
+}

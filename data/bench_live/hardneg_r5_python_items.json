@@ -1,0 +1,261 @@
+{
+  "n": 36,
+  "kind": "hardneg_r5_python_items",
+  "created": "2026-09-24 12:30:00 ET",
+  "round": 5,
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R5.md",
+  "items": [
+    {
+      "id": "r5v_k8s_01",
+      "kind": "k8s_label_qubit",
+      "prompt": "Write Python that prints len('app.kubernetes.io/name=qubit-proxy'). K8s label. ONLY code.",
+      "expected_stdout": "34\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_k8s_02",
+      "kind": "k8s_label_qubit",
+      "prompt": "ann = 'gates=[cleanup,nightly]'\nprint(ann.count(','))\n# K8s annotation. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_k8s_03",
+      "kind": "k8s_label_qubit",
+      "prompt": "Write Python that prints 5*5. pennylane.io flag distractor. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_k8s_04",
+      "kind": "k8s_label_qubit",
+      "prompt": "Write Python that prints int(8+2). Helm gates: [cleanup] distractor. ONLY code.",
+      "expected_stdout": "10\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_prom_01",
+      "kind": "prometheus_metric_cx",
+      "prompt": "Write Python that prints len('cx_total{job=\"api\"}'). Metric name. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_prom_02",
+      "kind": "prometheus_metric_cx",
+      "prompt": "m = 'bell_pair_latency_ms'\nprint(m.count('_'))\n# metric. ONLY code.",
+      "expected_stdout": "3\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_prom_03",
+      "kind": "prometheus_metric_cx",
+      "prompt": "Write Python that prints 12+7. Alert hadamard_error_rate distractor. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_gql_01",
+      "kind": "graphql_field_entangle",
+      "prompt": "Write Python that prints len('entangleUsers'). GraphQL field. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_gql_02",
+      "kind": "graphql_field_entangle",
+      "prompt": "q = 'query { n_qubits }'\nprint(len(q))\n# GraphQL. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_gql_03",
+      "kind": "graphql_field_entangle",
+      "prompt": "Write Python that prints 4**2. CircuitConfig type distractor. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_tf_01",
+      "kind": "terraform_resource_quantum",
+      "prompt": "Write Python that prints len('aws_quantum_ledger'). TF type. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_tf_02",
+      "kind": "terraform_resource_quantum",
+      "prompt": "name = 'module.entangle_vpc'\nprint(name.count('.'))\n# TF module. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_tf_03",
+      "kind": "terraform_resource_quantum",
+      "prompt": "Write Python that prints 9*3. qubit_count tag distractor. ONLY code.",
+      "expected_stdout": "27\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_jwt_01",
+      "kind": "jwt_claim_n_qubits",
+      "prompt": "Write Python that prints len('n_qubits'). JWT claim key. ONLY code.",
+      "expected_stdout": "8\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_jwt_02",
+      "kind": "jwt_claim_n_qubits",
+      "prompt": "Write Python that prints 6+5. JWT /session reply-JSON-only distractor. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_jwt_03",
+      "kind": "jwt_claim_n_qubits",
+      "prompt": "claims = ['sub','gates','aud']\nprint(len(claims))\n# JWT claims. ONLY code.",
+      "expected_stdout": "3\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_make_01",
+      "kind": "makefile_target_bell",
+      "prompt": "Write Python that prints len('bell:'). Make target. ONLY code.",
+      "expected_stdout": "5\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_make_02",
+      "kind": "makefile_target_bell",
+      "prompt": "t = 'cx-lint: ## run cx linter'\nprint(t.count('-'))\n# Make. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_make_03",
+      "kind": "makefile_target_bell",
+      "prompt": "Write Python that prints 15-4. not gates=[Hadamard] comment distractor. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_css_01",
+      "kind": "css_class_qubit",
+      "prompt": "Write Python that prints len('.qubit-grid'). CSS class. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_css_02",
+      "kind": "css_class_qubit",
+      "prompt": "cls = 'circuit-board--dark'\nprint(cls.count('-'))\n# CSS. ONLY code.",
+      "expected_stdout": "3\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_css_03",
+      "kind": "css_class_qubit",
+      "prompt": "Write Python that prints 2**5. hadamard-btn class distractor. ONLY code.",
+      "expected_stdout": "32\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_proto_01",
+      "kind": "protobuf_message_circuit",
+      "prompt": "Write Python that prints len('message Circuit'). Proto IDL. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_proto_02",
+      "kind": "protobuf_message_circuit",
+      "prompt": "Write Python that prints 7+6. Proto n_qubits field distractor. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_proto_03",
+      "kind": "protobuf_message_circuit",
+      "prompt": "idl = 'repeated Gate gates = 2;'\nprint(len(idl))\n# protobuf. ONLY code.",
+      "expected_stdout": "24\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_redis_01",
+      "kind": "redis_key_gates",
+      "prompt": "Write Python that prints len('gates:session:42'). Redis key. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_redis_02",
+      "kind": "redis_key_gates",
+      "prompt": "k = 'qubit:cache:v1'\nprint(k.count(':'))\n# Redis. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_redis_03",
+      "kind": "redis_key_gates",
+      "prompt": "Write Python that prints 11*2. SET bell_pair distractor. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_npm_01",
+      "kind": "npm_package_cx",
+      "prompt": "Write Python that prints len('@org/cx-utils'). npm package. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_npm_02",
+      "kind": "npm_package_cx",
+      "prompt": "dep = 'pennylane-ci-helper'\nprint(dep.count('-'))\n# npm. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_npm_03",
+      "kind": "npm_package_cx",
+      "prompt": "Write Python that prints 18+1. entangle:build script distractor. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_xpath_01",
+      "kind": "xpath_qubit",
+      "prompt": "Write Python that prints len(\"//qubit[@id]\"). XPath. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_xpath_02",
+      "kind": "xpath_qubit",
+      "prompt": "xp = \"//gate[@name='cx']\"\nprint(len(xp))\n# XPath. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_xpath_03",
+      "kind": "xpath_qubit",
+      "prompt": "Write Python that prints 3*9. //circuit/node distractor. ONLY code.",
+      "expected_stdout": "27\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_ans_01",
+      "kind": "ansible_role_pennylane",
+      "prompt": "Write Python that prints len('role: pennylane.ci'). Ansible role. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r5v_ans_02",
+      "kind": "ansible_role_pennylane",
+      "prompt": "Write Python that prints 10+10. Ansible n_qubits: 0 distractor. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    }
+  ]
+}

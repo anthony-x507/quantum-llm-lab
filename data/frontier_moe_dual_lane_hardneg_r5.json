@@ -1,0 +1,533 @@
+{
+  "method": "heuristic",
+  "n": 44,
+  "hits": 44,
+  "misses": 0,
+  "score": "44/44",
+  "rate": 1.0,
+  "by_family": {
+    "k8s_label_qubit": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "prometheus_metric_cx": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "graphql_field_entangle": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "terraform_resource_quantum": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "jwt_claim_n_qubits": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "makefile_target_bell": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "css_class_qubit": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "protobuf_message_circuit": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "redis_key_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "npm_package_cx": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "xpath_qubit": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "ansible_role_pennylane": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "ent_control_r5": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r5": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r5": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "r5_k8s_01",
+      "family": "k8s_label_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('app.kubernetes.io/name=qubit-proxy'). K8s label on",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_k8s_02",
+      "family": "k8s_label_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "ann = 'gates=[cleanup,nightly]'\nprint(ann.count(','))\n# K8s annotation value gat",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_k8s_03",
+      "family": "k8s_label_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 5*5. Pod annotation pennylane.io/enabled=false is a fea",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_k8s_04",
+      "family": "k8s_label_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints int(8+2). Helm value gates: [cleanup] is a list of Cron",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_prom_01",
+      "family": "prometheus_metric_cx",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('cx_total{job=\"api\"}'). Prometheus metric name cx_t",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_prom_02",
+      "family": "prometheus_metric_cx",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "m = 'bell_pair_latency_ms'\nprint(m.count('_'))\n# metric name only; not a Bell-pa",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_prom_03",
+      "family": "prometheus_metric_cx",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 12+7. Alert rule hadamard_error_rate is SRE jargon. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_gql_01",
+      "family": "graphql_field_entangle",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('entangleUsers'). GraphQL field name only. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_gql_02",
+      "family": "graphql_field_entangle",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "q = 'query { n_qubits }'\nprint(len(q))\n# GraphQL selection set; field n_qubits i",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_gql_03",
+      "family": "graphql_field_entangle",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 4**2. GraphQL type CircuitConfig is a billing schema na",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_tf_01",
+      "family": "terraform_resource_quantum",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('aws_quantum_ledger'). Terraform resource type stri",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_tf_02",
+      "family": "terraform_resource_quantum",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "name = 'module.entangle_vpc'\nprint(name.count('.'))\n# Terraform module path; not",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_tf_03",
+      "family": "terraform_resource_quantum",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 9*3. HCL attribute qubit_count is an integer tag, not n",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_jwt_01",
+      "family": "jwt_claim_n_qubits",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('n_qubits'). JWT claim key string only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_jwt_02",
+      "family": "jwt_claim_n_qubits",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 6+5. Auth note: reply JSON only for /session — JWT clai",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_jwt_03",
+      "family": "jwt_claim_n_qubits",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "claims = ['sub','gates','aud']\nprint(len(claims))\n# JWT claim names; gates is a ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_make_01",
+      "family": "makefile_target_bell",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('bell:'). Makefile target label. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_make_02",
+      "family": "makefile_target_bell",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t = 'cx-lint: ## run cx linter'\nprint(t.count('-'))\n# Make target; not CX gate. ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_make_03",
+      "family": "makefile_target_bell",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 15-4. Recipe comment # not gates=[Hadamard] — that woul",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_css_01",
+      "family": "css_class_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('.qubit-grid'). CSS class selector string. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_css_02",
+      "family": "css_class_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "cls = 'circuit-board--dark'\nprint(cls.count('-'))\n# CSS BEM class; not a quantum",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_css_03",
+      "family": "css_class_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 2**5. HTML class='hadamard-btn' is UI chrome. ONLY code",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_proto_01",
+      "family": "protobuf_message_circuit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('message Circuit'). Protobuf IDL fragment. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_proto_02",
+      "family": "protobuf_message_circuit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 7+6. Proto field int32 n_qubits = 1 is a seat counter; ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_proto_03",
+      "family": "protobuf_message_circuit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "idl = 'repeated Gate gates = 2;'\nprint(len(idl))\n# protobuf field; not a circuit",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_redis_01",
+      "family": "redis_key_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates:session:42'). Redis key pattern. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_redis_02",
+      "family": "redis_key_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "k = 'qubit:cache:v1'\nprint(k.count(':'))\n# Redis key; not a qubit circuit. ONLY ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_redis_03",
+      "family": "redis_key_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 11*2. SET bell_pair 1 is a Redis command, not entanglem",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_npm_01",
+      "family": "npm_package_cx",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('@org/cx-utils'). npm package name. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_npm_02",
+      "family": "npm_package_cx",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "dep = 'pennylane-ci-helper'\nprint(dep.count('-'))\n# npm dep name; not PennyLane ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_npm_03",
+      "family": "npm_package_cx",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 18+1. package.json script 'entangle:build' is a bundler",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_xpath_01",
+      "family": "xpath_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len(\"//qubit[@id]\"). XPath string only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_xpath_02",
+      "family": "xpath_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "xp = \"//gate[@name='cx']\"\nprint(len(xp))\n# XPath; XML tag gate is UI markup. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_xpath_03",
+      "family": "xpath_qubit",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 3*9. XPath //circuit/node is DOM navigation, not a quan",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_ans_01",
+      "family": "ansible_role_pennylane",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('role: pennylane.ci'). Ansible role ref. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_ans_02",
+      "family": "ansible_role_pennylane",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 10+10. Vars file n_qubits: 0 disables a feature flag in",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r5_ent_01",
+      "family": "ent_control_r5",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Propose a quantum circuit with n_qubits and gates for a GHZ entanglement demo. R",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r5_ent_02",
+      "family": "ent_control_r5",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Build a PennyLane Bell-pair: Hadamard then CX. Return valid JSON with n_qubits a",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r5_vis_01",
+      "family": "vision_control_r5",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. In the photo of the rack, how many blinking LEDs are visible ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r5_vis_02",
+      "family": "vision_control_r5",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Observa la imagen adjunta. En la foto del laboratorio, ¿cuántos monitores hay? R",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r5_base_01",
+      "family": "base_control_r5",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Hello! Thanks for chatting about hiking. Any fun weekend plans? No code, no circ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r5_base_02",
+      "family": "base_control_r5",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Nice talk about JWT seat-count claims named n_qubits. Any gardening tips? No cod",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r5_base_03",
+      "family": "base_control_r5",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Text-only ASCII rack sketch (no image file, no photo). Someone drew 4 boxes. How",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r5_base_04",
+      "family": "base_control_r5",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Thanks for the K8s annotation chat about gates=[cleanup]. Cooking ideas? No code",
+      "ent_adapter_blocked": false
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_r5_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}

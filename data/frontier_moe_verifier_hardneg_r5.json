@@ -1,6 +1,6 @@
 {
   "frontier": "C3-moe-verifier-codigo-vivo",
-  "written": "2026-09-24 12:31:24",
+  "written": "2026-09-24 12:31:16",
   "mode": "hardneg-cpu",
   "router_method": "heuristic",
   "claims": [
@@ -183,14 +183,14 @@
     }
   },
   "python_paths": {
-    "n_items": 32,
+    "n_items": 36,
     "proposer": "heuristic",
     "router_method": "heuristic",
     "rounds_max": 2,
     "paths": {
       "a_single_shot_no_moe": {
         "path": "a_single_shot_no_moe",
-        "n": 32,
+        "n": 36,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 0.0,
         "delta_solve_rate": 0.0,
@@ -198,12 +198,12 @@
         "solved_loop": 0,
         "repair_success_rate": 0.0,
         "repair_helped_n": 0,
-        "failed_single_n": 32,
+        "failed_single_n": 36,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "r4v_yaml_01",
+            "id": "r5v_k8s_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -212,7 +212,7 @@
             "actions": []
           },
           {
-            "id": "r4v_yaml_02",
+            "id": "r5v_k8s_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -221,7 +221,7 @@
             "actions": []
           },
           {
-            "id": "r4v_yaml_03",
+            "id": "r5v_k8s_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -230,7 +230,7 @@
             "actions": []
           },
           {
-            "id": "r4v_yaml_04",
+            "id": "r5v_k8s_04",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -239,7 +239,7 @@
             "actions": []
           },
           {
-            "id": "r4v_sql_01",
+            "id": "r5v_prom_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -248,7 +248,7 @@
             "actions": []
           },
           {
-            "id": "r4v_sql_02",
+            "id": "r5v_prom_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -257,7 +257,7 @@
             "actions": []
           },
           {
-            "id": "r4v_sql_03",
+            "id": "r5v_prom_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -266,7 +266,7 @@
             "actions": []
           },
           {
-            "id": "r4v_dock_01",
+            "id": "r5v_gql_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -275,7 +275,7 @@
             "actions": []
           },
           {
-            "id": "r4v_dock_02",
+            "id": "r5v_gql_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -284,7 +284,7 @@
             "actions": []
           },
           {
-            "id": "r4v_dock_03",
+            "id": "r5v_gql_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -293,7 +293,7 @@
             "actions": []
           },
           {
-            "id": "r4v_git_01",
+            "id": "r5v_tf_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -302,7 +302,7 @@
             "actions": []
           },
           {
-            "id": "r4v_git_02",
+            "id": "r5v_tf_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -311,7 +311,7 @@
             "actions": []
           },
           {
-            "id": "r4v_git_03",
+            "id": "r5v_tf_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -320,7 +320,7 @@
             "actions": []
           },
           {
-            "id": "r4v_schema_01",
+            "id": "r5v_jwt_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -329,7 +329,7 @@
             "actions": []
           },
           {
-            "id": "r4v_schema_02",
+            "id": "r5v_jwt_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -338,7 +338,7 @@
             "actions": []
           },
           {
-            "id": "r4v_schema_04",
+            "id": "r5v_jwt_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -347,7 +347,7 @@
             "actions": []
           },
           {
-            "id": "r4v_csv_01",
+            "id": "r5v_make_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -356,7 +356,7 @@
             "actions": []
           },
           {
-            "id": "r4v_csv_02",
+            "id": "r5v_make_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -365,7 +365,7 @@
             "actions": []
           },
           {
-            "id": "r4v_csv_03",
+            "id": "r5v_make_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -374,7 +374,7 @@
             "actions": []
           },
           {
-            "id": "r4v_stack_01",
+            "id": "r5v_css_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -383,7 +383,7 @@
             "actions": []
           },
           {
-            "id": "r4v_stack_02",
+            "id": "r5v_css_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -392,7 +392,7 @@
             "actions": []
           },
           {
-            "id": "r4v_stack_03",
+            "id": "r5v_css_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -401,7 +401,7 @@
             "actions": []
           },
           {
-            "id": "r4v_dc_01",
+            "id": "r5v_proto_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -410,7 +410,7 @@
             "actions": []
           },
           {
-            "id": "r4v_dc_02",
+            "id": "r5v_proto_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -419,7 +419,7 @@
             "actions": []
           },
           {
-            "id": "r4v_dc_03",
+            "id": "r5v_proto_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -428,7 +428,7 @@
             "actions": []
           },
           {
-            "id": "r4v_mail_01",
+            "id": "r5v_redis_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -437,7 +437,7 @@
             "actions": []
           },
           {
-            "id": "r4v_mail_02",
+            "id": "r5v_redis_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -446,7 +446,7 @@
             "actions": []
           },
           {
-            "id": "r4v_toml_01",
+            "id": "r5v_redis_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -455,7 +455,7 @@
             "actions": []
           },
           {
-            "id": "r4v_toml_02",
+            "id": "r5v_npm_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -464,7 +464,7 @@
             "actions": []
           },
           {
-            "id": "r4v_toml_03",
+            "id": "r5v_npm_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -473,7 +473,7 @@
             "actions": []
           },
           {
-            "id": "r4v_mmd_01",
+            "id": "r5v_npm_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -482,7 +482,43 @@
             "actions": []
           },
           {
-            "id": "r4v_mmd_03",
+            "id": "r5v_xpath_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r5v_xpath_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r5v_xpath_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r5v_ans_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r5v_ans_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -494,7 +530,7 @@
       },
       "b_moe_alone": {
         "path": "b_moe_alone",
-        "n": 32,
+        "n": 36,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 0.0,
         "delta_solve_rate": 0.0,
@@ -502,12 +538,12 @@
         "solved_loop": 0,
         "repair_success_rate": 0.0,
         "repair_helped_n": 0,
-        "failed_single_n": 32,
+        "failed_single_n": 36,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "r4v_yaml_01",
+            "id": "r5v_k8s_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -516,7 +552,7 @@
             "actions": []
           },
           {
-            "id": "r4v_yaml_02",
+            "id": "r5v_k8s_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -525,7 +561,7 @@
             "actions": []
           },
           {
-            "id": "r4v_yaml_03",
+            "id": "r5v_k8s_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -534,7 +570,7 @@
             "actions": []
           },
           {
-            "id": "r4v_yaml_04",
+            "id": "r5v_k8s_04",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -543,7 +579,7 @@
             "actions": []
           },
           {
-            "id": "r4v_sql_01",
+            "id": "r5v_prom_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -552,7 +588,7 @@
             "actions": []
           },
           {
-            "id": "r4v_sql_02",
+            "id": "r5v_prom_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -561,7 +597,7 @@
             "actions": []
           },
           {
-            "id": "r4v_sql_03",
+            "id": "r5v_prom_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -570,7 +606,7 @@
             "actions": []
           },
           {
-            "id": "r4v_dock_01",
+            "id": "r5v_gql_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -579,7 +615,7 @@
             "actions": []
           },
           {
-            "id": "r4v_dock_02",
+            "id": "r5v_gql_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -588,7 +624,7 @@
             "actions": []
           },
           {
-            "id": "r4v_dock_03",
+            "id": "r5v_gql_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -597,7 +633,7 @@
             "actions": []
           },
           {
-            "id": "r4v_git_01",
+            "id": "r5v_tf_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -606,7 +642,7 @@
             "actions": []
           },
           {
-            "id": "r4v_git_02",
+            "id": "r5v_tf_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -615,7 +651,7 @@
             "actions": []
           },
           {
-            "id": "r4v_git_03",
+            "id": "r5v_tf_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -624,7 +660,7 @@
             "actions": []
           },
           {
-            "id": "r4v_schema_01",
+            "id": "r5v_jwt_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -633,7 +669,7 @@
             "actions": []
           },
           {
-            "id": "r4v_schema_02",
+            "id": "r5v_jwt_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -642,7 +678,7 @@
             "actions": []
           },
           {
-            "id": "r4v_schema_04",
+            "id": "r5v_jwt_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -651,7 +687,7 @@
             "actions": []
           },
           {
-            "id": "r4v_csv_01",
+            "id": "r5v_make_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -660,7 +696,7 @@
             "actions": []
           },
           {
-            "id": "r4v_csv_02",
+            "id": "r5v_make_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -669,7 +705,7 @@
             "actions": []
           },
           {
-            "id": "r4v_csv_03",
+            "id": "r5v_make_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -678,7 +714,7 @@
             "actions": []
           },
           {
-            "id": "r4v_stack_01",
+            "id": "r5v_css_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -687,7 +723,7 @@
             "actions": []
           },
           {
-            "id": "r4v_stack_02",
+            "id": "r5v_css_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -696,7 +732,7 @@
             "actions": []
           },
           {
-            "id": "r4v_stack_03",
+            "id": "r5v_css_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -705,7 +741,7 @@
             "actions": []
           },
           {
-            "id": "r4v_dc_01",
+            "id": "r5v_proto_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -714,7 +750,7 @@
             "actions": []
           },
           {
-            "id": "r4v_dc_02",
+            "id": "r5v_proto_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -723,7 +759,7 @@
             "actions": []
           },
           {
-            "id": "r4v_dc_03",
+            "id": "r5v_proto_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -732,7 +768,7 @@
             "actions": []
           },
           {
-            "id": "r4v_mail_01",
+            "id": "r5v_redis_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -741,7 +777,7 @@
             "actions": []
           },
           {
-            "id": "r4v_mail_02",
+            "id": "r5v_redis_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -750,7 +786,7 @@
             "actions": []
           },
           {
-            "id": "r4v_toml_01",
+            "id": "r5v_redis_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -759,7 +795,7 @@
             "actions": []
           },
           {
-            "id": "r4v_toml_02",
+            "id": "r5v_npm_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -768,7 +804,7 @@
             "actions": []
           },
           {
-            "id": "r4v_toml_03",
+            "id": "r5v_npm_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -777,7 +813,7 @@
             "actions": []
           },
           {
-            "id": "r4v_mmd_01",
+            "id": "r5v_npm_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -786,7 +822,43 @@
             "actions": []
           },
           {
-            "id": "r4v_mmd_03",
+            "id": "r5v_xpath_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r5v_xpath_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r5v_xpath_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r5v_ans_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r5v_ans_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -795,199 +867,223 @@
             "actions": []
           }
         ],
-        "n_items_total": 32,
-        "n_routed_python": 32,
+        "n_items_total": 36,
+        "n_routed_python": 36,
         "n_routed_away": 0,
         "solve_rate_on_python_lane": 0.0,
         "routing": [
           {
-            "id": "r4v_yaml_01",
+            "id": "r5v_k8s_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_yaml_02",
+            "id": "r5v_k8s_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_yaml_03",
+            "id": "r5v_k8s_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_yaml_04",
+            "id": "r5v_k8s_04",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_sql_01",
+            "id": "r5v_prom_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_sql_02",
+            "id": "r5v_prom_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_sql_03",
+            "id": "r5v_prom_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_dock_01",
+            "id": "r5v_gql_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_dock_02",
+            "id": "r5v_gql_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_dock_03",
+            "id": "r5v_gql_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_git_01",
+            "id": "r5v_tf_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_git_02",
+            "id": "r5v_tf_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_git_03",
+            "id": "r5v_tf_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_schema_01",
+            "id": "r5v_jwt_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_schema_02",
+            "id": "r5v_jwt_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_schema_04",
+            "id": "r5v_jwt_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_csv_01",
+            "id": "r5v_make_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_csv_02",
+            "id": "r5v_make_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_csv_03",
+            "id": "r5v_make_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_stack_01",
+            "id": "r5v_css_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_stack_02",
+            "id": "r5v_css_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_stack_03",
+            "id": "r5v_css_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_dc_01",
+            "id": "r5v_proto_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_dc_02",
+            "id": "r5v_proto_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_dc_03",
+            "id": "r5v_proto_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_mail_01",
+            "id": "r5v_redis_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_mail_02",
+            "id": "r5v_redis_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_toml_01",
+            "id": "r5v_redis_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_toml_02",
+            "id": "r5v_npm_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_toml_03",
+            "id": "r5v_npm_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_mmd_01",
+            "id": "r5v_npm_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_mmd_03",
+            "id": "r5v_xpath_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r5v_xpath_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r5v_xpath_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r5v_ans_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r5v_ans_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
@@ -996,20 +1092,20 @@
       },
       "c_verifier_alone": {
         "path": "c_verifier_alone",
-        "n": 32,
+        "n": 36,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 1.0,
         "delta_solve_rate": 1.0,
         "solved_single": 0,
-        "solved_loop": 32,
+        "solved_loop": 36,
         "repair_success_rate": 1.0,
-        "repair_helped_n": 32,
-        "failed_single_n": 32,
+        "repair_helped_n": 36,
+        "failed_single_n": 36,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "r4v_yaml_01",
+            "id": "r5v_k8s_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1020,7 +1116,7 @@
             ]
           },
           {
-            "id": "r4v_yaml_02",
+            "id": "r5v_k8s_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1031,7 +1127,7 @@
             ]
           },
           {
-            "id": "r4v_yaml_03",
+            "id": "r5v_k8s_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1042,7 +1138,7 @@
             ]
           },
           {
-            "id": "r4v_yaml_04",
+            "id": "r5v_k8s_04",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1053,7 +1149,7 @@
             ]
           },
           {
-            "id": "r4v_sql_01",
+            "id": "r5v_prom_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1064,7 +1160,7 @@
             ]
           },
           {
-            "id": "r4v_sql_02",
+            "id": "r5v_prom_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1075,7 +1171,7 @@
             ]
           },
           {
-            "id": "r4v_sql_03",
+            "id": "r5v_prom_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1086,7 +1182,7 @@
             ]
           },
           {
-            "id": "r4v_dock_01",
+            "id": "r5v_gql_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1097,7 +1193,7 @@
             ]
           },
           {
-            "id": "r4v_dock_02",
+            "id": "r5v_gql_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1108,7 +1204,7 @@
             ]
           },
           {
-            "id": "r4v_dock_03",
+            "id": "r5v_gql_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1119,7 +1215,7 @@
             ]
           },
           {
-            "id": "r4v_git_01",
+            "id": "r5v_tf_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1130,7 +1226,7 @@
             ]
           },
           {
-            "id": "r4v_git_02",
+            "id": "r5v_tf_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1141,7 +1237,7 @@
             ]
           },
           {
-            "id": "r4v_git_03",
+            "id": "r5v_tf_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1152,7 +1248,7 @@
             ]
           },
           {
-            "id": "r4v_schema_01",
+            "id": "r5v_jwt_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1163,7 +1259,7 @@
             ]
           },
           {
-            "id": "r4v_schema_02",
+            "id": "r5v_jwt_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1174,7 +1270,7 @@
             ]
           },
           {
-            "id": "r4v_schema_04",
+            "id": "r5v_jwt_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1185,7 +1281,7 @@
             ]
           },
           {
-            "id": "r4v_csv_01",
+            "id": "r5v_make_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1196,7 +1292,7 @@
             ]
           },
           {
-            "id": "r4v_csv_02",
+            "id": "r5v_make_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1207,7 +1303,7 @@
             ]
           },
           {
-            "id": "r4v_csv_03",
+            "id": "r5v_make_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1218,7 +1314,7 @@
             ]
           },
           {
-            "id": "r4v_stack_01",
+            "id": "r5v_css_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1229,7 +1325,7 @@
             ]
           },
           {
-            "id": "r4v_stack_02",
+            "id": "r5v_css_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1240,7 +1336,7 @@
             ]
           },
           {
-            "id": "r4v_stack_03",
+            "id": "r5v_css_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1251,7 +1347,7 @@
             ]
           },
           {
-            "id": "r4v_dc_01",
+            "id": "r5v_proto_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1262,7 +1358,7 @@
             ]
           },
           {
-            "id": "r4v_dc_02",
+            "id": "r5v_proto_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1273,7 +1369,7 @@
             ]
           },
           {
-            "id": "r4v_dc_03",
+            "id": "r5v_proto_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1284,7 +1380,7 @@
             ]
           },
           {
-            "id": "r4v_mail_01",
+            "id": "r5v_redis_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1295,7 +1391,7 @@
             ]
           },
           {
-            "id": "r4v_mail_02",
+            "id": "r5v_redis_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1306,7 +1402,7 @@
             ]
           },
           {
-            "id": "r4v_toml_01",
+            "id": "r5v_redis_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1317,7 +1413,7 @@
             ]
           },
           {
-            "id": "r4v_toml_02",
+            "id": "r5v_npm_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1328,7 +1424,7 @@
             ]
           },
           {
-            "id": "r4v_toml_03",
+            "id": "r5v_npm_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1339,7 +1435,7 @@
             ]
           },
           {
-            "id": "r4v_mmd_01",
+            "id": "r5v_npm_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1350,7 +1446,51 @@
             ]
           },
           {
-            "id": "r4v_mmd_03",
+            "id": "r5v_xpath_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r5v_xpath_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r5v_xpath_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r5v_ans_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r5v_ans_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1364,20 +1504,20 @@
       },
       "d_moe_verifier_unified": {
         "path": "d_moe_verifier_unified",
-        "n": 32,
+        "n": 36,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 1.0,
         "delta_solve_rate": 1.0,
         "solved_single": 0,
-        "solved_loop": 32,
+        "solved_loop": 36,
         "repair_success_rate": 1.0,
-        "repair_helped_n": 32,
-        "failed_single_n": 32,
+        "repair_helped_n": 36,
+        "failed_single_n": 36,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "r4v_yaml_01",
+            "id": "r5v_k8s_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1388,7 +1528,7 @@
             ]
           },
           {
-            "id": "r4v_yaml_02",
+            "id": "r5v_k8s_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1399,7 +1539,7 @@
             ]
           },
           {
-            "id": "r4v_yaml_03",
+            "id": "r5v_k8s_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1410,7 +1550,7 @@
             ]
           },
           {
-            "id": "r4v_yaml_04",
+            "id": "r5v_k8s_04",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1421,7 +1561,7 @@
             ]
           },
           {
-            "id": "r4v_sql_01",
+            "id": "r5v_prom_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1432,7 +1572,7 @@
             ]
           },
           {
-            "id": "r4v_sql_02",
+            "id": "r5v_prom_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1443,7 +1583,7 @@
             ]
           },
           {
-            "id": "r4v_sql_03",
+            "id": "r5v_prom_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1454,7 +1594,7 @@
             ]
           },
           {
-            "id": "r4v_dock_01",
+            "id": "r5v_gql_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1465,7 +1605,7 @@
             ]
           },
           {
-            "id": "r4v_dock_02",
+            "id": "r5v_gql_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1476,7 +1616,7 @@
             ]
           },
           {
-            "id": "r4v_dock_03",
+            "id": "r5v_gql_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1487,7 +1627,7 @@
             ]
           },
           {
-            "id": "r4v_git_01",
+            "id": "r5v_tf_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1498,7 +1638,7 @@
             ]
           },
           {
-            "id": "r4v_git_02",
+            "id": "r5v_tf_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1509,7 +1649,7 @@
             ]
           },
           {
-            "id": "r4v_git_03",
+            "id": "r5v_tf_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1520,7 +1660,7 @@
             ]
           },
           {
-            "id": "r4v_schema_01",
+            "id": "r5v_jwt_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1531,7 +1671,7 @@
             ]
           },
           {
-            "id": "r4v_schema_02",
+            "id": "r5v_jwt_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1542,7 +1682,7 @@
             ]
           },
           {
-            "id": "r4v_schema_04",
+            "id": "r5v_jwt_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1553,7 +1693,7 @@
             ]
           },
           {
-            "id": "r4v_csv_01",
+            "id": "r5v_make_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1564,7 +1704,7 @@
             ]
           },
           {
-            "id": "r4v_csv_02",
+            "id": "r5v_make_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1575,7 +1715,7 @@
             ]
           },
           {
-            "id": "r4v_csv_03",
+            "id": "r5v_make_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1586,7 +1726,7 @@
             ]
           },
           {
-            "id": "r4v_stack_01",
+            "id": "r5v_css_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1597,7 +1737,7 @@
             ]
           },
           {
-            "id": "r4v_stack_02",
+            "id": "r5v_css_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1608,7 +1748,7 @@
             ]
           },
           {
-            "id": "r4v_stack_03",
+            "id": "r5v_css_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1619,7 +1759,7 @@
             ]
           },
           {
-            "id": "r4v_dc_01",
+            "id": "r5v_proto_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1630,7 +1770,7 @@
             ]
           },
           {
-            "id": "r4v_dc_02",
+            "id": "r5v_proto_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1641,7 +1781,7 @@
             ]
           },
           {
-            "id": "r4v_dc_03",
+            "id": "r5v_proto_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1652,7 +1792,7 @@
             ]
           },
           {
-            "id": "r4v_mail_01",
+            "id": "r5v_redis_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1663,7 +1803,7 @@
             ]
           },
           {
-            "id": "r4v_mail_02",
+            "id": "r5v_redis_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1674,7 +1814,7 @@
             ]
           },
           {
-            "id": "r4v_toml_01",
+            "id": "r5v_redis_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1685,7 +1825,7 @@
             ]
           },
           {
-            "id": "r4v_toml_02",
+            "id": "r5v_npm_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1696,7 +1836,7 @@
             ]
           },
           {
-            "id": "r4v_toml_03",
+            "id": "r5v_npm_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1707,7 +1847,7 @@
             ]
           },
           {
-            "id": "r4v_mmd_01",
+            "id": "r5v_npm_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1718,7 +1858,51 @@
             ]
           },
           {
-            "id": "r4v_mmd_03",
+            "id": "r5v_xpath_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r5v_xpath_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r5v_xpath_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r5v_ans_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r5v_ans_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1729,199 +1913,223 @@
             ]
           }
         ],
-        "n_items_total": 32,
-        "n_routed_python": 32,
+        "n_items_total": 36,
+        "n_routed_python": 36,
         "n_routed_away": 0,
         "solve_rate_on_python_lane": 1.0,
         "routing": [
           {
-            "id": "r4v_yaml_01",
+            "id": "r5v_k8s_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_yaml_02",
+            "id": "r5v_k8s_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_yaml_03",
+            "id": "r5v_k8s_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_yaml_04",
+            "id": "r5v_k8s_04",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_sql_01",
+            "id": "r5v_prom_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_sql_02",
+            "id": "r5v_prom_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_sql_03",
+            "id": "r5v_prom_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_dock_01",
+            "id": "r5v_gql_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_dock_02",
+            "id": "r5v_gql_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_dock_03",
+            "id": "r5v_gql_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_git_01",
+            "id": "r5v_tf_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_git_02",
+            "id": "r5v_tf_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_git_03",
+            "id": "r5v_tf_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_schema_01",
+            "id": "r5v_jwt_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_schema_02",
+            "id": "r5v_jwt_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_schema_04",
+            "id": "r5v_jwt_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_csv_01",
+            "id": "r5v_make_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_csv_02",
+            "id": "r5v_make_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_csv_03",
+            "id": "r5v_make_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_stack_01",
+            "id": "r5v_css_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_stack_02",
+            "id": "r5v_css_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_stack_03",
+            "id": "r5v_css_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_dc_01",
+            "id": "r5v_proto_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_dc_02",
+            "id": "r5v_proto_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_dc_03",
+            "id": "r5v_proto_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_mail_01",
+            "id": "r5v_redis_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_mail_02",
+            "id": "r5v_redis_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_toml_01",
+            "id": "r5v_redis_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_toml_02",
+            "id": "r5v_npm_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_toml_03",
+            "id": "r5v_npm_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_mmd_01",
+            "id": "r5v_npm_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r4v_mmd_03",
+            "id": "r5v_xpath_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r5v_xpath_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r5v_xpath_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r5v_ans_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r5v_ans_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
@@ -1932,7 +2140,7 @@
     "comparison_table": [
       {
         "path": "baseline_single_no_moe",
-        "n": 32,
+        "n": 36,
         "metric": "solve_rate_single",
         "rate": 0.0,
         "delta_vs_baseline": 0.0,
@@ -1941,7 +2149,7 @@
       },
       {
         "path": "moe_alone_python_lane",
-        "n": 32,
+        "n": 36,
         "metric": "solve_rate_single",
         "rate": 0.0,
         "delta_vs_baseline": 0.0,
@@ -1950,7 +2158,7 @@
       },
       {
         "path": "verifier_alone",
-        "n": 32,
+        "n": 36,
         "metric": "solve_rate_loop",
         "rate": 1.0,
         "delta_vs_baseline": 1.0,
@@ -1959,7 +2167,7 @@
       },
       {
         "path": "moe_verifier_unified_python_lane",
-        "n": 32,
+        "n": 36,
         "metric": "solve_rate_loop",
         "rate": 1.0,
         "delta_vs_baseline": 1.0,
@@ -2008,487 +2216,532 @@
   "notes": [],
   "hardneg_router": {
     "method": "heuristic",
-    "n": 40,
-    "hits": 40,
+    "n": 44,
+    "hits": 44,
     "misses": 0,
-    "score": "40/40",
+    "score": "44/44",
     "rate": 1.0,
     "by_family": {
-      "yaml_key_qubit": {
+      "k8s_label_qubit": {
         "n": 4,
         "hits": 4,
         "rate": 1.0
       },
-      "sql_column_bell": {
+      "prometheus_metric_cx": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "docker_image_pennylane": {
+      "graphql_field_entangle": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "git_ref_entangle": {
+      "terraform_resource_quantum": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "json_schema_prop": {
+      "jwt_claim_n_qubits": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "makefile_target_bell": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "css_class_qubit": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "protobuf_message_circuit": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "redis_key_gates": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "npm_package_cx": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "xpath_qubit": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "ansible_role_pennylane": {
+        "n": 2,
+        "hits": 2,
+        "rate": 1.0
+      },
+      "ent_control_r5": {
+        "n": 2,
+        "hits": 2,
+        "rate": 1.0
+      },
+      "vision_control_r5": {
+        "n": 2,
+        "hits": 2,
+        "rate": 1.0
+      },
+      "base_control_r5": {
         "n": 4,
         "hits": 4,
-        "rate": 1.0
-      },
-      "csv_header_cx": {
-        "n": 3,
-        "hits": 3,
-        "rate": 1.0
-      },
-      "stack_trace_gate": {
-        "n": 3,
-        "hits": 3,
-        "rate": 1.0
-      },
-      "dataclass_n_qubits": {
-        "n": 3,
-        "hits": 3,
-        "rate": 1.0
-      },
-      "email_subject_quantum": {
-        "n": 3,
-        "hits": 3,
-        "rate": 1.0
-      },
-      "toml_section_qubits": {
-        "n": 3,
-        "hits": 3,
-        "rate": 1.0
-      },
-      "mermaid_text_diagram": {
-        "n": 3,
-        "hits": 3,
-        "rate": 1.0
-      },
-      "ent_control_r4": {
-        "n": 2,
-        "hits": 2,
-        "rate": 1.0
-      },
-      "vision_control_r4": {
-        "n": 2,
-        "hits": 2,
-        "rate": 1.0
-      },
-      "base_control_r4": {
-        "n": 1,
-        "hits": 1,
         "rate": 1.0
       }
     },
     "ent_never_on_python": true,
     "rows": [
       {
-        "id": "r4_yaml_01",
-        "family": "yaml_key_qubit",
+        "id": "r5_k8s_01",
+        "family": "k8s_label_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('qubit: 3'). YAML key 'qubit' is a config label, no",
+        "prompt_preview": "Write Python that prints len('app.kubernetes.io/name=qubit-proxy'). K8s label on",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_yaml_02",
-        "family": "yaml_key_qubit",
+        "id": "r5_k8s_02",
+        "family": "k8s_label_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "cfg = 'hadamard: cleanup\\ncx: nightly'\nprint(cfg.count(':'))\n# YAML keys named h",
+        "prompt_preview": "ann = 'gates=[cleanup,nightly]'\nprint(ann.count(','))\n# K8s annotation value gat",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_yaml_03",
-        "family": "yaml_key_qubit",
+        "id": "r5_k8s_03",
+        "family": "k8s_label_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints int(4*5). A YAML snippet may show n_qubits: 0 as a disa",
+        "prompt_preview": "Write Python that prints 5*5. Pod annotation pennylane.io/enabled=false is a fea",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_yaml_04",
-        "family": "yaml_key_qubit",
+        "id": "r5_k8s_04",
+        "family": "k8s_label_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 2**4. Ops config line gates=hadamard_cleanup is a strin",
+        "prompt_preview": "Write Python that prints int(8+2). Helm value gates: [cleanup] is a list of Cron",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_sql_01",
-        "family": "sql_column_bell",
+        "id": "r5_prom_01",
+        "family": "prometheus_metric_cx",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('SELECT bell, cx FROM scores'). SQL column names be",
+        "prompt_preview": "Write Python that prints len('cx_total{job=\"api\"}'). Prometheus metric name cx_t",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_sql_02",
-        "family": "sql_column_bell",
+        "id": "r5_prom_02",
+        "family": "prometheus_metric_cx",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "q = 'SELECT COUNT(*) FROM gates'\nprint(len(q))\n# table named gates is a sports s",
+        "prompt_preview": "m = 'bell_pair_latency_ms'\nprint(m.count('_'))\n# metric name only; not a Bell-pa",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_sql_03",
-        "family": "sql_column_bell",
+        "id": "r5_prom_03",
+        "family": "prometheus_metric_cx",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 9+8. SQL comment -- measure fidelity of join is DB jarg",
+        "prompt_preview": "Write Python that prints 12+7. Alert rule hadamard_error_rate is SRE jargon. ONL",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_dock_01",
-        "family": "docker_image_pennylane",
+        "id": "r5_gql_01",
+        "family": "graphql_field_entangle",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('pennylane/ci:latest'). Container image name only —",
+        "prompt_preview": "Write Python that prints len('entangleUsers'). GraphQL field name only. ONLY cod",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_dock_02",
-        "family": "docker_image_pennylane",
+        "id": "r5_gql_02",
+        "family": "graphql_field_entangle",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "img = 'ghcr.io/org/qubit-proxy:1.2'\nprint(img.count('/'))\n# docker ref; not a qu",
+        "prompt_preview": "q = 'query { n_qubits }'\nprint(len(q))\n# GraphQL selection set; field n_qubits i",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_dock_03",
-        "family": "docker_image_pennylane",
+        "id": "r5_gql_03",
+        "family": "graphql_field_entangle",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 6*6. Dockerfile FROM line mentioning circuit-runner is ",
+        "prompt_preview": "Write Python that prints 4**2. GraphQL type CircuitConfig is a billing schema na",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_git_01",
-        "family": "git_ref_entangle",
+        "id": "r5_tf_01",
+        "family": "terraform_resource_quantum",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('feature/entangle-users'). Git branch name is a met",
+        "prompt_preview": "Write Python that prints len('aws_quantum_ledger'). Terraform resource type stri",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_git_02",
-        "family": "git_ref_entangle",
+        "id": "r5_tf_02",
+        "family": "terraform_resource_quantum",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "msg = 'fix: unbell the flaky test'\nprint(msg.count('l'))\n# commit subject; not a",
+        "prompt_preview": "name = 'module.entangle_vpc'\nprint(name.count('.'))\n# Terraform module path; not",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_git_03",
-        "family": "git_ref_entangle",
+        "id": "r5_tf_03",
+        "family": "terraform_resource_quantum",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 11+11. PR title 'Add Hadamard button CSS' is frontend, ",
+        "prompt_preview": "Write Python that prints 9*3. HCL attribute qubit_count is an integer tag, not n",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_schema_01",
-        "family": "json_schema_prop",
+        "id": "r5_jwt_01",
+        "family": "jwt_claim_n_qubits",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('n_qubits'). OpenAPI property name as a string — no",
+        "prompt_preview": "Write Python that prints len('n_qubits'). JWT claim key string only. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_schema_02",
-        "family": "json_schema_prop",
+        "id": "r5_jwt_02",
+        "family": "jwt_claim_n_qubits",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 3+4. Schema docs say clients may reply JSON only for /h",
+        "prompt_preview": "Write Python that prints 6+5. Auth note: reply JSON only for /session — JWT clai",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_schema_03",
-        "family": "json_schema_prop",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Thanks for the API schema chat about the deprecated n_qubits field. Any fun weat",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "r4_schema_04",
-        "family": "json_schema_prop",
+        "id": "r5_jwt_03",
+        "family": "jwt_claim_n_qubits",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "props = ['gates','shots','seed']\nprint(len(props))\n# JSON Schema property list; ",
+        "prompt_preview": "claims = ['sub','gates','aud']\nprint(len(claims))\n# JWT claim names; gates is a ",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_csv_01",
-        "family": "csv_header_cx",
+        "id": "r5_make_01",
+        "family": "makefile_target_bell",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('cx,bell,shots'.split(',')). CSV headers only. ONLY",
+        "prompt_preview": "Write Python that prints len('bell:'). Makefile target label. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_csv_02",
-        "family": "csv_header_cx",
+        "id": "r5_make_02",
+        "family": "makefile_target_bell",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "hdr = 'hadamard,ry,rz'\nprint(hdr.count(','))\n# spreadsheet columns named after g",
+        "prompt_preview": "t = 'cx-lint: ## run cx linter'\nprint(t.count('-'))\n# Make target; not CX gate. ",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_csv_03",
-        "family": "csv_header_cx",
+        "id": "r5_make_03",
+        "family": "makefile_target_bell",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints sum([1,2,3,4]). CSV column 'entanglement_score' is a ri",
+        "prompt_preview": "Write Python that prints 15-4. Recipe comment # not gates=[Hadamard] — that woul",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_stack_01",
-        "family": "stack_trace_gate",
+        "id": "r5_css_01",
+        "family": "css_class_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('GateError: boom'). Exception class name GateError ",
+        "prompt_preview": "Write Python that prints len('.qubit-grid'). CSS class selector string. ONLY cod",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_stack_02",
-        "family": "stack_trace_gate",
+        "id": "r5_css_02",
+        "family": "css_class_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "tb = 'File circuit_ui.py, line 10, in render'\nprint(len(tb))\n# stack frame path;",
+        "prompt_preview": "cls = 'circuit-board--dark'\nprint(cls.count('-'))\n# CSS BEM class; not a quantum",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_stack_03",
-        "family": "stack_trace_gate",
+        "id": "r5_css_03",
+        "family": "css_class_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 100-55. Traceback mentioning UnitaryTransform is a clas",
+        "prompt_preview": "Write Python that prints 2**5. HTML class='hadamard-btn' is UI chrome. ONLY code",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_dc_01",
-        "family": "dataclass_n_qubits",
+        "id": "r5_proto_01",
+        "family": "protobuf_message_circuit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "from dataclasses import dataclass\n@dataclass\nclass Job:\n    n_qubits: int = 0  #",
+        "prompt_preview": "Write Python that prints len('message Circuit'). Protobuf IDL fragment. ONLY cod",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_dc_02",
-        "family": "dataclass_n_qubits",
+        "id": "r5_proto_02",
+        "family": "protobuf_message_circuit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 5*3. A dataclass field named bell_pair_id is a UUID str",
+        "prompt_preview": "Write Python that prints 7+6. Proto field int32 n_qubits = 1 is a seat counter; ",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_dc_03",
-        "family": "dataclass_n_qubits",
+        "id": "r5_proto_03",
+        "family": "protobuf_message_circuit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python: print(len('CircuitConfig')). Class name string length — not a circ",
+        "prompt_preview": "idl = 'repeated Gate gates = 2;'\nprint(len(idl))\n# protobuf field; not a circuit",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_mail_01",
-        "family": "email_subject_quantum",
+        "id": "r5_redis_01",
+        "family": "redis_key_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('Re: quantum leap in Q3 sales'). Email subject meta",
+        "prompt_preview": "Write Python that prints len('gates:session:42'). Redis key pattern. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_mail_02",
-        "family": "email_subject_quantum",
+        "id": "r5_redis_02",
+        "family": "redis_key_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "subj = 'FW: entangle the two CRM leads'\nprint(subj.count('e'))\n# email subject; ",
+        "prompt_preview": "k = 'qubit:cache:v1'\nprint(k.count(':'))\n# Redis key; not a qubit circuit. ONLY ",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_mail_03",
-        "family": "email_subject_quantum",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Nice email thread about a 'quantum leap' in hiring. Any cooking tips? No code, n",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "r4_toml_01",
-        "family": "toml_section_qubits",
+        "id": "r5_redis_03",
+        "family": "redis_key_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('[qubits]'). TOML section header as a string — not ",
+        "prompt_preview": "Write Python that prints 11*2. SET bell_pair 1 is a Redis command, not entanglem",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_toml_02",
-        "family": "toml_section_qubits",
+        "id": "r5_npm_01",
+        "family": "npm_package_cx",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 8*2. INI section [pennylane] is a deactivated plugin fl",
+        "prompt_preview": "Write Python that prints len('@org/cx-utils'). npm package name. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_toml_03",
-        "family": "toml_section_qubits",
+        "id": "r5_npm_02",
+        "family": "npm_package_cx",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints int(7*7). TOML key gates: [] means empty allow-list str",
+        "prompt_preview": "dep = 'pennylane-ci-helper'\nprint(dep.count('-'))\n# npm dep name; not PennyLane ",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_mmd_01",
-        "family": "mermaid_text_diagram",
+        "id": "r5_npm_03",
+        "family": "npm_package_cx",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Mermaid text (sin imagen, no png): graph LR; A-->B-->C. Write Python that prints",
+        "prompt_preview": "Write Python that prints 18+1. package.json script 'entangle:build' is a bundler",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_mmd_02",
-        "family": "mermaid_text_diagram",
-        "expected": "base",
-        "got": "base",
-        "ok": true,
-        "adapter": null,
-        "prompt_preview": "Text-only mermaid whiteboard sketch (no image file, no photo). Someone drew 2 bo",
-        "ent_adapter_blocked": false
-      },
-      {
-        "id": "r4_mmd_03",
-        "family": "mermaid_text_diagram",
+        "id": "r5_xpath_01",
+        "family": "xpath_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 'diagram'.count('a'). PlantUML chalkboard paste is text",
+        "prompt_preview": "Write Python that prints len(\"//qubit[@id]\"). XPath string only. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r4_ent_01",
-        "family": "ent_control_r4",
+        "id": "r5_xpath_02",
+        "family": "xpath_qubit",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "xp = \"//gate[@name='cx']\"\nprint(len(xp))\n# XPath; XML tag gate is UI markup. ONL",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r5_xpath_03",
+        "family": "xpath_qubit",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 3*9. XPath //circuit/node is DOM navigation, not a quan",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r5_ans_01",
+        "family": "ansible_role_pennylane",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('role: pennylane.ci'). Ansible role ref. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r5_ans_02",
+        "family": "ansible_role_pennylane",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 10+10. Vars file n_qubits: 0 disables a feature flag in",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r5_ent_01",
+        "family": "ent_control_r5",
         "expected": "ent",
         "got": "ent",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Propose a quantum circuit with n_qubits and gates for a Bell-pair entanglement s",
+        "prompt_preview": "Propose a quantum circuit with n_qubits and gates for a GHZ entanglement demo. R",
         "ent_adapter_blocked": false
       },
       {
-        "id": "r4_ent_02",
-        "family": "ent_control_r4",
+        "id": "r5_ent_02",
+        "family": "ent_control_r5",
         "expected": "ent",
         "got": "ent",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Build a PennyLane circuit: Hadamard then CX on qubits 0,1. Return valid JSON wit",
+        "prompt_preview": "Build a PennyLane Bell-pair: Hadamard then CX. Return valid JSON with n_qubits a",
         "ent_adapter_blocked": false
       },
       {
-        "id": "r4_vis_01",
-        "family": "vision_control_r4",
+        "id": "r5_vis_01",
+        "family": "vision_control_r5",
         "expected": "vision",
         "got": "vision",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Look at the image. In the photo of the dashboard, how many red alerts are visibl",
+        "prompt_preview": "Look at the image. In the photo of the rack, how many blinking LEDs are visible ",
         "ent_adapter_blocked": false
       },
       {
-        "id": "r4_vis_02",
-        "family": "vision_control_r4",
+        "id": "r5_vis_02",
+        "family": "vision_control_r5",
         "expected": "vision",
         "got": "vision",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Observa la imagen adjunta. En la foto del panel, ¿cuántos botones verdes hay? Re",
+        "prompt_preview": "Observa la imagen adjunta. En la foto del laboratorio, ¿cuántos monitores hay? R",
         "ent_adapter_blocked": false
       },
       {
-        "id": "r4_base_01",
-        "family": "base_control_r4",
+        "id": "r5_base_01",
+        "family": "base_control_r5",
         "expected": "base",
         "got": "base",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Hello! Thanks for the earlier chat about hobbies. Any fun cooking tips? No code,",
+        "prompt_preview": "Hello! Thanks for chatting about hiking. Any fun weekend plans? No code, no circ",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r5_base_02",
+        "family": "base_control_r5",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Nice talk about JWT seat-count claims named n_qubits. Any gardening tips? No cod",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r5_base_03",
+        "family": "base_control_r5",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Text-only ASCII rack sketch (no image file, no photo). Someone drew 4 boxes. How",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "r5_base_04",
+        "family": "base_control_r5",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Thanks for the K8s annotation chat about gates=[cleanup]. Cooking ideas? No code",
         "ent_adapter_blocked": false
       }
     ],
-    "fixture_path": "data/bench_live/hardneg_r4_mixed_router.json",
+    "fixture_path": "data/bench_live/hardneg_r5_mixed_router.json",
     "anti_contamination": {
       "expected_lane_harness_only": true,
       "gt_never_in_route_api": true
@@ -2496,7 +2749,7 @@
   },
   "hardneg_delta": {
     "router_rate": 1.0,
-    "router_score": "40/40",
+    "router_score": "44/44",
     "ent_never_on_python": true,
     "vs_freeze_floor": "hold"
   }
