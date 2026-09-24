@@ -1,4 +1,7 @@
-## 2026-09-24 — tip-hardneg-r11 polish (side)
+## 2026-09-24 — fold tip-hardneg-r11 → codigo-vivo-tip
+Cherry-pick rebase `6bb06fc`/`8764220` onto `f70faa1` → `4629919`+`e472522` FF-equivalent. CPU unified **1.0** (re-smoke); R11 **52/52·44/44**; motion coverage **100%** (141 ind + 59 corr); vision BASE **1.000** (10/10); circ **2/2**; inverse_cv **99.82%**; collision physics **100%** (n=40/2850); choose_safest **100%**; R10 **52/52·44/44**; pillars 26/26; hardneg 18/18; `wired_to_vlm`; freezes retained incl. motion_r4 + vision_ground + inverse_r2 + r10 + motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_r11_100pct_20260924_140723`. Distance-mid / TTI **not** folded. See SCOREBOARD + TIP-R11.
+
+## 2026-09-24 — tip-hardneg-r11 polish (side → FOLDED)
 Branch `frontier/tip-hardneg-r11` from tip `1304d1a` (post R10 fold; newer than `6624df1`). R11 router **52/52** · verifier **44/44**; mixed (d) **1.0**; R1–R10+LP held; `ent_never_on_python`. Novel: Smithy / Prisma / Ansible / Consul / Linkerd / Cilium / Airflow / Kafka / Prometheus / Kyverno / Gradle / Zig / Dart / Temporal. See `docs/FRONTIER-CODIGO-VIVO-TIP-R11.md`.
 
 ## 2026-09-24 — fold tip-motion-r4 → codigo-vivo-tip

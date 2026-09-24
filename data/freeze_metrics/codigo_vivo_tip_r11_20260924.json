@@ -3,6 +3,15 @@
   "router": "52/52",
   "verifier": "44/44",
   "mixed_d": 1.0,
+  "motion_coverage_known": 1.0,
+  "vision_base": 1.0,
+  "circ_axis": "2/2",
+  "collision_physics_pct": 100.0,
+  "inverse_cv_pct": 99.82,
+  "choose_safest_pct": 100.0,
   "frozen": true,
-  "when_et": "2026-09-24 1:51:00 ET"
+  "folded": true,
+  "when_et": "2026-09-24 14:07:23 ET",
+  "freeze_id": "codigo_vivo_tip_r11_100pct_20260924_140723",
+  "tip_sha_short": "FOLD_SHORT"
 }

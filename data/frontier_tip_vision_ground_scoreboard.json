@@ -1,6 +1,6 @@
 {
   "schema": "frontier_tip_vision_ground_scoreboard",
-  "written": "2026-09-24 13:44:41 ET",
+  "written": "2026-09-24 14:07:23 ET",
   "branch": "frontier/tip-vision-ground",
   "base_tip_sha": "6624df1e9bdad1cdb7ddb4cb925ae018bb93968c",
   "base_tip_sha_short": "6624df1",
@@ -19,34 +19,9 @@
     "source": "BENCHMARK_CODIGO_VIVO.json base.vision (pre tip-vision-ground reinforce)"
   },
   "vision_after": {
-    "accuracy": 1.0,
-    "correct": "10/10",
-    "vis_circ_01": {
-      "correct": true,
-      "pred": {
-        "n_qubits": 2,
-        "gates": [
-          "H",
-          "X",
-          "CNOT",
-          "X"
-        ]
-      },
-      "phase": "grounded"
-    },
-    "vis_circ_02": {
-      "correct": true,
-      "pred": {
-        "n_qubits": 1,
-        "gates": [
-          "RY",
-          "Z"
-        ]
-      },
-      "phase": "grounded"
-    },
-    "circuit_axis_pct": 100.0,
-    "delta_accuracy": 0.1
+    "base_accuracy": 1.0,
+    "base_correct": "10/10",
+    "circ_axis": "2/2"
   },
   "rescued": [
     "vis_circ_02"
@@ -106,5 +81,6 @@
     "correlated": 59,
     "unknown": 0
   },
-  "note_post_motion_r4_fold": "motion-r4 folded; coverage 100%; vision BASE held"
+  "note_post_motion_r4_fold": "motion-r4 folded; coverage 100%; vision BASE held",
+  "fold_note": "held on r11 fold re-smoke; tip vis BASE 1.0 circ 2/2"
 }

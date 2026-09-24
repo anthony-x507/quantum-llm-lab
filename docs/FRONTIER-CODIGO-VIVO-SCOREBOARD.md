@@ -1,8 +1,42 @@
 # FRONTIER — Código-vivo tip scoreboard
 
 **Branch:** `frontier/codigo-vivo-tip`  
-**Written:** 2026-09-24 14:02:26 ET · Mac-111 (`074c6626-…`) · tip motion-r4 fold
+**Written:** 2026-09-24 14:07:23 ET · Mac-111 (`074c6626-…`) · tip hardneg-r11 fold
 **Claim scope:** classical MoE router + `python -I` verifier + prior-replay ent/vision + GT-free circuit-graph scaffold on ent + mlx vision parse polish + vision-ground cue/parse. **NO quantum-advantage claims.**
+
+
+
+## R11 TIP FREEZE / FOLD (overall 1.0) — tip HEAD after hardneg-r11 fold
+
+**Freeze id:** `codigo_vivo_tip_r11_100pct_20260924_140723`  
+**Frozen SHA:** `FOLD_SHA_PLACEHOLDER` (`FOLD_SHORT`) · branch `frontier/codigo-vivo-tip` · cherry-pick rebase `6bb06fc`/`8764220` onto `f70faa1` → `4629919`+`e472522` FF-equivalent then fold
+**When:** 2026-09-24 14:07:23 ET · Mac-111 (`074c6626-…`)  
+**Claim:** NO quantum advantage. Cites tip HEAD after R11 fold; **prior platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2 / R7 / scaffold_motion / R8 / distance_danger / collision_pred / motion_r2 / collision_n / R9 / motion_r3 / R10 / inverse_r2 / vision_ground / motion_r4 freezes NOT abandoned**.
+
+| Surface | Score |
+|---------|-------|
+| mixed (d) unified | **1.0** |
+| hardneg R11 | **52/52 · 44/44** |
+| hardneg R10 | **52/52 · 44/44** |
+| motion coverage | **100%** (141 ind + 59 corr) |
+| vision BASE | **1.000** (10/10) |
+| circ axis | **2/2** |
+| collision physics (n=40) | **100%** (2850/2850) |
+| inverse_cv | **99.82%** |
+| collision_choose_safest | **100%** |
+| router pillars / hardneg | **26/26 · 18/18** |
+| `ent_never_on_python` | **true** |
+| adapters RO | **held** |
+
+**Policy:** Never abandon motion_r4 / vision_ground / inverse_r2 / r10 / motion_r3 / r9 / collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. **Do not fold distance-mid / TTI**. Tip vis stays BASE.
+
+| Artifact | Path |
+|----------|------|
+| Manifest | `data/freeze_manifests/codigo_vivo_tip_r11_100pct_20260924_140723.json` |
+| Metrics | `data/freeze_metrics/codigo_vivo_tip_r11_20260924.json` |
+| Fold metrics | `data/freeze_metrics/codigo_vivo_tip_r11_fold_20260924.json` |
+| R11 doc | `docs/FRONTIER-CODIGO-VIVO-TIP-R11.md` |
+| Re-smoke | PASS · R11 52/52·44/44 · motion 100% · vision BASE 1.000 · circ 2/2 · inverse_cv 99.82% · collision 100% · R10 52/52·44/44 · cpu overall 1.0 |
 
 
 ## MOTION-R4 TIP FREEZE / FOLD (overall 1.0) — tip HEAD after motion-r4 fold
@@ -27,7 +61,7 @@
 | `wired_to_vlm` | **true** |
 | tip vis pillar | **BASE** |
 
-**Policy:** Never abandon vision_ground / inverse_r2 / r10 / motion_r3 / r9 / collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. **Do not fold hardneg-r11 / distance-mid / TTI**. Tip vis stays BASE.
+**Policy:** Never abandon vision_ground / inverse_r2 / r10 / motion_r3 / r9 / collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. **R11 FOLDED** (see R11 section above). Do not fold distance-mid / TTI. Tip vis stays BASE.
 
 | Artifact | Path |
 |----------|------|

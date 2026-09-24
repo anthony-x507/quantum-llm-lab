@@ -1,3 +1,4 @@
+- 2026-09-24 14:07:23 ET — fold tip-hardneg-r11 → codigo-vivo-tip; freeze `codigo_vivo_tip_r11_100pct_20260924_140723`; mixed 1.0; R11 52/52·44/44; motion 100%; vision BASE 1.000; circ 2/2; inverse_cv 99.82%; collision 100%.
 - 2026-09-24 14:02:26 ET — fold tip-motion-r4 → codigo-vivo-tip; freeze `codigo_vivo_tip_motion_r4_100pct_20260924_135017`; mixed 1.0; motion 100%; vision BASE 1.000; circ 2/2; inverse_cv 99.82%; collision 100%.
 - 2026-09-24 13:55:13 ET — fold tip-vision-ground → codigo-vivo-tip; freeze `codigo_vivo_tip_vision_ground_100pct_20260924_134441`; mixed 1.0; vision BASE 1.000; circ 2/2; inverse_cv 99.82%; collision 100%.
 - 2026-09-24 13:49:42 ET — fold tip-inverse-r2 → codigo-vivo-tip; freeze `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`; mixed 1.0; inverse_cv 99.82%; collision 100%; R10 52/52·44/44; motion 97.5%.

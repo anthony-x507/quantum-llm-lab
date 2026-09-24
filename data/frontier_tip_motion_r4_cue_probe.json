@@ -1,8 +1,8 @@
 {
-  "frontier": "codigo-vivo-tip-motion-r4-fold",
-  "written": "2026-09-24 14:00:44 ET",
+  "frontier": "codigo-vivo-tip-r11-fold",
+  "written": "2026-09-24 14:06:01 ET",
   "branch": "frontier/codigo-vivo-tip",
-  "tip_base": "3f5f1b1",
+  "tip_base": "f70faa1",
   "claims": [
     "NO quantum-advantage claims",
     "GT-free RGB motion cue only",
@@ -13,14 +13,13 @@
   "anti_contamination": {
     "gt_free_all": true,
     "reads_meta_any": false,
-    "inference_uses_gt": false,
-    "prompt_suffix_unknown_honesty": true,
-    "known_stage1to4_overrides": 0
+    "inference_uses_gt_any": false
   },
   "n_scenes": 200,
   "cue_counts": {
+    "independent": 141,
     "correlated": 59,
-    "independent": 141
+    "unknown": 0
   },
   "reason_counts": {},
   "track_mode_counts": {
@@ -44,67 +43,8 @@
   "coverage_before": 0.975,
   "coverage_delta_pp": 2.5,
   "special_cases": {
-    "scene_0222": {
-      "cue": "independent",
-      "reason": null,
-      "vel_corr": 0.279,
-      "vel_corr_x": null,
-      "vel_corr_y": null,
-      "dist_cv": 0.02,
-      "dist_rel": null,
-      "n": 10,
-      "hues_chosen": [
-        "red",
-        "blue"
-      ],
-      "track_mode": "hue_hard",
-      "stage": 1,
-      "stage_from": null,
-      "gt_free": true,
-      "reads_meta": false,
-      "inference_uses_gt": false
-    },
-    "scene_0075": {
-      "cue": "independent",
-      "reason": null,
-      "vel_corr": null,
-      "vel_corr_x": null,
-      "vel_corr_y": null,
-      "dist_cv": null,
-      "dist_rel": null,
-      "n": 16,
-      "hues_chosen": [
-        "green"
-      ],
-      "track_mode": "singleton_mover",
-      "stage": 5,
-      "stage_from": 0,
-      "gt_free": true,
-      "reads_meta": false,
-      "inference_uses_gt": false
-    },
-    "scene_0140": {
-      "cue": "independent",
-      "reason": null,
-      "vel_corr": null,
-      "vel_corr_x": null,
-      "vel_corr_y": null,
-      "dist_cv": null,
-      "dist_rel": null,
-      "n": 16,
-      "hues_chosen": [
-        "green"
-      ],
-      "track_mode": "singleton_mover",
-      "stage": 5,
-      "stage_from": 0,
-      "gt_free": true,
-      "reads_meta": false,
-      "inference_uses_gt": false
-    },
     "scene_0002": {
       "cue": "correlated",
-      "reason": null,
       "vel_corr": 0.503,
       "vel_corr_x": 0.842,
       "vel_corr_y": -0.442,
@@ -118,13 +58,14 @@
       "track_mode": "axis_locked",
       "stage": 5,
       "stage_from": 4,
+      "prior_track_mode": "continuity_dense",
       "gt_free": true,
       "reads_meta": false,
+      "source": "rgb_centroid_velocity",
       "inference_uses_gt": false
     },
     "scene_0010": {
       "cue": "correlated",
-      "reason": null,
       "vel_corr": 0.669,
       "vel_corr_x": 0.921,
       "vel_corr_y": 0.314,
@@ -138,13 +79,52 @@
       "track_mode": "axis_locked",
       "stage": 5,
       "stage_from": 4,
+      "prior_track_mode": "continuity_dense",
       "gt_free": true,
       "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false
+    },
+    "scene_0075": {
+      "cue": "independent",
+      "vel_corr": null,
+      "dist_cv": null,
+      "dist_rel": null,
+      "n": 16,
+      "hues_chosen": [
+        "green"
+      ],
+      "track_mode": "singleton_mover",
+      "stage": 5,
+      "stage_from": 0,
+      "motion_span": 66.222,
+      "path_len": 66.586,
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false
+    },
+    "scene_0140": {
+      "cue": "independent",
+      "vel_corr": null,
+      "dist_cv": null,
+      "dist_rel": null,
+      "n": 16,
+      "hues_chosen": [
+        "green"
+      ],
+      "track_mode": "singleton_mover",
+      "stage": 5,
+      "stage_from": 0,
+      "motion_span": 72.028,
+      "path_len": 72.245,
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
       "inference_uses_gt": false
     },
     "scene_0152": {
       "cue": "independent",
-      "reason": null,
       "vel_corr": 0.569,
       "vel_corr_x": 0.277,
       "vel_corr_y": 0.341,
@@ -158,18 +138,16 @@
       "track_mode": "axis_weak",
       "stage": 5,
       "stage_from": 4,
+      "prior_track_mode": "continuity_dense",
       "gt_free": true,
       "reads_meta": false,
+      "source": "rgb_centroid_velocity",
       "inference_uses_gt": false
     },
     "scene_0155": {
       "cue": "independent",
-      "reason": null,
       "vel_corr": -1.0,
-      "vel_corr_x": null,
-      "vel_corr_y": null,
       "dist_cv": 0.217,
-      "dist_rel": null,
       "n": 10,
       "hues_chosen": [
         "yellow",
@@ -177,19 +155,15 @@
       ],
       "track_mode": "hue_hard",
       "stage": 1,
-      "stage_from": null,
       "gt_free": true,
       "reads_meta": false,
+      "source": "rgb_centroid_velocity",
       "inference_uses_gt": false
     },
     "scene_0157": {
       "cue": "independent",
-      "reason": null,
       "vel_corr": -0.985,
-      "vel_corr_x": null,
-      "vel_corr_y": null,
       "dist_cv": 0.129,
-      "dist_rel": null,
       "n": 10,
       "hues_chosen": [
         "blue",
@@ -197,21 +171,34 @@
       ],
       "track_mode": "hue_hard",
       "stage": 1,
-      "stage_from": null,
       "gt_free": true,
       "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false
+    },
+    "scene_0222": {
+      "cue": "independent",
+      "vel_corr": 0.279,
+      "dist_cv": 0.02,
+      "n": 10,
+      "hues_chosen": [
+        "red",
+        "blue"
+      ],
+      "track_mode": "hue_hard",
+      "stage": 1,
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
       "inference_uses_gt": false
     }
   },
   "sample_rows": [
     {
+      "id": "scene_0000",
       "cue": "correlated",
-      "reason": null,
       "vel_corr": 1.0,
-      "vel_corr_x": null,
-      "vel_corr_y": null,
       "dist_cv": 0.0,
-      "dist_rel": null,
       "n": 9,
       "hues_chosen": [
         "soft_red",
@@ -219,17 +206,16 @@
       ],
       "track_mode": "hue_extended",
       "stage": 2,
-      "stage_from": null,
-      "id": "scene_0000"
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false
     },
     {
+      "id": "scene_0001",
       "cue": "correlated",
-      "reason": null,
       "vel_corr": 1.0,
-      "vel_corr_x": null,
-      "vel_corr_y": null,
       "dist_cv": 0.0,
-      "dist_rel": null,
       "n": 10,
       "hues_chosen": [
         "soft_red",
@@ -237,12 +223,14 @@
       ],
       "track_mode": "hue_extended",
       "stage": 2,
-      "stage_from": null,
-      "id": "scene_0001"
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false
     },
     {
+      "id": "scene_0002",
       "cue": "correlated",
-      "reason": null,
       "vel_corr": 0.503,
       "vel_corr_x": 0.842,
       "vel_corr_y": -0.442,
@@ -256,16 +244,17 @@
       "track_mode": "axis_locked",
       "stage": 5,
       "stage_from": 4,
-      "id": "scene_0002"
+      "prior_track_mode": "continuity_dense",
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false
     },
     {
+      "id": "scene_0003",
       "cue": "independent",
-      "reason": null,
       "vel_corr": 0.0,
-      "vel_corr_x": null,
-      "vel_corr_y": null,
       "dist_cv": 0.339,
-      "dist_rel": null,
       "n": 10,
       "hues_chosen": [
         "brown",
@@ -273,17 +262,16 @@
       ],
       "track_mode": "hue_extended",
       "stage": 2,
-      "stage_from": null,
-      "id": "scene_0003"
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false
     },
     {
+      "id": "scene_0004",
       "cue": "independent",
-      "reason": null,
       "vel_corr": 0.626,
-      "vel_corr_x": null,
-      "vel_corr_y": null,
       "dist_cv": 0.211,
-      "dist_rel": null,
       "n": 10,
       "hues_chosen": [
         "red",
@@ -291,17 +279,16 @@
       ],
       "track_mode": "hue_hard",
       "stage": 1,
-      "stage_from": null,
-      "id": "scene_0004"
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false
     },
     {
+      "id": "scene_0005",
       "cue": "independent",
-      "reason": null,
       "vel_corr": -0.703,
-      "vel_corr_x": null,
-      "vel_corr_y": null,
       "dist_cv": 0.269,
-      "dist_rel": null,
       "n": 10,
       "hues_chosen": [
         "green",
@@ -309,17 +296,16 @@
       ],
       "track_mode": "hue_hard",
       "stage": 1,
-      "stage_from": null,
-      "id": "scene_0005"
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false
     },
     {
+      "id": "scene_0006",
       "cue": "correlated",
-      "reason": null,
       "vel_corr": 1.0,
-      "vel_corr_x": null,
-      "vel_corr_y": null,
       "dist_cv": 0.0,
-      "dist_rel": null,
       "n": 10,
       "hues_chosen": [
         "soft_red",
@@ -327,17 +313,16 @@
       ],
       "track_mode": "hue_extended",
       "stage": 2,
-      "stage_from": null,
-      "id": "scene_0006"
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false
     },
     {
+      "id": "scene_0007",
       "cue": "independent",
-      "reason": null,
       "vel_corr": -0.981,
-      "vel_corr_x": null,
-      "vel_corr_y": null,
       "dist_cv": 0.136,
-      "dist_rel": null,
       "n": 10,
       "hues_chosen": [
         "green",
@@ -345,8 +330,10 @@
       ],
       "track_mode": "hue_hard",
       "stage": 1,
-      "stage_from": null,
-      "id": "scene_0007"
+      "gt_free": true,
+      "reads_meta": false,
+      "source": "rgb_centroid_velocity",
+      "inference_uses_gt": false
     }
   ],
   "unknown_rows": [],
@@ -382,5 +369,5 @@
       "stage": 5
     }
   ],
-  "elapsed_s": 3.14
+  "elapsed_s": 3.039
 }
