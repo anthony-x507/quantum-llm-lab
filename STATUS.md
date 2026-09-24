@@ -1,3 +1,6 @@
+## 2026-09-24 — tip-hardneg-r13 polish (side; not folded)
+Branch `frontier/tip-hardneg-r13` from tip `f70faa1` (post motion-r4). R13 router **6/52→52/52** · verifier **44/44**; mixed (d) **1.0**; R1–R10+LP held; motion **100%** / collision **100%** / inverse_cv **≥99.82%** cited from tip. Novel: Nginx / HAProxy / Caddy / Redis / Postgres RLS / Skaffold / Buildkite / Packer / Salt / Bazel select / Dagger / Dagster / Hasura / NestJS. See `docs/FRONTIER-CODIGO-VIVO-TIP-R13.md`. **Not folded.**
+
 ## 2026-09-24 — fold tip-motion-r4 → codigo-vivo-tip
 Rebase `a59cb7a`/`606c66f` onto `3f5f1b1` → `753b1f7`+`a27b6fd` FF. CPU unified **1.0** (re-smoke); motion coverage **100%** (141 ind + 59 corr; +2.5 pp vs 97.5%); vision BASE **1.000** (10/10); circ **2/2**; inverse_cv **99.82%**; collision physics **100%** (n=40/2850); choose_safest **100%**; R10 **52/52·44/44**; pillars 26/26; hardneg 18/18; `wired_to_vlm`; freezes retained incl. vision_ground + inverse_r2 + r10 + motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_motion_r4_100pct_20260924_135017`. R11 / distance-mid / TTI **not** folded. See SCOREBOARD + TIP-MOTION-R4.
 

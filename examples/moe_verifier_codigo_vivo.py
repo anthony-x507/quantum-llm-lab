@@ -651,6 +651,12 @@ def main(argv: list[str] | None = None) -> int:
             hp = str(args.hardneg_items).lower() + str(args.hardneg_router).lower()
             if 'label_protect' in hp or 'label-protect' in hp:
                 out_path = ROOT / "data" / "frontier_moe_verifier_hardneg_label_protect.json"
+            elif 'r13' in hp:
+                out_path = ROOT / "data" / "frontier_moe_verifier_hardneg_r13.json"
+            elif 'r12' in hp:
+                out_path = ROOT / "data" / "frontier_moe_verifier_hardneg_r12.json"
+            elif 'r11' in hp:
+                out_path = ROOT / "data" / "frontier_moe_verifier_hardneg_r11.json"
             elif 'r10' in hp:
                 out_path = ROOT / "data" / "frontier_moe_verifier_hardneg_r10.json"
             elif 'r9' in hp:

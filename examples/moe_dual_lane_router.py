@@ -162,7 +162,8 @@ def route_heuristic(prompt: str) -> Lane:
     # R7: CI YAML multiline gates:\n  - …; Make .PHONY: gates; bare len('gates:') key tokens.
     # R8: Dockerfile ARG gates=; JSON Schema "gates"; TF/TOML/Nix gates = [...]; markdown 'gates: list'; Rego input.gates[_]; CUE #Gates:; EDN :gates; fullwidth lookalikes.
     # R9: OpenAPI /gates:; Helm values gates: enabled; Pulumi gates:prod; CFN Gates:; Dhall gates : Bool; Justfile recipe gates:; Cedar when { gates:.
-# R10: AsyncAPI/Istio/ArgoCD/Tekton/FlatBuffers/Cypher/Earthfile gates:; Nomad/Vault/Cap'n/Solidity/Rust cfg/Kotlin/csproj/SPARQL.
+    # R10: AsyncAPI/Istio/ArgoCD/Tekton/FlatBuffers/Cypher/Earthfile gates:; Nomad/Vault/Cap'n/Solidity/Rust cfg/Kotlin/csproj/SPARQL.
+    # R13: Nginx/HAProxy/Caddy/Redis/Postgres/Skaffold/Buildkite/Packer/Salt/Bazel/Dagger/Dagster/Hasura/NestJS gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -302,7 +303,65 @@ def route_heuristic(prompt: str) -> Lane:
             # R10: messaging-only / GitOps / schema-only gates: prose
             r"|gates:\s+is\s+messaging"
             r"|gates:\s+is\s+(?:CI|schema)\b"
-            r"|gates:\s+mention",
+            r"|gates:\s+mention"
+            # R13: Nginx map gates: $request
+            r"|gates\s*:\s*\$request\b"
+            r"|nginx\s+.*gates:"
+            r"|map\s+gates:"
+            # R13: HAProxy ACL gates: hdr
+            r"|gates\s*:\s*hdr\b"
+            r"|haproxy\s+.*gates:"
+            r"|acl\s+gates:"
+            # R13: Caddy matcher gates: path
+            r"|gates\s*:\s*path\b"
+            r"|caddy\s+.*gates:"
+            r"|matcher\s+gates:"
+            # R13: Redis ACL gates: ~*
+            r"|gates\s*:\s*~\*"
+            r"|redis\s+.*gates:"
+            r"|acl\s+.*gates:\s*~\*"
+            # R13: Postgres RLS gates: USING
+            r"|gates\s*:\s*USING\b"
+            r"|postgres\s+.*gates:"
+            r"|rls\s+.*gates:"
+            # R13: Skaffold profile gates: activation
+            r"|gates\s*:\s*activation\b"
+            r"|skaffold\s+.*gates:"
+            r"|profile\s+gates:"
+            # R13: Buildkite step gates: if
+            r"|gates\s*:\s*if\b"
+            r"|buildkite\s+.*gates:"
+            r"|step\s+gates:\s*if"
+            # R13: Packer provisioner gates: shell
+            r"|gates\s*:\s*shell\b"
+            r"|packer\s+.*gates:"
+            r"|provisioner\s+gates:"
+            # R13: Salt pillar gates: grains
+            r"|gates\s*:\s*grains\b"
+            r"|salt\s+.*gates:"
+            r"|pillar\s+gates:"
+            # R13: Bazel select gates: //conditions
+            r"|gates\s*:\s*//conditions\b"
+            r"|bazel\s+select\s+.*gates:"
+            r"|select\(\s*\{[^}]*gates:"
+            # R13: Dagger pipeline gates: withSecret
+            r"|gates\s*:\s*withSecret\b"
+            r"|dagger\s+.*gates:"
+            r"|pipeline\s+gates:\s*with"
+            # R13: Dagster asset gates: AutoMaterialize
+            r"|gates\s*:\s*AutoMaterialize\b"
+            r"|dagster\s+.*gates:"
+            r"|asset\s+gates:"
+            # R13: Hasura permission gates: check
+            r"|gates\s*:\s*check\b"
+            r"|hasura\s+.*gates:"
+            r"|permission\s+gates:"
+            # R13: NestJS guard gates: CanActivate
+            r"|gates\s*:\s*CanActivate\b"
+            r"|nestjs\s+.*gates:"
+            r"|guard\s+gates:"
+            # R13: proxy / LB / webserver / cache / DB / k8s / CI / image / config / build / orchestration / GraphQL / framework prose
+            r"|gates:\s+is\s+(?:proxy|LB|webserver|cache|DB|k8s|CI|image|config|build|orchestration|GraphQL|framework)\b",
             text,
             re.I,
         )
@@ -858,6 +917,12 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r13' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r13.json"
+        elif 'r12' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r12.json"
+        elif 'r11' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r11.json"
         elif 'r10' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r10.json"
         elif 'r9' in hp:
