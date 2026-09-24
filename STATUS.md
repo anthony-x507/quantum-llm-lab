@@ -3,6 +3,12 @@
 Ver **[`docs/STATUS.md`](docs/STATUS.md)** (Agent Lab / quantum-llm-lab).  
 Plan SSOT: [`docs/PLAN-MAESTRO-PARTE-1.md`](docs/PLAN-MAESTRO-PARTE-1.md).
 
+## 2026-09-24 — fold tip-hardneg-r7 → codigo-vivo-tip
+Rebase `bac0ad0`/`76a3eac` onto `f0fe729` → `00fdaaf`+`f586efd` FF. CPU unified **1.0** (re-smoke); R7 52/52·44/44; LP 43/43·32/32; R1–R6 held; freezes retained incl. post_od2 + R6 + label_protect. See SCOREBOARD + TIP-R7.
+
+## 2026-09-24 — R7 tip freeze codigo-vivo-tip @ f586efd
+Freeze `codigo_vivo_tip_r7_100pct`. CPU unified **1.0**; R1–R7 18/18·22/22·35/35·40/40·44/44·48/48·52/52; R3–R7/LP verifier 28/28·32/32·36/36·40/40·44/44·32/32; LP 43/43; `ent_never_on_python`. Prior freezes **retained** (platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2 / polish_r7). Blockers none. See SCOREBOARD.
+
 ## 2026-09-24 — POST-OD2 tip freeze @ 15c9a23
 Freeze `codigo_vivo_tip_post_od2_100pct_20260924_125301`. CPU unified **1.0**; R1–R6 18/18·22/22·35/35·40/40·44/44·48/48; LP 43/43·32/32; own-delta Py−0.062 Ent+1.0 Vis−0.200 dual-lane 1.0; wired_to_vlm. Prior freezes **retained** (platform / mlx_r3 / post_polish / R5 / LP / R6). Blockers none. See SCOREBOARD.
 

@@ -540,7 +540,7 @@
       "expected": "ent",
       "got": "ent",
       "ok": true,
-      "adapter": null,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
       "prompt_preview": "Propose a quantum circuit with n_qubits and gates for a GHZ entanglement demo. R",
       "ent_adapter_blocked": false
     },
@@ -550,7 +550,7 @@
       "expected": "ent",
       "got": "ent",
       "ok": true,
-      "adapter": null,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
       "prompt_preview": "Build a PennyLane Bell-pair: Hadamard then CX. Return valid JSON with n_qubits a",
       "ent_adapter_blocked": false
     },

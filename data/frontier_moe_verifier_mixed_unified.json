@@ -1,7 +1,7 @@
 {
   "frontier": "C3b-moe-verifier-mixed-live",
-  "written": "2026-09-24 12:52:38",
-  "primary": "/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r7/data/frontier_moe_verifier_mixed_cpu.json",
+  "written": "2026-09-24 12:54:55",
+  "primary": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/frontier_moe_verifier_mixed_cpu.json",
   "scoreboard": {
     "table": [
       {
@@ -97,7 +97,7 @@
     },
     "moe_delta_visible": true,
     "priors_used": [
-      "/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r7/data/BENCHMARK_CODIGO_VIVO.json",
+      "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/BENCHMARK_CODIGO_VIVO.json",
       "docs/FRONTIER-MOE-VERIFIER-UNIFIED.md#prior-live"
     ]
   },

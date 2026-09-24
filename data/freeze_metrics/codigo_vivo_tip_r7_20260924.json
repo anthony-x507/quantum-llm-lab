@@ -1,0 +1,51 @@
+{
+  "frontier": "codigo-vivo-tip-r7-fold",
+  "written_et": "2026-09-24 12:56:00 ET",
+  "tip_sha": "f586efd6791b4e15b645934bc368a29a3f1d89ec",
+  "tip_sha_short": "f586efd",
+  "branch": "frontier/codigo-vivo-tip",
+  "source_branch": "frontier/tip-hardneg-r7",
+  "rebase_onto": "f0fe729",
+  "content_sha": "00fdaaf",
+  "pin_sha": "f586efd",
+  "policy": "Fold R7 into tip; retain post_od2/r6/label_protect/r5/platform/mlx_r3/post_polish; RO lora_adapter; no merge main.",
+  "holds": {
+    "mixed_d_unified": 1.0,
+    "r1_router": "18/18",
+    "r2_router": "22/22",
+    "r3_router": "35/35",
+    "r3_verifier": "28/28",
+    "r4_router": "40/40",
+    "r4_verifier": "32/32",
+    "r5_router": "44/44",
+    "r5_verifier": "36/36",
+    "r6_router": "48/48",
+    "r6_verifier": "40/40",
+    "r7_router": "52/52",
+    "r7_verifier": "44/44",
+    "label_protect_router": "43/43",
+    "label_protect_verifier": "32/32",
+    "router_smoke": "12/12",
+    "pillars": "26/26",
+    "ent_never_on_python": true,
+    "floor_held": true,
+    "floor": 0.9667
+  },
+  "prior_freezes_retained": [
+    "codigo_vivo_tip_platform_100pct_20260924_111435",
+    "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",
+    "codigo_vivo_tip_post_polish_100pct_20260924_123210",
+    "codigo_vivo_tip_r5_100pct_20260924_123727",
+    "codigo_vivo_tip_label_protect_100pct_20260924_124608",
+    "codigo_vivo_tip_r6_100pct_20260924_124951",
+    "codigo_vivo_tip_post_od2_100pct_20260924_125301",
+    "tip_moe_verifier_polish_r7_100pct_20260924_125313"
+  ],
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "ent_never_on_python": true,
+    "lora_adapter_writes": false
+  },
+  "blockers": [],
+  "claims": "No quantum-advantage claims."
+}

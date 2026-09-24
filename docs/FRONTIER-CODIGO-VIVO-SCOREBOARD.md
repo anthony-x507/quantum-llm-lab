@@ -27,6 +27,7 @@
 | `frontier/tip-label-protect` | `8b0772a` | fold label-protect/fall-super (`751ed03`+`8b0772a` onto `32fed9b`); router 43/43·verifier 32/32; floor **1.0** held |
 | `frontier/tip-hardneg-r6` | `259e4a4` | fold R6 polish `f3fcf1e` (rebase onto `3b10288` → `f3fcf1e` + pin `259e4a4`); R6 48/48·40/40; LP held 43/43·32/32; floor **1.0** held |
 | `frontier/tip-own-delta-refresh` | `1b56131` | fold own-delta refresh (rebase onto `4291aab`); RAW Py−0.062 Ent+1.0 Vis−0.200; dual-lane **1.0**; floor **1.0** held |
+| `frontier/tip-hardneg-r7` | `f586efd` | fold R7 polish `00fdaaf` (rebase onto `f0fe729` → `00fdaaf` + pin `f586efd`); R7 52/52·44/44; LP held 43/43·32/32; floor **1.0** held |
 
 **Metric policy:** Prefer vision **1.0** / overall **1.0** from `mixed-freeze-vision` over scaffold-merge / R2-port scoreboards that still show vis **0.9** / overall **0.9667**. Keep scaffold wiring + R2 reinforces + anti-think.
 
@@ -149,6 +150,30 @@
 | R6 doc | `docs/FRONTIER-CODIGO-VIVO-TIP-R6.md` |
 | Re-smoke | PASS · R6 48/48·40/40 · LP 43/43·32/32 · cpu overall 1.0 |
 
+
+## R7 TIP FREEZE / FOLD (overall 1.0) — tip HEAD after hardneg-r7 fold
+
+**Freeze id:** `codigo_vivo_tip_r7_100pct`  
+**Tip HEAD (pre-fold-docs):** `f586efd` · rebased from `4291aab` onto POST-OD2 tip `f0fe729`  
+**Claim:** NO quantum advantage. Cites tip HEAD after R7 fold; **prior platform / mlx_r3 / post_polish / R5 / label_protect / R6 / post_od2 / polish_r7 freezes NOT abandoned**.
+
+| Surface | Score |
+|---------|-------|
+| mixed (d) unified | **1.0** |
+| hardneg R1–R7 | **18/18 · 22/22 · 35/35 · 40/40 · 44/44 · 48/48 · 52/52** |
+| R3–R7 verifier | **28/28 · 32/32 · 36/36 · 40/40 · 44/44** |
+| label-protect | **43/43 · 32/32** |
+| router smoke / pillars | **12/12 · 26/26** |
+| `ent_never_on_python` | **true** |
+
+**Policy:** Never abandon platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2. `data/lora_adapter/` **READ-ONLY**. No merge to `main`.
+
+| Artifact | Path |
+|----------|------|
+| Manifest | `data/freeze_manifests/codigo_vivo_tip_r7_100pct_*.json` |
+| Metrics | `data/freeze_metrics/codigo_vivo_tip_r7_20260924.json` |
+| R7 doc | `docs/FRONTIER-CODIGO-VIVO-TIP-R7.md` |
+| Re-smoke | PASS · R7 52/52·44/44 · LP 43/43·32/32 · cpu overall 1.0 |
 
 ## POST-OD2 TIP FREEZE (overall 1.0) — after own-delta refresh fold + R6
 
