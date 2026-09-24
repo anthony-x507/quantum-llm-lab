@@ -131,6 +131,7 @@
 **Frozen SHA:** `eefc61711bbd321fe72fd21c43b88a0082eb6dba` (`eefc617`) · branch `frontier/codigo-vivo-tip` · rebase `eec0a8a`/`b33c2b0` onto `3d05cbe` → `ea2f450`+`0096a6e` FF then fold  
 **When:** 2026-09-24 13:34:05 ET · Mac-111 (`074c6626-…`)  
 **Claim:** NO quantum advantage. Cites tip HEAD after R9 fold; **prior platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2 / R7 / scaffold_motion / R8 / distance_danger / collision_pred / motion_r2 / collision_n freezes NOT abandoned**. `frontier/tip-inverse-r2` raises inverse_cv **89.82→99.82** (**FOLDED** — see INVERSE-R2 section).
+| tip-inverse-r3 (side, **not folded**) | inverse_cv 99.82→**100.0** | collision 100 / choose_safest 100 / mixed 1.0 held | TP mass bounce; ego geometric |
 
 | Surface | Score |
 |---------|-------|

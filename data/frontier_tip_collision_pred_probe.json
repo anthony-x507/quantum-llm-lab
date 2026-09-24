@@ -1,12 +1,12 @@
 {
   "schema": "frontier_tip_collision_pred_probe",
-  "ts": "2026-09-24 13:53:41 ET",
+  "ts": "2026-09-24 14:04:40 ET",
   "domain": "collision_predictive",
-  "branch": "frontier/tip-inverse-r2",
+  "branch": "frontier/tip-inverse-r3",
   "n_eval_seqs": 40,
   "metric_collision_correct_pct": 100.0,
   "metric_n_queries": 2850,
-  "ablation_pp": 0.18,
+  "ablation_pp": 0.0,
   "contam_passed": true,
   "retrieval_ok": true,
   "emit_schema": [
@@ -59,19 +59,19 @@
       },
       "k=3": {
         "n": 950,
-        "collision_correct_pct": 99.79,
-        "safe_match_pct": 99.79,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=5": {
         "n": 950,
-        "collision_correct_pct": 99.68,
-        "safe_match_pct": 99.68,
+        "collision_correct_pct": 100.0,
+        "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "overall": {
         "n": 2850,
-        "collision_correct_pct": 99.82
+        "collision_correct_pct": 100.0
       }
     },
     "collision_choose_safest": {
