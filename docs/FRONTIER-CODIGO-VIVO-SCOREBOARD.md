@@ -4,6 +4,10 @@
 **Written:** 2026-09-24 12:37:27 ET · Mac-111 (`074c6626-…`) · tip R5 100pct freeze @ `6dce7b6`  
 **Claim scope:** classical MoE router + `python -I` verifier + prior-replay ent/vision + GT-free circuit-graph scaffold on ent + mlx vision parse polish. **NO quantum-advantage claims.**
 
+## VISION-DELTA SIDE BRANCH (no fold) — 2026-09-24 ~13:35 ET
+
+Branch `frontier/tip-vision-delta` @ tip base `3d05cbe`. Vision RAW own-delta **−0.200**; parse-only ceiling ≈ **−0.1**; tip CPU unified **1.0** held; tip vision stays **BASE**. **No freeze. No fold.** See `docs/FRONTIER-CODIGO-VIVO-TIP-VISION-DELTA.md`.
+
 ## Tip composition (merges / folds)
 
 | Source tip | SHA | Role |

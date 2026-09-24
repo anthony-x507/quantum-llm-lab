@@ -91,8 +91,51 @@ def _norm_stdout(s: str) -> str:
 
 
 def _extract_int_answer(text: str) -> str | None:
+    """Prefer structured JSON answer fields, then last standalone int.
+
+    Quantum LoRA often emits {"next_term": "48", "sequence":[...,24,...]} —
+    naive last-int extract wrongly picks 24. Gold-free: never consults expected.
+    """
     t = _strip_thinking(text)
-    # last standalone integer
+    prefer_keys = (
+        "next_term", "answer", "result", "value", "total", "x",
+        "pred", "output", "n", "sum",
+    )
+    blobs: list[str] = []
+    if "{" in t and "}" in t:
+        blobs.append(t[t.find("{") : t.rfind("}") + 1])
+    for m in re.finditer(r"\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}", t, flags=re.S):
+        blobs.append(m.group(0))
+    seen: set[str] = set()
+    for blob in reversed(blobs):
+        blob = blob.strip()
+        if not blob or blob in seen:
+            continue
+        seen.add(blob)
+        try:
+            obj = json.loads(blob)
+        except json.JSONDecodeError:
+            try:
+                fixed = blob.replace("'", '"')
+                fixed = re.sub(r",\s*}", "}", fixed)
+                fixed = re.sub(r",\s*]", "]", fixed)
+                obj = json.loads(fixed)
+            except json.JSONDecodeError:
+                continue
+        if not isinstance(obj, dict):
+            continue
+        for k in prefer_keys:
+            if k not in obj:
+                continue
+            v = obj[k]
+            if isinstance(v, bool):
+                continue
+            if isinstance(v, (int, float)):
+                return str(int(v)) if float(v) == int(v) else str(v)
+            if isinstance(v, str):
+                mnum = re.search(r"-?\d+", v.strip())
+                if mnum:
+                    return mnum.group(0)
     nums = re.findall(r"(?m)(?<![\w.])(-?\d+)(?![\w.])", t)
     if not nums:
         return None

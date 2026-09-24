@@ -1,0 +1,110 @@
+{
+  "frontier": "codigo-vivo-tip-vision-delta",
+  "branch": "frontier/tip-vision-delta",
+  "tip_base_sha": "3d05cbe1ef88eaf3effc2a93049cbb27ba2ef800",
+  "tip_base_sha_short": "3d05cbe",
+  "branch_sha_pre_commit": "3d05cbe1ef88eaf3effc2a93049cbb27ba2ef800",
+  "written": "2026-09-24 13:36:19 ET",
+  "host": "Mac-111",
+  "machine_id": "074c6626-0440-4817-9829-6bae77c578d6",
+  "claims": [
+    "NO quantum-advantage claims",
+    "adapters READ-ONLY",
+    "no fold into tip",
+    "no main merge"
+  ],
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "CLEAN": true,
+    "ent_never_on_python": true,
+    "writes_to_lora_adapter": false,
+    "ro_mtime_unchanged_safetensors": true
+  },
+  "adapters_ro": {
+    "lora_adapter": {
+      "mtime_et": "2026-09-24 00:58:09 ET",
+      "role": "quantum RO; RAW own-delta; NOT on tip vision"
+    },
+    "lora_adapter_ent2": {
+      "mtime_et": "2026-09-24 09:02:13 ET",
+      "role": "tip MoE ent lane"
+    },
+    "lora_adapter_classical": {
+      "mtime_et": "2026-09-24 05:29:28 ET",
+      "role": "present; not routed on CV pillars"
+    },
+    "ro_lock_verified": true
+  },
+  "vision_BASE_vs_adapter": {
+    "prior_RAW_BENCHMARK": {
+      "base": 0.9,
+      "adapter": 0.7,
+      "delta": -0.2,
+      "base_correct": "9/10",
+      "adapter_correct": "7/10",
+      "source": "data/BENCHMARK_CODIGO_VIVO.json"
+    },
+    "parse_polish_expected_if_rebench": {
+      "base": 0.9,
+      "adapter": 0.8,
+      "delta": -0.1,
+      "rescues": [
+        "vis_math_06 next_term JSON key"
+      ],
+      "still_fail_content": [
+        "vis_circ_01 missing X",
+        "vis_circ_02 H+RY vs RY+Z"
+      ]
+    },
+    "tip_uses": "BASE (dual-lane; quantum LoRA hurts vision)",
+    "tip_vision_rate_cpu_d": 1.0
+  },
+  "honest_ceiling": {
+    "non_negative_own_delta": false,
+    "parse_only_ceiling_delta": -0.1,
+    "irreducible_without_new_vision_lora": [
+      "vis_circ_01 content missing X",
+      "vis_circ_02 wrong gate set (H+RY \u2260 RY+Z)"
+    ],
+    "next_reinforce_angles": [
+      "Train vision-specific LoRA under a NEW dir (never write data/lora_adapter/)",
+      "Circuit grounding prompt: emit explicit X when diagram shows Pauli-X before CX",
+      "Reuse anti-think JSON-only cue from vision/grounding.py on bench vision circuit items",
+      "Keep tip vision on BASE until own-delta \u2265 0 on a dedicated adapter"
+    ]
+  },
+  "parse_polish_implemented": [
+    "examples/bench_codigo_vivo.py::_extract_int_answer prefers next_term/answer/\u2026 JSON keys",
+    "examples/llm_quantum_bridge.py::_sanitize_jsonish + parsear_propuesta tolerate bare pi/2",
+    "examples/moe_verifier_mixed_live.py::gold_free_extract_json_obj same pi sanitize"
+  ],
+  "tip_cpu_unified": {
+    "python": 1.0,
+    "ent": 1.0,
+    "vision": 1.0,
+    "overall": 1.0,
+    "floor_held": true,
+    "source": "data/frontier_moe_verifier_mixed_cpu_vision_delta.json"
+  },
+  "tip_cpu_smoke": {
+    "pillars": "26/26",
+    "hardneg": "18/18",
+    "PASS": true,
+    "ent_never_on_python": true,
+    "source": "data/frontier_moe_verifier_mixed_smoke_vision_delta.json"
+  },
+  "freezes_retained_cited": [
+    "collision_n",
+    "motion_r2",
+    "distance",
+    "collision_pred",
+    "r8",
+    "scaffold",
+    "priors"
+  ],
+  "freeze": false,
+  "freeze_reason": "own-delta still negative (parse-only ceiling \u2248 \u22120.1); tip vis already 1.0 \u2014 no freeze-bar rise; document honest ceiling",
+  "fold_into_tip": false,
+  "push": true,
+  "blockers": []
+}

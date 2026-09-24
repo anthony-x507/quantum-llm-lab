@@ -1,0 +1,153 @@
+{
+  "written": "2026-09-24 13:34:36 ET",
+  "host": "Mac-111",
+  "tip_base_sha": "3d05cbe",
+  "branch": "frontier/tip-vision-delta",
+  "prior_raw_own_delta_vision": {
+    "base": 0.9,
+    "adapter": 0.7,
+    "delta": -0.20000000000000007,
+    "base_correct": "9/10",
+    "adapter_correct": "7/10"
+  },
+  "offline_rescore_with_parse_polish": {
+    "base": 0.5,
+    "adapter": 0.8,
+    "delta": 0.30000000000000004,
+    "base_correct": "5/10",
+    "adapter_correct": "8/10",
+    "caveat": "raw_preview truncated to 240 chars in BENCHMARK; polish applied gold-free"
+  },
+  "base_rows_interesting": [
+    {
+      "id": "vis_math_02",
+      "kind": "math",
+      "prior": true,
+      "rescored": false,
+      "changed": true,
+      "pred": "13",
+      "err": null,
+      "expected": "50",
+      "raw_preview": "Got it, let's solve the problem. The expression is 9 * 7 - 13. First, I need to do the multiplication: 9 times 7 is 63. Then subtract 13 from 63. So 63 minus 13 is 50. I need to ma"
+    },
+    {
+      "id": "vis_math_04",
+      "kind": "math",
+      "prior": true,
+      "rescored": false,
+      "changed": true,
+      "pred": "18",
+      "err": null,
+      "expected": "6",
+      "raw_preview": "Got it, let's solve the equation 2x + 6 = 18. First, I need to isolate x. So, subtract 6 from both sides. That gives 2x = 18 - 6, which is 2x = 12. Then divide both sides by 2, so "
+    },
+    {
+      "id": "vis_math_05",
+      "kind": "math",
+      "prior": true,
+      "rescored": false,
+      "changed": true,
+      "pred": "80",
+      "err": null,
+      "expected": "20",
+      "raw_preview": "Got it, let's see. The problem is 25% of 80. To find a percentage of a number, you can convert the percentage to a decimal and multiply. 25% is 0.25 in decimal. So 0.25 times 80. L"
+    },
+    {
+      "id": "vis_math_06",
+      "kind": "math",
+      "prior": true,
+      "rescored": false,
+      "changed": true,
+      "pred": "24",
+      "err": null,
+      "expected": "48",
+      "raw_preview": "Got it, let's see. The sequence is 3, 6, 12, 24, ?. I need to find the next term. Let's check the pattern. From 3 to 6, that's multiplied by 2. 6 to 12 is also multiplied by 2. 12 "
+    },
+    {
+      "id": "vis_circ_02",
+      "kind": "circuit",
+      "prior": false,
+      "rescored": true,
+      "changed": true,
+      "pred": {
+        "gates": [
+          "RY",
+          "Z"
+        ],
+        "narrative_rescue": true
+      },
+      "err": null,
+      "expected": [
+        "RY",
+        "Z"
+      ],
+      "raw_preview": "Got it, let's break this down. The circuit has 1 qubit. First, apply RY(pi/2), then apply Z. \n\nFor RY gate: it's a single-qubit gate, so wires is [0] (since 1 qubit, index 0). The "
+    },
+    {
+      "id": "vis_math_07",
+      "kind": "math",
+      "prior": true,
+      "rescored": false,
+      "changed": true,
+      "pred": "5",
+      "err": null,
+      "expected": "20",
+      "raw_preview": "Got it, let's see. The problem is about finding the area of a rectangle. The formula for the area of a rectangle is length multiplied by width. Here, the length is 5 and the width "
+    }
+  ],
+  "adapter_rows_interesting": [
+    {
+      "id": "vis_math_06",
+      "kind": "math",
+      "prior": false,
+      "rescored": true,
+      "changed": true,
+      "pred": "48",
+      "err": null,
+      "expected": "48",
+      "raw_preview": "</think>\n\n{\"sequence\": [[\"3\", 0], [\"6\", 1], [\"12\", 2], [\"24\", 3]], \"next_term\": \"48\", \"template\": \"doubling\", \"nota\": \"Doubling sequence: 3, 6, 12, 24, 48.\"}"
+    },
+    {
+      "id": "vis_circ_01",
+      "kind": "circuit",
+      "prior": false,
+      "rescored": false,
+      "changed": false,
+      "pred": {
+        "n_qubits": 2,
+        "gates": [
+          "H",
+          "CX"
+        ]
+      },
+      "err": null,
+      "expected": [
+        "H",
+        "X",
+        "CNOT"
+      ],
+      "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1]]}"
+    },
+    {
+      "id": "vis_circ_02",
+      "kind": "circuit",
+      "prior": false,
+      "rescored": false,
+      "changed": false,
+      "pred": {
+        "n_qubits": 1,
+        "gates": [
+          "H",
+          "RY"
+        ]
+      },
+      "err": null,
+      "expected": [
+        "RY",
+        "Z"
+      ],
+      "raw_preview": "</think>\n\n{\"n_qubits\": 1, \"gates\": [[\"h\", 0], [\"ry\", 0, pi/2]]}"
+    }
+  ],
+  "math06_probe": "48"
+}

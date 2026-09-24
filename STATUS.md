@@ -1,5 +1,12 @@
 # Estado de avance
 
+## 2026-09-24 — tip-vision-delta (side branch; no fold)
+
+Branch `frontier/tip-vision-delta` from tip `3d05cbe` (post collision-n).  
+Vision RAW own-delta **−0.200** (0.9→0.7); parse polish → expected ceiling **−0.1** (math_06 only); circ content fails irreducible without new vision LoRA.  
+Tip dual-lane CPU unified **1.0** held; tip stays on **BASE** for vis. Adapters RO. **No freeze. No fold into tip.**  
+See `docs/FRONTIER-CODIGO-VIVO-TIP-VISION-DELTA.md`.
+
 ## 2026-09-24 — fold tip-collision-n → codigo-vivo-tip
 Rebase `55277d9`/`c79ab1a` onto `763fb8c` → already up to date; FF. CPU unified **1.0** (re-smoke); collision physics **100%** (2850 queries / **40** eval); motion **91%**; R8 52/52·44/44; LP 43/43·32/32; pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_collision_n_100pct_20260924_132559`. R9 **not** folded. See SCOREBOARD + TIP-COLLISION-N.
 

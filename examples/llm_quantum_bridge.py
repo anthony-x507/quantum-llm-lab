@@ -98,29 +98,48 @@ def _extract_balanced_json(texto: str) -> str | None:
     return None
 
 
+
+def _sanitize_jsonish(blob: str) -> str:
+    """Make near-JSON circuit blobs parseable without inventing gates.
+
+    Models often emit bare pi/2 / π/2 inside arrays (invalid JSON). Replace
+    with numeric literals. Gold-free: does not consult expected answers.
+    """
+    s = blob
+    s = s.replace("'", '"')
+    s = re.sub(r"(?<![\w.])π\s*/\s*2(?![\w.])", "1.5707963267948966", s)
+    s = re.sub(r"(?<![\w.])pi\s*/\s*2(?![\w.])", "1.5707963267948966", s, flags=re.I)
+    s = re.sub(r"(?<![\w.])π(?![\w.])", "3.141592653589793", s)
+    s = re.sub(r"(?<![\w.])pi(?![\w.])", "3.141592653589793", s, flags=re.I)
+    s = re.sub(r",\s*}", "}", s)
+    s = re.sub(r",\s*]", "]", s)
+    return s
+
+
 def parsear_propuesta(texto: str) -> dict[str, Any]:
     """Extrae el primer objeto JSON del texto del modelo (brace-balanced)."""
     texto = texto.strip()
-    try:
-        data = json.loads(texto)
-        if isinstance(data, dict) and "gates" in data:
-            return data
-    except json.JSONDecodeError:
-        pass
-
+    candidates = [texto]
     blob = _extract_balanced_json(texto)
+    if blob:
+        candidates.append(blob)
+    last_err: Exception | None = None
+    for cand in candidates:
+        for variant in (cand, _sanitize_jsonish(cand)):
+            try:
+                data = json.loads(variant)
+            except json.JSONDecodeError as exc:
+                last_err = exc
+                continue
+            if isinstance(data, dict) and "gates" in data:
+                data.setdefault("n_qubits", 2)
+                return data
     if not blob:
-        raise ValueError(f"No encontré JSON en la respuesta del modelo:\n{texto[:500]}")
-    data = json.loads(blob)
-    if "gates" not in data:
-        raise ValueError(f"JSON sin 'gates': {data}")
-    data.setdefault("n_qubits", 2)
-    return data
+        raise ValueError(
+            f"No encontré JSON en la respuesta del modelo:\n{texto[:500]}"
+        )
+    raise ValueError(f"JSON inválido tras sanitize ({last_err}): {blob[:240]}")
 
-
-# ---------------------------------------------------------------------------
-# 2) Simulador PennyLane (CPU)
-# ---------------------------------------------------------------------------
 
 def ejecutar_circuito(propuesta: dict[str, Any]) -> dict[str, Any]:
     """Construye y mide el circuito en el dispositivo default.qubit."""
