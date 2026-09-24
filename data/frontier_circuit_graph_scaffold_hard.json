@@ -1,0 +1,1408 @@
+{
+  "written": "2026-09-24 10:52:39",
+  "router_method": "heuristic",
+  "polish_features": false,
+  "n_fixtures": 15,
+  "n_ent_evaluated": 15,
+  "n_skipped_non_ent": 0,
+  "no_scaffold": {
+    "n": 15,
+    "parse_rate": 0.9333,
+    "structure_rate": 0.9333,
+    "solve_rate": 0.2667,
+    "parse_n": 14,
+    "structure_n": 14,
+    "solve_n": 4
+  },
+  "scaffold": {
+    "n": 15,
+    "parse_rate": 1.0,
+    "structure_rate": 1.0,
+    "solve_rate": 0.9333,
+    "parse_n": 15,
+    "structure_n": 15,
+    "solve_n": 14
+  },
+  "delta_scaffold_minus_off": {
+    "parse_rate": 0.0667,
+    "structure_rate": 0.0667,
+    "solve_rate": 0.6666
+  },
+  "clear_win": true,
+  "clear_win_rule": "Δsolve≥0.15 OR (Δstructure≥0.15 AND Δparse≥0.05)",
+  "prompt_touches_gt": false,
+  "claims": [
+    "NO quantum-advantage claims",
+    "Scaffold = classical Clifford–Pauli graph features/hints only",
+    "Metrics are own-delta usability (parse/structure/solve) on CPU heuristic"
+  ],
+  "anti_contamination": {
+    "gt_in_scaffold_hints": false,
+    "prompt_touches_gt": false,
+    "graph_builder_rejects_gt_kwargs": true,
+    "lora_adapter_writes": false
+  },
+  "rows": [
+    {
+      "id": "hard_teleport_01",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": true,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ]
+          ],
+          "nota": "weak-teleport-trunc"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": true,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "z",
+              2
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "hard_teleport_02",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": true,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ]
+          ],
+          "nota": "weak-teleport-trunc"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": true,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "z",
+              2
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "hard_teleport_03",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": false,
+        "structure_ok": false,
+        "solve_ok": false,
+        "unitary_ok": false,
+        "error": "missing_gates_or_n",
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": true,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [],
+          "nota": "weak-teleport-empty"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": true,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "h",
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "hard_qft2_01",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": true,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "nota": "weak-qft-h-only"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": true,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "ry",
+              1,
+              0.7854
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "hard_qft2_02",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": true,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "ry",
+              1,
+              0.7854
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "nota": "weak-qft-ok"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": true,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "ry",
+              1,
+              0.7854
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "hard_qft3_01",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": true,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "ry",
+              1,
+              0.5
+            ]
+          ],
+          "nota": "weak-qft-no-cx"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": true,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "ry",
+              1,
+              0.7854
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "hard_parity_01",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": true,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "nota": "weak-parity-bellish"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": true,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              1,
+              2
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "hard_parity_02",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": true,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "nota": "weak-parity-bellish"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": true,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              1,
+              2
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "hard_parity_03",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": true,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "nota": "weak-parity-one-cx"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": true,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              1,
+              2
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "hard_cluster_01",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": true,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ]
+          ],
+          "nota": "weak-cluster-ok"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": true,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "hard_w_01",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": true,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "ry",
+              0,
+              1.231
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "ry",
+              1,
+              0.9553
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "x",
+              0
+            ]
+          ],
+          "nota": "weak-w-ok"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": true,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "ry",
+              0,
+              1.231
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "ry",
+              1,
+              0.9553
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "x",
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "hard_swap_01",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": true,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "nota": "weak-swap-one-cx"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": true,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "cx",
+              1,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "hard_trap_product_01",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": true,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": false,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "nota": "weak-product-trap-cx"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": true,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": false,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "hard_trap_product_02",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": true,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": false,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "nota": "weak-product"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": true,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": true,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": false,
+          "want_w": false,
+          "want_swap": false,
+          "want_cx": false,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 2,
+          "gates": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    },
+    {
+      "id": "hard_trap_ent_01",
+      "lane": "ent",
+      "scaffold_applied": true,
+      "off": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": true,
+          "want_w": true,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ]
+          ],
+          "nota": "weak-cluster-ok"
+        }
+      },
+      "on": {
+        "parse_ok": true,
+        "structure_ok": true,
+        "solve_ok": false,
+        "unitary_ok": true,
+        "error": null,
+        "goals": {
+          "want_bell_like": false,
+          "want_product": false,
+          "want_ghz": false,
+          "want_teleport": false,
+          "want_qft": false,
+          "want_parity": false,
+          "want_cluster": true,
+          "want_w": true,
+          "want_swap": false,
+          "want_cx": true,
+          "want_parseable": true
+        },
+        "proposal": {
+          "n_qubits": 3,
+          "gates": [
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ]
+          ],
+          "nota": "scaffold-guided heuristic"
+        }
+      },
+      "hint_has_gt_token": false
+    }
+  ],
+  "elapsed_s": 1.46,
+  "router_scaffold_smoke": {
+    "n": 8,
+    "ent_injected": 8,
+    "any_gt_leak": false,
+    "rows": [
+      {
+        "id": "ent_bell_01",
+        "lane": "ent",
+        "injected": true,
+        "has_scaffold_markers": true,
+        "gt_leak": false
+      },
+      {
+        "id": "ent_bell_02",
+        "lane": "ent",
+        "injected": true,
+        "has_scaffold_markers": true,
+        "gt_leak": false
+      },
+      {
+        "id": "ent_bell_03",
+        "lane": "ent",
+        "injected": true,
+        "has_scaffold_markers": true,
+        "gt_leak": false
+      },
+      {
+        "id": "ent_cx_01",
+        "lane": "ent",
+        "injected": true,
+        "has_scaffold_markers": true,
+        "gt_leak": false
+      },
+      {
+        "id": "ent_ghz_01",
+        "lane": "ent",
+        "injected": true,
+        "has_scaffold_markers": true,
+        "gt_leak": false
+      },
+      {
+        "id": "ent_product_01",
+        "lane": "ent",
+        "injected": true,
+        "has_scaffold_markers": true,
+        "gt_leak": false
+      },
+      {
+        "id": "ent_product_02",
+        "lane": "ent",
+        "injected": true,
+        "has_scaffold_markers": true,
+        "gt_leak": false
+      },
+      {
+        "id": "ent_ry_01",
+        "lane": "ent",
+        "injected": true,
+        "has_scaffold_markers": true,
+        "gt_leak": false
+      }
+    ]
+  },
+  "frontier": "circuit-graph-scaffold-hard",
+  "mode": "hard-cpu-eval",
+  "fixture_set": "hard",
+  "original_freeze_recheck": {
+    "freeze_still_held": true,
+    "freeze_path": "data/FRONTIER_CIRCUIT_GRAPH_SCAFFOLD_FREEZE.json",
+    "floors": {
+      "solve_rate": 0.9,
+      "delta_solve_rate": 0.45
+    },
+    "observed": {
+      "solve_rate": 0.9,
+      "delta_solve_rate": 0.5,
+      "delta": {
+        "parse_rate": 0.25,
+        "structure_rate": 0.35,
+        "solve_rate": 0.5
+      },
+      "clear_win": true,
+      "n_ent": 20
+    },
+    "written": "2026-09-24 10:52:40"
+  }
+}

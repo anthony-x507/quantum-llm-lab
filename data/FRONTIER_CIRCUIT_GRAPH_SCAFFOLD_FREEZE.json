@@ -1,0 +1,24 @@
+{
+  "frontier": "circuit-graph-moe-scaffold",
+  "written": "2026-09-24 10:48:51",
+  "clear_win": true,
+  "delta": {
+    "parse_rate": 0.25,
+    "structure_rate": 0.35,
+    "solve_rate": 0.45
+  },
+  "n_ent": 20,
+  "polish_features": true,
+  "claims": [
+    "NO quantum-advantage claims",
+    "Scaffold = classical Clifford–Pauli graph features/hints only",
+    "Metrics are own-delta usability (parse/structure/solve) on CPU heuristic"
+  ],
+  "anti_contamination": {
+    "gt_in_scaffold_hints": false,
+    "prompt_touches_gt": false,
+    "graph_builder_rejects_gt_kwargs": true,
+    "lora_adapter_writes": false
+  },
+  "note": "Freeze: scaffold own-delta clear on CPU heuristic; still no Q-advantage / no VLM wire."
+}
