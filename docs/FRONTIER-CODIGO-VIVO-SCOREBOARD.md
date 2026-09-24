@@ -3,6 +3,7 @@
 **Branch:** `frontier/tip-tti-cold` → **FOLDED** into `frontier/codigo-vivo-tip`  
 **Side:** `c97e89a` / feat `9ddb8f4` · **Base tip:** `677235a` (post R16)  
 **Freeze:** `codigo_vivo_tip_tti_cold_fold_100pct_20260924_152850`  
+**Fold SHA:** `04d95c0`  
 **Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-TTI-COLD.md`
 
 | Surface | Result |
