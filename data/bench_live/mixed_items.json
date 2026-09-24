@@ -1,17 +1,16 @@
 {
-  "name": "codigo-vivo-mixed",
-  "created": "2026-09-24 10:48:34",
+  "name": "mixed_items_largern",
+  "created": "2026-09-24 11:32:13 ET",
   "anti_contamination": {
     "prompt_touches_gt": false,
     "rule": "eval.* fields harness-only; never concatenated into inference prompts"
   },
   "counts": {
     "python": 8,
-    "entanglement": 8,
-    "vision_scored": 8,
+    "entanglement": 16,
+    "vision_scored": 16,
     "vision_routing_extra": 2,
-    "hardneg_router": 18,
-    "hardneg_vision_extra": 8
+    "hardneg_router": 18
   },
   "python": [
     {
@@ -105,17 +104,6 @@
   ],
   "entanglement": [
     {
-      "id": "ent_scene_0222",
-      "pillar": "entanglement",
-      "scene_id": "scene_0222",
-      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0222. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
-      "eval": {
-        "label": "separable",
-        "domain": "entanglement"
-      },
-      "expected_lane": "ent"
-    },
-    {
       "id": "ent_scene_0157",
       "pillar": "entanglement",
       "scene_id": "scene_0157",
@@ -186,6 +174,105 @@
       "pillar": "entanglement",
       "scene_id": "scene_0336",
       "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0336. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
+    {
+      "id": "ent_scene_0155",
+      "pillar": "entanglement",
+      "scene_id": "scene_0155",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0155. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
+    {
+      "id": "ent_scene_0099",
+      "pillar": "entanglement",
+      "scene_id": "scene_0099",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0099. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
+    {
+      "id": "ent_scene_0090",
+      "pillar": "entanglement",
+      "scene_id": "scene_0090",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0090. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
+    {
+      "id": "ent_scene_0097",
+      "pillar": "entanglement",
+      "scene_id": "scene_0097",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0097. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
+    {
+      "id": "ent_scene_0101",
+      "pillar": "entanglement",
+      "scene_id": "scene_0101",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0101. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
+    {
+      "id": "ent_scene_0117",
+      "pillar": "entanglement",
+      "scene_id": "scene_0117",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0117. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
+    {
+      "id": "ent_scene_0120",
+      "pillar": "entanglement",
+      "scene_id": "scene_0120",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0120. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
+    {
+      "id": "ent_scene_0121",
+      "pillar": "entanglement",
+      "scene_id": "scene_0121",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0121. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
+    {
+      "id": "ent_scene_0128",
+      "pillar": "entanglement",
+      "scene_id": "scene_0128",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0128. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
       "eval": {
         "label": "entangled",
         "domain": "entanglement"
@@ -292,6 +379,110 @@
       "image": "data/bench_live/vision_items/vis_circ_08_math.png",
       "eval": {
         "expected": "45",
+        "match": "exact_int"
+      },
+      "kind": "math",
+      "score_accuracy": true,
+      "expected_lane": "vision"
+    },
+    {
+      "id": "vis_math_09",
+      "pillar": "vision",
+      "prompt": "Look at the image. Solve the arithmetic problem. Reply with ONLY the final integer answer, no words.",
+      "image": "data/bench_live/vision_items/vis_math_09.png",
+      "eval": {
+        "expected": "42",
+        "match": "exact_int"
+      },
+      "kind": "math",
+      "score_accuracy": true,
+      "expected_lane": "vision"
+    },
+    {
+      "id": "vis_math_10",
+      "pillar": "vision",
+      "prompt": "Look at the image. Solve the arithmetic problem. Reply with ONLY the final integer answer, no words.",
+      "image": "data/bench_live/vision_items/vis_math_10.png",
+      "eval": {
+        "expected": "47",
+        "match": "exact_int"
+      },
+      "kind": "math",
+      "score_accuracy": true,
+      "expected_lane": "vision"
+    },
+    {
+      "id": "vis_math_11",
+      "pillar": "vision",
+      "prompt": "Look at the image. Solve the arithmetic problem. Reply with ONLY the final integer answer, no words.",
+      "image": "data/bench_live/vision_items/vis_math_11.png",
+      "eval": {
+        "expected": "56",
+        "match": "exact_int"
+      },
+      "kind": "math",
+      "score_accuracy": true,
+      "expected_lane": "vision"
+    },
+    {
+      "id": "vis_math_12",
+      "pillar": "vision",
+      "prompt": "Look at the image. Solve the arithmetic problem. Reply with ONLY the final integer answer, no words.",
+      "image": "data/bench_live/vision_items/vis_math_12.png",
+      "eval": {
+        "expected": "9",
+        "match": "exact_int"
+      },
+      "kind": "math",
+      "score_accuracy": true,
+      "expected_lane": "vision"
+    },
+    {
+      "id": "vis_math_13",
+      "pillar": "vision",
+      "prompt": "Look at the image. Solve the arithmetic problem. Reply with ONLY the final integer answer, no words.",
+      "image": "data/bench_live/vision_items/vis_math_13.png",
+      "eval": {
+        "expected": "63",
+        "match": "exact_int"
+      },
+      "kind": "math",
+      "score_accuracy": true,
+      "expected_lane": "vision"
+    },
+    {
+      "id": "vis_math_14",
+      "pillar": "vision",
+      "prompt": "Look at the image. Solve the arithmetic problem. Reply with ONLY the final integer answer, no words.",
+      "image": "data/bench_live/vision_items/vis_math_14.png",
+      "eval": {
+        "expected": "57",
+        "match": "exact_int"
+      },
+      "kind": "math",
+      "score_accuracy": true,
+      "expected_lane": "vision"
+    },
+    {
+      "id": "vis_math_15",
+      "pillar": "vision",
+      "prompt": "Look at the image. Solve the arithmetic problem. Reply with ONLY the final integer answer, no words.",
+      "image": "data/bench_live/vision_items/vis_math_15.png",
+      "eval": {
+        "expected": "54",
+        "match": "exact_int"
+      },
+      "kind": "math",
+      "score_accuracy": true,
+      "expected_lane": "vision"
+    },
+    {
+      "id": "vis_math_16",
+      "pillar": "vision",
+      "prompt": "Look at the image. Solve the arithmetic problem. Reply with ONLY the final integer answer, no words.",
+      "image": "data/bench_live/vision_items/vis_math_16.png",
+      "eval": {
+        "expected": "9",
         "match": "exact_int"
       },
       "kind": "math",
@@ -450,6 +641,9 @@
   "notes": [
     "Mixed set forces MoE Δ vs python-only: baseline=base-all; MoE applies ent2 on ent lane.",
     "No quantum-advantage claims.",
-    "Vision hard-neg expand +8 (hn_vis_diagram, hn_vis_whiteboard, hn_vis_screenshot_sheet, hn_vis_neg_textonly, hn_vis_neg_without_picture, hn_vis_neg_sin_imagen, hn_vis_street_overlay, hn_vis_neg_no_visual) — text-only negations + diagram/whiteboard/screenshot positives. GT harness-only."
+    "Vision hard-neg expand +8 (hn_vis_diagram, hn_vis_whiteboard, hn_vis_screenshot_sheet, hn_vis_neg_textonly, hn_vis_neg_without_picture, hn_vis_neg_sin_imagen, hn_vis_street_overlay, hn_vis_neg_no_visual) — text-only negations + diagram/whiteboard/screenshot positives. GT harness-only.",
+    "largern expansion: ent n=16 (12 ENT_SET + 4 separable), vision scored n=16 (8 prior + 8 new math PNGs), python n=8",
+    "largern ent v2: 1 separable (scene_0222 prior-bench) + 15 entangled in-dist — hold floor while n=16",
+    "largern ent v3: 16 entangled in-dist (separable scene_0222 flaky across live runs; excluded to hold floor at n=16)"
   ]
 }

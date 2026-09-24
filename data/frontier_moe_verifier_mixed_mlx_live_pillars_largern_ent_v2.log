@@ -1,0 +1,43 @@
+8B ready=True effective_GB=5.761
+=== LIVE ent BASE n=16 ===
+[2026-09-24 11:45:31 ] Loading VLM mlx-community/Qwen3-VL-8B-Thinking-4bit adapter=None
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 2913.66it/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 5112.51it/s]
+  [mlx-live-ent-base ent] scene_0222 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0157 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0291 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0359 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0239 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0293 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0317 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0336 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0155 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0099 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0090 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0097 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0101 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0117 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0120 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0121 parse=False compile=False label=False energy=False
+=== LIVE ent ENT2 adapter=/Users/anthony/Documents/quantum-llm-lab-tip-mlx-largern/data/lora_adapter_ent2 ===
+[2026-09-24 11:49:58 ] Loading VLM mlx-community/Qwen3-VL-8B-Thinking-4bit adapter='/Users/anthony/Documents/quantum-llm-lab-tip-mlx-largern/data/lora_adapter_ent2'
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 1978.63it/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 4616.57it/s]
+  [mlx-live-ent-ent2 ent] scene_0222 parse=True compile=True label=False energy=True
+  [mlx-live-ent-ent2 ent] scene_0157 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0291 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0359 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0239 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0293 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0317 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0336 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0155 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0099 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0090 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0097 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0101 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0117 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0120 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0121 parse=True compile=True label=True energy=True
+Wrote data/frontier_moe_verifier_mixed_mlx_live_pillars_largern_ent_v2.json
+drops: []

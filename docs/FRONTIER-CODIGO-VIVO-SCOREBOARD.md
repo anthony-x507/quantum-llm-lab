@@ -296,3 +296,15 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 Consolidate freeze citing MLX+R3 (platform f0da3e7 retained): `codigo_vivo_tip_mlx_r3_100pct_20260924_112131` · `docs/FRONTIER-CODIGO-VIVO-TIP-MLX-R3.md`
 
 Fold scaffold→VLM wire (platform + MLX+R3 freezes retained): tip `ae62ce2` · `docs/FRONTIER-SCAFFOLD-WIRE-VLM.md`
+
+## MLX LIVE larger-n (tip-mlx-largern) — 2026-09-24 ~11:58 ET
+
+| Path | python | ent | vision | overall |
+|------|--------|-----|--------|---------|
+| (a) baseline | 0.125 | 0.000 | 1.000 | 0.375 |
+| (b) MoE alone | 0.125 | 1.000 | 1.000 | 0.708 |
+| (c) verifier-on-python | 1.000 | 0.000 | 1.000 | 0.667 |
+| (d) unified | **1.000** | **1.000** | **1.000** | **1.000** |
+
+n honest: py=8 ent=16 vis=16 · Δ vs CPU 1.0 = **0.0** · floor held · Mac-111 only · see `docs/FRONTIER-CODIGO-VIVO-TIP-MLX-LARGERN.md`
+

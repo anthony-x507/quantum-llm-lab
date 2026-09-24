@@ -1,0 +1,72 @@
+8B ready=True effective_GB=5.761
+=== LIVE python verifier n=8 ===
+[2026-09-24 11:35:11 ] Loading VLM mlx-community/Qwen3-VL-8B-Thinking-4bit adapter=None
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 2248.15it/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 5186.69it/s]
+=== LIVE ent BASE n=16 ===
+[2026-09-24 11:37:46 ] Loading VLM mlx-community/Qwen3-VL-8B-Thinking-4bit adapter=None
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 1760.34it/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 5045.68it/s]
+  [mlx-live-ent-base ent] scene_0222 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0157 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0291 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0359 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0239 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0293 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0317 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0336 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0155 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0283 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0099 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0142 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0023 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0033 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0035 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0036 parse=False compile=False label=False energy=False
+=== LIVE ent ENT2 adapter=/Users/anthony/Documents/quantum-llm-lab-tip-mlx-largern/data/lora_adapter_ent2 ===
+[2026-09-24 11:42:02 ] Loading VLM mlx-community/Qwen3-VL-8B-Thinking-4bit adapter='/Users/anthony/Documents/quantum-llm-lab-tip-mlx-largern/data/lora_adapter_ent2'
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 1973.73it/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 5029.54it/s]
+  [mlx-live-ent-ent2 ent] scene_0222 parse=True compile=True label=False energy=True
+  [mlx-live-ent-ent2 ent] scene_0157 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0291 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0359 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0239 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0293 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0317 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0336 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0155 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0283 parse=True compile=True label=False energy=True
+  [mlx-live-ent-ent2 ent] scene_0099 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0142 parse=True compile=True label=False energy=True
+  [mlx-live-ent-ent2 ent] scene_0023 parse=True compile=True label=False energy=True
+  [mlx-live-ent-ent2 ent] scene_0033 parse=True compile=True label=False energy=True
+  [mlx-live-ent-ent2 ent] scene_0035 parse=True compile=True label=False energy=True
+  [mlx-live-ent-ent2 ent] scene_0036 parse=True compile=True label=False energy=True
+=== LIVE vision BASE n=16 ===
+[2026-09-24 11:43:04 ] Loading VLM mlx-community/Qwen3-VL-8B-Thinking-4bit adapter=None
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 3194.28it/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 4609.80it/s]
+  [mlx-live-vis vision] vis_math_01 correct=True pred=45 err=None
+  [mlx-live-vis vision] vis_math_02 correct=True pred=50 err=None
+  [mlx-live-vis vision] vis_math_03 correct=True pred=20 err=None
+  [mlx-live-vis vision] vis_math_04 correct=True pred=6 err=None
+  [mlx-live-vis vision] vis_math_05 correct=True pred=20 err=None
+  [mlx-live-vis vision] vis_math_06 correct=True pred=48 err=None
+  [mlx-live-vis vision] vis_math_07 correct=True pred=20 err=None
+  [mlx-live-vis vision] vis_math_08 correct=True pred=45 err=None
+  [mlx-live-vis vision] vis_math_09 correct=True pred=42 err=None
+  [mlx-live-vis vision] vis_math_10 correct=True pred=47 err=None
+  [mlx-live-vis vision] vis_math_11 correct=True pred=56 err=None
+  [mlx-live-vis vision] vis_math_12 correct=True pred=9 err=None
+  [mlx-live-vis vision] vis_math_13 correct=True pred=63 err=None
+  [mlx-live-vis vision] vis_math_14 correct=True pred=57 err=None
+  [mlx-live-vis vision] vis_math_15 correct=True pred=54 err=None
+  [mlx-live-vis vision] vis_math_16 correct=True pred=9 err=None
+Wrote data/frontier_moe_verifier_mixed_mlx_live_pillars_largern.json
+  a_baseline             py=0.1250 ent=0.0000 vis=1.0000 overall=0.3750
+  b_moe_alone            py=0.1250 ent=0.5625 vis=1.0000 overall=0.5625
+  c_verifier_on_python   py=1.0000 ent=0.0000 vis=1.0000 overall=0.6667
+  d_unified              py=1.0000 ent=0.5625 vis=1.0000 overall=0.8542
+vs CPU 1.0: {'cpu_unified_overall': 1.0, 'mlx_unified_overall': 0.8542, 'delta': -0.1458, 'note': 'CPU tip uses prior-replay ent/vis + live heuristic/verifier python → overall 1.0; this row is LIVE mlx on all three pillars with honest n.'}
+drops: ['overall Δ vs CPU 1.0 = -0.1458 (mlx=0.8542)', 'ent live label_acc 0.5625 < 1.0 (CPU prior 1.0)']

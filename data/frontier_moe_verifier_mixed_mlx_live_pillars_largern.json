@@ -1,0 +1,2395 @@
+{
+  "frontier": "codigo-vivo-tip-mlx-live-pillars",
+  "written": "2026-09-24 11:43:24 ET",
+  "host": {
+    "hostname": "Mac-55",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "machineId_hint": "074c6626-0440-4817-9829-6bae77c578d6"
+  },
+  "tip_sha_at_run": null,
+  "claims": [
+    "NO quantum-advantage claims",
+    "Live mlx_vlm generate for py+ent+vis; not prior-replay for these rates"
+  ],
+  "ro_lock": {
+    "script_writes_to_lora_adapter": false,
+    "policy": "READ-ONLY; never overwrite data/lora_adapter/",
+    "ent_adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-mlx-largern/data/lora_adapter_ent2"
+  },
+  "model_status": {
+    "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
+    "rev": "e68aa09bc7df2d41ba8f96e4f12118097b61d19a",
+    "snap_exists": true,
+    "shards_present": [
+      "model-00001-of-00002.safetensors",
+      "model-00002-of-00002.safetensors"
+    ],
+    "effective_bytes": 5760665246,
+    "effective_GB": 5.761,
+    "ready": true,
+    "target_GB": 5.78
+  },
+  "studio": {
+    "machineId": "8e12e5c3-d3ae-4886-867e-28f4fc01a913",
+    "label": "Mac-198",
+    "online": false,
+    "note": "Studio offline at start; ran on Mac-111 only"
+  },
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "ent_never_on_python": true,
+    "gt_never_in_inference_prompts": true
+  },
+  "n_requested": {
+    "python": 8,
+    "ent": 16,
+    "vision": 16
+  },
+  "python_paths": {
+    "n_items": 8,
+    "proposer": "mlx",
+    "router_method": "heuristic",
+    "rounds_max": 2,
+    "routing": [
+      {
+        "id": "py_arith_01",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_arith_02",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_arith_03",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_arith_04",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_alg_01",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_alg_02",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_alg_03",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      },
+      {
+        "id": "py_alg_04",
+        "lane": "python",
+        "adapter": null,
+        "ent_blocked_on_python": true
+      }
+    ],
+    "paths": {
+      "a_baseline_single": {
+        "path": "a_baseline_single",
+        "n": 8,
+        "solve_rate_single": 0.125,
+        "solve_rate_loop": 0.125,
+        "delta_solve_rate": 0.0,
+        "solved_single": 1,
+        "solved_loop": 1,
+        "repair_success_rate": 0.0,
+        "repair_helped_n": 0,
+        "failed_single_n": 7,
+        "prompt_touches_gt": false,
+        "prompt_touches_gt_locked_false": true
+      },
+      "b_moe_alone_python_lane": {
+        "path": "b_moe_alone_python_lane",
+        "n": 8,
+        "solve_rate_single": 0.125,
+        "solve_rate_loop": 0.125,
+        "delta_solve_rate": 0.0,
+        "solved_single": 1,
+        "solved_loop": 1,
+        "repair_success_rate": 0.0,
+        "repair_helped_n": 0,
+        "failed_single_n": 7,
+        "prompt_touches_gt": false,
+        "prompt_touches_gt_locked_false": true
+      },
+      "c_verifier_alone": {
+        "path": "c_verifier_alone",
+        "n": 8,
+        "solve_rate_single": 0.125,
+        "solve_rate_loop": 1.0,
+        "delta_solve_rate": 0.875,
+        "solved_single": 1,
+        "solved_loop": 8,
+        "repair_success_rate": 1.0,
+        "repair_helped_n": 7,
+        "failed_single_n": 7,
+        "prompt_touches_gt": false,
+        "prompt_touches_gt_locked_false": true
+      },
+      "d_unified_python_lane": {
+        "path": "d_unified_python_lane",
+        "n": 8,
+        "solve_rate_single": 0.125,
+        "solve_rate_loop": 1.0,
+        "delta_solve_rate": 0.875,
+        "solved_single": 1,
+        "solved_loop": 8,
+        "repair_success_rate": 1.0,
+        "repair_helped_n": 7,
+        "failed_single_n": 7,
+        "prompt_touches_gt": false,
+        "prompt_touches_gt_locked_false": true
+      }
+    },
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false,
+    "elapsed_s": 156.28,
+    "metric_source": "mlx_live_generate"
+  },
+  "ent_live": {
+    "metric_source": "mlx_live_generate",
+    "n": 16,
+    "scene_ids": [
+      "scene_0222",
+      "scene_0157",
+      "scene_0291",
+      "scene_0359",
+      "scene_0239",
+      "scene_0293",
+      "scene_0317",
+      "scene_0336",
+      "scene_0155",
+      "scene_0283",
+      "scene_0099",
+      "scene_0142",
+      "scene_0023",
+      "scene_0033",
+      "scene_0035",
+      "scene_0036"
+    ],
+    "missing_scenes": [],
+    "adapter_ent2": "/Users/anthony/Documents/quantum-llm-lab-tip-mlx-largern/data/lora_adapter_ent2",
+    "elapsed_s": 318.79,
+    "wired_to_vlm": true,
+    "channel": "text_scaffold_prefix",
+    "weight_peft_injection": false,
+    "base": {
+      "label_acc": 0.0,
+      "parse_rate": 0.4375,
+      "compile_rate": 0.0,
+      "n": 16,
+      "label_correct": 0,
+      "parse_ok": 7,
+      "wired_to_vlm": true,
+      "scaffold_wired_n": 16,
+      "details": [
+        {
+          "scene_id": "scene_0222",
+          "source": "compile_fail:IndexError",
+          "parse": true,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Regla1: puerta mal formada: 'h'.",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx"
+          ],
+          "raw_preview": "Okay, let's tackle this problem. So, the user wants me to act as a quantum circuit assistant and respond with a specific JSON based on the given image and some scaffold information.\n\nFirst, I need to ",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0157",
+          "source": "fail:ValueError",
+          "parse": false,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "JSON sin 'gates': {'shape': 'square', 'color': 'blue', 'size': 'large', 'material': 'hollow', 'radius_px': 22.0, 'mass': 0.8643}",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": false,
+          "gate_names": [],
+          "raw_preview": "Okay, let's tackle this problem. The user provided an image and some context about being a quantum circuit assistant. They want a JSON response with specific keys: n_qubits, gates, domain, label, nota",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0291",
+          "source": "compile_fail:IndexError",
+          "parse": true,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Regla1: puerta mal formada: 'h'.",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx"
+          ],
+          "raw_preview": "Okay, let's tackle this problem. So, the user wants me to act as a quantum circuit assistant and respond with a specific JSON based on the given image and some scaffold information.\n\nFirst, I need to ",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0359",
+          "source": "compile_fail:IndexError",
+          "parse": true,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Regla1: puerta mal formada: 'h'.",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx"
+          ],
+          "raw_preview": "Okay, let's tackle this problem. The user provided an image and some context about being a quantum circuit assistant. They want a JSON response with specific keys: n_qubits, gates, domain, label, nota",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0239",
+          "source": "fail:ValueError",
+          "parse": false,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "No encontré JSON en la respuesta del modelo:\nOkay, let's tackle this problem. So, the user provided an image with some quantum circuit elements and wants me to respond with a specific JSON structure. ",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": false,
+          "gate_names": [],
+          "raw_preview": "Okay, let's tackle this problem. So, the user provided an image with some quantum circuit elements and wants me to respond with a specific JSON structure. Let me break it down step by step.\n\nFirst, th",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0293",
+          "source": "fail:ValueError",
+          "parse": false,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "No encontré JSON en la respuesta del modelo:\nOkay, let's tackle this problem. So, the user wants me to act as a quantum circuit assistant and respond with a specific JSON based on the given image and ",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": false,
+          "gate_names": [],
+          "raw_preview": "Okay, let's tackle this problem. So, the user wants me to act as a quantum circuit assistant and respond with a specific JSON based on the given image and scene description.\n\nFirst, I need to parse th",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0317",
+          "source": "fail:JSONDecodeError",
+          "parse": false,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Expecting property name enclosed in double quotes: line 1 column 109 (char 108)",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": false,
+          "gate_names": [],
+          "raw_preview": "Okay, let's tackle this problem. So, the user wants me to act as a quantum circuit assistant and respond with a specific JSON based on the given image and some scaffold information.\n\nFirst, I need to ",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 807,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.6942,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0336",
+          "source": "fail:ValueError",
+          "parse": false,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "JSON sin 'gates': {'shape': 'irregular_polygon', 'color': 'yellow', 'size': 'small', 'material': 'light', 'radius_px': 8.0, 'mass': 0.1959}",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": false,
+          "gate_names": [],
+          "raw_preview": "Okay, let's tackle this problem. The user wants me to respond with a JSON that includes n_qubits, gates, domain, label, and nota. The gates should be from h, x, y, z, cx, ry. Also, if there's a bounce",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0155",
+          "source": "compile_fail:IndexError",
+          "parse": true,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Regla1: puerta mal formada: 'h'.",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx"
+          ],
+          "raw_preview": "Okay, let's tackle this problem. The user wants me to respond with a specific JSON structure based on the given image and the circuit quantum assistant role.\n\nFirst, I need to understand the image des",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0283",
+          "source": "fail:ValueError",
+          "parse": false,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "No encontré JSON en la respuesta del modelo:\nOkay, let's tackle this problem. So, the user wants me to act as a quantum circuit assistant and respond with a specific JSON based on the given image and ",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": false,
+          "gate_names": [],
+          "raw_preview": "Okay, let's tackle this problem. So, the user wants me to act as a quantum circuit assistant and respond with a specific JSON based on the given image and some scaffold information.\n\nFirst, I need to ",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0099",
+          "source": "compile_fail:IndexError",
+          "parse": true,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Regla1: puerta mal formada: 'h'.",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "cx"
+          ],
+          "raw_preview": "Okay, let's tackle this problem. The user wants me to respond with a specific JSON structure based on the given image and the circuit graph scaffold information.\n\nFirst, I need to understand what's be",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0142",
+          "source": "compile_fail:IndexError",
+          "parse": true,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Regla1: puerta mal formada: 'h'.",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx"
+          ],
+          "raw_preview": "Okay, let's tackle this problem. The user wants me to respond with a specific JSON structure based on the given image and the circuit graph scaffold. First, I need to understand what's being asked.\n\nT",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0023",
+          "source": "fail:JSONDecodeError",
+          "parse": false,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": false,
+          "gate_names": [],
+          "raw_preview": "Okay, let's tackle this problem. The user wants me to respond with a specific JSON structure based on the given image and some circuit quantum guidelines. First, I need to understand what's being aske",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0033",
+          "source": "fail:JSONDecodeError",
+          "parse": false,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": false,
+          "gate_names": [],
+          "raw_preview": "Okay, let's tackle this problem. So, the user wants me to act as a quantum circuit assistant and respond with a specific JSON based on the given image and some scaffold information.\n\nFirst, I need to ",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0035",
+          "source": "compile_fail:ValueError",
+          "parse": true,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Regla1: puerta mal formada: 'ry'.",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "ry",
+            "cx"
+          ],
+          "raw_preview": "Okay, let's tackle this problem. So, the user wants me to act as a quantum circuit assistant and respond with a specific JSON based on the given image and some scaffold information.\n\nFirst, I need to ",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 807,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.6942,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0036",
+          "source": "fail:JSONDecodeError",
+          "parse": false,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": false,
+          "gate_names": [],
+          "raw_preview": "Okay, let's tackle this problem. So, the user wants me to act as a quantum circuit assistant and respond with a specific JSON based on the given image and some scaffold information.\n\nFirst, I need to ",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "moe_ent2": {
+      "label_acc": 0.5625,
+      "parse_rate": 1.0,
+      "compile_rate": 1.0,
+      "n": 16,
+      "label_correct": 9,
+      "parse_ok": 16,
+      "wired_to_vlm": true,
+      "scaffold_wired_n": 16,
+      "details": [
+        {
+          "scene_id": "scene_0222",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "ry"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"ry\", 1, 0.5]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi+\", \"template\": \"bell_hcxry\", \"nota\": \"Circuito Bell (Phi",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0157",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Psi+\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Psi+/bell_",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0291",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi+\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Phi+/bell_",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0359",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Psi+\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Psi+/bell_",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0239",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi+\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Phi+/bell_",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0293",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "ry"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"ry\", 1, 0.4]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi-\", \"template\": \"bell_hcxry\", \"nota\": \"Circuito Bell (Phi",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0317",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi-\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Phi-/bell_",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 807,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.6942,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0336",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi+\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Phi+/bell_",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0155",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi+\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Phi+/bell_",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0283",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "ry"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"ry\", 1, 0.5]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Psi+\", \"template\": \"bell_hcxry\", \"nota\": \"Circuito Bell (Psi",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0099",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi+\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Phi+/bell_",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0142",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi+\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Phi+/bell_",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0023",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Psi+\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Psi+/bell_",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0033",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi+\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Phi+/bell_",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0035",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi+\", \"template\": \"bell_hcx\", \"nota\": \"Circuito Bell (Phi+/bell_hcx): produ",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 807,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.6942,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        },
+        {
+          "scene_id": "scene_0036",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "ry"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"ry\", 1, 0.5]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Psi+\", \"template\": \"bell_hcxry\", \"nota\": \"Circuito Bell (Psi",
+          "circuit_graph_scaffold": {
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
+            "injected": true,
+            "hint_chars": 822,
+            "has_markers": true,
+            "gt_leak": false,
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "cross_attn_keys_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909,
+            "companion_conditioning": {
+              "prefix": {
+                "kind": "prefix",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_prefix_stub"
+              },
+              "cross_attn": {
+                "kind": "cross_attn",
+                "wired_to_vlm": true,
+                "channel": "text_scaffold_prefix",
+                "weight_peft_injection": false,
+                "role": "companion_cross_attn_stub"
+              },
+              "prefix_shape": [
+                4,
+                64
+              ],
+              "cross_attn_keys_shape": [
+                4,
+                64
+              ]
+            }
+          }
+        }
+      ],
+      "error": null
+    }
+  },
+  "vision_live": {
+    "metric_source": "mlx_live_generate",
+    "n": 16,
+    "elapsed_s": 19.83,
+    "accuracy": 1.0,
+    "correct": 16,
+    "polish": {
+      "applied": false,
+      "retried_ids": [],
+      "rescued": 0
+    },
+    "details": [
+      {
+        "id": "vis_math_01",
+        "kind": "math",
+        "correct": true,
+        "expected": "45",
+        "pred": "45",
+        "error": null,
+        "raw_preview": "Got it, let's solve 17 + 28. First, add the tens: 10 + 20 = 30. Then add the ones: 7 + 8 = 15. Now combine them: 30 + 15 = 45. So the answer is 45.\n</think>\n\n45"
+      },
+      {
+        "id": "vis_math_02",
+        "kind": "math",
+        "correct": true,
+        "expected": "50",
+        "pred": "50",
+        "error": null,
+        "raw_preview": "Got it, let's solve the problem. The expression is 9 * 7 - 13. First, I need to do the multiplication: 9 times 7 is 63. Then subtract 13 from 63. So 63 minus 13 is 50. I need to make sure I follow the order of operations: multiplication bef"
+      },
+      {
+        "id": "vis_math_03",
+        "kind": "math",
+        "correct": true,
+        "expected": "20",
+        "pred": "20",
+        "error": null,
+        "raw_preview": "Got it, let's see. The problem says there are 12 red balls and 8 blue balls. To find the total, I need to add those two numbers together. So 12 plus 8. Let me calculate that: 12 + 8 = 20. Yep, that's the total number of balls.\n</think>\n\n20"
+      },
+      {
+        "id": "vis_math_04",
+        "kind": "math",
+        "correct": true,
+        "expected": "6",
+        "pred": "6",
+        "error": null,
+        "raw_preview": "Got it, let's solve the equation 2x + 6 = 18. First, I need to isolate x. So, subtract 6 from both sides. That gives 2x = 18 - 6, which is 2x = 12. Then divide both sides by 2, so x = 12 / 2 = 6. Let me check: 2*6 + 6 = 12 + 6 = 18, which m"
+      },
+      {
+        "id": "vis_math_05",
+        "kind": "math",
+        "correct": true,
+        "expected": "20",
+        "pred": "20",
+        "error": null,
+        "raw_preview": "Got it, let's see. The problem is 25% of 80. To find a percentage of a number, you can convert the percentage to a decimal and multiply. 25% is 0.25 in decimal. So 0.25 times 80. Let me calculate that. 0.25 * 80 = 20. So the integer result "
+      },
+      {
+        "id": "vis_math_06",
+        "kind": "math",
+        "correct": true,
+        "expected": "48",
+        "pred": "48",
+        "error": null,
+        "raw_preview": "Got it, let's see. The sequence is 3, 6, 12, 24, ?. I need to find the next term. Let's check the pattern. From 3 to 6, that's multiplied by 2. 6 to 12 is also multiplied by 2. 12 to 24 is multiplied by 2. So each term is double the previou"
+      },
+      {
+        "id": "vis_math_07",
+        "kind": "math",
+        "correct": true,
+        "expected": "20",
+        "pred": "20",
+        "error": null,
+        "raw_preview": "Got it, let's see. The problem is about finding the area of a rectangle. The formula for the area of a rectangle is length multiplied by width. Here, the length is 5 and the width is 4. So I need to calculate 5 times 4. Let me do that: 5 * "
+      },
+      {
+        "id": "vis_math_08",
+        "kind": "math",
+        "correct": true,
+        "expected": "45",
+        "pred": "45",
+        "error": null,
+        "raw_preview": "Got it, let's see. The problem says speed is 15 m/s, time is 3 seconds. Distance is speed multiplied by time. So 15 times 3 is 45. And it says integer meters, so that's 45.\n</think>\n\n45"
+      },
+      {
+        "id": "vis_math_09",
+        "kind": "math",
+        "correct": true,
+        "expected": "42",
+        "pred": "42",
+        "error": null,
+        "raw_preview": "Got it, let's solve 23 + 19. First, add the tens: 20 + 10 is 30. Then add the ones: 3 + 9 is 12. Now combine them: 30 + 12 is 42. So the answer should be 42.\n</think>\n\n42"
+      },
+      {
+        "id": "vis_math_10",
+        "kind": "math",
+        "correct": true,
+        "expected": "47",
+        "pred": "47",
+        "error": null,
+        "raw_preview": "Got it, let's solve 64 minus 17. First, subtract 10 from 64 to get 54, then subtract 7 more. 54 minus 7 is 47. So the answer should be 47.\n</think>\n\n47"
+      },
+      {
+        "id": "vis_math_11",
+        "kind": "math",
+        "correct": true,
+        "expected": "56",
+        "pred": "56",
+        "error": null,
+        "raw_preview": "Got it, let's see. The problem is 8 times 7. I need to calculate that. 8 multiplied by 7 is 56. The instruction says to write only the integer, so I should just put 56.\n</think>\n\n56"
+      },
+      {
+        "id": "vis_math_12",
+        "kind": "math",
+        "correct": true,
+        "expected": "9",
+        "pred": "9",
+        "error": null,
+        "raw_preview": "Got it, let's see. The problem is 81 divided by 9. I need to calculate that. 9 times 9 is 81, so 81 divided by 9 is 9. That's the integer answer.\n</think>\n\n9"
+      },
+      {
+        "id": "vis_math_13",
+        "kind": "math",
+        "correct": true,
+        "expected": "63",
+        "pred": "63",
+        "error": null,
+        "raw_preview": "Got it, let's solve 35 + 28. First, add the tens: 30 + 20 = 50. Then add the ones: 5 + 8 = 13. Now combine them: 50 + 13 = 63. So the answer is 63.\n</think>\n\n63"
+      },
+      {
+        "id": "vis_math_14",
+        "kind": "math",
+        "correct": true,
+        "expected": "57",
+        "pred": "57",
+        "error": null,
+        "raw_preview": "Got it, let's solve 90 minus 33. So 90 - 33. Let's subtract: 90 minus 30 is 60, then minus 3 more is 57. So the answer should be 57.\n</think>\n\n57"
+      },
+      {
+        "id": "vis_math_15",
+        "kind": "math",
+        "correct": true,
+        "expected": "54",
+        "pred": "54",
+        "error": null,
+        "raw_preview": "Got it, let's see. The problem is 6 times 9. I need to calculate that. 6 multiplied by 9 is 54. The question says to write only the integer, so I should just put 54.\n</think>\n\n54"
+      },
+      {
+        "id": "vis_math_16",
+        "kind": "math",
+        "correct": true,
+        "expected": "9",
+        "pred": "9",
+        "error": null,
+        "raw_preview": "Got it, let's see. The problem is 72 divided by 8. I need to calculate that. 8 times 9 is 72, right? So 72 divided by 8 is 9. The question says to write only the integer, so the answer is 9.\n</think>\n\n9"
+      }
+    ]
+  },
+  "scoreboard": {
+    "table": [
+      {
+        "path": "a_baseline",
+        "python": {
+          "n": 8,
+          "rate": 0.125,
+          "metric": "solve_rate_single",
+          "source": "mlx_live"
+        },
+        "entanglement": {
+          "n": 16,
+          "label_acc": 0.0,
+          "source": "mlx_live"
+        },
+        "vision": {
+          "n": 16,
+          "accuracy": 1.0,
+          "source": "mlx_live"
+        },
+        "overall_mean": 0.375
+      },
+      {
+        "path": "b_moe_alone",
+        "python": {
+          "n": 8,
+          "rate": 0.125,
+          "metric": "solve_rate_single",
+          "source": "mlx_live"
+        },
+        "entanglement": {
+          "n": 16,
+          "label_acc": 0.5625,
+          "source": "mlx_live"
+        },
+        "vision": {
+          "n": 16,
+          "accuracy": 1.0,
+          "source": "mlx_live"
+        },
+        "overall_mean": 0.5625
+      },
+      {
+        "path": "c_verifier_on_python",
+        "python": {
+          "n": 8,
+          "rate": 1.0,
+          "metric": "solve_rate_loop",
+          "source": "mlx_live"
+        },
+        "entanglement": {
+          "n": 16,
+          "label_acc": 0.0,
+          "source": "mlx_live"
+        },
+        "vision": {
+          "n": 16,
+          "accuracy": 1.0,
+          "source": "mlx_live"
+        },
+        "overall_mean": 0.6667
+      },
+      {
+        "path": "d_unified",
+        "python": {
+          "n": 8,
+          "rate": 1.0,
+          "metric": "solve_rate_loop",
+          "source": "mlx_live"
+        },
+        "entanglement": {
+          "n": 16,
+          "label_acc": 0.5625,
+          "source": "mlx_live"
+        },
+        "vision": {
+          "n": 16,
+          "accuracy": 1.0,
+          "source": "mlx_live"
+        },
+        "overall_mean": 0.8542
+      }
+    ],
+    "delta_moe_vs_baseline": {
+      "python": 0.0,
+      "entanglement": 0.5625,
+      "vision": 0.0,
+      "overall": 0.4792
+    },
+    "moe_delta_visible": true,
+    "vs_cpu_overall_1_0": {
+      "cpu_unified_overall": 1.0,
+      "mlx_unified_overall": 0.8542,
+      "delta": -0.1458,
+      "note": "CPU tip uses prior-replay ent/vis + live heuristic/verifier python → overall 1.0; this row is LIVE mlx on all three pillars with honest n."
+    }
+  },
+  "vs_cpu_overall_1_0": {
+    "cpu_unified_overall": 1.0,
+    "mlx_unified_overall": 0.8542,
+    "delta": -0.1458,
+    "note": "CPU tip uses prior-replay ent/vis + live heuristic/verifier python → overall 1.0; this row is LIVE mlx on all three pillars with honest n."
+  },
+  "drops_honesty": [
+    "overall Δ vs CPU 1.0 = -0.1458 (mlx=0.8542)",
+    "ent live label_acc 0.5625 < 1.0 (CPU prior 1.0)"
+  ],
+  "elapsed_s": 494.93,
+  "notes": []
+}
