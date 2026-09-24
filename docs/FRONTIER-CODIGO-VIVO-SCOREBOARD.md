@@ -24,6 +24,7 @@
 | `frontier/tip-ent-sep-fix` | `08463a2` | fold ent-sep-fix (rebase `47975a7` onto `459f6da`); LIVE pool honest 1sep+15ent; MLX ent2 **1.0** with sep; CPU floor **1.0** held |
 | `frontier/tip-own-delta-scoreboard` | `66db30a` | fold own-delta (rebase `2382c90` onto `0a1ef4d`); honesty Py−0.062 Ent+1.0 Vis−0.200; dual-lane protects; CPU floor **1.0** held |
 | `frontier/tip-hardneg-r5` | `55bdfb7` | fold R5 polish `9a12fbc` (rebase onto `b1c7091` → `49d7ccc` + pin `55bdfb7`); R5 44/44·36/36; floor **1.0** held |
+| `frontier/tip-label-protect` | `8b0772a` | fold label-protect/fall-super (`751ed03`+`8b0772a` onto `32fed9b`); router 43/43·verifier 32/32; floor **1.0** held |
 
 **Metric policy:** Prefer vision **1.0** / overall **1.0** from `mixed-freeze-vision` over scaffold-merge / R2-port scoreboards that still show vis **0.9** / overall **0.9667**. Keep scaffold wiring + R2 reinforces + anti-think.
 
@@ -515,10 +516,12 @@ Anti-contam **CLEAN**. Adapters RO unchanged. Platform / mlx_r3 / polish_r4 / **
 
 **R5 tip freeze (100pct):** `codigo_vivo_tip_r5_100pct_20260924_123727` @ tip `6dce7b6` · 2026-09-24 12:37:27 ET · cites R1–R5 + mlx largern + ent-sep + own-delta + wired_to_vlm · blockers **none**.
 
-## Label-protect polish (branch `frontier/tip-label-protect`, not yet folded)
+## Label-protect / fall-super — FOLDED
 
-**When:** 2026-09-24 ~12:45 ET · Mac-111 · base tip `6dce7b6`  
-**Δ:** router fall/super taxonomy hardneg **36/43→43/43**; verifier **32/32**; mixed (d) **1.0 held**. R1–R5 held.  
+**When:** measure ~12:45 ET · fold 2026-09-24 12:44:19 ET · Mac-111 · rebase onto `32fed9b` → `751ed03`+`8b0772a` FF  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-LABEL-PROTECT.md`
+
+**Δ:** router **36/43→43/43**; verifier **32/32**; mixed (d) **1.0 held**.  
 **Honesty:** dual-lane + negated `json válido` / empty `gates=[]` protect python/base from ent mis-route on fall/super label words; real fall/super circuit JSON asks stay ent.  
-**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-LABEL-PROTECT.md`  
-**Policy:** tip freeze-busy → no FF yet; never abandon platform/post_polish/R5 freezes.
+**CPU re-smoke after fold:** unified **1.0**; label-protect **43/43·32/32**; R1–R5 routers **18/18·22/22·35/35·40/40·44/44**; R3/R4/R5 verifier **28/28·32/32·36/36**; `wired_to_vlm` retained · R5 tip freeze `codigo_vivo_tip_r5_100pct_20260924_123727` **retained**.  
+Platform / mlx_r3 / post_polish / polish_r5 / R5 tip freezes **retained**. Never abandon.

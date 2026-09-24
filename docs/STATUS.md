@@ -7,6 +7,9 @@
 
 ---
 
+## 2026-09-24 — fold tip-label-protect → codigo-vivo-tip
+Rebase `2d86650`/`65de0c9` onto `32fed9b` → `751ed03`+`8b0772a` FF. CPU unified **1.0** (re-smoke); label-protect 43/43·32/32; R1–R5 held; R5 tip freeze retained. See SCOREBOARD + TIP-LABEL-PROTECT.
+
 ## 2026-09-24 — tip-label-protect (fall/super)
 Branch `frontier/tip-label-protect` from tip `6dce7b6` (tip freeze-busy → separate).  
 Router pre→post **36/43→43/43**; verifier **32/32**; mixed (d) **1.0** held ≥0.967; R1–R5 held.  

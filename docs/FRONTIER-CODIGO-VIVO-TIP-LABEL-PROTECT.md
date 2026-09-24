@@ -1,7 +1,7 @@
 # Frontier — Código-vivo tip label-protect / fall-super
 
-**Branch:** `frontier/tip-label-protect` (tip freeze-busy → separate branch)  
-**Base tip:** `6dce7b6` (`frontier/codigo-vivo-tip` post hardneg-r5 fold)  
+**Branch:** `frontier/codigo-vivo-tip` (folded from `frontier/tip-label-protect`)  
+**Base tip:** `32fed9b` (R5 tip freeze) · rebased polish `2d86650`→`751ed03` / pin `65de0c9`→`8b0772a`  
 **When:** 2026-09-24 ~12:38–12:50 ET · Mac-111 (`074c6626-…`)  
 **Claim:** NO quantum advantage. Classical heuristic router + `python -I` verifier only.
 
@@ -77,6 +77,15 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `data/freeze_manifests/tip_moe_verifier_polish_label_protect_100pct_*.json`
 - `docs/FRONTIER-CODIGO-VIVO-TIP-LABEL-PROTECT.md` (this file)
 
+
+
+## FOLDED into tip
+
+**When:** 2026-09-24 12:44:19 ET · Mac-111 (`074c6626-…`)  
+**Tip after FF:** `8b0772a` (rebase onto `32fed9b` + FF).  
+**Prior freezes retained (not abandoned):** platform / mlx_r3 / polish_r4/r5 / post_polish / **R5 tip freeze** `codigo_vivo_tip_r5_100pct_20260924_123727` @ `32fed9b`.  
+**Re-smoke:** mixed (d) **1.0**; label-protect **43/43·32/32**; R1–R5 held; `ent_never_on_python=true`.
+
 ## What this does NOT do
 
 - No merge to `main`.
@@ -84,4 +93,3 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - No quantum-advantage marketing.
 - No CloudAgent. MachineId `074c6626-…` only.
 - Does **not** fold into tip yet (tip freeze-busy / dirty); source branch kept for history.
-
