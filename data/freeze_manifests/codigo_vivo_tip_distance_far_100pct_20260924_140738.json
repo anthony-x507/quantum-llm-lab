@@ -30,5 +30,6 @@
   "feat_sha": "8b4779c50f0276b798d02b404696ac561c984489",
   "feat_sha_short": "8b4779c",
   "pushed": true,
-  "remote_branch": "origin/frontier/tip-distance-far"
+  "remote_branch": "origin/frontier/tip-distance-far",
+  "docs_pin_sha": "a59ed59"
 }
