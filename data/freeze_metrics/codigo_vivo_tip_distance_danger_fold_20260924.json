@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-distance-danger-fold",
   "written_et": "2026-09-24 13:12:43 ET",
-  "tip_sha": "da55eacd3e9cd9b8c8ad63576936438b8210e507",
-  "tip_sha_short": "da55eac",
+  "tip_sha": "e4d33be9667e1a0c0f452cb93fc22f2d280fe4dd",
+  "tip_sha_short": "e4d33be",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-distance-danger",
   "rebase_onto": "e2a950d",
@@ -78,5 +78,7 @@
     },
     "tracking_dz": "100%",
     "anti_contam": "CLEAN"
-  }
+  },
+  "content_sha": "da55eac",
+  "freeze_sha": "e4d33be"
 }
