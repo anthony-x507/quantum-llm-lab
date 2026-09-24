@@ -133,7 +133,16 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
     # Deterministic template pick from physics cues (not gold labels).
     # Templates stay inside Jev-allowed gates: h,x,y,z,cx,ry.
     # Each branch must produce a DISTINCT gate-name fingerprint.
-    if surface in ("ramp",) or shape in ("triangle",):
+    # Order: rare cues first so soft_ry/ramp do not starve drag/irregular/classic.
+    if shape in ("star", "irregular_polygon", "ring"):
+        # formas irregulares: X+RY (sin CX) — firma distinta
+        gates = [["x", 0], ["ry", 0, theta], ["h", 1]]
+        tpl = "irregular_xry"
+    elif cond == "air_drag" or (n_bounce >= 2 and not multi and surface == "hard_elastic_floor"):
+        # drag / rebotes: dissipative chain (no CX) — distinct from wind
+        gates = [["h", 0], ["ry", 0, theta], ["x", 1], ["ry", 1, round(theta * 0.6, 3)]]
+        tpl = "drag_bounce"
+    elif surface in ("ramp",) or (shape == "triangle" and surface not in ("soft_lossy_floor", "hard_elastic_floor")):
         # ramp / wedge: Y then RY (tilt signature)
         gates = [["y", 0], ["ry", 0, theta], ["h", 1]]
         tpl = "ramp_yry"
@@ -141,22 +150,18 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
         # soft floor / high loss: Z phase then dissipative RY
         gates = [["h", 0], ["z", 0], ["ry", 0, theta]]
         tpl = "soft_zry"
-    elif cond in ("moon_g", "mars_g") or loss < 0.25:
-        # low-g / low-loss: soft RY only (energy almost conserved)
-        gates = [["h", 0], ["ry", 0, round(theta * 0.4, 3)]]
-        tpl = "soft_ry"
-    elif cond == "air_drag" or (n_bounce >= 2 and not multi):
-        # drag / rebotes: dissipative chain (no CX) — distinct from wind
-        gates = [["h", 0], ["ry", 0, theta], ["x", 1], ["ry", 1, round(theta * 0.6, 3)]]
-        tpl = "drag_bounce"
     elif cond == "lateral_wind" or multi:
         # wind / multi-object: CX then dual RY
         gates = [["h", 0], ["cx", 0, 1], ["ry", 1, theta], ["ry", 0, round(theta * 0.5, 3)]]
         tpl = "wind_dual_ry"
-    elif shape in ("star", "irregular_polygon", "ring"):
-        # formas irregulares: X+RY (sin CX) — firma distinta
-        gates = [["x", 0], ["ry", 0, theta], ["h", 1]]
-        tpl = "irregular_xry"
+    elif cond in ("moon_g", "mars_g") or loss < 0.25:
+        # low-g / low-loss: soft RY only (energy almost conserved)
+        gates = [["h", 0], ["ry", 0, round(theta * 0.4, 3)]]
+        tpl = "soft_ry"
+    elif shape == "triangle":
+        # remaining triangles on flat floors still get ramp tilt signature
+        gates = [["y", 0], ["ry", 0, theta], ["h", 1]]
+        tpl = "ramp_yry"
     else:
         # vacuum / default: H+CX+RY
         gates = [["h", 0], ["cx", 0, 1], ["ry", 1, theta]]
