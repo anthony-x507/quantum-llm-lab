@@ -4,7 +4,7 @@
 **Branch:** `frontier/tip-inverse-r2` (rebased; source kept) · tip `frontier/codigo-vivo-tip`  
 **Base tip at fold:** `fabef2b` (post R10) · inverse originally from `2d13d0a`  
 **When:** polish ~13:43 ET · fold 2026-09-24 13:49:42 ET · Mac-111 (`074c6626-…`)  
-**Freeze:** `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`  
+**Freeze:** `codigo_vivo_tip_inverse_r2_100pct_20260924_134326` @ `f10c2d0`  
 **Claim:** NO quantum advantage. CPU elastic-disk physics oracle + action-aware wall-bounce CV only.
 
 ## LOCK (Anthony / Leader)

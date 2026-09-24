@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-inverse-r2-fold",
   "written_et": "2026-09-24 13:49:42 ET",
-  "tip_sha": "PENDING_FOLD_COMMIT",
-  "tip_sha_short": "PENDING",
+  "tip_sha": "f10c2d059711d78ff6e30077fec63456782ea74b",
+  "tip_sha_short": "f10c2d0",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-inverse-r2",
   "rebase_onto": "fabef2b",
@@ -66,5 +66,6 @@
     "frontier/tip-hardneg-r11"
   ],
   "freeze_id": "codigo_vivo_tip_inverse_r2_100pct_20260924_134326",
-  "blockers": []
+  "blockers": [],
+  "content_sha": "f10c2d059711d78ff6e30077fec63456782ea74b"
 }

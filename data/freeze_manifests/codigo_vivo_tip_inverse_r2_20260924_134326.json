@@ -4,12 +4,12 @@
   "domain": "codigo_vivo_tip_inverse_r2",
   "pct": 100,
   "band": "100pct",
-  "git_sha": "0a1439d1a1356318667222753fb9e99e8df7be2c",
-  "git_sha_short": "0a1439d",
+  "git_sha": "f10c2d059711d78ff6e30077fec63456782ea74b",
+  "git_sha_short": "f10c2d0",
   "artifact": "data/frontier_tip_inverse_r2_probe.json",
   "collision_eval": "data/collision_predictive/EVAL_COLLISION_CPU.json",
   "base_tip_sha": "2d13d0a474f36c9cb6b435c3141b837c8da81c5b",
-  "branch": "frontier/tip-inverse-r2",
+  "branch": "frontier/codigo-vivo-tip",
   "metrics": {
     "collision_physics_overall_pct": 100.0,
     "collision_choose_safest_overall_pct": 100.0,
@@ -47,5 +47,7 @@
     "codigo_vivo_tip_distance_danger_100pct_20260924_131243"
   ],
   "folded_at_et": "2026-09-24 13:49:42 ET",
-  "fold_base_tip_sha": "fabef2b314847256a466791badb81735da3a1397"
+  "fold_base_tip_sha": "fabef2b314847256a466791badb81735da3a1397",
+  "feat_sha": "6b77248",
+  "feat_sha_full": "6b772481648b94d3acdca63af99adf12063fedc7"
 }

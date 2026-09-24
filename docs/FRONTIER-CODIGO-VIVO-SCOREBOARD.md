@@ -8,7 +8,7 @@
 ## INVERSE-R2 TIP FREEZE / FOLD (overall 1.0) — tip HEAD after inverse-r2 fold
 
 **Freeze id:** `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`  
-**Frozen SHA:** *(pinned on tip after fold — see pin commit)* · branch `frontier/codigo-vivo-tip` · rebase `0a1439d`/`7db813f`/`95b1ad6` onto `fabef2b` → `6b77248`+`343d00a`+`5d4d466` FF then fold  
+**Frozen SHA:** `f10c2d059711d78ff6e30077fec63456782ea74b` (`f10c2d0`) · branch `frontier/codigo-vivo-tip` · rebase `0a1439d`/`7db813f`/`95b1ad6` onto `fabef2b` → `6b77248`+`343d00a`+`5d4d466` FF then fold
 **When:** 2026-09-24 13:49:42 ET · Mac-111 (`074c6626-…`)  
 **Claim:** NO quantum advantage. Cites tip HEAD after inverse-r2 fold; **prior platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2 / R7 / scaffold_motion / R8 / distance_danger / collision_pred / motion_r2 / collision_n / R9 / motion_r3 / R10 freezes NOT abandoned**.
 
