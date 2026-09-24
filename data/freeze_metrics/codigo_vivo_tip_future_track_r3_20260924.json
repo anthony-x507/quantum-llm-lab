@@ -41,5 +41,6 @@
     "orig_track": 0.24,
     "orig_plus_dist": 0.18
   },
-  "note": "Safe rise; residual ~0.42 pp still cold/warm near-plane where motion magnitude has no obs-channel signal beyond class-aware step. No GT leak. NO fold into tip."
+  "note": "Safe rise; residual ~0.42 pp still cold/warm near-plane where motion magnitude has no obs-channel signal beyond class-aware step. No GT leak. NO fold into tip.",
+  "feat_sha": "6da80e5361607209aa19fbe44467f9a663a26c64"
 }
