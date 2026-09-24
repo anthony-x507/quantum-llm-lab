@@ -1,0 +1,327 @@
+{
+  "n": 52,
+  "kind": "mixed_router_hardneg",
+  "created": "2026-09-24T17:40:00Z",
+  "round": "r10",
+  "note": "R10 NEW traps (\u2260R1\u2013R9/\u2260LP): asyncapi_channel_gates, nomad_job_gates, vault_policy_gates, istio_virtualservice_gates, argocd_sync_gates, tekton_param_gates, flatbuffers_table_gates, capnp_struct_gates, solidity_modifier_gates, rust_cfg_feature_gates, kotlin_annotation_qubit, csproj_property_gates, sparql_bind_gates, cypher_property_gates, earthfile_target_gates + controls. HARD: AsyncAPI/Istio/ArgoCD/Tekton/FlatBuffers/Cypher/Earthfile gates: scalars. GT harness-only.",
+  "anti_contamination": {
+    "no_main_merge": true,
+    "no_tip_cv_touch": true,
+    "lora_adapter_ro": true,
+    "distinct_from_r9": true
+  },
+  "items": [
+    {
+      "id": "r10_async_01",
+      "expected": "python",
+      "family": "asyncapi_channel_gates",
+      "prompt": "Write Python that prints len('gates:'). AsyncAPI channel. ONLY code."
+    },
+    {
+      "id": "r10_async_02",
+      "expected": "python",
+      "family": "asyncapi_channel_gates",
+      "prompt": "ch='gates: subscribe'\nprint(ch.count(':'))\n# AsyncAPI channel gates: \u2014 not a circuit. ONLY code."
+    },
+    {
+      "id": "r10_async_03",
+      "expected": "python",
+      "family": "asyncapi_channel_gates",
+      "prompt": "Write Python that prints 6*6. AsyncAPI channel name gates: is messaging only. ONLY code."
+    },
+    {
+      "id": "r10_nomad_01",
+      "expected": "python",
+      "family": "nomad_job_gates",
+      "prompt": "Write Python that prints len('gates = \"http\"'). Nomad job. ONLY code."
+    },
+    {
+      "id": "r10_nomad_02",
+      "expected": "python",
+      "family": "nomad_job_gates",
+      "prompt": "line='gates = [\"http\"]'\nprint(line.count('='))\n# Nomad HCL attr gates \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r10_nomad_03",
+      "expected": "python",
+      "family": "nomad_job_gates",
+      "prompt": "Write Python that prints 8. Nomad job group gates = is HCL only. ONLY code."
+    },
+    {
+      "id": "r10_vault_01",
+      "expected": "python",
+      "family": "vault_policy_gates",
+      "prompt": "Write Python that prints len('path \"gates/data\"'). Vault policy. ONLY code."
+    },
+    {
+      "id": "r10_vault_02",
+      "expected": "python",
+      "family": "vault_policy_gates",
+      "prompt": "p='path \"secret/gates\"'\nprint(p.count('gates'))\n# Vault ACL path gates \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r10_vault_03",
+      "expected": "python",
+      "family": "vault_policy_gates",
+      "prompt": "Write Python that prints 9. Vault policy path gates/data is ACL only. ONLY code."
+    },
+    {
+      "id": "r10_istio_01",
+      "expected": "python",
+      "family": "istio_virtualservice_gates",
+      "prompt": "Write Python that prints len('gates:'). Istio VirtualService. ONLY code."
+    },
+    {
+      "id": "r10_istio_02",
+      "expected": "python",
+      "family": "istio_virtualservice_gates",
+      "prompt": "vs='gates: [mesh]'\nprint(len(vs))\n# Istio VirtualService gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r10_istio_03",
+      "expected": "python",
+      "family": "istio_virtualservice_gates",
+      "prompt": "Write Python that prints 11. Istio VirtualService gates: mesh is mesh-only. ONLY code."
+    },
+    {
+      "id": "r10_argo_01",
+      "expected": "python",
+      "family": "argocd_sync_gates",
+      "prompt": "Write Python that prints len('gates: Create'). ArgoCD sync. ONLY code."
+    },
+    {
+      "id": "r10_argo_02",
+      "expected": "python",
+      "family": "argocd_sync_gates",
+      "prompt": "opt='syncOptions: [gates: Create]'\nprint(opt.count('gates'))\n# ArgoCD Application gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r10_argo_03",
+      "expected": "python",
+      "family": "argocd_sync_gates",
+      "prompt": "Write Python that prints 14. ArgoCD syncOption gates: Create is GitOps only. ONLY code."
+    },
+    {
+      "id": "r10_tek_01",
+      "expected": "python",
+      "family": "tekton_param_gates",
+      "prompt": "Write Python that prints len('name: gates'). Tekton param. ONLY code."
+    },
+    {
+      "id": "r10_tek_02",
+      "expected": "python",
+      "family": "tekton_param_gates",
+      "prompt": "p='params:\\n- name: gates'\nprint(p.count('gates'))\n# Tekton Pipeline param gates \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r10_tek_03",
+      "expected": "python",
+      "family": "tekton_param_gates",
+      "prompt": "Write Python that prints 7*2. Tekton Task param gates: is CI only. ONLY code."
+    },
+    {
+      "id": "r10_fb_01",
+      "expected": "python",
+      "family": "flatbuffers_table_gates",
+      "prompt": "Write Python that prints len('gates: [string]'). FlatBuffers. ONLY code."
+    },
+    {
+      "id": "r10_fb_02",
+      "expected": "python",
+      "family": "flatbuffers_table_gates",
+      "prompt": "f='table X { gates: string; }'\nprint(f.count('gates'))\n# FlatBuffers field gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r10_fb_03",
+      "expected": "python",
+      "family": "flatbuffers_table_gates",
+      "prompt": "Write Python that prints 16. FlatBuffers table field gates: is schema only. ONLY code."
+    },
+    {
+      "id": "r10_cap_01",
+      "expected": "python",
+      "family": "capnp_struct_gates",
+      "prompt": "Write Python that prints len('gates @0 :List'). Cap'n Proto. ONLY code."
+    },
+    {
+      "id": "r10_cap_02",
+      "expected": "python",
+      "family": "capnp_struct_gates",
+      "prompt": "s='gates @0 :Text'\nprint(len(s))\n# Cap'n Proto field gates \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r10_cap_03",
+      "expected": "python",
+      "family": "capnp_struct_gates",
+      "prompt": "Write Python that prints 4*5. Cap'n Proto struct gates @0 is IDL only. ONLY code."
+    },
+    {
+      "id": "r10_sol_01",
+      "expected": "python",
+      "family": "solidity_modifier_gates",
+      "prompt": "Write Python that prints len('modifier gates()'). Solidity. ONLY code."
+    },
+    {
+      "id": "r10_sol_02",
+      "expected": "python",
+      "family": "solidity_modifier_gates",
+      "prompt": "m='modifier gates() { _; }'\nprint(m.count('gates'))\n# Solidity modifier gates \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r10_sol_03",
+      "expected": "python",
+      "family": "solidity_modifier_gates",
+      "prompt": "Write Python that prints 18. Solidity modifier gates() is EVM only. ONLY code."
+    },
+    {
+      "id": "r10_rust_01",
+      "expected": "python",
+      "family": "rust_cfg_feature_gates",
+      "prompt": "Write Python that prints len('#[cfg(feature = \"gates\")]'). Rust cfg. ONLY code."
+    },
+    {
+      "id": "r10_rust_02",
+      "expected": "python",
+      "family": "rust_cfg_feature_gates",
+      "prompt": "c='cfg(feature = \"gates\")'\nprint(c.count('gates'))\n# Rust cfg feature gates \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r10_rust_03",
+      "expected": "python",
+      "family": "rust_cfg_feature_gates",
+      "prompt": "Write Python that prints 13. Rust #[cfg(feature = \"gates\")] is Cargo only. ONLY code."
+    },
+    {
+      "id": "r10_kt_01",
+      "expected": "python",
+      "family": "kotlin_annotation_qubit",
+      "prompt": "Write Python that prints len('@Qubit(id=1)'). Kotlin annotation. ONLY code."
+    },
+    {
+      "id": "r10_kt_02",
+      "expected": "python",
+      "family": "kotlin_annotation_qubit",
+      "prompt": "a='@Gates(value=\"cleanup\")'\nprint(len(a))\n# Kotlin annotation @Gates \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r10_kt_03",
+      "expected": "python",
+      "family": "kotlin_annotation_qubit",
+      "prompt": "Write Python that prints 17. Kotlin @Qubit annotation is metadata only. ONLY code."
+    },
+    {
+      "id": "r10_cs_01",
+      "expected": "python",
+      "family": "csproj_property_gates",
+      "prompt": "Write Python that prints len('<Gates>true</Gates>'). MSBuild. ONLY code."
+    },
+    {
+      "id": "r10_cs_02",
+      "expected": "python",
+      "family": "csproj_property_gates",
+      "prompt": "x='<PropertyGroup><Gates>On</Gates></PropertyGroup>'\nprint(x.count('Gates'))\n# csproj PropertyGroup Gates \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r10_cs_03",
+      "expected": "python",
+      "family": "csproj_property_gates",
+      "prompt": "Write Python that prints 3*7. MSBuild <Gates> property is .NET only. ONLY code."
+    },
+    {
+      "id": "r10_spar_01",
+      "expected": "python",
+      "family": "sparql_bind_gates",
+      "prompt": "Write Python that prints len('BIND(?gates AS ?g)'). SPARQL. ONLY code."
+    },
+    {
+      "id": "r10_spar_02",
+      "expected": "python",
+      "family": "sparql_bind_gates",
+      "prompt": "Write Python that prints 19. SPARQL BIND ?gates is query only. ONLY code."
+    },
+    {
+      "id": "r10_cy_01",
+      "expected": "python",
+      "family": "cypher_property_gates",
+      "prompt": "Write Python that prints len('{gates:'). Cypher property. ONLY code."
+    },
+    {
+      "id": "r10_cy_02",
+      "expected": "python",
+      "family": "cypher_property_gates",
+      "prompt": "q='MATCH (n {gates: true})'\nprint(q.count('gates'))\n# Neo4j Cypher property gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r10_earth_01",
+      "expected": "python",
+      "family": "earthfile_target_gates",
+      "prompt": "Write Python that prints len('gates:'). Earthfile target. ONLY code."
+    },
+    {
+      "id": "r10_earth_02",
+      "expected": "python",
+      "family": "earthfile_target_gates",
+      "prompt": "Write Python that prints 2. Earthfile target gates: is a build target only. ONLY code."
+    },
+    {
+      "id": "r10_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r10",
+      "prompt": "Responde SOLO JSON v\u00e1lido con n_qubits, gates, domain, label. Bell pair entrelazado."
+    },
+    {
+      "id": "r10_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r10",
+      "prompt": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separable."
+    },
+    {
+      "id": "r10_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r10",
+      "prompt": "Look at the image. How many dots are visible? Only the integer. No circuit."
+    },
+    {
+      "id": "r10_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r10",
+      "prompt": "Look at the chalkboard. How many letters? Only the integer. No circuit."
+    },
+    {
+      "id": "r10_base_01",
+      "expected": "base",
+      "family": "base_control_r10",
+      "prompt": "Thanks. Ignore AsyncAPI channel gates: in the README. No code, no circuit."
+    },
+    {
+      "id": "r10_base_02",
+      "expected": "base",
+      "family": "base_control_r10",
+      "prompt": "Please ignore the Istio VirtualService gates: mesh phrase. Chat only \u2014 no program, no circuit."
+    },
+    {
+      "id": "r10_base_03",
+      "expected": "base",
+      "family": "base_control_r10",
+      "prompt": "Hello \u2014 Cypher {gates: true} is graph only. No code, no circuit, no pennylane."
+    },
+    {
+      "id": "r10_base_04",
+      "expected": "base",
+      "family": "base_control_r10",
+      "prompt": "Weather update. Earthfile target gates: mention. No code, no circuit."
+    },
+    {
+      "id": "r10_ctrl_01",
+      "expected": "python",
+      "family": "base_python_control_r10",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code."
+    },
+    {
+      "id": "r10_ctrl_02",
+      "expected": "python",
+      "family": "base_python_control_r10",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code."
+    }
+  ]
+}

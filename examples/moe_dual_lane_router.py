@@ -162,6 +162,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R7: CI YAML multiline gates:\n  - …; Make .PHONY: gates; bare len('gates:') key tokens.
     # R8: Dockerfile ARG gates=; JSON Schema "gates"; TF/TOML/Nix gates = [...]; markdown 'gates: list'; Rego input.gates[_]; CUE #Gates:; EDN :gates; fullwidth lookalikes.
     # R9: OpenAPI /gates:; Helm values gates: enabled; Pulumi gates:prod; CFN Gates:; Dhall gates : Bool; Justfile recipe gates:; Cedar when { gates:.
+# R10: AsyncAPI/Istio/ArgoCD/Tekton/FlatBuffers/Cypher/Earthfile gates:; Nomad/Vault/Cap'n/Solidity/Rust cfg/Kotlin/csproj/SPARQL.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -269,7 +270,39 @@ def route_heuristic(prompt: str) -> Lane:
             # R9: Cedar when { gates: / gates: true|false|attr
             r"|when\s*\{\s*gates\s*:"
             r"|cedar\s+.*gates:"
-            r"|gates\s*:\s*(?:true|false|attr)\b",
+            r"|gates\s*:\s*(?:true|false|attr)\b"
+            # R10: AsyncAPI channel gates: / gates: subscribe
+            r"|gates\s*:\s*subscribe\b"
+            r"|asyncapi\s+.*gates:"
+            r"|channel(?:\s+name)?\s+gates:"
+            # R10: Istio VirtualService gates: mesh
+            r"|gates\s*:\s*mesh\b"
+            r"|istio\s+.*gates:"
+            r"|virtualservice\s+.*gates:"
+            # R10: ArgoCD syncOption gates: Create
+            r"|gates\s*:\s*Create\b"
+            r"|argocd\s+.*gates:"
+            r"|syncoptions?\s+.*gates:"
+            # R10: Tekton Task/Pipeline param gates:
+            r"|tekton\s+.*gates:"
+            r"|task\s+param\s+gates:"
+            r"|pipeline\s+param\s+gates:"
+            # R10: FlatBuffers table field gates: string
+            r"|gates\s*:\s*string\b"
+            r"|flatbuffers?\s+.*gates:"
+            r"|table\s+.*\bgates\s*:"
+            # R10: Neo4j Cypher {gates: property
+            r"|\{gates\s*:"
+            r"|cypher\s+.*gates:"
+            r"|neo4j\s+.*gates:"
+            # R10: Earthfile target gates:
+            r"|earthfile\s+.*gates:"
+            r"|build\s+target\s+gates:"
+            r"|target\s+gates:\s*(?:is\s+)?(?:a\s+)?(?:build\s+)?(?:target|mention)"
+            # R10: messaging-only / GitOps / schema-only gates: prose
+            r"|gates:\s+is\s+messaging"
+            r"|gates:\s+is\s+(?:CI|schema)\b"
+            r"|gates:\s+mention",
             text,
             re.I,
         )
@@ -825,6 +858,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r10' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r10.json"
         elif 'r9' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r9.json"
         elif 'r8' in hp:

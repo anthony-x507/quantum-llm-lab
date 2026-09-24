@@ -1,0 +1,94 @@
+{
+  "frontier": "codigo-vivo-tip-r10",
+  "written_et": "2026-09-24 1:45:00 ET",
+  "base_tip_sha": "3d05cbe",
+  "branch": "frontier/tip-hardneg-r10",
+  "tip_parent": "frontier/tip-vision-delta@3d05cbe (post collision-n tip pin)",
+  "policy": "R10 NEW hardneg n=52/44; NEVER drop freeze floor overall>=0.967 (prefer 1.0). RO data/lora_adapter/. No merge main. R1\u2013R9+LP must hold. Tip-cv/r9/motion-r3/vision-delta busy \u2192 side branch tip-hardneg-r10.",
+  "before": {
+    "overall_d_unified": 1.0,
+    "note": "tip @ 3d05cbe; R9 priors cherry-picked side-only"
+  },
+  "after": {
+    "overall_d_unified": 1.0,
+    "router_pillars": "26/26",
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false,
+    "scoreboard": {
+      "d_unified": 1.0
+    }
+  },
+  "hardneg_r10_router": {
+    "score": "52/52",
+    "rate": 1.0,
+    "n": 52,
+    "ent_never_on_python": true,
+    "pre_reinforce": {
+      "score": "38/52",
+      "rate": 0.7308
+    },
+    "post_reinforce": {
+      "score": "52/52",
+      "rate": 1.0
+    },
+    "families": [
+      "asyncapi_channel_gates",
+      "nomad_job_gates",
+      "vault_policy_gates",
+      "istio_virtualservice_gates",
+      "argocd_sync_gates",
+      "tekton_param_gates",
+      "flatbuffers_table_gates",
+      "capnp_struct_gates",
+      "solidity_modifier_gates",
+      "rust_cfg_feature_gates",
+      "kotlin_annotation_qubit",
+      "csproj_property_gates",
+      "sparql_bind_gates",
+      "cypher_property_gates",
+      "earthfile_target_gates",
+      "ent_control_r10",
+      "vision_control_r10",
+      "base_control_r10",
+      "base_python_control_r10"
+    ]
+  },
+  "hardneg_r10_verifier": {
+    "router_smoke": "12/12",
+    "hardneg_router": "52/52",
+    "verifier_alone_loop": {
+      "pre": "1.0 (44/44)",
+      "post": "1.0 (44/44)"
+    },
+    "unified_loop": {
+      "pre": "1.0 (44/44)",
+      "post": "1.0 (44/44)"
+    },
+    "ent_never_on_python": true,
+    "proposer_polish_needed": false,
+    "fixture_lift": null
+  },
+  "holds": {
+    "r1_router": "18/18",
+    "r2_router": "22/22",
+    "r3_router": "35/35",
+    "r3_verifier": "28/28",
+    "r4_router": "40/40",
+    "r4_verifier": "32/32",
+    "r5_router": "44/44",
+    "r5_verifier": "36/36",
+    "r6_router": "48/48",
+    "r6_verifier": "40/40",
+    "r7_router": "52/52",
+    "r7_verifier": "44/44",
+    "r8_router": "52/52",
+    "r8_verifier": "44/44",
+    "r9_router": "52/52",
+    "r9_verifier": "44/44",
+    "lp_router": "43/43",
+    "lp_verifier": "32/32"
+  },
+  "freeze": true,
+  "adapters_ro": true,
+  "blockers": []
+}

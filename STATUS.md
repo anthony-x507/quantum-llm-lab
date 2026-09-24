@@ -1,3 +1,6 @@
+## 2026-09-24 — tip-hardneg-r10 polish (side)
+Branch `frontier/tip-hardneg-r10` from tip `3d05cbe`. R10 router **52/52** · verifier **44/44**; mixed (d) **1.0**; R1–R9+LP held; `ent_never_on_python`. Novel: AsyncAPI / Nomad / Vault / Istio / ArgoCD / Tekton / FlatBuffers / Cap'n Proto / Solidity / Rust cfg / Kotlin / csproj / SPARQL / Cypher / Earthfile. See `docs/FRONTIER-CODIGO-VIVO-TIP-R10.md`.
+
 # Estado de avance
 
 ## 2026-09-24 — fold tip-motion-r3 → codigo-vivo-tip

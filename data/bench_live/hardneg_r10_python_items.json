@@ -1,0 +1,317 @@
+{
+  "n": 44,
+  "kind": "python_hardneg_items",
+  "created": "2026-09-24T17:40:00Z",
+  "round": "r10",
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R10.md",
+  "items": [
+    {
+      "id": "r10v_async_01",
+      "kind": "asyncapi_channel_gates",
+      "prompt": "Write Python that prints len('gates:'). AsyncAPI channel. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_async_02",
+      "kind": "asyncapi_channel_gates",
+      "prompt": "ch='gates: subscribe'\nprint(ch.count(':'))\n# AsyncAPI channel gates: \u2014 not a circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_async_03",
+      "kind": "asyncapi_channel_gates",
+      "prompt": "Write Python that prints 6*6. AsyncAPI channel name gates: is messaging only. ONLY code.",
+      "expected_stdout": "36\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_nomad_01",
+      "kind": "nomad_job_gates",
+      "prompt": "Write Python that prints len('gates = \"http\"'). Nomad job. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_nomad_02",
+      "kind": "nomad_job_gates",
+      "prompt": "line='gates = [\"http\"]'\nprint(line.count('='))\n# Nomad HCL attr gates \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_nomad_03",
+      "kind": "nomad_job_gates",
+      "prompt": "Write Python that prints 8. Nomad job group gates = is HCL only. ONLY code.",
+      "expected_stdout": "8\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_vault_01",
+      "kind": "vault_policy_gates",
+      "prompt": "Write Python that prints len('path \"gates/data\"'). Vault policy. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_vault_02",
+      "kind": "vault_policy_gates",
+      "prompt": "p='path \"secret/gates\"'\nprint(p.count('gates'))\n# Vault ACL path gates \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_vault_03",
+      "kind": "vault_policy_gates",
+      "prompt": "Write Python that prints 9. Vault policy path gates/data is ACL only. ONLY code.",
+      "expected_stdout": "9\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_istio_01",
+      "kind": "istio_virtualservice_gates",
+      "prompt": "Write Python that prints len('gates:'). Istio VirtualService. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_istio_02",
+      "kind": "istio_virtualservice_gates",
+      "prompt": "vs='gates: [mesh]'\nprint(len(vs))\n# Istio VirtualService gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_istio_03",
+      "kind": "istio_virtualservice_gates",
+      "prompt": "Write Python that prints 11. Istio VirtualService gates: mesh is mesh-only. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_argo_01",
+      "kind": "argocd_sync_gates",
+      "prompt": "Write Python that prints len('gates: Create'). ArgoCD sync. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_argo_02",
+      "kind": "argocd_sync_gates",
+      "prompt": "opt='syncOptions: [gates: Create]'\nprint(opt.count('gates'))\n# ArgoCD Application gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_argo_03",
+      "kind": "argocd_sync_gates",
+      "prompt": "Write Python that prints 14. ArgoCD syncOption gates: Create is GitOps only. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_tek_01",
+      "kind": "tekton_param_gates",
+      "prompt": "Write Python that prints len('name: gates'). Tekton param. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_tek_02",
+      "kind": "tekton_param_gates",
+      "prompt": "p='params:\\n- name: gates'\nprint(p.count('gates'))\n# Tekton Pipeline param gates \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_tek_03",
+      "kind": "tekton_param_gates",
+      "prompt": "Write Python that prints 7*2. Tekton Task param gates: is CI only. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_fb_01",
+      "kind": "flatbuffers_table_gates",
+      "prompt": "Write Python that prints len('gates: [string]'). FlatBuffers. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_fb_02",
+      "kind": "flatbuffers_table_gates",
+      "prompt": "f='table X { gates: string; }'\nprint(f.count('gates'))\n# FlatBuffers field gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_fb_03",
+      "kind": "flatbuffers_table_gates",
+      "prompt": "Write Python that prints 16. FlatBuffers table field gates: is schema only. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_cap_01",
+      "kind": "capnp_struct_gates",
+      "prompt": "Write Python that prints len('gates @0 :List'). Cap'n Proto. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_cap_02",
+      "kind": "capnp_struct_gates",
+      "prompt": "s='gates @0 :Text'\nprint(len(s))\n# Cap'n Proto field gates \u2014 not circuit. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_cap_03",
+      "kind": "capnp_struct_gates",
+      "prompt": "Write Python that prints 4*5. Cap'n Proto struct gates @0 is IDL only. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_sol_01",
+      "kind": "solidity_modifier_gates",
+      "prompt": "Write Python that prints len('modifier gates()'). Solidity. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_sol_02",
+      "kind": "solidity_modifier_gates",
+      "prompt": "m='modifier gates() { _; }'\nprint(m.count('gates'))\n# Solidity modifier gates \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_sol_03",
+      "kind": "solidity_modifier_gates",
+      "prompt": "Write Python that prints 18. Solidity modifier gates() is EVM only. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_rust_01",
+      "kind": "rust_cfg_feature_gates",
+      "prompt": "Write Python that prints len('#[cfg(feature = \"gates\")]'). Rust cfg. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_rust_02",
+      "kind": "rust_cfg_feature_gates",
+      "prompt": "c='cfg(feature = \"gates\")'\nprint(c.count('gates'))\n# Rust cfg feature gates \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_rust_03",
+      "kind": "rust_cfg_feature_gates",
+      "prompt": "Write Python that prints 13. Rust #[cfg(feature = \"gates\")] is Cargo only. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_kt_01",
+      "kind": "kotlin_annotation_qubit",
+      "prompt": "Write Python that prints len('@Qubit(id=1)'). Kotlin annotation. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_kt_02",
+      "kind": "kotlin_annotation_qubit",
+      "prompt": "a='@Gates(value=\"cleanup\")'\nprint(len(a))\n# Kotlin annotation @Gates \u2014 not circuit. ONLY code.",
+      "expected_stdout": "23\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_kt_03",
+      "kind": "kotlin_annotation_qubit",
+      "prompt": "Write Python that prints 17. Kotlin @Qubit annotation is metadata only. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_cs_01",
+      "kind": "csproj_property_gates",
+      "prompt": "Write Python that prints len('<Gates>true</Gates>'). MSBuild. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_cs_02",
+      "kind": "csproj_property_gates",
+      "prompt": "x='<PropertyGroup><Gates>On</Gates></PropertyGroup>'\nprint(x.count('Gates'))\n# csproj PropertyGroup Gates \u2014 not circuit. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_cs_03",
+      "kind": "csproj_property_gates",
+      "prompt": "Write Python that prints 3*7. MSBuild <Gates> property is .NET only. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_spar_01",
+      "kind": "sparql_bind_gates",
+      "prompt": "Write Python that prints len('BIND(?gates AS ?g)'). SPARQL. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_spar_02",
+      "kind": "sparql_bind_gates",
+      "prompt": "Write Python that prints 19. SPARQL BIND ?gates is query only. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_cy_01",
+      "kind": "cypher_property_gates",
+      "prompt": "Write Python that prints len('{gates:'). Cypher property. ONLY code.",
+      "expected_stdout": "7\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_cy_02",
+      "kind": "cypher_property_gates",
+      "prompt": "q='MATCH (n {gates: true})'\nprint(q.count('gates'))\n# Neo4j Cypher property gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_earth_01",
+      "kind": "earthfile_target_gates",
+      "prompt": "Write Python that prints len('gates:'). Earthfile target. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_earth_02",
+      "kind": "earthfile_target_gates",
+      "prompt": "Write Python that prints 2. Earthfile target gates: is a build target only. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_ctrl_01",
+      "kind": "base_python_control_r10",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r10v_ctrl_02",
+      "kind": "base_python_control_r10",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}
