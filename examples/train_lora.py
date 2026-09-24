@@ -53,29 +53,98 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
         "product_circuit",
     ):
         entangled = bool(meta.get("entangled", meta.get("train_target_kind") == "bell_circuit"))
+        bell = meta.get("bell_state") or "Phi+"
+        shape = str(meta.get("shape") or "?")
+        seed = int(meta.get("scene_seed") or meta.get("seed") or 0)
+        corr = str(meta.get("correlation") or "")
+        # Optional scene-gen hint; else deterministic pick from cues.
+        tpl = meta.get("ent_template")
+        # === ENTANGLED: diversify Bell / CX patterns (distinct gate fingerprints) ===
+        # Allowed gates: h,x,y,z,cx,ry. CX required for entangled; forbidden for separable.
         if entangled:
-            bell = meta.get("bell_state") or "Phi+"
-            # Bell generator (toy): H + CX → entrelazado
+            bell_map = {
+                "Phi+": "bell_hcx",
+                "Phi-": "bell_xhcx",
+                "Psi+": "bell_hxcx",
+                "Psi-": "bell_xxhcx",
+            }
+            pool = [
+                "bell_hcx",      # H + CX
+                "bell_xhcx",     # X + H + CX
+                "bell_hxcx",     # H + X(q1) + CX
+                "bell_xxhcx",    # X + H + X(q1) + CX
+                "bell_hcxz",     # H + CX + Z
+                "bell_yhcx",     # Y + H + CX
+                "bell_hcxry",    # H + CX + RY (soft)
+            ]
+            if not tpl:
+                tpl = bell_map.get(str(bell)) or pool[seed % len(pool)]
+                # shape cue diversifies further when bell already mapped
+                if shape in ("star", "ring") and tpl == "bell_hcx":
+                    tpl = "bell_hcxry"
+                elif shape in ("triangle",) and tpl == "bell_hcx":
+                    tpl = "bell_yhcx"
+                elif corr.endswith("_phase") or "phase" in corr:
+                    tpl = "bell_hcxz"
+            gates_by_tpl = {
+                "bell_hcx": [["h", 0], ["cx", 0, 1]],
+                "bell_xhcx": [["x", 0], ["h", 0], ["cx", 0, 1]],
+                "bell_hxcx": [["h", 0], ["x", 1], ["cx", 0, 1]],
+                "bell_xxhcx": [["x", 0], ["h", 0], ["x", 1], ["cx", 0, 1]],
+                "bell_hcxz": [["h", 0], ["cx", 0, 1], ["z", 1]],
+                "bell_yhcx": [["y", 0], ["h", 0], ["cx", 0, 1]],
+                "bell_hcxry": [["h", 0], ["cx", 0, 1], ["ry", 1, 0.4]],
+            }
+            if tpl not in gates_by_tpl:
+                tpl = "bell_hcx"
             return {
                 "n_qubits": 2,
-                "gates": [["h", 0], ["cx", 0, 1]],
+                "gates": gates_by_tpl[tpl],
                 "domain": "entanglement",
                 "label": "entangled",
                 "bell_state": bell,
+                "template": tpl,
                 "nota": (
-                    f"Circuito Bell ({bell}): produce entrelazamiento; "
+                    f"Circuito Bell ({bell}/{tpl}): produce entrelazamiento (CX presente); "
                     "la escena visual muestra correlación no-local (no producto separable)."
                 ),
             }
-        # separable / product state
+        # === SEPARABLE / product: NO CX — diversify product fingerprints ===
+        sep_pool = [
+            "sep_hh",    # H H
+            "sep_xx",    # X X
+            "sep_hy",    # H Y
+            "sep_ryry",  # RY RY
+            "sep_hx",    # H X
+            "sep_zz",    # Z Z
+            "sep_yh",    # Y H
+        ]
+        if not tpl:
+            tpl = sep_pool[seed % len(sep_pool)]
+            if shape in ("ring", "circle") and tpl == "sep_hh":
+                tpl = "sep_ryry"
+            elif shape in ("star",) and tpl == "sep_hh":
+                tpl = "sep_zz"
+        gates_by_tpl = {
+            "sep_hh": [["h", 0], ["h", 1]],
+            "sep_xx": [["x", 0], ["x", 1]],
+            "sep_hy": [["h", 0], ["y", 1]],
+            "sep_ryry": [["ry", 0, 0.5], ["ry", 1, 0.5]],
+            "sep_hx": [["h", 0], ["x", 1]],
+            "sep_zz": [["z", 0], ["z", 1]],
+            "sep_yh": [["y", 0], ["h", 1]],
+        }
+        if tpl not in gates_by_tpl:
+            tpl = "sep_hh"
         return {
             "n_qubits": 2,
-            "gates": [["h", 0], ["h", 1]],
+            "gates": gates_by_tpl[tpl],
             "domain": "entanglement",
             "label": "separable",
+            "template": tpl,
             "nota": (
-                "Estado producto (separable): dos H independientes; "
-                "sin CX — no hay entrelazamiento."
+                f"Estado producto (separable/{tpl}): sin CX — no hay entrelazamiento; "
+                "trayectorias independientes."
             ),
         }
 
@@ -357,7 +426,34 @@ def evaluate_subset(
         parsear_propuesta = None  # type: ignore
 
     rng = random.Random(seed)
-    sample = rows[:] if len(rows) <= n_test else rng.sample(rows, n_test)
+    # Stratify so entanglement is not under-sampled vs fall (ent eval signal).
+    if len(rows) <= n_test:
+        sample = rows[:]
+    else:
+        by_dom: dict[str, list] = {"fall": [], "entanglement": [], "superposition": [], "other": []}
+        for r in rows:
+            d = str((r.get("meta") or {}).get("domain") or "other")
+            by_dom.setdefault(d if d in by_dom else "other", []).append(r)
+        for v in by_dom.values():
+            rng.shuffle(v)
+        n_ent = max(2, int(round(n_test * 0.40)))
+        n_fall = max(2, int(round(n_test * 0.30)))
+        n_sup = max(1, n_test - n_ent - n_fall)
+        sample = []
+        sample.extend(by_dom["entanglement"][:n_ent])
+        sample.extend(by_dom["fall"][:n_fall])
+        sample.extend(by_dom["superposition"][:n_sup])
+        leftover = (
+            by_dom["entanglement"][n_ent:]
+            + by_dom["fall"][n_fall:]
+            + by_dom["superposition"][n_sup:]
+            + by_dom["other"]
+        )
+        rng.shuffle(leftover)
+        while len(sample) < n_test and leftover:
+            sample.append(leftover.pop())
+        rng.shuffle(sample)
+        sample = sample[:n_test]
 
     # Optional live VLM
     use_vlm = False
@@ -498,6 +594,20 @@ def evaluate_subset(
         )
 
     n = max(1, len(sample))
+    # Entanglement-specific accuracy (among gold_domain==entanglement details)
+    ent_details = [d for d in details if d.get("gold_domain") == "entanglement"]
+    ent_n = len(ent_details)
+    ent_domain_acc = (
+        sum(1 for d in ent_details if d.get("ok_domain")) / ent_n if ent_n else None
+    )
+    ent_label_acc = (
+        sum(1 for d in ent_details if d.get("ok_label")) / ent_n if ent_n else None
+    )
+    ent_gate_combos = {
+        tuple(d.get("gate_names") or [])
+        for d in ent_details
+        if d.get("gate_names")
+    }
     return {
         "n": len(sample),
         "parse_rate": parsed / n,
@@ -508,6 +618,10 @@ def evaluate_subset(
         "energy_ok_rate": energy_ok_n / n,
         "energy_loss_scenes": energy_loss_n,
         "unique_gate_combos": len(gate_combos),
+        "ent_n": ent_n,
+        "ent_domain_acc": ent_domain_acc,
+        "ent_label_acc": ent_label_acc,
+        "ent_unique_gate_combos": len(ent_gate_combos),
         "details": details,
         "used_vlm": use_vlm,
         "adapter": adapter,

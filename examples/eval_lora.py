@@ -42,7 +42,7 @@ def main() -> int:
     )
     print(
         json.dumps(
-            {k: base[k] for k in ("n", "parse_rate", "compile_rate", "jev_approve_rate", "domain_acc", "label_acc", "energy_ok_rate", "unique_gate_combos", "used_vlm")},
+            {k: base[k] for k in ("n", "parse_rate", "compile_rate", "jev_approve_rate", "domain_acc", "label_acc", "energy_ok_rate", "unique_gate_combos", "ent_n", "ent_domain_acc", "ent_label_acc", "ent_unique_gate_combos", "used_vlm")},
             indent=2,
         )
     )
@@ -62,7 +62,7 @@ def main() -> int:
         )
         print(
             json.dumps(
-                {k: ft[k] for k in ("n", "parse_rate", "compile_rate", "jev_approve_rate", "domain_acc", "label_acc", "energy_ok_rate", "unique_gate_combos", "used_vlm")},
+                {k: ft[k] for k in ("n", "parse_rate", "compile_rate", "jev_approve_rate", "domain_acc", "label_acc", "energy_ok_rate", "unique_gate_combos", "ent_n", "ent_domain_acc", "ent_label_acc", "ent_unique_gate_combos", "used_vlm")},
                 indent=2,
             )
         )
@@ -75,6 +75,8 @@ def main() -> int:
             "jev_approve_rate": ft["jev_approve_rate"] - base["jev_approve_rate"],
             "domain_acc": ft.get("domain_acc", 0) - base.get("domain_acc", 0),
             "label_acc": ft.get("label_acc", 0) - base.get("label_acc", 0),
+            "ent_domain_acc": (ft.get("ent_domain_acc") or 0) - (base.get("ent_domain_acc") or 0),
+            "ent_label_acc": (ft.get("ent_label_acc") or 0) - (base.get("ent_label_acc") or 0),
         }
         d = report["delta"]["jev_approve_rate"]
         print(f"\nMejora Jev APROBAR: {d:+.0%} (meta: +20 puntos)")
@@ -83,6 +85,10 @@ def main() -> int:
             f"label_acc={ft.get('label_acc', 0):.2f} "
             f"energy_ok={ft.get('energy_ok_rate', 0):.2f} "
             f"gate_combos={ft.get('unique_gate_combos', 0)} "
+            f"ent_n={ft.get('ent_n')} "
+            f"ent_dom={ft.get('ent_domain_acc')} "
+            f"ent_lab={ft.get('ent_label_acc')} "
+            f"ent_gates={ft.get('ent_unique_gate_combos')} "
             f"(meta label≥0.7)"
         )
         ok = d >= 0.20

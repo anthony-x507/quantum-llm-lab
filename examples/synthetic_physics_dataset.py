@@ -455,8 +455,13 @@ def simulate_entanglement_scene(
     n_frames: int,
     scene_seed: int,
     entangled: bool,
+    ent_template: str | None = None,
+    bell_state: str | None = None,
+    pattern: str | None = None,
 ) -> tuple[list[Image.Image], dict[str, Any]]:
-    """Visual metaphor: two particles; entrelazado = correlación espejo + enlace; separable = independientes."""
+    """Visual metaphor: two particles; entrelazado = correlación espejo + enlace; separable = independientes.
+    pattern ∈ mirror|phase_link|shared_orbit|anti_xy diversifies motion/link cues for gate templates.
+    """
     shapes = [rng.choice(SHAPES), rng.choice(SHAPES)]
     colors = [rng.choice(COLORS), rng.choice([c for c in COLORS if c != shapes[0]] or list(COLORS))]
     # ensure distinct colors
@@ -474,17 +479,30 @@ def simulate_entanglement_scene(
         x=WIDTH * 0.72, y=HEIGHT * 0.35, vx=0, vy=0,
     )
     phase0 = rng.uniform(0, 2 * math.pi)
+    pattern = pattern or rng.choice(["mirror", "phase_link", "shared_orbit", "anti_xy"])
     frames: list[Image.Image] = []
     trajectory: list[dict[str, Any]] = []
     for fi in range(n_frames):
         t = fi / max(1, n_frames - 1)
         ang = phase0 + t * 2 * math.pi
-        # shared oscillation if entangled; independent if separable
+        # shared oscillation if entangled; independent if separable — pattern diversifies cues
         if entangled:
-            a.x = WIDTH * 0.28 + 10 * math.sin(ang)
-            a.y = HEIGHT * 0.35 + 8 * math.cos(ang)
-            b.x = WIDTH * 0.72 - 10 * math.sin(ang)  # anti-correlated
-            b.y = HEIGHT * 0.35 - 8 * math.cos(ang)
+            if pattern == "phase_link":
+                a.x = WIDTH * 0.30 + 8 * math.sin(ang)
+                a.y = HEIGHT * 0.40 + 12 * math.cos(ang)
+                b.x = WIDTH * 0.70 + 8 * math.sin(ang + math.pi / 2)
+                b.y = HEIGHT * 0.40 + 12 * math.cos(ang + math.pi / 2)
+            elif pattern == "shared_orbit":
+                r = 28
+                a.x = WIDTH * 0.5 + r * math.cos(ang)
+                a.y = HEIGHT * 0.42 + r * math.sin(ang)
+                b.x = WIDTH * 0.5 + r * math.cos(ang + math.pi)
+                b.y = HEIGHT * 0.42 + r * math.sin(ang + math.pi)
+            else:  # mirror / anti_xy
+                a.x = WIDTH * 0.28 + 10 * math.sin(ang)
+                a.y = HEIGHT * 0.35 + 8 * math.cos(ang)
+                b.x = WIDTH * 0.72 - 10 * math.sin(ang)
+                b.y = HEIGHT * 0.35 - 8 * math.cos(ang)
             link = True
         else:
             a.x = WIDTH * 0.28 + 12 * math.sin(ang)
@@ -498,10 +516,18 @@ def simulate_entanglement_scene(
         # faint axes
         draw.line([(8, HEIGHT // 2), (WIDTH - 8, HEIGHT // 2)], fill=(40, 45, 70), width=1)
         if link:
-            draw.line([(a.x, a.y), (b.x, b.y)], fill=(180, 160, 255), width=2)
+            link_col = {
+                "phase_link": (160, 220, 255),
+                "shared_orbit": (255, 180, 220),
+                "anti_xy": (180, 160, 255),
+                "mirror": (200, 170, 255),
+            }.get(pattern, (180, 160, 255))
+            draw.line([(a.x, a.y), (b.x, b.y)], fill=link_col, width=2)
             # Bell-ish glyph in center
             mx, my = (a.x + b.x) / 2, (a.y + b.y) / 2
             draw.ellipse([mx - 4, my - 4, mx + 4, my + 4], fill=(200, 180, 255))
+            if pattern == "phase_link":
+                draw.arc([mx - 12, my - 12, mx + 12, my + 12], 0, 270, fill=link_col, width=2)
         _draw_body(draw, a)
         _draw_body(draw, b)
         # label strip (visual cue, not text-heavy)
@@ -517,7 +543,25 @@ def simulate_entanglement_scene(
             "linked": link,
         })
 
-    bell_state = rng.choice(["Phi+", "Phi-", "Psi+", "Psi-"]) if entangled else None
+    if entangled:
+        bell_state = bell_state or rng.choice(["Phi+", "Phi-", "Psi+", "Psi-"])
+    else:
+        bell_state = None
+    # Default template if caller did not pin one
+    if not ent_template:
+        if entangled:
+            bell_map = {"Phi+": "bell_hcx", "Phi-": "bell_xhcx", "Psi+": "bell_hxcx", "Psi-": "bell_xxhcx"}
+            ent_template = bell_map.get(str(bell_state), "bell_hcx")
+        else:
+            ent_template = ["sep_hh", "sep_xx", "sep_hy", "sep_ryry", "sep_hx", "sep_zz", "sep_yh"][
+                scene_seed % 7
+            ]
+    corr = {
+        "mirror": "anti_correlated_xy",
+        "anti_xy": "anti_correlated_xy",
+        "phase_link": "phase_correlated",
+        "shared_orbit": "orbit_anticorrelated",
+    }.get(pattern, "anti_correlated_xy") if entangled else "independent"
     meta: dict[str, Any] = {
         "domain": "entanglement",
         "scene_seed": scene_seed,
@@ -525,7 +569,9 @@ def simulate_entanglement_scene(
         "entangled": entangled,
         "separable": not entangled,
         "bell_state": bell_state,
-        "correlation": "anti_correlated_xy" if entangled else "independent",
+        "ent_template": ent_template,
+        "pattern": pattern,
+        "correlation": corr,
         "shape": a.shape,
         "color": a.color,
         "objects": [a.as_meta(), b.as_meta()],
@@ -537,9 +583,9 @@ def simulate_entanglement_scene(
         "surface": "quantum_canvas",
         "gravity_condition": "n/a_entanglement",
         "governing_law": (
-            f"Toy Bell pair visual ({bell_state}); non-local correlation metaphor"
+            f"Toy Bell pair visual ({bell_state}/{pattern}/{ent_template}); non-local correlation metaphor"
             if entangled
-            else "Two separable particles; independent trajectories (product state)"
+            else f"Two separable particles ({ent_template}); independent trajectories (product state)"
         ),
         "label": "entangled" if entangled else "separable",
         "train_target_kind": "bell_circuit" if entangled else "product_circuit",
@@ -680,18 +726,34 @@ def sample_configs(n_scenes: int, rng: random.Random) -> list[dict[str, Any]]:
             }
         )
 
-    # --- Entanglement subset (~22%) ---
-    n_ent = max(8, int(n_scenes * 0.22))
+    # --- Entanglement subset (~38% target; was under-represented vs fall) ---
+    ENT_TEMPLATES_BELL = [
+        "bell_hcx", "bell_xhcx", "bell_hxcx", "bell_xxhcx",
+        "bell_hcxz", "bell_yhcx", "bell_hcxry",
+    ]
+    ENT_TEMPLATES_SEP = [
+        "sep_hh", "sep_xx", "sep_hy", "sep_ryry", "sep_hx", "sep_zz", "sep_yh",
+    ]
+    n_ent = max(12, int(n_scenes * 0.38))
     for i in range(n_ent):
+        entangled = i % 3 != 0  # ~2/3 entangled, 1/3 separable contrast
+        tpl = (
+            ENT_TEMPLATES_BELL[i % len(ENT_TEMPLATES_BELL)]
+            if entangled
+            else ENT_TEMPLATES_SEP[i % len(ENT_TEMPLATES_SEP)]
+        )
         configs.append(
             {
                 "domain": "entanglement",
-                "entangled": i % 3 != 0,  # ~2/3 entangled, 1/3 separable contrast
+                "entangled": entangled,
+                "ent_template": tpl,
+                "bell_state": ["Phi+", "Phi-", "Psi+", "Psi-"][i % 4] if entangled else None,
+                "pattern": ["mirror", "phase_link", "shared_orbit", "anti_xy"][i % 4],
             }
         )
 
-    # --- Superposition subset (~23%) ---
-    n_sup = max(8, int(n_scenes * 0.23))
+    # --- Superposition subset (~27%) ---
+    n_sup = max(8, int(n_scenes * 0.27))
     for i in range(n_sup):
         configs.append(
             {
@@ -702,7 +764,7 @@ def sample_configs(n_scenes: int, rng: random.Random) -> list[dict[str, Any]]:
 
     while len(configs) < n_scenes:
         roll = rng.random()
-        if roll < 0.55:
+        if roll < 0.35:
             configs.append(
                 {
                     "domain": "fall",
@@ -715,8 +777,16 @@ def sample_configs(n_scenes: int, rng: random.Random) -> list[dict[str, Any]]:
                     "multi": rng.random() < 0.35,
                 }
             )
-        elif roll < 0.78:
-            configs.append({"domain": "entanglement", "entangled": rng.random() < 0.7})
+        elif roll < 0.73:
+            entangled = rng.random() < 0.7
+            tpl = rng.choice(ENT_TEMPLATES_BELL if entangled else ENT_TEMPLATES_SEP)
+            configs.append({
+                "domain": "entanglement",
+                "entangled": entangled,
+                "ent_template": tpl,
+                "bell_state": rng.choice(["Phi+", "Phi-", "Psi+", "Psi-"]) if entangled else None,
+                "pattern": rng.choice(["mirror", "phase_link", "shared_orbit", "anti_xy"]),
+            })
         else:
             configs.append({"domain": "superposition", "collapsed": rng.random() < 0.25})
 
@@ -726,9 +796,9 @@ def sample_configs(n_scenes: int, rng: random.Random) -> list[dict[str, Any]]:
         by_dom.setdefault(c.get("domain", "fall"), []).append(c)
     for v in by_dom.values():
         rng.shuffle(v)
-    # target mix ~55/22/23
-    n_fall = max(1, int(round(n_scenes * 0.55)))
-    n_ent = max(1, int(round(n_scenes * 0.22)))
+    # target mix ~35 fall / 38 ent / 27 super (ent no longer under vs fall)
+    n_fall = max(1, int(round(n_scenes * 0.35)))
+    n_ent = max(1, int(round(n_scenes * 0.38)))
     n_sup = max(1, n_scenes - n_fall - n_ent)
     # adjust if pool short
     picked: list = []
@@ -815,15 +885,50 @@ def generate_dataset(
     out_dir: str | Path = "data/scenes",
     seed: int = 42,
     frames_per_scene: int = 30,
+    start_index: int = 0,
+    domain_only: str | None = None,
 ) -> Path:
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     rng = random.Random(seed)
     configs = sample_configs(n_scenes, rng)
+    if domain_only:
+        # Force all configs to requested domain (enrichment appends).
+        forced: list[dict[str, Any]] = []
+        for i in range(n_scenes):
+            if domain_only == "entanglement":
+                entangled = i % 3 != 0
+                ENT_B = [
+                    "bell_hcx", "bell_xhcx", "bell_hxcx", "bell_xxhcx",
+                    "bell_hcxz", "bell_yhcx", "bell_hcxry",
+                ]
+                ENT_S = ["sep_hh", "sep_xx", "sep_hy", "sep_ryry", "sep_hx", "sep_zz", "sep_yh"]
+                forced.append({
+                    "domain": "entanglement",
+                    "entangled": entangled,
+                    "ent_template": (ENT_B if entangled else ENT_S)[i % (len(ENT_B) if entangled else len(ENT_S))],
+                    "bell_state": ["Phi+", "Phi-", "Psi+", "Psi-"][i % 4] if entangled else None,
+                    "pattern": ["mirror", "phase_link", "shared_orbit", "anti_xy"][i % 4],
+                })
+            elif domain_only == "superposition":
+                forced.append({"domain": "superposition", "collapsed": i % 4 == 0})
+            else:
+                forced.append({
+                    "domain": "fall",
+                    "shape": rng.choice(SHAPES),
+                    "color": rng.choice(COLORS),
+                    "size": rng.choice(SIZES),
+                    "material": rng.choice(MATERIALS),
+                    "surface": rng.choice(SURFACES),
+                    "condition": rng.choice(CONDITIONS),
+                    "multi": rng.random() < 0.35,
+                })
+        configs = forced
     metas: list[dict[str, Any]] = []
 
     for i, cfg in enumerate(configs):
-        scene_seed = seed * 100000 + i
+        idx = start_index + i
+        scene_seed = seed * 100000 + idx
         scene_rng = random.Random(scene_seed)
         # slight per-scene frame jitter around default
         n_fr = frames_per_scene
@@ -837,6 +942,9 @@ def generate_dataset(
                 n_frames=n_fr,
                 scene_seed=scene_seed,
                 entangled=bool(cfg.get("entangled", True)),
+                ent_template=cfg.get("ent_template"),
+                bell_state=cfg.get("bell_state"),
+                pattern=cfg.get("pattern"),
             )
         elif domain == "superposition":
             frames, meta = simulate_superposition_scene(
@@ -861,7 +969,7 @@ def generate_dataset(
             meta["domain"] = "fall"
             meta["label"] = "fall_multi" if meta.get("multi_object") else "fall"
             meta["train_target_kind"] = "fall_circuit"
-        scene_dir = out / f"scene_{i:04d}"
+        scene_dir = out / f"scene_{idx:04d}"
         scene_dir.mkdir(parents=True, exist_ok=True)
         for fi, img in enumerate(frames):
             img.save(scene_dir / f"frame_{fi:04d}.png")
@@ -873,7 +981,7 @@ def generate_dataset(
             print(f"  wrote {i + 1}/{n_scenes} scenes -> {scene_dir}")
 
     write_summary(out, metas, seed)
-    print(f"Done: {n_scenes} scenes under {out.resolve()}")
+    print(f"Done: {n_scenes} scenes under {out.resolve()} (start_index={start_index})")
     print(f"  SUMMARY.json + SUMMARY.md written")
     return out
 
@@ -896,12 +1004,27 @@ def main() -> None:
         default=30,
         help="Base frames per scene (~24-36; slight jitter applied)",
     )
+    p.add_argument(
+        "--start-index",
+        type=int,
+        default=0,
+        help="Scene id offset (append enrichment without overwriting scene_0000+)",
+    )
+    p.add_argument(
+        "--domain-only",
+        type=str,
+        default=None,
+        choices=["fall", "entanglement", "superposition"],
+        help="Force all generated scenes to one domain (enrichment)",
+    )
     args = p.parse_args()
     generate_dataset(
         n_scenes=args.n_scenes,
         out_dir=args.out,
         seed=args.seed,
         frames_per_scene=args.frames_per_scene,
+        start_index=args.start_index,
+        domain_only=args.domain_only,
     )
 
 
