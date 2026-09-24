@@ -1,0 +1,79 @@
+{
+  "round": "r17",
+  "branch": "frontier/tip-hardneg-r17",
+  "base_tip": "34c696fa6ebcd63608ddb246ad2ce06f70caf912",
+  "when_et": "2026-09-24T14:36:28-0400",
+  "machine": "Mac-111",
+  "router_pre": {
+    "hits": 8,
+    "n": 52,
+    "rate": 0.1538
+  },
+  "router_post": {
+    "hits": 52,
+    "n": 52,
+    "rate": 1.0
+  },
+  "verifier_alone": {
+    "hits": 44,
+    "n": 44,
+    "rate": 1.0
+  },
+  "unified": {
+    "hits": 44,
+    "n": 44,
+    "rate": 1.0
+  },
+  "rise_pp": 84.62,
+  "rise_rate_pct_vs_pre": 550.0,
+  "freeze_gate_80pp": true,
+  "mixed_unified": 1.0,
+  "floors": {
+    "mixed": 1.0,
+    "motion": "100% (tip motion-r4; untouched)",
+    "tti": "100% (tip-tti fold; untouched)",
+    "collision": "100% (untouched)",
+    "inverse_cv": "100% (tip inverse-r3 fold; untouched)",
+    "r12": "52/52\u00b744/44 (on tip; held)"
+  },
+  "held_routers": {
+    "r2": "22/22",
+    "r3": "35/35",
+    "r7": "52/52",
+    "r8": "52/52",
+    "r9": "52/52",
+    "r10": "52/52",
+    "r11": "52/52",
+    "r12": "52/52",
+    "lp": "43/43"
+  },
+  "held_verifiers": {
+    "r7": "44/44",
+    "r12": "44/44",
+    "lp": "32/32"
+  },
+  "smoke": "12/12",
+  "ent_never_on_python": true,
+  "pillars": "26/26",
+  "hardneg_smoke": "18/18",
+  "families": [
+    "cloudflare_worker_gates",
+    "cloudfront_behavior_gates",
+    "vitess_vschema_gates",
+    "cockroach_grant_gates",
+    "pinot_table_gates",
+    "circleci_when_gates",
+    "drone_when_gates",
+    "maven_profile_gates",
+    "sbt_task_gates",
+    "rails_before_action_gates",
+    "phoenix_plug_gates",
+    "flagger_canary_gates",
+    "argorollouts_step_gates",
+    "debezium_filter_gates"
+  ],
+  "not_folded": true,
+  "lora_adapter_ro": true,
+  "adapters_mtime_unchanged": true,
+  "feat_sha": "PENDING"
+}

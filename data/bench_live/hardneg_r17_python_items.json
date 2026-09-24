@@ -1,0 +1,317 @@
+{
+  "n": 44,
+  "kind": "python_hardneg_items",
+  "created": "2026-09-24T18:35:00Z",
+  "round": "r17",
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R17.md",
+  "items": [
+    {
+      "id": "r17v_cfw_01",
+      "kind": "cloudflare_worker_gates",
+      "prompt": "Write Python that prints len('gates: fetch'). Cloudflare Worker. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_cfw_02",
+      "kind": "cloudflare_worker_gates",
+      "prompt": "t='gates: fetch'\nprint(t.count('gates'))\n# Cloudflare Worker gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_cfw_03",
+      "kind": "cloudflare_worker_gates",
+      "prompt": "Write Python that prints 51. Cloudflare Worker gates: fetch is edge only. ONLY code.",
+      "expected_stdout": "51\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_cft_01",
+      "kind": "cloudfront_behavior_gates",
+      "prompt": "Write Python that prints len('gates: PathPattern'). CloudFront. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_cft_02",
+      "kind": "cloudfront_behavior_gates",
+      "prompt": "t='gates: PathPattern'\nprint(t.count('gates'))\n# CloudFront gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_cft_03",
+      "kind": "cloudfront_behavior_gates",
+      "prompt": "Write Python that prints 52. CloudFront gates: PathPattern is CDN only. ONLY code.",
+      "expected_stdout": "52\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_vit_01",
+      "kind": "vitess_vschema_gates",
+      "prompt": "Write Python that prints len('gates: sharded'). Vitess. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_vit_02",
+      "kind": "vitess_vschema_gates",
+      "prompt": "t='gates: sharded'\nprint(t.count('gates'))\n# Vitess gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_vit_03",
+      "kind": "vitess_vschema_gates",
+      "prompt": "Write Python that prints 53. Vitess gates: sharded is DB only. ONLY code.",
+      "expected_stdout": "53\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_crdb_01",
+      "kind": "cockroach_grant_gates",
+      "prompt": "Write Python that prints len('gates: GRANT'). CockroachDB. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_crdb_02",
+      "kind": "cockroach_grant_gates",
+      "prompt": "t='gates: GRANT'\nprint(t.count('gates'))\n# CockroachDB gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_crdb_03",
+      "kind": "cockroach_grant_gates",
+      "prompt": "Write Python that prints 54. CockroachDB gates: GRANT is DB only. ONLY code.",
+      "expected_stdout": "54\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_pinot_01",
+      "kind": "pinot_table_gates",
+      "prompt": "Write Python that prints len('gates: ingestion'). Apache Pinot. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_pinot_02",
+      "kind": "pinot_table_gates",
+      "prompt": "t='gates: ingestion'\nprint(t.count('gates'))\n# Apache Pinot gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_pinot_03",
+      "kind": "pinot_table_gates",
+      "prompt": "Write Python that prints 55. Apache Pinot gates: ingestion is DB only. ONLY code.",
+      "expected_stdout": "55\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_cci_01",
+      "kind": "circleci_when_gates",
+      "prompt": "Write Python that prints len('gates: equal'). CircleCI. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_cci_02",
+      "kind": "circleci_when_gates",
+      "prompt": "t='gates: equal'\nprint(t.count('gates'))\n# CircleCI gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_cci_03",
+      "kind": "circleci_when_gates",
+      "prompt": "Write Python that prints 56. CircleCI gates: equal is CI only. ONLY code.",
+      "expected_stdout": "56\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_drone_01",
+      "kind": "drone_when_gates",
+      "prompt": "Write Python that prints len('gates: event'). Drone CI. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_drone_02",
+      "kind": "drone_when_gates",
+      "prompt": "t='gates: event'\nprint(t.count('gates'))\n# Drone CI gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_drone_03",
+      "kind": "drone_when_gates",
+      "prompt": "Write Python that prints 57. Drone CI gates: event is CI only. ONLY code.",
+      "expected_stdout": "57\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_mvn_01",
+      "kind": "maven_profile_gates",
+      "prompt": "Write Python that prints len('gates: activeByDefault'). Maven. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_mvn_02",
+      "kind": "maven_profile_gates",
+      "prompt": "t='gates: activeByDefault'\nprint(t.count('gates'))\n# Maven gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_mvn_03",
+      "kind": "maven_profile_gates",
+      "prompt": "Write Python that prints 58. Maven gates: activeByDefault is build only. ONLY code.",
+      "expected_stdout": "58\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_sbt_01",
+      "kind": "sbt_task_gates",
+      "prompt": "Write Python that prints len('gates: dependsOn'). sbt. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_sbt_02",
+      "kind": "sbt_task_gates",
+      "prompt": "t='gates: dependsOn'\nprint(t.count('gates'))\n# sbt gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_sbt_03",
+      "kind": "sbt_task_gates",
+      "prompt": "Write Python that prints 59. sbt gates: dependsOn is build only. ONLY code.",
+      "expected_stdout": "59\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_rails_01",
+      "kind": "rails_before_action_gates",
+      "prompt": "Write Python that prints len('gates: before_action'). Rails. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_rails_02",
+      "kind": "rails_before_action_gates",
+      "prompt": "t='gates: before_action'\nprint(t.count('gates'))\n# Rails gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_rails_03",
+      "kind": "rails_before_action_gates",
+      "prompt": "Write Python that prints 60. Rails gates: before_action is framework only. ONLY code.",
+      "expected_stdout": "60\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_phx_01",
+      "kind": "phoenix_plug_gates",
+      "prompt": "Write Python that prints len('gates: plug'). Phoenix. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_phx_02",
+      "kind": "phoenix_plug_gates",
+      "prompt": "t='gates: plug'\nprint(t.count('gates'))\n# Phoenix gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_phx_03",
+      "kind": "phoenix_plug_gates",
+      "prompt": "Write Python that prints 61. Phoenix gates: plug is framework only. ONLY code.",
+      "expected_stdout": "61\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_flg_01",
+      "kind": "flagger_canary_gates",
+      "prompt": "Write Python that prints len('gates: stepWeight'). Flagger. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_flg_02",
+      "kind": "flagger_canary_gates",
+      "prompt": "t='gates: stepWeight'\nprint(t.count('gates'))\n# Flagger gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_flg_03",
+      "kind": "flagger_canary_gates",
+      "prompt": "Write Python that prints 62. Flagger gates: stepWeight is canary only. ONLY code.",
+      "expected_stdout": "62\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_aro_01",
+      "kind": "argorollouts_step_gates",
+      "prompt": "Write Python that prints len('gates: setWeight'). Argo Rollouts. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_aro_02",
+      "kind": "argorollouts_step_gates",
+      "prompt": "t='gates: setWeight'\nprint(t.count('gates'))\n# Argo Rollouts gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_aro_03",
+      "kind": "argorollouts_step_gates",
+      "prompt": "Write Python that prints 63. Argo Rollouts gates: setWeight is canary only. ONLY code.",
+      "expected_stdout": "63\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_dbz_01",
+      "kind": "debezium_filter_gates",
+      "prompt": "Write Python that prints len('gates: op'). Debezium. ONLY code.",
+      "expected_stdout": "9\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_dbz_02",
+      "kind": "debezium_filter_gates",
+      "prompt": "t='gates: op'\nprint(t.count('gates'))\n# Debezium gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_dbz_03",
+      "kind": "debezium_filter_gates",
+      "prompt": "Write Python that prints 64. Debezium gates: op is CDC only. ONLY code.",
+      "expected_stdout": "64\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_ctrl_01",
+      "kind": "base_python_control_r17",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r17v_ctrl_02",
+      "kind": "base_python_control_r17",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}
