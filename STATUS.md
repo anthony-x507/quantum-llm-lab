@@ -1,7 +1,7 @@
 # Estado de avance
 
 ## 2026-09-24 — tip-hardneg-r8 polish @ side branch
-Branch `frontier/tip-hardneg-r8` from tip `69655dd` (wt `…-tip-hardneg-r8`). R8 router **52/52** · verifier **44/44**; mixed (d) **1.0**; R1–R7+LP held; `ent_never_on_python`. Novel: Dockerfile ARG / JSON Schema / TF / md fence / unicode / Rego / CUE / TOML / GraphQL / SARIF / Nix / WASM / EDN / email. **Not folded** (tip-cv/R7/scaffold-motion left alone). See `docs/FRONTIER-CODIGO-VIVO-TIP-R8.md`.
+Branch `frontier/tip-hardneg-r8` SHA `c964dcc` from tip `69655dd` (wt `…-tip-hardneg-r8`). R8 router **52/52** · verifier **44/44**; mixed (d) **1.0**; R1–R7+LP held; `ent_never_on_python`. Novel: Dockerfile ARG / JSON Schema / TF / md fence / unicode / Rego / CUE / TOML / GraphQL / SARIF / Nix / WASM / EDN / email. **Not folded** (tip-cv/R7/scaffold-motion left alone). See `docs/FRONTIER-CODIGO-VIVO-TIP-R8.md`.
 
 
 Ver **[`docs/STATUS.md`](docs/STATUS.md)** (Agent Lab / quantum-llm-lab).  
