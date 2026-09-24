@@ -1,6 +1,6 @@
 {
   "frontier": "C3-moe-verifier-codigo-vivo",
-  "written": "2026-09-24 13:51:06",
+  "written": "2026-09-24 14:31:39",
   "mode": "hardneg-cpu",
   "router_method": "heuristic",
   "claims": [
@@ -16,7 +16,7 @@
   },
   "ro_lock": {
     "ro_paths_checked": [
-      "/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r11/data/lora_adapter",
+      "/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r16/data/lora_adapter",
       "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter"
     ],
     "script_writes_to_lora_adapter": false,
