@@ -325,7 +325,7 @@ def evaluate(root: Path, audit_path: Path, *, contam_self_test: bool = False) ->
 
     result = {
         "domain": "collision_predictive",
-        "branch_tag": "tip-collision-pred",
+        "branch_tag": "tip-choose-safest-n",
         "ts": _now(),
         "n_eval_seqs": len(seqs),
         "predictors": table,
@@ -366,7 +366,7 @@ def main() -> None:
         "schema": "frontier_tip_collision_pred_probe",
         "ts": result["ts"],
         "domain": "collision_predictive",
-        "branch": "frontier/tip-inverse-r2",
+        "branch": "frontier/tip-choose-safest-n",
         "n_eval_seqs": result["n_eval_seqs"],
         "metric_collision_correct_pct": result["predictors"]["collision_physics"]["overall"]["collision_correct_pct"],
         "metric_n_queries": result["predictors"]["collision_physics"]["overall"]["n"],
@@ -386,6 +386,32 @@ def main() -> None:
         json.dumps({**probe, "schema": "frontier_tip_collision_n_probe",
                     "n_expand": {"before_n_eval_seqs": 8, "before_n_queries": 555,
                                  "target_n_eval_seqs": 40}}, indent=2) + "\n"
+    )
+    cs = result["predictors"]["collision_choose_safest"]["overall"]
+    Path("data/frontier_tip_choose_safest_n_probe.json").write_text(
+        json.dumps({
+            **probe,
+            "schema": "frontier_tip_choose_safest_n_probe",
+            "branch": "frontier/tip-choose-safest-n",
+            "collision_choose_safest_overall_pct": cs["collision_correct_pct"],
+            "collision_choose_safest_n": cs["n"],
+            "collision_physics_overall_pct": (
+                result["predictors"]["collision_physics"]["overall"]["collision_correct_pct"]
+            ),
+            "n_expand": {
+                "before_n_eval_seqs": 40,
+                "before_n_queries": 2850,
+                "target_n_eval_seqs": 80,
+                "hardneg": True,
+            },
+            "floors_policy": {
+                "physics": 100.0,
+                "choose_safest": 100.0,
+                "distance_DZ": "held_by_non_touch",
+                "motion": "held_by_non_touch",
+                "TTI": "held_by_non_touch",
+            },
+        }, indent=2) + "\n"
     )
 
     inv = result["predictors"]["inverse_cv"]["overall"]["collision_correct_pct"]

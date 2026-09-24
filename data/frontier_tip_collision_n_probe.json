@@ -1,12 +1,12 @@
 {
   "schema": "frontier_tip_collision_n_probe",
-  "ts": "2026-09-24 14:22:44 ET",
+  "ts": "2026-09-24 14:27:09 ET",
   "domain": "collision_predictive",
-  "branch": "frontier/tip-inverse-r2",
-  "n_eval_seqs": 40,
+  "branch": "frontier/tip-choose-safest-n",
+  "n_eval_seqs": 80,
   "metric_collision_correct_pct": 100.0,
-  "metric_n_queries": 2850,
-  "ablation_pp": 0.18,
+  "metric_n_queries": 5670,
+  "ablation_pp": 0.14,
   "contam_passed": true,
   "retrieval_ok": true,
   "emit_schema": [
@@ -28,73 +28,73 @@
   "predictors": {
     "collision_physics": {
       "k=1": {
-        "n": 950,
+        "n": 1890,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=3": {
-        "n": 950,
+        "n": 1890,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=5": {
-        "n": 950,
+        "n": 1890,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
-        "physics_fail_rate": 0.0011
+        "physics_fail_rate": 0.0032
       },
       "overall": {
-        "n": 2850,
+        "n": 5670,
         "collision_correct_pct": 100.0
       }
     },
     "inverse_cv": {
       "k=1": {
-        "n": 950,
-        "collision_correct_pct": 100.0,
+        "n": 1890,
+        "collision_correct_pct": 99.95,
         "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=3": {
-        "n": 950,
-        "collision_correct_pct": 99.79,
-        "safe_match_pct": 99.79,
+        "n": 1890,
+        "collision_correct_pct": 99.89,
+        "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=5": {
-        "n": 950,
-        "collision_correct_pct": 99.68,
-        "safe_match_pct": 99.68,
+        "n": 1890,
+        "collision_correct_pct": 99.74,
+        "safe_match_pct": 99.89,
         "physics_fail_rate": 0.0
       },
       "overall": {
-        "n": 2850,
-        "collision_correct_pct": 99.82
+        "n": 5670,
+        "collision_correct_pct": 99.86
       }
     },
     "collision_choose_safest": {
       "k=1": {
-        "n": 950,
+        "n": 1890,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=3": {
-        "n": 950,
+        "n": 1890,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
         "physics_fail_rate": 0.0
       },
       "k=5": {
-        "n": 950,
+        "n": 1890,
         "collision_correct_pct": 100.0,
         "safe_match_pct": 100.0,
-        "physics_fail_rate": 0.0
+        "physics_fail_rate": 0.0026
       },
       "overall": {
-        "n": 2850,
+        "n": 5670,
         "collision_correct_pct": 100.0
       }
     }

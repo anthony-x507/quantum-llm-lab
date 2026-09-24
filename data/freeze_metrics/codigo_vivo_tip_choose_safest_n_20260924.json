@@ -1,0 +1,20 @@
+{
+  "frontier": "codigo-vivo-tip-choose-safest-n",
+  "written_et": "2026-09-24 14:27:33 ET",
+  "branch": "frontier/tip-choose-safest-n",
+  "base_tip": "9a0de24",
+  "mixed_d_unified": 1.0,
+  "collision_physics_pct": 100.0,
+  "collision_choose_safest_pct": 100.0,
+  "n_eval_seqs_before": 40,
+  "n_eval_seqs_after": 80,
+  "n_queries_before": 2850,
+  "n_queries_after": 5670,
+  "floor_held": true,
+  "floors_distance_DZ_motion_TTI": "held_by_non_touch",
+  "adapters_ro": true,
+  "freeze_update": true,
+  "freeze_id": "codigo_vivo_tip_choose_safest_n_100pct_20260924_142733",
+  "feat_sha": "PENDING_FEAT_SHA",
+  "hardneg": true
+}

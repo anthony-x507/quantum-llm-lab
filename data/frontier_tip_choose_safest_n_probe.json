@@ -1,5 +1,5 @@
 {
-  "schema": "frontier_tip_collision_pred_probe",
+  "schema": "frontier_tip_choose_safest_n_probe",
   "ts": "2026-09-24 14:27:09 ET",
   "domain": "collision_predictive",
   "branch": "frontier/tip-choose-safest-n",
@@ -100,5 +100,21 @@
     }
   },
   "quantum_adapter_touched": false,
-  "floor_resmoke": "N/A \u2014 side-branch collision_predictive only; tip router untouched"
+  "floor_resmoke": "N/A \u2014 side-branch collision_predictive only; tip router untouched",
+  "collision_choose_safest_overall_pct": 100.0,
+  "collision_choose_safest_n": 5670,
+  "collision_physics_overall_pct": 100.0,
+  "n_expand": {
+    "before_n_eval_seqs": 40,
+    "before_n_queries": 2850,
+    "target_n_eval_seqs": 80,
+    "hardneg": true
+  },
+  "floors_policy": {
+    "physics": 100.0,
+    "choose_safest": 100.0,
+    "distance_DZ": "held_by_non_touch",
+    "motion": "held_by_non_touch",
+    "TTI": "held_by_non_touch"
+  }
 }

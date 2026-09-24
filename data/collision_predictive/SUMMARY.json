@@ -1,9 +1,9 @@
 {
   "domain": "collision_predictive",
-  "seed": 24092446,
-  "n_seq": 200,
-  "n_train": 160,
-  "n_eval": 40,
+  "seed": 24092447,
+  "n_seq": 400,
+  "n_train": 320,
+  "n_eval": 80,
   "horizons": [
     1,
     3,
@@ -22,7 +22,20 @@
     "is_safe"
   ],
   "physics": "elastic_disk_2d_masses",
+  "hardneg_mix": {
+    "unsafe_look_safe": 0.22,
+    "safe_look_unsafe": 0.22,
+    "near_miss_choice": 0.16,
+    "baseline_remainder": 0.4,
+    "realized_counts": {
+      "safe_look_unsafe": 87,
+      "baseline": 154,
+      "unsafe_look_safe": 87,
+      "near_miss_choice": 72
+    }
+  },
   "anti_contamination": "consequences_gt.json sidecar only; meta has no futures",
   "adapter_future": "data/lora_adapter_collision/ (empty; VLM deferred)",
-  "quantum_adapter": "data/lora_adapter/ READ-ONLY \u2014 never touch"
+  "quantum_adapter": "data/lora_adapter/ READ-ONLY \u2014 never touch",
+  "branch_tag": "tip-choose-safest-n"
 }

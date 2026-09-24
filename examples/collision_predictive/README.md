@@ -48,3 +48,7 @@ Quantum `data/lora_adapter/` = **READ-ONLY**. No GPU steal.
 Default synth is now **200** sequences (**160** train / **40** eval), seed `24092446`.
 Prior thin set was 40 / 32 / 8 @ seed `24092445`. Physics oracle held 100% at larger n.
 
+## tip-choose-safest-n (side)
+
+Defaults: **400 / 320 / 80**, seed **24092447**, hardneg mix for choose_safest pressure.
+Eval oracle physics + choose_safest held **100%** @ **5670** queries. Do not fold.
