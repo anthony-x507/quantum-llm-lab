@@ -162,7 +162,8 @@ def route_heuristic(prompt: str) -> Lane:
     # R7: CI YAML multiline gates:\n  - …; Make .PHONY: gates; bare len('gates:') key tokens.
     # R8: Dockerfile ARG gates=; JSON Schema "gates"; TF/TOML/Nix gates = [...]; markdown 'gates: list'; Rego input.gates[_]; CUE #Gates:; EDN :gates; fullwidth lookalikes.
     # R9: OpenAPI /gates:; Helm values gates: enabled; Pulumi gates:prod; CFN Gates:; Dhall gates : Bool; Justfile recipe gates:; Cedar when { gates:.
-# R10: AsyncAPI/Istio/ArgoCD/Tekton/FlatBuffers/Cypher/Earthfile gates:; Nomad/Vault/Cap'n/Solidity/Rust cfg/Kotlin/csproj/SPARQL.
+    # R10: AsyncAPI/Istio/ArgoCD/Tekton/FlatBuffers/Cypher/Earthfile gates:; Nomad/Vault/Cap'n/Solidity/Rust cfg/Kotlin/csproj/SPARQL.
+    # R12: Traefik/Envoy/NATS/ClickHouse/dbt/Crossplane/Flux/RabbitMQ/ES/Swift/Elixir/Julia/Kong/Spinnaker gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -302,7 +303,66 @@ def route_heuristic(prompt: str) -> Lane:
             # R10: messaging-only / GitOps / schema-only gates: prose
             r"|gates:\s+is\s+messaging"
             r"|gates:\s+is\s+(?:CI|schema)\b"
-            r"|gates:\s+mention",
+            r"|gates:\s+mention"
+            # R12: Traefik middleware gates: stripPrefix
+            r"|gates\s*:\s*stripPrefix\b"
+            r"|traefik\s+.*gates:"
+            r"|middleware\s+gates:"
+            # R12: Envoy filter gates: HTTP
+            r"|gates\s*:\s*HTTP\b"
+            r"|envoy\s+.*gates:"
+            r"|filter\s+gates:\s*HTTP"
+            # R12: NATS subject gates: publish
+            r"|gates\s*:\s*publish\b"
+            r"|nats\s+.*gates:"
+            r"|subject\s+.*gates:"
+            # R12: ClickHouse setting gates: Readonly
+            r"|gates\s*:\s*Readonly\b"
+            r"|clickhouse\s+.*gates:"
+            r"|setting\s+gates:"
+            # R12: dbt model gates: ephemeral
+            r"|gates\s*:\s*ephemeral\b"
+            r"|dbt\s+.*gates:"
+            r"|model\s+config\s+gates:"
+            # R12: Crossplane claim gates: Ready
+            r"|gates\s*:\s*Ready\b"
+            r"|crossplane\s+.*gates:"
+            r"|claim\s+gates:"
+            # R12: Flux Kustomization gates: prune
+            r"|gates\s*:\s*prune\b"
+            r"|flux\s+.*gates:"
+            r"|kustomization\s+.*gates:"
+            # R12: RabbitMQ policy gates: ha-mode
+            r"|gates\s*:\s*ha-mode\b"
+            r"|rabbitmq\s+.*gates:"
+            r"|policy\s+.*gates:\s*ha"
+            # R12: Elasticsearch ingest gates: set
+            r"|gates\s*:\s*set\b"
+            r"|elasticsearch\s+.*gates:"
+            r"|ingest\s+(?:pipeline\s+)?gates:"
+            # R12: Swift property gates: Wrapped
+            r"|gates\s*:\s*Wrapped\b"
+            r"|swift\s+.*gates:"
+            r"|propertywrapper\s+.*gates:"
+            # R12: Elixir attribute gates: :atom
+            r"|gates\s*:\s*:\w+"
+            r"|elixir\s+.*gates:"
+            r"|@gates\s*:"
+            r"|attribute\s+gates:"
+            # R12: Julia macro gates: Symbol
+            r"|gates\s*:\s*Symbol\b"
+            r"|julia\s+.*gates:"
+            r"|macro\s+@gates:"
+            # R12: Kong plugin gates: rate-limiting
+            r"|gates\s*:\s*rate-limiting\b"
+            r"|kong\s+.*gates:"
+            r"|plugin\s+gates:"
+            # R12: Spinnaker stage gates: manualJudgment
+            r"|gates\s*:\s*manualJudgment\b"
+            r"|spinnaker\s+.*gates:"
+            r"|stage\s+gates:"
+            # R12: proxy / messaging / DB / SQL / k8s / GitOps / broker / search / language / BEAM / gateway / CD prose
+            r"|gates:\s+is\s+(?:proxy|messaging|DB|SQL|k8s|GitOps|broker|search|language|BEAM|gateway|CD)\b",
             text,
             re.I,
         )
@@ -858,6 +918,10 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r12' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r12.json"
+        elif 'r11' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r11.json"
         elif 'r10' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r10.json"
         elif 'r9' in hp:

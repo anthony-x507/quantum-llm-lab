@@ -1,3 +1,6 @@
+## 2026-09-24 — tip-hardneg-r12 polish (side; not folded)
+Branch `frontier/tip-hardneg-r12` from tip `a27b6fd` (post motion-r4; brief pin `3f5f1b1` advanced). R12 router **6/52→52/52** · verifier **44/44**; mixed (d) **1.0**; R1–R10+LP held; motion **100%** / collision **100%** / inverse_cv **99.82%** cited from tip. Novel: Traefik / Envoy / NATS / ClickHouse / dbt / Crossplane / Flux / RabbitMQ / ES / Swift / Elixir / Julia / Kong / Spinnaker. See `docs/FRONTIER-CODIGO-VIVO-TIP-R12.md`. **Not folded.**
+
 ## 2026-09-24 — fold tip-vision-ground → codigo-vivo-tip
 Rebase `5a74c4a`/`06017ae`/`04b0738`/`810a8bf` onto `9cc5ed5` → `78ce050`+`5775665`+`2c5f1e5`+`ec65f66` FF. CPU unified **1.0** (re-smoke); vision BASE **1.000** (10/10); circ **2/2**; inverse_cv **99.82%**; collision physics **100%** (n=40/2850); choose_safest **100%**; R10 **52/52·44/44**; motion **97.5%**; pillars 26/26; hardneg 18/18; `wired_to_vlm`; freezes retained incl. inverse_r2 + r10 + motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_vision_ground_100pct_20260924_134441`. Motion-r4 / R11 / distance-mid / TTI **not** folded. See SCOREBOARD + TIP-VISION-GROUND.
 

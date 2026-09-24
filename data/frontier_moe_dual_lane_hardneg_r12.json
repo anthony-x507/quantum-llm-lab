@@ -1,0 +1,628 @@
+{
+  "method": "heuristic",
+  "n": 52,
+  "hits": 52,
+  "misses": 0,
+  "score": "52/52",
+  "rate": 1.0,
+  "by_family": {
+    "traefik_middleware_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "envoy_filter_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "nats_subject_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "clickhouse_setting_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "dbt_model_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "crossplane_claim_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "flux_kustomization_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "rabbitmq_policy_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "elasticsearch_ingest_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "swift_property_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "elixir_attribute_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "julia_macro_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "kong_plugin_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "spinnaker_stage_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "ent_control_r12": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r12": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r12": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "base_python_control_r12": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "r12_traefik_01",
+      "family": "traefik_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: stripPrefix'). Traefik middleware. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_traefik_02",
+      "family": "traefik_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: stripPrefix'\nprint(t.count('gates'))\n# Traefik middleware gates: — not",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_traefik_03",
+      "family": "traefik_middleware_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 6*3. Traefik middleware gates: stripPrefix is proxy onl",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_envoy_01",
+      "family": "envoy_filter_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: HTTP'). Envoy filter. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_envoy_02",
+      "family": "envoy_filter_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "e='gates: HTTP'\nprint(len(e))\n# Envoy HTTP filter gates: — not circuit. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_envoy_03",
+      "family": "envoy_filter_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 15. Envoy filter gates: HTTP is proxy only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_nats_01",
+      "family": "nats_subject_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: publish'). NATS subject. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_nats_02",
+      "family": "nats_subject_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "n='gates: publish'\nprint(n.count('gates'))\n# NATS subject ACL gates: — not circu",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_nats_03",
+      "family": "nats_subject_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 4*4. NATS subject gates: publish is messaging only. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_ch_01",
+      "family": "clickhouse_setting_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Readonly'). ClickHouse setting. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_ch_02",
+      "family": "clickhouse_setting_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "c='gates: Readonly'\nprint(c.count('gates'))\n# ClickHouse setting gates: — not ci",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_ch_03",
+      "family": "clickhouse_setting_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 17. ClickHouse gates: Readonly is DB only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_dbt_01",
+      "family": "dbt_model_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: ephemeral'). dbt model. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_dbt_02",
+      "family": "dbt_model_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "d='gates: ephemeral'\nprint(len(d))\n# dbt model config gates: — not circuit. ONLY",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_dbt_03",
+      "family": "dbt_model_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 5*4. dbt model gates: ephemeral is SQL only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_xp_01",
+      "family": "crossplane_claim_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Ready'). Crossplane claim. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_xp_02",
+      "family": "crossplane_claim_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "x='gates: Ready'\nprint(x.count('gates'))\n# Crossplane Composite claim gates: — n",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_xp_03",
+      "family": "crossplane_claim_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 19. Crossplane claim gates: Ready is k8s only. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_flux_01",
+      "family": "flux_kustomization_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: prune'). Flux Kustomization. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_flux_02",
+      "family": "flux_kustomization_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "f='gates: prune'\nprint(len(f))\n# Flux Kustomization gates: — not circuit. ONLY c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_flux_03",
+      "family": "flux_kustomization_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 7*3. Flux Kustomization gates: prune is GitOps only. ON",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_rmq_01",
+      "family": "rabbitmq_policy_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: ha-mode'). RabbitMQ policy. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_rmq_02",
+      "family": "rabbitmq_policy_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "r='gates: ha-mode'\nprint(r.count('gates'))\n# RabbitMQ policy definition gates: —",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_rmq_03",
+      "family": "rabbitmq_policy_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 22. RabbitMQ policy gates: ha-mode is broker only. ONLY",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_es_01",
+      "family": "elasticsearch_ingest_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: set'). Elasticsearch ingest. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_es_02",
+      "family": "elasticsearch_ingest_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "e='gates: set'\nprint(e.count('gates'))\n# Elasticsearch ingest pipeline gates: — ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_es_03",
+      "family": "elasticsearch_ingest_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 8*3. Elasticsearch ingest gates: set is search only. ON",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_swift_01",
+      "family": "swift_property_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Wrapped'). Swift property. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_swift_02",
+      "family": "swift_property_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "s='gates: Wrapped'\nprint(len(s))\n# Swift @propertyWrapper gates: — not circuit. ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_swift_03",
+      "family": "swift_property_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 23. Swift property gates: Wrapped is language only. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_elixir_01",
+      "family": "elixir_attribute_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: :atom'). Elixir attribute. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_elixir_02",
+      "family": "elixir_attribute_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "a='gates: :atom'\nprint(a.count('gates'))\n# Elixir module attribute @gates: — not",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_elixir_03",
+      "family": "elixir_attribute_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 9*2. Elixir attribute gates: :atom is BEAM only. ONLY c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_julia_01",
+      "family": "julia_macro_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Symbol'). Julia macro. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_julia_02",
+      "family": "julia_macro_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "j='gates: Symbol'\nprint(j.count('gates'))\n# Julia macro @gates: — not circuit. O",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_julia_03",
+      "family": "julia_macro_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 25. Julia macro gates: Symbol is language only. ONLY co",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_kong_01",
+      "family": "kong_plugin_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: rate-limiting'). Kong plugin. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_kong_02",
+      "family": "kong_plugin_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "k='gates: rate-limiting'\nprint(len(k))\n# Kong gateway plugin gates: — not circui",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_kong_03",
+      "family": "kong_plugin_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 11*2. Kong plugin gates: rate-limiting is gateway only.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_spin_01",
+      "family": "spinnaker_stage_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: manualJudgment'). Spinnaker stage. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_spin_02",
+      "family": "spinnaker_stage_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "p='gates: manualJudgment'\nprint(p.count('gates'))\n# Spinnaker pipeline stage gat",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_spin_03",
+      "family": "spinnaker_stage_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 26. Spinnaker stage gates: manualJudgment is CD only. O",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_ent_01",
+      "family": "ent_control_r12",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelaz",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r12_ent_02",
+      "family": "ent_control_r12",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separabl",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r12_vis_01",
+      "family": "vision_control_r12",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. How many dots are visible? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r12_vis_02",
+      "family": "vision_control_r12",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the chalkboard. How many letters? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r12_base_01",
+      "family": "base_control_r12",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Thanks. Ignore Traefik middleware gates: stripPrefix in the README. No code, no ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r12_base_02",
+      "family": "base_control_r12",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Please ignore the Envoy filter gates: HTTP phrase. Chat only — no program, no ci",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r12_base_03",
+      "family": "base_control_r12",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Hello — Flux gates: prune is GitOps only. No code, no circuit, no pennylane.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r12_base_04",
+      "family": "base_control_r12",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Weather update. Kong gates: rate-limiting mention. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r12_ctrl_01",
+      "family": "base_python_control_r12",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r12_ctrl_02",
+      "family": "base_python_control_r12",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(sum(range(4)))\n# plain. ONLY code.",
+      "ent_adapter_blocked": true
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_r12_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}
