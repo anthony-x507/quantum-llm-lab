@@ -1,7 +1,7 @@
 # FRONTIER — Código-vivo tip scoreboard
 
 **Branch:** `frontier/codigo-vivo-tip`  
-**Written:** 2026-09-24 11:31:30 ET · Mac-111 (`074c6626-…`) · tip `0dd7b79`  
+**Written:** 2026-09-24 12:03:20 ET · Mac-111 (`074c6626-…`) · tip `c11ccac`  
 **Claim scope:** classical MoE router + `python -I` verifier + prior-replay ent/vision + GT-free circuit-graph scaffold on ent + mlx vision parse polish. **NO quantum-advantage claims.**
 
 ## Tip composition (merges / folds)
@@ -20,6 +20,7 @@
 | hardneg R3 polish | `5c67267` | R3 router 35/35; floor **1.0** held |
 | `frontier/scaffold-wire-vlm` | `ae62ce2` | fold wire→VLM (`text_scaffold_prefix`); rebase `8f5e694`→`e680271` then FF; `wired_to_vlm=true` |
 | `frontier/tip-hardneg-r4` | `0dd7b79` | fold R4 polish `40f1d7c` (rebase onto `4e36548` → `11740a6` + sync); R4 40/40; floor **1.0** held |
+| `frontier/tip-mlx-largern` | `c11ccac` | fold mlx LIVE larger-n `d65eb69`/`75f6c0a` (rebase onto `01ddabd` → `23a9b7a`+`c11ccac`); py8/ent16/vis16 unified **1.0**; CPU floor **1.0** held |
 
 **Metric policy:** Prefer vision **1.0** / overall **1.0** from `mixed-freeze-vision` over scaffold-merge / R2-port scoreboards that still show vis **0.9** / overall **0.9667**. Keep scaffold wiring + R2 reinforces + anti-think.
 
@@ -141,6 +142,36 @@
 | R4 metrics | `data/freeze_metrics/codigo_vivo_tip_adv_r4_20260924.json` |
 | Mixed reconfirm | `data/frontier_moe_verifier_mixed_{smoke,cpu,unified}.json` |
 
+
+## FOLD — tip-mlx-largern → tip (overall 1.0 held)
+
+**When:** 2026-09-24 12:03:20 ET · Mac-111 (`074c6626-…`)  
+**Method:** tip advanced with R4 fold `01ddabd` → rebase `frontier/tip-mlx-largern` (`75f6c0a` / feat `d65eb69`, parent `0dd7b79`) onto tip → `23a9b7a` + stamp `c11ccac` (FF merge). Expanded LIVE pool moved to `mixed_items_largern.json`; tip `mixed_items.json` kept for CPU floor.  
+**Claim:** NO quantum advantage. MLX LIVE larger-n evidence fold. Prior freezes **NOT abandoned**. Separable `scene_0222` flaky — **evidence folded, not fixed**.
+
+| Lock | Value |
+|------|-------|
+| overall (d unified) CPU | **1.0000** (py1 / ent1 / vis1) |
+| MoE Δ overall | **+0.3334** visible |
+| pillars / hardneg smoke | **26/26 · 18/18** |
+| hardneg R1 / R2 / R3 / R4 | **18/18 · 22/22 · 35/35 · 40/40** |
+| R3 / R4 verifier loop | **28/28 · 32/32** (unified 1.0) |
+| MLX LIVE largern (d) | **1.0000** (py8/ent16/vis16 · Δ vs CPU **0**) |
+| `wired_to_vlm` | **true** (`text_scaffold_prefix`) |
+| `ent_never_on_python` | **true** |
+| `prompt_touches_gt` | **false** |
+| floor held | **yes** (≥0.967, actual 1.0) |
+| platform freeze `f0da3e7` | **retained** |
+| MLX+R3 freeze `5c67267` / `codigo_vivo_tip_mlx_r3_…` | **retained** |
+| polish_r4 `40f1d7c` / `tip_moe_verifier_polish_r4_…` | **retained** |
+
+| Artifact | Path |
+|----------|------|
+| LARGERN doc | `docs/FRONTIER-CODIGO-VIVO-TIP-MLX-LARGERN.md` |
+| Primary merged | `data/frontier_moe_verifier_mixed_mlx_live_pillars_largern_merged.json` |
+| LIVE pool | `data/bench_live/mixed_items_largern.json` |
+| Mixed reconfirm | `data/frontier_moe_verifier_mixed_{smoke,cpu,unified}.json` |
+
 ## LOCK / anti-contam
 
 - Freeze mixed unified overall **≥0.9667** (docs ~0.967); polished floor held at **1.0**. Never abandon.
@@ -149,7 +180,7 @@
 
 ## Live retest (this tip)
 
-**Re-smoke @ 2026-09-24 11:31:30 ET** (fold tip-hardneg-r4 @ `0dd7b79`) · Mac-111
+**Re-smoke @ 2026-09-24 12:03:20 ET** (fold tip-mlx-largern @ `c11ccac`) · Mac-111
 
 | Check | Result |
 |-------|--------|
@@ -165,6 +196,7 @@
 | Hardneg R3 router | **35/35 (1.0)** |
 | Hardneg R4 router | **40/40 (1.0)** |
 | R3 / R4 verifier loop | **28/28 · 32/32** |
+| MLX LIVE largern (d) | **1.0000** (n 8/16/16 · Δ vs CPU 0) |
 | Floor ≥0.967 | **held at 1.0** |
 
 
@@ -234,6 +266,7 @@ Detail: `docs/FRONTIER-CODIGO-VIVO-TIP-R3.md` · metrics `data/freeze_metrics/co
 | `mixed-with-freeze-r2` `7211f78` | not full-merged (would drop scaffold + revert vis→0.9) | Folded `run_hardneg` CLI + docs/metrics; **did not** take their 0.9667 unified JSON |
 | `scaffold-wire-vlm` `8f5e694`→`ae62ce2` | none (rebase onto `e680271` clean) | FF into tip; re-smoke overall **1.0**; freezes retained |
 | `tip-hardneg-r4` `40f1d7c`→`11740a6` | mixed `{cpu,unified}.json` | **Ours (tip scaffold-wire smoke)**; re-smoke after FF → overall **1.0**; freezes retained |
+| `tip-mlx-largern` `75f6c0a`→`c11ccac` | `mixed_items.json` (expanded n) | **Tip CPU pool restored**; LIVE pool → `mixed_items_largern.json`; re-smoke overall **1.0**; freezes retained; sep flaky not fixed |
 
 ## Reproduce
 
@@ -255,6 +288,9 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 
 ## Artifacts
 
+- `data/frontier_moe_verifier_mixed_mlx_live_pillars_largern_merged.json`
+- `data/bench_live/mixed_items_largern.json`
+- `docs/FRONTIER-CODIGO-VIVO-TIP-MLX-LARGERN.md`
 - `data/frontier_moe_verifier_mixed_{smoke,cpu,unified}.json`
 - `data/frontier_moe_dual_lane_hardneg.json` / `_r2.json` / `_r3.json`
 - `data/frontier_moe_verifier_hardneg_r3.json`
@@ -306,5 +342,5 @@ Fold scaffold→VLM wire (platform + MLX+R3 freezes retained): tip `ae62ce2` · 
 | (c) verifier-on-python | 1.000 | 0.000 | 1.000 | 0.667 |
 | (d) unified | **1.000** | **1.000** | **1.000** | **1.000** |
 
-n honest: py=8 ent=16 vis=16 · Δ vs CPU 1.0 = **0.0** · floor held · Mac-111 only · see `docs/FRONTIER-CODIGO-VIVO-TIP-MLX-LARGERN.md`
+n honest: py=8 ent=16 vis=16 · Δ vs CPU 1.0 = **0.0** · floor held · Mac-111 only · **FOLDED** @ 12:03 ET · see `docs/FRONTIER-CODIGO-VIVO-TIP-MLX-LARGERN.md`
 

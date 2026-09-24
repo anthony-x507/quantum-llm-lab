@@ -101,7 +101,7 @@ def _ent_adapter() -> Path | None:
 
 
 def run_python_live(n: int, rounds: int) -> dict[str, Any]:
-    mixed_blob = json.loads((ROOT / "data/bench_live/mixed_items.json").read_text())
+    mixed_blob = json.loads((ROOT / "data/bench_live/mixed_items_largern.json").read_text())
     items = mixed._py_items_for_ver(mixed_blob)[:n]
     t0 = time.time()
     py_eval = mixed.run_python_paths(
@@ -119,7 +119,7 @@ def run_python_live(n: int, rounds: int) -> dict[str, Any]:
 
 
 def run_ent_live(n: int) -> dict[str, Any]:
-    mixed_blob = json.loads((ROOT / "data/bench_live/mixed_items.json").read_text())
+    mixed_blob = json.loads((ROOT / "data/bench_live/mixed_items_largern.json").read_text())
     sids = [it["scene_id"] for it in (mixed_blob.get("entanglement") or [])][:n]
     # ensure scenes resolvable under tip ROOT
     missing = []
@@ -184,7 +184,7 @@ def run_ent_live(n: int) -> dict[str, Any]:
 
 
 def _vis_items_for_bench(n: int) -> list[dict[str, Any]]:
-    mixed_blob = json.loads((ROOT / "data/bench_live/mixed_items.json").read_text())
+    mixed_blob = json.loads((ROOT / "data/bench_live/mixed_items_largern.json").read_text())
     out = []
     for it in mixed_blob.get("vision") or []:
         if not it.get("score_accuracy", True):

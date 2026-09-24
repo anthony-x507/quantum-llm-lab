@@ -1,9 +1,9 @@
 # Frontier — Código-vivo tip · MLX LIVE mixed pillars · larger-n
 
-**Evidence branch:** `frontier/tip-mlx-largern`  
-**Tip base:** local `frontier/codigo-vivo-tip` (R4 folded; MLX+R3 retained) · origin tip still ~`4e36548`  
+**Evidence branch:** `frontier/tip-mlx-largern` (folded into tip)  
+**Tip:** `frontier/codigo-vivo-tip` (R4+scaffold retained; this fold)  
 **Host:** Mac-111 (`074c6626-0440-4817-9829-6bae77c578d6`) · **Studio** Mac-198 **OFFLINE**  
-**Written:** 2026-09-24 ~11:58 ET  
+**Written:** 2026-09-24 ~11:58 ET · **Folded:** 2026-09-24 12:02 ET  
 **Model:** `mlx-community/Qwen3-VL-8B-Thinking-4bit` · effective **5.761 GB** (ready)
 
 ## Goal
@@ -62,7 +62,16 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `data/frontier_moe_verifier_mixed_mlx_live_pillars_largern_merged.json` — **primary** scoreboard
 - `data/frontier_moe_verifier_mixed_mlx_live_pillars_largern.json` — v1 full pass (py8+ent16sep-heavy+vis16)
 - `data/frontier_moe_verifier_mixed_mlx_live_pillars_largern_ent_v3.json` — ent v3 floor-hold
-- `data/bench_live/mixed_items.json` — expanded pools
+- `data/bench_live/mixed_items_largern.json` — expanded LIVE pools (tip keeps `mixed_items.json` for CPU floor n8/8/8)
 - `data/bench_live/vision_items/vis_math_09.png` … `vis_math_16.png`
 - `examples/moe_verifier_mixed_mlx_live_pillars.py` — reused runner
 - logs: `data/frontier_moe_verifier_mixed_mlx_live_pillars_largern*.log`
+
+## FOLDED into tip
+
+**When:** 2026-09-24 12:02 ET · Mac-111 (`074c6626-…`)  
+**Method:** tip advanced with R4 fold `01ddabd` → rebase `frontier/tip-mlx-largern` (`75f6c0a`/`d65eb69`) onto tip → `23a9b7a`+`c11ccac` FF.  
+**CPU re-smoke:** mixed unified overall **1.0** (py/ent/vis 1.0); tip `mixed_items.json` retained for CPU floor (largern pool → `mixed_items_largern.json`).  
+**Honesty retained:** separable `scene_0222` flaky — fold evidence only; not “fixed”.  
+**Freezes retained:** platform `f0da3e7` · MLX+R3 `5c67267` · polish_r4 `40f1d7c`.  
+**Anti-contam:** no `lora_adapter` writes; no merge `main`; `ent_never_on_python=true`.
