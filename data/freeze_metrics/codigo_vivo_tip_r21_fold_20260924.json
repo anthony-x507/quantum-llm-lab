@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-r21-fold",
   "written_et": "2026-09-24 15:58:31 ET",
-  "tip_sha": "PENDING",
-  "tip_sha_short": "PENDING",
+  "tip_sha": "636c34e7f16a1522add779c852300ab45a9fc6bd",
+  "tip_sha_short": "636c34e",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-hardneg-r21",
   "rebase_onto": "5ef34a7",
@@ -11,8 +11,8 @@
   "pre_feat_sha_full": "590e9afd6f685952d7393713299f93a74967ca37",
   "pre_side_sha": "50e60b2",
   "pre_side_sha_full": "50e60b2e580968354b66ad79df7e9ce4b94536ed",
-  "post_port_feat_sha": "PENDING",
-  "post_port_feat_sha_full": "PENDING",
+  "post_port_feat_sha": "636c34e7f16a1522add779c852300ab45a9fc6bd",
+  "post_port_feat_sha_full": "636c34e7f16a1522add779c852300ab45a9fc6bd",
   "method": "cherry-pick 590e9af onto 5ef34a7; merge R12+R13+R14+R15+R16+R17+R18+R19+R20+R21 gates_ops; keep tip STATUS+mixed/LP/r7\u2013r12 JSON ours",
   "policy": "Fold R21 into tip; keep R20 52/52\u00b744/44 + R19 52/52\u00b744/44 + mixed 1.0 + choose_n n=80 + tti-cold freeze + pillars 37 + circ 5/5; RO lora_adapter; tip vis BASE; no merge main; do NOT fold R22+.",
   "holds": {
