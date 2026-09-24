@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-r13-fold",
   "written_et": "2026-09-24 14:44:57 ET",
-  "tip_sha": "PENDING_FOLD",
-  "tip_sha_short": "PENDING",
+  "tip_sha": "cab187397c5f174122454c5ec0834bfe8d6f657c",
+  "tip_sha_short": "cab1873",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-hardneg-r13",
   "rebase_onto": "f052420",
@@ -80,5 +80,5 @@
   "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
   "conflict_resolution": "STATUS+mixed/r7-r10/LP JSON ours; router/verifier merged R11+R12+R13 gates_ops",
   "freeze_name": "codigo_vivo_tip_r13_100pct_20260924_144457",
-  "fold_sha": "PENDING_FOLD"
+  "fold_sha": "cab187397c5f174122454c5ec0834bfe8d6f657c"
 }

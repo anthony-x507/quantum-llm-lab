@@ -4,8 +4,8 @@
   "domain": "codigo_vivo_tip_r13",
   "pct": 100,
   "band": "100pct",
-  "git_sha": "PENDING_FOLD",
-  "git_sha_short": "PENDING",
+  "git_sha": "cab187397c5f174122454c5ec0834bfe8d6f657c",
+  "git_sha_short": "cab1873",
   "artifact": "data/frontier_moe_verifier_hardneg_r13.json",
   "eval_path": "data/frontier_moe_verifier_hardneg_r13.json",
   "mixed_eval": "data/frontier_moe_verifier_mixed_unified.json",
@@ -97,5 +97,5 @@
   "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
   "freeze_name": "codigo_vivo_tip_r13_100pct_20260924_144457",
   "conflict_resolution": "STATUS+mixed/r7-r10/LP JSON ours; router/verifier merged R11+R12+R13 gates_ops",
-  "fold_sha": "PENDING_FOLD"
+  "fold_sha": "cab187397c5f174122454c5ec0834bfe8d6f657c"
 }

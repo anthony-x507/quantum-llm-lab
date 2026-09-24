@@ -12,7 +12,7 @@
 | inverse_cv · collision · choose_safest | **100% · 100% · 100%** (n=40 / 2850) |
 | pillars / hardneg smoke | **26/26 · 18/18** |
 | Freeze | `codigo_vivo_tip_r13_100pct_20260924_144457` |
-| Tip SHA (fold) | `PENDING_FOLD` |
+| Tip SHA (fold) | `cab1873` |
 | Policy | RO `data/lora_adapter/`; no main; far+mid+inv+R12 floors kept; future-track/circ/R14+ not folded |
 
 **Method:** cherry-pick `304a45b`/`ca29220` onto `f052420` → `845a292`. Conflicts: STATUS+mixed/r7–r10/LP JSON ours; router/verifier merged R11+R12+R13 gates_ops.
