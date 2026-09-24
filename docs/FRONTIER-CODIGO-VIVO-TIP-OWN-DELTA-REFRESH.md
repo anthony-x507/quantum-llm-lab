@@ -1,6 +1,6 @@
 # FRONTIER — Código-vivo tip own-delta refresh
 
-**Branch:** `frontier/tip-own-delta-refresh` (from tip `3b10288`)  
+**Branch:** `frontier/codigo-vivo-tip` (folded from `frontier/tip-own-delta-refresh`; measured @ `3b10288`, rebased onto `4291aab`)  
 **Written:** 2026-09-24 ~12:50 ET · Mac-111 (`074c6626-…`)  
 **Claim scope:** BASE vs OUR RO adapters on tip MoE+verifier dual-lane **after label-protect freeze**. **NO quantum-advantage claims.**
 
@@ -106,3 +106,11 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `data/frontier_moe_verifier_mixed_cpu_own_delta_refresh.json`
 - `data/frontier_tip_own_delta_refresh_mlx_sample.json`
 - `data/tip_own_delta_refresh_adapter_ro_snapshot_{before,after}.json`
+
+## FOLDED into tip
+
+**When:** 2026-09-24 12:51:49 ET · Mac-111 (`074c6626-…`)  
+**Tip after FF:** `1b56131` (rebase onto `4291aab` + FF).  
+**Prior freezes retained:** platform / mlx_r3 / post_polish / R5 tip / label_protect / **R6 tip** / polish_r6.  
+**Re-smoke:** mixed (d) **1.0**; LP **43/43**; R5 **44/44**; R6 **48/48**; `ent_never_on_python=true`.
+

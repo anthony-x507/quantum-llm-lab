@@ -26,6 +26,7 @@
 | `frontier/tip-hardneg-r5` | `55bdfb7` | fold R5 polish `9a12fbc` (rebase onto `b1c7091` → `49d7ccc` + pin `55bdfb7`); R5 44/44·36/36; floor **1.0** held |
 | `frontier/tip-label-protect` | `8b0772a` | fold label-protect/fall-super (`751ed03`+`8b0772a` onto `32fed9b`); router 43/43·verifier 32/32; floor **1.0** held |
 | `frontier/tip-hardneg-r6` | `259e4a4` | fold R6 polish `f3fcf1e` (rebase onto `3b10288` → `f3fcf1e` + pin `259e4a4`); R6 48/48·40/40; LP held 43/43·32/32; floor **1.0** held |
+| `frontier/tip-own-delta-refresh` | `1b56131` | fold own-delta refresh (rebase onto `4291aab`); RAW Py−0.062 Ent+1.0 Vis−0.200; dual-lane **1.0**; floor **1.0** held |
 
 **Metric policy:** Prefer vision **1.0** / overall **1.0** from `mixed-freeze-vision` over scaffold-merge / R2-port scoreboards that still show vis **0.9** / overall **0.9667**. Keep scaffold wiring + R2 reinforces + anti-think.
 
@@ -585,11 +586,12 @@ Anti-contam **CLEAN**. Adapters RO unchanged. Platform / mlx_r3 / polish_r4 / **
 **CPU re-smoke after fold:** unified **1.0**; label-protect **43/43·32/32**; R1–R5 routers **18/18·22/22·35/35·40/40·44/44**; R3/R4/R5 verifier **28/28·32/32·36/36**; `wired_to_vlm` retained · R5 tip freeze `codigo_vivo_tip_r5_100pct_20260924_123727` **retained**; label-protect tip freeze `codigo_vivo_tip_label_protect_100pct_20260924_124608` **locked**.  
 Platform / mlx_r3 / post_polish / polish_r5 / R5 tip freezes **retained**. Never abandon.
 
-## Own-delta tip refresh @ `3b10288` — branch `frontier/tip-own-delta-refresh`
+## Own-delta tip refresh — FOLDED
 
-**When:** 2026-09-24 ~12:50 ET · Mac-111 · tip post label-protect freeze  
+**When:** measure ~12:50 ET · fold 2026-09-24 12:51:49 ET · Mac-111 · rebase onto `4291aab` → `1b56131` FF  
 **Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-OWN-DELTA-REFRESH.md`  
-**JSON:** `data/frontier_tip_own_delta_refresh_scoreboard.json`
+**JSON:** `data/frontier_tip_own_delta_refresh_scoreboard.json`  
+**Tip cited at measure:** `3b10288` · folded onto tip with R6 (`4291aab`)
 
 | pillar | base | adapter | Δ | tip dual-lane |
 |--------|------|---------|---|----------------|
@@ -600,4 +602,6 @@ Platform / mlx_r3 / post_polish / polish_r5 / R5 tip freezes **retained**. Never
 **CPU / MLX sample:** unified **1.0** / **1.0** (Δ=0). pillars 26/26 · hardneg 18/18 · `wired_to_vlm=true`.  
 **Honesty held:** RAW deltas unchanged vs prior own-delta; dual-lane still protects tip floor under label-protect+R5 composition.  
 `ro_mtime_unchanged=true`. Freezes retained incl. `codigo_vivo_tip_label_protect_100pct_20260924_124608`.
+
+**CPU re-smoke after fold:** unified **1.0**; LP **43/43**; R5 **44/44**; R6 **48/48**; pillars **26/26**; freezes retained incl. r6 + label_protect · 2026-09-24 12:51:49 ET.
 

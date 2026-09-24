@@ -7,6 +7,9 @@
 
 ---
 
+## 2026-09-24 — fold tip-own-delta-refresh → codigo-vivo-tip
+Rebase `9c9b4d3` onto `4291aab` → `1b56131` FF. CPU unified **1.0** (re-smoke); RAW Py−0.062 Ent+1.0 Vis−0.200; dual-lane held; freezes retained incl. r6 + label_protect. See SCOREBOARD + OWN-DELTA-REFRESH.
+
 ## 2026-09-24 — fold tip-hardneg-r6 → codigo-vivo-tip
 Rebase onto `3b10288` → `f3fcf1e`+`259e4a4` FF. CPU unified **1.0**; R6 48/48·40/40; LP 43/43·32/32; R1–R5 held. Freezes retained. See SCOREBOARD + TIP-R6.
 
