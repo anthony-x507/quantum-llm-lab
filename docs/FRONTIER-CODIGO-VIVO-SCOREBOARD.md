@@ -6,6 +6,9 @@
 
 
 
+
+## 2026-09-24 — fold tip-tti @ tip
+Cherry-pick `c483e46`→`6665e2c` onto `e70b23a`. TTI scorable **100%** (691/691 · 725/725); mixed **1.0**; R11 **52/52·44/44**; motion **100%**; inv **99.82%**; collision **100%**; freeze `codigo_vivo_tip_tti_fold_100pct_20260924_141146`. Distance-mid/R12/inv-r3 **not** folded.
 ## R11 TIP FREEZE / FOLD (overall 1.0) — tip HEAD after hardneg-r11 fold
 
 **Freeze id:** `codigo_vivo_tip_r11_100pct_20260924_140723`  

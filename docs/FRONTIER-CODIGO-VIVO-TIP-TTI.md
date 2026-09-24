@@ -1,11 +1,11 @@
 # FRONTIER — tip-tti (time-to-impact metric on collision/distance layer)
 
-**Branch:** `frontier/tip-tti`  
-**Base tip SHA:** `9cc5ed5` (`origin/frontier/codigo-vivo-tip`; newer than `fabef2b`)  
-**Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-tti` (Mac-111)  
-**When:** 2026-09-24 13:56:59 ET  
-**Freeze:** `codigo_vivo_tip_tti_100pct_20260924_135659`  
-**Scope:** Side-branch only — does **not** fold into tip; avoids tip-cv / tip-hardneg-r11 / tip-distance-mid / tip-motion-r4 / tip-vision-ground / tip-inverse-r2.
+**Status:** **FOLDED** into `frontier/codigo-vivo-tip` (cherry-pick rebase `c483e46` onto `e70b23a` → `6665e2c` FF-equivalent)  
+**Branch:** `frontier/tip-tti` (rebased feat retained) · tip `frontier/codigo-vivo-tip`  
+**Base tip at fold:** `e70b23a` (post R11) · feat from `9cc5ed5`  
+**When:** polish ~13:56 ET · fold 2026-09-24 14:12:08 ET · Mac-111 (`074c6626-…`)  
+**Freeze:** `codigo_vivo_tip_tti_fold_100pct_20260924_141146`  
+**Claim:** NO quantum advantage. CPU heuristic / physics oracle TTI % vs GT only.
 
 ## LOCK (Anthony / Leader)
 
@@ -88,10 +88,10 @@ cd /Users/anthony/Documents/quantum-llm-lab-tip-tti
 
 ## Non-goals / avoided
 
-- No merge to `main` / tip / tip-cv.
+- No merge to `main`. Tip fold complete.
 - No CloudAgent.
 - No write to `data/lora_adapter/`.
-- No tip-cv / tip-hardneg-r11 / tip-distance-mid / tip-motion-r4 / tip-vision-ground / tip-inverse-r2 worktrees.
+- Fold worktree: tip-cv only. Avoided tip-distance-mid / tip-distance-far / tip-hardneg-r12 / tip-hardneg-r13 / tip-inverse-r3.
 - No fake metrics.
 
 ## Blockers

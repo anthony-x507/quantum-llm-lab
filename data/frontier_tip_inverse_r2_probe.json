@@ -1,8 +1,8 @@
 {
   "schema": "frontier_tip_inverse_r2_probe",
-  "ts": "2026-09-24 14:07:23 ET",
+  "ts": "2026-09-24 14:10:27 ET",
   "domain": "collision_predictive",
-  "branch": "frontier/codigo-vivo-tip",
+  "branch": "frontier/tip-inverse-r2",
   "n_eval_seqs": 40,
   "metric_collision_correct_pct": 100.0,
   "metric_n_queries": 2850,
@@ -104,6 +104,5 @@
   "inverse_cv_overall_pct": 99.82,
   "collision_choose_safest_overall_pct": 100.0,
   "physics_freeze_100pct": true,
-  "inverse_target_ge_95": true,
-  "note_fold": "r11-fold re-smoke hold"
+  "inverse_target_ge_95": true
 }

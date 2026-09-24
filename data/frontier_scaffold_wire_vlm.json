@@ -1,7 +1,7 @@
 {
   "frontier": "scaffold-wire-vlm",
-  "written": "2026-09-24 13:17:54",
-  "parent_sha": "30194cb",
+  "written": "2026-09-24 14:11:29",
+  "parent_sha": "6665e2c",
   "branch": "frontier/scaffold-wire-vlm",
   "wired_to_vlm": true,
   "channel": "text_scaffold_prefix",
@@ -210,7 +210,7 @@
     ]
   },
   "ablation": {
-    "written": "2026-09-24 13:17:52",
+    "written": "2026-09-24 14:11:27",
     "router_method": "heuristic",
     "polish_features": false,
     "n_fixtures": 24,
@@ -279,7 +279,7 @@
     "scaffold_gt_leaks": 0,
     "ent_vision_scaffold_on": true
   },
-  "elapsed_s": 3.66,
+  "elapsed_s": 3.38,
   "claims": [
     "NO quantum-advantage claims",
     "wired_to_vlm=true via text_scaffold_prefix on MoE ent lane",
