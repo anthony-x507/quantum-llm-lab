@@ -4,8 +4,8 @@
   "domain": "codigo_vivo_tip_r7",
   "pct": 100,
   "band": "100pct",
-  "git_sha": "f586efd6791b4e15b645934bc368a29a3f1d89ec",
-  "git_sha_short": "f586efd",
+  "git_sha": "6f6489472e42f6c1b07b7a0bba54428e9076775c",
+  "git_sha_short": "6f64894",
   "artifact": "data/frontier_moe_verifier_hardneg_r7.json",
   "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
   "metrics": {

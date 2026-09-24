@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-r7-fold",
   "written_et": "2026-09-24 12:56:00 ET",
-  "tip_sha": "f586efd6791b4e15b645934bc368a29a3f1d89ec",
-  "tip_sha_short": "f586efd",
+  "tip_sha": "6f6489472e42f6c1b07b7a0bba54428e9076775c",
+  "tip_sha_short": "6f64894",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-hardneg-r7",
   "rebase_onto": "f0fe729",
@@ -47,5 +47,8 @@
     "lora_adapter_writes": false
   },
   "blockers": [],
-  "claims": "No quantum-advantage claims."
+  "claims": "No quantum-advantage claims.",
+  "git_sha": "6f6489472e42f6c1b07b7a0bba54428e9076775c",
+  "git_sha_short": "6f64894",
+  "fold_docs_sha": "6f6489472e42f6c1b07b7a0bba54428e9076775c"
 }
