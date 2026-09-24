@@ -33,6 +33,7 @@
 | `frontier/tip-distance-danger` | `fd07999` | fold distance-danger (rebase `110bcbc` onto `e2a950d` → `da55eac`+pin); DZ 30–70 m **100%**; floor **1.0** held |
 | `frontier/tip-collision-pred` | `3834ebe` | fold collision-pred (rebase `c52ea34`/`da7a628` onto `fd07999` → `3834ebe`+`30194cb` FF); CPU oracle **100%**; floor **1.0** held |
 | `frontier/tip-motion-r2` | `77d161a` | fold motion-r2 (rebase `c3cd0a4`/`9649df2` onto `4fe070e` → `77d161a`+`4d91a9c` FF); motion **91%**; floor **1.0** held |
+| `frontier/tip-collision-n` | `c79ab1a` | fold collision-n (rebase no-op on `763fb8c` → `c79ab1a`+`55277d9` FF); physics **100%** n=40/2850; floor **1.0** held |
 
 **Metric policy:** Prefer vision **1.0** / overall **1.0** from `mixed-freeze-vision` over scaffold-merge / R2-port scoreboards that still show vis **0.9** / overall **0.9667**. Keep scaffold wiring + R2 reinforces + anti-think.
 
@@ -631,6 +632,28 @@ Anti-contam **CLEAN** (`prompt_touches_gt=false`). Adapters RO mtime unchanged. 
 
 
 
+
+
+## Collision-n (eval expand 8→40) — FOLDED
+
+**Freeze:** `codigo_vivo_tip_collision_n_100pct_20260924_132559`  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-COLLISION-N.md`  
+**SHA:** feat `c79ab1a` · pin `55277d9` · fold FF onto tip `763fb8c` (rebase no-op)
+
+| Lock | Value |
+|------|-------|
+| collision_physics overall | **100%** (2850 queries / **40** eval) |
+| collision_choose_safest | **100%** |
+| inverse_cv overall | 89.82% |
+| ablation (phys − inv) | +10.18 pp |
+| n_eval before→after | 8 → **40** |
+| n_queries before→after | 555 → **2850** |
+| contam / retrieval | **PASS** / **ok** |
+| mixed (d) unified | **1.0** (re-smoke) |
+| motion coverage | **91%** held |
+| prior collision_pred freeze | **retained** (`…131846`, n=8 history) |
+
+**CPU re-smoke after fold:** unified **1.0**; collision probe reconfirmed 100% @ n=40; R8+LP held; freezes retained incl. motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion + r7 + post_od2 + LP + r6 + priors. Adapters RO. **R9 not folded.**
 
 ## Motion-r2 (coverage reinforce 44%→91%) — FOLDED
 

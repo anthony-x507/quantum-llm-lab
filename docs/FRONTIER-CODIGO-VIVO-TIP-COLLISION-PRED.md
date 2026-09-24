@@ -88,3 +88,5 @@ cd /Users/anthony/Documents/quantum-llm-lab-tip-collision-pred
 **Adapters:** `data/lora_adapter/` RO mtime unchanged (2026-09-24 10:57:17).  
 **Freeze:** `codigo_vivo_tip_collision_pred_100pct_20260924_131846`.
 
+**Later folded:** tip-collision-n @ `c79ab1a` / freeze `codigo_vivo_tip_collision_n_100pct_20260924_132559` (eval **8→40**; physics 100% held).
+

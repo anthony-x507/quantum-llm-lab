@@ -1,6 +1,6 @@
 {
   "schema": "frontier_tip_collision_n_probe",
-  "ts": "2026-09-24 13:25:53 ET",
+  "ts": "2026-09-24 13:28:39 ET",
   "domain": "collision_predictive",
   "branch": "frontier/tip-collision-n",
   "n_eval_seqs": 40,
@@ -100,7 +100,7 @@
     }
   },
   "quantum_adapter_touched": false,
-  "floor_resmoke": "N/A \u2014 side-branch collision_predictive only; tip router / mixed untouched; mixed floor 1.0 assumed held",
+  "floor_resmoke": "mixed (d) unified 1.0 @ tip-cv fold re-smoke 2026-09-24 13:28:19 ET; collision physics recheck 100% n=40/2850",
   "n_expand": {
     "before_n_eval_seqs": 8,
     "before_n_queries": 555,
@@ -119,5 +119,9 @@
   "physics_freeze_100pct": true,
   "base_tip_sha": "763fb8c",
   "freeze_sha": "c79ab1a0f99ad6784144f2e6c21771edacb8f59b",
-  "freeze_id": "codigo_vivo_tip_collision_n_100pct_20260924_132559"
+  "freeze_id": "codigo_vivo_tip_collision_n_100pct_20260924_132559",
+  "folded_into_tip": true,
+  "fold_et": "2026-09-24 13:29:35 ET",
+  "mixed_d_unified": 1.0,
+  "motion_coverage_known": 0.91
 }

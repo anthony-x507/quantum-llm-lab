@@ -1,5 +1,8 @@
 # Estado de avance
 
+## 2026-09-24 — fold tip-collision-n → codigo-vivo-tip
+Rebase `55277d9`/`c79ab1a` onto `763fb8c` → already up to date; FF. CPU unified **1.0** (re-smoke); collision physics **100%** (2850 queries / **40** eval); motion **91%**; R8 52/52·44/44; LP 43/43·32/32; pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_collision_n_100pct_20260924_132559`. R9 **not** folded. See SCOREBOARD + TIP-COLLISION-N.
+
 ## 2026-09-24 — fold tip-motion-r2 → codigo-vivo-tip
 Rebase `9649df2`/`c3cd0a4` onto `4fe070e` → `77d161a`+`4d91a9c` FF. CPU unified **1.0** (re-smoke); motion coverage **91%** (132 ind + 50 corr; +47.0 pp vs 44%); R8 52/52·44/44; LP 43/43·32/32; pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. r8 + scaffold_motion + distance_danger + collision_pred (`codigo_vivo_tip_collision_pred_100pct_20260924_131846`). Freeze `codigo_vivo_tip_motion_r2_100pct_20260924_131537`. See SCOREBOARD + TIP-MOTION-R2.
 

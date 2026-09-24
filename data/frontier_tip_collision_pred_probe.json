@@ -1,8 +1,8 @@
 {
-  "schema": "frontier_tip_collision_n_probe",
-  "ts": "2026-09-24 13:25:53 ET",
+  "schema": "frontier_tip_collision_pred_probe",
+  "ts": "2026-09-24 13:28:39 ET",
   "domain": "collision_predictive",
-  "branch": "frontier/tip-collision-n",
+  "branch": "frontier/codigo-vivo-tip",
   "n_eval_seqs": 40,
   "metric_collision_correct_pct": 100.0,
   "metric_n_queries": 2850,
@@ -100,24 +100,7 @@
     }
   },
   "quantum_adapter_touched": false,
-  "floor_resmoke": "N/A \u2014 side-branch collision_predictive only; tip router / mixed untouched; mixed floor 1.0 assumed held",
-  "n_expand": {
-    "before_n_eval_seqs": 8,
-    "before_n_queries": 555,
-    "before_physics_pct": 100.0,
-    "after_n_eval_seqs": 40,
-    "after_n_queries": 2850,
-    "after_physics_pct": 100.0,
-    "target_n_eval_seqs": 40,
-    "seed_before": 24092445,
-    "seed_after": 24092446,
-    "split_before": "32/8",
-    "split_after": "160/40"
-  },
-  "freeze_update": true,
-  "physics_freeze_held": true,
-  "physics_freeze_100pct": true,
-  "base_tip_sha": "763fb8c",
-  "freeze_sha": "c79ab1a0f99ad6784144f2e6c21771edacb8f59b",
-  "freeze_id": "codigo_vivo_tip_collision_n_100pct_20260924_132559"
+  "floor_resmoke": "mixed (d) 1.0 held post tip-collision-n fold; physics 100% at n=40",
+  "n_expand_via": "frontier/tip-collision-n @ c79ab1a folded",
+  "prior_n8_freeze_retained": "codigo_vivo_tip_collision_pred_100pct_20260924_131846"
 }

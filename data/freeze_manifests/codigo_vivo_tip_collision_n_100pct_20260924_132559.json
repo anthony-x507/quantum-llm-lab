@@ -9,7 +9,7 @@
   "artifact": "data/frontier_tip_collision_n_probe.json",
   "collision_eval": "data/collision_predictive/EVAL_COLLISION_CPU.json",
   "base_tip_sha": "763fb8c4e813bf2333873efd3a7084d883f103ac",
-  "branch": "frontier/tip-collision-n",
+  "branch": "frontier/codigo-vivo-tip",
   "metrics": {
     "collision_physics_overall_pct": 100.0,
     "collision_choose_safest_overall_pct": 100.0,
@@ -23,15 +23,48 @@
     "collision_retrieval_ok": true,
     "mixed_d_unified": 1.0,
     "floor_held": true,
-    "floor_resmoke": "N/A"
+    "floor_resmoke": "mixed (d) 1.0 @ 2026-09-24 13:28:19 ET",
+    "motion_coverage_known": 0.91,
+    "r8_router": "52/52",
+    "r8_verifier": "44/44",
+    "label_protect_router": "43/43",
+    "label_protect_verifier": "32/32",
+    "pillars": "26/26",
+    "smoke": "12/12",
+    "wired_to_vlm": true,
+    "gt_leak": false,
+    "ent_never_on_python": true,
+    "motion_r2_retained": true,
+    "collision_pred_retained": true,
+    "distance_danger_retained": true,
+    "r8_retained": true,
+    "scaffold_motion_retained": true
   },
   "floors": {
     "mixed_d_unified": 1.0,
     "held": true,
     "collision_physics": 1.0,
-    "min_hold_pct": 80.0
+    "min_hold_pct": 80.0,
+    "motion_coverage": 0.91
   },
-  "policy": "RO data/lora_adapter/; no merge main; side-branch only; avoid tip-cv / tip-hardneg-r9 / tip-motion-r2 / tip-distance-danger; GT never at inference",
-  "note": "n-expand collision-pred eval 8\u219240 seqs / 555\u21922850 queries; physics oracle held 100%; CPU synth seed 24092446",
-  "prior_freeze_retained": "codigo_vivo_tip_collision_pred_100pct_20260924_131846"
+  "policy": "RO data/lora_adapter/; no merge main; fold into tip; retain motion_r2+collision_pred+distance_danger+r8+scaffold_motion+priors; GT never at inference; do NOT fold R9",
+  "note": "Fold tip-collision-n into tip; rebase no-op (already on 763fb8c); FF c79ab1a+55277d9; re-smoke mixed d=1.0; physics 100% n=40/2850; side freeze codigo_vivo_tip_collision_n_100pct_20260924_132559 pinned on tip",
+  "prior_freeze_retained": "codigo_vivo_tip_collision_pred_100pct_20260924_131846",
+  "retained_freezes": [
+    "codigo_vivo_tip_platform_100pct_20260924_111435",
+    "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",
+    "codigo_vivo_tip_post_polish_100pct_20260924_123210",
+    "codigo_vivo_tip_r5_100pct_20260924_123727",
+    "codigo_vivo_tip_label_protect_100pct_20260924_124608",
+    "codigo_vivo_tip_r6_100pct_20260924_124951",
+    "codigo_vivo_tip_post_od2_100pct_20260924_125301",
+    "codigo_vivo_tip_r7_100pct_20260924_125600",
+    "codigo_vivo_tip_scaffold_motion_100pct_20260924_130131",
+    "codigo_vivo_tip_r8_100pct_20260924_130950",
+    "codigo_vivo_tip_distance_danger_100pct_20260924_131243",
+    "codigo_vivo_tip_collision_pred_100pct_20260924_131846",
+    "codigo_vivo_tip_motion_r2_100pct_20260924_131537"
+  ],
+  "base_tip": "763fb8c",
+  "folded_et": "2026-09-24 13:29:35 ET"
 }

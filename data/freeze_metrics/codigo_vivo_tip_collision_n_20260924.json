@@ -1,7 +1,7 @@
 {
   "frontier": "codigo-vivo-tip-collision-n",
   "written_et": "2026-09-24 13:25:59 ET",
-  "branch": "frontier/tip-collision-n",
+  "branch": "frontier/codigo-vivo-tip",
   "base_tip": "763fb8c",
   "mixed_d_unified": 1.0,
   "collision_physics_pct": 100.0,
@@ -13,5 +13,9 @@
   "adapters_ro": true,
   "freeze_update": true,
   "freeze_id": "codigo_vivo_tip_collision_n_100pct_20260924_132559",
-  "feat_sha": "c79ab1a0f99ad6784144f2e6c21771edacb8f59b"
+  "feat_sha": "c79ab1a0f99ad6784144f2e6c21771edacb8f59b",
+  "folded_into_tip": true,
+  "fold_et": "2026-09-24 13:29:35 ET",
+  "floor_resmoke": "1.0 @ 2026-09-24 13:28:19 ET",
+  "motion_coverage_known": 0.91
 }
