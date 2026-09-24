@@ -84,5 +84,7 @@
     "NO quantum advantage",
     "Classical heuristic router + python -I verifier only",
     "Dual-lane protects tip floor while fall/super label traps are reinforced"
-  ]
+  ],
+  "git_sha": "2d866502891d6c35551fcdf0b5b52b56f362d8d1",
+  "git_sha_short": "2d86650"
 }

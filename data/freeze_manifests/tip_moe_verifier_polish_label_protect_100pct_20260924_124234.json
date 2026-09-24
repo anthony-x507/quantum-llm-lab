@@ -4,8 +4,8 @@
   "domain": "tip_moe_verifier_polish_label_protect",
   "pct": 100.0,
   "band": "100",
-  "git_sha": "PENDING_COMMIT",
-  "git_sha_short": "PENDING",
+  "git_sha": "2d866502891d6c35551fcdf0b5b52b56f362d8d1",
+  "git_sha_short": "2d86650",
   "artifact": "data/frontier_moe_verifier_hardneg_label_protect.json",
   "eval_path": "data/freeze_metrics/codigo_vivo_tip_adv_label_protect_20260924.json",
   "metrics": {
@@ -94,7 +94,9 @@
       "NO quantum advantage",
       "Classical heuristic router + python -I verifier only",
       "Dual-lane protects tip floor while fall/super label traps are reinforced"
-    ]
+    ],
+    "git_sha": "2d866502891d6c35551fcdf0b5b52b56f362d8d1",
+    "git_sha_short": "2d86650"
   },
   "policy": "LABEL-PROTECT / fall-super hardneg; NEVER drop freeze floor overall>=0.967 (prefer 1.0). RO data/lora_adapter/. No merge main. R1–R5 must hold. Tip freeze-busy → separate branch tip-label-protect.",
   "floor_held": true,
