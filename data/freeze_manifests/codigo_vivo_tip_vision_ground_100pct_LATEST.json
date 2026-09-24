@@ -40,5 +40,6 @@
     "label_protect",
     "scaffold_motion",
     "r3-r8"
-  ]
+  ],
+  "git_sha_docs_pin": "06017ae2e59f3d11cc4589ba139df329b2433fe6"
 }

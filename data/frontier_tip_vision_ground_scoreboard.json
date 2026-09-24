@@ -83,7 +83,9 @@
     "ro_before": "data/tip_vision_ground_adapter_ro_snapshot_before.json",
     "ro_after": "data/tip_vision_ground_adapter_ro_snapshot_after.json"
   },
-  "base_tip_note": "origin tip after motion-r3 fold (was 2d13d0a at brief start)",
-  "branch_sha": "5a74c4a973a3039c6f7e2762e48a72b3ad8ce891",
-  "branch_sha_short": "5a74c4a"
+  "base_tip_note": "origin tip after motion-r3 fold (brief allowed newer than 2d13d0a)",
+  "branch_sha": "06017ae2e59f3d11cc4589ba139df329b2433fe6",
+  "branch_sha_short": "06017ae",
+  "feat_sha": "5a74c4a973a3039c6f7e2762e48a72b3ad8ce891",
+  "feat_sha_short": "5a74c4a"
 }

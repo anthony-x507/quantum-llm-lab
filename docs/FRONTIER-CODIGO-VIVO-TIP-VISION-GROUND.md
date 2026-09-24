@@ -1,6 +1,6 @@
 # FRONTIER — Código-vivo tip vision-ground
 
-**Branch:** `frontier/tip-vision-ground` (from tip `2d13d0a`, post R9; motion-r3 **not** folded on origin)  
+**Branch:** `frontier/tip-vision-ground` (from tip `6624df1` (motion-r3 folded; brief allowed newer than `2d13d0a`))  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-vision-ground` · Mac-111  
 **Written:** 2026-09-24 13:44:41 ET  
 **Claim scope:** BASE vision bench reinforce via **prompt / parse / grounding only**. Tip vis pillar stays **BASE**. **NO quantum-advantage claims.**  
@@ -10,9 +10,9 @@
 
 | Field | Value |
 |-------|-------|
-| Tip base SHA | `2d13d0a` (`2d13d0a474f36c9cb6b435c3141b837c8da81c5b`) |
+| Tip base SHA | `6624df1` (`6624df1e9bdad1cdb7ddb4cb925ae018bb93968c`) |
 | Branch | `frontier/tip-vision-ground` |
-| Branch SHA |  () |
+| Branch SHA | `06017ae` (`06017ae2e59f3d11cc4589ba139df329b2433fe6`) · feat `5a74c4a` |
 | Host | Mac-111 (`074c6626-…`) |
 | Adapters | **READ-ONLY** (`ro_mtime_unchanged=true` on `*.safetensors`) |
 | Freeze | `codigo_vivo_tip_vision_ground_100pct_20260924_134441` |
