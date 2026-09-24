@@ -6,7 +6,7 @@
 **When (side):** 2026-09-24 ~14:40–14:45 ET · **Fold:** 2026-09-24 ~14:59 ET  
 **Side freeze:** `codigo_vivo_tip_pillars_reinforce_100pct_20260924_144425`  
 **Fold freeze:** `codigo_vivo_tip_pillars_reinforce_fold_100pct_20260924_145946`  
-**Fold feat SHA:** `PENDING` (pinned in docs commit)  
+**Fold feat SHA:** `98fbbbd` (`98fbbbd80a01b5f5d8728af67024af90c5575d26`)  
 **Feat SHA (side):** `9cd55eb` (`9cd55ebdbe7e7d6e9199eedd6ef0ddc262f7c5c4`)  
 **Scope:** Folded into tip-cv. LP-expand / R14+ **not** folded.
 

@@ -14,5 +14,7 @@
   "fold_into_tip": true,
   "base_tip_sha": "370f35a",
   "source_sha": "b536f57",
-  "source_feat_sha": "9cd55eb"
+  "source_feat_sha": "9cd55eb",
+  "fold_feat_sha": "98fbbbd",
+  "git_sha": "98fbbbd"
 }

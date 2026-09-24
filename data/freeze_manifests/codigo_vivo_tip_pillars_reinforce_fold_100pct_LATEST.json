@@ -74,8 +74,8 @@
     "codigo_vivo_tip_pillars_reinforce_100pct_20260924_144425"
   ],
   "note": "pillars reinforce fold: tip 29/29\u219237/37 (+8; side was 26\u219234; circ extras retained); mixed 1.0; circ 5/5 retained; R13 52/52; LP/R14+ not folded",
-  "fold_feat_sha": "PENDING",
-  "fold_feat_sha_short": "PENDING",
-  "git_sha": "PENDING",
-  "git_sha_short": "PENDING"
+  "fold_feat_sha": "98fbbbd80a01b5f5d8728af67024af90c5575d26",
+  "fold_feat_sha_short": "98fbbbd",
+  "git_sha": "98fbbbd80a01b5f5d8728af67024af90c5575d26",
+  "git_sha_short": "98fbbbd"
 }
