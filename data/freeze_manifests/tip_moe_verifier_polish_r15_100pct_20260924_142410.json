@@ -24,5 +24,6 @@
     "frontier_moe_verifier_hardneg_r15.json": "4033a55e53c6eb26",
     "frontier_moe_verifier_mixed_unified.json": "e37ff18b2332708d"
   },
-  "evidence": "data/freeze_metrics/codigo_vivo_tip_adv_r15_20260924.json"
+  "evidence": "data/freeze_metrics/codigo_vivo_tip_adv_r15_20260924.json",
+  "feat_sha": "7ef18cef9046ed1454c316c165e51717246b57d9"
 }

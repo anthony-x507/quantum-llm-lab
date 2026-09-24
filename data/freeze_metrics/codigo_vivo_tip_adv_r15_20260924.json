@@ -80,5 +80,6 @@
   ],
   "not_folded": true,
   "lora_adapter_ro": true,
-  "adapters_mtime_unchanged": true
+  "adapters_mtime_unchanged": true,
+  "feat_sha": "7ef18cef9046ed1454c316c165e51717246b57d9"
 }
