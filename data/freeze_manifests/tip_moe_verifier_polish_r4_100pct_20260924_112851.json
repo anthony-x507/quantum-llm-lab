@@ -4,8 +4,8 @@
   "domain": "tip_moe_verifier_polish_r4",
   "pct": 100.0,
   "band": "100",
-  "git_sha": "505042fc652fefcb688e3b9cdf103bac55964c93",
-  "git_sha_short": "505042f",
+  "git_sha": "40f1d7c07bb692e7928c43d6008bb7d53fc941e7",
+  "git_sha_short": "40f1d7c",
   "artifact": "data/frontier_moe_verifier_hardneg_r4.json",
   "eval_path": "data/freeze_metrics/codigo_vivo_tip_adv_r4_20260924.json",
   "metrics": {
@@ -114,5 +114,6 @@
     "floor_mixed_d": 0.9667,
     "floor_held": true,
     "prefer": 1.0
-  }
+  },
+  "polish_content_commit": "40f1d7c07bb692e7928c43d6008bb7d53fc941e7"
 }
