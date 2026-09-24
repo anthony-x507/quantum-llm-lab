@@ -4,7 +4,8 @@
 **Base tip SHA:** `e70b23a` (`frontier/codigo-vivo-tip` @ R11; **side-only**)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-future-track` (Mac-111)  
 **When:** 2026-09-24 ~14:13 ET  
-**Freeze:** `codigo_vivo_tip_future_track_100pct_20260924_141347`  
+**Freeze:** `codigo_vivo_tip_future_track_100pct_20260924_141347`
+**Feat SHA:** `951c3df` (`951c3dfc6d06a0a3449ffb85d66b964d187aedf7`)  
 **Scope:** Side-branch only — does **not** fold into tip / tip-cv / tip-tti / tip-distance-mid / tip-distance-far / tip-hardneg-r12/r13 / tip-inverse-r3 / tip-circ-expand.
 
 ## LOCK (Anthony)
