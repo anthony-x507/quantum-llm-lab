@@ -336,6 +336,60 @@ def predict_next_distance(d_curr: float, d_prev: float | None) -> float:
     return max(0.5, d_curr + v)
 
 
+def size_rate_next_distance(
+    d_curr: float,
+    size_prev: float | None,
+    size_curr: float | None,
+) -> float:
+    """d ∝ 1/s → next depth from apparent-size rate (GT-free).
+
+    If size grows (approach), predicted next distance shrinks by the same rate.
+    """
+    if size_prev is None or size_curr is None or size_prev <= 1.0 or size_curr <= 1.0:
+        return max(0.5, float(d_curr))
+    rate = float(size_curr) / float(size_prev)
+    if rate <= 1e-6:
+        return max(0.5, float(d_curr))
+    return max(0.5, float(d_curr) / rate)
+
+
+def predict_future_distance_v5(
+    e: dict[str, Any],
+    *,
+    d_prev: float | None,
+    size_prev: float | None,
+    size_curr: float | None,
+    conf_gate: float = 0.50,
+) -> tuple[float | None, str]:
+    """Future depth for tip-future-track (v5).
+
+    High-conf: median of (legacy closing-speed blend, size-rate, depth-vel).
+    Low-conf: None → caller should GP-fallback (keeps distance estimator untouched).
+    """
+    if e.get("est_m") is None:
+        return None, "no_est"
+    d_curr = float(e["est_m"])
+    conf = float(e.get("confidence") or 0.0)
+    if conf < conf_gate:
+        return None, "low_conf"
+    para = e.get("parallax") or "unknown"
+    d_vel = predict_next_distance(d_curr, float(d_prev) if d_prev is not None else None)
+    d_size = size_rate_next_distance(d_curr, size_prev, size_curr)
+    # Legacy closing-speed-informed blend (pre-v5 tip path)
+    if e.get("closing_speed_mps") is not None and para == "approach":
+        d_cs = d_curr - float(e["closing_speed_mps"]) * (1.0 / 12.0)
+        d_legacy = 0.40 * d_curr + 0.30 * d_vel + 0.30 * max(0.5, d_cs)
+    elif e.get("closing_speed_mps") is not None and para == "recede":
+        d_cs = d_curr - float(e["closing_speed_mps"]) * (1.0 / 12.0)
+        d_legacy = 0.45 * d_curr + 0.30 * d_vel + 0.25 * max(0.5, d_cs)
+    else:
+        w_vel = 0.55 if para in ("approach", "recede") else 0.18
+        d_legacy = (1.0 - w_vel) * d_curr + w_vel * d_vel
+    # Robust median of three GT-free cues
+    trio = sorted([float(d_legacy), float(d_size), float(d_vel)])
+    return trio[1], "v5_median_legacy_size_vel"
+
+
 def track_associate_greedy(
     prev_objs: list[dict[str, Any]],
     curr_objs: list[dict[str, Any]],

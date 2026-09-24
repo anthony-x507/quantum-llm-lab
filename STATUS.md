@@ -1,3 +1,6 @@
+## 2026-09-24 — tip-future-track (side) future-pred → DZ 100%
+Branch `frontier/tip-future-track` from tip `e70b23a`. Future track **86.21→97.89** · +dist **95.36→98.19**; DZ future **97.3/96.59→100/100**; tracking assoc **100%** held; distance DZ **100%** MAE unchanged; contam CLEAN; adapters RO; freeze `codigo_vivo_tip_future_track_100pct_20260924_141347`. **No tip fold.** Avoided tip-cv / tti / mid / far / r12 / r13 / inv-r3. See `docs/FRONTIER-CODIGO-VIVO-TIP-FUTURE-TRACK.md`.
+
 ## 2026-09-24 — fold tip-hardneg-r11 → codigo-vivo-tip
 Cherry-pick rebase `6bb06fc`/`8764220` onto `f70faa1` → `4629919`+`e472522` FF-equivalent. CPU unified **1.0** (re-smoke); R11 **52/52·44/44**; motion coverage **100%** (141 ind + 59 corr); vision BASE **1.000** (10/10); circ **2/2**; inverse_cv **99.82%**; collision physics **100%** (n=40/2850); choose_safest **100%**; R10 **52/52·44/44**; pillars 26/26; hardneg 18/18; `wired_to_vlm`; freezes retained incl. motion_r4 + vision_ground + inverse_r2 + r10 + motion_r3 + r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_r11_100pct_20260924_140723`. Distance-mid / TTI **not** folded. See SCOREBOARD + TIP-R11.
 

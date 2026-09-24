@@ -10,6 +10,7 @@ Metrics:
   - % correct distance by range band (tol 10% if GT<50m, 20% if 50–200m)
   - % correct in DANGER ZONE 30–70 m (+ delta vs baseline 48.69% ~50m)
   - Ablation: tracking±distance; future-pred±distance — overall AND in danger zone
+  - v5 future-track: size-rate + median blend; GP low-conf fallback (DZ floors held)
 
 Usage:
   python examples/distance_est/eval_heuristic.py
@@ -37,8 +38,10 @@ from physics import (
     in_danger_zone,
     parallax_signal,
     pick_building_scale,
+    predict_future_distance_v5,
     predict_next_distance,
     refine_with_parallax,
+    size_rate_next_distance,
     temporal_ema_distance,
     track_associate_greedy,
     within_tol,
@@ -215,6 +218,13 @@ def eval_tracking(seq_meta: dict, seq_gt: dict, *, use_distance: bool, danger_on
 
 
 def eval_future_pred(seq_meta: dict, seq_gt: dict, *, use_distance: bool, danger_only: bool = False) -> dict[str, Any]:
+    """Future depth / position pred — v5 tip-future-track polish.
+
+    High-conf +distance: median(legacy blend, size-rate, depth-vel).
+    Low-conf / tracking-only: size-rate on est_m when available else GP on
+    current frame (no poisoned fake-apparent floor-scale projection).
+    Distance *estimator* path unchanged — DZ floors held via estimate_frame.
+    """
     focal = float(seq_meta.get("focal_px") or DEFAULT_FOCAL_PX)
     gt_by_t = {fr["t"]: {o["id"]: o for o in fr["objects"]} for fr in seq_gt["frames"]}
     frames = seq_meta["frames"]
@@ -229,6 +239,7 @@ def eval_future_pred(seq_meta: dict, seq_gt: dict, *, use_distance: bool, danger
         next_gt = gt_by_t[next_fr["t"]]
         next_pos = {o["id"]: o for o in next_fr["objects"]}
         curr_gt = gt_by_t[fr["t"]]
+        scale = pick_building_scale(fr["objects"], focal)
 
         for o in fr["objects"]:
             if o["class"] not in PRIORITY_DISTANCE_CLASSES:
@@ -243,8 +254,12 @@ def eval_future_pred(seq_meta: dict, seq_gt: dict, *, use_distance: bool, danger
             if prev_est and o["id"] in prev_est:
                 dx = o["cx"] - prev_est[o["id"]]["cx"]
                 dy = o["cy"] - prev_est[o["id"]]["cy"]
+                size_prev = float(prev_est[o["id"]]["apparent_px"])
+                d_prev = prev_est[o["id"]].get("est_m")
             else:
                 dx = dy = 0.0
+                size_prev = None
+                d_prev = None
             pred_cx = o["cx"] + dx
             pred_cy = o["cy"] + dy
             np_ = next_pos.get(o["id"])
@@ -253,47 +268,31 @@ def eval_future_pred(seq_meta: dict, seq_gt: dict, *, use_distance: bool, danger
                 if (pred_cx - np_["cx"]) ** 2 + (pred_cy - np_["cy"]) ** 2 <= 20 ** 2:
                     c_pos += 1
 
-            if use_distance and e.get("est_m") is not None and float(e.get("confidence") or 0) >= 0.50:
-                d_prev = prev_est[o["id"]].get("est_m") if prev_est and o["id"] in prev_est else None
-                d_vel = predict_next_distance(float(e["est_m"]), float(d_prev) if d_prev else None)
-                # Prefer closing-speed-informed blend when growth signal present
-                para = e.get("parallax") or "unknown"
-                w_vel = 0.55 if para in ("approach", "recede") else 0.18
-                if e.get("closing_speed_mps") is not None and para == "approach":
-                    # d_next ≈ d - v_close * dt (dt≈1/12 of generator frame rate unit=1)
-                    d_cs = float(e["est_m"]) - float(e["closing_speed_mps"]) * (1.0 / 12.0)
-                    d_hat = 0.40 * float(e["est_m"]) + 0.30 * d_vel + 0.30 * max(0.5, d_cs)
-                elif e.get("closing_speed_mps") is not None and para == "recede":
-                    d_cs = float(e["est_m"]) - float(e["closing_speed_mps"]) * (1.0 / 12.0)
-                    d_hat = 0.45 * float(e["est_m"]) + 0.30 * d_vel + 0.25 * max(0.5, d_cs)
-                else:
-                    d_hat = (1 - w_vel) * float(e["est_m"]) + w_vel * d_vel
-                n += 1
-                if within_tol(d_hat, float(next_gt[o["id"]]["gt_m"])):
-                    c += 1
-            elif use_distance:
-                # Honesty: low-conf / unknown → fall back to size-rate tracking (no bad depth)
-                n += 1
-                scale = pick_building_scale(fr["objects"], focal)
-                if scale and prev_est and o["id"] in prev_est:
-                    fake = dict(o)
-                    sp = float(prev_est[o["id"]]["apparent_px"])
-                    sc = float(o["apparent_px"])
-                    fake["apparent_px"] = sc * (sc / sp if sp > 1 else 1.0)
-                    d_hat, _, _ = estimate_via_floor_scale(fake, scale, focal)
-                    if d_hat is not None and within_tol(d_hat, float(next_gt[o["id"]]["gt_m"])):
-                        c += 1
-            elif not use_distance:
-                n += 1
-                scale = pick_building_scale(fr["objects"], focal)
-                if scale and prev_est and o["id"] in prev_est:
-                    fake = dict(o)
-                    sp = float(prev_est[o["id"]]["apparent_px"])
-                    sc = float(o["apparent_px"])
-                    fake["apparent_px"] = sc * (sc / sp if sp > 1 else 1.0)
-                    d_hat, _, _ = estimate_via_floor_scale(fake, scale, focal)
-                    if d_hat is not None and within_tol(d_hat, float(next_gt[o["id"]]["gt_m"])):
-                        c += 1
+            size_curr = float(o["apparent_px"])
+            d_hat: float | None = None
+            if use_distance:
+                d_hat, _src = predict_future_distance_v5(
+                    e,
+                    d_prev=float(d_prev) if d_prev is not None else None,
+                    size_prev=size_prev,
+                    size_curr=size_curr,
+                )
+                if d_hat is None:
+                    # Low-conf honesty: prefer current-frame GP over size-poisoned fake
+                    if scale is not None:
+                        d_hat, _, _ = estimate_via_floor_scale(o, scale, focal)
+                    elif e.get("est_m") is not None and size_prev is not None:
+                        d_hat = size_rate_next_distance(float(e["est_m"]), size_prev, size_curr)
+            else:
+                # tracking-only: size-rate on est when present, else GP
+                if e.get("est_m") is not None:
+                    d_hat = size_rate_next_distance(float(e["est_m"]), size_prev, size_curr)
+                elif scale is not None:
+                    d_hat, _, _ = estimate_via_floor_scale(o, scale, focal)
+
+            n += 1
+            if d_hat is not None and within_tol(d_hat, float(next_gt[o["id"]]["gt_m"])):
+                c += 1
 
         prev_est = {o["id"]: {**o, **est_map[o["id"]]} for o in fr["objects"]}
 
@@ -459,7 +458,7 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
         "scale_lock": "FLOOR-SCALE",
         "no_fixed_object_heights": True,
         "soft_size_priors": {"car_length_m": 4.5, "car_height_m": 1.55, "ped_height_m": 1.7},
-        "predictor": "floor_scale_parallax_size_prior_closing_speed_v2_danger",
+        "predictor": "floor_scale_parallax_size_prior_closing_speed_v5_future_track",
         "n_eval_seq": len(eval_ids),
         "distance": {
             "n": n, "correct": c, "pct": pct(n, c),
