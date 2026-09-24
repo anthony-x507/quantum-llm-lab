@@ -8,7 +8,7 @@
 ## VISION-GROUND TIP FREEZE / FOLD (overall 1.0) — tip HEAD after vision-ground fold
 
 **Freeze id:** `codigo_vivo_tip_vision_ground_100pct_20260924_134441`  
-**Frozen SHA:** (pin after fold commit) · branch `frontier/codigo-vivo-tip` · rebase `5a74c4a`/`06017ae`/`04b0738`/`810a8bf` onto `9cc5ed5` → `78ce050`+`5775665`+`2c5f1e5`+`ec65f66` FF then fold
+**Frozen SHA:** `139773da8e63223961f4abf4b32155b2dda4b4bf` (`139773d`) · branch `frontier/codigo-vivo-tip` · rebase `5a74c4a`/`06017ae`/`04b0738`/`810a8bf` onto `9cc5ed5` → `78ce050`+`5775665`+`2c5f1e5`+`ec65f66` FF then fold
 **When:** 2026-09-24 13:55:13 ET · Mac-111 (`074c6626-…`)  
 **Claim:** NO quantum advantage. Cites tip HEAD after vision-ground fold; **prior platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2 / R7 / scaffold_motion / R8 / distance_danger / collision_pred / motion_r2 / collision_n / R9 / motion_r3 / R10 / inverse_r2 freezes NOT abandoned**.
 

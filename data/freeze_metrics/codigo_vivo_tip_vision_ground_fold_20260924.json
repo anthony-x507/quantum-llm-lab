@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-vision-ground-fold",
   "written_et": "2026-09-24 13:55:13 ET",
-  "tip_sha": "ec65f66abfca8e47ca0a3de8900b86fdeb9a21a2",
-  "tip_sha_short": "ec65f66",
+  "tip_sha": "139773da8e63223961f4abf4b32155b2dda4b4bf",
+  "tip_sha_short": "139773d",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-vision-ground",
   "rebase_onto": "9cc5ed5",
@@ -71,5 +71,5 @@
   ],
   "freeze_id": "codigo_vivo_tip_vision_ground_100pct_20260924_134441",
   "blockers": [],
-  "content_sha": "ec65f66abfca8e47ca0a3de8900b86fdeb9a21a2"
+  "content_sha": "139773da8e63223961f4abf4b32155b2dda4b4bf"
 }
