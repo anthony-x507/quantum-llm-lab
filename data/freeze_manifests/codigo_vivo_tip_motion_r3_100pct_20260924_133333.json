@@ -4,8 +4,8 @@
   "domain": "codigo_vivo_tip_motion_r3",
   "pct": 100,
   "band": "100pct",
-  "git_sha": "1d2ca8764a230e7faf4231f7882448d1bf76178f",
-  "git_sha_short": "1d2ca87",
+  "git_sha": "fbe296a4bc179fbe228d7b1b9196dd735bec9351",
+  "git_sha_short": "fbe296a",
   "artifact": "data/frontier_tip_motion_r3_cue_probe.json",
   "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
   "metrics": {
@@ -41,15 +41,20 @@
     "floor_held": true,
     "floor": 0.9667,
     "motion_r2_retained": true,
-    "scaffold_motion_retained": true
+    "scaffold_motion_retained": true,
+    "r9_router": "52/52",
+    "r9_verifier": "44/44",
+    "collision_physics_pct": 100.0,
+    "collision_n_eval_seqs": 40,
+    "floor_resmoke": "mixed (d) 1.0 @ 2026-09-24 13:38:30 ET; motion 97.5%; R9 52/52·44/44"
   },
   "floors": {
     "mixed_d_unified": 0.9667,
     "held": true,
     "coverage_freeze_gate": 0.8
   },
-  "policy": "RO data/lora_adapter/; no merge main; side branch only; motion-r2 honesty frozen; stage4 escalate only on corr_ambiguous",
-  "note": "motion-r3 continuity+approach/recede on 3d05cbe; probe n=200 cov=0.975; mixed d=1.0; freeze because cov>=0.80",
+  "policy": "RO data/lora_adapter/; no merge main; fold into tip; motion-r2 honesty frozen; stage4 escalate only on corr_ambiguous; retain r9+collision_n+motion_r2+collision_pred+distance_danger+r8+scaffold_motion+priors; do NOT fold hardneg-r10/vision-delta",
+  "note": "Fold tip-motion-r3 into tip; rebase 1d2ca87/24798e3 onto 2d13d0a → fbe296a+553b7e5 FF; re-smoke cov=0.975 mixed d=1.0 R9 52/52·44/44; side freeze pinned on tip",
   "retained_freezes": [
     "codigo_vivo_tip_platform_100pct_20260924_111435",
     "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",
@@ -61,11 +66,15 @@
     "codigo_vivo_tip_r7_100pct_20260924_125600",
     "codigo_vivo_tip_scaffold_motion_100pct_20260924_130131",
     "codigo_vivo_tip_r8_100pct_20260924_130950",
-    "codigo_vivo_tip_motion_r2_100pct_20260924_131537",
     "codigo_vivo_tip_distance_danger_100pct_20260924_131243",
     "codigo_vivo_tip_collision_pred_100pct_20260924_131846",
-    "codigo_vivo_tip_collision_n_100pct_20260924_132559"
+    "codigo_vivo_tip_motion_r2_100pct_20260924_131537",
+    "codigo_vivo_tip_collision_n_100pct_20260924_132559",
+    "codigo_vivo_tip_r9_100pct_20260924_133405"
   ],
-  "base_tip": "3d05cbe",
-  "branch": "frontier/tip-motion-r3"
+  "base_tip": "2d13d0a",
+  "branch": "frontier/codigo-vivo-tip",
+  "source_branch": "frontier/tip-motion-r3",
+  "rebase_feat_sha": "fbe296a",
+  "rebase_pin_sha": "553b7e5"
 }

@@ -41,5 +41,15 @@
   "coverage_before_r2": 0.91,
   "delta_pp_vs_r2": 6.5,
   "mixed_d_unified": 1.0,
-  "floor_held": true
+  "floor_held": true,
+  "folded_at_et": "2026-09-24 13:38:30 ET",
+  "folded_into": "frontier/codigo-vivo-tip",
+  "post_rebase_feat_sha": "fbe296a",
+  "re_smoke": {
+    "mixed_d_unified": 1.0,
+    "motion_coverage_known": 0.975,
+    "r9_router": "52/52",
+    "r9_verifier": "44/44",
+    "collision_physics_pct": 100.0
+  }
 }

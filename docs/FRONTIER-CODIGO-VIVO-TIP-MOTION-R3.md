@@ -1,9 +1,9 @@
 # Frontier — tip motion-r3 (coverage reinforce UPWARD)
 
-**Status:** SIDE BRANCH `frontier/tip-motion-r3` (NOT folded; tip-cv / tip-collision-n / tip-hardneg-r9 / tip-motion-r2 / tip-distance-danger / tip-collision-pred AVOIDED)  
+**Status:** **FOLDED** into `frontier/codigo-vivo-tip` (see FOLDED section)  
 **Base tip:** `3d05cbe` (`frontier/codigo-vivo-tip` with collision-n folded; motion-r2 already on tip)  
 **When:** measure 2026-09-24 13:33:33 ET · Mac-111 (`074c6626-…`)  
-**Freeze:** `codigo_vivo_tip_motion_r3_100pct_20260924_133333` (≥80% coverage; sha 1d2ca87)  
+**Freeze:** `codigo_vivo_tip_motion_r3_100pct_20260924_133333` (≥80% coverage; post-rebase feat `fbe296a`)  
 **Claim:** NO quantum advantage. GT-free RGB centroid motion cue reinforce only.
 
 ## LOCK
@@ -65,7 +65,19 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 
 ## What this does NOT do
 
-- No merge to `main` / no tip FF (side branch only).
+- No merge to `main`.
 - No `lora_adapter` writes.
-- No CloudAgent. Does **not** touch tip-cv / tip-collision-n / tip-hardneg-r9 / tip-motion-r2 / tip-distance-danger / tip-collision-pred WTs.
+- No CloudAgent. Does **not** touch tip-hardneg-r10 / tip-vision-delta / tip-hardneg-r9 / tip-collision-n / tip-motion-r2 WTs.
 - No quantum-advantage marketing.
+- Tip FF completed — see FOLDED.
+
+
+## FOLDED into tip
+
+**When:** 2026-09-24 13:38:30 ET · Mac-111 (`074c6626-…`)  
+**Method:** rebase `frontier/tip-motion-r3` (`24798e3` / feat `1d2ca87`) onto tip `2d13d0a` → `fbe296a` + pin `553b7e5`; FF into tip (mixed JSON conflicts kept tip; re-smoke).  
+**Prior freezes retained (not abandoned):** platform, mlx_r3, post_polish, R5, label_protect, R6, post_od2, R7, **scaffold_motion**, **R8**, **distance_danger**, **collision_pred**, **motion_r2**, **collision_n**, **R9** `codigo_vivo_tip_r9_100pct_20260924_133405`.  
+**Re-smoke:** mixed (d) **1.0**; R9 **52/52·44/44**; motion coverage **97.5%** (138 ind + 57 corr / n=200; +6.5 pp vs 91%); `scene_0222=independent`; pillars **26/26**; smoke **12/12**; collision physics **100%** (n=40 / 2850; prior freeze; motion fold did not touch collision paths); `wired_to_vlm=true`; `gt_leak=false`; `ent_never_on_python=true`.  
+**Not folded:** tip-hardneg-r10 / tip-vision-delta (active — do not fold).  
+**Adapters:** `data/lora_adapter/` RO mtime unchanged (2026-09-24 10:57:17).  
+**Freeze:** `codigo_vivo_tip_motion_r3_100pct_20260924_133333` (side freeze pinned on tip after fold).

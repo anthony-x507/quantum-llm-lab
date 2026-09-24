@@ -1,0 +1,62 @@
+{
+  "frontier": "codigo-vivo-tip-motion-r3-fold",
+  "written_et": "2026-09-24 13:38:30 ET",
+  "tip_sha": "553b7e5f4d8fcfa16024c080819c04872f7ec4a5",
+  "tip_sha_short": "553b7e5",
+  "branch": "frontier/codigo-vivo-tip",
+  "source_branch": "frontier/tip-motion-r3",
+  "rebase_onto": "2d13d0a",
+  "pre_rebase_sha": "24798e3",
+  "pre_feat_sha": "1d2ca87",
+  "post_rebase_feat_sha": "fbe296a",
+  "post_rebase_pin_sha": "553b7e5",
+  "ff_sha": "553b7e5",
+  "policy": "Fold motion-r3 into tip; retain r9/collision_n/motion_r2/collision_pred/distance_danger/r8/scaffold_motion+priors; RO lora_adapter; no merge main; do NOT fold hardneg-r10/vision-delta.",
+  "holds": {
+    "mixed_d_unified": 1.0,
+    "motion_coverage_known": 0.975,
+    "motion_counts": {
+      "independent": 138,
+      "correlated": 57,
+      "unknown": 5
+    },
+    "motion_coverage_delta_pp": 6.5,
+    "r9_router": "52/52",
+    "r9_verifier": "44/44",
+    "pillars": "26/26",
+    "smoke": "12/12",
+    "collision_physics_pct": 100.0,
+    "collision_n_eval_seqs": 40,
+    "collision_n_queries": 2850,
+    "scene_0222": "independent",
+    "wired_to_vlm": true,
+    "gt_leak": false,
+    "ent_never_on_python": true,
+    "floor_held": true
+  },
+  "prior_freezes_retained": [
+    "codigo_vivo_tip_platform_100pct_20260924_111435",
+    "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",
+    "codigo_vivo_tip_post_polish_100pct_20260924_123210",
+    "codigo_vivo_tip_r5_100pct_20260924_123727",
+    "codigo_vivo_tip_label_protect_100pct_20260924_124608",
+    "codigo_vivo_tip_r6_100pct_20260924_124951",
+    "codigo_vivo_tip_post_od2_100pct_20260924_125301",
+    "codigo_vivo_tip_r7_100pct_20260924_125600",
+    "codigo_vivo_tip_scaffold_motion_100pct_20260924_130131",
+    "codigo_vivo_tip_r8_100pct_20260924_130950",
+    "codigo_vivo_tip_distance_danger_100pct_20260924_131243",
+    "codigo_vivo_tip_collision_pred_100pct_20260924_131846",
+    "codigo_vivo_tip_motion_r2_100pct_20260924_131537",
+    "codigo_vivo_tip_collision_n_100pct_20260924_132559",
+    "codigo_vivo_tip_r9_100pct_20260924_133405"
+  ],
+  "adapters_ro_mtime": "2026-09-24 10:57:17 data/lora_adapter",
+  "not_folded": [
+    "frontier/tip-hardneg-r10",
+    "frontier/tip-vision-delta"
+  ],
+  "freeze_id": "codigo_vivo_tip_motion_r3_100pct_20260924_133333",
+  "blockers": [],
+  "content_sha": "fbe296a4bc179fbe228d7b1b9196dd735bec9351"
+}

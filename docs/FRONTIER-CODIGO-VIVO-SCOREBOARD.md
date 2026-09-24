@@ -1,8 +1,36 @@
 # FRONTIER — Código-vivo tip scoreboard
 
 **Branch:** `frontier/codigo-vivo-tip`  
-**Written:** 2026-09-24 12:37:27 ET · Mac-111 (`074c6626-…`) · tip R5 100pct freeze @ `6dce7b6`  
+**Written:** 2026-09-24 13:38:30 ET · Mac-111 (`074c6626-…`) · tip motion-r3 fold
 **Claim scope:** classical MoE router + `python -I` verifier + prior-replay ent/vision + GT-free circuit-graph scaffold on ent + mlx vision parse polish. **NO quantum-advantage claims.**
+
+## MOTION-R3 TIP FREEZE / FOLD (overall 1.0) — tip HEAD after motion-r3 fold
+
+**Freeze id:** `codigo_vivo_tip_motion_r3_100pct_20260924_133333`  
+**Frozen SHA:** (fold commit; pin follows) · branch `frontier/codigo-vivo-tip` · rebase `24798e3`/`1d2ca87` onto `2d13d0a` → `fbe296a`+`553b7e5` FF then fold  
+**When:** 2026-09-24 13:38:30 ET · Mac-111 (`074c6626-…`)  
+**Claim:** NO quantum advantage. Cites tip HEAD after motion-r3 fold; **prior platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2 / R7 / scaffold_motion / R8 / distance_danger / collision_pred / motion_r2 / collision_n / R9 freezes NOT abandoned**.
+
+| Surface | Score |
+|---------|-------|
+| mixed (d) unified | **1.0** |
+| motion coverage | **97.5%** (138 ind + 57 corr; +6.5 pp vs 91%) |
+| hardneg R9 | **52/52 · 44/44** |
+| collision physics (n=40) | **100%** (2850/2850) |
+| router smoke / pillars | **12/12 · 26/26** |
+| `ent_never_on_python` | **true** |
+| `wired_to_vlm` | **true** |
+
+**Policy:** Never abandon r9 / collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. **Do not fold hardneg-r10 / vision-delta**.
+
+| Artifact | Path |
+|----------|------|
+| Manifest | `data/freeze_manifests/codigo_vivo_tip_motion_r3_100pct_20260924_133333.json` |
+| Metrics | `data/freeze_metrics/codigo_vivo_tip_motion_r3_20260924.json` |
+| Fold metrics | `data/freeze_metrics/codigo_vivo_tip_motion_r3_fold_20260924.json` |
+| Motion-r3 doc | `docs/FRONTIER-CODIGO-VIVO-TIP-MOTION-R3.md` |
+| Re-smoke | PASS · motion 97.5% · R9 52/52·44/44 · cpu overall 1.0 |
+
 
 ## R9 TIP FREEZE / FOLD (overall 1.0) — tip HEAD after hardneg-r9 fold
 
@@ -23,7 +51,7 @@
 | `ent_never_on_python` | **true** |
 | `wired_to_vlm` | **true** |
 
-**Policy:** Never abandon collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. **Do not fold motion-r3**.
+**Policy:** Never abandon collision_n / motion_r2 / collision_pred / distance_danger / r8 / scaffold_motion + priors. `data/lora_adapter/` **READ-ONLY**. No merge to `main`. Motion-r3 **folded** (see MOTION-R3 section). **Do not fold hardneg-r10 / vision-delta**.
 
 | Artifact | Path |
 |----------|------|
@@ -63,6 +91,7 @@
 | `frontier/tip-distance-danger` | `fd07999` | fold distance-danger (rebase `110bcbc` onto `e2a950d` → `da55eac`+pin); DZ 30–70 m **100%**; floor **1.0** held |
 | `frontier/tip-collision-pred` | `3834ebe` | fold collision-pred (rebase `c52ea34`/`da7a628` onto `fd07999` → `3834ebe`+`30194cb` FF); CPU oracle **100%**; floor **1.0** held |
 | `frontier/tip-motion-r2` | `77d161a` | fold motion-r2 (rebase `c3cd0a4`/`9649df2` onto `4fe070e` → `77d161a`+`4d91a9c` FF); motion **91%**; floor **1.0** held |
+| `frontier/tip-motion-r3` | `fbe296a` | fold motion-r3 (rebase `1d2ca87` onto `2d13d0a` → `fbe296a`+`553b7e5`); coverage **97.5%**; floor **1.0** held |
 | `frontier/tip-collision-n` | `c79ab1a` | fold collision-n (rebase no-op on `763fb8c` → `c79ab1a`+`55277d9` FF); physics **100%** n=40/2850; floor **1.0** held |
 
 **Metric policy:** Prefer vision **1.0** / overall **1.0** from `mixed-freeze-vision` over scaffold-merge / R2-port scoreboards that still show vis **0.9** / overall **0.9667**. Keep scaffold wiring + R2 reinforces + anti-think.

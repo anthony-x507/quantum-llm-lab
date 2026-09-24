@@ -1,5 +1,8 @@
 # Estado de avance — Agent Lab / quantum-llm-lab
 
+## 2026-09-24 — fold tip-motion-r3 → codigo-vivo-tip
+Motion coverage **97.5%**; mixed **1.0**; R9 **52/52·44/44**; freeze `codigo_vivo_tip_motion_r3_100pct_20260924_133333`. See root STATUS + TIP-MOTION-R3.
+
 ## 2026-09-24 — fold tip-hardneg-r9 → codigo-vivo-tip
 Rebase onto `3d05cbe` → FF `ea2f450`+`0096a6e`. Mixed (d) **1.0**; R9 **52/52·44/44**; R1–R8+LP held; collision_n/motion_r2 retained. Freeze `codigo_vivo_tip_r9_100pct_20260924_133405`. Motion-r3 not folded. See TIP-R9 + SCOREBOARD.
 

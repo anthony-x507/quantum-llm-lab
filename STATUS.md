@@ -1,7 +1,10 @@
 # Estado de avance
 
+## 2026-09-24 — fold tip-motion-r3 → codigo-vivo-tip
+Rebase `24798e3`/`1d2ca87` onto `2d13d0a` → `fbe296a`+`553b7e5` FF. CPU unified **1.0** (re-smoke); motion coverage **97.5%** (138 ind + 57 corr; +6.5 pp vs 91%); R9 **52/52·44/44**; collision physics **100%** (n=40); pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. r9 + collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_motion_r3_100pct_20260924_133333`. Hardneg-r10 / vision-delta **not** folded. See SCOREBOARD + TIP-MOTION-R3.
+
 ## 2026-09-24 — fold tip-hardneg-r9 → codigo-vivo-tip
-Rebase `eec0a8a`/`b33c2b0` onto `3d05cbe` → `ea2f450`+`0096a6e` FF. CPU unified **1.0** (re-smoke); R9 **52/52·44/44**; R1–R8+LP held; collision physics **100%** (n=40); motion **91%**; pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_r9_100pct_20260924_133405`. Motion-r3 **not** folded. See SCOREBOARD + TIP-R9.
+Rebase `eec0a8a`/`b33c2b0` onto `3d05cbe` → `ea2f450`+`0096a6e` FF. CPU unified **1.0** (re-smoke); R9 **52/52·44/44**; R1–R8+LP held; collision physics **100%** (n=40); motion **91%**; pillars 26/26; smoke 12/12; `wired_to_vlm`; freezes retained incl. collision_n + motion_r2 + collision_pred + distance_danger + r8 + scaffold_motion. Freeze `codigo_vivo_tip_r9_100pct_20260924_133405`. Motion-r3 later folded (see fold entry above). See SCOREBOARD + TIP-R9.
 
 ## 2026-09-24 — tip-hardneg-r9 polish @ side branch
 Branch `frontier/tip-hardneg-r9` SHA `ea2f450` (rebased onto tip post collision-n `3d05cbe`; wt `…-tip-hardneg-r9`). R9 router **52/52** · verifier **44/44**; mixed (d) **1.0**; R1–R8+LP held; `ent_never_on_python`. Novel: OpenAPI / Helm / Pulumi / CFN / Bicep / Thrift / Avro / Go build-tag / Java anno / PowerShell / LaTeX / gRPC / Dhall / Justfile / Cedar. See fold entry above + `docs/FRONTIER-CODIGO-VIVO-TIP-R9.md`.
