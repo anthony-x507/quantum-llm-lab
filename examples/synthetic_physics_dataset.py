@@ -736,6 +736,7 @@ def sample_configs(n_scenes: int, rng: random.Random) -> list[dict[str, Any]]:
         "bell_yxhcx", "bell_hcxryx", "bell_hzcx", "bell_ryzhcx",
         "bell_zhcxry", "bell_hycxry", "bell_xxhcxz", "bell_ryhcxz",
         "bell_xhycx", "bell_hcxryh", "bell_zyhcx", "bell_hcxzx",
+        "bell_ryxhcxz", "bell_hcxxy", "bell_yxhcxry", "bell_zhycx",
     ]
     ENT_TEMPLATES_SEP = [
         "sep_hh", "sep_xx", "sep_hy", "sep_ryry", "sep_hx", "sep_zz", "sep_yh",
@@ -745,6 +746,7 @@ def sample_configs(n_scenes: int, rng: random.Random) -> list[dict[str, Any]]:
         "sep_xhry", "sep_hzx", "sep_xyh", "sep_ryxh",
         "sep_zxh", "sep_yhry", "sep_hzy", "sep_ryxy",
         "sep_zyh", "sep_hxx", "sep_ryhz", "sep_xyz",
+        "sep_hyz", "sep_ryxz", "sep_xhy", "sep_zhry",
     ]
     n_ent = max(12, int(n_scenes * 0.38))
     for i in range(n_ent):
@@ -911,6 +913,7 @@ def generate_dataset(
             if domain_only == "entanglement":
                 entangled = i % 3 != 0
                 ENT_B = [
+                    "bell_ryxhcxz", "bell_hcxxy", "bell_yxhcxry", "bell_zhycx",
                     "bell_xhycx", "bell_hcxryh", "bell_zyhcx", "bell_hcxzx",
                     "bell_zhcxry", "bell_hycxry", "bell_xxhcxz", "bell_ryhcxz",
                     "bell_yxhcx", "bell_hcxryx", "bell_hzcx", "bell_ryzhcx",
@@ -921,6 +924,7 @@ def generate_dataset(
                     "bell_xhcxz", "bell_zxhcx", "bell_yhcx_x",
                 ]
                 ENT_S = [
+                    "sep_hyz", "sep_ryxz", "sep_xhy", "sep_zhry",
                     "sep_zyh", "sep_hxx", "sep_ryhz", "sep_xyz",
                     "sep_zxh", "sep_yhry", "sep_hzy", "sep_ryxy",
                     "sep_xhry", "sep_hzx", "sep_xyh", "sep_ryxh",

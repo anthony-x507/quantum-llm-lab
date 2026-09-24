@@ -99,6 +99,10 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
                 "bell_hcxryh",   # H + CX + RY + H(q1) hardneg post soft+H
                 "bell_zyhcx",    # Z + Y + H + CX hardneg phase+Y prep
                 "bell_hcxzx",    # H + CX + Z + X(q1) hardneg post phase+X
+                "bell_ryxhcxz",  # RY + X + H + CX + Z hardneg soft+busy+phase
+                "bell_hcxxy",    # H + CX + X + Y(q1) hardneg post busy
+                "bell_yxhcxry",  # Y + X + H + CX + RY hardneg busy+soft
+                "bell_zhycx",    # Z + H + Y(q1) + CX hardneg phase+Y
             ]
             if not tpl:
                 tpl = bell_map.get(str(bell)) or pool[seed % len(pool)]
@@ -136,10 +140,14 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
                 "bell_hycxry": [["h", 0], ["y", 1], ["cx", 0, 1], ["ry", 0, 0.35]],
                 "bell_xxhcxz": [["x", 0], ["h", 0], ["x", 1], ["cx", 0, 1], ["z", 1]],
                 "bell_ryhcxz": [["ry", 0, 0.35], ["h", 0], ["cx", 0, 1], ["z", 1]],
-            "bell_xhycx": [["x", 0], ["h", 0], ["y", 1], ["cx", 0, 1]],
-            "bell_hcxryh": [["h", 0], ["cx", 0, 1], ["ry", 1, 0.35], ["h", 1]],
-            "bell_zyhcx": [["z", 0], ["y", 0], ["h", 0], ["cx", 0, 1]],
-            "bell_hcxzx": [["h", 0], ["cx", 0, 1], ["z", 1], ["x", 1]],
+                "bell_xhycx": [["x", 0], ["h", 0], ["y", 1], ["cx", 0, 1]],
+                "bell_hcxryh": [["h", 0], ["cx", 0, 1], ["ry", 1, 0.35], ["h", 1]],
+                "bell_zyhcx": [["z", 0], ["y", 0], ["h", 0], ["cx", 0, 1]],
+                "bell_hcxzx": [["h", 0], ["cx", 0, 1], ["z", 1], ["x", 1]],
+                "bell_ryxhcxz": [["ry", 0, 0.35], ["x", 0], ["h", 0], ["cx", 0, 1], ["z", 1]],
+                "bell_hcxxy": [["h", 0], ["cx", 0, 1], ["x", 1], ["y", 1]],
+                "bell_yxhcxry": [["y", 0], ["x", 0], ["h", 0], ["cx", 0, 1], ["ry", 1, 0.35]],
+                "bell_zhycx": [["z", 0], ["h", 0], ["y", 1], ["cx", 0, 1]],
             }
             if tpl not in gates_by_tpl:
                 tpl = "bell_hcx"
@@ -188,6 +196,10 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
             "sep_hxx",   # H+X+X busy product, no CX
             "sep_ryhz",  # RY+H+Z soft+phase product, no CX
             "sep_xyz",   # X+Y+Z product triple, no CX
+            "sep_hyz",   # H+Y+Z product hardneg, no CX
+            "sep_ryxz",  # RY+X+Z soft+busy product, no CX
+            "sep_xhy",   # X+H+Y Phi- prep lookalike + Y, no CX
+            "sep_zhry",  # Z+H+RY phase+soft product, no CX
         ]
         if not tpl:
             tpl = sep_pool[seed % len(sep_pool)]
@@ -227,6 +239,10 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
             "sep_hxx": [["h", 0], ["x", 0], ["x", 1]],
             "sep_ryhz": [["ry", 0, 0.4], ["h", 0], ["z", 1]],
             "sep_xyz": [["x", 0], ["y", 1], ["z", 1]],
+            "sep_hyz": [["h", 0], ["y", 1], ["z", 1]],
+            "sep_ryxz": [["ry", 0, 0.4], ["x", 0], ["z", 1]],
+            "sep_xhy": [["x", 0], ["h", 0], ["y", 1]],
+            "sep_zhry": [["z", 0], ["h", 0], ["ry", 1, 0.4]],
         }
         if tpl not in gates_by_tpl:
             tpl = "sep_hh"
