@@ -28,5 +28,7 @@
   "ro_mtime_unchanged": true,
   "fold_into_tip": false,
   "tip_vis_pillar": "BASE",
-  "base_tip_sha_short": "f052420"
+  "base_tip_sha_short": "f052420",
+  "git_sha": "9cd55ebdbe7e7d6e9199eedd6ef0ddc262f7c5c4",
+  "git_sha_short": "9cd55eb"
 }
