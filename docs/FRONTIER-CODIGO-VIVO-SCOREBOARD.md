@@ -92,3 +92,18 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `docs/FRONTIER-MIXED-WITH-SCAFFOLD.md`
 - `docs/FRONTIER-MIXED-WITH-FREEZE-R2.md`
 - `docs/FRONTIER-VISION-MLX-ANTI-THINK.md`
+
+## MLX LIVE mixed (this tip)
+
+**Host:** Mac-111 · Studio offline · 8B effective **5.761 GB** ready  
+**Honest n:** py **3** / ent **8** / vis **8** · `metric_source=mlx_live_generate` (not prior-replay)
+
+| Path | python | ent | vision | overall |
+|------|--------|-----|--------|---------|
+| (a) | 0.000 | 0.000 | 1.000 | 0.333 |
+| (b) | 0.000 | 1.000 | 1.000 | 0.667 |
+| (c) | 1.000 | 0.000 | 1.000 | 0.667 |
+| (d) | **1.000** | **1.000** | **1.000** | **1.000** |
+
+Δ MoE overall **+0.3334** · vs CPU 1.0 **Δ=0** · drops **none** · detail `docs/FRONTIER-CODIGO-VIVO-TIP-MLX.md`
+

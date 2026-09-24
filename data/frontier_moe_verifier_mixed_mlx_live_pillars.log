@@ -1,0 +1,33 @@
+8B ready=True effective_GB=5.761
+=== LIVE python verifier n=3 ===
+[2026-09-24 11:04:26 ] Loading VLM mlx-community/Qwen3-VL-8B-Thinking-4bit adapter=None
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 3977.65it/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 5200.84it/s]
+=== LIVE ent BASE n=3 ===
+[2026-09-24 11:05:23 ] Loading VLM mlx-community/Qwen3-VL-8B-Thinking-4bit adapter=None
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 1840.95it/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 4543.88it/s]
+  [mlx-live-ent-base ent] scene_0222 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0157 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0291 parse=True compile=False label=False energy=True
+=== LIVE ent ENT2 adapter=/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2 ===
+[2026-09-24 11:06:13 ] Loading VLM mlx-community/Qwen3-VL-8B-Thinking-4bit adapter='/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2'
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 2247.59it/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 4930.61it/s]
+  [mlx-live-ent-ent2 ent] scene_0222 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0157 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0291 parse=True compile=True label=True energy=True
+=== LIVE vision BASE n=3 ===
+[2026-09-24 11:06:24 ] Loading VLM mlx-community/Qwen3-VL-8B-Thinking-4bit adapter=None
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 2115.91it/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 4906.77it/s]
+  [mlx-live-vis vision] vis_math_01 correct=True pred=45 err=None
+  [mlx-live-vis vision] vis_math_02 correct=True pred=50 err=None
+  [mlx-live-vis vision] vis_math_03 correct=True pred=20 err=None
+Wrote data/frontier_moe_verifier_mixed_mlx_live_pillars.json
+  a_baseline             py=0.0000 ent=0.0000 vis=1.0000 overall=0.3333
+  b_moe_alone            py=0.0000 ent=1.0000 vis=1.0000 overall=0.6667
+  c_verifier_on_python   py=1.0000 ent=0.0000 vis=1.0000 overall=0.6667
+  d_unified              py=1.0000 ent=1.0000 vis=1.0000 overall=1.0000
+vs CPU 1.0: {'cpu_unified_overall': 1.0, 'mlx_unified_overall': 1.0, 'delta': 0.0, 'note': 'CPU tip uses prior-replay ent/vis + live heuristic/verifier python → overall 1.0; this row is LIVE mlx on all three pillars with honest n.'}
+drops: []

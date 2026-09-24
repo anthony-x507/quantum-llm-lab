@@ -1,0 +1,445 @@
+{
+  "frontier": "codigo-vivo-tip-mlx-live-pillars",
+  "written": "2026-09-24 11:10:41 ET",
+  "host": {
+    "hostname": "Mac-54",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "machineId_hint": "074c6626-0440-4817-9829-6bae77c578d6"
+  },
+  "tip_sha_at_run": null,
+  "claims": [
+    "NO quantum-advantage claims",
+    "Live mlx_vlm generate for py+ent+vis; not prior-replay for these rates"
+  ],
+  "ro_lock": {
+    "script_writes_to_lora_adapter": false,
+    "policy": "READ-ONLY; never overwrite data/lora_adapter/",
+    "ent_adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2"
+  },
+  "model_status": {
+    "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
+    "rev": "e68aa09bc7df2d41ba8f96e4f12118097b61d19a",
+    "snap_exists": true,
+    "shards_present": [
+      "model-00001-of-00002.safetensors",
+      "model-00002-of-00002.safetensors"
+    ],
+    "effective_bytes": 5760665246,
+    "effective_GB": 5.761,
+    "ready": true,
+    "target_GB": 5.78
+  },
+  "studio": {
+    "machineId": "8e12e5c3-d3ae-4886-867e-28f4fc01a913",
+    "label": "Mac-198",
+    "online": false,
+    "note": "Studio offline at start; ran on Mac-111 only"
+  },
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "ent_never_on_python": null,
+    "gt_never_in_inference_prompts": true
+  },
+  "n_requested": {
+    "python": 3,
+    "ent": 8,
+    "vision": 8
+  },
+  "python_paths": {
+    "skipped": true
+  },
+  "ent_live": {
+    "metric_source": "mlx_live_generate",
+    "n": 8,
+    "scene_ids": [
+      "scene_0222",
+      "scene_0157",
+      "scene_0291",
+      "scene_0359",
+      "scene_0239",
+      "scene_0293",
+      "scene_0317",
+      "scene_0336"
+    ],
+    "missing_scenes": [],
+    "adapter_ent2": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+    "elapsed_s": 159.68,
+    "base": {
+      "label_acc": 0.0,
+      "parse_rate": 0.625,
+      "compile_rate": 0.0,
+      "n": 8,
+      "label_correct": 0,
+      "parse_ok": 5,
+      "details": [
+        {
+          "scene_id": "scene_0222",
+          "source": "compile_fail:ValueError",
+          "parse": true,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Regla1: puerta mal formada: 'cx'.",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "cx"
+          ],
+          "raw_preview": "Okay, let's tackle this problem. So, the user provided an image and some context about being a quantum circuit assistant. They want a JSON response with specific keys: n_qubits, gates, domain, label, "
+        },
+        {
+          "scene_id": "scene_0157",
+          "source": "compile_fail:ValueError",
+          "parse": true,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Regla1: puerta mal formada: 'cx'.",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "cx"
+          ],
+          "raw_preview": "Okay, let's tackle this problem. So, the user provided an image and wants me to respond with a specific JSON structure related to quantum circuits. First, I need to understand what's in the image.\n\nLo"
+        },
+        {
+          "scene_id": "scene_0291",
+          "source": "compile_fail:ValueError",
+          "parse": true,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Regla1: puerta mal formada: 'cx'.",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "cx"
+          ],
+          "raw_preview": "Okay, let's tackle this problem. So, the user provided an image and some scene details, and they want me to respond with a specific JSON structure related to quantum circuits. Let me break this down s"
+        },
+        {
+          "scene_id": "scene_0359",
+          "source": "fail:JSONDecodeError",
+          "parse": false,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Expecting property name enclosed in double quotes: line 1 column 32 (char 31)",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": false,
+          "gate_names": [],
+          "raw_preview": "Okay, let's tackle this problem. So, the user provided an image and wants me to respond with a specific JSON structure related to quantum circuits. First, I need to understand what's in the image.\n\nLo"
+        },
+        {
+          "scene_id": "scene_0239",
+          "source": "fail:JSONDecodeError",
+          "parse": false,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Expecting property name enclosed in double quotes: line 1 column 72 (char 71)",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": false,
+          "gate_names": [],
+          "raw_preview": "Okay, let's tackle this problem. So, the user provided an image and some context about being a quantum circuit assistant. They want a JSON response with specific keys: n_qubits, gates, domain, label, "
+        },
+        {
+          "scene_id": "scene_0293",
+          "source": "compile_fail:ValueError",
+          "parse": true,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Regla1: puerta mal formada: 'cx'.",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "cx"
+          ],
+          "raw_preview": "Okay, let's tackle this problem. So, the user provided an image and some context about being a quantum circuit assistant. They want a JSON response with specific keys: n_qubits, gates, domain, label, "
+        },
+        {
+          "scene_id": "scene_0317",
+          "source": "fail:JSONDecodeError",
+          "parse": false,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Expecting property name enclosed in double quotes: line 1 column 39 (char 38)",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": false,
+          "gate_names": [],
+          "raw_preview": "Okay, let's tackle this problem. So, the user provided an image and some scene details, and they want me to respond with a specific JSON structure related to quantum circuits. Let me break this down s"
+        },
+        {
+          "scene_id": "scene_0336",
+          "source": "compile_fail:ValueError",
+          "parse": true,
+          "compile": false,
+          "circuit_ran": false,
+          "jev": "RECHAZAR",
+          "reason": "Regla1: puerta mal formada: 'cx'.",
+          "ok_domain": false,
+          "ok_label": false,
+          "energy_ok": true,
+          "gate_names": [
+            "cx"
+          ],
+          "raw_preview": "Okay, let's tackle this problem. The user provided an image and some context about being a quantum circuit assistant. They want a JSON response with specific keys: n_qubits, gates, domain, label, nota"
+        }
+      ]
+    },
+    "moe_ent2": {
+      "label_acc": 1.0,
+      "parse_rate": 1.0,
+      "compile_rate": 1.0,
+      "n": 8,
+      "label_correct": 8,
+      "parse_ok": 8,
+      "details": [
+        {
+          "scene_id": "scene_0222",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "h"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"h\", 1]], \"domain\": \"entanglement\", \"label\": \"separable\", \"template\": \"sep_hh\", \"nota\": \"Estado producto (separable/sep_hh): sin CX — no hay entrelazamie"
+        },
+        {
+          "scene_id": "scene_0157",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi+\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Phi+/bell_"
+        },
+        {
+          "scene_id": "scene_0291",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi+\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Phi+/bell_"
+        },
+        {
+          "scene_id": "scene_0359",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi+\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Phi+/bell_"
+        },
+        {
+          "scene_id": "scene_0239",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi+\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Phi+/bell_"
+        },
+        {
+          "scene_id": "scene_0293",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi-\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Phi-/bell_"
+        },
+        {
+          "scene_id": "scene_0317",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi-\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Phi-/bell_"
+        },
+        {
+          "scene_id": "scene_0336",
+          "source": "vlm",
+          "parse": true,
+          "compile": true,
+          "circuit_ran": true,
+          "jev": "APROBAR",
+          "reason": "Circuito válido, consistente con pérdida/escena y probs≈1.",
+          "ok_domain": true,
+          "ok_label": true,
+          "energy_ok": true,
+          "gate_names": [
+            "h",
+            "cx",
+            "z"
+          ],
+          "raw_preview": "</think>\n\n{\"n_qubits\": 2, \"gates\": [[\"h\", 0], [\"cx\", 0, 1], [\"z\", 1]], \"domain\": \"entanglement\", \"label\": \"entangled\", \"bell_state\": \"Phi+\", \"template\": \"bell_hcxz\", \"nota\": \"Circuito Bell (Phi+/bell_"
+        }
+      ],
+      "error": null
+    }
+  },
+  "vision_live": {
+    "metric_source": "mlx_live_generate",
+    "n": 8,
+    "elapsed_s": 12.04,
+    "accuracy": 1.0,
+    "correct": 8,
+    "polish": {
+      "applied": false,
+      "retried_ids": [],
+      "rescued": 0
+    },
+    "details": [
+      {
+        "id": "vis_math_01",
+        "kind": "math",
+        "correct": true,
+        "expected": "45",
+        "pred": "45",
+        "error": null,
+        "raw_preview": "Got it, let's solve 17 + 28. First, add the tens: 10 + 20 = 30. Then add the ones: 7 + 8 = 15. Now combine them: 30 + 15 = 45. So the answer is 45.\n</think>\n\n45"
+      },
+      {
+        "id": "vis_math_02",
+        "kind": "math",
+        "correct": true,
+        "expected": "50",
+        "pred": "50",
+        "error": null,
+        "raw_preview": "Got it, let's solve the problem. The expression is 9 * 7 - 13. First, I need to do the multiplication: 9 times 7 is 63. Then subtract 13 from 63. So 63 minus 13 is 50. I need to make sure I follow the order of operations: multiplication bef"
+      },
+      {
+        "id": "vis_math_03",
+        "kind": "math",
+        "correct": true,
+        "expected": "20",
+        "pred": "20",
+        "error": null,
+        "raw_preview": "Got it, let's see. The problem says there are 12 red balls and 8 blue balls. To find the total, I need to add those two numbers together. So 12 plus 8. Let me calculate that: 12 + 8 = 20. Yep, that's the total number of balls.\n</think>\n\n20"
+      },
+      {
+        "id": "vis_math_04",
+        "kind": "math",
+        "correct": true,
+        "expected": "6",
+        "pred": "6",
+        "error": null,
+        "raw_preview": "Got it, let's solve the equation 2x + 6 = 18. First, I need to isolate x. So, subtract 6 from both sides. That gives 2x = 18 - 6, which is 2x = 12. Then divide both sides by 2, so x = 12 / 2 = 6. Let me check: 2*6 + 6 = 12 + 6 = 18, which m"
+      },
+      {
+        "id": "vis_math_05",
+        "kind": "math",
+        "correct": true,
+        "expected": "20",
+        "pred": "20",
+        "error": null,
+        "raw_preview": "Got it, let's see. The problem is 25% of 80. To find a percentage of a number, you can convert the percentage to a decimal and multiply. 25% is 0.25 in decimal. So 0.25 times 80. Let me calculate that. 0.25 * 80 = 20. So the integer result "
+      },
+      {
+        "id": "vis_math_06",
+        "kind": "math",
+        "correct": true,
+        "expected": "48",
+        "pred": "48",
+        "error": null,
+        "raw_preview": "Got it, let's see. The sequence is 3, 6, 12, 24, ?. I need to find the next term. Let's check the pattern. From 3 to 6, that's multiplied by 2. 6 to 12 is also multiplied by 2. 12 to 24 is multiplied by 2. So each term is double the previou"
+      },
+      {
+        "id": "vis_math_07",
+        "kind": "math",
+        "correct": true,
+        "expected": "20",
+        "pred": "20",
+        "error": null,
+        "raw_preview": "Got it, let's see. The problem is about finding the area of a rectangle. The formula for the area of a rectangle is length multiplied by width. Here, the length is 5 and the width is 4. So I need to calculate 5 times 4. Let me do that: 5 * "
+      },
+      {
+        "id": "vis_math_08",
+        "kind": "math",
+        "correct": true,
+        "expected": "45",
+        "pred": "45",
+        "error": null,
+        "raw_preview": "Got it, let's see. The problem says speed is 15 m/s, time is 3 seconds. Distance is speed multiplied by time. So 15 times 3 is 45. And it says integer meters, so that's 45.\n</think>\n\n45"
+      }
+    ]
+  },
+  "scoreboard": null,
+  "vs_cpu_overall_1_0": null,
+  "drops_honesty": [],
+  "elapsed_s": 171.74,
+  "notes": []
+}

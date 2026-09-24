@@ -1,0 +1,39 @@
+8B ready=True effective_GB=5.761
+=== LIVE ent BASE n=8 ===
+[2026-09-24 11:07:51 ] Loading VLM mlx-community/Qwen3-VL-8B-Thinking-4bit adapter=None
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 3130.39it/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 4945.72it/s]
+  [mlx-live-ent-base ent] scene_0222 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0157 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0291 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0359 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0239 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0293 parse=True compile=False label=False energy=True
+  [mlx-live-ent-base ent] scene_0317 parse=False compile=False label=False energy=False
+  [mlx-live-ent-base ent] scene_0336 parse=True compile=False label=False energy=True
+=== LIVE ent ENT2 adapter=/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2 ===
+[2026-09-24 11:10:01 ] Loading VLM mlx-community/Qwen3-VL-8B-Thinking-4bit adapter='/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2'
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 1509.79it/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 3743.35it/s]
+  [mlx-live-ent-ent2 ent] scene_0222 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0157 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0291 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0359 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0239 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0293 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0317 parse=True compile=True label=True energy=True
+  [mlx-live-ent-ent2 ent] scene_0336 parse=True compile=True label=True energy=True
+=== LIVE vision BASE n=8 ===
+[2026-09-24 11:10:29 ] Loading VLM mlx-community/Qwen3-VL-8B-Thinking-4bit adapter=None
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 2126.50it/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 5225.03it/s]
+  [mlx-live-vis vision] vis_math_01 correct=True pred=45 err=None
+  [mlx-live-vis vision] vis_math_02 correct=True pred=50 err=None
+  [mlx-live-vis vision] vis_math_03 correct=True pred=20 err=None
+  [mlx-live-vis vision] vis_math_04 correct=True pred=6 err=None
+  [mlx-live-vis vision] vis_math_05 correct=True pred=20 err=None
+  [mlx-live-vis vision] vis_math_06 correct=True pred=48 err=None
+  [mlx-live-vis vision] vis_math_07 correct=True pred=20 err=None
+  [mlx-live-vis vision] vis_math_08 correct=True pred=45 err=None
+Wrote data/frontier_moe_verifier_mixed_mlx_live_pillars_entvis8.json
+drops: []

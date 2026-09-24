@@ -1,66 +1,19 @@
 {
-  "written": "2026-09-24 10:50:32 ET",
+  "written": "2026-09-24 11:04:30 ET",
   "host": "Mac-52",
+  "machineId": "074c6626-0440-4817-9829-6bae77c578d6",
+  "label": "Mac-111",
   "user": "anthony",
   "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
   "rev": "e68aa09bc7df2d41ba8f96e4f12118097b61d19a",
-  "du_model_dir_misleading_MB": 4.4,
-  "note_du": "du -sh on model dir excludes shared hub/blobs symlinks; use effective_bytes",
-  "effective_bytes": 5776700631,
-  "effective_GB": 5.777,
+  "effective_bytes": 5760665246,
+  "effective_GB": 5.761,
   "shards_present": [
     "model-00001-of-00002.safetensors",
     "model-00002-of-00002.safetensors"
   ],
-  "index_json_bug": {
-    "claims_shards": [
-      "model-00001-of-00004.safetensors",
-      "model-00002-of-00004.safetensors",
-      "model-00003-of-00004.safetensors",
-      "model-00004-of-00004.safetensors"
-    ],
-    "claims_total_size": 17534247392,
-    "actual_remote_and_local": [
-      "model-00001-of-00002.safetensors",
-      "model-00002-of-00002.safetensors"
-    ],
-    "mlx_loads_anyway": true
-  },
   "model_status": "ready",
-  "smoke_load_generate": "OK (prior this session)",
-  "studio_reachability": "OFFLINE (tailscale last_seen~26m; TB 10.99.0.2 unreachable; agent machineId 8e12e5c3 disconnected). Work done on Mac-52/Mac-111 (anthony) where same model cache was ready.",
-  "smokes": {
-    "load_generate_text": "OK",
-    "vision_minimal_api": {
-      "ok": true,
-      "elapsed_s": 1.27
-    },
-    "vision_grounding_cli": "FAIL mlx_vlm API arg-order (prompt mistaken for image); model itself loads",
-    "python_verifier_mlx_n3": {
-      "solve_rate_single": 0.0,
-      "solve_rate_loop": 1.0,
-      "delta_solve_rate": 1.0,
-      "path": "/Users/anthony/Documents/quantum-llm-lab/data/frontier_python_verifier_mlx_mac111_n3.json"
-    },
-    "moe_verifier_mlx_n3": {
-      "comparison": "see file",
-      "path": "/Users/anthony/Documents/quantum-llm-lab/data/frontier_moe_verifier_mlx_mixed_n3.json",
-      "keys": [
-        "frontier",
-        "written",
-        "mode",
-        "router_method",
-        "claims",
-        "anti_contamination",
-        "ro_lock",
-        "adapter_map",
-        "router_smoke",
-        "ent_vision_routing",
-        "python_paths",
-        "priors_from_shipped_json",
-        "mlx_status",
-        "notes"
-      ]
-    }
-  }
+  "studio_machineId": "8e12e5c3-d3ae-4886-867e-28f4fc01a913",
+  "studio_online": false,
+  "note": "Confirmed on Mac-111 for codigo-vivo-tip mlx live mixed run"
 }
