@@ -1,0 +1,82 @@
+=== MoE smoke method=heuristic ===
+  [OK] ent_01   expected=ent     got=ent     adapter=lora_adapter_ent2
+  [OK] ent_02   expected=ent     got=ent     adapter=lora_adapter_ent2
+  [OK] ent_03   expected=ent     got=ent     adapter=lora_adapter_ent2
+  [OK] py_01    expected=python  got=python  adapter=None
+  [OK] py_02    expected=python  got=python  adapter=None
+  [OK] py_03    expected=python  got=python  adapter=None
+  [OK] vis_01   expected=vision  got=vision  adapter=lora_adapter_video_f1
+  [OK] vis_02   expected=vision  got=vision  adapter=lora_adapter_video_f1
+  [OK] vis_03   expected=vision  got=vision  adapter=lora_adapter_video_f1
+  [OK] base_01  expected=base    got=base    adapter=None
+  [OK] base_02  expected=base    got=base    adapter=None
+  [OK] base_03  expected=base    got=base    adapter=None
+Smoke score: 12/12
+=== MoE bench-codigo-vivo method=heuristic ===
+[moe] python lane=python adapter=None
+[moe] ent    lane=ent→ent adapter=/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2
+[moe] vision lane=vision adapter=/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_video_f1
+=== MOE load adapter=None pillars=['python'] ===
+[2026-09-24 09:30:42 ] Loading VLM mlx-community/Qwen3-VL-8B-Thinking-4bit adapter=None
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 6928.15it/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 6660.44it/s]
+  [moe-py python] py_arith_01 correct=False err=exit_1
+  [moe-py python] py_arith_02 correct=False err=exit_1
+  [moe-py python] py_arith_03 correct=False err=exit_1
+  [moe-py python] py_arith_04 correct=True err=None
+  [moe-py python] py_alg_01 correct=False err=exit_1
+  [moe-py python] py_alg_02 correct=False err=exit_1
+  [moe-py python] py_alg_03 correct=False err=exit_1
+  [moe-py python] py_alg_04 correct=False err=exit_1
+  [moe-py python] py_script_01 correct=False err=exit_1
+  [moe-py python] py_script_02 correct=False err=exit_1
+  [moe-py python] py_script_03 correct=False err=exit_1
+  [moe-py python] py_script_04 correct=False err=exit_1
+  [moe-py python] py_script_05 correct=False err=exit_1
+  [moe-py python] py_script_06 correct=False err=exit_1
+  [moe-py python] py_script_07 correct=False err=exit_1
+  [moe-py python] py_script_08 correct=False err=exit_1
+=== MOE load adapter='/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2' pillars=['entanglement'] ===
+[2026-09-24 09:32:06 ] Loading VLM mlx-community/Qwen3-VL-8B-Thinking-4bit adapter='/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_ent2'
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 2259.05it/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 5265.26it/s]
+  [moe-ent ent] scene_0222 parse=True compile=True label=True energy=True
+  [moe-ent ent] scene_0157 parse=True compile=True label=True energy=True
+  [moe-ent ent] scene_0291 parse=True compile=True label=True energy=True
+  [moe-ent ent] scene_0359 parse=True compile=True label=True energy=True
+  [moe-ent ent] scene_0239 parse=True compile=True label=True energy=True
+  [moe-ent ent] scene_0293 parse=True compile=True label=True energy=True
+  [moe-ent ent] scene_0317 parse=True compile=True label=True energy=True
+  [moe-ent ent] scene_0336 parse=True compile=True label=True energy=True
+  [moe-ent ent] scene_0155 parse=True compile=True label=True energy=True
+  [moe-ent ent] scene_0283 parse=True compile=True label=True energy=True
+  [moe-ent ent] scene_0099 parse=True compile=True label=True energy=True
+  [moe-ent ent] scene_0142 parse=True compile=True label=True energy=True
+=== MOE load adapter='/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_video_f1' pillars=['vision'] ===
+[2026-09-24 09:32:47 ] Loading VLM mlx-community/Qwen3-VL-8B-Thinking-4bit adapter='/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter_video_f1'
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 1696.04it/s]
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Fetching 15 files: 100%|██████████| 15/15 [00:00<00:00, 5018.31it/s]
+  [moe-vis vision] vis_math_01 correct=True pred=45 err=None
+  [moe-vis vision] vis_math_02 correct=True pred=50 err=None
+  [moe-vis vision] vis_math_03 correct=True pred=20 err=None
+  [moe-vis vision] vis_math_04 correct=False pred=7 err=None
+  [moe-vis vision] vis_math_05 correct=True pred=20 err=None
+  [moe-vis vision] vis_math_06 correct=True pred=48 err=None
+  [moe-vis vision] vis_circ_01 correct=False pred=None err=parse:JSONDecodeError
+  [moe-vis vision] vis_circ_02 correct=False pred=None err=parse:JSONDecodeError
+  [moe-vis vision] vis_math_07 correct=False pred=5 err=None
+  [moe-vis vision] vis_math_08 correct=True pred=45 err=None
+{
+  "python_ge_base": true,
+  "python_routed": 0.0625,
+  "python_baseline_base": 0.0625,
+  "ent_ge_0_95": true,
+  "ent_routed_label_acc": 1.0,
+  "vision_not_worse_than_minus_5pp": false,
+  "vision_routed": 0.6,
+  "vision_baseline_base": 0.9,
+  "vision_delta_pp": -30.0,
+  "gate_pass": false,
+  "note": "No quantum-advantage claims. Own-delta usability metrics only."
+}
+Wrote data/frontier_moe_dual_lane_smoke.json
