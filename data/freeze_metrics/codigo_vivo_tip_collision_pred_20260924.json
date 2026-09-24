@@ -7,5 +7,6 @@
   "collision_physics_pct": 100.0,
   "floor_held": true,
   "motion_coverage_known": 0.44,
-  "adapters_ro": true
+  "adapters_ro": true,
+  "fold_sha": "ebf6a35c86bc73f9c56f7e7c8c9a82ad9185024b"
 }

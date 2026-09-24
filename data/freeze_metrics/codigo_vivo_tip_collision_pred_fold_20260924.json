@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-collision-pred-fold",
   "written_et": "2026-09-24 13:18:46 ET",
-  "tip_sha": "PENDING_PIN",
-  "tip_sha_short": "PENDING",
+  "tip_sha": "ebf6a35c86bc73f9c56f7e7c8c9a82ad9185024b",
+  "tip_sha_short": "ebf6a35",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-collision-pred",
   "rebase_onto": "fd07999",
@@ -84,6 +84,6 @@
     "gt_at_inference": false
   },
   "content_sha": "3834ebe5400180c6654f74208926c3e882035d3b",
-  "freeze_sha": "PENDING_PIN",
+  "freeze_sha": "ebf6a35c86bc73f9c56f7e7c8c9a82ad9185024b",
   "blockers": []
 }

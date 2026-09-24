@@ -105,5 +105,7 @@
   "git_sha_short": "3834ebe",
   "freeze": "codigo_vivo_tip_collision_pred_100pct_20260924_131846",
   "folded_into_tip": true,
-  "fold_rebase_onto": "fd07999"
+  "fold_rebase_onto": "fd07999",
+  "fold_sha": "ebf6a35c86bc73f9c56f7e7c8c9a82ad9185024b",
+  "fold_sha_short": "ebf6a35"
 }
