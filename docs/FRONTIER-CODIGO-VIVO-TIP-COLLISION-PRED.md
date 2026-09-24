@@ -4,6 +4,7 @@
 **Base tip SHA:** `d892398` (`frontier/codigo-vivo-tip`)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-collision-pred` (Mac-111)  
 **When:** 2026-09-24 13:09:21 ET  
+**Freeze:** `codigo_vivo_tip_collision_pred_100pct_20260924_130921` @ `c52ea34`  
 **Scope:** Side-branch only — does **not** touch tip-cv / tip-hardneg-r8 / tip-distance-danger / tip-scaffold-motion.
 
 ## LOCK (Anthony 2026-09-24)

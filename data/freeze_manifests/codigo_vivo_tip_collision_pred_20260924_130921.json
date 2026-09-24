@@ -1,0 +1,36 @@
+{
+  "schema": "codigo_vivo_tip_collision_pred_100pct",
+  "frozen_at_et": "2026-09-24 13:09:21 ET",
+  "domain": "codigo_vivo_tip_collision_pred",
+  "pct": 100,
+  "band": "100pct",
+  "git_sha": "c52ea34a73c4e6fc28cd2bb1614d35859d573cd5",
+  "git_sha_short": "c52ea34",
+  "base_tip_sha": "d892398d7dd4a6cc7be4775a63db10c2c2b3bb8c",
+  "branch": "frontier/tip-collision-pred",
+  "artifact": "data/frontier_tip_collision_pred_probe.json",
+  "eval_path": "data/collision_predictive/EVAL_COLLISION_CPU.json",
+  "metrics": {
+    "collision_physics_overall_pct": 100.0,
+    "collision_choose_safest_overall_pct": 100.0,
+    "inverse_cv_overall_pct": 85.23,
+    "ablation_pp": 14.77,
+    "n_eval_seqs": 8,
+    "n_queries": 555,
+    "n_seq_total": 40,
+    "contam_passed": true,
+    "retrieval_ok": true,
+    "gt_at_inference": false,
+    "imports_unmerged_distance_branch": false,
+    "floor_resmoke": "N/A",
+    "floor_held": "N/A"
+  },
+  "floors": {
+    "tip_mixed_d_unified": "N/A — side-branch collision_predictive only",
+    "held": "N/A"
+  },
+  "policy": "RO data/lora_adapter/; no merge main; no tip-cv/R8/distance-danger/scaffold-motion touch; freezes retained; distance via stubs",
+  "note": "CPU elastic-disk oracle + distance_consumer stubs; VLM deferred to lora_adapter_collision/",
+  "retained_freezes_note": "Side-branch — does not abandon tip freezes ≥80% (platform/r5–r7/LP/scaffold_motion/etc.)",
+  "adapter_ro_mtime_et": "2026-09-24 13:07:53"
+}
