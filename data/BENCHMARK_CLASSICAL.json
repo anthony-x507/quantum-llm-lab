@@ -1,0 +1,51 @@
+{
+  "gold_python_sanity": {
+    "n": 220,
+    "exec_rate": 1.0,
+    "match_rate": 1.0,
+    "by_subdomain": {
+      "angled_projectile": {
+        "n": 27,
+        "exec_rate": 1.0,
+        "match_rate": 1.0
+      },
+      "ballistic": {
+        "n": 28,
+        "exec_rate": 1.0,
+        "match_rate": 1.0
+      },
+      "baseball": {
+        "n": 28,
+        "exec_rate": 1.0,
+        "match_rate": 1.0
+      },
+      "drag_projectile": {
+        "n": 27,
+        "exec_rate": 1.0,
+        "match_rate": 1.0
+      },
+      "elastic_collision": {
+        "n": 27,
+        "exec_rate": 1.0,
+        "match_rate": 1.0
+      },
+      "golf": {
+        "n": 28,
+        "exec_rate": 1.0,
+        "match_rate": 1.0
+      },
+      "inelastic_collision": {
+        "n": 27,
+        "exec_rate": 1.0,
+        "match_rate": 1.0
+      },
+      "soccer": {
+        "n": 28,
+        "exec_rate": 1.0,
+        "match_rate": 1.0
+      }
+    },
+    "used_vlm": false
+  },
+  "lane": "classical"
+}

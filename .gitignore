@@ -43,3 +43,19 @@ examples/*.bak-*
 data/lora_adapter_ent/
 data/lora_adapter_frozen_*/
 data/amp_embed/
+
+
+# Classical visual physics lane (PNGs local; keep docs + generator)
+data/classical_scenes/**
+!data/classical_scenes/.gitignore
+!data/classical_scenes/.gitkeep
+!data/classical_scenes/SUMMARY.json
+!data/classical_scenes/SUMMARY.md
+!data/classical_scenes/CLASSICAL_SET.md
+!data/classical_scenes/INDEX.json
+data/lora_adapter_classical/
+!data/lora_adapter_classical/.gitkeep
+data/lora_dataset_classical.jsonl
+data/lora_dataset_classical_hf/
+data/train_lora_classical*.log
+data/eval_classical*.log

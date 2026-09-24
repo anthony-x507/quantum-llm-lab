@@ -1,0 +1,8 @@
+# Ignore heavy PNG scene dirs; keep docs
+*/
+!.gitignore
+!.gitkeep
+!SUMMARY.json
+!SUMMARY.md
+!CLASSICAL_SET.md
+!INDEX.json

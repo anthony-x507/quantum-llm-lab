@@ -1,0 +1,24 @@
+{
+  "n_scenes": 220,
+  "seed": 240924,
+  "frame_size": [
+    240,
+    180
+  ],
+  "lane": "classical_visual_physics",
+  "counts_by_subdomain": {
+    "angled_projectile": 27,
+    "ballistic": 28,
+    "baseball": 28,
+    "drag_projectile": 27,
+    "elastic_collision": 27,
+    "golf": 28,
+    "inelastic_collision": 27,
+    "soccer": 28
+  },
+  "verified_ok": 220,
+  "domains": {
+    "sport_balls": 84,
+    "rockets_projectiles": 136
+  }
+}

@@ -1,0 +1,1762 @@
+[
+  {
+    "scene_id": "cscene_0000",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 24.624707,
+    "max_height_m": 8.778293,
+    "impact_speed_m_s": 11.400981
+  },
+  {
+    "scene_id": "cscene_0001",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 3776.718554,
+    "max_height_m": 1217253.618458,
+    "impact_speed_m_s": 224817.86301
+  },
+  {
+    "scene_id": "cscene_0002",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 126.99794,
+    "max_height_m": 18.929204,
+    "impact_speed_m_s": 36.281563
+  },
+  {
+    "scene_id": "cscene_0003",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 2.835659,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 1.097
+  },
+  {
+    "scene_id": "cscene_0004",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 87.208911,
+    "max_height_m": 19.52905,
+    "impact_speed_m_s": 29.977819
+  },
+  {
+    "scene_id": "cscene_0005",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 23.210461,
+    "max_height_m": 4.781692,
+    "impact_speed_m_s": 15.221229
+  },
+  {
+    "scene_id": "cscene_0006",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 3671.999185,
+    "max_height_m": 4987621395.251065,
+    "impact_speed_m_s": 1551296603.358742
+  },
+  {
+    "scene_id": "cscene_0007",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 16.222633,
+    "max_height_m": 6.198714,
+    "impact_speed_m_s": 13.661149
+  },
+  {
+    "scene_id": "cscene_0008",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 2988.291321,
+    "max_height_m": 264688242.193419,
+    "impact_speed_m_s": 72434175.951489
+  },
+  {
+    "scene_id": "cscene_0009",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 56.318948,
+    "max_height_m": 15.621451,
+    "impact_speed_m_s": 18.916873
+  },
+  {
+    "scene_id": "cscene_0010",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 165.03526,
+    "max_height_m": 55.171514,
+    "impact_speed_m_s": 41.287161
+  },
+  {
+    "scene_id": "cscene_0011",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 54.636496,
+    "max_height_m": 27.015206,
+    "impact_speed_m_s": 18.416465
+  },
+  {
+    "scene_id": "cscene_0012",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 423.753886,
+    "max_height_m": 105.938472,
+    "impact_speed_m_s": 64.475
+  },
+  {
+    "scene_id": "cscene_0013",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 23.161526,
+    "max_height_m": 4.051473,
+    "impact_speed_m_s": 17.255652
+  },
+  {
+    "scene_id": "cscene_0014",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 48.874881,
+    "max_height_m": 7.788018,
+    "impact_speed_m_s": 23.004755
+  },
+  {
+    "scene_id": "cscene_0015",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 84.433662,
+    "max_height_m": 28.831753,
+    "impact_speed_m_s": 28.289798
+  },
+  {
+    "scene_id": "cscene_0016",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 451.644543,
+    "max_height_m": 112.911136,
+    "impact_speed_m_s": 66.563
+  },
+  {
+    "scene_id": "cscene_0017",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 344.41877,
+    "max_height_m": 86.104692,
+    "impact_speed_m_s": 58.127
+  },
+  {
+    "scene_id": "cscene_0018",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 1.28735,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 13.554
+  },
+  {
+    "scene_id": "cscene_0019",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 70.51375,
+    "max_height_m": 11.413798,
+    "impact_speed_m_s": 29.098624
+  },
+  {
+    "scene_id": "cscene_0020",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 0.546399,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 5.762
+  },
+  {
+    "scene_id": "cscene_0021",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 172.151129,
+    "max_height_m": 35.692611,
+    "impact_speed_m_s": 41.759219
+  },
+  {
+    "scene_id": "cscene_0022",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 134.535931,
+    "max_height_m": 36.931157,
+    "impact_speed_m_s": 36.409425
+  },
+  {
+    "scene_id": "cscene_0023",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 192.996989,
+    "max_height_m": 23.175825,
+    "impact_speed_m_s": 44.925569
+  },
+  {
+    "scene_id": "cscene_0024",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 3725.140014,
+    "max_height_m": 17875715.583922,
+    "impact_speed_m_s": 3980058.14914
+  },
+  {
+    "scene_id": "cscene_0025",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 2.669854,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 7.766
+  },
+  {
+    "scene_id": "cscene_0026",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 1.20919,
+    "max_height_m": 1.584,
+    "impact_speed_m_s": 5.574772
+  },
+  {
+    "scene_id": "cscene_0027",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 2461.766335,
+    "max_height_m": 2205767385098.8735,
+    "impact_speed_m_s": 931912745494.9681
+  },
+  {
+    "scene_id": "cscene_0028",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 25.565814,
+    "max_height_m": 13.152988,
+    "impact_speed_m_s": 11.01459
+  },
+  {
+    "scene_id": "cscene_0029",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 50.711693,
+    "max_height_m": 10.462602,
+    "impact_speed_m_s": 20.184309
+  },
+  {
+    "scene_id": "cscene_0030",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 13.51618,
+    "max_height_m": 3.983047,
+    "impact_speed_m_s": 7.169583
+  },
+  {
+    "scene_id": "cscene_0031",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 1.947835,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 9.37
+  },
+  {
+    "scene_id": "cscene_0032",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 66.669019,
+    "max_height_m": 12.307777,
+    "impact_speed_m_s": 25.92065
+  },
+  {
+    "scene_id": "cscene_0033",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 3025.167019,
+    "max_height_m": 49978482146.3373,
+    "impact_speed_m_s": 17840735956.459797
+  },
+  {
+    "scene_id": "cscene_0034",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 3.237426,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 7.859
+  },
+  {
+    "scene_id": "cscene_0035",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 23.956745,
+    "max_height_m": 2.393065,
+    "impact_speed_m_s": 18.610164
+  },
+  {
+    "scene_id": "cscene_0036",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 56.210242,
+    "max_height_m": 18.615445,
+    "impact_speed_m_s": 24.410959
+  },
+  {
+    "scene_id": "cscene_0037",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 160.354153,
+    "max_height_m": 40.088538,
+    "impact_speed_m_s": 39.662
+  },
+  {
+    "scene_id": "cscene_0038",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 2.951311,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 8.1
+  },
+  {
+    "scene_id": "cscene_0039",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 4.505899,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 7.965
+  },
+  {
+    "scene_id": "cscene_0040",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 106.273445,
+    "max_height_m": 25.814758,
+    "impact_speed_m_s": 30.626203
+  },
+  {
+    "scene_id": "cscene_0041",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 2960.733906,
+    "max_height_m": 328779377.55366,
+    "impact_speed_m_s": 91152103.618237
+  },
+  {
+    "scene_id": "cscene_0042",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 4.32023,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 7.748
+  },
+  {
+    "scene_id": "cscene_0043",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 67.873254,
+    "max_height_m": 14.409841,
+    "impact_speed_m_s": 21.423027
+  },
+  {
+    "scene_id": "cscene_0044",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 0.367647,
+    "max_height_m": 0.834,
+    "impact_speed_m_s": 4.04513
+  },
+  {
+    "scene_id": "cscene_0045",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 161.624814,
+    "max_height_m": 33.34837,
+    "impact_speed_m_s": 37.323729
+  },
+  {
+    "scene_id": "cscene_0046",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 25.901282,
+    "max_height_m": 6.198757,
+    "impact_speed_m_s": 13.564245
+  },
+  {
+    "scene_id": "cscene_0047",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 40.280213,
+    "max_height_m": 2.398674,
+    "impact_speed_m_s": 29.705691
+  },
+  {
+    "scene_id": "cscene_0048",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 2.63926,
+    "max_height_m": 2.827,
+    "impact_speed_m_s": 7.447532
+  },
+  {
+    "scene_id": "cscene_0049",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 146.550635,
+    "max_height_m": 33.806955,
+    "impact_speed_m_s": 35.077951
+  },
+  {
+    "scene_id": "cscene_0050",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 214.929941,
+    "max_height_m": 53.732485,
+    "impact_speed_m_s": 45.918
+  },
+  {
+    "scene_id": "cscene_0051",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 3.559564,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 8.569
+  },
+  {
+    "scene_id": "cscene_0052",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 3.500398,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 1.288
+  },
+  {
+    "scene_id": "cscene_0053",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 3396.904936,
+    "max_height_m": 643472.160694,
+    "impact_speed_m_s": 121736.047474
+  },
+  {
+    "scene_id": "cscene_0054",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 5.206366,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 5.352
+  },
+  {
+    "scene_id": "cscene_0055",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 23.279356,
+    "max_height_m": 1.67822,
+    "impact_speed_m_s": 20.969511
+  },
+  {
+    "scene_id": "cscene_0056",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 3.343977,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 6.294
+  },
+  {
+    "scene_id": "cscene_0057",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 1.810463,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 4.713
+  },
+  {
+    "scene_id": "cscene_0058",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 0.982403,
+    "max_height_m": 1.282,
+    "impact_speed_m_s": 5.015261
+  },
+  {
+    "scene_id": "cscene_0059",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 71.909643,
+    "max_height_m": 17.977411,
+    "impact_speed_m_s": 26.56
+  },
+  {
+    "scene_id": "cscene_0060",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 21.973522,
+    "max_height_m": 3.116661,
+    "impact_speed_m_s": 12.201562
+  },
+  {
+    "scene_id": "cscene_0061",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 3.286206,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 10.697
+  },
+  {
+    "scene_id": "cscene_0062",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 114.532525,
+    "max_height_m": 19.001802,
+    "impact_speed_m_s": 33.724515
+  },
+  {
+    "scene_id": "cscene_0063",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 107.446155,
+    "max_height_m": 17.726541,
+    "impact_speed_m_s": 32.172648
+  },
+  {
+    "scene_id": "cscene_0064",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 248.631577,
+    "max_height_m": 62.157894,
+    "impact_speed_m_s": 49.387
+  },
+  {
+    "scene_id": "cscene_0065",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 152.551399,
+    "max_height_m": 38.13785,
+    "impact_speed_m_s": 38.685
+  },
+  {
+    "scene_id": "cscene_0066",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 3043.356494,
+    "max_height_m": 3788690344985.761,
+    "impact_speed_m_s": 1608381491307.1187
+  },
+  {
+    "scene_id": "cscene_0067",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 3957.839542,
+    "max_height_m": 385844341.283287,
+    "impact_speed_m_s": 102622480.7286
+  },
+  {
+    "scene_id": "cscene_0068",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 5.917542,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 12.398
+  },
+  {
+    "scene_id": "cscene_0069",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 135.590728,
+    "max_height_m": 20.439186,
+    "impact_speed_m_s": 35.932201
+  },
+  {
+    "scene_id": "cscene_0070",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 9.126698,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 9.377
+  },
+  {
+    "scene_id": "cscene_0071",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 0.465033,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 2.885
+  },
+  {
+    "scene_id": "cscene_0072",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 4.87143,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 12.007
+  },
+  {
+    "scene_id": "cscene_0073",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 36.364805,
+    "max_height_m": 4.823618,
+    "impact_speed_m_s": 23.015899
+  },
+  {
+    "scene_id": "cscene_0074",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 154.34298,
+    "max_height_m": 20.87254,
+    "impact_speed_m_s": 42.945861
+  },
+  {
+    "scene_id": "cscene_0075",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 139.813363,
+    "max_height_m": 32.612549,
+    "impact_speed_m_s": 35.00213
+  },
+  {
+    "scene_id": "cscene_0076",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 3.385181,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 13.582
+  },
+  {
+    "scene_id": "cscene_0077",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 2907.772063,
+    "max_height_m": 2129582.766975,
+    "impact_speed_m_s": 469616.552281
+  },
+  {
+    "scene_id": "cscene_0078",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 40.252415,
+    "max_height_m": 2.832502,
+    "impact_speed_m_s": 27.5114
+  },
+  {
+    "scene_id": "cscene_0079",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 4202.585937,
+    "max_height_m": 852923235.041199,
+    "impact_speed_m_s": 235718695.096164
+  },
+  {
+    "scene_id": "cscene_0080",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 37.670681,
+    "max_height_m": 6.908106,
+    "impact_speed_m_s": 15.485661
+  },
+  {
+    "scene_id": "cscene_0081",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 327.241823,
+    "max_height_m": 81.810456,
+    "impact_speed_m_s": 56.659
+  },
+  {
+    "scene_id": "cscene_0082",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 5.351463,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 12.861
+  },
+  {
+    "scene_id": "cscene_0083",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 0.464686,
+    "max_height_m": 2.002,
+    "impact_speed_m_s": 6.267315
+  },
+  {
+    "scene_id": "cscene_0084",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 47.194016,
+    "max_height_m": 14.653652,
+    "impact_speed_m_s": 20.175943
+  },
+  {
+    "scene_id": "cscene_0085",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 24.433226,
+    "max_height_m": 4.400037,
+    "impact_speed_m_s": 10.955205
+  },
+  {
+    "scene_id": "cscene_0086",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 144.558352,
+    "max_height_m": 14.756002,
+    "impact_speed_m_s": 41.708647
+  },
+  {
+    "scene_id": "cscene_0087",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 2.786571,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 0.286
+  },
+  {
+    "scene_id": "cscene_0088",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 3.080432,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 5.594
+  },
+  {
+    "scene_id": "cscene_0089",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 0.114058,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 5.077
+  },
+  {
+    "scene_id": "cscene_0090",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 42.676034,
+    "max_height_m": 3.816201,
+    "impact_speed_m_s": 25.716818
+  },
+  {
+    "scene_id": "cscene_0091",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 1.395734,
+    "max_height_m": 1.222,
+    "impact_speed_m_s": 4.896493
+  },
+  {
+    "scene_id": "cscene_0092",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 3.352018,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 3.151
+  },
+  {
+    "scene_id": "cscene_0093",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 2.348633,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 5.195
+  },
+  {
+    "scene_id": "cscene_0094",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 3621.532327,
+    "max_height_m": 195450751.440748,
+    "impact_speed_m_s": 50015138.90155
+  },
+  {
+    "scene_id": "cscene_0095",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 307.95528,
+    "max_height_m": 76.98882,
+    "impact_speed_m_s": 54.964
+  },
+  {
+    "scene_id": "cscene_0096",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 50.294142,
+    "max_height_m": 8.641063,
+    "impact_speed_m_s": 22.86186
+  },
+  {
+    "scene_id": "cscene_0097",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 196.41782,
+    "max_height_m": 49.104455,
+    "impact_speed_m_s": 43.896
+  },
+  {
+    "scene_id": "cscene_0098",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 89.142419,
+    "max_height_m": 15.017495,
+    "impact_speed_m_s": 26.729233
+  },
+  {
+    "scene_id": "cscene_0099",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 4257.470772,
+    "max_height_m": 741286.627332,
+    "impact_speed_m_s": 131009.42971
+  },
+  {
+    "scene_id": "cscene_0100",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 162.678295,
+    "max_height_m": 21.706335,
+    "impact_speed_m_s": 40.285437
+  },
+  {
+    "scene_id": "cscene_0101",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 1.678629,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 5.457
+  },
+  {
+    "scene_id": "cscene_0102",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 118.598961,
+    "max_height_m": 20.043131,
+    "impact_speed_m_s": 33.787123
+  },
+  {
+    "scene_id": "cscene_0103",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 8.598559,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 11.996
+  },
+  {
+    "scene_id": "cscene_0104",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 64.697987,
+    "max_height_m": 16.174497,
+    "impact_speed_m_s": 25.193
+  },
+  {
+    "scene_id": "cscene_0105",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 3915.758057,
+    "max_height_m": 1435585633125.1416,
+    "impact_speed_m_s": 571405442581.7753
+  },
+  {
+    "scene_id": "cscene_0106",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 75.470804,
+    "max_height_m": 28.214621,
+    "impact_speed_m_s": 26.295791
+  },
+  {
+    "scene_id": "cscene_0107",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 3558.504671,
+    "max_height_m": 203131453.505614,
+    "impact_speed_m_s": 52917266.701434
+  },
+  {
+    "scene_id": "cscene_0108",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 106.842719,
+    "max_height_m": 14.839418,
+    "impact_speed_m_s": 37.232689
+  },
+  {
+    "scene_id": "cscene_0109",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 1.722546,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 4.979
+  },
+  {
+    "scene_id": "cscene_0110",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 158.210481,
+    "max_height_m": 39.55262,
+    "impact_speed_m_s": 39.396
+  },
+  {
+    "scene_id": "cscene_0111",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 17.4082,
+    "max_height_m": 1.767231,
+    "impact_speed_m_s": 15.834085
+  },
+  {
+    "scene_id": "cscene_0112",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 116.807369,
+    "max_height_m": 18.321361,
+    "impact_speed_m_s": 35.037963
+  },
+  {
+    "scene_id": "cscene_0113",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 413.290344,
+    "max_height_m": 103.322586,
+    "impact_speed_m_s": 63.674
+  },
+  {
+    "scene_id": "cscene_0114",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 35.40864,
+    "max_height_m": 3.483589,
+    "impact_speed_m_s": 22.665997
+  },
+  {
+    "scene_id": "cscene_0115",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 164.468193,
+    "max_height_m": 16.482474,
+    "impact_speed_m_s": 44.222165
+  },
+  {
+    "scene_id": "cscene_0116",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 170.855917,
+    "max_height_m": 20.592577,
+    "impact_speed_m_s": 44.24794
+  },
+  {
+    "scene_id": "cscene_0117",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 515.804888,
+    "max_height_m": 128.951222,
+    "impact_speed_m_s": 71.134
+  },
+  {
+    "scene_id": "cscene_0118",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 6.632199,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 9.591
+  },
+  {
+    "scene_id": "cscene_0119",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 3.276437,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 9.452
+  },
+  {
+    "scene_id": "cscene_0120",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 214.312528,
+    "max_height_m": 53.578132,
+    "impact_speed_m_s": 45.852
+  },
+  {
+    "scene_id": "cscene_0121",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 0.646149,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 2.431
+  },
+  {
+    "scene_id": "cscene_0122",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 4.191644,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 13.796
+  },
+  {
+    "scene_id": "cscene_0123",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 155.78666,
+    "max_height_m": 18.144641,
+    "impact_speed_m_s": 46.555267
+  },
+  {
+    "scene_id": "cscene_0124",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 150.489186,
+    "max_height_m": 33.475272,
+    "impact_speed_m_s": 37.522921
+  },
+  {
+    "scene_id": "cscene_0125",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 68.313235,
+    "max_height_m": 21.675302,
+    "impact_speed_m_s": 26.394626
+  },
+  {
+    "scene_id": "cscene_0126",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 221.156771,
+    "max_height_m": 44.38539,
+    "impact_speed_m_s": 44.429784
+  },
+  {
+    "scene_id": "cscene_0127",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 39.10707,
+    "max_height_m": 5.264948,
+    "impact_speed_m_s": 21.463366
+  },
+  {
+    "scene_id": "cscene_0128",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 334.139247,
+    "max_height_m": 83.534812,
+    "impact_speed_m_s": 57.253
+  },
+  {
+    "scene_id": "cscene_0129",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 6.051882,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 7.181
+  },
+  {
+    "scene_id": "cscene_0130",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 202.424954,
+    "max_height_m": 39.844324,
+    "impact_speed_m_s": 45.758319
+  },
+  {
+    "scene_id": "cscene_0131",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 26.214369,
+    "max_height_m": 4.79626,
+    "impact_speed_m_s": 14.085247
+  },
+  {
+    "scene_id": "cscene_0132",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 159.481592,
+    "max_height_m": 32.517591,
+    "impact_speed_m_s": 38.256101
+  },
+  {
+    "scene_id": "cscene_0133",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 23.767655,
+    "max_height_m": 2.081664,
+    "impact_speed_m_s": 19.47913
+  },
+  {
+    "scene_id": "cscene_0134",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 205.859464,
+    "max_height_m": 77.397524,
+    "impact_speed_m_s": 46.999302
+  },
+  {
+    "scene_id": "cscene_0135",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 15.359447,
+    "max_height_m": 5.457642,
+    "impact_speed_m_s": 14.273973
+  },
+  {
+    "scene_id": "cscene_0136",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 3.816639,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 7.197
+  },
+  {
+    "scene_id": "cscene_0137",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 132.082338,
+    "max_height_m": 20.191509,
+    "impact_speed_m_s": 35.423538
+  },
+  {
+    "scene_id": "cscene_0138",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 33.103597,
+    "max_height_m": 5.155328,
+    "impact_speed_m_s": 16.658451
+  },
+  {
+    "scene_id": "cscene_0139",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 2947.636945,
+    "max_height_m": 7107198.444071,
+    "impact_speed_m_s": 1643234.231636
+  },
+  {
+    "scene_id": "cscene_0140",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 4295.242784,
+    "max_height_m": 101436.05354,
+    "impact_speed_m_s": 15666.136039
+  },
+  {
+    "scene_id": "cscene_0141",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 6.063612,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 11.413
+  },
+  {
+    "scene_id": "cscene_0142",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 6.044625,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 8.132
+  },
+  {
+    "scene_id": "cscene_0143",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 62.461396,
+    "max_height_m": 14.392907,
+    "impact_speed_m_s": 22.369259
+  },
+  {
+    "scene_id": "cscene_0144",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 0.95116,
+    "max_height_m": 2.577,
+    "impact_speed_m_s": 7.110608
+  },
+  {
+    "scene_id": "cscene_0145",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 4228.174572,
+    "max_height_m": 49366497995.20632,
+    "impact_speed_m_s": 16870820996.047083
+  },
+  {
+    "scene_id": "cscene_0146",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 206.275255,
+    "max_height_m": 51.568814,
+    "impact_speed_m_s": 44.984
+  },
+  {
+    "scene_id": "cscene_0147",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 111.445176,
+    "max_height_m": 12.050913,
+    "impact_speed_m_s": 36.489401
+  },
+  {
+    "scene_id": "cscene_0148",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 5.576891,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 12.178
+  },
+  {
+    "scene_id": "cscene_0149",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 54.222518,
+    "max_height_m": 12.845931,
+    "impact_speed_m_s": 20.628819
+  },
+  {
+    "scene_id": "cscene_0150",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 33.863899,
+    "max_height_m": 4.17976,
+    "impact_speed_m_s": 20.509971
+  },
+  {
+    "scene_id": "cscene_0151",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 27.453963,
+    "max_height_m": 2.272887,
+    "impact_speed_m_s": 21.414913
+  },
+  {
+    "scene_id": "cscene_0152",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 65.602165,
+    "max_height_m": 9.785698,
+    "impact_speed_m_s": 26.994083
+  },
+  {
+    "scene_id": "cscene_0153",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 470.856809,
+    "max_height_m": 117.714202,
+    "impact_speed_m_s": 67.964
+  },
+  {
+    "scene_id": "cscene_0154",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 16.221017,
+    "max_height_m": 4.474199,
+    "impact_speed_m_s": 14.094492
+  },
+  {
+    "scene_id": "cscene_0155",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 142.315461,
+    "max_height_m": 18.465094,
+    "impact_speed_m_s": 38.3846
+  },
+  {
+    "scene_id": "cscene_0156",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 58.034695,
+    "max_height_m": 15.933436,
+    "impact_speed_m_s": 20.469058
+  },
+  {
+    "scene_id": "cscene_0157",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 4158.480121,
+    "max_height_m": 6944835081.721021,
+    "impact_speed_m_s": 2136380992.294925
+  },
+  {
+    "scene_id": "cscene_0158",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 183.167413,
+    "max_height_m": 70.008912,
+    "impact_speed_m_s": 44.365251
+  },
+  {
+    "scene_id": "cscene_0159",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 591.905444,
+    "max_height_m": 147.976361,
+    "impact_speed_m_s": 76.201
+  },
+  {
+    "scene_id": "cscene_0160",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 26.642742,
+    "max_height_m": 4.657793,
+    "impact_speed_m_s": 16.708096
+  },
+  {
+    "scene_id": "cscene_0161",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 3836.790221,
+    "max_height_m": 46376030274.522354,
+    "impact_speed_m_s": 16017502539.489153
+  },
+  {
+    "scene_id": "cscene_0162",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 21.376605,
+    "max_height_m": 4.777864,
+    "impact_speed_m_s": 17.820218
+  },
+  {
+    "scene_id": "cscene_0163",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 54.346686,
+    "max_height_m": 5.677117,
+    "impact_speed_m_s": 28.64037
+  },
+  {
+    "scene_id": "cscene_0164",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 1.189014,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 11.899
+  },
+  {
+    "scene_id": "cscene_0165",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 3.27936,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 0.24
+  },
+  {
+    "scene_id": "cscene_0166",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 548.891376,
+    "max_height_m": 137.222844,
+    "impact_speed_m_s": 73.38
+  },
+  {
+    "scene_id": "cscene_0167",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 0.714598,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 10.362
+  },
+  {
+    "scene_id": "cscene_0168",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 1.89572,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 13.701
+  },
+  {
+    "scene_id": "cscene_0169",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 420.460976,
+    "max_height_m": 105.115244,
+    "impact_speed_m_s": 64.224
+  },
+  {
+    "scene_id": "cscene_0170",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 215.832901,
+    "max_height_m": 38.836074,
+    "impact_speed_m_s": 45.028316
+  },
+  {
+    "scene_id": "cscene_0171",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 4383.621822,
+    "max_height_m": 2771645.469523,
+    "impact_speed_m_s": 524449.865479
+  },
+  {
+    "scene_id": "cscene_0172",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 6.124401,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 6.316
+  },
+  {
+    "scene_id": "cscene_0173",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 212.74796,
+    "max_height_m": 35.202029,
+    "impact_speed_m_s": 44.206717
+  },
+  {
+    "scene_id": "cscene_0174",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 120.896037,
+    "max_height_m": 11.400123,
+    "impact_speed_m_s": 44.980332
+  },
+  {
+    "scene_id": "cscene_0175",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 4232.745707,
+    "max_height_m": 143773526.406727,
+    "impact_speed_m_s": 35107049.942055
+  },
+  {
+    "scene_id": "cscene_0176",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 3040.783331,
+    "max_height_m": 1454500.728408,
+    "impact_speed_m_s": 310044.61809
+  },
+  {
+    "scene_id": "cscene_0177",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 5.114008,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 6.058
+  },
+  {
+    "scene_id": "cscene_0178",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 160.939705,
+    "max_height_m": 23.869821,
+    "impact_speed_m_s": 44.167521
+  },
+  {
+    "scene_id": "cscene_0179",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 5.540163,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 5.051
+  },
+  {
+    "scene_id": "cscene_0180",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 17.926611,
+    "max_height_m": 7.514609,
+    "impact_speed_m_s": 9.336606
+  },
+  {
+    "scene_id": "cscene_0181",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 4188.719666,
+    "max_height_m": 6809489304.889915,
+    "impact_speed_m_s": 2105801193.508183
+  },
+  {
+    "scene_id": "cscene_0182",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 138.602841,
+    "max_height_m": 21.633576,
+    "impact_speed_m_s": 39.934866
+  },
+  {
+    "scene_id": "cscene_0183",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 129.655545,
+    "max_height_m": 32.413886,
+    "impact_speed_m_s": 35.664
+  },
+  {
+    "scene_id": "cscene_0184",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 3428.338776,
+    "max_height_m": 1168394622.337438,
+    "impact_speed_m_s": 336679518.477441
+  },
+  {
+    "scene_id": "cscene_0185",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 86.528847,
+    "max_height_m": 16.118421,
+    "impact_speed_m_s": 29.6176
+  },
+  {
+    "scene_id": "cscene_0186",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 30.139678,
+    "max_height_m": 5.729788,
+    "impact_speed_m_s": 12.886029
+  },
+  {
+    "scene_id": "cscene_0187",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 104.098532,
+    "max_height_m": 13.365458,
+    "impact_speed_m_s": 35.666775
+  },
+  {
+    "scene_id": "cscene_0188",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 0.077647,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 9.541
+  },
+  {
+    "scene_id": "cscene_0189",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 4082.559119,
+    "max_height_m": 2455069552814046.0,
+    "impact_speed_m_s": 1287166541164605.2
+  },
+  {
+    "scene_id": "cscene_0190",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 33.457909,
+    "max_height_m": 5.813533,
+    "impact_speed_m_s": 18.080872
+  },
+  {
+    "scene_id": "cscene_0191",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 139.589197,
+    "max_height_m": 34.897299,
+    "impact_speed_m_s": 37.005
+  },
+  {
+    "scene_id": "cscene_0192",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 205.92506,
+    "max_height_m": 43.471289,
+    "impact_speed_m_s": 43.410587
+  },
+  {
+    "scene_id": "cscene_0193",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 43.222836,
+    "max_height_m": 8.978915,
+    "impact_speed_m_s": 17.961568
+  },
+  {
+    "scene_id": "cscene_0194",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 59.132348,
+    "max_height_m": 8.815069,
+    "impact_speed_m_s": 25.602327
+  },
+  {
+    "scene_id": "cscene_0195",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 137.109341,
+    "max_height_m": 32.285733,
+    "impact_speed_m_s": 36.79315
+  },
+  {
+    "scene_id": "cscene_0196",
+    "subdomain": "golf",
+    "verified": true,
+    "range_m": 3041.565644,
+    "max_height_m": 13908982.794552,
+    "impact_speed_m_s": 3313987.696212
+  },
+  {
+    "scene_id": "cscene_0197",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 83.812887,
+    "max_height_m": 10.076244,
+    "impact_speed_m_s": 31.215484
+  },
+  {
+    "scene_id": "cscene_0198",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 3.265063,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 13.257
+  },
+  {
+    "scene_id": "cscene_0199",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 172.58147,
+    "max_height_m": 42.200586,
+    "impact_speed_m_s": 39.33068
+  },
+  {
+    "scene_id": "cscene_0200",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 59.419857,
+    "max_height_m": 22.004618,
+    "impact_speed_m_s": 25.408869
+  },
+  {
+    "scene_id": "cscene_0201",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 218.62147,
+    "max_height_m": 40.485393,
+    "impact_speed_m_s": 45.165263
+  },
+  {
+    "scene_id": "cscene_0202",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 9.986054,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 9.382
+  },
+  {
+    "scene_id": "cscene_0203",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 0.946764,
+    "max_height_m": 1.62,
+    "impact_speed_m_s": 5.637766
+  },
+  {
+    "scene_id": "cscene_0204",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 0.836148,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 6.304
+  },
+  {
+    "scene_id": "cscene_0205",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 5.279628,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 12.865
+  },
+  {
+    "scene_id": "cscene_0206",
+    "subdomain": "baseball",
+    "verified": true,
+    "range_m": 160.603066,
+    "max_height_m": 17.124435,
+    "impact_speed_m_s": 40.527175
+  },
+  {
+    "scene_id": "cscene_0207",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 296.13682,
+    "max_height_m": 74.034205,
+    "impact_speed_m_s": 53.899
+  },
+  {
+    "scene_id": "cscene_0208",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 1.846995,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 8.924
+  },
+  {
+    "scene_id": "cscene_0209",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 25.971429,
+    "max_height_m": 3.67161,
+    "impact_speed_m_s": 15.777621
+  },
+  {
+    "scene_id": "cscene_0210",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 627.184171,
+    "max_height_m": 156.796043,
+    "impact_speed_m_s": 78.439
+  },
+  {
+    "scene_id": "cscene_0211",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 33.680981,
+    "max_height_m": 11.143609,
+    "impact_speed_m_s": 15.315225
+  },
+  {
+    "scene_id": "cscene_0212",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 574.802086,
+    "max_height_m": 143.700522,
+    "impact_speed_m_s": 75.092
+  },
+  {
+    "scene_id": "cscene_0213",
+    "subdomain": "soccer",
+    "verified": true,
+    "range_m": 37.009077,
+    "max_height_m": 2.328821,
+    "impact_speed_m_s": 27.817586
+  },
+  {
+    "scene_id": "cscene_0214",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 0.359485,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 10.214
+  },
+  {
+    "scene_id": "cscene_0215",
+    "subdomain": "ballistic",
+    "verified": true,
+    "range_m": 279.765805,
+    "max_height_m": 69.941451,
+    "impact_speed_m_s": 52.388
+  },
+  {
+    "scene_id": "cscene_0216",
+    "subdomain": "angled_projectile",
+    "verified": true,
+    "range_m": 49.568648,
+    "max_height_m": 24.512288,
+    "impact_speed_m_s": 24.852189
+  },
+  {
+    "scene_id": "cscene_0217",
+    "subdomain": "inelastic_collision",
+    "verified": true,
+    "range_m": 2.196704,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 2.51
+  },
+  {
+    "scene_id": "cscene_0218",
+    "subdomain": "elastic_collision",
+    "verified": true,
+    "range_m": 2.123103,
+    "max_height_m": 0.0,
+    "impact_speed_m_s": 5.402
+  },
+  {
+    "scene_id": "cscene_0219",
+    "subdomain": "drag_projectile",
+    "verified": true,
+    "range_m": 12.782649,
+    "max_height_m": 3.255415,
+    "impact_speed_m_s": 7.35796
+  }
+]
