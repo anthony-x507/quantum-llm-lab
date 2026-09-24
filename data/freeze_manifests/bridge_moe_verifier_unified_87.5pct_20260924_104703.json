@@ -1,0 +1,28 @@
+{
+  "schema": "qlab_freeze_manifest_v1",
+  "frozen_at_et": "2026-09-24 10:47:03 ET",
+  "domain": "bridge_moe_verifier_unified",
+  "pct": 87.5,
+  "band": "90",
+  "git_sha": "3eeeb33414b763175379b53988f0965f552f14fe",
+  "git_sha_short": "3eeeb33",
+  "artifact": "data/frontier_moe_verifier_unified.json",
+  "eval_path": "data/freeze_metrics/bridge_moe_verifier_baseline_20260924.json",
+  "metrics": {
+    "frontier": "C3-moe-verifier-codigo-vivo",
+    "freeze_role": "platform_baseline_pre_hardneg",
+    "locked_at_et": "2026-09-24 10:45:00 ET",
+    "git_sha_base": "3eeeb33414b763175379b53988f0965f552f14fe",
+    "branch_base": "frontier/moe-verifier-codigo-vivo",
+    "policy": "LOCK freeze 80-100%: polish upward / reinforce around; never abandon this 80%+ platform. RO data/lora_adapter/. No merge main.",
+    "solve_rate_loop_verifier": 0.875,
+    "solve_rate_loop_unified": 0.875,
+    "smoke_solve_rate_loop": 1.0,
+    "router_smoke": "12/12",
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false,
+    "n": 16
+  },
+  "note": "Freeze bridge MoE+verifier CPU platform: unified/verifier loop 0.875 (n=16), smoke 1.0, ent_never_on_python. LOCK: polish around, never abandon ≥80%.",
+  "policy": "Do not abandon; polish and/or reinforce around. RO quantum adapters."
+}

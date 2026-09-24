@@ -1,6 +1,6 @@
 {
   "frontier": "C3-moe-verifier-codigo-vivo",
-  "written": "2026-09-24 10:50:48",
+  "written": "2026-09-24 10:48:46",
   "mode": "smoke",
   "router_method": "heuristic",
   "claims": [
@@ -599,5 +599,234 @@
     }
   },
   "mlx_status": null,
-  "notes": []
+  "notes": [],
+  "hardneg_router": {
+    "method": "heuristic",
+    "n": 18,
+    "hits": 18,
+    "misses": 0,
+    "score": "18/18",
+    "rate": 1.0,
+    "by_family": {
+      "python_looks_like_physics": {
+        "n": 4,
+        "hits": 4,
+        "rate": 1.0
+      },
+      "ent_wording_in_coding": {
+        "n": 6,
+        "hits": 6,
+        "rate": 1.0
+      },
+      "vision_caption_ambiguous": {
+        "n": 5,
+        "hits": 5,
+        "rate": 1.0
+      },
+      "ent_control": {
+        "n": 2,
+        "hits": 2,
+        "rate": 1.0
+      },
+      "base_control": {
+        "n": 1,
+        "hits": 1,
+        "rate": 1.0
+      }
+    },
+    "ent_never_on_python": true,
+    "rows": [
+      {
+        "id": "hn_py_physics_01",
+        "family": "python_looks_like_physics",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints the integer classical free-fall distance int(0.5 * 9.81",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "hn_py_physics_02",
+        "family": "python_looks_like_physics",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write a Python program that prints int(v0*t - 0.5*g*t*t) for ballistic height wi",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "hn_py_physics_03",
+        "family": "python_looks_like_physics",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "def kinetic_energy(m, v):\n    return int(0.5 * m * v * v)\nprint(kinetic_energy(4",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "hn_py_physics_04",
+        "family": "python_looks_like_physics",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python to simulate a 1D elastic collision velocity and print the integer r",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "hn_py_entword_01",
+        "family": "ent_wording_in_coding",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write a Python program that prints the length of the string 'entanglement'. Outp",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "hn_py_entword_02",
+        "family": "ent_wording_in_coding",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that counts how many times the substring 'qubit' appears in: 'qubit",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "hn_py_entword_03",
+        "family": "ent_wording_in_coding",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 2**10. Mentions of Bell pairs, entanglement, or gates i",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "hn_py_entword_04",
+        "family": "ent_wording_in_coding",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "import math\nprint(int(math.factorial(6)))\n# Python sandbox task — ignore any ent",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "hn_py_entword_05",
+        "family": "ent_wording_in_coding",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write a Python program that prints the word 'Hadamard' character count (len). ON",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "hn_vis_amb_01",
+        "family": "vision_caption_ambiguous",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Look at the image caption overlay. How many street lights are visible in the fra",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "hn_vis_amb_02",
+        "family": "vision_caption_ambiguous",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Photo of a table: red ball, blue cube, green cone. In the image, how many object",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "hn_vis_amb_03",
+        "family": "vision_caption_ambiguous",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Text-only description (no image file attached): There are 2 cats and 1 dog. How ",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "hn_vis_amb_04",
+        "family": "vision_caption_ambiguous",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Pure chat: someone said 'three rockets launched'. Without any picture or png, wh",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "hn_vis_amb_05",
+        "family": "vision_caption_ambiguous",
+        "expected": "vision",
+        "got": "vision",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Mira la imagen. La visión muestra semáforos en el video frame. ¿Cuántos? Solo el",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "hn_ent_clean_01",
+        "family": "ent_control",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Propose a quantum circuit with n_qubits and gates for a Bell-pair entanglement s",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "hn_ent_clean_02",
+        "family": "ent_control",
+        "expected": "ent",
+        "got": "ent",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Build a PennyLane circuit: Hadamard then CX on qubits 0,1. Return n_qubits and g",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "hn_base_01",
+        "family": "base_control",
+        "expected": "base",
+        "got": "base",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Hello! Thanks for the earlier chat. Any fun weather idioms?",
+        "ent_adapter_blocked": false
+      },
+      {
+        "id": "hn_py_gate_garden_01",
+        "family": "ent_wording_in_coding",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints s.count('gate') for s='the garden gate is closed'. ONLY",
+        "ent_adapter_blocked": true
+      }
+    ],
+    "fixture_path": "data/bench_live/hardneg_mixed_router.json",
+    "anti_contamination": {
+      "expected_lane_harness_only": true,
+      "gt_never_in_route_api": true
+    }
+  },
+  "hardneg_delta": {
+    "router_rate": 1.0,
+    "router_score": "18/18",
+    "ent_never_on_python": true,
+    "vs_freeze_floor": "hold"
+  }
 }

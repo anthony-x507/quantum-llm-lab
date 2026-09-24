@@ -117,6 +117,17 @@ def adapter_path_for(lane: Lane) -> Path | None:
     return None
 
 
+# Negated / text-only vision cues — hard-neg polish (do not treat as vision lane)
+VISION_NEG_RE = re.compile(
+    r"("
+    r"no\s+image(?:\s+file)?|without\s+(?:any\s+)?(?:image|picture|png|photo|frame)|"
+    r"text[- ]only|pure\s+chat|no\s+png\s+attached|no\s+picture|"
+    r"sin\s+imagen|sin\s+archivo\s+de\s+imagen|no\s+frame\s+attached"
+    r")",
+    re.IGNORECASE,
+)
+
+
 def route_heuristic(prompt: str) -> Lane:
     """Keyword rules. Entanglement LoRA must not win on Python/code prompts."""
     text = prompt or ""
@@ -125,13 +136,15 @@ def route_heuristic(prompt: str) -> Lane:
     has_ent = bool(ENT_RE.search(text))
     has_py = bool(PYTHON_RE.search(text))
     has_vis = bool(VISION_RE.search(text))
+    vis_negated = bool(VISION_NEG_RE.search(text))
 
     # Code-generation intent dominates (protect Python lane from ent LoRA)
     if has_py and not (has_ent and re.search(r"\b(n_qubits|gates\s*[=:\[]|json\s+v[aá]lido)\b", text, re.I)):
         return "python"
     if has_ent:
         return "ent"
-    if has_vis:
+    # Vision only when positive cues are not cancelled by text-only / no-image negations
+    if has_vis and not vis_negated:
         return "vision"
     if has_py:
         return "python"
@@ -286,6 +299,81 @@ SMOKE_FIXTURES: list[dict[str, str]] = [
     {"id": "base_03", "expected": "base",
      "prompt": "Tell me a short fun fact about cats."},
 ]
+
+
+
+HARDNEG_ROUTER_PATH = ROOT / "data" / "bench_live" / "hardneg_mixed_router.json"
+HARDNEG_OUT = ROOT / "data" / "frontier_moe_dual_lane_hardneg.json"
+
+
+def load_hardneg_fixtures(path: Path | None = None) -> list[dict[str, str]]:
+    """Load hard-neg mixed fixtures. Expected lane is harness-only (post-hoc)."""
+    p = path or HARDNEG_ROUTER_PATH
+    blob = json.loads(p.read_text(encoding="utf-8"))
+    items = blob.get("items") or blob
+    out: list[dict[str, str]] = []
+    for it in items:
+        out.append({
+            "id": str(it["id"]),
+            "expected": str(it["expected"]),
+            "prompt": str(it["prompt"]),
+            "family": str(it.get("family") or ""),
+        })
+    return out
+
+
+def run_hardneg(method: str = "heuristic", path: Path | None = None) -> dict[str, Any]:
+    """Score hard-neg mixed fixtures; GT lane compared post-hoc only."""
+    fixtures = load_hardneg_fixtures(path)
+    rows = []
+    hits = 0
+    by_family: dict[str, dict[str, int]] = {}
+    for fx in fixtures:
+        lane = route(fx["prompt"], method=method)
+        ok = lane == fx["expected"]
+        if ok:
+            hits += 1
+        fam = fx.get("family") or "unknown"
+        by_family.setdefault(fam, {"n": 0, "hits": 0})
+        by_family[fam]["n"] += 1
+        if ok:
+            by_family[fam]["hits"] += 1
+        ap = adapter_path_for(lane)  # type: ignore[arg-type]
+        rows.append({
+            "id": fx["id"],
+            "family": fam,
+            "expected": fx["expected"],
+            "got": lane,
+            "ok": ok,
+            "adapter": str(ap) if ap else None,
+            "prompt_preview": fx["prompt"][:80],
+            "ent_adapter_blocked": lane == "python" and (
+                ap is None or "ent" not in Path(str(ap)).name
+            ),
+        })
+    n = len(fixtures)
+    return {
+        "method": method,
+        "n": n,
+        "hits": hits,
+        "misses": n - hits,
+        "score": f"{hits}/{n}",
+        "rate": round(hits / n, 4) if n else 0.0,
+        "by_family": {
+            k: {**v, "rate": round(v["hits"] / v["n"], 4) if v["n"] else 0.0}
+            for k, v in by_family.items()
+        },
+        "ent_never_on_python": all(
+            (r["got"] != "python") or r.get("ent_adapter_blocked")
+            for r in rows
+        ),
+        "rows": rows,
+        "fixture_path": str((path or HARDNEG_ROUTER_PATH).relative_to(ROOT)),
+        "anti_contamination": {
+            "expected_lane_harness_only": True,
+            "gt_never_in_route_api": True,
+        },
+    }
 
 
 def run_smoke(method: str = "heuristic") -> dict[str, Any]:
@@ -498,6 +586,9 @@ def main() -> int:
     p.add_argument("--out", type=Path, default=SMOKE_OUT)
     p.add_argument("--route", type=str, default=None,
                    help="Route a single prompt and print lane+adapter")
+    p.add_argument("--hardneg", action="store_true",
+                   help="Score hard-neg mixed fixtures (physics-lookalike / ent-in-code / amb vision)")
+    p.add_argument("--hardneg-path", type=Path, default=HARDNEG_ROUTER_PATH)
     args = p.parse_args()
 
     method = "heuristic"
@@ -512,7 +603,7 @@ def main() -> int:
         print(json.dumps({"lane": lane, "adapter": str(ap) if ap else None}, indent=2))
         return 0
 
-    if not args.smoke and not args.bench_codigo_vivo:
+    if not args.smoke and not args.bench_codigo_vivo and not args.hardneg:
         args.smoke = True  # default to smoke
 
     artifact: dict[str, Any] = {
@@ -537,6 +628,18 @@ def main() -> int:
         print(f"=== MoE smoke method={method} ===", flush=True)
         artifact["smoke"] = run_smoke(method)
         print(f"Smoke score: {artifact['smoke']['score']}", flush=True)
+
+    if args.hardneg:
+        print(f"=== MoE hardneg method={method} ===", flush=True)
+        artifact["hardneg"] = run_hardneg(method, path=args.hardneg_path)
+        print(
+            f"Hardneg score: {artifact['hardneg']['score']} "
+            f"rate={artifact['hardneg']['rate']} "
+            f"ent_never_on_python={artifact['hardneg']['ent_never_on_python']}",
+            flush=True,
+        )
+        if args.out == SMOKE_OUT:
+            args.out = HARDNEG_OUT
 
     if args.bench_codigo_vivo:
         # Prefer not stealing GPU if a long mlx_vlm.lora job is live

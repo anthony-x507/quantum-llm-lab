@@ -1,0 +1,27 @@
+{
+  "frontier": "C3-moe-verifier-codigo-vivo",
+  "freeze_role": "platform_baseline_pre_hardneg",
+  "locked_at_et": "2026-09-24 10:45:00 ET",
+  "git_sha_base": "3eeeb33414b763175379b53988f0965f552f14fe",
+  "branch_base": "frontier/moe-verifier-codigo-vivo",
+  "sources": {
+    "unified": "data/frontier_moe_verifier_unified.json",
+    "cpu_n16": "data/frontier_moe_verifier_cpu_n16.json",
+    "cpu_smoke": "data/frontier_moe_verifier_cpu_smoke.json"
+  },
+  "gates": {
+    "cpu_verifier_loop_n16": 0.875,
+    "cpu_unified_loop_n16": 0.875,
+    "cpu_smoke_loop_n5": 1.0,
+    "router_smoke": "12/12",
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false
+  },
+  "comparison_table_n16": [
+    {"path": "baseline_single_no_moe", "rate": 0.0},
+    {"path": "moe_alone_python_lane", "rate": 0.0},
+    {"path": "verifier_alone", "rate": 0.875},
+    {"path": "moe_verifier_unified_python_lane", "rate": 0.875}
+  ],
+  "policy": "LOCK freeze 80-100%: polish upward / reinforce around; never abandon this 80%+ platform. RO data/lora_adapter/. No merge main."
+}

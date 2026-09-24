@@ -1,0 +1,24 @@
+{
+  "schema": "qlab_freeze_manifest_v1",
+  "frozen_at_et": "2026-09-24 10:51:04 ET",
+  "domain": "bridge_moe_verifier_unified_polished",
+  "pct": 100.0,
+  "band": "100",
+  "git_sha": "3eeeb33414b763175379b53988f0965f552f14fe",
+  "git_sha_short": "3eeeb33",
+  "artifact": "data/frontier_moe_verifier_unified.json",
+  "eval_path": "data/frontier_moe_verifier_cpu_n16.json",
+  "metrics": {
+    "solve_rate_loop_verifier": 1.0,
+    "solve_rate_loop_unified": 1.0,
+    "smoke_solve_rate_loop": 1.0,
+    "hardneg_router_rate": 1.0,
+    "hardneg_python_loop": 1.0,
+    "n": 16,
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false,
+    "delta_vs_freeze_0875": 0.125
+  },
+  "note": "Post hard-neg reinforce polish: original n16 loop 1.0 (was freeze 0.875). Floor 80%/87.5% manifests retained; never abandoned.",
+  "policy": "Do not abandon; polish and/or reinforce around. RO quantum adapters."
+}
