@@ -14,7 +14,7 @@
 
 **CPU re-smoke after fold:** unified **1.0**; R15 **15→52**; R14 held; LP/pillars/circ floors retained; freezes retained incl. r14 + label_protect_expand_fold + pillars + circ + future_r3 + r13 + priors. Adapters RO. choose-n / R16+ / tti-cold not folded.
 
-**Method:** cherry-pick `7ef18ce` onto tip `bc6902f` → `a65dac6` / fold `PENDING`; merge R12+R13+R14+R15 gates_ops; keep tip STATUS+mixed/LP/r7–r11 JSON ours.
+**Method:** cherry-pick `7ef18ce` onto tip `bc6902f` → `a65dac6` / fold `4787c78`; merge R12+R13+R14+R15 gates_ops; keep tip STATUS+mixed/LP/r7–r11 JSON ours.
 
 **Not folded:** choose-n @ fecca86 → R16 → tti-cold → R17…R24.
 
