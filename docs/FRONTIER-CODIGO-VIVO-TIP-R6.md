@@ -1,7 +1,7 @@
 # Frontier — Código-vivo tip hardneg R6
 
-**Branch:** `frontier/tip-hardneg-r6` (side branch from tip; fold later)  
-**Base tip:** `32fed9b` (R5 freeze `codigo_vivo_tip_r5_100pct`)  
+**Branch:** `frontier/codigo-vivo-tip` (folded from `frontier/tip-hardneg-r6`)  
+**Base tip:** `3b10288` (label-protect freeze) · R6 rebased from `32fed9b` → content `f3fcf1e` / pin `259e4a4`  
 **When:** 2026-09-24 ~12:44–12:47 ET · Mac-111 (`074c6626-…`)  
 **Claim:** NO quantum advantage. Classical heuristic router + `python -I` verifier only.
 
@@ -76,11 +76,17 @@ cd /Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r6
 - `data/freeze_manifests/tip_moe_verifier_polish_r6_100pct_*.json`
 - `docs/FRONTIER-CODIGO-VIVO-TIP-R6.md` (this file)
 
+## FOLDED into tip
+
+**When:** 2026-09-24 12:49:51 ET · Mac-111 (`074c6626-…`)  
+**Tip after FF:** `259e4a4` (rebase onto `3b10288` + FF). Fold commit follows with scoreboard/STATUS.  
+**Prior freezes retained (not abandoned):** platform, mlx_r3, post_polish, polish_r5, **R5 tip** `codigo_vivo_tip_r5_100pct_20260924_123727`, **label_protect** `codigo_vivo_tip_label_protect_100pct_20260924_124608`, polish_r6.  
+**Re-smoke:** mixed (d) **1.0**; R1–R6 routers **18/18 · 22/22 · 35/35 · 40/40 · 44/44 · 48/48**; R3/R4/R5/R6/LP verifier **28/28 · 32/32 · 36/36 · 40/40 · 32/32**; LP router **43/43**; `ent_never_on_python=true`.
+
 ## What this does NOT do
 
 - No merge to `main`.
 - No writes under `data/lora_adapter/`.
 - No quantum-advantage marketing.
 - No CloudAgent. MachineId `074c6626-…` only.
-- Does not touch tip-cv / label-protect fold worktree.
-- Not yet folded into `frontier/codigo-vivo-tip` (side branch only).
+- Folded into `frontier/codigo-vivo-tip`; source branch kept for history.

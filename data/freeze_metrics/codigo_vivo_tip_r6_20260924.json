@@ -1,0 +1,47 @@
+{
+  "frontier": "codigo-vivo-tip-r6-fold",
+  "written_et": "2026-09-24 12:49:51 ET",
+  "tip_sha": "259e4a4023180635ef3b03bb62cdc94c244082da",
+  "tip_sha_short": "259e4a4",
+  "branch": "frontier/codigo-vivo-tip",
+  "source_branch": "frontier/tip-hardneg-r6",
+  "rebase_onto": "3b10288",
+  "content_sha": "f3fcf1e",
+  "pin_sha": "259e4a4",
+  "policy": "Fold R6 into tip; retain platform/mlx_r3/post_polish/R5/label_protect; RO lora_adapter; no merge main.",
+  "holds": {
+    "mixed_d_unified": 1.0,
+    "r1_router": "18/18",
+    "r2_router": "22/22",
+    "r3_router": "35/35",
+    "r3_verifier": "28/28",
+    "r4_router": "40/40",
+    "r4_verifier": "32/32",
+    "r5_router": "44/44",
+    "r5_verifier": "36/36",
+    "r6_router": "48/48",
+    "r6_verifier": "40/40",
+    "label_protect_router": "43/43",
+    "label_protect_verifier": "32/32",
+    "router_smoke": "12/12",
+    "pillars": "26/26",
+    "ent_never_on_python": true,
+    "floor_held": true,
+    "floor": 0.9667
+  },
+  "prior_freezes_retained": [
+    "codigo_vivo_tip_platform_100pct_20260924_111435",
+    "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",
+    "codigo_vivo_tip_post_polish_100pct_20260924_123210",
+    "codigo_vivo_tip_r5_100pct_20260924_123727",
+    "codigo_vivo_tip_label_protect_100pct_20260924_124608",
+    "tip_moe_verifier_polish_r6_100pct_20260924_124715"
+  ],
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "ent_never_on_python": true,
+    "lora_adapter_writes": false
+  },
+  "blockers": [],
+  "claims": "No quantum-advantage claims."
+}

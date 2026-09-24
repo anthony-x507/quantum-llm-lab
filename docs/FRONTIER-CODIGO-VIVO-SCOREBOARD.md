@@ -25,6 +25,7 @@
 | `frontier/tip-own-delta-scoreboard` | `66db30a` | fold own-delta (rebase `2382c90` onto `0a1ef4d`); honesty Py−0.062 Ent+1.0 Vis−0.200; dual-lane protects; CPU floor **1.0** held |
 | `frontier/tip-hardneg-r5` | `55bdfb7` | fold R5 polish `9a12fbc` (rebase onto `b1c7091` → `49d7ccc` + pin `55bdfb7`); R5 44/44·36/36; floor **1.0** held |
 | `frontier/tip-label-protect` | `8b0772a` | fold label-protect/fall-super (`751ed03`+`8b0772a` onto `32fed9b`); router 43/43·verifier 32/32; floor **1.0** held |
+| `frontier/tip-hardneg-r6` | `259e4a4` | fold R6 polish `f3fcf1e` (rebase onto `3b10288` → `f3fcf1e` + pin `259e4a4`); R6 48/48·40/40; LP held 43/43·32/32; floor **1.0** held |
 
 **Metric policy:** Prefer vision **1.0** / overall **1.0** from `mixed-freeze-vision` over scaffold-merge / R2-port scoreboards that still show vis **0.9** / overall **0.9667**. Keep scaffold wiring + R2 reinforces + anti-think.
 
@@ -122,6 +123,30 @@
 | Unified | `data/frontier_moe_verifier_mixed_unified.json` |
 | Own-delta | `docs/FRONTIER-CODIGO-VIVO-TIP-OWN-DELTA-SCOREBOARD.md` |
 
+
+## R6 TIP FREEZE / FOLD (overall 1.0) — tip HEAD after hardneg-r6 fold
+
+**Freeze id:** `codigo_vivo_tip_r6_100pct`  
+**Tip HEAD (pre-fold-docs):** `259e4a4` · rebased from `32fed9b` onto label-protect tip `3b10288`  
+**Claim:** NO quantum advantage. Cites tip HEAD after R6 fold; **prior platform / mlx_r3 / post_polish / R5 tip / label_protect / polish_r5 / polish_r6 freezes NOT abandoned**.
+
+| Surface | Score |
+|---------|-------|
+| mixed (d) unified | **1.0** |
+| hardneg R1–R6 | **18/18 · 22/22 · 35/35 · 40/40 · 44/44 · 48/48** |
+| R3/R4/R5/R6 verifier | **28/28 · 32/32 · 36/36 · 40/40** |
+| label-protect | **43/43 · 32/32** |
+| router smoke / pillars | **12/12 · 26/26** |
+| `ent_never_on_python` | **true** |
+
+**Policy:** Never abandon platform / mlx_r3 / post_polish / R5 tip / label_protect. `data/lora_adapter/` **READ-ONLY**. No merge to `main`.
+
+| Artifact | Path |
+|----------|------|
+| Manifest | `data/freeze_manifests/codigo_vivo_tip_r6_100pct_*.json` |
+| Metrics | `data/freeze_metrics/codigo_vivo_tip_r6_20260924.json` |
+| R6 doc | `docs/FRONTIER-CODIGO-VIVO-TIP-R6.md` |
+| Re-smoke | PASS · R6 48/48·40/40 · LP 43/43·32/32 · cpu overall 1.0 |
 
 ## LABEL-PROTECT TIP FREEZE (overall 1.0) — after label-protect fold
 

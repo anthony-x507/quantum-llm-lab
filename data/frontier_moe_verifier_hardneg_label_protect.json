@@ -1,6 +1,6 @@
 {
   "frontier": "C3-moe-verifier-codigo-vivo",
-  "written": "2026-09-24 12:44:33",
+  "written": "2026-09-24 12:49:17",
   "mode": "hardneg-cpu",
   "router_method": "heuristic",
   "claims": [
@@ -173,13 +173,13 @@
     ],
     "prior_live_bench": {
       "source": "frontier_moe_dual_lane_smoke.json",
-      "python_solve_rate": 0.0625,
-      "ent_label_acc": 1.0,
-      "vision_accuracy": 0.9,
-      "gate_pass": true,
-      "n_python": 16,
-      "n_ent": 12,
-      "n_vision": 10
+      "python_solve_rate": null,
+      "ent_label_acc": null,
+      "vision_accuracy": null,
+      "gate_pass": null,
+      "n_python": null,
+      "n_ent": null,
+      "n_vision": null
     }
   },
   "python_paths": {
@@ -1973,18 +1973,18 @@
   "priors_from_shipped_json": {
     "moe_alone": {
       "source": "frontier_moe_dual_lane_smoke.json",
-      "python_solve_rate": 0.0625,
-      "ent_label_acc": 1.0,
-      "vision_accuracy": 0.9,
-      "gate_pass": true,
-      "n_python": 16,
-      "n_ent": 12,
-      "n_vision": 10
+      "python_solve_rate": null,
+      "ent_label_acc": null,
+      "vision_accuracy": null,
+      "gate_pass": null,
+      "n_python": null,
+      "n_ent": null,
+      "n_vision": null
     },
     "baseline_no_moe": {
       "source": "frontier_moe_dual_lane_smoke.json#gate",
-      "python_solve_rate": 0.0625,
-      "vision_accuracy": 0.9,
+      "python_solve_rate": null,
+      "vision_accuracy": null,
       "note": "single-shot base (no MoE) from prior Código-vivo baseline gate"
     },
     "verifier_alone_replay_n16": {
