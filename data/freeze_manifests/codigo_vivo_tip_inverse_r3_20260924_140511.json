@@ -1,0 +1,49 @@
+{
+  "schema": "codigo_vivo_tip_inverse_r3",
+  "frozen_at_et": "2026-09-24 14:05:11 ET",
+  "domain": "codigo_vivo_tip_inverse_r3",
+  "pct": 100,
+  "band": "100pct",
+  "git_sha": "a1cbee6417cc6b16bd95c01cf77aa66f3aa321ff",
+  "git_sha_short": "a1cbee6",
+  "artifact": "data/frontier_tip_inverse_r3_probe.json",
+  "collision_eval": "data/collision_predictive/EVAL_COLLISION_CPU.json",
+  "base_tip_sha": "3f5f1b16cd31b7c5cbbd1d48a0eda7006a18a1f1",
+  "branch": "frontier/tip-inverse-r3",
+  "metrics": {
+    "collision_physics_overall_pct": 100.0,
+    "collision_choose_safest_overall_pct": 100.0,
+    "collision_inverse_cv_overall_pct": 100.0,
+    "collision_inverse_cv_overall_pct_before": 99.82,
+    "collision_inverse_cv_delta_pp": 0.18,
+    "collision_ablation_pp": 0.0,
+    "collision_ablation_pp_before": 0.18,
+    "collision_n_eval_seqs": 40,
+    "collision_n_queries": 2850,
+    "collision_contam_passed": true,
+    "collision_retrieval_ok": true,
+    "mixed_d_unified": 1.0,
+    "floor_held": true,
+    "floor_resmoke": "N/A",
+    "not_folded_into_tip": true
+  },
+  "floors": {
+    "mixed_d_unified": 1.0,
+    "held": true,
+    "collision_physics": 1.0,
+    "choose_safest": 1.0,
+    "inverse_cv_min_target": 0.9982,
+    "inverse_cv_actual": 1.0,
+    "min_hold_pct": 80.0
+  },
+  "policy": "RO data/lora_adapter/; no merge main; no fold into tip; side-branch only; avoid tip-cv / tip-tti / tip-distance-mid / tip-motion-r4 / tip-hardneg-r11 / tip-hardneg-r12; GT never at inference",
+  "note": "inverse-r3 polish: raise inverse_cv 99.82\u2192100.0 via mass-aware third-party bounce (ego geometric-only); collision physics 100% + choose_safest 100% held; NOT folded into tip",
+  "prior_freeze_retained": [
+    "codigo_vivo_tip_inverse_r2_100pct_20260924_134326",
+    "codigo_vivo_tip_r9_100pct_20260924_133405",
+    "codigo_vivo_tip_collision_n_100pct_20260924_132559",
+    "codigo_vivo_tip_motion_r2_100pct_20260924_131537",
+    "codigo_vivo_tip_collision_pred_100pct_20260924_131846",
+    "codigo_vivo_tip_distance_danger_100pct_20260924_131243"
+  ]
+}
