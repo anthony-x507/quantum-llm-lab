@@ -122,6 +122,40 @@
 | Unified | `data/frontier_moe_verifier_mixed_unified.json` |
 | Own-delta | `docs/FRONTIER-CODIGO-VIVO-TIP-OWN-DELTA-SCOREBOARD.md` |
 
+
+## LABEL-PROTECT TIP FREEZE (overall 1.0) — after label-protect fold
+
+**Freeze id:** `codigo_vivo_tip_label_protect_100pct_20260924_124608`  
+**Frozen SHA:** `d151432894282e08cb03fc278bd03f5a0eeca9ec` (`d151432`) · branch `frontier/codigo-vivo-tip`  
+**When:** 2026-09-24 12:46:08 ET · Mac-111 (`074c6626-…`)  
+**Claim:** NO quantum advantage. Cites tip HEAD after label-protect fold; **prior platform / mlx_r3 / post_polish / R5 tip / polish_r5 / label-protect polish freezes NOT abandoned**.
+
+| Lock | Value |
+|------|-------|
+| overall (d unified) | **1.0000** |
+| MoE Δ overall | **+0.3334** visible |
+| pillars | **26/26** |
+| hardneg R1–R5 | **18/18 · 22/22 · 35/35 · 40/40 · 44/44** |
+| R3/R4/R5 verifier | **28/28 · 32/32 · 36/36** |
+| label-protect | **43/43 · 32/32** |
+| wired_to_vlm | **true** (`text_scaffold_prefix`) |
+| mlx largern / ent-sep | **1.0 / 1.0** (cited) |
+| own-delta honesty | Py **−0.062** · Ent **+1.0** · Vis **−0.200** (dual-lane protects) |
+| ent_never_on_python | **true** |
+| prompt_touches_gt | **false** |
+| floor held | **yes** (≥0.967, actual 1.0) |
+
+**Policy:** Never abandon platform `f0da3e7` / mlx_r3 / post_polish / R5 tip `codigo_vivo_tip_r5_100pct_20260924_123727`. `data/lora_adapter/` **READ-ONLY**. No merge to `main`.
+
+| Artifact | Path |
+|----------|------|
+| Manifest | `data/freeze_manifests/codigo_vivo_tip_label_protect_100pct_20260924_124608.json` |
+| Metrics | `data/freeze_metrics/codigo_vivo_tip_label_protect_20260924.json` |
+| Unified | `data/frontier_moe_verifier_mixed_unified.json` |
+| Label-protect | `docs/FRONTIER-CODIGO-VIVO-TIP-LABEL-PROTECT.md` |
+| Re-smoke | PASS · pillars 26/26 · hardneg 18/18 · LP 43/43 · R5 44/44 · cpu overall 1.0 |
+
+
 ## MLX+R3 CONSOLIDATE FREEZE (overall 1.0)
 
 **Freeze id:** `codigo_vivo_tip_mlx_r3_100pct_20260924_112131`  
@@ -523,5 +557,5 @@ Anti-contam **CLEAN**. Adapters RO unchanged. Platform / mlx_r3 / polish_r4 / **
 
 **Δ:** router **36/43→43/43**; verifier **32/32**; mixed (d) **1.0 held**.  
 **Honesty:** dual-lane + negated `json válido` / empty `gates=[]` protect python/base from ent mis-route on fall/super label words; real fall/super circuit JSON asks stay ent.  
-**CPU re-smoke after fold:** unified **1.0**; label-protect **43/43·32/32**; R1–R5 routers **18/18·22/22·35/35·40/40·44/44**; R3/R4/R5 verifier **28/28·32/32·36/36**; `wired_to_vlm` retained · R5 tip freeze `codigo_vivo_tip_r5_100pct_20260924_123727` **retained**.  
+**CPU re-smoke after fold:** unified **1.0**; label-protect **43/43·32/32**; R1–R5 routers **18/18·22/22·35/35·40/40·44/44**; R3/R4/R5 verifier **28/28·32/32·36/36**; `wired_to_vlm` retained · R5 tip freeze `codigo_vivo_tip_r5_100pct_20260924_123727` **retained**; label-protect tip freeze `codigo_vivo_tip_label_protect_100pct_20260924_124608` **locked**.  
 Platform / mlx_r3 / post_polish / polish_r5 / R5 tip freezes **retained**. Never abandon.

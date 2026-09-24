@@ -1,0 +1,130 @@
+{
+  "schema": "qlab_freeze_manifest_v1",
+  "freeze_id": "codigo_vivo_tip_label_protect_100pct_20260924_124608",
+  "frozen_at_et": "2026-09-24 12:46:08 ET",
+  "domain": "codigo_vivo_tip_label_protect",
+  "pct": 100.0,
+  "band": "100",
+  "git_sha": "d151432894282e08cb03fc278bd03f5a0eeca9ec",
+  "git_sha_short": "d151432",
+  "branch": "frontier/codigo-vivo-tip",
+  "host": "Mac-111",
+  "machine_id": "074c6626-0440-4817-9829-6bae77c578d6",
+  "artifact": "data/frontier_moe_verifier_mixed_unified.json",
+  "eval_path": "data/freeze_metrics/codigo_vivo_tip_label_protect_20260924.json",
+  "pillars": {
+    "moe": {
+      "actual": "+0.333 visible; (d) 1.0",
+      "gap": 0
+    },
+    "verifier": {
+      "actual": 1.0,
+      "gap": 0
+    },
+    "scaffold": {
+      "actual": "ON; wired_to_vlm=true",
+      "gap": 0
+    },
+    "vision": {
+      "actual": 1.0,
+      "gap": 0
+    },
+    "hardneg_r5": {
+      "actual": "44/44 router · 36/36 verifier",
+      "gap": 0
+    },
+    "label_protect": {
+      "actual": "43/43 router · 32/32 verifier",
+      "gap": 0
+    },
+    "mlx_largern": {
+      "actual": 1.0,
+      "gap": 0
+    },
+    "ent_sep": {
+      "actual": "ent2 w/ sep 1.0 (16/16)",
+      "gap": 0
+    },
+    "own_delta_honesty": {
+      "actual": "Py−0.062 Ent+1.0 Vis−0.200; dual-lane protects",
+      "gap": 0
+    }
+  },
+  "paths": {
+    "a_baseline": 0.3333,
+    "b_moe_alone": 0.6667,
+    "c_verifier_on_python": 0.6667,
+    "d_unified": 1.0
+  },
+  "composition_sources": {
+    "tip_head": "d151432",
+    "label_protect_fold": "d151432",
+    "label_protect_rebase": "751ed03+8b0772a",
+    "r5_tip_freeze": "32fed9b",
+    "hardneg_r5_fold": "55bdfb7",
+    "post_polish": "bf58743",
+    "own_delta": "66db30a",
+    "ent_sep_fix": "08463a2",
+    "mlx_largern": "c11ccac",
+    "scaffold_wire_vlm": "ae62ce2",
+    "hardneg_r4": "0dd7b79",
+    "mlx_r3": "5c67267",
+    "platform": "f0da3e7"
+  },
+  "retained_freezes": [
+    "codigo_vivo_tip_platform_100pct_20260924_111435",
+    "codigo_vivo_tip_mlx_r3_100pct_20260924_112131",
+    "codigo_vivo_tip_post_polish_100pct_20260924_123210",
+    "codigo_vivo_tip_r5_100pct_20260924_123727",
+    "tip_moe_verifier_polish_r3_100pct_20260924_111740",
+    "tip_moe_verifier_polish_r4_100pct_20260924_112851",
+    "tip_moe_verifier_polish_r5_100pct_20260924_123200",
+    "tip_moe_verifier_polish_label_protect_100pct_20260924_124234"
+  ],
+  "policy": "Do not abandon prior freezes; polish and/or reinforce around. RO data/lora_adapter/. No merge to main. NO quantum-advantage claims.",
+  "floor_held": true,
+  "overall_d_unified": 1.0,
+  "metrics": {
+    "overall": 1.0,
+    "python": 1.0,
+    "entanglement": 1.0,
+    "vision_scored": 1.0,
+    "moe_delta_overall": 0.3334,
+    "moe_delta_visible": true,
+    "router_pillars": "26/26",
+    "hardneg_r1": "18/18",
+    "hardneg_r1_rate": 1.0,
+    "hardneg_r2": "22/22",
+    "hardneg_r2_rate": 1.0,
+    "hardneg_r3": "35/35",
+    "hardneg_r3_rate": 1.0,
+    "hardneg_r4": "40/40",
+    "hardneg_r4_rate": 1.0,
+    "hardneg_r5": "44/44",
+    "hardneg_r5_rate": 1.0,
+    "label_protect": "43/43",
+    "label_protect_rate": 1.0,
+    "hardneg_r3_verifier": "28/28",
+    "hardneg_r4_verifier": "32/32",
+    "hardneg_r5_verifier": "36/36",
+    "label_protect_verifier": "32/32",
+    "wired_to_vlm": true,
+    "channel": "text_scaffold_prefix",
+    "scaffold_freeze_held": true,
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false,
+    "floor_held": true,
+    "floor": 0.9667,
+    "prefer": 1.0,
+    "mlx_largern": 1.0,
+    "ent_sep": 1.0,
+    "own_delta": "Py−0.062 Ent+1.0 Vis−0.200",
+    "smoke_reconfirm_et": "2026-09-24 12:46:08 ET",
+    "fold_source": "frontier/tip-label-protect@8b0772a → tip d151432"
+  },
+  "blockers": [],
+  "claims": [
+    "NO quantum advantage",
+    "Classical MoE + python -I verifier + prior-replay ent/vision + GT-free scaffold + mlx vision parse"
+  ]
+}

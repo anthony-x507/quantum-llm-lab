@@ -79,6 +79,16 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 
 
 
+
+## TIP FREEZE (100pct)
+
+| Manifest | pct |
+|----------|-----|
+| `data/freeze_manifests/codigo_vivo_tip_label_protect_100pct_20260924_124608.json` | **100** |
+
+Frozen tip SHA **`d151432`**. Metrics: `data/freeze_metrics/codigo_vivo_tip_label_protect_20260924.json`.  
+Prior freezes retained incl. R5 tip `codigo_vivo_tip_r5_100pct_20260924_123727`.
+
 ## FOLDED into tip
 
 **When:** 2026-09-24 12:44:19 ET · Mac-111 (`074c6626-…`)  

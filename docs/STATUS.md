@@ -7,6 +7,9 @@
 
 ---
 
+## 2026-09-24 — LABEL-PROTECT tip freeze @ d151432
+Freeze `codigo_vivo_tip_label_protect_100pct_20260924_124608`. CPU unified **1.0**; LP 43/43·32/32; R1–R5 18/18·22/22·35/35·40/40·44/44; R3/R4/R5 verifier 28/28·32/32·36/36; wired_to_vlm; mlx largern + ent-sep + own-delta cited. Prior freezes **retained** (platform / mlx_r3 / post_polish / R5 tip / polish_r5 / LP polish). Blockers none. See SCOREBOARD.
+
 ## 2026-09-24 — fold tip-label-protect → codigo-vivo-tip
 Rebase `2d86650`/`65de0c9` onto `32fed9b` → `751ed03`+`8b0772a` FF. CPU unified **1.0** (re-smoke); label-protect 43/43·32/32; R1–R5 held; R5 tip freeze retained. See SCOREBOARD + TIP-LABEL-PROTECT.
 
