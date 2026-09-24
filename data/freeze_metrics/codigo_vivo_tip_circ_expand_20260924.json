@@ -7,5 +7,7 @@
   "circ_axis": "5/5",
   "mixed_d_unified": 1.0,
   "ro_mtime_unchanged": true,
-  "fold_into_tip": false
+  "fold_into_tip": false,
+  "branch_sha": "bf906f9e609c81e0880d29ca168680714edd9b9d",
+  "branch_sha_short": "bf906f9"
 }

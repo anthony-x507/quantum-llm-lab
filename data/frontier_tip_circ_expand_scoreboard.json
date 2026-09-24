@@ -67,5 +67,9 @@
     "ro_before": "data/tip_circ_expand_adapter_ro_snapshot_before.json",
     "ro_after": "data/tip_circ_expand_adapter_ro_snapshot_after.json",
     "renderer": "examples/vision_circ/render_grounded_circ_scenes.py"
-  }
+  },
+  "branch_sha": "bf906f9e609c81e0880d29ca168680714edd9b9d",
+  "branch_sha_short": "bf906f9",
+  "feat_sha": "bf906f9e609c81e0880d29ca168680714edd9b9d",
+  "feat_sha_short": "bf906f9"
 }
