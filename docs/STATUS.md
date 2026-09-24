@@ -1,3 +1,4 @@
+- 2026-09-24 fold tip-distance-far → tip @ `5fb00e3`; freeze `codigo_vivo_tip_distance_far_fold_100pct_20260924_143716`; far MAE 4.653→2.600; DZ/mid/inv/R12 held.
 - 2026-09-24 14:31:02 ET: **FOLDED** tip-inverse-r3 → tip; freeze `codigo_vivo_tip_inverse_r3_fold_100pct_20260924_143102`; inv_cv 99.82→100.0; mixed 1.0; collision/choose_safest 100%; mid+R12 floors held. RO adapters.
 - 2026-09-24 fold tip-hardneg-r12 → tip; freeze `codigo_vivo_tip_r12_100pct_20260924_142830`; mixed 1.0; R12 52/52·44/44.
 - 2026-09-24 14:23:29 ET: **FOLDED** tip-distance-mid → tip; freeze `codigo_vivo_tip_distance_mid_100pct_20260924_142329`; mid/DZ/TTI/R11/motion/collision floors held. RO adapters.

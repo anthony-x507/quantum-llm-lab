@@ -1,6 +1,6 @@
 {
   "frontier": "C3b-moe-verifier-mixed-live",
-  "written": "2026-09-24 14:30:55",
+  "written": "2026-09-24 14:35:33",
   "claims": [
     "NO quantum-advantage claims",
     "MoE routing usability + classical python -I exec oracle only",

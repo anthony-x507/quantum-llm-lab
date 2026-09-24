@@ -1,13 +1,13 @@
 # FRONTIER — tip-distance-far (~100–200 m far-band polish)
 
-**Status:** **FOLDED** into `frontier/codigo-vivo-tip` @ `PENDING_FOLD` (2026-09-24 14:35:43 ET; side feat `8b4779c` / `bd2e8b4` → tip-cv merge-port keeping mid+TTI)  
+**Status:** **FOLDED** into `frontier/codigo-vivo-tip` @ `5fb00e3` (2026-09-24 14:35:43 ET; side feat `8b4779c` / `bd2e8b4` → tip-cv merge-port keeping mid+TTI)  
 **Branch:** `frontier/tip-distance-far` (source kept) · tip `frontier/codigo-vivo-tip`  
 **Base tip at fold:** `34c696f` (post inverse-r3) · originally from `f70faa1` (motion-r4)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-distance-far` (Mac-111) · tip-cv `/Users/anthony/Documents/quantum-llm-lab-tip-cv`  
 **When:** polish ~14:07 ET · fold 2026-09-24 14:35:43 ET · Mac-111 (`074c6626-…`)  
 **Feat SHA (side):** `8b4779c` (`8b4779c50f0276b798d02b404696ac561c984489`)  
 **Freeze (side):** `codigo_vivo_tip_distance_far_100pct_20260924_140738`  
-**Freeze (fold):** `PENDING_FOLD`  
+**Freeze (fold):** `codigo_vivo_tip_distance_far_fold_100pct_20260924_143716`  
 **Claim:** NO quantum advantage. Classical floor-scale CPU heuristic only (synth pinhole).
 
 

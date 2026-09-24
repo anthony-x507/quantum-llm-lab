@@ -1,6 +1,6 @@
 {
   "schema": "frontier_tip_inverse_r3_probe",
-  "ts": "2026-09-24 14:30:53 ET",
+  "ts": "2026-09-24 14:35:34 ET",
   "domain": "collision_predictive",
   "branch": "frontier/codigo-vivo-tip",
   "n_eval_seqs": 40,
