@@ -185,6 +185,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R12: Traefik/Envoy/NATS/ClickHouse/dbt/Crossplane/Flux/RabbitMQ/ES/Swift/Elixir/Julia/Kong/Spinnaker gates: scalars.
     # R13: Nginx/HAProxy/Caddy/Redis/Postgres/Skaffold/Buildkite/Packer/Salt/Bazel/Dagger/Dagster/Hasura/NestJS gates: scalars.
     # R14: Apache httpd/Varnish/APISIX/Tyk/KrakenD/MongoDB/Cassandra/Jenkins/Vagrant/Chef/Pants/Prefect/FastAPI/Spring gates: scalars.
+    # R15: Squid/OpenResty/Contour/Emissary/Zuul/Django/Laravel/Gin/DynamoDB/Firestore/Keycloak/Falco/OTel/Ray gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -542,7 +543,66 @@ def route_heuristic(prompt: str) -> Lane:
             r"|spring\s+.*gates:"
             r"|security\s+gates:\s*has"
             # R14: httpd / cache / gateway / API / DB / CI / image / config / build / orchestration / framework / security prose
-            r"|gates:\s+is\s+(?:httpd|cache|gateway|API|DB|CI|image|config|build|orchestration|framework|security)\b",
+            r"|gates:\s+is\s+(?:httpd|cache|gateway|API|DB|CI|image|config|build|orchestration|framework|security)\b"
+            # R15: Squid proxy gates: http_access
+            r"|gates\s*:\s*http_access\b"
+            r"|squid\s+.*gates:"
+            r"|proxy\s+gates:\s*http_access"
+            # R15: OpenResty Lua gates: content_by_lua
+            r"|gates\s*:\s*content_by_lua\b"
+            r"|openresty\s+.*gates:"
+            r"|lua\s+gates:\s*content"
+            # R15: Contour HTTPProxy gates: retryPolicy
+            r"|gates\s*:\s*retryPolicy\b"
+            r"|contour\s+.*gates:"
+            r"|httpproxy\s+.*gates:"
+            # R15: Emissary Mapping gates: hostname
+            r"|gates\s*:\s*hostname\b"
+            r"|emissary\s+.*gates:"
+            r"|mapping\s+gates:\s*hostname"
+            # R15: Zuul filter gates: StripPrefix
+            r"|gates\s*:\s*StripPrefix\b"
+            r"|zuul\s+.*gates:"
+            r"|filter\s+gates:\s*StripPrefix"
+            # R15: Django middleware gates: AuthenticationMiddleware
+            r"|gates\s*:\s*AuthenticationMiddleware\b"
+            r"|django\s+.*gates:"
+            r"|middleware\s+gates:\s*Authentication"
+            # R15: Laravel middleware gates: VerifyCsrfToken
+            r"|gates\s*:\s*VerifyCsrfToken\b"
+            r"|laravel\s+.*gates:"
+            r"|middleware\s+gates:\s*VerifyCsrf"
+            # R15: Gin middleware gates: AuthRequired
+            r"|gates\s*:\s*AuthRequired\b"
+            r"|gin\s+.*gates:"
+            r"|middleware\s+gates:\s*AuthRequired"
+            # R15: DynamoDB condition gates: ConditionExpression
+            r"|gates\s*:\s*ConditionExpression\b"
+            r"|dynamodb\s+.*gates:"
+            r"|dynamo\s+.*gates:"
+            # R15: Firestore rules gates: allow read
+            r"|gates\s*:\s*allow\s+read\b"
+            r"|firestore\s+.*gates:"
+            r"|rules\s+gates:\s*allow"
+            # R15: Keycloak realm gates: realm-role
+            r"|gates\s*:\s*realm-role\b"
+            r"|keycloak\s+.*gates:"
+            r"|realm\s+gates:"
+            # R15: Falco rule gates: evt.type
+            r"|gates\s*:\s*evt\.type\b"
+            r"|falco\s+.*gates:"
+            r"|rule\s+gates:\s*evt"
+            # R15: OTel sampler gates: parentbased
+            r"|gates\s*:\s*parentbased\b"
+            r"|otel\s+.*gates:"
+            r"|opentelemetry\s+.*gates:"
+            r"|sampler\s+gates:"
+            # R15: Ray actor gates: num_cpus
+            r"|gates\s*:\s*num_cpus\b"
+            r"|ray\s+.*gates:"
+            r"|actor\s+gates:\s*num_cpus"
+            # R15: proxy / ingress / gateway / framework / DB / security / observability / orchestration prose
+            r"|gates:\s+is\s+(?:proxy|ingress|gateway|framework|DB|security|observability|orchestration)\b",
             text,
             re.I,
         )
@@ -1162,6 +1222,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r15' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r15.json"
         elif 'r14' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r14.json"
         elif 'r13' in hp:

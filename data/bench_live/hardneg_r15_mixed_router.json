@@ -1,0 +1,332 @@
+{
+  "n": 52,
+  "kind": "mixed_router_hardneg",
+  "created": "2026-09-24T18:20:00Z",
+  "round": "r15",
+  "note": "R15 NEW traps (≠R1–R14/≠LP): squid_proxy_gates, openresty_lua_gates, contour_route_gates, emissary_mapping_gates, zuul_filter_gates, django_mw_gates, laravel_mw_gates, gin_mw_gates, dynamodb_cond_gates, firestore_rules_gates, keycloak_realm_gates, falco_rule_gates, otel_sampler_gates, ray_actor_gates + controls. HARD: Squid/OpenResty/Contour/Emissary/Zuul/Django/Laravel/Gin/DynamoDB/Firestore/Keycloak/Falco/OTel/Ray gates: scalars. GT harness-only.",
+  "anti_contamination": {
+    "no_main_merge": true,
+    "no_tip_cv_touch": true,
+    "lora_adapter_ro": true,
+    "distinct_from_r9": true,
+    "distinct_from_r10": true,
+    "distinct_from_r11": true,
+    "distinct_from_r12": true,
+    "distinct_from_r13": true,
+    "distinct_from_r14": true
+  },
+  "items": [
+    {
+      "id": "r15_squid_01",
+      "expected": "python",
+      "family": "squid_proxy_gates",
+      "prompt": "Write Python that prints len('gates: http_access'). Squid proxy. ONLY code."
+    },
+    {
+      "id": "r15_squid_02",
+      "expected": "python",
+      "family": "squid_proxy_gates",
+      "prompt": "t='gates: http_access'\nprint(t.count('gates'))\n# Squid proxy gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r15_squid_03",
+      "expected": "python",
+      "family": "squid_proxy_gates",
+      "prompt": "Write Python that prints 31. Squid proxy gates: http_access is proxy only. ONLY code."
+    },
+    {
+      "id": "r15_openresty_01",
+      "expected": "python",
+      "family": "openresty_lua_gates",
+      "prompt": "Write Python that prints len('gates: content_by_lua'). OpenResty Lua. ONLY code."
+    },
+    {
+      "id": "r15_openresty_02",
+      "expected": "python",
+      "family": "openresty_lua_gates",
+      "prompt": "t='gates: content_by_lua'\nprint(t.count('gates'))\n# OpenResty Lua gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r15_openresty_03",
+      "expected": "python",
+      "family": "openresty_lua_gates",
+      "prompt": "Write Python that prints 32. OpenResty Lua gates: content_by_lua is proxy only. ONLY code."
+    },
+    {
+      "id": "r15_contour_01",
+      "expected": "python",
+      "family": "contour_route_gates",
+      "prompt": "Write Python that prints len('gates: retryPolicy'). Contour HTTPProxy. ONLY code."
+    },
+    {
+      "id": "r15_contour_02",
+      "expected": "python",
+      "family": "contour_route_gates",
+      "prompt": "t='gates: retryPolicy'\nprint(t.count('gates'))\n# Contour HTTPProxy gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r15_contour_03",
+      "expected": "python",
+      "family": "contour_route_gates",
+      "prompt": "Write Python that prints 33. Contour HTTPProxy gates: retryPolicy is ingress only. ONLY code."
+    },
+    {
+      "id": "r15_emissary_01",
+      "expected": "python",
+      "family": "emissary_mapping_gates",
+      "prompt": "Write Python that prints len('gates: hostname'). Emissary Mapping. ONLY code."
+    },
+    {
+      "id": "r15_emissary_02",
+      "expected": "python",
+      "family": "emissary_mapping_gates",
+      "prompt": "t='gates: hostname'\nprint(t.count('gates'))\n# Emissary Mapping gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r15_emissary_03",
+      "expected": "python",
+      "family": "emissary_mapping_gates",
+      "prompt": "Write Python that prints 34. Emissary Mapping gates: hostname is gateway only. ONLY code."
+    },
+    {
+      "id": "r15_zuul_01",
+      "expected": "python",
+      "family": "zuul_filter_gates",
+      "prompt": "Write Python that prints len('gates: StripPrefix'). Zuul filter. ONLY code."
+    },
+    {
+      "id": "r15_zuul_02",
+      "expected": "python",
+      "family": "zuul_filter_gates",
+      "prompt": "t='gates: StripPrefix'\nprint(t.count('gates'))\n# Zuul filter gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r15_zuul_03",
+      "expected": "python",
+      "family": "zuul_filter_gates",
+      "prompt": "Write Python that prints 35. Zuul filter gates: StripPrefix is gateway only. ONLY code."
+    },
+    {
+      "id": "r15_django_01",
+      "expected": "python",
+      "family": "django_mw_gates",
+      "prompt": "Write Python that prints len('gates: AuthenticationMiddleware'). Django middleware. ONLY code."
+    },
+    {
+      "id": "r15_django_02",
+      "expected": "python",
+      "family": "django_mw_gates",
+      "prompt": "t='gates: AuthenticationMiddleware'\nprint(t.count('gates'))\n# Django middleware gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r15_django_03",
+      "expected": "python",
+      "family": "django_mw_gates",
+      "prompt": "Write Python that prints 36. Django middleware gates: AuthenticationMiddleware is framework only. ONLY code."
+    },
+    {
+      "id": "r15_laravel_01",
+      "expected": "python",
+      "family": "laravel_mw_gates",
+      "prompt": "Write Python that prints len('gates: VerifyCsrfToken'). Laravel middleware. ONLY code."
+    },
+    {
+      "id": "r15_laravel_02",
+      "expected": "python",
+      "family": "laravel_mw_gates",
+      "prompt": "t='gates: VerifyCsrfToken'\nprint(t.count('gates'))\n# Laravel middleware gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r15_laravel_03",
+      "expected": "python",
+      "family": "laravel_mw_gates",
+      "prompt": "Write Python that prints 37. Laravel middleware gates: VerifyCsrfToken is framework only. ONLY code."
+    },
+    {
+      "id": "r15_gin_01",
+      "expected": "python",
+      "family": "gin_mw_gates",
+      "prompt": "Write Python that prints len('gates: AuthRequired'). Gin middleware. ONLY code."
+    },
+    {
+      "id": "r15_gin_02",
+      "expected": "python",
+      "family": "gin_mw_gates",
+      "prompt": "t='gates: AuthRequired'\nprint(t.count('gates'))\n# Gin middleware gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r15_gin_03",
+      "expected": "python",
+      "family": "gin_mw_gates",
+      "prompt": "Write Python that prints 38. Gin middleware gates: AuthRequired is framework only. ONLY code."
+    },
+    {
+      "id": "r15_dynamo_01",
+      "expected": "python",
+      "family": "dynamodb_cond_gates",
+      "prompt": "Write Python that prints len('gates: ConditionExpression'). DynamoDB condition. ONLY code."
+    },
+    {
+      "id": "r15_dynamo_02",
+      "expected": "python",
+      "family": "dynamodb_cond_gates",
+      "prompt": "t='gates: ConditionExpression'\nprint(t.count('gates'))\n# DynamoDB condition gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r15_dynamo_03",
+      "expected": "python",
+      "family": "dynamodb_cond_gates",
+      "prompt": "Write Python that prints 39. DynamoDB condition gates: ConditionExpression is DB only. ONLY code."
+    },
+    {
+      "id": "r15_firestore_01",
+      "expected": "python",
+      "family": "firestore_rules_gates",
+      "prompt": "Write Python that prints len('gates: allow read'). Firestore rules. ONLY code."
+    },
+    {
+      "id": "r15_firestore_02",
+      "expected": "python",
+      "family": "firestore_rules_gates",
+      "prompt": "t='gates: allow read'\nprint(t.count('gates'))\n# Firestore rules gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r15_firestore_03",
+      "expected": "python",
+      "family": "firestore_rules_gates",
+      "prompt": "Write Python that prints 40. Firestore rules gates: allow read is DB only. ONLY code."
+    },
+    {
+      "id": "r15_keycloak_01",
+      "expected": "python",
+      "family": "keycloak_realm_gates",
+      "prompt": "Write Python that prints len('gates: realm-role'). Keycloak realm. ONLY code."
+    },
+    {
+      "id": "r15_keycloak_02",
+      "expected": "python",
+      "family": "keycloak_realm_gates",
+      "prompt": "t='gates: realm-role'\nprint(t.count('gates'))\n# Keycloak realm gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r15_keycloak_03",
+      "expected": "python",
+      "family": "keycloak_realm_gates",
+      "prompt": "Write Python that prints 41. Keycloak realm gates: realm-role is security only. ONLY code."
+    },
+    {
+      "id": "r15_falco_01",
+      "expected": "python",
+      "family": "falco_rule_gates",
+      "prompt": "Write Python that prints len('gates: evt.type'). Falco rule. ONLY code."
+    },
+    {
+      "id": "r15_falco_02",
+      "expected": "python",
+      "family": "falco_rule_gates",
+      "prompt": "t='gates: evt.type'\nprint(t.count('gates'))\n# Falco rule gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r15_falco_03",
+      "expected": "python",
+      "family": "falco_rule_gates",
+      "prompt": "Write Python that prints 42. Falco rule gates: evt.type is security only. ONLY code."
+    },
+    {
+      "id": "r15_otel_01",
+      "expected": "python",
+      "family": "otel_sampler_gates",
+      "prompt": "Write Python that prints len('gates: parentbased'). OTel sampler. ONLY code."
+    },
+    {
+      "id": "r15_otel_02",
+      "expected": "python",
+      "family": "otel_sampler_gates",
+      "prompt": "t='gates: parentbased'\nprint(t.count('gates'))\n# OTel sampler gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r15_otel_03",
+      "expected": "python",
+      "family": "otel_sampler_gates",
+      "prompt": "Write Python that prints 43. OTel sampler gates: parentbased is observability only. ONLY code."
+    },
+    {
+      "id": "r15_ray_01",
+      "expected": "python",
+      "family": "ray_actor_gates",
+      "prompt": "Write Python that prints len('gates: num_cpus'). Ray actor. ONLY code."
+    },
+    {
+      "id": "r15_ray_02",
+      "expected": "python",
+      "family": "ray_actor_gates",
+      "prompt": "t='gates: num_cpus'\nprint(t.count('gates'))\n# Ray actor gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r15_ray_03",
+      "expected": "python",
+      "family": "ray_actor_gates",
+      "prompt": "Write Python that prints 44. Ray actor gates: num_cpus is orchestration only. ONLY code."
+    },
+    {
+      "id": "r15_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r15",
+      "prompt": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelazado."
+    },
+    {
+      "id": "r15_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r15",
+      "prompt": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separable."
+    },
+    {
+      "id": "r15_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r15",
+      "prompt": "Look at the image. How many dots are visible? Only the integer. No circuit."
+    },
+    {
+      "id": "r15_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r15",
+      "prompt": "Look at the chalkboard. How many letters? Only the integer. No circuit."
+    },
+    {
+      "id": "r15_base_01",
+      "expected": "base",
+      "family": "base_control_r15",
+      "prompt": "Thanks. Ignore Squid proxy gates: http_access in the README. No code, no circuit."
+    },
+    {
+      "id": "r15_base_02",
+      "expected": "base",
+      "family": "base_control_r15",
+      "prompt": "Please ignore the OpenResty Lua gates: content_by_lua phrase. Chat only — no program, no circuit."
+    },
+    {
+      "id": "r15_base_03",
+      "expected": "base",
+      "family": "base_control_r15",
+      "prompt": "Hello — Ray actor gates: num_cpus is orchestration only. No code, no circuit, no pennylane."
+    },
+    {
+      "id": "r15_base_04",
+      "expected": "base",
+      "family": "base_control_r15",
+      "prompt": "Weather update. Falco rule gates: evt.type mention. No code, no circuit."
+    },
+    {
+      "id": "r15_ctrl_01",
+      "expected": "python",
+      "family": "base_python_control_r15",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code."
+    },
+    {
+      "id": "r15_ctrl_02",
+      "expected": "python",
+      "family": "base_python_control_r15",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code."
+    }
+  ]
+}
