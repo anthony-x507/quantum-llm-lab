@@ -12,6 +12,7 @@
 |-------|-------|
 | Tip base SHA | `3d05cbe` (`3d05cbe1ef88eaf3effc2a93049cbb27ba2ef800`) |
 | Branch | `frontier/tip-vision-delta` |
+| Branch SHA | `a5bff96` (`a5bff96d8aec408307ac6789a5de5283bf4b7308`) |
 | Host | Mac-111 (`074c6626-…`) |
 | Adapters | **READ-ONLY** (`ro_mtime_unchanged` on `*.safetensors`) |
 
