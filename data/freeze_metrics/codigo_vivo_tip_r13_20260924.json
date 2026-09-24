@@ -1,0 +1,7 @@
+{
+  "round": "r13",
+  "adv": "data/freeze_metrics/codigo_vivo_tip_adv_r13_20260924.json",
+  "router": "52/52",
+  "verifier": "44/44",
+  "mixed": 1.0
+}

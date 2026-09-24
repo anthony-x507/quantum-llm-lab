@@ -1,0 +1,330 @@
+{
+  "n": 52,
+  "kind": "mixed_router_hardneg",
+  "created": "2026-09-24T18:05:00Z",
+  "round": "r13",
+  "note": "R13 NEW traps (≠R1–R12/≠LP): nginx_map_gates, haproxy_acl_gates, caddy_matcher_gates, redis_acl_gates, postgres_rls_gates, skaffold_profile_gates, buildkite_step_gates, packer_provisioner_gates, salt_pillar_gates, bazel_select_gates, dagger_pipeline_gates, dagster_asset_gates, hasura_permission_gates, nestjs_guard_gates + controls. HARD: Nginx/HAProxy/Caddy/Redis/Postgres/Skaffold/Buildkite/Packer/Salt/Bazel/Dagger/Dagster/Hasura/NestJS gates: scalars. GT harness-only.",
+  "anti_contamination": {
+    "no_main_merge": true,
+    "no_tip_cv_touch": true,
+    "lora_adapter_ro": true,
+    "distinct_from_r9": true,
+    "distinct_from_r10": true,
+    "distinct_from_r11": true,
+    "distinct_from_r12": true
+  },
+  "items": [
+    {
+      "id": "r13_nginx_01",
+      "expected": "python",
+      "family": "nginx_map_gates",
+      "prompt": "Write Python that prints len('gates: $request'). Nginx map. ONLY code."
+    },
+    {
+      "id": "r13_nginx_02",
+      "expected": "python",
+      "family": "nginx_map_gates",
+      "prompt": "t='gates: $request'\nprint(t.count('gates'))\n# Nginx map gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r13_nginx_03",
+      "expected": "python",
+      "family": "nginx_map_gates",
+      "prompt": "Write Python that prints 19. Nginx map gates: $request is proxy only. ONLY code."
+    },
+    {
+      "id": "r13_haproxy_01",
+      "expected": "python",
+      "family": "haproxy_acl_gates",
+      "prompt": "Write Python that prints len('gates: hdr'). HAProxy ACL. ONLY code."
+    },
+    {
+      "id": "r13_haproxy_02",
+      "expected": "python",
+      "family": "haproxy_acl_gates",
+      "prompt": "t='gates: hdr'\nprint(t.count('gates'))\n# HAProxy ACL gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r13_haproxy_03",
+      "expected": "python",
+      "family": "haproxy_acl_gates",
+      "prompt": "Write Python that prints 17. HAProxy ACL gates: hdr is LB only. ONLY code."
+    },
+    {
+      "id": "r13_caddy_01",
+      "expected": "python",
+      "family": "caddy_matcher_gates",
+      "prompt": "Write Python that prints len('gates: path'). Caddy matcher. ONLY code."
+    },
+    {
+      "id": "r13_caddy_02",
+      "expected": "python",
+      "family": "caddy_matcher_gates",
+      "prompt": "t='gates: path'\nprint(t.count('gates'))\n# Caddy matcher gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r13_caddy_03",
+      "expected": "python",
+      "family": "caddy_matcher_gates",
+      "prompt": "Write Python that prints 21. Caddy matcher gates: path is webserver only. ONLY code."
+    },
+    {
+      "id": "r13_redis_01",
+      "expected": "python",
+      "family": "redis_acl_gates",
+      "prompt": "Write Python that prints len('gates: ~*'). Redis ACL. ONLY code."
+    },
+    {
+      "id": "r13_redis_02",
+      "expected": "python",
+      "family": "redis_acl_gates",
+      "prompt": "t='gates: ~*'\nprint(t.count('gates'))\n# Redis ACL gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r13_redis_03",
+      "expected": "python",
+      "family": "redis_acl_gates",
+      "prompt": "Write Python that prints 15. Redis ACL gates: ~* is cache only. ONLY code."
+    },
+    {
+      "id": "r13_pg_01",
+      "expected": "python",
+      "family": "postgres_rls_gates",
+      "prompt": "Write Python that prints len('gates: USING'). Postgres RLS. ONLY code."
+    },
+    {
+      "id": "r13_pg_02",
+      "expected": "python",
+      "family": "postgres_rls_gates",
+      "prompt": "t='gates: USING'\nprint(t.count('gates'))\n# Postgres RLS gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r13_pg_03",
+      "expected": "python",
+      "family": "postgres_rls_gates",
+      "prompt": "Write Python that prints 18. Postgres RLS gates: USING is DB only. ONLY code."
+    },
+    {
+      "id": "r13_skaffold_01",
+      "expected": "python",
+      "family": "skaffold_profile_gates",
+      "prompt": "Write Python that prints len('gates: activation'). Skaffold profile. ONLY code."
+    },
+    {
+      "id": "r13_skaffold_02",
+      "expected": "python",
+      "family": "skaffold_profile_gates",
+      "prompt": "t='gates: activation'\nprint(t.count('gates'))\n# Skaffold profile gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r13_skaffold_03",
+      "expected": "python",
+      "family": "skaffold_profile_gates",
+      "prompt": "Write Python that prints 23. Skaffold profile gates: activation is k8s only. ONLY code."
+    },
+    {
+      "id": "r13_bk_01",
+      "expected": "python",
+      "family": "buildkite_step_gates",
+      "prompt": "Write Python that prints len('gates: if'). Buildkite step. ONLY code."
+    },
+    {
+      "id": "r13_bk_02",
+      "expected": "python",
+      "family": "buildkite_step_gates",
+      "prompt": "t='gates: if'\nprint(t.count('gates'))\n# Buildkite step gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r13_bk_03",
+      "expected": "python",
+      "family": "buildkite_step_gates",
+      "prompt": "Write Python that prints 16. Buildkite step gates: if is CI only. ONLY code."
+    },
+    {
+      "id": "r13_packer_01",
+      "expected": "python",
+      "family": "packer_provisioner_gates",
+      "prompt": "Write Python that prints len('gates: shell'). Packer provisioner. ONLY code."
+    },
+    {
+      "id": "r13_packer_02",
+      "expected": "python",
+      "family": "packer_provisioner_gates",
+      "prompt": "t='gates: shell'\nprint(t.count('gates'))\n# Packer provisioner gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r13_packer_03",
+      "expected": "python",
+      "family": "packer_provisioner_gates",
+      "prompt": "Write Python that prints 20. Packer provisioner gates: shell is image only. ONLY code."
+    },
+    {
+      "id": "r13_salt_01",
+      "expected": "python",
+      "family": "salt_pillar_gates",
+      "prompt": "Write Python that prints len('gates: grains'). Salt pillar. ONLY code."
+    },
+    {
+      "id": "r13_salt_02",
+      "expected": "python",
+      "family": "salt_pillar_gates",
+      "prompt": "t='gates: grains'\nprint(t.count('gates'))\n# Salt pillar gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r13_salt_03",
+      "expected": "python",
+      "family": "salt_pillar_gates",
+      "prompt": "Write Python that prints 22. Salt pillar gates: grains is config only. ONLY code."
+    },
+    {
+      "id": "r13_bazel_01",
+      "expected": "python",
+      "family": "bazel_select_gates",
+      "prompt": "Write Python that prints len('gates: //conditions'). Bazel select. ONLY code."
+    },
+    {
+      "id": "r13_bazel_02",
+      "expected": "python",
+      "family": "bazel_select_gates",
+      "prompt": "t='gates: //conditions'\nprint(t.count('gates'))\n# Bazel select gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r13_bazel_03",
+      "expected": "python",
+      "family": "bazel_select_gates",
+      "prompt": "Write Python that prints 24. Bazel select gates: //conditions is build only. ONLY code."
+    },
+    {
+      "id": "r13_dagger_01",
+      "expected": "python",
+      "family": "dagger_pipeline_gates",
+      "prompt": "Write Python that prints len('gates: withSecret'). Dagger pipeline. ONLY code."
+    },
+    {
+      "id": "r13_dagger_02",
+      "expected": "python",
+      "family": "dagger_pipeline_gates",
+      "prompt": "t='gates: withSecret'\nprint(t.count('gates'))\n# Dagger pipeline gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r13_dagger_03",
+      "expected": "python",
+      "family": "dagger_pipeline_gates",
+      "prompt": "Write Python that prints 25. Dagger pipeline gates: withSecret is CI only. ONLY code."
+    },
+    {
+      "id": "r13_dagster_01",
+      "expected": "python",
+      "family": "dagster_asset_gates",
+      "prompt": "Write Python that prints len('gates: AutoMaterialize'). Dagster asset. ONLY code."
+    },
+    {
+      "id": "r13_dagster_02",
+      "expected": "python",
+      "family": "dagster_asset_gates",
+      "prompt": "t='gates: AutoMaterialize'\nprint(t.count('gates'))\n# Dagster asset gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r13_dagster_03",
+      "expected": "python",
+      "family": "dagster_asset_gates",
+      "prompt": "Write Python that prints 27. Dagster asset gates: AutoMaterialize is orchestration only. ONLY code."
+    },
+    {
+      "id": "r13_hasura_01",
+      "expected": "python",
+      "family": "hasura_permission_gates",
+      "prompt": "Write Python that prints len('gates: check'). Hasura permission. ONLY code."
+    },
+    {
+      "id": "r13_hasura_02",
+      "expected": "python",
+      "family": "hasura_permission_gates",
+      "prompt": "t='gates: check'\nprint(t.count('gates'))\n# Hasura permission gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r13_hasura_03",
+      "expected": "python",
+      "family": "hasura_permission_gates",
+      "prompt": "Write Python that prints 26. Hasura permission gates: check is GraphQL only. ONLY code."
+    },
+    {
+      "id": "r13_nestjs_01",
+      "expected": "python",
+      "family": "nestjs_guard_gates",
+      "prompt": "Write Python that prints len('gates: CanActivate'). NestJS guard. ONLY code."
+    },
+    {
+      "id": "r13_nestjs_02",
+      "expected": "python",
+      "family": "nestjs_guard_gates",
+      "prompt": "t='gates: CanActivate'\nprint(t.count('gates'))\n# NestJS guard gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r13_nestjs_03",
+      "expected": "python",
+      "family": "nestjs_guard_gates",
+      "prompt": "Write Python that prints 28. NestJS guard gates: CanActivate is framework only. ONLY code."
+    },
+    {
+      "id": "r13_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r13",
+      "prompt": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelazado."
+    },
+    {
+      "id": "r13_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r13",
+      "prompt": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separable."
+    },
+    {
+      "id": "r13_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r13",
+      "prompt": "Look at the image. How many dots are visible? Only the integer. No circuit."
+    },
+    {
+      "id": "r13_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r13",
+      "prompt": "Look at the chalkboard. How many letters? Only the integer. No circuit."
+    },
+    {
+      "id": "r13_base_01",
+      "expected": "base",
+      "family": "base_control_r13",
+      "prompt": "Thanks. Ignore Nginx map gates: $request in the README. No code, no circuit."
+    },
+    {
+      "id": "r13_base_02",
+      "expected": "base",
+      "family": "base_control_r13",
+      "prompt": "Please ignore the HAProxy ACL gates: hdr phrase. Chat only — no program, no circuit."
+    },
+    {
+      "id": "r13_base_03",
+      "expected": "base",
+      "family": "base_control_r13",
+      "prompt": "Hello — Dagster gates: AutoMaterialize is orchestration only. No code, no circuit, no pennylane."
+    },
+    {
+      "id": "r13_base_04",
+      "expected": "base",
+      "family": "base_control_r13",
+      "prompt": "Weather update. NestJS gates: CanActivate mention. No code, no circuit."
+    },
+    {
+      "id": "r13_ctrl_01",
+      "expected": "python",
+      "family": "base_python_control_r13",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code."
+    },
+    {
+      "id": "r13_ctrl_02",
+      "expected": "python",
+      "family": "base_python_control_r13",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code."
+    }
+  ]
+}

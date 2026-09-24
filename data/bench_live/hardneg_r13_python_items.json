@@ -1,0 +1,317 @@
+{
+  "n": 44,
+  "kind": "python_hardneg_items",
+  "created": "2026-09-24T18:05:00Z",
+  "round": "r13",
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R13.md",
+  "items": [
+    {
+      "id": "r13v_nginx_01",
+      "kind": "nginx_map_gates",
+      "prompt": "Write Python that prints len('gates: $request'). Nginx map. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_nginx_02",
+      "kind": "nginx_map_gates",
+      "prompt": "t='gates: $request'\nprint(t.count('gates'))\n# Nginx map gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_nginx_03",
+      "kind": "nginx_map_gates",
+      "prompt": "Write Python that prints 19. Nginx map gates: $request is proxy only. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_haproxy_01",
+      "kind": "haproxy_acl_gates",
+      "prompt": "Write Python that prints len('gates: hdr'). HAProxy ACL. ONLY code.",
+      "expected_stdout": "10\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_haproxy_02",
+      "kind": "haproxy_acl_gates",
+      "prompt": "t='gates: hdr'\nprint(t.count('gates'))\n# HAProxy ACL gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_haproxy_03",
+      "kind": "haproxy_acl_gates",
+      "prompt": "Write Python that prints 17. HAProxy ACL gates: hdr is LB only. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_caddy_01",
+      "kind": "caddy_matcher_gates",
+      "prompt": "Write Python that prints len('gates: path'). Caddy matcher. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_caddy_02",
+      "kind": "caddy_matcher_gates",
+      "prompt": "t='gates: path'\nprint(t.count('gates'))\n# Caddy matcher gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_caddy_03",
+      "kind": "caddy_matcher_gates",
+      "prompt": "Write Python that prints 21. Caddy matcher gates: path is webserver only. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_redis_01",
+      "kind": "redis_acl_gates",
+      "prompt": "Write Python that prints len('gates: ~*'). Redis ACL. ONLY code.",
+      "expected_stdout": "9\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_redis_02",
+      "kind": "redis_acl_gates",
+      "prompt": "t='gates: ~*'\nprint(t.count('gates'))\n# Redis ACL gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_redis_03",
+      "kind": "redis_acl_gates",
+      "prompt": "Write Python that prints 15. Redis ACL gates: ~* is cache only. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_pg_01",
+      "kind": "postgres_rls_gates",
+      "prompt": "Write Python that prints len('gates: USING'). Postgres RLS. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_pg_02",
+      "kind": "postgres_rls_gates",
+      "prompt": "t='gates: USING'\nprint(t.count('gates'))\n# Postgres RLS gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_pg_03",
+      "kind": "postgres_rls_gates",
+      "prompt": "Write Python that prints 18. Postgres RLS gates: USING is DB only. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_skaffold_01",
+      "kind": "skaffold_profile_gates",
+      "prompt": "Write Python that prints len('gates: activation'). Skaffold profile. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_skaffold_02",
+      "kind": "skaffold_profile_gates",
+      "prompt": "t='gates: activation'\nprint(t.count('gates'))\n# Skaffold profile gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_skaffold_03",
+      "kind": "skaffold_profile_gates",
+      "prompt": "Write Python that prints 23. Skaffold profile gates: activation is k8s only. ONLY code.",
+      "expected_stdout": "23\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_bk_01",
+      "kind": "buildkite_step_gates",
+      "prompt": "Write Python that prints len('gates: if'). Buildkite step. ONLY code.",
+      "expected_stdout": "9\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_bk_02",
+      "kind": "buildkite_step_gates",
+      "prompt": "t='gates: if'\nprint(t.count('gates'))\n# Buildkite step gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_bk_03",
+      "kind": "buildkite_step_gates",
+      "prompt": "Write Python that prints 16. Buildkite step gates: if is CI only. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_packer_01",
+      "kind": "packer_provisioner_gates",
+      "prompt": "Write Python that prints len('gates: shell'). Packer provisioner. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_packer_02",
+      "kind": "packer_provisioner_gates",
+      "prompt": "t='gates: shell'\nprint(t.count('gates'))\n# Packer provisioner gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_packer_03",
+      "kind": "packer_provisioner_gates",
+      "prompt": "Write Python that prints 20. Packer provisioner gates: shell is image only. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_salt_01",
+      "kind": "salt_pillar_gates",
+      "prompt": "Write Python that prints len('gates: grains'). Salt pillar. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_salt_02",
+      "kind": "salt_pillar_gates",
+      "prompt": "t='gates: grains'\nprint(t.count('gates'))\n# Salt pillar gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_salt_03",
+      "kind": "salt_pillar_gates",
+      "prompt": "Write Python that prints 22. Salt pillar gates: grains is config only. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_bazel_01",
+      "kind": "bazel_select_gates",
+      "prompt": "Write Python that prints len('gates: //conditions'). Bazel select. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_bazel_02",
+      "kind": "bazel_select_gates",
+      "prompt": "t='gates: //conditions'\nprint(t.count('gates'))\n# Bazel select gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_bazel_03",
+      "kind": "bazel_select_gates",
+      "prompt": "Write Python that prints 24. Bazel select gates: //conditions is build only. ONLY code.",
+      "expected_stdout": "24\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_dagger_01",
+      "kind": "dagger_pipeline_gates",
+      "prompt": "Write Python that prints len('gates: withSecret'). Dagger pipeline. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_dagger_02",
+      "kind": "dagger_pipeline_gates",
+      "prompt": "t='gates: withSecret'\nprint(t.count('gates'))\n# Dagger pipeline gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_dagger_03",
+      "kind": "dagger_pipeline_gates",
+      "prompt": "Write Python that prints 25. Dagger pipeline gates: withSecret is CI only. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_dagster_01",
+      "kind": "dagster_asset_gates",
+      "prompt": "Write Python that prints len('gates: AutoMaterialize'). Dagster asset. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_dagster_02",
+      "kind": "dagster_asset_gates",
+      "prompt": "t='gates: AutoMaterialize'\nprint(t.count('gates'))\n# Dagster asset gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_dagster_03",
+      "kind": "dagster_asset_gates",
+      "prompt": "Write Python that prints 27. Dagster asset gates: AutoMaterialize is orchestration only. ONLY code.",
+      "expected_stdout": "27\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_hasura_01",
+      "kind": "hasura_permission_gates",
+      "prompt": "Write Python that prints len('gates: check'). Hasura permission. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_hasura_02",
+      "kind": "hasura_permission_gates",
+      "prompt": "t='gates: check'\nprint(t.count('gates'))\n# Hasura permission gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_hasura_03",
+      "kind": "hasura_permission_gates",
+      "prompt": "Write Python that prints 26. Hasura permission gates: check is GraphQL only. ONLY code.",
+      "expected_stdout": "26\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_nestjs_01",
+      "kind": "nestjs_guard_gates",
+      "prompt": "Write Python that prints len('gates: CanActivate'). NestJS guard. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_nestjs_02",
+      "kind": "nestjs_guard_gates",
+      "prompt": "t='gates: CanActivate'\nprint(t.count('gates'))\n# NestJS guard gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_nestjs_03",
+      "kind": "nestjs_guard_gates",
+      "prompt": "Write Python that prints 28. NestJS guard gates: CanActivate is framework only. ONLY code.",
+      "expected_stdout": "28\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_ctrl_01",
+      "kind": "base_python_control_r13",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r13v_ctrl_02",
+      "kind": "base_python_control_r13",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}
