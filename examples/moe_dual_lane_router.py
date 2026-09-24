@@ -187,6 +187,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R14: Apache httpd/Varnish/APISIX/Tyk/KrakenD/MongoDB/Cassandra/Jenkins/Vagrant/Chef/Pants/Prefect/FastAPI/Spring gates: scalars.
     # R15: Squid/OpenResty/Contour/Emissary/Zuul/Django/Laravel/Gin/DynamoDB/Firestore/Keycloak/Falco/OTel/Ray gates: scalars.
     # R16: ATS/CoreDNS/Pulsar/Redpanda/GHA/GitLab/Terraform/Nix/Express/Flask/Knative/KEDA/Dapr/Gatekeeper gates: scalars.
+    # R29: Bookshelf.js/Objection.js/MikroORM/Tornado/Bottle/Falcon/Pyramid/Echo/Chi/Hanami/Resque/RQ/BlackSheep/Taskiq gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -664,7 +665,66 @@ def route_heuristic(prompt: str) -> Lane:
             r"|opa\s+gatekeeper\s+.*gates:"
             r"|constraint\s+gates:\s*enforcement"
             # R16: proxy / DNS / messaging / CI / IaC / build / framework / serving / autoscaler / sidecar / policy prose
-            r"|gates:\s+is\s+(?:proxy|DNS|messaging|CI|IaC|build|framework|serving|autoscaler|sidecar|policy)\b",
+            r"|gates:\s+is\s+(?:proxy|DNS|messaging|CI|IaC|build|framework|serving|autoscaler|sidecar|policy)\b"
+            # R29: Bookshelf.js plugin gates: Model.initialize
+            r"|gates\s*:\s*Model\.initialize\b"
+            r"|bookshelf(?:\.js)?\s+.*gates:"
+            r"|plugin\s+gates:\s*Model"
+            # R29: Objection.js hook gates: $beforeInsert
+            r"|gates\s*:\s*\$beforeInsert\b"
+            r"|objection(?:\.js)?\s+.*gates:"
+            r"|hook\s+gates:\s*\$beforeInsert"
+            # R29: MikroORM subscriber gates: EventSubscriber
+            r"|gates\s*:\s*EventSubscriber\b"
+            r"|mikroorm\s+.*gates:"
+            r"|subscriber\s+gates:\s*EventSubscriber"
+            # R29: Tornado middleware gates: RequestHandler
+            r"|gates\s*:\s*RequestHandler\b"
+            r"|tornado\s+.*gates:"
+            r"|middleware\s+gates:\s*RequestHandler"
+            # R29: Bottle plugin gates: Plugin.apply
+            r"|gates\s*:\s*Plugin\.apply\b"
+            r"|\bbottle\b\s+.*gates:"
+            r"|plugin\s+gates:\s*Plugin"
+            # R29: Falcon middleware gates: process_request
+            r"|gates\s*:\s*process_request\b"
+            r"|falcon\s+.*gates:"
+            r"|middleware\s+gates:\s*process_request"
+            # R29: Pyramid tween gates: tween_factory
+            r"|gates\s*:\s*tween_factory\b"
+            r"|pyramid\s+.*gates:"
+            r"|tween\s+gates:\s*tween_factory"
+            # R29: Echo middleware gates: MiddlewareFunc
+            r"|gates\s*:\s*MiddlewareFunc\b"
+            r"|\becho\b\s+.*gates:"
+            r"|middleware\s+gates:\s*MiddlewareFunc"
+            # R29: Chi middleware gates: Middleware.New
+            r"|gates\s*:\s*Middleware\.New\b"
+            r"|\bchi\b\s+.*gates:"
+            r"|middleware\s+gates:\s*Middleware\.New"
+            # R29: Hanami middleware gates: Hanami::Action
+            r"|gates\s*:\s*Hanami::Action\b"
+            r"|hanami\s+.*gates:"
+            r"|middleware\s+gates:\s*Hanami::"
+            # R29: Resque plugin gates: before_perform
+            r"|gates\s*:\s*before_perform\b"
+            r"|resque\s+.*gates:"
+            r"|plugin\s+gates:\s*before_perform"
+            # R29: RQ job gates: job.perform
+            r"|gates\s*:\s*job\.perform\b"
+            r"|\brq\b\s+.*gates:"
+            r"|job\s+gates:\s*job\.perform"
+            # R29: BlackSheep middleware gates: BoundHandler
+            r"|gates\s*:\s*BoundHandler\b"
+            r"|blacksheep\s+.*gates:"
+            r"|middleware\s+gates:\s*BoundHandler"
+            # R29: Taskiq middleware gates: TaskiqMiddleware
+            r"|gates\s*:\s*TaskiqMiddleware\b"
+            r"|taskiq\s+.*gates:"
+            r"|middleware\s+gates:\s*TaskiqMiddleware"
+            # R29: plugin / hook / subscriber / middleware / tween / job prose
+            r"|gates:\s+is\s+(?:plugin|hook|subscriber|middleware|tween|job)\b",
+
             text,
             re.I,
         )
@@ -1284,6 +1344,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r29' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r29.json"
         elif 'r16' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r16.json"
         elif 'r15' in hp:

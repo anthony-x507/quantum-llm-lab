@@ -1,0 +1,628 @@
+{
+  "method": "heuristic",
+  "n": 52,
+  "hits": 6,
+  "misses": 46,
+  "score": "6/52",
+  "rate": 0.1154,
+  "by_family": {
+    "bookshelf_plugin_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "objection_hook_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "mikroorm_subscriber_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "tornado_middleware_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "bottle_plugin_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "falcon_middleware_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "pyramid_tween_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "echo_middleware_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "chi_middleware_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "hanami_middleware_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "resque_plugin_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "rq_job_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "blacksheep_middleware_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "taskiq_middleware_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "ent_control_r29": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r29": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r29": {
+      "n": 4,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "base_python_control_r29": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "r29_bookshel_01",
+      "family": "bookshelf_plugin_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Model.initialize'). Bookshelf.js. ONLY code",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_bookshel_02",
+      "family": "bookshelf_plugin_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: Model.initialize'\nprint(t.count('gates'))\n# Bookshelf.js gates: — not ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_bookshel_03",
+      "family": "bookshelf_plugin_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 515. Bookshelf.js gates: Model.initialize is plugin onl",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_objectio_01",
+      "family": "objection_hook_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: $beforeInsert'). Objection.js. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_objectio_02",
+      "family": "objection_hook_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: $beforeInsert'\nprint(t.count('gates'))\n# Objection.js gates: — not cir",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_objectio_03",
+      "family": "objection_hook_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 516. Objection.js gates: $beforeInsert is hook only. ON",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_mikroorm_01",
+      "family": "mikroorm_subscriber_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: EventSubscriber'). MikroORM. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_mikroorm_02",
+      "family": "mikroorm_subscriber_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: EventSubscriber'\nprint(t.count('gates'))\n# MikroORM gates: — not circu",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_mikroorm_03",
+      "family": "mikroorm_subscriber_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 517. MikroORM gates: EventSubscriber is subscriber only",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_tornado_01",
+      "family": "tornado_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: RequestHandler'). Tornado. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_tornado_02",
+      "family": "tornado_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: RequestHandler'\nprint(t.count('gates'))\n# Tornado gates: — not circuit",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_tornado_03",
+      "family": "tornado_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 518. Tornado gates: RequestHandler is middleware only. ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_bottle_01",
+      "family": "bottle_plugin_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Plugin.apply'). Bottle. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_bottle_02",
+      "family": "bottle_plugin_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: Plugin.apply'\nprint(t.count('gates'))\n# Bottle gates: — not circuit. O",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_bottle_03",
+      "family": "bottle_plugin_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 519. Bottle gates: Plugin.apply is plugin only. ONLY co",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_falcon_01",
+      "family": "falcon_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: process_request'). Falcon. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_falcon_02",
+      "family": "falcon_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: process_request'\nprint(t.count('gates'))\n# Falcon gates: — not circuit",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_falcon_03",
+      "family": "falcon_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 520. Falcon gates: process_request is middleware only. ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_pyramid_01",
+      "family": "pyramid_tween_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: tween_factory'). Pyramid. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_pyramid_02",
+      "family": "pyramid_tween_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: tween_factory'\nprint(t.count('gates'))\n# Pyramid gates: — not circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_pyramid_03",
+      "family": "pyramid_tween_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 521. Pyramid gates: tween_factory is tween only. ONLY c",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_echo_01",
+      "family": "echo_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: MiddlewareFunc'). Echo. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_echo_02",
+      "family": "echo_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: MiddlewareFunc'\nprint(t.count('gates'))\n# Echo gates: — not circuit. O",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_echo_03",
+      "family": "echo_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 522. Echo gates: MiddlewareFunc is middleware only. ONL",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_chi_01",
+      "family": "chi_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Middleware.New'). Chi. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_chi_02",
+      "family": "chi_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: Middleware.New'\nprint(t.count('gates'))\n# Chi gates: — not circuit. ON",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_chi_03",
+      "family": "chi_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 523. Chi gates: Middleware.New is middleware only. ONLY",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_hanami_01",
+      "family": "hanami_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Hanami::Action'). Hanami. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_hanami_02",
+      "family": "hanami_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: Hanami::Action'\nprint(t.count('gates'))\n# Hanami gates: — not circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_hanami_03",
+      "family": "hanami_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 524. Hanami gates: Hanami::Action is middleware only. O",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_resque_01",
+      "family": "resque_plugin_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: before_perform'). Resque. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_resque_02",
+      "family": "resque_plugin_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: before_perform'\nprint(t.count('gates'))\n# Resque gates: — not circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_resque_03",
+      "family": "resque_plugin_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 525. Resque gates: before_perform is plugin only. ONLY ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_rq_01",
+      "family": "rq_job_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: job.perform'). RQ. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_rq_02",
+      "family": "rq_job_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: job.perform'\nprint(t.count('gates'))\n# RQ gates: — not circuit. ONLY c",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_rq_03",
+      "family": "rq_job_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 526. RQ gates: job.perform is job only. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_blksheep_01",
+      "family": "blacksheep_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: BoundHandler'). BlackSheep. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_blksheep_02",
+      "family": "blacksheep_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: BoundHandler'\nprint(t.count('gates'))\n# BlackSheep gates: — not circui",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_blksheep_03",
+      "family": "blacksheep_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 527. BlackSheep gates: BoundHandler is middleware only.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_taskiq_01",
+      "family": "taskiq_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: TaskiqMiddleware'). Taskiq. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_taskiq_02",
+      "family": "taskiq_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "t='gates: TaskiqMiddleware'\nprint(t.count('gates'))\n# Taskiq gates: — not circui",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_taskiq_03",
+      "family": "taskiq_middleware_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 528. Taskiq gates: TaskiqMiddleware is middleware only.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_ent_01",
+      "family": "ent_control_r29",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelaz",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_ent_02",
+      "family": "ent_control_r29",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separabl",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_vis_01",
+      "family": "vision_control_r29",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. How many dots are visible? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_vis_02",
+      "family": "vision_control_r29",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the chalkboard. How many letters? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_base_01",
+      "family": "base_control_r29",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Thanks. Ignore Bookshelf.js gates: Model.initialize in the README. No code, no c",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_base_02",
+      "family": "base_control_r29",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Please ignore the Tornado gates: RequestHandler phrase. Chat only — no program, ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_base_03",
+      "family": "base_control_r29",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Hello — Taskiq gates: TaskiqMiddleware is middleware only. No code, no circuit, ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_base_04",
+      "family": "base_control_r29",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": null,
+      "prompt_preview": "Weather update. Resque gates: before_perform mention. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r29_ctrl_01",
+      "family": "base_python_control_r29",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r29_ctrl_02",
+      "family": "base_python_control_r29",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(sum(range(4))) # plain. ONLY code.",
+      "ent_adapter_blocked": true
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_r29_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}

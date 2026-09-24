@@ -1,0 +1,29 @@
+{
+  "name": "codigo_vivo_tip_r29_20260924",
+  "kind": "tip_moe_verifier_polish_r29",
+  "branch": "frontier/tip-hardneg-r29",
+  "base_tip": "a54b74c",
+  "when_et": "2026-09-24T15:39:31-04:00",
+  "router": "52/52",
+  "verifier": "44/44",
+  "mixed": 1.0,
+  "rise_pp": 88.46,
+  "families": [
+    "bookshelf_plugin_gates",
+    "objection_hook_gates",
+    "mikroorm_subscriber_gates",
+    "tornado_middleware_gates",
+    "bottle_plugin_gates",
+    "falcon_middleware_gates",
+    "pyramid_tween_gates",
+    "echo_middleware_gates",
+    "chi_middleware_gates",
+    "hanami_middleware_gates",
+    "resque_plugin_gates",
+    "rq_job_gates",
+    "blacksheep_middleware_gates",
+    "taskiq_middleware_gates"
+  ],
+  "not_folded": true,
+  "feat_sha": "PENDING"
+}

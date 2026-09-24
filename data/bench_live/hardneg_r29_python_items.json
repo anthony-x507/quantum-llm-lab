@@ -1,0 +1,385 @@
+{
+  "n": 44,
+  "kind": "hardneg_python_items",
+  "created": "2026-09-24T15:37:56",
+  "round": "r29",
+  "note": "R29 hardneg: Bookshelf.js/Objection.js/MikroORM/Tornado/Bottle/Falcon/Pyramid/Echo/Chi/Hanami/Resque/RQ/BlackSheep/Taskiq gates: scalars (brief-suggested swaps for tip-brand + R9\u2013R28 collisions)",
+  "anti_contamination": {
+    "no_r9_r28_family_reuse": true,
+    "avoid_r28_set": [
+      "typeorm_subscriber",
+      "knex_hook",
+      "koa_middleware",
+      "litestar_guard",
+      "aiohttp_middleware",
+      "hibernate_interceptor",
+      "mybatis_interceptor",
+      "adonis_middleware",
+      "grape_middleware",
+      "absinthe_middleware",
+      "huey_task",
+      "oban_plugin",
+      "javalin_before",
+      "jersey_filter"
+    ],
+    "avoid_r27_set": [
+      "sequelize_hook",
+      "mongoose_middleware",
+      "actix_middleware",
+      "rocket_fairing",
+      "diesel_hook",
+      "gorm_callback",
+      "fastify_hook",
+      "hapi_plugin",
+      "sanic_middleware",
+      "starlette_middleware",
+      "sidekiq_middleware",
+      "dramatiq_actor",
+      "dropwizard_filter",
+      "ktor_plugin"
+    ],
+    "brief_suggested_swaps": {
+      "prisma_middleware": "bookshelf_plugin (prisma_field R11 / prisma brand)",
+      "nestjs_guard": "objection_hook (nestjs_guard_gates R13)",
+      "fastapi_dependency": "mikroorm_subscriber (fastapi tip R14)",
+      "django_signal": "tornado_middleware (django_* tip brand)",
+      "spring_aspect": "bottle_plugin (spring tip brand R14)",
+      "quarkus_interceptor": "falcon_middleware (quarkus_interceptor_gates R18)",
+      "laravel_middleware": "pyramid_tween (laravel_mw R15 / laravel_middleware R19)",
+      "rails_concern": "echo_middleware (rails_before_action / rails_concern docs)",
+      "elixir_plug": "chi_middleware (elixir tip R12 / phoenix_plug R17)",
+      "redis_lua": "hanami_middleware (redis tip brand R13)",
+      "temporal_workflow": "resque_plugin (temporal tip brand R11)",
+      "clickhouse_materialized": "rq_job (clickhouse tip brand R12)",
+      "kafka_connect": "blacksheep_middleware (kafka_acl / kafka_topic priors)",
+      "celery_beat": "taskiq_middleware (celery_task priors)"
+    },
+    "novel_r29": [
+      "bookshelf_plugin_gates",
+      "objection_hook_gates",
+      "mikroorm_subscriber_gates",
+      "tornado_middleware_gates",
+      "bottle_plugin_gates",
+      "falcon_middleware_gates",
+      "pyramid_tween_gates",
+      "echo_middleware_gates",
+      "chi_middleware_gates",
+      "hanami_middleware_gates",
+      "resque_plugin_gates",
+      "rq_job_gates",
+      "blacksheep_middleware_gates",
+      "taskiq_middleware_gates"
+    ],
+    "ent_never_on_python": true
+  },
+  "items": [
+    {
+      "id": "r29v_bookshel_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: Model.initialize'). Bookshelf.js. ONLY code.",
+      "expected_stdout": "23\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_bookshel_02",
+      "kind": "python",
+      "prompt": "t='gates: Model.initialize'\nprint(t.count('gates'))\n# Bookshelf.js gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_bookshel_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 515. Bookshelf.js gates: Model.initialize is plugin only. ONLY code.",
+      "expected_stdout": "515\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_objectio_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: $beforeInsert'). Objection.js. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_objectio_02",
+      "kind": "python",
+      "prompt": "t='gates: $beforeInsert'\nprint(t.count('gates'))\n# Objection.js gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_objectio_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 516. Objection.js gates: $beforeInsert is hook only. ONLY code.",
+      "expected_stdout": "516\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_mikroorm_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: EventSubscriber'). MikroORM. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_mikroorm_02",
+      "kind": "python",
+      "prompt": "t='gates: EventSubscriber'\nprint(t.count('gates'))\n# MikroORM gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_mikroorm_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 517. MikroORM gates: EventSubscriber is subscriber only. ONLY code.",
+      "expected_stdout": "517\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_tornado_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: RequestHandler'). Tornado. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_tornado_02",
+      "kind": "python",
+      "prompt": "t='gates: RequestHandler'\nprint(t.count('gates'))\n# Tornado gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_tornado_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 518. Tornado gates: RequestHandler is middleware only. ONLY code.",
+      "expected_stdout": "518\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_bottle_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: Plugin.apply'). Bottle. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_bottle_02",
+      "kind": "python",
+      "prompt": "t='gates: Plugin.apply'\nprint(t.count('gates'))\n# Bottle gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_bottle_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 519. Bottle gates: Plugin.apply is plugin only. ONLY code.",
+      "expected_stdout": "519\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_falcon_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: process_request'). Falcon. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_falcon_02",
+      "kind": "python",
+      "prompt": "t='gates: process_request'\nprint(t.count('gates'))\n# Falcon gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_falcon_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 520. Falcon gates: process_request is middleware only. ONLY code.",
+      "expected_stdout": "520\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_pyramid_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: tween_factory'). Pyramid. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_pyramid_02",
+      "kind": "python",
+      "prompt": "t='gates: tween_factory'\nprint(t.count('gates'))\n# Pyramid gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_pyramid_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 521. Pyramid gates: tween_factory is tween only. ONLY code.",
+      "expected_stdout": "521\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_echo_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: MiddlewareFunc'). Echo. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_echo_02",
+      "kind": "python",
+      "prompt": "t='gates: MiddlewareFunc'\nprint(t.count('gates'))\n# Echo gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_echo_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 522. Echo gates: MiddlewareFunc is middleware only. ONLY code.",
+      "expected_stdout": "522\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_chi_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: Middleware.New'). Chi. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_chi_02",
+      "kind": "python",
+      "prompt": "t='gates: Middleware.New'\nprint(t.count('gates'))\n# Chi gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_chi_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 523. Chi gates: Middleware.New is middleware only. ONLY code.",
+      "expected_stdout": "523\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_hanami_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: Hanami::Action'). Hanami. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_hanami_02",
+      "kind": "python",
+      "prompt": "t='gates: Hanami::Action'\nprint(t.count('gates'))\n# Hanami gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_hanami_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 524. Hanami gates: Hanami::Action is middleware only. ONLY code.",
+      "expected_stdout": "524\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_resque_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: before_perform'). Resque. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_resque_02",
+      "kind": "python",
+      "prompt": "t='gates: before_perform'\nprint(t.count('gates'))\n# Resque gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_resque_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 525. Resque gates: before_perform is plugin only. ONLY code.",
+      "expected_stdout": "525\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_rq_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: job.perform'). RQ. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_rq_02",
+      "kind": "python",
+      "prompt": "t='gates: job.perform'\nprint(t.count('gates'))\n# RQ gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_rq_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 526. RQ gates: job.perform is job only. ONLY code.",
+      "expected_stdout": "526\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_blksheep_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: BoundHandler'). BlackSheep. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_blksheep_02",
+      "kind": "python",
+      "prompt": "t='gates: BoundHandler'\nprint(t.count('gates'))\n# BlackSheep gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_blksheep_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 527. BlackSheep gates: BoundHandler is middleware only. ONLY code.",
+      "expected_stdout": "527\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_taskiq_01",
+      "kind": "python",
+      "prompt": "Write Python that prints len('gates: TaskiqMiddleware'). Taskiq. ONLY code.",
+      "expected_stdout": "23\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_taskiq_02",
+      "kind": "python",
+      "prompt": "t='gates: TaskiqMiddleware'\nprint(t.count('gates'))\n# Taskiq gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_taskiq_03",
+      "kind": "python",
+      "prompt": "Write Python that prints 528. Taskiq gates: TaskiqMiddleware is middleware only. ONLY code.",
+      "expected_stdout": "528\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_ctrl_01",
+      "kind": "python",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r29v_ctrl_02",
+      "kind": "python",
+      "prompt": "print(sum(range(4))) # plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}

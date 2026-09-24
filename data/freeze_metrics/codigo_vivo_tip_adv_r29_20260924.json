@@ -1,0 +1,52 @@
+{
+  "name": "codigo_vivo_tip_adv_r29_20260924",
+  "kind": "tip_moe_verifier_polish_r29",
+  "branch": "frontier/tip-hardneg-r29",
+  "base_tip": "a54b74c",
+  "base_tip_full": "a54b74cf3849b3330d63437b853726a10ffde1ed",
+  "when_et": "2026-09-24T15:39:31-04:00",
+  "machine": "Mac-111 (074c6626-0440-4817-9829-6bae77c578d6)",
+  "scores": {
+    "router_before": "6/52",
+    "router_after": "52/52",
+    "rise_pp": 88.46,
+    "verifier_alone": "44/44",
+    "verifier_unified": "44/44",
+    "mixed": 1.0,
+    "r7_r14": "52/52 x8",
+    "lp_router": "64/64",
+    "r12_verifier": "44/44",
+    "lp_verifier": "42/42",
+    "smoke": "12/12",
+    "pillars": "37/37",
+    "hardneg_smoke": "18/18",
+    "ent_never_on_python": true
+  },
+  "families": [
+    "bookshelf_plugin_gates",
+    "objection_hook_gates",
+    "mikroorm_subscriber_gates",
+    "tornado_middleware_gates",
+    "bottle_plugin_gates",
+    "falcon_middleware_gates",
+    "pyramid_tween_gates",
+    "echo_middleware_gates",
+    "chi_middleware_gates",
+    "hanami_middleware_gates",
+    "resque_plugin_gates",
+    "rq_job_gates",
+    "blacksheep_middleware_gates",
+    "taskiq_middleware_gates"
+  ],
+  "floors_held": true,
+  "not_folded": true,
+  "lora_adapter_ro": true,
+  "artifacts_sha16": {
+    "hardneg_r29_mixed_router.json": "615cca092a9f7e73",
+    "hardneg_r29_python_items.json": "b5d9a9faf3a2d9e5",
+    "frontier_moe_dual_lane_hardneg_r29.json": "6083d8a32fae8135",
+    "frontier_moe_verifier_hardneg_r29.json": "ed29ef920608b831",
+    "frontier_moe_verifier_mixed_unified.json": "1e75dcc121689831"
+  },
+  "feat_sha": "PENDING"
+}
