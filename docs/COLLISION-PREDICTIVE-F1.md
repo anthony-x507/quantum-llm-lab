@@ -74,3 +74,16 @@ docs/COLLISION-PREDICTIVE-F1.md
 - `WorkingMemory`: `memory_bridge.update_memory_from_collision` stores emit only
 - Inverse: Fase 2 action-conditional sketch now has a runnable CPU cousin here
 - Distance: `distance_note()` optional urgency band (heuristic; not GT meters)
+
+
+## Tip side-branch (2026-09-24 ~13:09 ET, Mac-111)
+
+Branch \`frontier/tip-collision-pred\` @ base \`d892398\` adds \`distance_consumer.py\`
+(stub-safe 30–70 m DZ urgency; no unmerged distance-branch import). Re-smoke:
+
+| predictor | overall % | n |
+|-----------|-----------|---|
+| collision_physics | **100.0** | 555 |
+| inverse_cv | 85.23 | 555 |
+
+Contam PASS. Adapter RO held. See \`docs/FRONTIER-CODIGO-VIVO-TIP-COLLISION-PRED.md\`.

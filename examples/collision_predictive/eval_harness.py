@@ -38,6 +38,12 @@ from physics import (
     predict_cv_no_collision,
     predict_emit,
 )
+from distance_consumer import (
+    integrate_distance_into_prompt_lines,
+    proxy_estimates_from_agents,
+    enrich_emit_with_distance,
+)
+from memory_bridge import emit_to_tool_out
 
 HORIZONS = (1, 3, 5)
 
@@ -65,6 +71,10 @@ def build_prompt(meta: dict[str, Any], query_t: int, k: int, action: str,
         )
         lines.append(f"  t={fr['t']} | {objs}")
     lines.append(f"Hypo action to evaluate: {action}")
+    # Distance cues (perception stub) — NEVER GT meters
+    agents_now = frames[query_t]["agents"] if query_t < len(frames) else frames[-1]["agents"]
+    ests = proxy_estimates_from_agents(agents_now)
+    lines.extend(integrate_distance_into_prompt_lines(ests))
     if inject_gt is not None:
         lines.append(
             "WARNING_INJECTED_GT="
@@ -204,6 +214,11 @@ def evaluate(root: Path, audit_path: Path, *, contam_self_test: bool = False) ->
             # --- collision_physics (evaluate given hypo action) ---
             pred_phys = predict_emit(agents0, k, action=action, choose_safest=False)
             pred_phys["predictor"] = "collision_physics"
+            # Distance consume (stub proxy) — does not alter physics GT scoring
+            _ests = proxy_estimates_from_agents(agents0)
+            enrich_emit_with_distance(pred_phys, _ests)
+            # WorkingMemory bridge smoke (refuse gt_*)
+            _ = emit_to_tool_out(pred_phys)
             sc_phys = score_emit(pred_phys, gt, agents0, k)
 
             # --- inverse_cv (ignore action / collisions; ablation baseline) ---
@@ -252,6 +267,9 @@ def evaluate(root: Path, audit_path: Path, *, contam_self_test: bool = False) ->
                     "chosen_action": pred_phys["chosen_action"],
                     "predicted_consequence": pred_phys["predicted_consequence"],
                     "is_safe": pred_phys["is_safe"],
+                    "distance_note": pred_phys.get("distance_note"),
+                    "distance_urgency_max": pred_phys.get("distance_urgency_max"),
+                    "distance_partner_band": pred_phys.get("distance_partner_band"),
                 },
                 "emit_inverse_cv": {
                     "chosen_action": pred_cv["chosen_action"],
@@ -309,6 +327,7 @@ def evaluate(root: Path, audit_path: Path, *, contam_self_test: bool = False) ->
 
     result = {
         "domain": "collision_predictive",
+        "branch_tag": "tip-collision-pred",
         "ts": _now(),
         "n_eval_seqs": len(seqs),
         "predictors": table,
@@ -317,6 +336,14 @@ def evaluate(root: Path, audit_path: Path, *, contam_self_test: bool = False) ->
         "retrieval_ok": retrieval_ok,
         "audit": str(audit_path),
         "emit_schema": ["chosen_action", "predicted_consequence", "is_safe"],
+        "distance_integration": {
+            "consumer": "examples/collision_predictive/distance_consumer.py",
+            "provider": "arena_px_proxy_stub",
+            "imports_unmerged_distance_branch": False,
+            "gt_meters_at_inference": False,
+            "danger_zone_m": [30, 70],
+            "note": "Consumes perception est_m as urgency cues; physics oracle unchanged",
+        },
         "gpu": "none — CPU physics only; VLM deferred",
         "quantum_adapter_touched": False,
     }
@@ -336,6 +363,27 @@ def main() -> None:
     # always run contam self-test for shipped numbers
     out_json = args.root / "EVAL_COLLISION_CPU.json"
     out_json.write_text(json.dumps(result, indent=2) + "\n")
+    # Tip-side probe for frontier fold / freeze
+    probe = {
+        "schema": "frontier_tip_collision_pred_probe",
+        "ts": result["ts"],
+        "domain": "collision_predictive",
+        "branch": "frontier/tip-collision-pred",
+        "n_eval_seqs": result["n_eval_seqs"],
+        "metric_collision_correct_pct": result["predictors"]["collision_physics"]["overall"]["collision_correct_pct"],
+        "metric_n_queries": result["predictors"]["collision_physics"]["overall"]["n"],
+        "ablation_pp": result["ablation"]["collision_minus_inverse_cv_pp"],
+        "contam_passed": (result.get("contam_self_test") or {}).get("passed"),
+        "retrieval_ok": result["retrieval_ok"],
+        "emit_schema": result["emit_schema"],
+        "distance_integration": result.get("distance_integration"),
+        "predictors": result["predictors"],
+        "quantum_adapter_touched": False,
+        "floor_resmoke": "N/A — side-branch collision_predictive only; tip router untouched",
+    }
+    Path("data/frontier_tip_collision_pred_probe.json").write_text(
+        json.dumps(probe, indent=2) + "\n"
+    )
 
     # markdown table
     lines = [

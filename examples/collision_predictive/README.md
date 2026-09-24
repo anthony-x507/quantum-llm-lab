@@ -15,18 +15,22 @@ Top-down **merge lane** (ego + vehicles/pedestrians). Separate from:
 
 Extends inverse-planning **Fase 2** (action-conditional) idea without forking
 the street set. Wires into `WorkingMemory` via `memory_bridge.py`.
+Consumes floor-scale **distance estimates** via `distance_consumer.py` stubs
+(no import of unmerged `tip-distance-danger` code).
 
 ## Paths
 
 ```
 examples/collision_predictive/
-  physics.py          # elastic disks + hypo actions
-  generate.py         # synth set → data/collision_predictive/
-  eval_harness.py     # % collision correct + ablation vs inverse_cv
-  memory_bridge.py    # emit → WorkingMemory (no GT)
+  physics.py             # elastic disks + hypo actions
+  generate.py            # synth set → data/collision_predictive/
+  eval_harness.py        # % collision correct + ablation vs inverse_cv
+  memory_bridge.py       # emit → WorkingMemory (no GT)
+  distance_consumer.py   # stub-safe distance urgency cues (30–70 m DZ)
 data/collision_predictive/   # frames local; SUMMARY+EVAL tracked
 data/lora_adapter_collision/ # empty — VLM deferred
 data/eval_audit/collision_*.jsonl
+data/frontier_tip_collision_pred_probe.json
 ```
 
 ## Run (CPU)
