@@ -166,6 +166,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R11: Smithy/Ansible/Linkerd/Cilium/Airflow/Kafka/Prometheus/Kyverno/Temporal gates: scalars; Prisma/Consul/Gradle/Zig/Dart held by priors.
     # R12: Traefik/Envoy/NATS/ClickHouse/dbt/Crossplane/Flux/RabbitMQ/ES/Swift/Elixir/Julia/Kong/Spinnaker gates: scalars.
     # R13: Nginx/HAProxy/Caddy/Redis/Postgres/Skaffold/Buildkite/Packer/Salt/Bazel/Dagger/Dagster/Hasura/NestJS gates: scalars.
+    # R21: Bun/Deno/PocketBase/Appwrite/Neon/PlanetScale/Fly.io/Railway/Meilisearch/Qdrant/Spin/SolidJS/Astro/HTMX gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -464,7 +465,68 @@ def route_heuristic(prompt: str) -> Lane:
             r"|nestjs\s+.*gates:"
             r"|guard\s+gates:"
             # R13: proxy / LB / webserver / cache / DB / k8s / CI / image / config / build / orchestration / GraphQL / framework prose
-            r"|gates:\s+is\s+(?:proxy|LB|webserver|cache|DB|k8s|CI|image|config|build|orchestration|GraphQL|framework)\b",
+            r"|gates:\s+is\s+(?:proxy|LB|webserver|cache|DB|k8s|CI|image|config|build|orchestration|GraphQL|framework)\b"
+            # R21: Bun plugin gates: preload
+            r"|gates\s*:\s*preload\b"
+            r"|\bbun\b\s+.*gates:"
+            r"|plugin\s+gates:\s*preload"
+            # R21: Deno permission gates: allow-net
+            r"|gates\s*:\s*allow-net\b"
+            r"|\bdeno\b\s+.*gates:"
+            r"|perm(?:ission)?\s+gates:\s*allow-net"
+            # R21: PocketBase hook gates: OnRecord
+            r"|gates\s*:\s*OnRecord\b"
+            r"|pocketbase\s+.*gates:"
+            r"|hook\s+gates:\s*OnRecord"
+            # R21: Appwrite schedule gates: schedule
+            r"|gates\s*:\s*schedule\b"
+            r"|appwrite\s+.*gates:"
+            r"|schedule\s+gates:"
+            # R21: Neon endpoint gates: endpoints
+            r"|gates\s*:\s*endpoints\b"
+            r"|\bneon\b\s+.*gates:"
+            r"|endpoint\s+gates:"
+            # R21: PlanetScale safeMigrations gates
+            r"|gates\s*:\s*safeMigrations\b"
+            r"|planetscale\s+.*gates:"
+            r"|safe\s+gates:\s*safeMigrations"
+            # R21: Fly.io autostop gates: auto_stop
+            r"|gates\s*:\s*auto_stop\b"
+            r"|fly\.io\s+.*gates:"
+            r"|\bflyio\b\s+.*gates:"
+            r"|autostop\s+gates:"
+            # R21: Railway startCommand gates
+            r"|gates\s*:\s*startCommand\b"
+            r"|railway\s+.*gates:"
+            r"|start\s+gates:\s*startCommand"
+            # R21: Meilisearch filterableAttributes gates
+            r"|gates\s*:\s*filterableAttributes\b"
+            r"|meilisearch\s+.*gates:"
+            r"|filter\s+gates:\s*filterableAttributes"
+            # R21: Qdrant distance gates
+            r"|gates\s*:\s*distance\b"
+            r"|qdrant\s+.*gates:"
+            r"|vector\s+gates:\s*distance"
+            # R21: Fermyon Spin outbound gates: allowed_outbound_hosts
+            r"|gates\s*:\s*allowed_outbound_hosts\b"
+            r"|fermyon\s+.*gates:"
+            r"|\bspin\b\s+.*gates:"
+            r"|outbound\s+gates:"
+            # R21: SolidJS createEffect gates
+            r"|gates\s*:\s*createEffect\b"
+            r"|solidjs\s+.*gates:"
+            r"|\bsolid\b\s+.*gates:"
+            r"|effect\s+gates:\s*createEffect"
+            # R21: Astro onRequest gates
+            r"|gates\s*:\s*onRequest\b"
+            r"|\bastro\b\s+.*gates:"
+            r"|onrequest\s+gates:"
+            # R21: HTMX hx-trigger gates
+            r"|gates\s*:\s*hx-trigger\b"
+            r"|\bhtmx\b\s+.*gates:"
+            r"|trigger\s+gates:\s*hx-trigger"
+            # R21: runtime / permission / BaaS / serverless / SQL / PaaS / search / vector / wasm / framework / frontend / HTML prose
+            r"|gates:\s+is\s+(?:runtime|permission|BaaS|serverless|SQL|PaaS|search|vector|wasm|framework|frontend|HTML)\b",
             text,
             re.I,
         )
@@ -1020,6 +1082,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r21' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r21.json"
         elif 'r13' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r13.json"
         elif 'r12' in hp:
