@@ -10,9 +10,12 @@ models/
 examples/out_frames/
 .venv/
 
-# Generated synthetic dataset (keep path via .gitkeep)
+# Generated synthetic dataset (keep SUMMARY; ignore frames/scene dirs)
 data/scenes/**
+!data/scenes/.gitignore
 !data/scenes/.gitkeep
+!data/scenes/SUMMARY.json
+!data/scenes/SUMMARY.md
 data/lora_adapter/**
 !data/lora_adapter/.gitkeep
 data/lora_dataset.jsonl

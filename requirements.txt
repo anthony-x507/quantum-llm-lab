@@ -7,3 +7,8 @@ pillow>=10.0.0
 mlx>=0.18.0; sys_platform == "darwin"
 mlx-lm>=0.19.0; sys_platform == "darwin"
 mlx-vlm>=0.1.0; sys_platform == "darwin"
+
+# LoRA / dataset (mlx-vlm.lora path)
+datasets>=2.19.0
+peft>=0.11.0
+huggingface_hub>=0.23.0

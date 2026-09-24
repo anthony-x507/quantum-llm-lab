@@ -1,0 +1,6 @@
+# Keep summaries; ignore generated frames and per-scene dirs
+*
+!.gitignore
+!.gitkeep
+!SUMMARY.json
+!SUMMARY.md

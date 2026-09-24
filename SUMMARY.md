@@ -55,3 +55,11 @@
 - **First raw_preview snippet (scene_0000):** `Got it, let's see. The problem is to propose a 2-qubit circuit based on the visual scene. The scene has a blue irregular polygon...` — model still opens with English CoT, but with 1024 tokens it finishes and emits parseable circuit JSON (notas in Spanish from the model).
 - **Git:** quantum-llm-lab `c08f896` on main; Agent-Lab- mirrored `be4ec62`.
 
+## 5) LoRA train unblock — 2026-09-23 21:35 EDT
+
+- **Deps:** `.venv` installed `datasets==5.0.1`, `peft==0.21.0`; `from mlx_vlm import lora` OK.
+- **Scenes:** `data/scenes/` n=280 seed=42 — domain counts: fall=102, entanglement=83, superposition=95.
+- **Prepared JSONL:** `data/lora_dataset.jsonl` (280 lines; gitignored).
+- **QEC:** `qec_robustness.py --self-test` PASS.
+- **Next:** `python examples/train_lora.py --epochs 3 --rank 32` (~2–3 h on M4).
+- **Git:** frames PNGs ignored; `SUMMARY.json` / `SUMMARY.md` under `data/scenes/` tracked.
