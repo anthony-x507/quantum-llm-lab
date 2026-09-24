@@ -122,6 +122,21 @@ def _scene_has_bounce_energy_loss(scene: dict[str, Any]) -> bool:
 
 def _claims_perfect_energy(proposal: dict[str, Any]) -> bool:
     text = _text_blob(proposal)
+    # Negation / denial of perfect conservation must NOT count as a claim
+    # (gold LoRA notas used to say "no afirma conservación perfecta" and false-triggered).
+    if re.search(
+        r"(no\s+afirma|sin\s+afirmar|no\s+digas\s+que|niega(r)?|descarta(r)?)\s+"
+        r".{0,40}conservaci[oó]n\s+perfecta",
+        text,
+        flags=re.I,
+    ):
+        text = re.sub(
+            r"(no\s+afirma|sin\s+afirmar|no\s+digas\s+que|niega(r)?|descarta(r)?)\s+"
+            r".{0,40}conservaci[oó]n\s+perfecta",
+            " ",
+            text,
+            flags=re.I,
+        )
     patterns = [
         r"conservaci[oó]n\s+perfecta",
         r"energ[ií]a\s+perfectamente\s+conserv",

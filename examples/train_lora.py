@@ -161,7 +161,7 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
         "template": tpl,
         "nota": (
             f"Firma toy de caída ({shape}/{cond}/{tpl}) con pérdida por rebote (~{loss:.2f}); "
-            "no afirma conservación perfecta."
+            "energía disipada en el impacto (no se conserva)."
         ),
     }
 
@@ -203,7 +203,8 @@ def _user_prompt_for_domain(meta: dict[str, Any], summary: dict[str, Any]) -> st
         "Eres un asistente de circuitos cuánticos. Mira la imagen. Responde SOLO JSON válido "
         "con claves n_qubits, gates, domain, label, nota. "
         "gates ∈ h,x,y,z,cx,ry. "
-        "Si hay pérdida por rebote, NO afirmes conservación perfecta. "
+        "Si hay pérdida por rebote, di que la energía se disipa en el impacto; "
+        "no digas que la energía se conserva. "
         f"Escena: {json.dumps(summary, ensure_ascii=False)}"
     )
 
