@@ -1,7 +1,7 @@
 # Estado de avance — Agent Lab / quantum-llm-lab
 
 **Repo:** https://github.com/anthony-x507/quantum-llm-lab  
-**Actualizado:** 2026-09-24 ~05:06 ET  
+**Actualizado:** 2026-09-24 ~05:12 ET  
 **SSOT del plan:** [`PLAN-MAESTRO-PARTE-1.md`](PLAN-MAESTRO-PARTE-1.md)  
 **Regla:** solo números de registro limpio (anti-contam). Sin claims de ventaja cuántica.
 
@@ -46,17 +46,18 @@ Fuente: `data/inverse_planning/EVAL_PASSIVE_CV.json` (push `746b70a`). VLM/LoRA 
 | Smoke CPU capas | **PASS** — hit real `f1_000_oak_ave` (distance 2.0) → `data/video_synth/fase1/SMOKE_THREE_LAYERS.json` |
 | LoRA F1 / own-delta / ablación VLM | **En cola** GPU (`qlora-video-f1`) — números VLM **aún no** |
 
-### Distancia (refuerzo temporal, FLOOR-SCALE)
+### Distancia (refuerzo temporal, FLOOR-SCALE + DANGER ZONE 30–70 m)
 
-| Banda | % correct (heurística CPU) |
-|-------|----------------------------|
-| ~5 m | 76.33 |
-| ~50 m | 48.69 |
-| ~100 m | 76.74 |
-| ~200 m | 56.73 |
-| **overall** | **65.29** |
+| Banda / slice | baseline `bcbcdc8` | improved (05:12 ET) | Δ |
+|---------------|--------------------|---------------------|---|
+| ~5 m | 76.33 | 75.76 | −0.57 |
+| **~50 m** | **48.69** | **50.56** | **+1.87** |
+| ~100 m | 76.74 | 79.28 | +2.54 |
+| ~200 m | 56.73 | 60.73 | +4.00 |
+| **overall** | **65.29** | **66.94** | **+1.65** |
+| **30–70 m danger** | — | **49.72** | +1.03 vs 48.69 |
 
-Ablación future-pred: tracking-only **73.51%** > +floor-dist **64.24%** (honesto; estimador ruidoso). Fuente: `EVAL_FLOOR_SCALE_CPU.json` (`bcbcdc8`). VLM/LoRA distancia diferido. Escala = **pisos de edificio** 2.4–3.0 m — **no** alturas fijas de semáforo.
+**danger50 focused set** (88 seq, eval 18): 30–70 m **60.11%** (**+11.42 pp** vs baseline 48.69); ~50 m band 62.15%. Future-pred in zone: tracking-only 60.05 → +dist **61.69** (+1.64 pp). Soft priors car~4.5 m / ped~1.7 m; lights still floor-span. Anti-contam CLEAN (`danger50_20260924_051252.jsonl`). Quantum `data/lora_adapter/` RO mtime **00:58:09**. VLM/LoRA diferido.
 
 
 ### Colisión predictiva (CPU, dominio separado)

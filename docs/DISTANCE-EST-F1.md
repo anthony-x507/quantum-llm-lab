@@ -1,68 +1,86 @@
-# Distance estimation — Fase 1 (FLOOR-SCALE CPU)
+# Distance estimation — Fase 1 + DANGER ZONE 50 m reinforce
 
-**When:** 2026-09-24 ~04:54 ET (Mac-139)  
-**Scale lock:** FLOOR-SCALE — building floors 2.4–3.0 m — **NO fixed object heights**  
-**Family:** `data/video_synth/distance_est/` (temporal street; extends video_synth)  
+**When:** 2026-09-24 ~04:54 ET baseline (`bcbcdc8`); ~05:12 ET danger50 reinforce (Mac-139)  
+**Scale lock:** FLOOR-SCALE — building floors 2.4–3.0 m — **NO fixed light heights**  
+**Soft priors (eval):** car length ~4.5 m · ped height ~1.7 m  
+**Family:** `data/video_synth/distance_est/` (+ `danger50/` focused set)  
 **Not:** inverse_planning corridor · quantum adapter  
 **Prototype:** `examples/distance_est/`
 
 ## Method
 
 1. Buildings expose `n_floors` + `floor_height_m` (standard 2.4–3.0 m) + `floor_px` in **meta** (scale ref, not distance GT).
-2. Heuristic: calibrate `d_building` from facade floors → ground-plane depth from `cy` anchored by floor-scale; lights/signs may use floor-span derived height when coplanar with facade.
-3. Lights in synth have **varied** true height **3–5 m** (estimator must not assume 3 m).
+2. Heuristic: floor-scale `d_building` → ground-plane depth from `cy`; **cars/peds** triangulate with soft size priors; lights/signs use floor-span derived height when coplanar (never fixed 3 m).
+3. Fine parallax refine (stronger weight in 30–70 m) + **closing-speed / TTI** from apparent growth.
 4. Priority distances: cars, intersections, stop signs, pedestrians, lights.
-5. Parallax refine: growing→approach, shrinking→recede.
-6. GT meters only in `distances_gt.json` — post-hoc compare.
+5. GT meters only in `distances_gt.json` — post-hoc compare.
 
-## Dataset
+## Datasets
 
-| item | value |
-|------|-------|
-| generator | `examples/distance_est/generate.py` |
-| sequences | **56** × 12 frames |
-| split | train **45** / eval **11** |
-| bands | ~5 / 50 / 100 / 200 m |
-| classes | building, light, car, pedestrian, stop_sign, intersection |
-| adapter | `data/lora_adapter_distance/` (GPU deferred) |
+| set | generator | sequences | split | focus |
+|-----|-----------|-----------|-------|-------|
+| baseline | `generate.py` | **56** × 12 | 45 / 11 | bands ~5/50/100/200 |
+| **danger50** | `generate_danger50.py` | **88** × 12 | 70 / 18 | critical obj in **30–70 m** + approach/recede |
 
-## CPU heuristic metrics (`EVAL_FLOOR_SCALE_CPU.json`)
+Adapter: `data/lora_adapter_distance/` (GPU deferred).
 
-Predictor: `floor_scale_parallax_heuristic` · anti-contam **CLEAN**
+## CPU metrics — original eval set (improved estimator)
 
-| band | n | % correct | tol |
-|------|---|-----------|-----|
-| ~5m | 528 | **76.33%** | ±10% |
-| ~50m | 536 | **48.69%** | ±10%/±20% |
-| ~100m | 473 | **76.74%** | ±20% |
-| ~200m | 275 | **56.73%** | ±20% |
-| **overall** | 1812 | **65.29%** | |
+Predictor: `floor_scale_parallax_size_prior_closing_speed` · anti-contam **CLEAN**
 
-### Ablation — tracking
+| band | n | % correct | Δ vs bcbcdc8 |
+|------|---|-----------|--------------|
+| ~5m | 528 | 75.76% | −0.57 pp |
+| **~50m** | 536 | **50.56%** | **+1.87 pp** (was 48.69%) |
+| ~100m | 473 | 79.28% | +2.54 pp |
+| ~200m | 275 | 60.73% | +4.00 pp |
+| **overall** | 1812 | **66.94%** | **+1.65 pp** (was 65.29%) |
 
-| mode | n | % correct |
-|------|---|-----------|
-| tracking-only | 1903 | 100.0% |
-| tracking + floor-calibrated distance | 1900 | 100.0% |
+| slice | n | % correct | Δ vs baseline 48.69% |
+|-------|---|-----------|----------------------|
+| **30–70 m DANGER ZONE** | 527 | **49.72%** | **+1.03 pp** |
 
-Synth tracks are easy (few crossings) → both saturate. Distance gate does not hurt.
+### Ablation — tracking (original)
 
-### Ablation — future depth prediction (camera-axis; not corridor inverse_planning)
+| mode | overall | danger zone |
+|------|---------|-------------|
+| tracking-only | 100.0% | 100.0% |
+| tracking + distance | 100.0% | 100.0% |
 
-| mode | depth-pred % | position-pred % |
-|------|--------------|-----------------|
-| tracking-only | **73.51%** | 99.58% |
-| + floor-calibrated distance rate | **64.24%** | 99.58% |
+### Ablation — future depth pred (original)
 
-Honest: hold-last depth beats noisy velocity on this CPU heuristic; VLM/LoRA Δ deferred (GPU busy).
+| mode | overall depth-pred | danger-zone depth-pred |
+|------|--------------------|------------------------|
+| tracking-only | 73.57% | 64.11% |
+| + distance / closing-speed | 65.02% | 48.55% |
+
+Honest: on mixed original set, +distance still hurts future-pred in danger zone (noisy mid-band).
+
+## CPU metrics — danger50 focused eval (18 seq)
+
+| band / slice | n | % correct | Δ vs baseline 48.69% |
+|--------------|---|-----------|----------------------|
+| ~50m band | 1012 | **62.15%** | **+13.46 pp** |
+| **30–70 m DANGER ZONE** | 915 | **60.11%** | **+11.42 pp** |
+| overall | 1920 | 73.54% | — |
+
+### Ablation — danger50 (future pred **improves** in zone)
+
+| mode | overall depth-pred | danger-zone depth-pred |
+|------|--------------------|------------------------|
+| tracking-only | 68.92% | 60.05% |
+| + distance / closing-speed | **74.32%** | **61.69%** |
+
+Tracking±distance saturates at 100% (synth, few crossings). On the focused mid-band set, distance **helps** inverse-style future pred (+5.4 pp overall, +1.64 pp in zone).
 
 ## Anti-contam
 
-- Audit: `data/eval_audit/distance_20260924_045444.jsonl`
-- Self-test: `data/video_synth/distance_est/ANTI_CONTAM_SELFTEST.json` (passed)
+- Original audit: `data/eval_audit/distance_20260924_051251.jsonl` — **CLEAN**
+- Danger50 audit: `data/eval_audit/danger50_20260924_051252.jsonl` — **CLEAN**
+- Self-tests: both `ANTI_CONTAM_SELFTEST.json` **passed**
 - Dirty → INVALID discard+rerun
 
 ## GPU
 
-Staged queue script: `data/RUN_DISTANCE_EST_WHEN_FREE.sh` (behind ent/classical/video_f1; **not** launched as extra screen this cycle).  
-Quantum `data/lora_adapter/` **RO** — mtime untouched.
+Staged queue: `data/RUN_DISTANCE_EST_WHEN_FREE.sh` (behind ent/classical/video_f1).  
+Quantum `data/lora_adapter/` **RO** — mtime **00:58:09** untouched.

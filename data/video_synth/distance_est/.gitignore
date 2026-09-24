@@ -7,3 +7,12 @@
 !SPLIT.json
 !EVAL_FLOOR_SCALE_CPU.json
 !ANTI_CONTAM_SELFTEST.json
+!danger50/
+danger50/*
+!danger50/.gitignore
+!danger50/SUMMARY.json
+!danger50/SUMMARY.md
+!danger50/INDEX.json
+!danger50/SPLIT.json
+!danger50/EVAL_DANGER50_CPU.json
+!danger50/ANTI_CONTAM_SELFTEST.json

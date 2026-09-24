@@ -17,3 +17,13 @@ Signals: **floor-scale + frame-to-frame parallax** (growing→approach, shrinkin
 .venv/bin/python examples/distance_est/eval_heuristic.py
 .venv/bin/python examples/distance_est/eval_heuristic.py --contam-self-test
 ```
+
+## DANGER ZONE reinforce (30–70 m)
+
+```bash
+python examples/distance_est/generate_danger50.py --n-seq 88
+python examples/distance_est/eval_heuristic.py --data data/video_synth/distance_est/danger50 --out-name EVAL_DANGER50_CPU.json
+```
+
+Soft priors: car ~4.5 m length, ped ~1.7 m height. Lights: floor-span only (no fixed height). Closing-speed / TTI from apparent growth.
+

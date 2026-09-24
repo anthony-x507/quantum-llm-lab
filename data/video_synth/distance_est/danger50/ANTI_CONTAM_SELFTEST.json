@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "clean_prompt_touches_gt": false,
+  "injected_prompt_touches_gt": true,
+  "meta_has_no_gt_m": true,
+  "scale_lock": "FLOOR-SCALE"
+}

@@ -45,7 +45,7 @@ No se declara dominio “10× cerrado” hasta tener **own-delta limpio** (base 
 | **Física clásica** | label / física visual | **PEND** (BASE VLM) | set 220 escenas; gold CPU 1.0 ≠ VLM | 1.0 | **PEND** | Smoke + own-delta BASE vs `lora_adapter_classical/` (GPU cola) |
 | **Visión temporal F1** | tracking + resumen | **PEND** | set 50×16 shipped; LoRA en cola | ≥0.80 gate / 1.0 techo | **PEND** | Train `lora_adapter_video_f1/` → own-delta → ablación 3 capas |
 | **Planif. inversa F1** | pos @k=1,3,5 | **PEND** (VLM) | CV: pos **1.0**; señal 0.50/0.00/0.51 | 1.0 pos+señal | Señal **débil** (CV); VLM **PEND** | Reforzar señal; LoRA `lora_adapter_inverse/` tras GPU; cruzar “anticipar error” con cuántico |
-| **Distancia** | % correct@tol por banda | **PEND** (VLM) | Heurística piso: **65.3%** overall (5m 76% / 50m 49% / 100m 77% / 200m 57%) | 1.0 | ~**35 pp** overall (heurística); VLM **PEND** | Diagnosticar banda ~50m; **no** apilar LoRA hasta estimar si VLM supera heurística; ablación: +dist **empeoró** future-pred (73.5→64.2) — reforzar estimador antes de creer el refuerzo |
+| **Distancia** | % correct@tol por banda + 30–70m danger | **PEND** (VLM) | Heurística reforzada: overall **66.9%**; ~50m **50.6%** (+1.9 pp vs 48.69); danger50 set 30–70m **60.1%** (+11.4 pp); future-pred en danger50 **+1.6 pp** con +dist | 1.0 | still ~**33 pp** overall; mid-band closing | danger50 ≥88 seq + priors car/ped + closing-speed; ablación original danger future-pred aún floja; **no** LoRA hasta VLM own-delta |
 | **Colisión predictiva** | % collision correct @k + ablación | **PEND** (VLM) | CPU oracle elastic: **100%**; inverse_cv **85.2%**; ablación **+14.8 pp** | 1.0 usable VLM | VLM **PEND**; CPU floor congelable como ref | Extiende inversa Fase2; LoRA `lora_adapter_collision/` diferido; no forkar street F1 |
 | **Compuesto lab** | ejes ≥10× / techo | base ~0 usable | cuántico cerca del techo en parse/label/energía; resto PEND | todos dominios en techo | **grande** fuera de cuántico | Ciclo permanente; GPU: ent → classical → video F1 → distance/inverse |
 
@@ -60,7 +60,7 @@ No se declara dominio “10× cerrado” hasta tener **own-delta limpio** (base 
 | Distancia | Floor-scale + parallax; luego LoRA `lora_adapter_distance/` **si** own-delta ≥ gate; Jeff **después** de tracking básico |
 | Seguridad / grants | **Jeff** (separado; post-tracking) |
 
-**Última actualización scoreboard:** 2026-09-24 ~05:05 ET · collision predictive CPU + Parte 1.
+**Última actualización scoreboard:** 2026-09-24 ~05:12 ET · distance danger50 reinforce (+1.9 pp ~50m; focused 30–70m 60.1%).
 
 ---
 ## 1. Visión

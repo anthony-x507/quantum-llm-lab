@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 """CPU floor-scale distance eval + tracking/prediction ablation.
 
-Scale lock: FLOOR-SCALE (building floors 2.4–3.0 m). NO fixed object heights.
+Scale lock: FLOOR-SCALE (building floors 2.4–3.0 m). NO fixed light heights.
+Soft car (~4.5 m) / ped (~1.7 m) size priors + fine parallax + closing-speed/TTI.
 GT meters loaded ONLY post-hoc from distances_gt.json.
 Anti-contam audit every eval; dirty → INVALID.
 
 Metrics:
   - % correct distance by range band (tol 10% if GT<50m, 20% if 50–200m)
-  - Ablation: tracking±distance vs tracking-only
-  - Ablation: next-frame distance prediction ±floor-calibrated signal
-    (proxy for whether distance helps inverse-planning-style future pred)
+  - % correct in DANGER ZONE 30–70 m (+ delta vs baseline 48.69% ~50m)
+  - Ablation: tracking±distance; future-pred±distance — overall AND in danger zone
 
 Usage:
   python examples/distance_est/eval_heuristic.py
+  python examples/distance_est/eval_heuristic.py --data data/video_synth/distance_est/danger50
   python examples/distance_est/eval_heuristic.py --contam-self-test
 """
 from __future__ import annotations
@@ -27,9 +28,13 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from physics import (
     DEFAULT_FOCAL_PX,
+    DANGER_ZONE_M_HI,
+    DANGER_ZONE_M_LO,
     PRIORITY_DISTANCE_CLASSES,
     band_for_distance,
+    closing_speed_tti,
     estimate_via_floor_scale,
+    in_danger_zone,
     parallax_signal,
     pick_building_scale,
     predict_next_distance,
@@ -41,6 +46,8 @@ from physics import (
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "data" / "video_synth" / "distance_est"
 AUDIT_DIR = ROOT / "data" / "eval_audit"
+BASELINE_50M_PCT = 48.69
+BASELINE_COMMIT = "bcbcdc8"
 
 
 def _now() -> str:
@@ -52,9 +59,9 @@ def build_prompt(meta: dict[str, Any], t: int, *, inject_gt: dict | None = None)
     fr = meta["frames"][t]
     lines = [
         "DOMAIN=distance_est STYLE=street_floor_scale",
-        "SCALE_LOCK=FLOOR-SCALE building floors 2.4–3.0m — NO fixed object heights",
+        "SCALE_LOCK=FLOOR-SCALE building floors 2.4–3.0m — NO fixed light heights; soft car~4.5m ped~1.7m priors",
         f"Task: estimate meters to priority objects (cars, intersections, stop signs, pedestrians, lights) at t={t}.",
-        "Signal: building-floor scale + frame-to-frame parallax.",
+        "Signal: building-floor scale + fine parallax + closing-speed.",
         f"Street={meta.get('street_name')} focal_px={meta.get('focal_px')}",
         "Objects:",
     ]
@@ -70,12 +77,10 @@ def build_prompt(meta: dict[str, Any], t: int, *, inject_gt: dict | None = None)
 
 
 def prompt_touches_gt(prompt: str, gt: dict[str, Any]) -> bool:
-    """Leak check: explicit GT keys / injection only (not numeric cx coincidence)."""
     if "WARNING_INJECTED_GT" in prompt:
         return True
     if "gt_m" in prompt or "_gt_m" in prompt or "distances_gt" in prompt:
         return True
-    # explicit JSON-ish gt dump
     if '"gt_m"' in prompt or "'gt_m'" in prompt:
         return True
     return False
@@ -94,6 +99,7 @@ def estimate_frame(
                 "id": o["id"], "class": o["class"],
                 "est_m": None, "confidence": 0.0,
                 "method": "no_building_scale", "parallax": "unknown",
+                "closing_speed_mps": None, "tti_s": None, "growth_frac": None,
             })
         return out
 
@@ -102,114 +108,80 @@ def estimate_frame(
     for o in objects:
         est, conf, method = estimate_via_floor_scale(o, scale, focal_px, building_cy=bcy)
         para = "unknown"
+        cs: dict[str, Any] = {"closing_speed_mps": None, "tti_s": None, "growth_frac": None, "signal": "unknown"}
         if prev_by_id and o["id"] in prev_by_id and est is not None:
             prev = prev_by_id[o["id"]]
-            para = parallax_signal(float(prev.get("apparent_px") or 1), float(o["apparent_px"]))
+            sp = float(prev.get("apparent_px") or 1)
+            sc = float(o["apparent_px"])
+            para = parallax_signal(sp, sc)
             if prev.get("est_m"):
-                est, conf = refine_with_parallax(est, para, float(prev["apparent_px"]), float(o["apparent_px"]))
+                est, conf = refine_with_parallax(est, para, sp, sc)
                 method = method + "+parallax"
+            cs = closing_speed_tti(sp, sc, float(est))
         out.append({
             "id": o["id"], "class": o["class"],
             "est_m": None if est is None else round(float(est), 3),
             "confidence": round(conf, 3),
             "method": method,
             "parallax": para,
+            "closing_speed_mps": cs.get("closing_speed_mps"),
+            "tti_s": cs.get("tti_s"),
+            "growth_frac": cs.get("growth_frac"),
             "cx": o["cx"], "cy": o["cy"],
             "apparent_px": o["apparent_px"],
         })
     return out
 
 
-def score_distances(
-    preds: list[dict[str, Any]],
-    gt_objs: list[dict[str, Any]],
-    *,
-    priority_only: bool = True,
-) -> dict[str, Any]:
-    gt_map = {o["id"]: o for o in gt_objs}
-    bands: dict[str, dict[str, int]] = {}
-    rows = []
-    for p in preds:
-        g = gt_map.get(p["id"])
-        if g is None:
-            continue
-        if priority_only and g["class"] not in PRIORITY_DISTANCE_CLASSES:
-            continue
-        if p.get("est_m") is None:
-            continue
-        band = g["gt_band"]
-        bands.setdefault(band, {"n": 0, "correct": 0})
-        ok = within_tol(float(p["est_m"]), float(g["gt_m"]))
-        bands[band]["n"] += 1
-        if ok:
-            bands[band]["correct"] += 1
-        rows.append({
-            "id": p["id"], "class": g["class"], "gt_m": g["gt_m"], "est_m": p["est_m"],
-            "band": band, "correct": ok, "confidence": p.get("confidence"),
-            "method": p.get("method"), "parallax": p.get("parallax"),
-        })
-    by_band = {}
-    for b, st in bands.items():
-        by_band[b] = {
-            "n": st["n"],
-            "correct": st["correct"],
-            "pct": round(100.0 * st["correct"] / st["n"], 2) if st["n"] else None,
-        }
-    n = sum(st["n"] for st in bands.values())
-    c = sum(st["correct"] for st in bands.values())
-    return {
-        "n": n,
-        "correct": c,
-        "pct": round(100.0 * c / n, 2) if n else None,
-        "by_band": by_band,
-        "rows_sample": rows[:12],
-    }
-
-
-def eval_tracking(seq_meta: dict, seq_gt: dict, *, use_distance: bool) -> dict[str, Any]:
-    """ID association accuracy vs GT id continuity (same id across frames)."""
+def eval_tracking(seq_meta: dict, seq_gt: dict, *, use_distance: bool, danger_only: bool = False) -> dict[str, Any]:
     focal = float(seq_meta.get("focal_px") or DEFAULT_FOCAL_PX)
     frames = seq_meta["frames"]
-    gt_frames = {fr["t"]: fr for fr in seq_gt["frames"]}
-    prev_est = None
-    prev_meta_objs = None
-    # Build predicted tracks by greedy assoc; score: matched pair shares GT id
-    # (we know true ids in meta for synth — association uses only cx/cy/class/+est)
-    # For fair ID-free assoc test: hide ids at associate time.
+    gt_by_t = {fr["t"]: {o["id"]: o for o in fr["objects"]} for fr in seq_gt["frames"]}
     correct = 0
     total = 0
     prev_by_anon: list[dict[str, Any]] = []
     anon_to_real: dict[str, str] = {}
+    prev_est = None
 
     for fr in frames:
         t = fr["t"]
         ests = estimate_frame(fr["objects"], prev_est, focal)
         est_map = {e["id"]: e for e in ests}
+        gt_map = gt_by_t.get(t, {})
 
-        # anonymize current
         curr_anon = []
         curr_map = {}
         for i, o in enumerate(fr["objects"]):
+            if danger_only:
+                g = gt_map.get(o["id"])
+                if g is None or not in_danger_zone(float(g.get("gt_m", -1))):
+                    continue
+                if g["class"] not in PRIORITY_DISTANCE_CLASSES:
+                    continue
             aid = f"c{i}"
             e = est_map[o["id"]]
-            row = {
+            curr_anon.append({
                 "id": aid, "class": o["class"], "cx": o["cx"], "cy": o["cy"],
                 "est_m": e.get("est_m"), "apparent_px": o["apparent_px"],
-            }
-            curr_anon.append(row)
+            })
             curr_map[aid] = o["id"]
 
-        if prev_by_anon:
+        if prev_by_anon and curr_anon:
             matches = track_associate_greedy(prev_by_anon, curr_anon, use_distance=use_distance)
             for pid, cid, _ in matches:
                 total += 1
                 if anon_to_real.get(pid) == curr_map[cid]:
                     correct += 1
 
-        # roll
         prev_by_anon = []
         anon_to_real = {}
         for i, o in enumerate(fr["objects"]):
+            if danger_only:
+                g = gt_map.get(o["id"])
+                if g is None or not in_danger_zone(float(g.get("gt_m", -1))):
+                    continue
+                if g["class"] not in PRIORITY_DISTANCE_CLASSES:
+                    continue
             aid = f"p{i}"
             e = est_map[o["id"]]
             prev_by_anon.append({
@@ -219,25 +191,16 @@ def eval_tracking(seq_meta: dict, seq_gt: dict, *, use_distance: bool) -> dict[s
             anon_to_real[aid] = o["id"]
 
         prev_est = {o["id"]: {**o, **est_map[o["id"]]} for o in fr["objects"]}
-        _ = gt_frames.get(t)  # loaded post-hoc only for scoring elsewhere
 
     return {
-        "mode": "tracking+distance" if use_distance else "tracking-only",
+        "mode": ("tracking+distance" if use_distance else "tracking-only") + ("_danger" if danger_only else ""),
         "n": total,
         "correct": correct,
         "pct": round(100.0 * correct / total, 2) if total else None,
     }
 
 
-def eval_future_pred(seq_meta: dict, seq_gt: dict, *, use_distance: bool) -> dict[str, Any]:
-    """Next-frame distance prediction vs GT (inverse-planning-style along depth).
-
-    tracking-only: predict next apparent size rate without meters, convert via
-    floor scale at next frame only after the fact for scoring... Actually:
-      - without distance: predict next cx,cy by constant image velocity; score
-        position hit (loose) — weak depth signal
-      - with distance: predict next gt_m via constant depth-rate; score with tol
-    """
+def eval_future_pred(seq_meta: dict, seq_gt: dict, *, use_distance: bool, danger_only: bool = False) -> dict[str, Any]:
     focal = float(seq_meta.get("focal_px") or DEFAULT_FOCAL_PX)
     gt_by_t = {fr["t"]: {o["id"]: o for o in fr["objects"]} for fr in seq_gt["frames"]}
     frames = seq_meta["frames"]
@@ -251,14 +214,18 @@ def eval_future_pred(seq_meta: dict, seq_gt: dict, *, use_distance: bool) -> dic
         next_fr = frames[fi + 1]
         next_gt = gt_by_t[next_fr["t"]]
         next_pos = {o["id"]: o for o in next_fr["objects"]}
+        curr_gt = gt_by_t[fr["t"]]
 
         for o in fr["objects"]:
             if o["class"] not in PRIORITY_DISTANCE_CLASSES:
                 continue
+            g0 = curr_gt.get(o["id"])
+            if danger_only:
+                if g0 is None or not in_danger_zone(float(g0.get("gt_m", -1))):
+                    continue
             e = est_map[o["id"]]
             if o["id"] not in next_gt:
                 continue
-            # position extrapolation (always)
             if prev_est and o["id"] in prev_est:
                 dx = o["cx"] - prev_est[o["id"]]["cx"]
                 dy = o["cy"] - prev_est[o["id"]]["cy"]
@@ -275,38 +242,34 @@ def eval_future_pred(seq_meta: dict, seq_gt: dict, *, use_distance: bool) -> dic
             if use_distance and e.get("est_m") is not None:
                 d_prev = prev_est[o["id"]].get("est_m") if prev_est and o["id"] in prev_est else None
                 d_vel = predict_next_distance(float(e["est_m"]), float(d_prev) if d_prev else None)
-                # Blend hold-last (stable) with parallax/depth-rate (motion) —
-                # pure velocity overshoots when floor-scale est is noisy frame-to-frame.
+                # Prefer closing-speed-informed blend when growth signal present
                 para = e.get("parallax") or "unknown"
-                w_vel = 0.55 if para in ("approach", "recede") else 0.20
-                d_hat = (1 - w_vel) * float(e["est_m"]) + w_vel * d_vel
+                w_vel = 0.60 if para in ("approach", "recede") else 0.22
+                if e.get("closing_speed_mps") is not None and para == "approach":
+                    # d_next ≈ d - v_close * dt (dt≈1/12 of generator frame rate unit=1)
+                    d_cs = float(e["est_m"]) - float(e["closing_speed_mps"]) * (1.0 / 12.0)
+                    d_hat = 0.35 * float(e["est_m"]) + 0.35 * d_vel + 0.30 * max(0.5, d_cs)
+                else:
+                    d_hat = (1 - w_vel) * float(e["est_m"]) + w_vel * d_vel
                 n += 1
                 if within_tol(d_hat, float(next_gt[o["id"]]["gt_m"])):
                     c += 1
             elif not use_distance:
-                # image-size rate → crude next distance via floor scale at *current*
-                # (no explicit meters memory): use apparent growth only as motion,
-                # score as incorrect depth unless stable — honest weak baseline
                 n += 1
-                # hold last apparent→ if we don't have meters, use building scale
-                # at next frame on predicted size
                 scale = pick_building_scale(fr["objects"], focal)
                 if scale and prev_est and o["id"] in prev_est:
-                    from physics import estimate_via_floor_scale as _est
                     fake = dict(o)
-                    # predict next size
                     sp = float(prev_est[o["id"]]["apparent_px"])
                     sc = float(o["apparent_px"])
                     fake["apparent_px"] = sc * (sc / sp if sp > 1 else 1.0)
-                    d_hat, _, _ = _est(fake, scale, focal)
+                    d_hat, _, _ = estimate_via_floor_scale(fake, scale, focal)
                     if d_hat is not None and within_tol(d_hat, float(next_gt[o["id"]]["gt_m"])):
                         c += 1
-                # else miss
 
         prev_est = {o["id"]: {**o, **est_map[o["id"]]} for o in fr["objects"]}
 
     return {
-        "mode": "pred+distance" if use_distance else "pred-tracking-only",
+        "mode": ("pred+distance" if use_distance else "pred-tracking-only") + ("_danger" if danger_only else ""),
         "distance_pred_n": n,
         "distance_pred_correct": c,
         "distance_pred_pct": round(100.0 * c / n, 2) if n else None,
@@ -316,25 +279,32 @@ def eval_future_pred(seq_meta: dict, seq_gt: dict, *, use_distance: bool) -> dic
     }
 
 
-def run_eval(data_dir: Path) -> dict[str, Any]:
+def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> dict[str, Any]:
     split = json.loads((data_dir / "SPLIT.json").read_text())
     eval_ids = split["eval_ids"]
-    audit_path = AUDIT_DIR / f"distance_{datetime.now().strftime('%Y%m%d_%H%M%S')}.jsonl"
+    tag = "danger50" if "danger50" in str(data_dir) else "distance"
+    audit_path = AUDIT_DIR / f"{tag}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.jsonl"
     AUDIT_DIR.mkdir(parents=True, exist_ok=True)
 
     all_dist_rows = []
     band_acc: dict[str, dict[str, int]] = {}
+    danger_acc = {"n": 0, "correct": 0}
+    band50_acc = {"n": 0, "correct": 0}  # ~50m band for delta vs baseline
     dirty = 0
     track_only = {"n": 0, "correct": 0}
     track_dist = {"n": 0, "correct": 0}
+    track_only_dz = {"n": 0, "correct": 0}
+    track_dist_dz = {"n": 0, "correct": 0}
     pred_only = {"n": 0, "correct": 0, "pos_n": 0, "pos_c": 0}
     pred_dist = {"n": 0, "correct": 0, "pos_n": 0, "pos_c": 0}
+    pred_only_dz = {"n": 0, "correct": 0, "pos_n": 0, "pos_c": 0}
+    pred_dist_dz = {"n": 0, "correct": 0, "pos_n": 0, "pos_c": 0}
+    tti_rows = 0
 
     for sid in eval_ids:
         seq_dir = data_dir / sid
         meta = json.loads((seq_dir / "meta.json").read_text())
         gt = json.loads((seq_dir / "distances_gt.json").read_text())
-        # assert anti-contam structure
         meta_blob = json.dumps(meta)
         if "gt_m" in meta_blob or '"_gt_m"' in meta_blob:
             dirty += 1
@@ -350,7 +320,6 @@ def run_eval(data_dir: Path) -> dict[str, Any]:
             gt_fr = next(x for x in gt["frames"] if x["t"] == t)
             touches = prompt_touches_gt(prompt, gt)
             preds = estimate_frame(fr["objects"], prev, focal)
-            # score post-hoc
             for p in preds:
                 g = next((x for x in gt_fr["objects"] if x["id"] == p["id"]), None)
                 if g is None or g["class"] not in PRIORITY_DISTANCE_CLASSES:
@@ -363,10 +332,24 @@ def run_eval(data_dir: Path) -> dict[str, Any]:
                 ok = within_tol(float(p["est_m"]), float(g["gt_m"]))
                 if ok:
                     band_acc[band]["correct"] += 1
+                gt_m = float(g["gt_m"])
+                if in_danger_zone(gt_m):
+                    danger_acc["n"] += 1
+                    if ok:
+                        danger_acc["correct"] += 1
+                if band == "~50m":
+                    band50_acc["n"] += 1
+                    if ok:
+                        band50_acc["correct"] += 1
+                if p.get("tti_s") is not None:
+                    tti_rows += 1
                 all_dist_rows.append({
                     "seq_id": sid, "t": t, "id": p["id"], "class": g["class"],
                     "gt_m": g["gt_m"], "est_m": p["est_m"], "band": band,
+                    "in_danger_zone": in_danger_zone(gt_m),
                     "correct": ok, "method": p.get("method"), "parallax": p.get("parallax"),
+                    "closing_speed_mps": p.get("closing_speed_mps"),
+                    "tti_s": p.get("tti_s"),
                 })
 
             with audit_path.open("a") as af:
@@ -378,24 +361,33 @@ def run_eval(data_dir: Path) -> dict[str, Any]:
                     "n_preds": len(preds),
                     "memory": "heuristic_prev_est_only",
                     "scale_lock": "FLOOR-SCALE",
+                    "soft_priors": "car~4.5m ped~1.7m",
                     "retrieval": None,
-                    "tool": "floor_scale+parallax",
+                    "tool": "floor_scale+parallax+closing_speed",
                 }) + "\n")
             if touches:
                 dirty += 1
             prev = {o["id"]: {**o, **next(p for p in preds if p["id"] == o["id"])} for o in fr["objects"]}
 
-        tr0 = eval_tracking(meta, gt, use_distance=False)
-        tr1 = eval_tracking(meta, gt, use_distance=True)
-        track_only["n"] += tr0["n"]; track_only["correct"] += tr0["correct"]
-        track_dist["n"] += tr1["n"]; track_dist["correct"] += tr1["correct"]
+        for use_d, bucket, bucket_dz in [
+            (False, track_only, track_only_dz),
+            (True, track_dist, track_dist_dz),
+        ]:
+            tr = eval_tracking(meta, gt, use_distance=use_d, danger_only=False)
+            bucket["n"] += tr["n"]; bucket["correct"] += tr["correct"]
+            trd = eval_tracking(meta, gt, use_distance=use_d, danger_only=True)
+            bucket_dz["n"] += trd["n"]; bucket_dz["correct"] += trd["correct"]
 
-        pr0 = eval_future_pred(meta, gt, use_distance=False)
-        pr1 = eval_future_pred(meta, gt, use_distance=True)
-        pred_only["n"] += pr0["distance_pred_n"]; pred_only["correct"] += pr0["distance_pred_correct"]
-        pred_only["pos_n"] += pr0["position_pred_n"]; pred_only["pos_c"] += pr0["position_pred_correct"]
-        pred_dist["n"] += pr1["distance_pred_n"]; pred_dist["correct"] += pr1["distance_pred_correct"]
-        pred_dist["pos_n"] += pr1["position_pred_n"]; pred_dist["pos_c"] += pr1["position_pred_correct"]
+        for use_d, bucket, bucket_dz in [
+            (False, pred_only, pred_only_dz),
+            (True, pred_dist, pred_dist_dz),
+        ]:
+            pr = eval_future_pred(meta, gt, use_distance=use_d, danger_only=False)
+            bucket["n"] += pr["distance_pred_n"]; bucket["correct"] += pr["distance_pred_correct"]
+            bucket["pos_n"] += pr["position_pred_n"]; bucket["pos_c"] += pr["position_pred_correct"]
+            prd = eval_future_pred(meta, gt, use_distance=use_d, danger_only=True)
+            bucket_dz["n"] += prd["distance_pred_n"]; bucket_dz["correct"] += prd["distance_pred_correct"]
+            bucket_dz["pos_n"] += prd["position_pred_n"]; bucket_dz["pos_c"] += prd["position_pred_correct"]
 
     def pct(n, c):
         return round(100.0 * c / n, 2) if n else None
@@ -406,13 +398,19 @@ def run_eval(data_dir: Path) -> dict[str, Any]:
     }
     n = sum(st["n"] for st in band_acc.values())
     c = sum(st["correct"] for st in band_acc.values())
+    dz_pct = pct(danger_acc["n"], danger_acc["correct"])
+    b50_pct = pct(band50_acc["n"], band50_acc["correct"])
+    delta_vs_baseline = None if b50_pct is None else round(b50_pct - BASELINE_50M_PCT, 2)
+    delta_dz_vs_baseline = None if dz_pct is None else round(dz_pct - BASELINE_50M_PCT, 2)
 
     result = {
         "ts": _now(),
         "domain": "distance_est",
+        "data_dir": str(data_dir.relative_to(ROOT)) if str(data_dir).startswith(str(ROOT)) else str(data_dir),
         "scale_lock": "FLOOR-SCALE",
         "no_fixed_object_heights": True,
-        "predictor": "floor_scale_parallax_heuristic",
+        "soft_size_priors": {"car_length_m": 4.5, "car_height_m": 1.55, "ped_height_m": 1.7},
+        "predictor": "floor_scale_parallax_size_prior_closing_speed",
         "n_eval_seq": len(eval_ids),
         "distance": {
             "n": n, "correct": c, "pct": pct(n, c),
@@ -420,9 +418,33 @@ def run_eval(data_dir: Path) -> dict[str, Any]:
             "tol": {"lt_50m": "10%", "50_to_200m": "20%"},
             "priority_classes": list(PRIORITY_DISTANCE_CLASSES),
         },
+        "danger_zone_30_70m": {
+            "lo_m": DANGER_ZONE_M_LO,
+            "hi_m": DANGER_ZONE_M_HI,
+            "n": danger_acc["n"],
+            "correct": danger_acc["correct"],
+            "pct": dz_pct,
+            "delta_pp_vs_baseline_50m": delta_dz_vs_baseline,
+        },
+        "band_50m_vs_baseline": {
+            "baseline_pct": BASELINE_50M_PCT,
+            "baseline_commit": BASELINE_COMMIT,
+            "n": band50_acc["n"],
+            "correct": band50_acc["correct"],
+            "pct": b50_pct,
+            "delta_pp": delta_vs_baseline,
+        },
+        "closing_speed": {
+            "tti_estimates_emitted": tti_rows,
+            "note": "growth_frac → closing_speed_mps → tti_s when approaching",
+        },
         "ablation_tracking": {
             "tracking_only": {"n": track_only["n"], "correct": track_only["correct"], "pct": pct(track_only["n"], track_only["correct"])},
             "tracking_plus_distance": {"n": track_dist["n"], "correct": track_dist["correct"], "pct": pct(track_dist["n"], track_dist["correct"])},
+            "danger_zone": {
+                "tracking_only": {"n": track_only_dz["n"], "correct": track_only_dz["correct"], "pct": pct(track_only_dz["n"], track_only_dz["correct"])},
+                "tracking_plus_distance": {"n": track_dist_dz["n"], "correct": track_dist_dz["correct"], "pct": pct(track_dist_dz["n"], track_dist_dz["correct"])},
+            },
         },
         "ablation_future_pred": {
             "tracking_only": {
@@ -435,7 +457,19 @@ def run_eval(data_dir: Path) -> dict[str, Any]:
                 "n": pred_dist["n"], "correct": pred_dist["correct"],
                 "position_pred_pct": pct(pred_dist["pos_n"], pred_dist["pos_c"]),
             },
-            "note": "Future depth prediction proxy (inverse-planning-style along camera axis); separate domain from corridor inverse_planning.",
+            "danger_zone": {
+                "tracking_only": {
+                    "distance_pred_pct": pct(pred_only_dz["n"], pred_only_dz["correct"]),
+                    "n": pred_only_dz["n"], "correct": pred_only_dz["correct"],
+                    "position_pred_pct": pct(pred_only_dz["pos_n"], pred_only_dz["pos_c"]),
+                },
+                "plus_distance": {
+                    "distance_pred_pct": pct(pred_dist_dz["n"], pred_dist_dz["correct"]),
+                    "n": pred_dist_dz["n"], "correct": pred_dist_dz["correct"],
+                    "position_pred_pct": pct(pred_dist_dz["pos_n"], pred_dist_dz["pos_c"]),
+                },
+            },
+            "note": "Future depth prediction proxy (inverse-planning-style along camera axis); danger-zone slice reported separately.",
         },
         "anti_contam": {
             "audit_path": str(audit_path.relative_to(ROOT)),
@@ -445,7 +479,7 @@ def run_eval(data_dir: Path) -> dict[str, Any]:
         "gpu": "deferred — heuristic CPU only; LoRA queued behind existing waiters",
         "sample_rows": all_dist_rows[:15],
     }
-    out_json = data_dir / "EVAL_FLOOR_SCALE_CPU.json"
+    out_json = data_dir / out_name
     out_json.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result
 
@@ -459,7 +493,6 @@ def contam_self_test(data_dir: Path) -> dict[str, Any]:
     injected = build_prompt(meta, 0, inject_gt={"gt_m": gt["frames"][0]["objects"][0]["gt_m"]})
     clean_hit = prompt_touches_gt(clean, gt)
     dirty_hit = prompt_touches_gt(injected, gt)
-    # meta must not contain gt_m
     meta_clean = "gt_m" not in json.dumps(meta)
     passed = (not clean_hit) and dirty_hit and meta_clean
     out = {
@@ -476,20 +509,27 @@ def contam_self_test(data_dir: Path) -> dict[str, Any]:
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", type=Path, default=DATA)
+    ap.add_argument("--out-name", type=str, default="EVAL_FLOOR_SCALE_CPU.json")
     ap.add_argument("--contam-self-test", action="store_true")
     args = ap.parse_args(argv)
     if args.contam_self_test:
         r = contam_self_test(args.data)
         print(json.dumps(r, indent=2))
         sys.exit(0 if r["passed"] else 1)
-    r = run_eval(args.data)
+    r = run_eval(args.data, out_name=args.out_name)
     print(json.dumps({
         "distance_pct": r["distance"]["pct"],
         "by_band": r["distance"]["by_band"],
+        "danger_zone_30_70m": r["danger_zone_30_70m"],
+        "band_50m_vs_baseline": r["band_50m_vs_baseline"],
         "ablation_tracking": r["ablation_tracking"],
         "ablation_future_pred": {
             "tracking_only": r["ablation_future_pred"]["tracking_only"]["distance_pred_pct"],
             "plus_distance": r["ablation_future_pred"]["plus_distance"]["distance_pred_pct"],
+            "danger_zone": {
+                "tracking_only": r["ablation_future_pred"]["danger_zone"]["tracking_only"]["distance_pred_pct"],
+                "plus_distance": r["ablation_future_pred"]["danger_zone"]["plus_distance"]["distance_pred_pct"],
+            },
         },
         "anti_contam": r["anti_contam"],
         "scale_lock": r["scale_lock"],

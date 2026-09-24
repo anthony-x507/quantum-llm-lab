@@ -1,6 +1,6 @@
 """Floor-scale + parallax distance helpers (CPU, no VLM).
 
-LOCK (Anthony): NO fixed object heights. Traffic lights are NOT a fixed 3m.
+LOCK (Anthony): NO fixed traffic-light heights. Traffic lights are NOT a fixed 3m.
 Scale reference = BUILDING FLOORS: each floor ≈ 8–10 ft (2.4–3.0 m), standard.
 
 Pipeline:
@@ -9,9 +9,10 @@ Pipeline:
      d_building ≈ focal_px * floor_height_m / floor_px
   3. Derive light/sign REAL height by how many floors it spans in-frame
      (span_floors * floor_height_m), THEN distance from that derived height.
-  4. Priority distances: cars, intersections, stop signs, people motion —
-     object height is a means, not the goal.
-  5. Frame-to-frame parallax (growing→approach, shrinking→recede) refines.
+  4. Soft apparent-size priors for cars (~4.5 m length) and pedestrians (~1.7 m
+     height) — NOT for lights (still floor-span / 3–5 m vary).
+  5. Fine frame-to-frame parallax triangulates mid-band (30–70 m DANGER ZONE).
+  6. Closing-speed + time-to-impact from apparent growth rate.
 
 GT meters exist only in synthetic sidecars; never in inference prompts.
 """
@@ -24,6 +25,11 @@ FLOOR_HEIGHT_M_MIN = 2.4   # ~8 ft
 FLOOR_HEIGHT_M_MAX = 3.0   # ~10 ft
 FLOOR_HEIGHT_M_DEFAULT = 2.7
 
+# Soft size priors (cars / peds only — NEVER lights)
+CAR_LENGTH_M_PRIOR = 4.5
+CAR_HEIGHT_M_PRIOR = 1.55
+PED_HEIGHT_M_PRIOR = 1.7
+
 # Default pinhole focal length in pixels (matches generator)
 DEFAULT_FOCAL_PX = 420.0
 
@@ -31,6 +37,10 @@ DEFAULT_FOCAL_PX = 420.0
 TOL_NEAR = 0.10   # GT < 50 m → ±10%
 TOL_FAR = 0.20    # GT 50–200 m → ±20%
 NEAR_CUTOFF_M = 50.0
+
+# Danger zone (reinforce mid-band)
+DANGER_ZONE_M_LO = 30.0
+DANGER_ZONE_M_HI = 70.0
 
 # Priority classes for distance scoring (height is NOT the goal)
 PRIORITY_DISTANCE_CLASSES = ("car", "intersection", "stop_sign", "pedestrian", "light")
@@ -44,6 +54,10 @@ def band_for_distance(d_m: float) -> str:
     if d_m < 150:
         return "~100m"
     return "~200m"
+
+
+def in_danger_zone(d_m: float) -> bool:
+    return DANGER_ZONE_M_LO <= d_m <= DANGER_ZONE_M_HI
 
 
 def tolerance_for_gt(gt_m: float) -> float:
@@ -108,6 +122,17 @@ def distance_from_derived_height(
     return (focal_px * derived_height_m) / apparent_px
 
 
+def distance_from_size_prior(
+    apparent_px: float,
+    prior_m: float,
+    focal_px: float = DEFAULT_FOCAL_PX,
+) -> float | None:
+    """Soft prior: d = f * H_prior / h_px (cars ~4.5 m length / peds ~1.7 m)."""
+    if apparent_px <= 1e-3 or prior_m <= 0:
+        return None
+    return (focal_px * prior_m) / apparent_px
+
+
 def estimate_via_floor_scale(
     obj: dict[str, Any],
     scale: dict[str, float],
@@ -115,17 +140,16 @@ def estimate_via_floor_scale(
     *,
     building_cy: float | None = None,
 ) -> tuple[float | None, float, str]:
-    """Estimate distance using FLOOR-SCALE (no fixed object-height catalog).
+    """Estimate distance using FLOOR-SCALE + soft car/ped size priors.
 
     Buildings → direct floor calibration.
-    Other priority classes → ground-plane depth from cy, anchored so the
-    reference building's cy maps to d_building from floors; apparent size
-    used only for parallax refine later — never a fixed car/light height table.
-    Lights/signs: optional floor-span derived height when building_cy≈obj cy
-    (same depth plane); otherwise ground-plane.
+    Cars/peds → triangulate ground-plane + apparent-size prior (4.5 m / 1.7 m).
+    Lights/signs → floor-span derived height when coplanar; else ground-plane.
+      NEVER a fixed light catalog height.
     """
     cls = obj.get("class", "")
     app = float(obj.get("apparent_px") or obj.get("bbox_h") or 0.0)
+    bbox_w = float(obj.get("bbox_w") or 0.0)
     floor_px = scale["floor_px"]
     fh = scale["floor_height_m"]
     d_b = scale["d_building_m"]
@@ -141,30 +165,56 @@ def estimate_via_floor_scale(
 
     cy_f = float(cy)
     # Invert render: cy = horizon + (focal * 1.6 / d) * 0.22
-    # → d = focal * 1.6 * 0.22 / (cy - horizon)
-    # Anchor with building so floor-scale wins over absolute cam_h assumptions:
-    # d = d_b * (bcy - horizon) / (cy - horizon)
+    # Anchor with building so floor-scale wins over absolute cam_h assumptions.
     horizon = 57.6  # height*0.30 for H=192
     bcy = float(building_cy) if building_cy is not None else (horizon + (focal_px * 1.6 / max(d_b, 1)) * 0.22)
     f_obj = max(0.25, cy_f - horizon)
     f_b = max(0.25, bcy - horizon)
-    # Prefer absolute GP matching renderer; blend with floor-anchored ratio
     d_abs = (focal_px * 1.6 * 0.22) / f_obj
     d_anch = d_b * (f_b / f_obj)
     d_gp = 0.55 * d_abs + 0.45 * d_anch
 
     if cls in ("light", "stop_sign"):
-        # If roughly same image-row as building → same depth plane; floor-span
-        # yields derived height then pinhole (consistent). Else trust ground-plane.
+        # Same image-row as building → same depth plane; floor-span derived H.
+        # Else trust ground-plane. NEVER fixed light height.
         if abs(cy_f - bcy) < 8 and floor_px > 1e-6 and app > 1e-3:
             H = derived_height_from_floor_span(app, floor_px, fh)
             d_h = distance_from_derived_height(app, H, focal_px)
             if d_h is not None:
-                d = 0.25 * d_gp + 0.75 * d_h
+                # Mid-band: prefer GP more (floor-span alone overshoots ~50 m lights)
+                mid = DANGER_ZONE_M_LO <= d_gp <= DANGER_ZONE_M_HI
+                w_h = 0.35 if mid else 0.75
+                d = (1.0 - w_h) * d_gp + w_h * d_h
                 return max(1.0, d), 0.75, "floor_span+ground_plane"
         return max(1.0, d_gp), 0.6, "ground_plane_floor_anchored"
 
-    if cls in ("car", "pedestrian", "intersection"):
+    if cls == "car":
+        # Triangulate GP + length prior (bbox_w ≈ length * scale * 0.5 in render)
+        # and soft height prior on apparent_px.
+        d_len = distance_from_size_prior(max(bbox_w, 1e-3) / 0.5, CAR_LENGTH_M_PRIOR, focal_px)
+        d_h = distance_from_size_prior(app, CAR_HEIGHT_M_PRIOR, focal_px)
+        parts = [d_gp]
+        weights = [0.50]
+        if d_len is not None:
+            parts.append(d_len)
+            weights.append(0.30)
+        if d_h is not None:
+            parts.append(d_h)
+            weights.append(0.20)
+        wsum = sum(weights)
+        d = sum(p * w for p, w in zip(parts, weights)) / wsum
+        return max(1.0, d), 0.78, "gp+car_size_prior"
+
+    if cls == "pedestrian":
+        d_h = distance_from_size_prior(app, PED_HEIGHT_M_PRIOR, focal_px)
+        if d_h is not None:
+            mid = DANGER_ZONE_M_LO <= d_gp <= DANGER_ZONE_M_HI
+            w_h = 0.45 if mid else 0.30
+            d = (1.0 - w_h) * d_gp + w_h * d_h
+            return max(1.0, d), 0.76, "gp+ped_height_prior"
+        return max(1.0, d_gp), 0.65, "ground_plane_floor_anchored"
+
+    if cls == "intersection":
         return max(1.0, d_gp), 0.65, "ground_plane_floor_anchored"
 
     return max(1.0, d_gp), 0.4, "ground_plane_default"
@@ -186,21 +236,62 @@ def refine_with_parallax(
     signal: str,
     size_prev: float,
     size_curr: float,
-    alpha: float = 0.35,
+    alpha: float | None = None,
 ) -> tuple[float, float]:
-    """Blend size-only estimate with size-ratio depth change (triangulate)."""
+    """Fine parallax: blend size-ratio depth change (triangulate mid-band)."""
     conf = 0.55
     if size_prev <= 1e-6 or size_curr <= 1e-6:
         return d_est, conf
     d_par = d_est * (size_prev / size_curr)
+    # Stronger parallax weight in danger zone (30–70 m)
+    if alpha is None:
+        mid = DANGER_ZONE_M_LO <= d_est <= DANGER_ZONE_M_HI
+        if signal in ("approach", "recede"):
+            alpha = 0.55 if mid else 0.40
+        else:
+            alpha = 0.25 if mid else 0.20
     refined = (1 - alpha) * d_est + alpha * d_par
     if signal == "approach":
-        conf = 0.78
+        conf = 0.82
     elif signal == "recede":
-        conf = 0.72
+        conf = 0.78
     elif signal == "stable":
-        conf = 0.62
+        conf = 0.65
     return max(0.5, refined), conf
+
+
+def closing_speed_tti(
+    size_prev: float,
+    size_curr: float,
+    d_est: float,
+    *,
+    dt_s: float = 1.0 / 12.0,
+) -> dict[str, float | str | None]:
+    """If object grows X% per frame → closing speed + time-to-impact.
+
+    d ∝ 1/s → d_curr ≈ d_est, d_prev ≈ d_est * (s_curr / s_prev)
+    v_close (m/s, + toward camera) = (d_prev - d_curr) / dt
+    tti = d_curr / v_close when approaching.
+    """
+    out: dict[str, float | str | None] = {
+        "growth_frac": None,
+        "closing_speed_mps": None,
+        "tti_s": None,
+        "signal": "unknown",
+    }
+    if size_prev <= 1e-6 or size_curr <= 1e-6 or d_est <= 0 or dt_s <= 0:
+        return out
+    growth = (size_curr - size_prev) / size_prev
+    out["growth_frac"] = round(float(growth), 5)
+    signal = parallax_signal(size_prev, size_curr)
+    out["signal"] = signal
+    # d_prev from size ratio relative to current estimate
+    d_prev = d_est * (size_curr / size_prev)
+    v_close = (d_prev - d_est) / dt_s
+    out["closing_speed_mps"] = round(float(v_close), 4)
+    if v_close > 0.05:  # approaching
+        out["tti_s"] = round(float(d_est / v_close), 3)
+    return out
 
 
 def predict_next_size(size_curr: float, size_prev: float | None) -> float:
