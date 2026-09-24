@@ -19,3 +19,8 @@ data/scenes/**
 data/lora_adapter/**
 !data/lora_adapter/.gitkeep
 data/lora_dataset.jsonl
+
+# smoke LoRA runs
+data/lora_adapter_smoke/
+data/train_lora_smoke.log
+data/train_lora.log

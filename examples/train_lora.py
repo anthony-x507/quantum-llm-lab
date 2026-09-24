@@ -158,31 +158,13 @@ def load_scenes(scenes_dir: Path) -> list[dict[str, Any]]:
 
 
 def _user_prompt_for_domain(meta: dict[str, Any], summary: dict[str, Any]) -> str:
-    domain = meta.get("domain", "fall")
-    base = (
-        "Eres un asistente de circuitos cuánticos. Responde SOLO JSON válido "
-        'con claves n_qubits, gates, domain, label, nota. '
-    )
-    if domain == "entanglement":
-        return (
-            base
-            + "La escena es sobre ENTRELAZAMIENTO vs estado separable. "
-            "Si ves correlación no-local / enlace entre dos partículas → circuito Bell (H+CX), label=entangled. "
-            "Si son independientes → producto (H,H), label=separable. "
-            f"Escena: {json.dumps(summary, ensure_ascii=False)}"
-        )
-    if domain == "superposition":
-        return (
-            base
-            + "La escena es sobre SUPERPOSICIÓN. "
-            "Si hay dos hipótesis fantasma A|B sin medición → H en q0, label=superposed; "
-            "NO colapses. Si ya colapsó → refleja collapsed_to, label=collapsed. "
-            f"Escena: {json.dumps(summary, ensure_ascii=False)}"
-        )
+    """Neutral task instruction + non-gold visual/physics signals only (no scene gold labels)."""
+    _ = meta  # domain must be inferred by the model; do not inject gold domain/label
     return (
-        base
-        + "Escena de física visual (caída / figuras). "
-        "Propón circuito 2 qubits (firma toy caída + pérdida de energía). "
+        "Eres un asistente de circuitos cuánticos. Mira la imagen. Responde SOLO JSON válido "
+        "con claves n_qubits, gates, domain, label, nota. "
+        "gates ∈ h,x,y,z,cx,ry. "
+        "Si hay pérdida por rebote, NO afirmes conservación perfecta. "
         f"Escena: {json.dumps(summary, ensure_ascii=False)}"
     )
 
@@ -194,11 +176,11 @@ def build_chat_dataset(rows: list[dict[str, Any]], out_jsonl: Path) -> int:
     with out_jsonl.open("w", encoding="utf-8") as fh:
         for row in rows:
             meta = row["meta"]
+            # PASO 1: user-visible summary keeps visual/physics signals only.
+            # Gold keys (domain/label/entangled/...) stay in assistant completion, not user turn.
             summary = {
                 k: meta.get(k)
                 for k in (
-                    "domain",
-                    "label",
                     "shape",
                     "color",
                     "surface",
@@ -208,16 +190,8 @@ def build_chat_dataset(rows: list[dict[str, Any]], out_jsonl: Path) -> int:
                     "restitution",
                     "trayectoria",
                     "objeto",
-                    "entangled",
-                    "separable",
-                    "bell_state",
-                    "superposed",
-                    "collapsed",
-                    "collapsed_to",
-                    "hypotheses",
                     "multi_object",
                     "objects",
-                    "correlation",
                 )
                 if meta.get(k) is not None
             }
@@ -270,6 +244,10 @@ def run_mlx_vlm_lora(
         str(epochs),
         "--batch-size",
         str(batch_size),
+        "--train-on-completions",
+        "--grad-checkpoint",
+        "--gradient-accumulation-steps",
+        "4",
         "--output-path",
         str(out_dir / "adapters.safetensors"),
     ]
