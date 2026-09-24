@@ -1,7 +1,7 @@
 {
   "domain": "collision_predictive",
   "branch_tag": "tip-collision-pred",
-  "ts": "2026-09-24 14:04:40 ET",
+  "ts": "2026-09-24 14:30:53 ET",
   "n_eval_seqs": 40,
   "predictors": {
     "collision_physics": {
@@ -91,7 +91,7 @@
     "rule": "injecting future/consequence GT \u2192 INVALID (discard; never report as clean)"
   },
   "retrieval_ok": true,
-  "audit": "data/eval_audit/collision_20260924_140439.jsonl",
+  "audit": "data/eval_audit/collision_20260924_143052.jsonl",
   "emit_schema": [
     "chosen_action",
     "predicted_consequence",

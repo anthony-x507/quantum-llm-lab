@@ -1,5 +1,28 @@
 # FRONTIER — Código-vivo tip scoreboard
 
+
+## Fold — tip-inverse-r3 → codigo-vivo-tip (2026-09-24 14:31:02 ET)
+
+| Surface | Score |
+|---------|-------|
+| mixed (d) unified | **1.0** |
+| inverse_cv | **100.0%** (was 99.82%; +0.18 pp) |
+| collision physics · choose_safest | **100% · 100%** (n=40 / 2850) |
+| R12 router · verifier | **52/52 · 44/44** (retained) |
+| mid floors (near/outer · DZ · TTI) | **retained 100%** |
+| motion coverage | **100%** (retained) |
+| pillars / hardneg smoke | **26/26 · 18/18** |
+| Freeze | `codigo_vivo_tip_inverse_r3_fold_100pct_20260924_143102` |
+| Tip SHA (fold) | `TIP_FOLD_SHA_SHORT` |
+| Policy | RO `data/lora_adapter/`; no main; mid+R12 floors kept; distance-far/R13 not folded |
+
+**Method:** cherry-pick `a1cbee6`/`cf626b8` onto `fbd2e7e` → `9efe5da`+`813a790`. TP mass-aware bounce for third-party pairs; ego geometric-only (no ego elastic / no substeps).
+
+**CPU re-smoke after fold:** unified **1.0**; inverse_cv **100.0%**; collision physics **100.0%**; choose_safest **100.0%**; R12 **52/52·44/44**; mid_near/outer **100%**; DZ mid **100%**; TTI retained; pillars 26/26; hardneg 18/18; `wired_to_vlm=true`; tip vis BASE.  
+Anti-contam **CLEAN**. Adapters RO unchanged. Freezes retained incl. r12 + distance_mid + tti + r11 + motion_r4 + vision_ground + inverse_r2 + r10 + priors. Never abandon.
+
+**Not folded:** distance-far / hardneg-r13 / circ-expand / future-track.
+
 ## Fold — tip-hardneg-r12 → codigo-vivo-tip (2026-09-24 14:28:30 ET)
 
 | Surface | Score |
@@ -9,11 +32,11 @@
 | R11 router · verifier | **52/52 · 44/44** |
 | mid floors (near/outer · DZ · TTI) | **retained 100%** |
 | motion coverage | **100%** (141 ind + 59 corr) |
-| inverse_cv · collision · choose_safest | **99.82% · 100% · 100%** |
+| inverse_cv · collision · choose_safest | **99.82% · 100% · 100%** (pre inverse-r3 fold) |
 | pillars / hardneg smoke | **26/26 · 18/18** |
 | Freeze | `codigo_vivo_tip_r12_100pct_20260924_142830` |
 | Tip SHA (fold) | `db6d93e` |
-| Policy | RO `data/lora_adapter/`; no main; mid floors + R12 hardneg; distance-far/R13/inverse-r3 not folded |
+| Policy | RO `data/lora_adapter/`; no main; mid floors + R12 hardneg; distance-far/R13 not folded (inverse-r3 later folded) |
 
 
 **Branch:** `frontier/codigo-vivo-tip`  
@@ -34,7 +57,7 @@
 **CPU re-smoke after fold:** unified **1.0**; mid_near/outer **100%**; DZ **100%**; TTI scorable **100%** (691/691 · 725/725); R11 **52/52·44/44**; motion **100%**; inverse_cv **99.82%**; collision physics **100.0%**; choose_safest **100.0%**; pillars 26/26; hardneg 18/18; `wired_to_vlm=true`; tip vis BASE.  
 Anti-contam **CLEAN**. Adapters RO unchanged. Freezes retained incl. tti + r11 + motion_r4 + vision_ground + inverse_r2 + r10 + distance_danger + priors. Never abandon.
 
-**Not folded:** distance-far / hardneg-r12 / hardneg-r13 / inverse-r3 / circ-expand / future-track.
+**Not folded (at R12 fold time):** distance-far / hardneg-r13 / inverse-r3 / circ-expand / future-track. *(inverse-r3 later folded — see INVERSE-R3 fold section above.)*
 
 ## 2026-09-24 — fold tip-tti @ tip
 Cherry-pick `c483e46`→`6665e2c` onto `e70b23a`. TTI scorable **100%** (691/691 · 725/725); mixed **1.0**; R11 **52/52·44/44**; motion **100%**; inv **99.82%**; collision **100%**; freeze `codigo_vivo_tip_tti_fold_100pct_20260924_141146`. Distance-mid/R12/inv-r3 **not** folded.

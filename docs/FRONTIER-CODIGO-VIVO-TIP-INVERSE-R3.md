@@ -1,12 +1,13 @@
 # FRONTIER — tip-inverse-r3 (inverse_cv → 100% polish)
 
-**Branch:** `frontier/tip-inverse-r3`  
+**Branch:** `frontier/tip-inverse-r3` → **FOLDED** into `frontier/codigo-vivo-tip`  
 **Base tip SHA:** `3f5f1b1` (`origin/frontier/codigo-vivo-tip`; tip-cv busy with motion-r4)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-inverse-r3` (Mac-111)  
 **When:** 2026-09-24 14:05:11 ET
-**Freeze:**  @   
-**Fold status:** **NOT folded into tip** (side-branch only; TTI / distance-mid / R11 wait after motion-r4)  
-**Scope:** Side-branch only — avoids tip-cv / tip-tti / tip-distance-mid / tip-motion-r4 / tip-hardneg-r11 / tip-hardneg-r12.
+**Freeze (side):** `codigo_vivo_tip_inverse_r3_100pct_20260924_140511` @ `a1cbee6`  
+**Freeze (fold):** `codigo_vivo_tip_inverse_r3_fold_100pct_20260924_143102` @ `TIP_FOLD_SHA_SHORT`
+**Fold status:** **FOLDED** into tip @ 2026-09-24 14:31:02 ET · freeze `codigo_vivo_tip_inverse_r3_fold_100pct_20260924_143102` · Tip SHA `TIP_FOLD_SHA_SHORT`  
+**Scope:** Folded into tip-cv only. Keep mid+R12 floors. Distance-far / R13 not folded.
 
 ## LOCK (Anthony / Leader)
 
@@ -14,7 +15,7 @@
 - Raise **inverse_cv** from ~99.82% toward **100%** without dropping collision physics **100%**, choose_safest **100%**, or mixed floor **1.0**.
 - Anti-contam: GT / real consequences **NEVER** at inference.
 - Quantum `data/lora_adapter/` = **READ-ONLY**.
-- No merge to `main`; **no fold into tip**.
+- No merge to `main`; **folded into tip** (this entry).
 
 ## What this branch changes
 
@@ -86,4 +87,18 @@ cd /Users/anthony/Documents/quantum-llm-lab-tip-inverse-r3
 
 ## Blockers
 
-None. Physics 100% held; inverse_cv 100%; choose_safest 100%; freeze written; **not folded**.
+None (pre-fold). See Fold section — now FOLDED.
+
+
+## Fold into tip (2026-09-24 14:31:02 ET)
+
+- Worktree: `/Users/anthony/Documents/quantum-llm-lab-tip-cv` (Mac-111)
+- Onto tip HEAD `fbd2e7e` (post R12): cherry-pick `a1cbee6` + `cf626b8` → `9efe5da` + `813a790`
+- Re-smoke: mixed (d) **1.0**; inverse_cv **100.0%**; collision **100%**; choose_safest **100%**; mid+R12 floors retained
+- Freeze: `codigo_vivo_tip_inverse_r3_fold_100pct_20260924_143102`
+- Tip SHA (fold): `TIP_FOLD_SHA_SHORT`
+- Adapters RO unchanged; no merge to `main`; distance-far / R13 **not** folded
+
+## Blockers
+
+None. Physics 100% held; inverse_cv 100%; choose_safest 100%; mixed 1.0; mid+R12 held; freeze written; **FOLDED**.

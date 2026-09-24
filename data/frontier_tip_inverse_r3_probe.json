@@ -1,8 +1,8 @@
 {
   "schema": "frontier_tip_inverse_r3_probe",
-  "ts": "2026-09-24 14:04:40 ET",
+  "ts": "2026-09-24 14:30:53 ET",
   "domain": "collision_predictive",
-  "branch": "frontier/tip-inverse-r3",
+  "branch": "frontier/codigo-vivo-tip",
   "n_eval_seqs": 40,
   "metric_collision_correct_pct": 100.0,
   "metric_n_queries": 2850,
@@ -100,8 +100,8 @@
     }
   },
   "quantum_adapter_touched": false,
-  "floor_resmoke": "N/A \u2014 side-branch only; tip router untouched",
-  "base_tip_sha": "3f5f1b1",
+  "floor_resmoke": "mixed (d) re-smoke on tip fold",
+  "base_tip_sha": "fbd2e7e",
   "inverse_cv_overall_pct": 100.0,
   "inverse_cv_overall_pct_before": 99.82,
   "inverse_cv_delta_pp": 0.18,
@@ -109,90 +109,5 @@
   "physics_freeze_100pct": true,
   "inverse_target_ge_95": true,
   "inverse_r3_method": "tp_mass_bounce_ego_geometric",
-  "not_folded_into_tip": true,
-  "predictors_before_r2": {
-    "inverse_cv": {
-      "k=1": {
-        "n": 950,
-        "collision_correct_pct": 100.0,
-        "safe_match_pct": 100.0,
-        "physics_fail_rate": 0.0
-      },
-      "k=3": {
-        "n": 950,
-        "collision_correct_pct": 99.79,
-        "safe_match_pct": 99.79,
-        "physics_fail_rate": 0.0
-      },
-      "k=5": {
-        "n": 950,
-        "collision_correct_pct": 99.68,
-        "safe_match_pct": 99.68,
-        "physics_fail_rate": 0.0
-      },
-      "overall": {
-        "n": 2850,
-        "collision_correct_pct": 99.82
-      }
-    },
-    "collision_physics": {
-      "k=1": {
-        "n": 950,
-        "collision_correct_pct": 100.0,
-        "safe_match_pct": 100.0,
-        "physics_fail_rate": 0.0
-      },
-      "k=3": {
-        "n": 950,
-        "collision_correct_pct": 100.0,
-        "safe_match_pct": 100.0,
-        "physics_fail_rate": 0.0
-      },
-      "k=5": {
-        "n": 950,
-        "collision_correct_pct": 100.0,
-        "safe_match_pct": 100.0,
-        "physics_fail_rate": 0.0011
-      },
-      "overall": {
-        "n": 2850,
-        "collision_correct_pct": 100.0
-      }
-    },
-    "collision_choose_safest": {
-      "k=1": {
-        "n": 950,
-        "collision_correct_pct": 100.0,
-        "safe_match_pct": 100.0,
-        "physics_fail_rate": 0.0
-      },
-      "k=3": {
-        "n": 950,
-        "collision_correct_pct": 100.0,
-        "safe_match_pct": 100.0,
-        "physics_fail_rate": 0.0
-      },
-      "k=5": {
-        "n": 950,
-        "collision_correct_pct": 100.0,
-        "safe_match_pct": 100.0,
-        "physics_fail_rate": 0.0
-      },
-      "overall": {
-        "n": 2850,
-        "collision_correct_pct": 100.0
-      }
-    }
-  },
-  "ablation_pp_before": 0.18,
-  "mixed_floor": 1.0,
-  "floor_held": true,
-  "avoided_worktrees": [
-    "tip-cv",
-    "tip-tti",
-    "tip-distance-mid",
-    "tip-motion-r4",
-    "tip-hardneg-r11",
-    "tip-hardneg-r12"
-  ]
+  "not_folded_into_tip": false
 }

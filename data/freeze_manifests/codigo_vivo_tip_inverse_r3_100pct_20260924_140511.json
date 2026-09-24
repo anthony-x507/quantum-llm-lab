@@ -25,7 +25,9 @@
     "mixed_d_unified": 1.0,
     "floor_held": true,
     "floor_resmoke": "N/A",
-    "not_folded_into_tip": true
+    "not_folded_into_tip": false,
+    "folded_into_tip_at_et": "2026-09-24 14:31:02 ET",
+    "fold_freeze": "codigo_vivo_tip_inverse_r3_fold_100pct_20260924_143102"
   },
   "floors": {
     "mixed_d_unified": 1.0,
@@ -36,8 +38,8 @@
     "inverse_cv_actual": 1.0,
     "min_hold_pct": 80.0
   },
-  "policy": "RO data/lora_adapter/; no merge main; no fold into tip; side-branch only; avoid tip-cv / tip-tti / tip-distance-mid / tip-motion-r4 / tip-hardneg-r11 / tip-hardneg-r12; GT never at inference",
-  "note": "inverse-r3 polish: raise inverse_cv 99.82\u2192100.0 via mass-aware third-party bounce (ego geometric-only); collision physics 100% + choose_safest 100% held; NOT folded into tip",
+  "policy": "FOLDED into tip; RO data/lora_adapter/; no merge main",
+  "note": "inverse-r3 polish FOLDED into tip; see codigo_vivo_tip_inverse_r3_fold_100pct_20260924_143102",
   "prior_freeze_retained": [
     "codigo_vivo_tip_inverse_r2_100pct_20260924_134326",
     "codigo_vivo_tip_r9_100pct_20260924_133405",

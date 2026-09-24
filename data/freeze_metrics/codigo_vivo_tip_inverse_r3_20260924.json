@@ -18,5 +18,12 @@
     "floor_resmoke": "N/A",
     "not_folded_into_tip": true
   },
-  "frozen_at_et": "2026-09-24 14:05:11 ET"
+  "frozen_at_et": "2026-09-24 14:05:11 ET",
+  "folded": true,
+  "folded_at_et": "2026-09-24 14:31:02 ET",
+  "fold_freeze": "codigo_vivo_tip_inverse_r3_fold_100pct_20260924_143102",
+  "inverse_cv_overall_pct": 100.0,
+  "inverse_cv_overall_pct_before": 99.82,
+  "mixed_d_unified": 1.0,
+  "floor_held": true
 }

@@ -367,7 +367,7 @@ def main() -> None:
         "schema": "frontier_tip_collision_pred_probe",
         "ts": result["ts"],
         "domain": "collision_predictive",
-        "branch": "frontier/tip-inverse-r3",
+        "branch": "frontier/codigo-vivo-tip",
         "n_eval_seqs": result["n_eval_seqs"],
         "metric_collision_correct_pct": result["predictors"]["collision_physics"]["overall"]["collision_correct_pct"],
         "metric_n_queries": result["predictors"]["collision_physics"]["overall"]["n"],
@@ -378,7 +378,7 @@ def main() -> None:
         "distance_integration": result.get("distance_integration"),
         "predictors": result["predictors"],
         "quantum_adapter_touched": False,
-        "floor_resmoke": "N/A — side-branch collision_predictive only; tip router untouched",
+        "floor_resmoke": "mixed (d) re-smoke on tip fold",
     }
     Path("data/frontier_tip_collision_pred_probe.json").write_text(
         json.dumps(probe, indent=2) + "\n"
@@ -393,8 +393,8 @@ def main() -> None:
     inv_probe = {
         **probe,
         "schema": "frontier_tip_inverse_r3_probe",
-        "branch": "frontier/tip-inverse-r3",
-        "base_tip_sha": "3f5f1b1",
+        "branch": "frontier/codigo-vivo-tip",
+        "base_tip_sha": "fbd2e7e",
         "inverse_cv_overall_pct": inv,
         "inverse_cv_overall_pct_before": 99.82,
         "inverse_cv_delta_pp": None if inv is None else round(float(inv) - 99.82, 2),
@@ -406,7 +406,7 @@ def main() -> None:
         ),
         "inverse_target_ge_95": inv is not None and inv >= 95.0,
         "inverse_r3_method": "tp_mass_bounce_ego_geometric",
-        "not_folded_into_tip": True,
+        "not_folded_into_tip": False,
         "quantum_adapter_touched": False,
     }
     Path("data/frontier_tip_inverse_r3_probe.json").write_text(

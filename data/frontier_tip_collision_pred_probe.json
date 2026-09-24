@@ -1,8 +1,8 @@
 {
   "schema": "frontier_tip_collision_pred_probe",
-  "ts": "2026-09-24 14:04:40 ET",
+  "ts": "2026-09-24 14:30:53 ET",
   "domain": "collision_predictive",
-  "branch": "frontier/tip-inverse-r3",
+  "branch": "frontier/codigo-vivo-tip",
   "n_eval_seqs": 40,
   "metric_collision_correct_pct": 100.0,
   "metric_n_queries": 2850,
@@ -100,5 +100,5 @@
     }
   },
   "quantum_adapter_touched": false,
-  "floor_resmoke": "N/A \u2014 side-branch collision_predictive only; tip router untouched"
+  "floor_resmoke": "mixed (d) re-smoke on tip fold"
 }
