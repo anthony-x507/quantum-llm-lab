@@ -1,8 +1,8 @@
 {
   "frontier": "codigo-vivo-tip-collision-n-fold",
   "written_et": "2026-09-24 13:29:35 ET",
-  "tip_sha": "PENDING",
-  "tip_sha_short": "PENDING",
+  "tip_sha": "77c873cc1245313e497050a760bf27a7ad20f9d6",
+  "tip_sha_short": "77c873c",
   "branch": "frontier/codigo-vivo-tip",
   "source_branch": "frontier/tip-collision-n",
   "rebase_onto": "763fb8c",
@@ -67,5 +67,6 @@
     "frontier/tip-hardneg-r9"
   ],
   "freeze_id": "codigo_vivo_tip_collision_n_100pct_20260924_132559",
-  "blockers": []
+  "blockers": [],
+  "content_sha": "77c873cc1245313e497050a760bf27a7ad20f9d6"
 }

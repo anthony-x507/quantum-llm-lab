@@ -17,5 +17,8 @@
   "folded_into_tip": true,
   "fold_et": "2026-09-24 13:29:35 ET",
   "floor_resmoke": "1.0 @ 2026-09-24 13:28:19 ET",
-  "motion_coverage_known": 0.91
+  "motion_coverage_known": 0.91,
+  "fold_sha": "77c873cc1245313e497050a760bf27a7ad20f9d6",
+  "tip_sha": "77c873cc1245313e497050a760bf27a7ad20f9d6",
+  "tip_sha_short": "77c873c"
 }

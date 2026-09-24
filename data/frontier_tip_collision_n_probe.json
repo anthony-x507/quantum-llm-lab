@@ -118,10 +118,11 @@
   "physics_freeze_held": true,
   "physics_freeze_100pct": true,
   "base_tip_sha": "763fb8c",
-  "freeze_sha": "c79ab1a0f99ad6784144f2e6c21771edacb8f59b",
+  "freeze_sha": "77c873cc1245313e497050a760bf27a7ad20f9d6",
   "freeze_id": "codigo_vivo_tip_collision_n_100pct_20260924_132559",
   "folded_into_tip": true,
   "fold_et": "2026-09-24 13:29:35 ET",
   "mixed_d_unified": 1.0,
-  "motion_coverage_known": 0.91
+  "motion_coverage_known": 0.91,
+  "fold_sha": "77c873cc1245313e497050a760bf27a7ad20f9d6"
 }
