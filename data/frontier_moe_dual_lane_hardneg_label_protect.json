@@ -1,9 +1,9 @@
 {
   "method": "heuristic",
-  "n": 43,
-  "hits": 43,
+  "n": 64,
+  "hits": 64,
   "misses": 0,
-  "score": "43/43",
+  "score": "64/64",
   "rate": 1.0,
   "by_family": {
     "neg_json_valido_tax": {
@@ -64,6 +64,41 @@
     "ent_control_fall_super": {
       "n": 5,
       "hits": 5,
+      "rate": 1.0
+    },
+    "domain_label_chat": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "domain_label_snake_cfg": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "tax_api_domain_labels": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "gates_empty_docs_tax": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "neg_valid_json_en": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "qubit_metaphor_tax": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "ent_control_domain_label": {
+      "n": 3,
+      "hits": 3,
       "rate": 1.0
     }
   },
@@ -455,7 +490,7 @@
       "expected": "ent",
       "got": "ent",
       "ok": true,
-      "adapter": null,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
       "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Dominio fall, labe",
       "ent_adapter_blocked": false
     },
@@ -465,7 +500,7 @@
       "expected": "ent",
       "got": "ent",
       "ok": true,
-      "adapter": null,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
       "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Dominio superposit",
       "ent_adapter_blocked": false
     },
@@ -475,7 +510,7 @@
       "expected": "ent",
       "got": "ent",
       "ok": true,
-      "adapter": null,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
       "prompt_preview": "Reply with valid JSON: n_qubits, gates, domain, label. domain fall, label collap",
       "ent_adapter_blocked": false
     },
@@ -485,7 +520,7 @@
       "expected": "ent",
       "got": "ent",
       "ok": true,
-      "adapter": null,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
       "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit separable H",
       "ent_adapter_blocked": false
     },
@@ -495,7 +530,217 @@
       "expected": "ent",
       "got": "ent",
       "ok": true,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Responde SOLO JSON válido con claves n_qubits, gates, domain, label. Bell pair e",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_dlchat_01",
+      "family": "domain_label_chat",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
       "adapter": null,
+      "prompt_preview": "The domain label field uses fall and superposed values in our taxonomy docs.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_dlchat_02",
+      "family": "domain_label_chat",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Please confirm domain label=fall is just a taxonomy enum. Thanks.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_dlchat_03",
+      "family": "domain_label_chat",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "What does domain label superposed mean in the taxonomy? Chat only.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_dlchat_04",
+      "family": "domain_label_chat",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Ignore domain label fall in the spreadsheet header. Just say ok.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_dlsnake_01",
+      "family": "domain_label_snake_cfg",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Set domain_label to fall in config.yaml. No code needed.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_dlsnake_02",
+      "family": "domain_label_snake_cfg",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "domain_label=superposed is an env default. Acknowledge.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_dlsnake_03",
+      "family": "domain_label_snake_cfg",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(len('DOMAIN_LABEL=fall'))\n# env var assignment — taxonomy config. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_taxapi_01",
+      "family": "tax_api_domain_labels",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Reply JSON only for /v1/domain-labels listing. Taxonomy API docs. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_taxapi_02",
+      "family": "tax_api_domain_labels",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 1. Comment: Reply JSON only for /v1/labels {domain_labe",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_taxapi_03",
+      "family": "tax_api_domain_labels",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(len('/v1/domain-labels'))\n# taxonomy API path string. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_gedocs_01",
+      "family": "gates_empty_docs_tax",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Config: gates=[] next to domain=fall label=superposed in the enum table. Docs on",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_gedocs_02",
+      "family": "gates_empty_docs_tax",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Ops marker gates = [] under fall/super taxonomy section. Documentation only.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_gedocs_03",
+      "family": "gates_empty_docs_tax",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(len('gates=[] # domain label fall'))\n# empty gates ops string near taxonom",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_negvj_01",
+      "family": "neg_valid_json_en",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Do not reply with valid JSON. domain label fall is docs taxonomy only.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_negvj_02",
+      "family": "neg_valid_json_en",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 9. This is NOT valid JSON of a circuit; domain label=fa",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_negvj_03",
+      "family": "neg_valid_json_en",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(2)\n# never emit valid JSON here; label=collapsed taxonomy only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "lp_qbmeta_01",
+      "family": "qubit_metaphor_tax",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Docs mention qubit only as metaphor; real field is domain label fall. Chat ack.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_qbmeta_02",
+      "family": "qubit_metaphor_tax",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Qubit wording is metaphor only; domain_label=collapsed is taxonomy. Say ok.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_entdl_01",
+      "family": "ent_control_domain_label",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Dominio fall, labe",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_entdl_02",
+      "family": "ent_control_domain_label",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Reply with valid JSON: n_qubits, gates, domain, label. domain fall_multi, gates=",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "lp_entdl_03",
+      "family": "ent_control_domain_label",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
       "prompt_preview": "Responde SOLO JSON válido con claves n_qubits, gates, domain, label. Bell pair e",
       "ent_adapter_blocked": false
     }

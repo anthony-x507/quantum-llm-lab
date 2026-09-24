@@ -1,7 +1,7 @@
 {
   "frontier": "C3b-moe-verifier-mixed-live",
-  "written": "2026-09-24 14:59:10",
-  "primary": "data/frontier_moe_verifier_mixed_cpu_pillars_reinforce_fold.json",
+  "written": "2026-09-24 15:02:30",
+  "primary": "data/frontier_moe_verifier_mixed_cpu_lp_expand_fold.json",
   "scoreboard": {
     "table": [
       {

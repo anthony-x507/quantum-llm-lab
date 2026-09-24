@@ -174,6 +174,8 @@ def route_heuristic(prompt: str) -> Lane:
     # R4: OpenAPI/schema "reply JSON only" near a deprecated n_qubits *field* is NOT ent.
     # R5: gates=[nonempty] k8s/helm allow-lists, redis gates:key paths, protobuf gates=N; are NOT ent.
     # label-protect: empty gates=[] ops + negated "json válido" near fall/super taxonomy are NOT ent.
+    # label-protect-expand: domain label / domain_label taxonomy chat, /v1/domain-labels tax API,
+    #   empty-gates docs-only, English negated valid JSON — must not steal ent without real circuit ask.
     # R6: Bazel //gates:target; HTML data-gates="..."; Groovy/Jenkins gates = '...' quoted assigns.
     # R7: CI YAML multiline gates:\n  - …; Make .PHONY: gates; bare len('gates:') key tokens.
     # R8: Dockerfile ARG gates=; JSON Schema "gates"; TF/TOML/Nix gates = [...]; markdown 'gates: list'; Rego input.gates[_]; CUE #Gates:; EDN :gates; fullwidth lookalikes.
@@ -515,15 +517,50 @@ def route_heuristic(prompt: str) -> Lane:
             re.I,
         )
     )
+    # label-protect-expand: English valid-JSON negation (do not steal via domain label chat)
+    valid_json_negated = bool(
+        re.search(
+            r"(?:"
+            r"do\s+not\s+reply\s+with\s+valid\s+json|"
+            r"not\s+valid\s+json(?:\s+of\s+a\s+circuit)?|"
+            r"never\s+emit\s+valid\s+json|"
+            r"never\s+reply\s+with\s+valid\s+json"
+            r")",
+            text,
+            re.I,
+        )
+    )
     schema_field_distract = bool(
         re.search(
             r"(?:openapi|schema|deprecated|property|field)\s+"
             r"(?:n_qubits|.*\bn_qubits\b)"
             r"|\bn_qubits\b\s+(?:field|property|is\s+deprecated)"
-            r"|reply\s+json\s+only\s+for\s+/\w+",
+            r"|reply\s+json\s+only\s+for\s+/\w+"
+            # label-protect-expand: taxonomy CRUD paths
+            r"|/v1/(?:domain-)?labels\b"
+            r"|taxonomy\s+api",
             text,
             re.I,
         )
+    )
+    # label-protect-expand cues
+    lp_domain_label_cue = bool(
+        re.search(r"domain\s*[_ ]\s*label|domain_label", text, re.I)
+    )
+    lp_tax_docs = bool(
+        re.search(
+            r"(?:"
+            r"taxonomy|docs?\s+only|documentation\s+only|enum\s+table|"
+            r"chat\s+only|chat\s+ack|just\s+say\s+ok|\bsay\s+ok\b|"
+            r"acknowledge|no\s+code\s+needed|spreadsheet|env\s+default|"
+            r"config\.yaml|as\s+metaphor|metaphor\s+only"
+            r")",
+            text,
+            re.I,
+        )
+    )
+    tax_api_path = bool(
+        re.search(r"/v1/(?:domain-)?labels\b|taxonomy\s+api", text, re.I)
     )
     ent_json_ask = (
         (gates_token and not gates_ops_label) or json_valido
@@ -575,7 +612,19 @@ def route_heuristic(prompt: str) -> Lane:
                 re.I,
             )
             and not gates_ops_label  # R5: ops allow-list gates=[...] must not block ENT_NEG cancel
+            and not schema_field_distract  # LP-expand: /v1/domain-labels tax API reply-json
+            and not tax_api_path
         )
+    ):
+        has_ent = False
+    # label-protect-expand: domain label / domain_label taxonomy chat, tax API paths,
+    # empty-gates docs-only, English valid-JSON negation — cancel bare ENT_RE steals
+    # when there is no real circuit JSON ask (ent controls keep ent_json_ask).
+    if has_ent and not ent_json_ask and (
+        lp_domain_label_cue
+        or tax_api_path
+        or (gates_ops_label and lp_tax_docs)
+        or (valid_json_negated and (lp_domain_label_cue or lp_tax_docs))
     ):
         has_ent = False
     if vis_arith and not ent_json_ask:

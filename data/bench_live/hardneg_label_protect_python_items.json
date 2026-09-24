@@ -1,8 +1,8 @@
 {
-  "n": 32,
+  "n": 42,
   "kind": "hardneg_label_protect_python_items",
-  "created": "2026-09-24 12:45:00 ET",
-  "round": "label_protect",
+  "created": "2026-09-24",
+  "round": "label_protect_expand",
   "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-LABEL-PROTECT.md",
   "items": [
     {
@@ -228,7 +228,77 @@
       "prompt": "print(sum(range(5)))\n# plain. ONLY code.",
       "expected_stdout": "10\n",
       "timeout_s": 5
+    },
+    {
+      "id": "lpv_dlchat_01",
+      "kind": "python",
+      "timeout_s": 8,
+      "prompt": "Write Python that prints 4. Comment: domain label=fall is taxonomy chat, not a circuit. ONLY code.",
+      "expected_stdout": "4"
+    },
+    {
+      "id": "lpv_dlsnake_01",
+      "kind": "python",
+      "timeout_s": 8,
+      "prompt": "print(len('DOMAIN_LABEL=fall'))\n# env taxonomy. ONLY code.",
+      "expected_stdout": "17"
+    },
+    {
+      "id": "lpv_dlsnake_02",
+      "kind": "python",
+      "timeout_s": 8,
+      "prompt": "Write Python that prints len('domain_label=superposed'). ONLY code.",
+      "expected_stdout": "23"
+    },
+    {
+      "id": "lpv_taxapi_01",
+      "kind": "python",
+      "timeout_s": 8,
+      "prompt": "Write Python that prints 1. /v1/domain-labels taxonomy API path is not a circuit. ONLY code.",
+      "expected_stdout": "1"
+    },
+    {
+      "id": "lpv_taxapi_02",
+      "kind": "python",
+      "timeout_s": 8,
+      "prompt": "print(len('/v1/domain-labels'))\n# taxonomy path. ONLY code.",
+      "expected_stdout": "17"
+    },
+    {
+      "id": "lpv_gedocs_01",
+      "kind": "python",
+      "timeout_s": 8,
+      "prompt": "print(len('gates=[]'))\n# empty gates ops near domain label fall. ONLY code.",
+      "expected_stdout": "8"
+    },
+    {
+      "id": "lpv_negvj_01",
+      "kind": "python",
+      "timeout_s": 8,
+      "prompt": "Write Python that prints 9. NOT valid JSON of a circuit; domain label=fall. ONLY code.",
+      "expected_stdout": "9"
+    },
+    {
+      "id": "lpv_negvj_02",
+      "kind": "python",
+      "timeout_s": 8,
+      "prompt": "print(2)\n# never emit valid JSON; label=collapsed taxonomy. ONLY code.",
+      "expected_stdout": "2"
+    },
+    {
+      "id": "lpv_qbmeta_01",
+      "kind": "python",
+      "timeout_s": 8,
+      "prompt": "Write Python that prints 0. Qubit is metaphor; domain label fall is taxonomy. ONLY code.",
+      "expected_stdout": "0"
+    },
+    {
+      "id": "lpv_ctrl_dl_01",
+      "kind": "python",
+      "timeout_s": 8,
+      "prompt": "Write Python that prints 5. domain_label string length toy. ONLY code.",
+      "expected_stdout": "5"
     }
   ],
-  "note": "python items: hard router traps live in mixed_router; verifier items use gold-free liftable forms with same fall/super distractors"
+  "note": "LP expand python items beyond tip 32; gold-free liftable Write Python/print forms with same domain-label/fall-super distractors. No GT in prompts."
 }

@@ -1,0 +1,100 @@
+{
+  "frontier": "codigo-vivo-tip-label-protect-expand",
+  "written_et": "2026-09-24 14:50:44 ET",
+  "base_tip_sha": "8beae21",
+  "branch": "frontier/tip-label-protect-expand",
+  "tip_parent": "frontier/codigo-vivo-tip@8beae21",
+  "policy": "LP expand beyond tip 43/43\u00b732/32; NEVER drop freeze floor overall>=0.967 (prefer 1.0). RO data/lora_adapter/. No merge main. No fold. R2\u2013R12+LP must hold.",
+  "before": {
+    "overall_d_unified": 1.0,
+    "label_protect_router_tip43": "43/43",
+    "label_protect_router_expanded_pre_reinforce": "52/64",
+    "label_protect_router_rate_pre": 0.8125,
+    "note": "tip @ 8beae21 post R13 fold; expanded bench exposes domain_label chat steals"
+  },
+  "after": {
+    "overall_d_unified": 1.0,
+    "label_protect_router_expanded": "64/64",
+    "label_protect_verifier_expanded": "42/42",
+    "tip43_subset": "43/43",
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false,
+    "router_pillars": "26/26",
+    "hardneg_smoke": "18/18",
+    "scoreboard": {
+      "a_baseline": 0.3333,
+      "b_moe_alone": 0.6667,
+      "c_verifier_on_python": 0.6667,
+      "d_unified": 1.0
+    }
+  },
+  "hardneg_label_protect_router": {
+    "score": "64/64",
+    "rate": 1.0,
+    "pre_reinforce": "52/64",
+    "pre_rate": 0.8125,
+    "n": 64,
+    "prior_tip_n": 43,
+    "fixture": "data/bench_live/hardneg_label_protect_mixed_router.json",
+    "artifact": "data/frontier_moe_dual_lane_hardneg_label_protect.json"
+  },
+  "hardneg_label_protect_verifier": {
+    "unified_loop": "42/42",
+    "rate": 1.0,
+    "prior_tip_n": 32,
+    "n": 42,
+    "fixture": "data/bench_live/hardneg_label_protect_python_items.json",
+    "artifact": "data/frontier_moe_verifier_hardneg_label_protect.json"
+  },
+  "new_families": [
+    "domain_label_chat",
+    "domain_label_snake_cfg",
+    "tax_api_domain_labels",
+    "gates_empty_docs_tax",
+    "neg_valid_json_en",
+    "qubit_metaphor_tax",
+    "ent_control_domain_label"
+  ],
+  "holds": {
+    "r2_router": "22/22",
+    "r3_router": "35/35",
+    "r4_router": "40/40",
+    "r5_router": "44/44",
+    "r6_router": "48/48",
+    "r7_router": "52/52",
+    "r8_router": "52/52",
+    "r9_router": "52/52",
+    "r10_router": "52/52",
+    "r11_router": "52/52",
+    "r12_router": "52/52",
+    "r5_verifier": "36/36",
+    "r7_verifier": "44/44",
+    "r12_verifier": "44/44",
+    "smoke_router": "12/12",
+    "mixed_d_unified": 1.0,
+    "floor_held": true,
+    "floor_policy": ">=0.967 prefer 1.0"
+  },
+  "reinforce_layer": [
+    "Router: domain label / domain_label taxonomy chat cancels bare ENT_RE when no real ent_json_ask",
+    "Router: /v1/domain-labels taxonomy API + schema_field_distract; ENT_NEG cancel allowed with reply-json tax paths",
+    "Router: gates_ops_label + taxonomy/docs-only cancels bare gates ENT_RE steal",
+    "Router: English valid-JSON negation (do not reply / NOT valid JSON / never emit)",
+    "Fixtures: +21 router / +10 python liftable items; ent controls with domain label retained"
+  ],
+  "anti_contamination": {
+    "expected_harness_only": true,
+    "prompt_touches_gt": false,
+    "ent_never_on_python": true,
+    "lora_adapter_writes": false,
+    "ro_mtime_unchanged": true
+  },
+  "blockers": [],
+  "claims": [
+    "NO quantum advantage",
+    "Classical heuristic router + python -I verifier only",
+    "Side-only LP expand; NOT folded into tip"
+  ],
+  "fold": false,
+  "feat_sha": "5890883"
+}

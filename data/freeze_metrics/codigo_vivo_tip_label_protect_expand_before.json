@@ -1,0 +1,101 @@
+{
+  "phase": "before",
+  "router_expanded": "52/64",
+  "rate": 0.8125,
+  "tip43_subset": "43/43",
+  "misses": [
+    {
+      "id": "lp_dlchat_01",
+      "exp": "base",
+      "got": "ent",
+      "family": "domain_label_chat"
+    },
+    {
+      "id": "lp_dlchat_02",
+      "exp": "base",
+      "got": "ent",
+      "family": "domain_label_chat"
+    },
+    {
+      "id": "lp_dlchat_03",
+      "exp": "base",
+      "got": "ent",
+      "family": "domain_label_chat"
+    },
+    {
+      "id": "lp_dlchat_04",
+      "exp": "base",
+      "got": "ent",
+      "family": "domain_label_chat"
+    },
+    {
+      "id": "lp_dlsnake_01",
+      "exp": "base",
+      "got": "ent",
+      "family": "domain_label_snake_cfg"
+    },
+    {
+      "id": "lp_dlsnake_02",
+      "exp": "base",
+      "got": "ent",
+      "family": "domain_label_snake_cfg"
+    },
+    {
+      "id": "lp_taxapi_01",
+      "exp": "base",
+      "got": "ent",
+      "family": "tax_api_domain_labels"
+    },
+    {
+      "id": "lp_gedocs_01",
+      "exp": "base",
+      "got": "ent",
+      "family": "gates_empty_docs_tax"
+    },
+    {
+      "id": "lp_gedocs_02",
+      "exp": "base",
+      "got": "ent",
+      "family": "gates_empty_docs_tax"
+    },
+    {
+      "id": "lp_negvj_01",
+      "exp": "base",
+      "got": "ent",
+      "family": "neg_valid_json_en"
+    },
+    {
+      "id": "lp_qbmeta_01",
+      "exp": "base",
+      "got": "ent",
+      "family": "qubit_metaphor_tax"
+    },
+    {
+      "id": "lp_qbmeta_02",
+      "exp": "base",
+      "got": "ent",
+      "family": "qubit_metaphor_tax"
+    }
+  ],
+  "by_family": {
+    "neg_json_valido_tax": "4/4",
+    "gates_empty_eq_fall": "4/4",
+    "taxonomy_enum_fall_super": "4/4",
+    "freefall_classical": "3/3",
+    "superpose_crud": "3/3",
+    "sql_yaml_csv_label": "4/4",
+    "var_collapsed_separable": "3/3",
+    "tax_endpoint_openapi": "3/3",
+    "metric_name_distract": "3/3",
+    "base_control_tax": "4/4",
+    "vision_control_fall_super": "3/3",
+    "ent_control_fall_super": "5/5",
+    "domain_label_chat": "0/4",
+    "domain_label_snake_cfg": "1/3",
+    "tax_api_domain_labels": "2/3",
+    "gates_empty_docs_tax": "1/3",
+    "neg_valid_json_en": "2/3",
+    "qubit_metaphor_tax": "0/2",
+    "ent_control_domain_label": "3/3"
+  }
+}

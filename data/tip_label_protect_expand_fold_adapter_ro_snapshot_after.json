@@ -1,0 +1,16 @@
+{
+  "when": "2026-09-24 15:02:46 ET",
+  "path": "data/lora_adapter",
+  "exists": true,
+  "entries": [
+    {
+      "rel": ".gitkeep",
+      "is_dir": false,
+      "size": 0,
+      "mtime": 1790261820.7295232,
+      "mtime_iso": "2026-09-24 10:57:00"
+    }
+  ],
+  "dir_mtime": 1790261837.0,
+  "dir_mtime_iso": "2026-09-24 10:57:17"
+}

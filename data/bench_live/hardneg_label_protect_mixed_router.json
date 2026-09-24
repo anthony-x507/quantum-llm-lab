@@ -1,10 +1,14 @@
 {
-  "n": 43,
+  "n": 64,
   "kind": "hardneg_label_protect_mixed_router",
-  "created": "2026-09-24 12:40:00 ET",
-  "round": "label_protect",
-  "note": "LABEL-PROTECT / fall-super negatives (≠R1–R5): neg_json_valido_tax, gates_empty_eq_fall, taxonomy_enum_fall_super, freefall_classical, superpose_crud, sql_yaml_csv_label, var_collapsed_separable, tax_endpoint_openapi, metric_name_distract + base/vision/ent controls. HARD: NOT json válido near taxonomy; gates=[] empty-eq ops next to fall/super labels. GT harness-only.",
-  "anti_contamination": "expected lane is harness-only; never injected into route()",
+  "created": "2026-09-24",
+  "round": "label_protect_expand",
+  "note": "LP expand beyond tip floor 43: +domain_label_chat +domain_label_snake_cfg +tax_api_domain_labels +gates_empty_docs_tax +neg_valid_json_en +qubit_metaphor_tax +ent_control_domain_label. Tip misses: domain label chat steals ent via ENT_RE; gates=[] docs without ENT_NEG; English valid-JSON negation.",
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "expected_harness_only": true,
+    "tip_floor_prior": "43/43"
+  },
   "items": [
     {
       "id": "lp_negjson_01",
@@ -263,6 +267,132 @@
       "expected": "ent",
       "family": "ent_control_fall_super",
       "prompt": "Responde SOLO JSON válido con claves n_qubits, gates, domain, label. Bell pair entrelazado."
+    },
+    {
+      "id": "lp_dlchat_01",
+      "expected": "base",
+      "family": "domain_label_chat",
+      "prompt": "The domain label field uses fall and superposed values in our taxonomy docs."
+    },
+    {
+      "id": "lp_dlchat_02",
+      "expected": "base",
+      "family": "domain_label_chat",
+      "prompt": "Please confirm domain label=fall is just a taxonomy enum. Thanks."
+    },
+    {
+      "id": "lp_dlchat_03",
+      "expected": "base",
+      "family": "domain_label_chat",
+      "prompt": "What does domain label superposed mean in the taxonomy? Chat only."
+    },
+    {
+      "id": "lp_dlchat_04",
+      "expected": "base",
+      "family": "domain_label_chat",
+      "prompt": "Ignore domain label fall in the spreadsheet header. Just say ok."
+    },
+    {
+      "id": "lp_dlsnake_01",
+      "expected": "base",
+      "family": "domain_label_snake_cfg",
+      "prompt": "Set domain_label to fall in config.yaml. No code needed."
+    },
+    {
+      "id": "lp_dlsnake_02",
+      "expected": "base",
+      "family": "domain_label_snake_cfg",
+      "prompt": "domain_label=superposed is an env default. Acknowledge."
+    },
+    {
+      "id": "lp_dlsnake_03",
+      "expected": "python",
+      "family": "domain_label_snake_cfg",
+      "prompt": "print(len('DOMAIN_LABEL=fall'))\n# env var assignment — taxonomy config. ONLY code."
+    },
+    {
+      "id": "lp_taxapi_01",
+      "expected": "base",
+      "family": "tax_api_domain_labels",
+      "prompt": "Reply JSON only for /v1/domain-labels listing. Taxonomy API docs. No circuit."
+    },
+    {
+      "id": "lp_taxapi_02",
+      "expected": "python",
+      "family": "tax_api_domain_labels",
+      "prompt": "Write Python that prints 1. Comment: Reply JSON only for /v1/labels {domain_label:fall} is taxonomy CRUD, not a circuit. ONLY code."
+    },
+    {
+      "id": "lp_taxapi_03",
+      "expected": "python",
+      "family": "tax_api_domain_labels",
+      "prompt": "print(len('/v1/domain-labels'))\n# taxonomy API path string. ONLY code."
+    },
+    {
+      "id": "lp_gedocs_01",
+      "expected": "base",
+      "family": "gates_empty_docs_tax",
+      "prompt": "Config: gates=[] next to domain=fall label=superposed in the enum table. Docs only."
+    },
+    {
+      "id": "lp_gedocs_02",
+      "expected": "base",
+      "family": "gates_empty_docs_tax",
+      "prompt": "Ops marker gates = [] under fall/super taxonomy section. Documentation only."
+    },
+    {
+      "id": "lp_gedocs_03",
+      "expected": "python",
+      "family": "gates_empty_docs_tax",
+      "prompt": "print(len('gates=[] # domain label fall'))\n# empty gates ops string near taxonomy. ONLY code."
+    },
+    {
+      "id": "lp_negvj_01",
+      "expected": "base",
+      "family": "neg_valid_json_en",
+      "prompt": "Do not reply with valid JSON. domain label fall is docs taxonomy only."
+    },
+    {
+      "id": "lp_negvj_02",
+      "expected": "python",
+      "family": "neg_valid_json_en",
+      "prompt": "Write Python that prints 9. This is NOT valid JSON of a circuit; domain label=fall taxonomy. ONLY code."
+    },
+    {
+      "id": "lp_negvj_03",
+      "expected": "python",
+      "family": "neg_valid_json_en",
+      "prompt": "print(2)\n# never emit valid JSON here; label=collapsed taxonomy only. ONLY code."
+    },
+    {
+      "id": "lp_qbmeta_01",
+      "expected": "base",
+      "family": "qubit_metaphor_tax",
+      "prompt": "Docs mention qubit only as metaphor; real field is domain label fall. Chat ack."
+    },
+    {
+      "id": "lp_qbmeta_02",
+      "expected": "base",
+      "family": "qubit_metaphor_tax",
+      "prompt": "Qubit wording is metaphor only; domain_label=collapsed is taxonomy. Say ok."
+    },
+    {
+      "id": "lp_entdl_01",
+      "expected": "ent",
+      "family": "ent_control_domain_label",
+      "prompt": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Dominio fall, label superposed, un qubit en |+>."
+    },
+    {
+      "id": "lp_entdl_02",
+      "expected": "ent",
+      "family": "ent_control_domain_label",
+      "prompt": "Reply with valid JSON: n_qubits, gates, domain, label. domain fall_multi, gates=[H], label collapsed."
+    },
+    {
+      "id": "lp_entdl_03",
+      "expected": "ent",
+      "family": "ent_control_domain_label",
+      "prompt": "Responde SOLO JSON válido con claves n_qubits, gates, domain, label. Bell pair entrelazado; domain entangled; label entangled."
     }
   ]
 }

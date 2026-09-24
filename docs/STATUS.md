@@ -1,3 +1,4 @@
+- 2026-09-24: fold tip-label-protect-expand → tip; LP 43→64/64 · verif 32→42/42; pillars 37/37; circ 5/5; freeze codigo_vivo_tip_label_protect_expand_fold_100pct_20260924_150306
 - 2026-09-24: fold tip-pillars-reinforce → tip; pillars 29→37/37; freeze codigo_vivo_tip_pillars_reinforce_fold_100pct_20260924_145946
 - 2026-09-24 fold tip-circ-expand → tip: circ 2/2→5/5; BASE 13/13; mixed 1.0; freeze codigo_vivo_tip_circ_expand_fold_100pct_20260924_145451
 - 2026-09-24 fold tip-future-track-r3 → tip: track 86.15→99.34 / +dist 95.36→99.52; floors held; freeze `codigo_vivo_tip_future_track_r3_fold_100pct_20260924_144946`.
