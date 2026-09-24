@@ -1,0 +1,337 @@
+{
+  "frontier": "C3b-moe-verifier-mixed-live",
+  "written": "2026-09-24 10:50:10",
+  "claims": [
+    "NO quantum-advantage claims",
+    "MoE routing usability + classical python -I exec oracle only"
+  ],
+  "ro_lock": {
+    "script_writes_to_lora_adapter": false,
+    "policy": "READ-ONLY; never overwrite data/lora_adapter/",
+    "ent_adapter_ro": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+  },
+  "mode": "smoke",
+  "router_method": "heuristic",
+  "mixed_counts": {
+    "python": 8,
+    "entanglement": 8,
+    "vision_scored": 8,
+    "vision_routing_extra": 2,
+    "hardneg_router": 10
+  },
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "leaks": [],
+    "policy": "GT only in eval.*; never concatenated into inference prompts",
+    "locked_false": true
+  },
+  "router": {
+    "method": "heuristic",
+    "pillar_routing": {
+      "n": 26,
+      "hits": 26,
+      "score": "26/26",
+      "rows": [
+        {
+          "id": "py_arith_01",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null
+        },
+        {
+          "id": "py_arith_02",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null
+        },
+        {
+          "id": "py_arith_03",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null
+        },
+        {
+          "id": "py_arith_04",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null
+        },
+        {
+          "id": "py_alg_01",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null
+        },
+        {
+          "id": "py_alg_02",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null
+        },
+        {
+          "id": "py_alg_03",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null
+        },
+        {
+          "id": "py_alg_04",
+          "pillar": "python",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null
+        },
+        {
+          "id": "ent_scene_0222",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+        },
+        {
+          "id": "ent_scene_0157",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+        },
+        {
+          "id": "ent_scene_0291",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+        },
+        {
+          "id": "ent_scene_0359",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+        },
+        {
+          "id": "ent_scene_0239",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+        },
+        {
+          "id": "ent_scene_0293",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+        },
+        {
+          "id": "ent_scene_0317",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+        },
+        {
+          "id": "ent_scene_0336",
+          "pillar": "entanglement",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+        },
+        {
+          "id": "vis_math_01",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null
+        },
+        {
+          "id": "vis_math_02",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null
+        },
+        {
+          "id": "vis_math_03",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null
+        },
+        {
+          "id": "vis_math_04",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null
+        },
+        {
+          "id": "vis_math_05",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null
+        },
+        {
+          "id": "vis_math_06",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null
+        },
+        {
+          "id": "vis_math_07",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null
+        },
+        {
+          "id": "vis_math_08",
+          "pillar": "vision",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null
+        },
+        {
+          "id": "vis_circ_01",
+          "pillar": "vision",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+        },
+        {
+          "id": "vis_circ_02",
+          "pillar": "vision",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2"
+        }
+      ]
+    },
+    "hardneg_routing": {
+      "n": 10,
+      "hits": 10,
+      "score": "10/10",
+      "rows": [
+        {
+          "id": "hn_py_quantum_word",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "note": "qubits/Bell noun but code-gen → python"
+        },
+        {
+          "id": "hn_py_circuit_print",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "note": "gate token but code-gen"
+        },
+        {
+          "id": "hn_ent_no_python",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2",
+          "note": "classic ent"
+        },
+        {
+          "id": "hn_ent_spanish",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2",
+          "note": "spanish ent"
+        },
+        {
+          "id": "hn_vis_math",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "note": "vision math"
+        },
+        {
+          "id": "hn_vis_frame",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "note": "vision spanish"
+        },
+        {
+          "id": "hn_vis_chalkboard",
+          "expected_lane": "vision",
+          "got": "vision",
+          "ok": true,
+          "adapter": null,
+          "note": "vision not ent"
+        },
+        {
+          "id": "hn_base_chat",
+          "expected_lane": "base",
+          "got": "base",
+          "ok": true,
+          "adapter": null,
+          "note": "chat → base"
+        },
+        {
+          "id": "hn_amb_py_def_quantum",
+          "expected_lane": "python",
+          "got": "python",
+          "ok": true,
+          "adapter": null,
+          "note": "def+print dominates"
+        },
+        {
+          "id": "hn_amb_ent_image_words",
+          "expected_lane": "ent",
+          "got": "ent",
+          "ok": true,
+          "adapter": "/Users/anthony/Documents/quantum-llm-lab-mixed-live/data/lora_adapter_ent2",
+          "note": "imagen present but ent JSON wins"
+        }
+      ]
+    },
+    "ent_never_on_python": true
+  },
+  "notes": [
+    "smoke only"
+  ]
+}

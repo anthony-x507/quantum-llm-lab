@@ -1,0 +1,405 @@
+{
+  "name": "codigo-vivo-mixed",
+  "created": "2026-09-24 10:48:34",
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "rule": "eval.* fields harness-only; never concatenated into inference prompts"
+  },
+  "counts": {
+    "python": 8,
+    "entanglement": 8,
+    "vision_scored": 8,
+    "vision_routing_extra": 2,
+    "hardneg_router": 10
+  },
+  "python": [
+    {
+      "id": "py_arith_01",
+      "pillar": "python",
+      "prompt": "Write a Python program that prints the integer result of 47 + 18. Output ONLY the code, no markdown fences.",
+      "eval": {
+        "expected_stdout": "65\n"
+      },
+      "timeout_s": 5,
+      "kind": "arithmetic",
+      "expected_lane": "python"
+    },
+    {
+      "id": "py_arith_02",
+      "pillar": "python",
+      "prompt": "Write a Python program that prints 12 * 11 - 7. ONLY code, no markdown.",
+      "eval": {
+        "expected_stdout": "125\n"
+      },
+      "timeout_s": 5,
+      "kind": "arithmetic",
+      "expected_lane": "python"
+    },
+    {
+      "id": "py_arith_03",
+      "pillar": "python",
+      "prompt": "Write a Python program that prints the integer floor of 100 / 7. ONLY code.",
+      "eval": {
+        "expected_stdout": "14\n"
+      },
+      "timeout_s": 5,
+      "kind": "arithmetic",
+      "expected_lane": "python"
+    },
+    {
+      "id": "py_arith_04",
+      "pillar": "python",
+      "prompt": "Write a Python program that prints 2 ** 10. ONLY code.",
+      "eval": {
+        "expected_stdout": "1024\n"
+      },
+      "timeout_s": 5,
+      "kind": "arithmetic",
+      "expected_lane": "python"
+    },
+    {
+      "id": "py_alg_01",
+      "pillar": "python",
+      "prompt": "A tank starts with 40 liters. It gains 3 liters per minute for 8 minutes. Write Python that prints the final liters as an integer. ONLY code.",
+      "eval": {
+        "expected_stdout": "64\n"
+      },
+      "timeout_s": 5,
+      "kind": "algebra_word",
+      "expected_lane": "python"
+    },
+    {
+      "id": "py_alg_02",
+      "pillar": "python",
+      "prompt": "Solve for x: 5x - 15 = 20. Write Python that prints the integer x. ONLY code.",
+      "eval": {
+        "expected_stdout": "7\n"
+      },
+      "timeout_s": 5,
+      "kind": "algebra_word",
+      "expected_lane": "python"
+    },
+    {
+      "id": "py_alg_03",
+      "pillar": "python",
+      "prompt": "Three consecutive integers sum to 54. Write Python that prints the middle integer. ONLY code.",
+      "eval": {
+        "expected_stdout": "18\n"
+      },
+      "timeout_s": 5,
+      "kind": "algebra_word",
+      "expected_lane": "python"
+    },
+    {
+      "id": "py_alg_04",
+      "pillar": "python",
+      "prompt": "A rectangle has perimeter 30 and width 5. Write Python that prints the length as an integer. ONLY code.",
+      "eval": {
+        "expected_stdout": "10\n"
+      },
+      "timeout_s": 5,
+      "kind": "algebra_word",
+      "expected_lane": "python"
+    }
+  ],
+  "entanglement": [
+    {
+      "id": "ent_scene_0222",
+      "pillar": "entanglement",
+      "scene_id": "scene_0222",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0222. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "separable",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
+    {
+      "id": "ent_scene_0157",
+      "pillar": "entanglement",
+      "scene_id": "scene_0157",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0157. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
+    {
+      "id": "ent_scene_0291",
+      "pillar": "entanglement",
+      "scene_id": "scene_0291",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0291. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
+    {
+      "id": "ent_scene_0359",
+      "pillar": "entanglement",
+      "scene_id": "scene_0359",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0359. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
+    {
+      "id": "ent_scene_0239",
+      "pillar": "entanglement",
+      "scene_id": "scene_0239",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0239. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
+    {
+      "id": "ent_scene_0293",
+      "pillar": "entanglement",
+      "scene_id": "scene_0293",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0293. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
+    {
+      "id": "ent_scene_0317",
+      "pillar": "entanglement",
+      "scene_id": "scene_0317",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0317. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    },
+    {
+      "id": "ent_scene_0336",
+      "pillar": "entanglement",
+      "scene_id": "scene_0336",
+      "prompt": "Eres un asistente de circuitos cuánticos. Escena scene_0336. Mira la imagen del circuito. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx. No expliques.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent"
+    }
+  ],
+  "vision": [
+    {
+      "id": "vis_math_01",
+      "pillar": "vision",
+      "prompt": "Look at the image. Solve the arithmetic problem. Reply with ONLY the final integer answer, no words.",
+      "image": "data/bench_live/vision_items/vis_math_01.png",
+      "eval": {
+        "expected": "45",
+        "match": "exact_int"
+      },
+      "kind": "math",
+      "score_accuracy": true,
+      "expected_lane": "vision"
+    },
+    {
+      "id": "vis_math_02",
+      "pillar": "vision",
+      "prompt": "Look at the image. Compute the expression. Reply with ONLY the final integer.",
+      "image": "data/bench_live/vision_items/vis_math_02.png",
+      "eval": {
+        "expected": "50",
+        "match": "exact_int"
+      },
+      "kind": "math",
+      "score_accuracy": true,
+      "expected_lane": "vision"
+    },
+    {
+      "id": "vis_math_03",
+      "pillar": "vision",
+      "prompt": "Look at the image word problem. Reply with ONLY the integer total.",
+      "image": "data/bench_live/vision_items/vis_math_03.png",
+      "eval": {
+        "expected": "20",
+        "match": "exact_int"
+      },
+      "kind": "math",
+      "score_accuracy": true,
+      "expected_lane": "vision"
+    },
+    {
+      "id": "vis_math_04",
+      "pillar": "vision",
+      "prompt": "Look at the equation in the image. Reply with ONLY the integer value of x.",
+      "image": "data/bench_live/vision_items/vis_math_04.png",
+      "eval": {
+        "expected": "6",
+        "match": "exact_int"
+      },
+      "kind": "math",
+      "score_accuracy": true,
+      "expected_lane": "vision"
+    },
+    {
+      "id": "vis_math_05",
+      "pillar": "vision",
+      "prompt": "Look at the image. Reply with ONLY the integer result.",
+      "image": "data/bench_live/vision_items/vis_math_05.png",
+      "eval": {
+        "expected": "20",
+        "match": "exact_int"
+      },
+      "kind": "math",
+      "score_accuracy": true,
+      "expected_lane": "vision"
+    },
+    {
+      "id": "vis_math_06",
+      "pillar": "vision",
+      "prompt": "Look at the image sequence. Reply with ONLY the next integer.",
+      "image": "data/bench_live/vision_items/vis_math_06.png",
+      "eval": {
+        "expected": "48",
+        "match": "exact_int"
+      },
+      "kind": "math",
+      "score_accuracy": true,
+      "expected_lane": "vision"
+    },
+    {
+      "id": "vis_math_07",
+      "pillar": "vision",
+      "prompt": "Look at the image. Reply with ONLY the integer area.",
+      "image": "data/bench_live/vision_items/vis_math_07.png",
+      "eval": {
+        "expected": "20",
+        "match": "exact_int"
+      },
+      "kind": "math",
+      "score_accuracy": true,
+      "expected_lane": "vision"
+    },
+    {
+      "id": "vis_math_08",
+      "pillar": "vision",
+      "prompt": "Look at the image. Reply with ONLY the integer distance in meters.",
+      "image": "data/bench_live/vision_items/vis_circ_08_math.png",
+      "eval": {
+        "expected": "45",
+        "match": "exact_int"
+      },
+      "kind": "math",
+      "score_accuracy": true,
+      "expected_lane": "vision"
+    },
+    {
+      "id": "vis_circ_01",
+      "pillar": "vision",
+      "prompt": "Look at the circuit description in the image. Emit ONLY a JSON object with keys n_qubits (int) and gates (list of {name, wires}). No markdown.",
+      "image": "data/bench_live/vision_items/vis_circ_01.png",
+      "eval": {
+        "expected": null,
+        "match": "json_gates_contain"
+      },
+      "kind": "circuit",
+      "score_accuracy": false,
+      "expected_lane": "ent",
+      "note": "circuit JSON from image → ent adapter (not vision-math)"
+    },
+    {
+      "id": "vis_circ_02",
+      "pillar": "vision",
+      "prompt": "Look at the circuit in the image. Emit ONLY JSON with n_qubits and gates (name, wires, optionally params). No markdown.",
+      "image": "data/bench_live/vision_items/vis_circ_02.png",
+      "eval": {
+        "expected": null,
+        "match": "json_gates_contain"
+      },
+      "kind": "circuit",
+      "score_accuracy": false,
+      "expected_lane": "ent",
+      "note": "circuit JSON from image → ent adapter (not vision-math)"
+    }
+  ],
+  "hardneg_router": [
+    {
+      "id": "hn_py_quantum_word",
+      "pillar": "router_only",
+      "expected_lane": "python",
+      "prompt": "Write a Python program that prints the integer 2 (as in two qubits in a Bell pair). Output ONLY the code, no markdown fences. Do not emit JSON.",
+      "note": "qubits/Bell noun but code-gen → python"
+    },
+    {
+      "id": "hn_py_circuit_print",
+      "pillar": "router_only",
+      "expected_lane": "python",
+      "prompt": "Write Python that prints the string 'cx' (a gate name) then a newline. ONLY code.",
+      "note": "gate token but code-gen"
+    },
+    {
+      "id": "hn_ent_no_python",
+      "pillar": "router_only",
+      "expected_lane": "ent",
+      "prompt": "Propose a quantum circuit with n_qubits and gates for this entanglement scene. Reply JSON only with keys n_qubits, gates, domain, label.",
+      "note": "classic ent"
+    },
+    {
+      "id": "hn_ent_spanish",
+      "pillar": "router_only",
+      "expected_lane": "ent",
+      "prompt": "Circuito cuántico PennyLane: arma un par de Bell (Hadamard + CX). Devuelve JSON válido n_qubits y gates.",
+      "note": "spanish ent"
+    },
+    {
+      "id": "hn_vis_math",
+      "pillar": "router_only",
+      "expected_lane": "vision",
+      "prompt": "Look at the image. Solve the arithmetic problem. Reply with ONLY the final integer answer, no words.",
+      "note": "vision math"
+    },
+    {
+      "id": "hn_vis_frame",
+      "pillar": "router_only",
+      "expected_lane": "vision",
+      "prompt": "Mira la imagen del frame PNG. ¿Cuántos objetos hay? Responde solo un entero.",
+      "note": "vision spanish"
+    },
+    {
+      "id": "hn_vis_chalkboard",
+      "pillar": "router_only",
+      "expected_lane": "vision",
+      "prompt": "Look at the image of this chalkboard. Solve the arithmetic written there. Reply with ONLY the final integer, no circuit JSON.",
+      "note": "vision not ent"
+    },
+    {
+      "id": "hn_base_chat",
+      "pillar": "router_only",
+      "expected_lane": "base",
+      "prompt": "Hello! Thanks for the help. Tell me a short fun fact about cats.",
+      "note": "chat → base"
+    },
+    {
+      "id": "hn_amb_py_def_quantum",
+      "pillar": "router_only",
+      "expected_lane": "python",
+      "prompt": "def count_qubits():\n    # return how many qubits a Bell circuit uses as an integer printed\n    print(2)\n# complete / emit this Python script only",
+      "note": "def+print dominates"
+    },
+    {
+      "id": "hn_amb_ent_image_words",
+      "pillar": "router_only",
+      "expected_lane": "ent",
+      "prompt": "Eres un asistente de circuitos cuánticos. Mira la imagen. Responde SOLO JSON válido con claves n_qubits, gates, domain, label. PennyLane gates h,x,cx.",
+      "note": "imagen present but ent JSON wins"
+    }
+  ],
+  "notes": [
+    "Mixed set forces MoE Δ vs python-only: baseline=base-all; MoE applies ent2 on ent lane.",
+    "No quantum-advantage claims."
+  ]
+}

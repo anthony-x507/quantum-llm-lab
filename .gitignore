@@ -114,3 +114,12 @@ data/collision_predictive/**
 data/lora_adapter_collision/**
 !data/lora_adapter_collision/.gitkeep
 data/eval_audit/collision_*.jsonl
+
+# Local RO symlinks / worktree overlays (never commit absolute lab links)
+data/lora_adapter
+data/lora_adapter_ent
+data/lora_adapter_ent2
+data/lora_adapter_classical
+data/bench_live/vision_items
+data/scenes/scene_*
+*.log

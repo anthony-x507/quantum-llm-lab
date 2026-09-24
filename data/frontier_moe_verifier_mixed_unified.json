@@ -1,0 +1,465 @@
+{
+  "frontier": "C3b-moe-verifier-mixed-live",
+  "written": "2026-09-24 10:51:30",
+  "claims": [
+    "NO quantum-advantage claims"
+  ],
+  "mixed_counts": {
+    "python": 8,
+    "entanglement": 8,
+    "vision_scored": 8,
+    "vision_routing_extra": 2,
+    "hardneg_router": 10
+  },
+  "prompt_touches_gt": false,
+  "ent_never_on_python": true,
+  "moe_delta_visible": true,
+  "primary_cpu": {
+    "mode": "cpu-eval",
+    "mlx_status": null,
+    "router_pillars": "26/26",
+    "router_hardneg": "10/10",
+    "table": [
+      {
+        "path": "a_baseline",
+        "python": {
+          "n": 8,
+          "rate": 0.0,
+          "metric": "solve_rate_single"
+        },
+        "entanglement": {
+          "n": 8,
+          "label_acc": 0.0,
+          "source": "prior_replay"
+        },
+        "vision": {
+          "n": 8,
+          "accuracy": 0.9,
+          "source": "prior_replay"
+        },
+        "overall_mean": 0.3,
+        "prompt_touches_gt": false,
+        "repair_success_rate": 0.0
+      },
+      {
+        "path": "b_moe_alone",
+        "python": {
+          "n": 8,
+          "rate": 0.0,
+          "metric": "solve_rate_single"
+        },
+        "entanglement": {
+          "n": 8,
+          "label_acc": 1.0,
+          "source": "prior_replay"
+        },
+        "vision": {
+          "n": 8,
+          "accuracy": 0.9,
+          "source": "prior_replay"
+        },
+        "overall_mean": 0.6333,
+        "prompt_touches_gt": false,
+        "repair_success_rate": 0.0
+      },
+      {
+        "path": "c_verifier_on_python",
+        "python": {
+          "n": 8,
+          "rate": 1.0,
+          "metric": "solve_rate_loop"
+        },
+        "entanglement": {
+          "n": 8,
+          "label_acc": 0.0,
+          "source": "prior_replay"
+        },
+        "vision": {
+          "n": 8,
+          "accuracy": 0.9,
+          "source": "prior_replay"
+        },
+        "overall_mean": 0.6333,
+        "prompt_touches_gt": false,
+        "repair_success_rate": 1.0
+      },
+      {
+        "path": "d_unified",
+        "python": {
+          "n": 8,
+          "rate": 1.0,
+          "metric": "solve_rate_loop"
+        },
+        "entanglement": {
+          "n": 8,
+          "label_acc": 1.0,
+          "source": "prior_replay"
+        },
+        "vision": {
+          "n": 8,
+          "accuracy": 0.9,
+          "source": "prior_replay"
+        },
+        "overall_mean": 0.9667,
+        "prompt_touches_gt": false,
+        "repair_success_rate": 1.0
+      }
+    ],
+    "delta_moe_vs_baseline": {
+      "python": 0.0,
+      "entanglement": 1.0,
+      "vision": 0.0,
+      "overall": 0.3333
+    },
+    "moe_delta_visible": true,
+    "anti_contamination": {
+      "prompt_touches_gt": false,
+      "leaks": [],
+      "policy": "GT only in eval.*; never concatenated into inference prompts",
+      "locked_false": true,
+      "gt_never_in_inference_prompts": true,
+      "ent_never_on_python": true,
+      "lock": "docs/LOCK-ANTI-CONTAMINATION.md"
+    },
+    "python_proposer": "heuristic",
+    "python_n": 8
+  },
+  "runs": {
+    "cpu": {
+      "mode": "cpu-eval",
+      "mlx_status": null,
+      "router_pillars": "26/26",
+      "router_hardneg": "10/10",
+      "table": [
+        {
+          "path": "a_baseline",
+          "python": {
+            "n": 8,
+            "rate": 0.0,
+            "metric": "solve_rate_single"
+          },
+          "entanglement": {
+            "n": 8,
+            "label_acc": 0.0,
+            "source": "prior_replay"
+          },
+          "vision": {
+            "n": 8,
+            "accuracy": 0.9,
+            "source": "prior_replay"
+          },
+          "overall_mean": 0.3,
+          "prompt_touches_gt": false,
+          "repair_success_rate": 0.0
+        },
+        {
+          "path": "b_moe_alone",
+          "python": {
+            "n": 8,
+            "rate": 0.0,
+            "metric": "solve_rate_single"
+          },
+          "entanglement": {
+            "n": 8,
+            "label_acc": 1.0,
+            "source": "prior_replay"
+          },
+          "vision": {
+            "n": 8,
+            "accuracy": 0.9,
+            "source": "prior_replay"
+          },
+          "overall_mean": 0.6333,
+          "prompt_touches_gt": false,
+          "repair_success_rate": 0.0
+        },
+        {
+          "path": "c_verifier_on_python",
+          "python": {
+            "n": 8,
+            "rate": 1.0,
+            "metric": "solve_rate_loop"
+          },
+          "entanglement": {
+            "n": 8,
+            "label_acc": 0.0,
+            "source": "prior_replay"
+          },
+          "vision": {
+            "n": 8,
+            "accuracy": 0.9,
+            "source": "prior_replay"
+          },
+          "overall_mean": 0.6333,
+          "prompt_touches_gt": false,
+          "repair_success_rate": 1.0
+        },
+        {
+          "path": "d_unified",
+          "python": {
+            "n": 8,
+            "rate": 1.0,
+            "metric": "solve_rate_loop"
+          },
+          "entanglement": {
+            "n": 8,
+            "label_acc": 1.0,
+            "source": "prior_replay"
+          },
+          "vision": {
+            "n": 8,
+            "accuracy": 0.9,
+            "source": "prior_replay"
+          },
+          "overall_mean": 0.9667,
+          "prompt_touches_gt": false,
+          "repair_success_rate": 1.0
+        }
+      ],
+      "delta_moe_vs_baseline": {
+        "python": 0.0,
+        "entanglement": 1.0,
+        "vision": 0.0,
+        "overall": 0.3333
+      },
+      "moe_delta_visible": true,
+      "anti_contamination": {
+        "prompt_touches_gt": false,
+        "leaks": [],
+        "policy": "GT only in eval.*; never concatenated into inference prompts",
+        "locked_false": true,
+        "gt_never_in_inference_prompts": true,
+        "ent_never_on_python": true,
+        "lock": "docs/LOCK-ANTI-CONTAMINATION.md"
+      },
+      "python_proposer": "heuristic",
+      "python_n": 8
+    },
+    "replay": {
+      "mode": "replay",
+      "mlx_status": null,
+      "router_pillars": "26/26",
+      "router_hardneg": "10/10",
+      "table": [
+        {
+          "path": "a_baseline",
+          "python": {
+            "n": 8,
+            "rate": 0.125,
+            "metric": "solve_rate_single"
+          },
+          "entanglement": {
+            "n": 8,
+            "label_acc": 0.0,
+            "source": "prior_replay"
+          },
+          "vision": {
+            "n": 8,
+            "accuracy": 0.9,
+            "source": "prior_replay"
+          },
+          "overall_mean": 0.3417,
+          "prompt_touches_gt": false,
+          "repair_success_rate": 0.0
+        },
+        {
+          "path": "b_moe_alone",
+          "python": {
+            "n": 8,
+            "rate": 0.125,
+            "metric": "solve_rate_single"
+          },
+          "entanglement": {
+            "n": 8,
+            "label_acc": 1.0,
+            "source": "prior_replay"
+          },
+          "vision": {
+            "n": 8,
+            "accuracy": 0.9,
+            "source": "prior_replay"
+          },
+          "overall_mean": 0.675,
+          "prompt_touches_gt": false,
+          "repair_success_rate": 0.0
+        },
+        {
+          "path": "c_verifier_on_python",
+          "python": {
+            "n": 8,
+            "rate": 1.0,
+            "metric": "solve_rate_loop"
+          },
+          "entanglement": {
+            "n": 8,
+            "label_acc": 0.0,
+            "source": "prior_replay"
+          },
+          "vision": {
+            "n": 8,
+            "accuracy": 0.9,
+            "source": "prior_replay"
+          },
+          "overall_mean": 0.6333,
+          "prompt_touches_gt": false,
+          "repair_success_rate": 1.0
+        },
+        {
+          "path": "d_unified",
+          "python": {
+            "n": 8,
+            "rate": 1.0,
+            "metric": "solve_rate_loop"
+          },
+          "entanglement": {
+            "n": 8,
+            "label_acc": 1.0,
+            "source": "prior_replay"
+          },
+          "vision": {
+            "n": 8,
+            "accuracy": 0.9,
+            "source": "prior_replay"
+          },
+          "overall_mean": 0.9667,
+          "prompt_touches_gt": false,
+          "repair_success_rate": 1.0
+        }
+      ],
+      "delta_moe_vs_baseline": {
+        "python": 0.0,
+        "entanglement": 1.0,
+        "vision": 0.0,
+        "overall": 0.3333
+      },
+      "moe_delta_visible": true,
+      "anti_contamination": {
+        "prompt_touches_gt": false,
+        "leaks": [],
+        "policy": "GT only in eval.*; never concatenated into inference prompts",
+        "locked_false": true,
+        "gt_never_in_inference_prompts": true,
+        "ent_never_on_python": true,
+        "lock": "docs/LOCK-ANTI-CONTAMINATION.md"
+      },
+      "python_proposer": "replay",
+      "python_n": 8
+    },
+    "mlx_n2_mac139": {
+      "mode": "mlx",
+      "mlx_status": "ok",
+      "router_pillars": "26/26",
+      "router_hardneg": "10/10",
+      "table": [
+        {
+          "path": "a_baseline",
+          "python": {
+            "n": 2,
+            "rate": 0.0,
+            "metric": "solve_rate_single"
+          },
+          "entanglement": {
+            "n": 8,
+            "label_acc": 0.0,
+            "source": "prior_replay"
+          },
+          "vision": {
+            "n": 8,
+            "accuracy": 0.9,
+            "source": "prior_replay"
+          },
+          "overall_mean": 0.3,
+          "prompt_touches_gt": false,
+          "repair_success_rate": 0.0
+        },
+        {
+          "path": "b_moe_alone",
+          "python": {
+            "n": 2,
+            "rate": 0.0,
+            "metric": "solve_rate_single"
+          },
+          "entanglement": {
+            "n": 8,
+            "label_acc": 1.0,
+            "source": "prior_replay"
+          },
+          "vision": {
+            "n": 8,
+            "accuracy": 0.9,
+            "source": "prior_replay"
+          },
+          "overall_mean": 0.6333,
+          "prompt_touches_gt": false,
+          "repair_success_rate": 0.0
+        },
+        {
+          "path": "c_verifier_on_python",
+          "python": {
+            "n": 2,
+            "rate": 1.0,
+            "metric": "solve_rate_loop"
+          },
+          "entanglement": {
+            "n": 8,
+            "label_acc": 0.0,
+            "source": "prior_replay"
+          },
+          "vision": {
+            "n": 8,
+            "accuracy": 0.9,
+            "source": "prior_replay"
+          },
+          "overall_mean": 0.6333,
+          "prompt_touches_gt": false,
+          "repair_success_rate": 1.0
+        },
+        {
+          "path": "d_unified",
+          "python": {
+            "n": 2,
+            "rate": 1.0,
+            "metric": "solve_rate_loop"
+          },
+          "entanglement": {
+            "n": 8,
+            "label_acc": 1.0,
+            "source": "prior_replay"
+          },
+          "vision": {
+            "n": 8,
+            "accuracy": 0.9,
+            "source": "prior_replay"
+          },
+          "overall_mean": 0.9667,
+          "prompt_touches_gt": false,
+          "repair_success_rate": 1.0
+        }
+      ],
+      "delta_moe_vs_baseline": {
+        "python": 0.0,
+        "entanglement": 1.0,
+        "vision": 0.0,
+        "overall": 0.3333
+      },
+      "moe_delta_visible": true,
+      "anti_contamination": {
+        "prompt_touches_gt": false,
+        "leaks": [],
+        "policy": "GT only in eval.*; never concatenated into inference prompts",
+        "locked_false": true,
+        "gt_never_in_inference_prompts": true,
+        "ent_never_on_python": true,
+        "lock": "docs/LOCK-ANTI-CONTAMINATION.md"
+      },
+      "python_proposer": "mlx",
+      "python_n": 2
+    }
+  },
+  "studio_mlx": "Mac-198/Studio offline; mlx n=2 ran on Mac-139 (.venv) with Qwen3-VL-8B-Thinking-4bit",
+  "notes": [
+    "MoE Δ visible on mixed set via entanglement prior-replay (base 0.0 → MoE/ent2 1.0).",
+    "Python heuristic/replay: verifier loop lifts solve_rate; MoE alone ≈ baseline on python lane (expected).",
+    "Unified (d) best overall on CPU/replay/mlx-fallback tables."
+  ]
+}

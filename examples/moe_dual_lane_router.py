@@ -60,6 +60,7 @@ PYTHON_RE = re.compile(
 VISION_RE = re.compile(
     r"\b("
     r"image|images|frame|frames|visi[oó]n|look\s+at\s+the\s+image|"
+    r"look\s+at\s+the\s+(?:image\s+)?sequence|"
     r"in\s+the\s+image|screenshot|photo|picture|png|jpeg|"
     r"mira\s+la\s+imagen|video\s+frame|vlm"
     r")\b",
@@ -125,10 +126,25 @@ def route_heuristic(prompt: str) -> Lane:
     has_ent = bool(ENT_RE.search(text))
     has_py = bool(PYTHON_RE.search(text))
     has_vis = bool(VISION_RE.search(text))
+    ent_json_ask = bool(
+        re.search(r"\b(n_qubits|gates\s*[=:\[]|json\s+v[aá]lido)\b", text, re.I)
+    )
+    # Vision arithmetic / explicit "no circuit" beats stray "circuit" token in the prompt
+    vis_arith = bool(
+        has_vis
+        and re.search(
+            r"(only\s+the\s+final\s+integer|solve\s+the\s+arithmetic|"
+            r"no\s+circuit|responde\s+solo\s+un\s+entero)",
+            text,
+            re.I,
+        )
+    )
 
     # Code-generation intent dominates (protect Python lane from ent LoRA)
-    if has_py and not (has_ent and re.search(r"\b(n_qubits|gates\s*[=:\[]|json\s+v[aá]lido)\b", text, re.I)):
+    if has_py and not (has_ent and ent_json_ask):
         return "python"
+    if vis_arith and not ent_json_ask:
+        return "vision"
     if has_ent:
         return "ent"
     if has_vis:

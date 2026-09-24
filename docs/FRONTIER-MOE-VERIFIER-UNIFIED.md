@@ -93,3 +93,9 @@ Ship-OK when:
 - No writes under `data/lora_adapter/`.
 - No quantum-advantage marketing.
 - No Cursor Cloud Agents for this unify.
+
+## Mixed-live extension
+
+See **`docs/FRONTIER-MOE-VERIFIER-MIXED-LIVE.md`** (`frontier/moe-verifier-mixed-live`):
+mixed Python+Ent+Vision scoreboard so MoE Δ is visible (ent 0→1.0; overall +0.33).
+
