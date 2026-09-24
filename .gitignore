@@ -114,3 +114,7 @@ data/collision_predictive/**
 data/lora_adapter_collision/**
 !data/lora_adapter_collision/.gitkeep
 data/eval_audit/collision_*.jsonl
+
+# Frontier circuit-graph local convenience (worktree symlinks); keep smoke metrics
+data/lora_dataset_ent_v*.jsonl
+!data/frontier_circuit_graph_smoke.json
