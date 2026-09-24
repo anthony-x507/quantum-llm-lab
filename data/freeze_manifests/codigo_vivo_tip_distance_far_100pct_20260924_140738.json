@@ -26,5 +26,9 @@
   "predictor": "floor_scale_parallax_size_prior_closing_speed_v4_far",
   "side_only": true,
   "not_folded": true,
-  "adapters_ro": "data/lora_adapter/"
+  "adapters_ro": "data/lora_adapter/",
+  "feat_sha": "8b4779c50f0276b798d02b404696ac561c984489",
+  "feat_sha_short": "8b4779c",
+  "pushed": true,
+  "remote_branch": "origin/frontier/tip-distance-far"
 }
