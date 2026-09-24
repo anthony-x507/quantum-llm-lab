@@ -7,7 +7,7 @@
 ## R10 TIP FREEZE / FOLD (overall 1.0) — tip HEAD after hardneg-r10 fold
 
 **Freeze id:** `codigo_vivo_tip_r10_100pct_20260924_134615`  
-**Frozen SHA:** `PENDING_FOLD` · branch `frontier/codigo-vivo-tip` · rebase `b281e88`/`677c7ce` onto `6624df1` → `d4b2d4f`+`06fcc67` FF then fold  
+**Frozen SHA:** `1304d1a3246c0a7f5d6669d84900e14c596dffff` (`1304d1a`) · branch `frontier/codigo-vivo-tip` · rebase `b281e88`/`677c7ce` onto `6624df1` → `d4b2d4f`+`06fcc67` FF then fold  
 **When:** 2026-09-24 13:46:15 ET · Mac-111 (`074c6626-…`)  
 **Claim:** NO quantum advantage. Cites tip HEAD after R10 fold; **prior platform / mlx_r3 / post_polish / R5 / LP / R6 / post_od2 / R7 / scaffold_motion / R8 / distance_danger / collision_pred / motion_r2 / collision_n / R9 / motion_r3 freezes NOT abandoned**.
 

@@ -12,5 +12,7 @@
   "pillars": "26/26",
   "smoke": "12/12",
   "ent_never_on_python": true,
-  "floor_held": true
+  "floor_held": true,
+  "tip_sha": "1304d1a3246c0a7f5d6669d84900e14c596dffff",
+  "tip_sha_short": "1304d1a"
 }

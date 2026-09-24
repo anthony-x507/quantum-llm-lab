@@ -4,8 +4,8 @@
   "domain": "codigo_vivo_tip_r10",
   "pct": 100,
   "band": "100pct",
-  "git_sha": "PENDING_FOLD",
-  "git_sha_short": "PENDING",
+  "git_sha": "1304d1a3246c0a7f5d6669d84900e14c596dffff",
+  "git_sha_short": "1304d1a",
   "artifact": "data/frontier_moe_verifier_hardneg_r10.json",
   "eval_path": "data/frontier_moe_verifier_mixed_unified.json",
   "metrics": {
@@ -37,5 +37,5 @@
   "source_branch": "frontier/tip-hardneg-r10",
   "note": "Fold tip-hardneg-r10 into codigo-vivo-tip post motion-r3; re-smoke held floor 1.0; R10 52/52\u00b744/44; motion 97.5%",
   "freeze_id": "codigo_vivo_tip_r10_100pct_20260924_134615",
-  "fold_commit": "PENDING_FOLD"
+  "fold_commit": "1304d1a3246c0a7f5d6669d84900e14c596dffff"
 }
