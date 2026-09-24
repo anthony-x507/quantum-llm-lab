@@ -1,5 +1,7 @@
 # Plan de fine-tune con LoRA (Agent Lab / M4)
 
+GPS global: [`PLAN-MAESTRO.md`](PLAN-MAESTRO.md).
+
 Documento listo para ejecutar cuando existan: (1) dataset sintético mixto en `data/scenes/` (~200+ escenas) y (2) pesos locales de `mlx-community/Qwen3-VL-8B-Thinking-4bit`.
 
 ## Qué es LoRA
