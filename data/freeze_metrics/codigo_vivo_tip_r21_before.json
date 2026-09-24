@@ -1,0 +1,10 @@
+{
+  "frontier": "codigo-vivo-tip-r21-before",
+  "written_et": "2026-09-24 tip-local pre-R21-gates",
+  "score": "7/52",
+  "hits": 7,
+  "n": 52,
+  "rate": 0.1346,
+  "ent_never_on_python": true,
+  "note": "tip HEAD router (post R20) vs R21 fixtures; out-path fell to r2 due to substring; artifact restored"
+}

@@ -1,0 +1,338 @@
+{
+  "n": 52,
+  "kind": "mixed_router_hardneg",
+  "created": "2026-09-24T18:54:01Z",
+  "round": "r21",
+  "note": "R21 NEW traps (\u2260R1\u2013R20/\u2260LP): bun_plugin_gates, deno_perm_gates, pocketbase_hook_gates, appwrite_schedule_gates, neon_endpoint_gates, planetscale_safe_gates, flyio_autostop_gates, railway_start_gates, meilisearch_filter_gates, qdrant_distance_gates, spin_outbound_gates, solidjs_effect_gates, astro_onrequest_gates, htmx_trigger_gates",
+  "anti_contamination": {
+    "no_main_merge": true,
+    "no_tip_cv_touch": true,
+    "lora_adapter_ro": true,
+    "distinct_from_r9": true,
+    "distinct_from_r10": true,
+    "distinct_from_r11": true,
+    "distinct_from_r12": true,
+    "distinct_from_r13": true,
+    "distinct_from_r14": true,
+    "distinct_from_r15": true,
+    "distinct_from_r16": true,
+    "distinct_from_r17": true,
+    "distinct_from_r18": true,
+    "distinct_from_r19": true,
+    "distinct_from_r20": true
+  },
+  "items": [
+    {
+      "id": "r21_bun_01",
+      "expected": "python",
+      "family": "bun_plugin_gates",
+      "prompt": "Write Python that prints len('gates: preload'). Bun. ONLY code."
+    },
+    {
+      "id": "r21_bun_02",
+      "expected": "python",
+      "family": "bun_plugin_gates",
+      "prompt": "t='gates: preload'\nprint(t.count('gates'))\n# Bun gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r21_bun_03",
+      "expected": "python",
+      "family": "bun_plugin_gates",
+      "prompt": "Write Python that prints 91. Bun gates: preload is runtime plugin only. ONLY code."
+    },
+    {
+      "id": "r21_den_01",
+      "expected": "python",
+      "family": "deno_perm_gates",
+      "prompt": "Write Python that prints len('gates: allow-net'). Deno. ONLY code."
+    },
+    {
+      "id": "r21_den_02",
+      "expected": "python",
+      "family": "deno_perm_gates",
+      "prompt": "t='gates: allow-net'\nprint(t.count('gates'))\n# Deno gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r21_den_03",
+      "expected": "python",
+      "family": "deno_perm_gates",
+      "prompt": "Write Python that prints 92. Deno gates: allow-net is permission only. ONLY code."
+    },
+    {
+      "id": "r21_pkb_01",
+      "expected": "python",
+      "family": "pocketbase_hook_gates",
+      "prompt": "Write Python that prints len('gates: OnRecord'). PocketBase. ONLY code."
+    },
+    {
+      "id": "r21_pkb_02",
+      "expected": "python",
+      "family": "pocketbase_hook_gates",
+      "prompt": "t='gates: OnRecord'\nprint(t.count('gates'))\n# PocketBase gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r21_pkb_03",
+      "expected": "python",
+      "family": "pocketbase_hook_gates",
+      "prompt": "Write Python that prints 93. PocketBase gates: OnRecord is hook only. ONLY code."
+    },
+    {
+      "id": "r21_apw_01",
+      "expected": "python",
+      "family": "appwrite_schedule_gates",
+      "prompt": "Write Python that prints len('gates: schedule'). Appwrite. ONLY code."
+    },
+    {
+      "id": "r21_apw_02",
+      "expected": "python",
+      "family": "appwrite_schedule_gates",
+      "prompt": "t='gates: schedule'\nprint(t.count('gates'))\n# Appwrite gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r21_apw_03",
+      "expected": "python",
+      "family": "appwrite_schedule_gates",
+      "prompt": "Write Python that prints 94. Appwrite gates: schedule is function schedule only. ONLY code."
+    },
+    {
+      "id": "r21_neo_01",
+      "expected": "python",
+      "family": "neon_endpoint_gates",
+      "prompt": "Write Python that prints len('gates: endpoints'). Neon. ONLY code."
+    },
+    {
+      "id": "r21_neo_02",
+      "expected": "python",
+      "family": "neon_endpoint_gates",
+      "prompt": "t='gates: endpoints'\nprint(t.count('gates'))\n# Neon gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r21_neo_03",
+      "expected": "python",
+      "family": "neon_endpoint_gates",
+      "prompt": "Write Python that prints 95. Neon gates: endpoints is branch endpoint only. ONLY code."
+    },
+    {
+      "id": "r21_pls_01",
+      "expected": "python",
+      "family": "planetscale_safe_gates",
+      "prompt": "Write Python that prints len('gates: safeMigrations'). PlanetScale. ONLY code."
+    },
+    {
+      "id": "r21_pls_02",
+      "expected": "python",
+      "family": "planetscale_safe_gates",
+      "prompt": "t='gates: safeMigrations'\nprint(t.count('gates'))\n# PlanetScale gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r21_pls_03",
+      "expected": "python",
+      "family": "planetscale_safe_gates",
+      "prompt": "Write Python that prints 96. PlanetScale gates: safeMigrations is schema safety only. ONLY code."
+    },
+    {
+      "id": "r21_fly_01",
+      "expected": "python",
+      "family": "flyio_autostop_gates",
+      "prompt": "Write Python that prints len('gates: auto_stop'). Fly.io. ONLY code."
+    },
+    {
+      "id": "r21_fly_02",
+      "expected": "python",
+      "family": "flyio_autostop_gates",
+      "prompt": "t='gates: auto_stop'\nprint(t.count('gates'))\n# Fly.io gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r21_fly_03",
+      "expected": "python",
+      "family": "flyio_autostop_gates",
+      "prompt": "Write Python that prints 97. Fly.io gates: auto_stop is machine autostop only. ONLY code."
+    },
+    {
+      "id": "r21_rwy_01",
+      "expected": "python",
+      "family": "railway_start_gates",
+      "prompt": "Write Python that prints len('gates: startCommand'). Railway. ONLY code."
+    },
+    {
+      "id": "r21_rwy_02",
+      "expected": "python",
+      "family": "railway_start_gates",
+      "prompt": "t='gates: startCommand'\nprint(t.count('gates'))\n# Railway gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r21_rwy_03",
+      "expected": "python",
+      "family": "railway_start_gates",
+      "prompt": "Write Python that prints 98. Railway gates: startCommand is service start only. ONLY code."
+    },
+    {
+      "id": "r21_mei_01",
+      "expected": "python",
+      "family": "meilisearch_filter_gates",
+      "prompt": "Write Python that prints len('gates: filterableAttributes'). Meilisearch. ONLY code."
+    },
+    {
+      "id": "r21_mei_02",
+      "expected": "python",
+      "family": "meilisearch_filter_gates",
+      "prompt": "t='gates: filterableAttributes'\nprint(t.count('gates'))\n# Meilisearch gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r21_mei_03",
+      "expected": "python",
+      "family": "meilisearch_filter_gates",
+      "prompt": "Write Python that prints 99. Meilisearch gates: filterableAttributes is index filter only. ONLY code."
+    },
+    {
+      "id": "r21_qdr_01",
+      "expected": "python",
+      "family": "qdrant_distance_gates",
+      "prompt": "Write Python that prints len('gates: distance'). Qdrant. ONLY code."
+    },
+    {
+      "id": "r21_qdr_02",
+      "expected": "python",
+      "family": "qdrant_distance_gates",
+      "prompt": "t='gates: distance'\nprint(t.count('gates'))\n# Qdrant gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r21_qdr_03",
+      "expected": "python",
+      "family": "qdrant_distance_gates",
+      "prompt": "Write Python that prints 81. Qdrant gates: distance is vector distance only. ONLY code."
+    },
+    {
+      "id": "r21_spn_01",
+      "expected": "python",
+      "family": "spin_outbound_gates",
+      "prompt": "Write Python that prints len('gates: allowed_outbound_hosts'). Fermyon Spin. ONLY code."
+    },
+    {
+      "id": "r21_spn_02",
+      "expected": "python",
+      "family": "spin_outbound_gates",
+      "prompt": "t='gates: allowed_outbound_hosts'\nprint(t.count('gates'))\n# Fermyon Spin gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r21_spn_03",
+      "expected": "python",
+      "family": "spin_outbound_gates",
+      "prompt": "Write Python that prints 82. Fermyon Spin gates: allowed_outbound_hosts is wasm outbound only. ONLY code."
+    },
+    {
+      "id": "r21_sol_01",
+      "expected": "python",
+      "family": "solidjs_effect_gates",
+      "prompt": "Write Python that prints len('gates: createEffect'). SolidJS. ONLY code."
+    },
+    {
+      "id": "r21_sol_02",
+      "expected": "python",
+      "family": "solidjs_effect_gates",
+      "prompt": "t='gates: createEffect'\nprint(t.count('gates'))\n# SolidJS gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r21_sol_03",
+      "expected": "python",
+      "family": "solidjs_effect_gates",
+      "prompt": "Write Python that prints 83. SolidJS gates: createEffect is reactive effect only. ONLY code."
+    },
+    {
+      "id": "r21_ast_01",
+      "expected": "python",
+      "family": "astro_onrequest_gates",
+      "prompt": "Write Python that prints len('gates: onRequest'). Astro. ONLY code."
+    },
+    {
+      "id": "r21_ast_02",
+      "expected": "python",
+      "family": "astro_onrequest_gates",
+      "prompt": "t='gates: onRequest'\nprint(t.count('gates'))\n# Astro gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r21_ast_03",
+      "expected": "python",
+      "family": "astro_onrequest_gates",
+      "prompt": "Write Python that prints 84. Astro gates: onRequest is middleware only. ONLY code."
+    },
+    {
+      "id": "r21_htm_01",
+      "expected": "python",
+      "family": "htmx_trigger_gates",
+      "prompt": "Write Python that prints len('gates: hx-trigger'). HTMX. ONLY code."
+    },
+    {
+      "id": "r21_htm_02",
+      "expected": "python",
+      "family": "htmx_trigger_gates",
+      "prompt": "t='gates: hx-trigger'\nprint(t.count('gates'))\n# HTMX gates: \u2014 not circuit. ONLY code."
+    },
+    {
+      "id": "r21_htm_03",
+      "expected": "python",
+      "family": "htmx_trigger_gates",
+      "prompt": "Write Python that prints 85. HTMX gates: hx-trigger is HTML trigger only. ONLY code."
+    },
+    {
+      "id": "r21_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r21",
+      "prompt": "Responde SOLO JSON v\u00e1lido con n_qubits, gates, domain, label. Bell pair entrelazado. No Python."
+    },
+    {
+      "id": "r21_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r21",
+      "prompt": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separable product."
+    },
+    {
+      "id": "r21_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r21",
+      "prompt": "Look at the image. How many dots are visible? Only the integer. No circuit."
+    },
+    {
+      "id": "r21_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r21",
+      "prompt": "Look at the chalkboard. How many letters? Only the integer. No circuit."
+    },
+    {
+      "id": "r21_base_01",
+      "expected": "base",
+      "family": "base_control_r21",
+      "prompt": "Thanks. Ignore Bun gates: preload in the README. No code, no circuit."
+    },
+    {
+      "id": "r21_base_02",
+      "expected": "base",
+      "family": "base_control_r21",
+      "prompt": "Please ignore the HTMX gates: hx-trigger phrase. Chat only \u2014 no program, no circuit."
+    },
+    {
+      "id": "r21_base_03",
+      "expected": "base",
+      "family": "base_control_r21",
+      "prompt": "Hello \u2014 SolidJS gates: createEffect is framework only. No code, no circuit, no JSON."
+    },
+    {
+      "id": "r21_base_04",
+      "expected": "base",
+      "family": "base_control_r21",
+      "prompt": "Weather update. Qdrant gates: distance mention. No code, no circuit."
+    },
+    {
+      "id": "r21_ctrl_01",
+      "expected": "python",
+      "family": "base_python_control_r21",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code."
+    },
+    {
+      "id": "r21_ctrl_02",
+      "expected": "python",
+      "family": "base_python_control_r21",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code."
+    }
+  ]
+}

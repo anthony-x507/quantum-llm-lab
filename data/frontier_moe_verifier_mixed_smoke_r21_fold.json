@@ -1,0 +1,8 @@
+{
+  "frontier": "C3b-moe-verifier-mixed-live-r21-fold-smoke",
+  "primary": "data/frontier_moe_verifier_mixed_cpu_r21_fold.json",
+  "unified": "data/frontier_moe_verifier_mixed_unified_r21_fold.json",
+  "overall_d": 1.0,
+  "pillars": "37/37",
+  "hardneg_smoke": "18/18"
+}
