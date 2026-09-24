@@ -1,0 +1,368 @@
+{
+  "n": 44,
+  "kind": "hardneg_python_items",
+  "created": "2026-09-24T15:11:37",
+  "round": "r25",
+  "note": "R25 hardneg python verifier items; GT stdout harness-only. \u2260 R9\u2013R24.",
+  "anti_contamination": {
+    "no_r9_r24_family_reuse": true,
+    "blocked_r23": [
+      "tauri_command",
+      "electron_ipc",
+      "expo_plugin",
+      "capacitor_plugin",
+      "vite_plugin",
+      "esbuild_plugin",
+      "rollup_plugin",
+      "turborepo_pipeline",
+      "nx_executor",
+      "biome_rule",
+      "oxc_lint",
+      "drizzle_column",
+      "surreal_scope",
+      "flutter_channel"
+    ],
+    "blocked_r24": [
+      "wails_bind",
+      "neutralino_ext",
+      "react_native_turbo",
+      "ionic_lifecycle",
+      "webpack_pitch",
+      "parcel_transformer",
+      "swc_plugin",
+      "moonrepo_task",
+      "lage_pipeline",
+      "eslint_meta",
+      "ruff_select",
+      "sqlalchemy_column",
+      "edgedb_constraint",
+      "maui_handler"
+    ],
+    "novel_r25": [
+      "playwright_fixture_gates",
+      "cypress_command_gates",
+      "vitest_mock_gates",
+      "pytest_mark_gates",
+      "k6_executor_gates",
+      "locust_taskset_gates",
+      "trpc_procedure_gates",
+      "strapi_lifecycle_gates",
+      "payload_hook_gates",
+      "storybook_decorator_gates",
+      "godot_signal_gates",
+      "bevy_system_gates",
+      "sentry_hook_gates",
+      "opensearch_pipeline_gates"
+    ]
+  },
+  "items": [
+    {
+      "id": "r25v_ply_01",
+      "kind": "playwright_fixture_gates",
+      "prompt": "Write Python that prints len('gates: test.extend'). Playwright. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_ply_02",
+      "kind": "playwright_fixture_gates",
+      "prompt": "t='gates: test.extend'\nprint(t.count('gates'))\n# Playwright gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_ply_03",
+      "kind": "playwright_fixture_gates",
+      "prompt": "Write Python that prints 201. Playwright gates: test.extend is fixture only. ONLY code.",
+      "expected_stdout": "201\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_cyp_01",
+      "kind": "cypress_command_gates",
+      "prompt": "Write Python that prints len('gates: Commands.add'). Cypress. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_cyp_02",
+      "kind": "cypress_command_gates",
+      "prompt": "t='gates: Commands.add'\nprint(t.count('gates'))\n# Cypress gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_cyp_03",
+      "kind": "cypress_command_gates",
+      "prompt": "Write Python that prints 202. Cypress gates: Commands.add is command only. ONLY code.",
+      "expected_stdout": "202\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_vit_01",
+      "kind": "vitest_mock_gates",
+      "prompt": "Write Python that prints len('gates: vi.mock'). Vitest. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_vit_02",
+      "kind": "vitest_mock_gates",
+      "prompt": "t='gates: vi.mock'\nprint(t.count('gates'))\n# Vitest gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_vit_03",
+      "kind": "vitest_mock_gates",
+      "prompt": "Write Python that prints 203. Vitest gates: vi.mock is mock only. ONLY code.",
+      "expected_stdout": "203\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_pyt_01",
+      "kind": "pytest_mark_gates",
+      "prompt": "Write Python that prints len('gates: pytest.mark'). Pytest. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_pyt_02",
+      "kind": "pytest_mark_gates",
+      "prompt": "t='gates: pytest.mark'\nprint(t.count('gates'))\n# Pytest gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_pyt_03",
+      "kind": "pytest_mark_gates",
+      "prompt": "Write Python that prints 204. Pytest gates: pytest.mark is mark only. ONLY code.",
+      "expected_stdout": "204\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_k6e_01",
+      "kind": "k6_executor_gates",
+      "prompt": "Write Python that prints len('gates: ramping-vus'). k6. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_k6e_02",
+      "kind": "k6_executor_gates",
+      "prompt": "t='gates: ramping-vus'\nprint(t.count('gates'))\n# k6 gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_k6e_03",
+      "kind": "k6_executor_gates",
+      "prompt": "Write Python that prints 205. k6 gates: ramping-vus is executor only. ONLY code.",
+      "expected_stdout": "205\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_loc_01",
+      "kind": "locust_taskset_gates",
+      "prompt": "Write Python that prints len('gates: TaskSet'). Locust. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_loc_02",
+      "kind": "locust_taskset_gates",
+      "prompt": "t='gates: TaskSet'\nprint(t.count('gates'))\n# Locust gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_loc_03",
+      "kind": "locust_taskset_gates",
+      "prompt": "Write Python that prints 206. Locust gates: TaskSet is taskset only. ONLY code.",
+      "expected_stdout": "206\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_trp_01",
+      "kind": "trpc_procedure_gates",
+      "prompt": "Write Python that prints len('gates: protectedProcedure'). tRPC. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_trp_02",
+      "kind": "trpc_procedure_gates",
+      "prompt": "t='gates: protectedProcedure'\nprint(t.count('gates'))\n# tRPC gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_trp_03",
+      "kind": "trpc_procedure_gates",
+      "prompt": "Write Python that prints 207. tRPC gates: protectedProcedure is procedure only. ONLY code.",
+      "expected_stdout": "207\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_str_01",
+      "kind": "strapi_lifecycle_gates",
+      "prompt": "Write Python that prints len('gates: beforeCreate'). Strapi. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_str_02",
+      "kind": "strapi_lifecycle_gates",
+      "prompt": "t='gates: beforeCreate'\nprint(t.count('gates'))\n# Strapi gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_str_03",
+      "kind": "strapi_lifecycle_gates",
+      "prompt": "Write Python that prints 208. Strapi gates: beforeCreate is lifecycle only. ONLY code.",
+      "expected_stdout": "208\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_pay_01",
+      "kind": "payload_hook_gates",
+      "prompt": "Write Python that prints len('gates: beforeChange'). Payload. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_pay_02",
+      "kind": "payload_hook_gates",
+      "prompt": "t='gates: beforeChange'\nprint(t.count('gates'))\n# Payload gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_pay_03",
+      "kind": "payload_hook_gates",
+      "prompt": "Write Python that prints 209. Payload gates: beforeChange is hook only. ONLY code.",
+      "expected_stdout": "209\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_sty_01",
+      "kind": "storybook_decorator_gates",
+      "prompt": "Write Python that prints len('gates: decorators'). Storybook. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_sty_02",
+      "kind": "storybook_decorator_gates",
+      "prompt": "t='gates: decorators'\nprint(t.count('gates'))\n# Storybook gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_sty_03",
+      "kind": "storybook_decorator_gates",
+      "prompt": "Write Python that prints 210. Storybook gates: decorators is decorator only. ONLY code.",
+      "expected_stdout": "210\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_god_01",
+      "kind": "godot_signal_gates",
+      "prompt": "Write Python that prints len('gates: emit_signal'). Godot. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_god_02",
+      "kind": "godot_signal_gates",
+      "prompt": "t='gates: emit_signal'\nprint(t.count('gates'))\n# Godot gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_god_03",
+      "kind": "godot_signal_gates",
+      "prompt": "Write Python that prints 211. Godot gates: emit_signal is signal only. ONLY code.",
+      "expected_stdout": "211\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_bev_01",
+      "kind": "bevy_system_gates",
+      "prompt": "Write Python that prints len('gates: ResMut'). Bevy. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_bev_02",
+      "kind": "bevy_system_gates",
+      "prompt": "t='gates: ResMut'\nprint(t.count('gates'))\n# Bevy gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_bev_03",
+      "kind": "bevy_system_gates",
+      "prompt": "Write Python that prints 212. Bevy gates: ResMut is system only. ONLY code.",
+      "expected_stdout": "212\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_sen_01",
+      "kind": "sentry_hook_gates",
+      "prompt": "Write Python that prints len('gates: before_send'). Sentry. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_sen_02",
+      "kind": "sentry_hook_gates",
+      "prompt": "t='gates: before_send'\nprint(t.count('gates'))\n# Sentry gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_sen_03",
+      "kind": "sentry_hook_gates",
+      "prompt": "Write Python that prints 213. Sentry gates: before_send is hook only. ONLY code.",
+      "expected_stdout": "213\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_ose_01",
+      "kind": "opensearch_pipeline_gates",
+      "prompt": "Write Python that prints len('gates: processors'). OpenSearch. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_ose_02",
+      "kind": "opensearch_pipeline_gates",
+      "prompt": "t='gates: processors'\nprint(t.count('gates'))\n# OpenSearch gates: \u2014 not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_ose_03",
+      "kind": "opensearch_pipeline_gates",
+      "prompt": "Write Python that prints 214. OpenSearch gates: processors is pipeline only. ONLY code.",
+      "expected_stdout": "214\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_ctrl_01",
+      "kind": "base_python_control_r25",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r25v_ctrl_02",
+      "kind": "base_python_control_r25",
+      "prompt": "print(sum(range(4))) # plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}

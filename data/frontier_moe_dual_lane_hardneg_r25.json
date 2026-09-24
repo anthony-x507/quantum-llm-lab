@@ -1,0 +1,628 @@
+{
+  "method": "heuristic",
+  "n": 52,
+  "hits": 52,
+  "misses": 0,
+  "score": "52/52",
+  "rate": 1.0,
+  "by_family": {
+    "playwright_fixture_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "cypress_command_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "vitest_mock_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "pytest_mark_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "k6_executor_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "locust_taskset_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "trpc_procedure_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "strapi_lifecycle_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "payload_hook_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "storybook_decorator_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "godot_signal_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "bevy_system_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "sentry_hook_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "opensearch_pipeline_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "ent_control_r25": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r25": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r25": {
+      "n": 4,
+      "hits": 4,
+      "rate": 1.0
+    },
+    "base_python_control_r25": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "r25_ply_01",
+      "family": "playwright_fixture_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: test.extend'). Playwright. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_ply_02",
+      "family": "playwright_fixture_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: test.extend'\nprint(t.count('gates'))\n# Playwright gates: — not circuit",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_ply_03",
+      "family": "playwright_fixture_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 201. Playwright gates: test.extend is fixture only. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_cyp_01",
+      "family": "cypress_command_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: Commands.add'). Cypress. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_cyp_02",
+      "family": "cypress_command_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: Commands.add'\nprint(t.count('gates'))\n# Cypress gates: — not circuit. ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_cyp_03",
+      "family": "cypress_command_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 202. Cypress gates: Commands.add is command only. ONLY ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_vit_01",
+      "family": "vitest_mock_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: vi.mock'). Vitest. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_vit_02",
+      "family": "vitest_mock_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: vi.mock'\nprint(t.count('gates'))\n# Vitest gates: — not circuit. ONLY c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_vit_03",
+      "family": "vitest_mock_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 203. Vitest gates: vi.mock is mock only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_pyt_01",
+      "family": "pytest_mark_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: pytest.mark'). Pytest. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_pyt_02",
+      "family": "pytest_mark_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: pytest.mark'\nprint(t.count('gates'))\n# Pytest gates: — not circuit. ON",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_pyt_03",
+      "family": "pytest_mark_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 204. Pytest gates: pytest.mark is mark only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_k6e_01",
+      "family": "k6_executor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: ramping-vus'). k6. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_k6e_02",
+      "family": "k6_executor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: ramping-vus'\nprint(t.count('gates'))\n# k6 gates: — not circuit. ONLY c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_k6e_03",
+      "family": "k6_executor_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 205. k6 gates: ramping-vus is executor only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_loc_01",
+      "family": "locust_taskset_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: TaskSet'). Locust. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_loc_02",
+      "family": "locust_taskset_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: TaskSet'\nprint(t.count('gates'))\n# Locust gates: — not circuit. ONLY c",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_loc_03",
+      "family": "locust_taskset_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 206. Locust gates: TaskSet is taskset only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_trp_01",
+      "family": "trpc_procedure_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: protectedProcedure'). tRPC. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_trp_02",
+      "family": "trpc_procedure_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: protectedProcedure'\nprint(t.count('gates'))\n# tRPC gates: — not circui",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_trp_03",
+      "family": "trpc_procedure_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 207. tRPC gates: protectedProcedure is procedure only. ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_str_01",
+      "family": "strapi_lifecycle_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: beforeCreate'). Strapi. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_str_02",
+      "family": "strapi_lifecycle_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: beforeCreate'\nprint(t.count('gates'))\n# Strapi gates: — not circuit. O",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_str_03",
+      "family": "strapi_lifecycle_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 208. Strapi gates: beforeCreate is lifecycle only. ONLY",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_pay_01",
+      "family": "payload_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: beforeChange'). Payload. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_pay_02",
+      "family": "payload_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: beforeChange'\nprint(t.count('gates'))\n# Payload gates: — not circuit. ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_pay_03",
+      "family": "payload_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 209. Payload gates: beforeChange is hook only. ONLY cod",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_sty_01",
+      "family": "storybook_decorator_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: decorators'). Storybook. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_sty_02",
+      "family": "storybook_decorator_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: decorators'\nprint(t.count('gates'))\n# Storybook gates: — not circuit. ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_sty_03",
+      "family": "storybook_decorator_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 210. Storybook gates: decorators is decorator only. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_god_01",
+      "family": "godot_signal_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: emit_signal'). Godot. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_god_02",
+      "family": "godot_signal_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: emit_signal'\nprint(t.count('gates'))\n# Godot gates: — not circuit. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_god_03",
+      "family": "godot_signal_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 211. Godot gates: emit_signal is signal only. ONLY code",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_bev_01",
+      "family": "bevy_system_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: ResMut'). Bevy. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_bev_02",
+      "family": "bevy_system_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: ResMut'\nprint(t.count('gates'))\n# Bevy gates: — not circuit. ONLY code",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_bev_03",
+      "family": "bevy_system_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 212. Bevy gates: ResMut is system only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_sen_01",
+      "family": "sentry_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: before_send'). Sentry. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_sen_02",
+      "family": "sentry_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: before_send'\nprint(t.count('gates'))\n# Sentry gates: — not circuit. ON",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_sen_03",
+      "family": "sentry_hook_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 213. Sentry gates: before_send is hook only. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_ose_01",
+      "family": "opensearch_pipeline_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: processors'). OpenSearch. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_ose_02",
+      "family": "opensearch_pipeline_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: processors'\nprint(t.count('gates'))\n# OpenSearch gates: — not circuit.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_ose_03",
+      "family": "opensearch_pipeline_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 214. OpenSearch gates: processors is pipeline only. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_ent_01",
+      "family": "ent_control_r25",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelaz",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r25_ent_02",
+      "family": "ent_control_r25",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separabl",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r25_vis_01",
+      "family": "vision_control_r25",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. How many dots are visible? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r25_vis_02",
+      "family": "vision_control_r25",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the chalkboard. How many letters? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r25_base_01",
+      "family": "base_control_r25",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Thanks. Ignore Playwright gates: test.extend in the README. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r25_base_02",
+      "family": "base_control_r25",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Please ignore the Bevy gates: ResMut phrase. Chat only — no program, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r25_base_03",
+      "family": "base_control_r25",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Hello — Sentry gates: before_send is hook only. No code, no circuit, no JSON.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r25_base_04",
+      "family": "base_control_r25",
+      "expected": "base",
+      "got": "base",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Weather update. Strapi gates: beforeCreate mention. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r25_ctrl_01",
+      "family": "base_python_control_r25",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r25_ctrl_02",
+      "family": "base_python_control_r25",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(sum(range(4))) # plain. ONLY code.",
+      "ent_adapter_blocked": true
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_r25_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}

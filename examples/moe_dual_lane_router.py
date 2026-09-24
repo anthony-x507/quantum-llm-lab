@@ -185,6 +185,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R12: Traefik/Envoy/NATS/ClickHouse/dbt/Crossplane/Flux/RabbitMQ/ES/Swift/Elixir/Julia/Kong/Spinnaker gates: scalars.
     # R13: Nginx/HAProxy/Caddy/Redis/Postgres/Skaffold/Buildkite/Packer/Salt/Bazel/Dagger/Dagster/Hasura/NestJS gates: scalars.
     # R14: Apache httpd/Varnish/APISIX/Tyk/KrakenD/MongoDB/Cassandra/Jenkins/Vagrant/Chef/Pants/Prefect/FastAPI/Spring gates: scalars.
+    # R25: Playwright/Cypress/Vitest/Pytest/k6/Locust/tRPC/Strapi/Payload/Storybook/Godot/Bevy/Sentry/OpenSearch gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -542,7 +543,65 @@ def route_heuristic(prompt: str) -> Lane:
             r"|spring\s+.*gates:"
             r"|security\s+gates:\s*has"
             # R14: httpd / cache / gateway / API / DB / CI / image / config / build / orchestration / framework / security prose
-            r"|gates:\s+is\s+(?:httpd|cache|gateway|API|DB|CI|image|config|build|orchestration|framework|security)\b",
+            r"|gates:\s+is\s+(?:httpd|cache|gateway|API|DB|CI|image|config|build|orchestration|framework|security)\b"
+            # R25: Playwright fixture gates: test.extend
+            r"|gates\s*:\s*test\.extend\b"
+            r"|playwright\s+.*gates:"
+            r"|fixture\s+gates:\s*test"
+            # R25: Cypress command gates: Commands.add
+            r"|gates\s*:\s*Commands\.add\b"
+            r"|cypress\s+.*gates:"
+            r"|command\s+gates:\s*Commands"
+            # R25: Vitest mock gates: vi.mock
+            r"|gates\s*:\s*vi\.mock\b"
+            r"|vitest\s+.*gates:"
+            r"|mock\s+gates:\s*vi"
+            # R25: Pytest mark gates: pytest.mark
+            r"|gates\s*:\s*pytest\.mark\b"
+            r"|pytest\s+.*gates:"
+            r"|mark\s+gates:\s*pytest"
+            # R25: k6 executor gates: ramping-vus
+            r"|gates\s*:\s*ramping-vus\b"
+            r"|\bk6\b\s+.*gates:"
+            r"|executor\s+gates:\s*ramping"
+            # R25: Locust taskset gates: TaskSet
+            r"|gates\s*:\s*TaskSet\b"
+            r"|locust\s+.*gates:"
+            r"|taskset\s+gates:\s*TaskSet"
+            # R25: tRPC procedure gates: protectedProcedure
+            r"|gates\s*:\s*protectedProcedure\b"
+            r"|trpc\s+.*gates:"
+            r"|procedure\s+gates:\s*protected"
+            # R25: Strapi lifecycle gates: beforeCreate
+            r"|gates\s*:\s*beforeCreate\b"
+            r"|strapi\s+.*gates:"
+            r"|lifecycle\s+gates:\s*beforeCreate"
+            # R25: Payload hook gates: beforeChange
+            r"|gates\s*:\s*beforeChange\b"
+            r"|payload\s+.*gates:"
+            r"|hook\s+gates:\s*beforeChange"
+            # R25: Storybook decorator gates: decorators
+            r"|gates\s*:\s*decorators\b"
+            r"|storybook\s+.*gates:"
+            r"|decorator\s+gates:\s*decorators"
+            # R25: Godot signal gates: emit_signal
+            r"|gates\s*:\s*emit_signal\b"
+            r"|godot\s+.*gates:"
+            r"|signal\s+gates:\s*emit"
+            # R25: Bevy system gates: ResMut
+            r"|gates\s*:\s*ResMut\b"
+            r"|\bbevy\b\s+.*gates:"
+            r"|system\s+gates:\s*ResMut"
+            # R25: Sentry hook gates: before_send
+            r"|gates\s*:\s*before_send\b"
+            r"|sentry\s+.*gates:"
+            r"|hook\s+gates:\s*before_send"
+            # R25: OpenSearch pipeline gates: processors
+            r"|gates\s*:\s*processors\b"
+            r"|opensearch\s+.*gates:"
+            r"|pipeline\s+gates:\s*processors"
+            # R25: fixture / command / mock / mark / executor / taskset / procedure / lifecycle / hook / decorator / signal / system / pipeline prose
+            r"|gates:\s+is\s+(?:fixture|command|mock|mark|executor|taskset|procedure|lifecycle|hook|decorator|signal|system|pipeline)\b",
             text,
             re.I,
         )
@@ -1162,6 +1221,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r25' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r25.json"
         elif 'r14' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r14.json"
         elif 'r13' in hp:

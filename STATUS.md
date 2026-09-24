@@ -1,3 +1,6 @@
+## 2026-09-24 — tip-hardneg-r25 polish (side; NOT folded)
+Branch `frontier/tip-hardneg-r25` from tip `bc6902f` (post R14 fold cite; ≥bc6902f). R25 router **6→52/52** · verifier **44/44**; mixed (d) **1.0**; R7–R14+LP held; `ent_never_on_python`. Novel: Playwright / Cypress / Vitest / Pytest / k6 / Locust / tRPC / Strapi / Payload / Storybook / Godot / Bevy / Sentry / OpenSearch. Rise **+88.46 pp** → freeze polish_r25 100%. See `docs/FRONTIER-CODIGO-VIVO-TIP-R25.md`.
+
 ## 2026-09-24 — fold tip-hardneg-r14 → codigo-vivo-tip
 Cherry-pick `37ccc6f` onto `1d5fe3e` → `e1b12d5` / fold `6a4e716`. Conflicts: STATUS+mixed/LP/r7–r11 JSON ours; router/verifier merged R12+R13+R14 gates_ops. CPU unified **1.0** (re-smoke); R14 **52/52·44/44** (tip before **16/52**; side 8→52); LP **64/64·42/42**; pillars **37/37**; circ **5/5**; R13/R12/R5/R7 held; far MAE **2.600** / track ~**99.34%** / DZ/mid/TTI/inv/collision **100%** cited retained; `wired_to_vlm`; freezes retained incl. label_protect_expand_fold + pillars_reinforce + circ_expand + future_r3 + r13 + far + inverse_r3 + r12 + mid + tti + r11 + side polish_r14. Freeze `codigo_vivo_tip_r14_100pct_20260924_150809`. R15+ / choose-n / tti-cold **not** folded. Tip vis stays BASE. RO `data/lora_adapter/`. See SCOREBOARD + TIP-R14.
 
