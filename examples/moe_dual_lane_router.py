@@ -158,6 +158,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R4: OpenAPI/schema "reply JSON only" near a deprecated n_qubits *field* is NOT ent.
     # R5: gates=[nonempty] k8s/helm allow-lists, redis gates:key paths, protobuf gates=N; are NOT ent.
     # label-protect: empty gates=[] ops + negated "json válido" near fall/super taxonomy are NOT ent.
+    # R6: Bazel //gates:target; HTML data-gates="..."; Groovy/Jenkins gates = '...' quoted assigns.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -180,7 +181,17 @@ def route_heuristic(prompt: str) -> Lane:
             # R5: annotation/chat mention of gates=[cleanup] ops lists
             r"|annotation(?:\s+value)?\s+gates\s*="
             r"|k8s\s+annotation"
-            r"|helm\s+value\s+gates",
+            r"|helm\s+value\s+gates"
+            # R6: Bazel package label //gates:target (single colon segment)
+            r"|//gates\s*:\s*[A-Za-z_][\w\-]*"
+            r"|bazel\s+target\s+//gates"
+            # R6: HTML data-gates= / data-gates="..." ops allow-list attrs
+            r"|data-gates\s*="
+            r"|html\s+data-gates"
+            # R6: Groovy/Jenkins quoted assign gates = 'cleanup' / gates = "..."
+            r"|gates\s*=\s*['\"][^'\"]*['\"]"
+            r"|jenkins(?:file)?\s+.*gates\s*="
+            r"|groovy\s+assign\s+gates",
             text,
             re.I,
         )
@@ -736,6 +747,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r6' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r6.json"
         elif 'r5' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r5.json"
         elif 'r4' in hp:

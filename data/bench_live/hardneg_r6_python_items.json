@@ -1,0 +1,289 @@
+{
+  "n": 40,
+  "kind": "hardneg_r6_python_items",
+  "created": "2026-09-24 12:45:00 ET",
+  "round": 6,
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R6.md",
+  "items": [
+    {
+      "id": "r6v_gha_01",
+      "kind": "github_action_qubit",
+      "prompt": "Write Python that prints len('qubit-lint'). GitHub Actions job id only. ONLY code.",
+      "expected_stdout": "10\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_gha_02",
+      "kind": "github_action_qubit",
+      "prompt": "step = 'uses: org/cx-action@v1'\nprint(step.count('/'))\n# GHA step uses:; not a CX gate. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_gha_03",
+      "kind": "github_action_qubit",
+      "prompt": "Write Python that prints 8*3. Workflow env PENNYLANE_CI=0 is a feature flag. ONLY code.",
+      "expected_stdout": "24\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_ngx_01",
+      "kind": "nginx_location_cx",
+      "prompt": "Write Python that prints len('location /cx-api'). nginx location path. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_ngx_02",
+      "kind": "nginx_location_cx",
+      "prompt": "loc = 'location ~ ^/qubit/'\nprint(loc.count('/'))\n# nginx regex location; not a qubit circuit. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_ngx_03",
+      "kind": "nginx_location_cx",
+      "prompt": "Write Python that prints 14+5. Proxy pass /hadamard-health is an HTTP path. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_kfk_01",
+      "kind": "kafka_topic_bell",
+      "prompt": "Write Python that prints len('bell.events.v1'). Kafka topic name. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_kfk_02",
+      "kind": "kafka_topic_bell",
+      "prompt": "t = 'cx.metrics.raw'\nprint(t.count('.'))\n# Kafka topic; not CX gate. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_kfk_03",
+      "kind": "kafka_topic_bell",
+      "prompt": "Write Python that prints 7*4. Consumer group entangle-workers is a fleet name. ONLY code.",
+      "expected_stdout": "28\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_sys_01",
+      "kind": "systemd_unit_quantum",
+      "prompt": "Write Python that prints len('quantum-agent.service'). systemd unit name. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_sys_02",
+      "kind": "systemd_unit_quantum",
+      "prompt": "u = 'pennylane-sidecar.service'\nprint(u.count('-'))\n# systemd unit; not PennyLane circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_sys_03",
+      "kind": "systemd_unit_quantum",
+      "prompt": "Write Python that prints 9+9. Unit drop-in Environment=GATES=cleanup is an ops allow-list env, not a circuit JSON ask. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_aws_01",
+      "kind": "aws_arn_pennylane",
+      "prompt": "Write Python that prints len('arn:aws:lambda:us-east-1:1:function:pennylane-ci'). ARN string. ONLY code.",
+      "expected_stdout": "48\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_aws_02",
+      "kind": "aws_arn_pennylane",
+      "prompt": "arn = 'arn:aws:iam::123:role/qubit-runner'\nprint(arn.count(':'))\n# IAM role ARN; not a qubit circuit. ONLY code.",
+      "expected_stdout": "5\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_aws_03",
+      "kind": "aws_arn_pennylane",
+      "prompt": "Write Python that prints 11+6. S3 key prefix gates/cleanup/nightly is an ops path, not gates=[...] circuit JSON. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_bzl_01",
+      "kind": "bazel_target_cx",
+      "prompt": "Write Python that prints len('//cx:lint'). Bazel label. ONLY code.",
+      "expected_stdout": "9\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_bzl_02",
+      "kind": "bazel_target_cx",
+      "prompt": "label = '//gates:cleanup'\nprint(label.count(':'))\n# Bazel target //gates:cleanup is a package path, not a circuit JSON ask. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_bzl_03",
+      "kind": "bazel_target_cx",
+      "prompt": "Write Python that prints 5**2. Bazel query kind(qubit_*, ...) is a build graph filter. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_crg_01",
+      "kind": "cargo_feature_qubit",
+      "prompt": "Write Python that prints len('qubit-alloc'). Cargo feature name. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_crg_02",
+      "kind": "cargo_feature_qubit",
+      "prompt": "feat = 'features = [\"bell-smoke\"]'\nprint(feat.count('\"'))\n# Cargo.toml features; not Bell circuit. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_crg_03",
+      "kind": "cargo_feature_qubit",
+      "prompt": "Write Python that prints 13-4. Crate pennylane-sys is a FFI binding name. ONLY code.",
+      "expected_stdout": "9\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_htm_01",
+      "kind": "html_data_attr_entangle",
+      "prompt": "Write Python that prints len('data-entangle-id'). HTML data-* attr. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_htm_02",
+      "kind": "html_data_attr_entangle",
+      "prompt": "attr = 'data-gates=\"cleanup,nightly\"'\nprint(attr.count(','))\n# HTML data-gates attr is an ops allow-list, not a circuit JSON ask. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_htm_03",
+      "kind": "html_data_attr_entangle",
+      "prompt": "Write Python that prints 2**4. data-qubit-count=3 is a DOM dataset field. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_ldap_01",
+      "kind": "ldap_dn_qubit",
+      "prompt": "Write Python that prints len('cn=qubit-bot,ou=svc'). LDAP DN fragment. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_ldap_02",
+      "kind": "ldap_dn_qubit",
+      "prompt": "dn = 'uid=cx-reader,dc=ex'\nprint(dn.count('='))\n# LDAP DN; not CX gate. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_ldap_03",
+      "kind": "ldap_dn_qubit",
+      "prompt": "Write Python that prints 6*6. Group cn=hadamard-ops is an ACL name. ONLY code.",
+      "expected_stdout": "36\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_cm_01",
+      "kind": "cmake_option_n_qubits",
+      "prompt": "Write Python that prints len('option(N_QUBITS'). CMake option token. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_cm_02",
+      "kind": "cmake_option_n_qubits",
+      "prompt": "Write Python that prints 10+3. CMake note: reply JSON only for /build-meta — option n_qubits is a seat-count cache key, not a circuit emit. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_cm_03",
+      "kind": "cmake_option_n_qubits",
+      "prompt": "opt = 'ENABLE_BELL_TESTS'\nprint(len(opt))\n# CMake option; not Bell circuit. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_jnk_01",
+      "kind": "groovy_jenkins_gates",
+      "prompt": "Write Python that prints len('stage(\"qubit-lint\")'). Jenkins stage label. ONLY code.",
+      "expected_stdout": "19\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_jnk_02",
+      "kind": "groovy_jenkins_gates",
+      "prompt": "line = \"gates = 'cleanup'\"\nprint(line.count(\"'\"))\n# Jenkinsfile Groovy assign gates = 'cleanup' is an ops allow-list string, not a circuit JSON ask. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_jnk_03",
+      "kind": "groovy_jenkins_gates",
+      "prompt": "Write Python that prints 16-7. pipeline { agent any } with env PENNYLANE=0 is CI config. ONLY code.",
+      "expected_stdout": "9\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_es_01",
+      "kind": "elasticsearch_index_bell",
+      "prompt": "Write Python that prints len('bell-logs-2026'). ES index name. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_es_02",
+      "kind": "elasticsearch_index_bell",
+      "prompt": "idx = 'cx-metrics-v2'\nprint(idx.count('-'))\n# ES index; not CX gate. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_es_03",
+      "kind": "elasticsearch_index_bell",
+      "prompt": "Write Python that prints 4*5. Mapping field qubit_id is a document property. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_grd_01",
+      "kind": "gradle_task_entangle",
+      "prompt": "Write Python that prints len(':entangle:compile'). Gradle task path. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_grd_02",
+      "kind": "gradle_task_entangle",
+      "prompt": "Write Python that prints 12+8. task qubitCheck(type: Exec) is a build hook. ONLY code.",
+      "expected_stdout": "20\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_pls_01",
+      "kind": "plist_key_qubit",
+      "prompt": "Write Python that prints len('CFBundleQubitId'). macOS plist key. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r6v_pls_02",
+      "kind": "plist_key_qubit",
+      "prompt": "k = 'HadamardHotKey'\nprint(len(k))\n# plist key; not Hadamard gate. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    }
+  ]
+}

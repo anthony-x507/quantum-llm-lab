@@ -1,0 +1,118 @@
+{
+  "frontier": "codigo-vivo-tip-r6",
+  "written_et": "2026-09-24 12:47:15 ET",
+  "base_tip_sha": "32fed9b",
+  "branch": "frontier/tip-hardneg-r6",
+  "tip_parent": "frontier/codigo-vivo-tip@32fed9b",
+  "policy": "R6 NEW hardneg n=48/40; NEVER drop freeze floor overall>=0.967 (prefer 1.0). RO data/lora_adapter/. No merge main. R1–R5 must hold. Tip fold-busy (label-protect) → side branch tip-hardneg-r6; do not touch tip-cv worktree.",
+  "before": {
+    "overall_d_unified": 1.0,
+    "hardneg_r1_router": "18/18",
+    "hardneg_r2_router": "22/22",
+    "hardneg_r3_router": "35/35",
+    "hardneg_r3_verifier": "28/28",
+    "hardneg_r4_router": "40/40",
+    "hardneg_r4_verifier": "32/32",
+    "hardneg_r5_router": "44/44",
+    "hardneg_r5_verifier": "36/36",
+    "note": "tip @ 32fed9b (R5 freeze codigo_vivo_tip_r5_100pct); label-protect folding separately"
+  },
+  "after": {
+    "overall_d_unified": 1.0,
+    "router_pillars": "26/26",
+    "router_hardneg_mixed_embedded": "18/18",
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false,
+    "circuit_scaffold_default": true,
+    "scoreboard": {
+      "a_baseline": 0.3333,
+      "b_moe_alone": 0.6667,
+      "c_verifier_on_python": 0.6667,
+      "d_unified": 1.0
+    },
+    "delta_moe_overall": 0.3334
+  },
+  "hardneg_r6_router": {
+    "score": "48/48",
+    "rate": 1.0,
+    "n": 48,
+    "ent_never_on_python": true,
+    "pre_reinforce": {
+      "score": "43/48",
+      "rate": 0.8958
+    },
+    "post_reinforce": {
+      "score": "48/48",
+      "rate": 1.0
+    },
+    "families": [
+      "github_action_qubit",
+      "nginx_location_cx",
+      "kafka_topic_bell",
+      "systemd_unit_quantum",
+      "aws_arn_pennylane",
+      "bazel_target_cx",
+      "cargo_feature_qubit",
+      "html_data_attr_entangle",
+      "ldap_dn_qubit",
+      "cmake_option_n_qubits",
+      "groovy_jenkins_gates",
+      "elasticsearch_index_bell",
+      "gradle_task_entangle",
+      "plist_key_qubit",
+      "ent_control_r6",
+      "vision_control_r6",
+      "base_control_r6"
+    ]
+  },
+  "hardneg_r6_verifier": {
+    "router_smoke": "12/12",
+    "hardneg_router": "48/48",
+    "hardneg_router_rate": 1.0,
+    "verifier_alone_loop": {
+      "pre": "1.0 (40/40)",
+      "post": "1.0 (40/40)"
+    },
+    "unified_loop": {
+      "pre": "1.0 (40/40)",
+      "post": "1.0 (40/40)"
+    },
+    "ent_never_on_python": true,
+    "prompt_touches_gt": false,
+    "proposer_polish_needed": false
+  },
+  "holds": {
+    "r1_router": "18/18",
+    "r2_router": "22/22",
+    "r3_router": "35/35",
+    "r3_verifier_loop": "28/28",
+    "r4_router": "40/40",
+    "r4_verifier_loop": "32/32",
+    "r5_router": "44/44",
+    "r5_verifier_loop": "36/36",
+    "r6_router": "48/48",
+    "r6_verifier_loop": "40/40",
+    "mixed_d_unified": 1.0,
+    "floor_held": true,
+    "floor": 0.9667
+  },
+  "reinforce_layer": {
+    "router": [
+      "Bazel //gates:target package labels excluded from ent_json_ask",
+      "HTML data-gates= / data-gates=\"...\" ops allow-list attrs excluded",
+      "Groovy/Jenkins gates = '...' / gates = \"...\" quoted assigns excluded",
+      "ENT_NEG cancel no longer blocked by R6 ops-label gates chat mentions"
+    ],
+    "proposer": [],
+    "max_layers": 1,
+    "layers_used": 1
+  },
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "ent_never_on_python": true,
+    "lora_adapter_writes": false,
+    "expected_lane_harness_only": true
+  },
+  "blockers": [],
+  "claims": "No quantum-advantage claims. Classical heuristic router + python -I verifier only."
+}

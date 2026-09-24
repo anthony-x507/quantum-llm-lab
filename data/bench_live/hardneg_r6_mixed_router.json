@@ -1,0 +1,298 @@
+{
+  "n": 48,
+  "kind": "hardneg_r6_mixed_router",
+  "created": "2026-09-24 12:45:00 ET",
+  "round": 6,
+  "note": "R6 NEW traps (not R1–R5, not label-protect fall/super): github_action_qubit, nginx_location_cx, kafka_topic_bell, systemd_unit_quantum, aws_arn_pennylane, bazel_target_cx, cargo_feature_qubit, html_data_attr_entangle, ldap_dn_qubit, cmake_option_n_qubits, groovy_jenkins_gates, elasticsearch_index_bell, gradle_task_entangle, plist_key_qubit. HARD: Bazel //gates:cleanup; HTML data-gates=\"...\"; Jenkins gates = 'cleanup'; base chat mentioning quoted gates assign. GT harness-only.",
+  "anti_contamination": "expected lane is harness-only; never injected into route()",
+  "items": [
+    {
+      "id": "r6_gha_01",
+      "expected": "python",
+      "family": "github_action_qubit",
+      "prompt": "Write Python that prints len('qubit-lint'). GitHub Actions job id only. ONLY code."
+    },
+    {
+      "id": "r6_gha_02",
+      "expected": "python",
+      "family": "github_action_qubit",
+      "prompt": "step = 'uses: org/cx-action@v1'\nprint(step.count('/'))\n# GHA step uses:; not a CX gate. ONLY code."
+    },
+    {
+      "id": "r6_gha_03",
+      "expected": "python",
+      "family": "github_action_qubit",
+      "prompt": "Write Python that prints 8*3. Workflow env PENNYLANE_CI=0 is a feature flag. ONLY code."
+    },
+    {
+      "id": "r6_ngx_01",
+      "expected": "python",
+      "family": "nginx_location_cx",
+      "prompt": "Write Python that prints len('location /cx-api'). nginx location path. ONLY code."
+    },
+    {
+      "id": "r6_ngx_02",
+      "expected": "python",
+      "family": "nginx_location_cx",
+      "prompt": "loc = 'location ~ ^/qubit/'\nprint(loc.count('/'))\n# nginx regex location; not a qubit circuit. ONLY code."
+    },
+    {
+      "id": "r6_ngx_03",
+      "expected": "python",
+      "family": "nginx_location_cx",
+      "prompt": "Write Python that prints 14+5. Proxy pass /hadamard-health is an HTTP path. ONLY code."
+    },
+    {
+      "id": "r6_kfk_01",
+      "expected": "python",
+      "family": "kafka_topic_bell",
+      "prompt": "Write Python that prints len('bell.events.v1'). Kafka topic name. ONLY code."
+    },
+    {
+      "id": "r6_kfk_02",
+      "expected": "python",
+      "family": "kafka_topic_bell",
+      "prompt": "t = 'cx.metrics.raw'\nprint(t.count('.'))\n# Kafka topic; not CX gate. ONLY code."
+    },
+    {
+      "id": "r6_kfk_03",
+      "expected": "python",
+      "family": "kafka_topic_bell",
+      "prompt": "Write Python that prints 7*4. Consumer group entangle-workers is a fleet name. ONLY code."
+    },
+    {
+      "id": "r6_sys_01",
+      "expected": "python",
+      "family": "systemd_unit_quantum",
+      "prompt": "Write Python that prints len('quantum-agent.service'). systemd unit name. ONLY code."
+    },
+    {
+      "id": "r6_sys_02",
+      "expected": "python",
+      "family": "systemd_unit_quantum",
+      "prompt": "u = 'pennylane-sidecar.service'\nprint(u.count('-'))\n# systemd unit; not PennyLane circuit. ONLY code."
+    },
+    {
+      "id": "r6_sys_03",
+      "expected": "python",
+      "family": "systemd_unit_quantum",
+      "prompt": "Write Python that prints 9+9. Unit drop-in Environment=GATES=cleanup is an ops allow-list env, not a circuit JSON ask. ONLY code."
+    },
+    {
+      "id": "r6_aws_01",
+      "expected": "python",
+      "family": "aws_arn_pennylane",
+      "prompt": "Write Python that prints len('arn:aws:lambda:us-east-1:1:function:pennylane-ci'). ARN string. ONLY code."
+    },
+    {
+      "id": "r6_aws_02",
+      "expected": "python",
+      "family": "aws_arn_pennylane",
+      "prompt": "arn = 'arn:aws:iam::123:role/qubit-runner'\nprint(arn.count(':'))\n# IAM role ARN; not a qubit circuit. ONLY code."
+    },
+    {
+      "id": "r6_aws_03",
+      "expected": "python",
+      "family": "aws_arn_pennylane",
+      "prompt": "Write Python that prints 11+6. S3 key prefix gates/cleanup/nightly is an ops path, not gates=[...] circuit JSON. ONLY code."
+    },
+    {
+      "id": "r6_bzl_01",
+      "expected": "python",
+      "family": "bazel_target_cx",
+      "prompt": "Write Python that prints len('//cx:lint'). Bazel label. ONLY code."
+    },
+    {
+      "id": "r6_bzl_02",
+      "expected": "python",
+      "family": "bazel_target_cx",
+      "prompt": "label = '//gates:cleanup'\nprint(label.count(':'))\n# Bazel target //gates:cleanup is a package path, not a circuit JSON ask. ONLY code."
+    },
+    {
+      "id": "r6_bzl_03",
+      "expected": "python",
+      "family": "bazel_target_cx",
+      "prompt": "Write Python that prints 5**2. Bazel query kind(qubit_*, ...) is a build graph filter. ONLY code."
+    },
+    {
+      "id": "r6_crg_01",
+      "expected": "python",
+      "family": "cargo_feature_qubit",
+      "prompt": "Write Python that prints len('qubit-alloc'). Cargo feature name. ONLY code."
+    },
+    {
+      "id": "r6_crg_02",
+      "expected": "python",
+      "family": "cargo_feature_qubit",
+      "prompt": "feat = 'features = [\"bell-smoke\"]'\nprint(feat.count('\"'))\n# Cargo.toml features; not Bell circuit. ONLY code."
+    },
+    {
+      "id": "r6_crg_03",
+      "expected": "python",
+      "family": "cargo_feature_qubit",
+      "prompt": "Write Python that prints 13-4. Crate pennylane-sys is a FFI binding name. ONLY code."
+    },
+    {
+      "id": "r6_htm_01",
+      "expected": "python",
+      "family": "html_data_attr_entangle",
+      "prompt": "Write Python that prints len('data-entangle-id'). HTML data-* attr. ONLY code."
+    },
+    {
+      "id": "r6_htm_02",
+      "expected": "python",
+      "family": "html_data_attr_entangle",
+      "prompt": "attr = 'data-gates=\"cleanup,nightly\"'\nprint(attr.count(','))\n# HTML data-gates attr is an ops allow-list, not a circuit JSON ask. ONLY code."
+    },
+    {
+      "id": "r6_htm_03",
+      "expected": "python",
+      "family": "html_data_attr_entangle",
+      "prompt": "Write Python that prints 2**4. data-qubit-count=3 is a DOM dataset field. ONLY code."
+    },
+    {
+      "id": "r6_ldap_01",
+      "expected": "python",
+      "family": "ldap_dn_qubit",
+      "prompt": "Write Python that prints len('cn=qubit-bot,ou=svc'). LDAP DN fragment. ONLY code."
+    },
+    {
+      "id": "r6_ldap_02",
+      "expected": "python",
+      "family": "ldap_dn_qubit",
+      "prompt": "dn = 'uid=cx-reader,dc=ex'\nprint(dn.count('='))\n# LDAP DN; not CX gate. ONLY code."
+    },
+    {
+      "id": "r6_ldap_03",
+      "expected": "python",
+      "family": "ldap_dn_qubit",
+      "prompt": "Write Python that prints 6*6. Group cn=hadamard-ops is an ACL name. ONLY code."
+    },
+    {
+      "id": "r6_cm_01",
+      "expected": "python",
+      "family": "cmake_option_n_qubits",
+      "prompt": "Write Python that prints len('option(N_QUBITS'). CMake option token. ONLY code."
+    },
+    {
+      "id": "r6_cm_02",
+      "expected": "python",
+      "family": "cmake_option_n_qubits",
+      "prompt": "Write Python that prints 10+3. CMake note: reply JSON only for /build-meta — option n_qubits is a seat-count cache key, not a circuit emit. ONLY code."
+    },
+    {
+      "id": "r6_cm_03",
+      "expected": "python",
+      "family": "cmake_option_n_qubits",
+      "prompt": "opt = 'ENABLE_BELL_TESTS'\nprint(len(opt))\n# CMake option; not Bell circuit. ONLY code."
+    },
+    {
+      "id": "r6_jnk_01",
+      "expected": "python",
+      "family": "groovy_jenkins_gates",
+      "prompt": "Write Python that prints len('stage(\"qubit-lint\")'). Jenkins stage label. ONLY code."
+    },
+    {
+      "id": "r6_jnk_02",
+      "expected": "python",
+      "family": "groovy_jenkins_gates",
+      "prompt": "line = \"gates = 'cleanup'\"\nprint(line.count(\"'\"))\n# Jenkinsfile Groovy assign gates = 'cleanup' is an ops allow-list string, not a circuit JSON ask. ONLY code."
+    },
+    {
+      "id": "r6_jnk_03",
+      "expected": "python",
+      "family": "groovy_jenkins_gates",
+      "prompt": "Write Python that prints 16-7. pipeline { agent any } with env PENNYLANE=0 is CI config. ONLY code."
+    },
+    {
+      "id": "r6_es_01",
+      "expected": "python",
+      "family": "elasticsearch_index_bell",
+      "prompt": "Write Python that prints len('bell-logs-2026'). ES index name. ONLY code."
+    },
+    {
+      "id": "r6_es_02",
+      "expected": "python",
+      "family": "elasticsearch_index_bell",
+      "prompt": "idx = 'cx-metrics-v2'\nprint(idx.count('-'))\n# ES index; not CX gate. ONLY code."
+    },
+    {
+      "id": "r6_es_03",
+      "expected": "python",
+      "family": "elasticsearch_index_bell",
+      "prompt": "Write Python that prints 4*5. Mapping field qubit_id is a document property. ONLY code."
+    },
+    {
+      "id": "r6_grd_01",
+      "expected": "python",
+      "family": "gradle_task_entangle",
+      "prompt": "Write Python that prints len(':entangle:compile'). Gradle task path. ONLY code."
+    },
+    {
+      "id": "r6_grd_02",
+      "expected": "python",
+      "family": "gradle_task_entangle",
+      "prompt": "Write Python that prints 12+8. task qubitCheck(type: Exec) is a build hook. ONLY code."
+    },
+    {
+      "id": "r6_pls_01",
+      "expected": "python",
+      "family": "plist_key_qubit",
+      "prompt": "Write Python that prints len('CFBundleQubitId'). macOS plist key. ONLY code."
+    },
+    {
+      "id": "r6_pls_02",
+      "expected": "python",
+      "family": "plist_key_qubit",
+      "prompt": "k = 'HadamardHotKey'\nprint(len(k))\n# plist key; not Hadamard gate. ONLY code."
+    },
+    {
+      "id": "r6_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r6",
+      "prompt": "Propose a quantum circuit with n_qubits and gates for a GHZ entanglement demo. Reply JSON only."
+    },
+    {
+      "id": "r6_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r6",
+      "prompt": "Build a PennyLane Bell-pair: Hadamard then CX. Return valid JSON with n_qubits and gates list."
+    },
+    {
+      "id": "r6_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r6",
+      "prompt": "Look at the image. In the photo of the rack, how many blinking LEDs are visible in the frame? Reply with only the integer."
+    },
+    {
+      "id": "r6_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r6",
+      "prompt": "Observa la imagen adjunta. En la foto del laboratorio, ¿cuántos monitores hay? Responde solo un entero."
+    },
+    {
+      "id": "r6_base_01",
+      "expected": "base",
+      "family": "base_control_r6",
+      "prompt": "Hello! Thanks for chatting about hiking. Any fun weekend plans? No code, no circuit."
+    },
+    {
+      "id": "r6_base_02",
+      "expected": "base",
+      "family": "base_control_r6",
+      "prompt": "Nice talk about Bazel //gates:cleanup labels. Any gardening tips? No code, no circuit."
+    },
+    {
+      "id": "r6_base_03",
+      "expected": "base",
+      "family": "base_control_r6",
+      "prompt": "Text-only ASCII rack sketch (no image file, no photo). Someone drew 4 boxes. How is the weather?"
+    },
+    {
+      "id": "r6_base_04",
+      "expected": "base",
+      "family": "base_control_r6",
+      "prompt": "Thanks for the Jenkins chat about gates = 'cleanup'. Cooking ideas? No code, no circuit."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "frontier": "C3-moe-verifier-codigo-vivo",
-  "written": "2026-09-24 12:46:47",
+  "written": "2026-09-24 12:46:31",
   "mode": "hardneg-cpu",
   "router_method": "heuristic",
   "claims": [
@@ -183,14 +183,14 @@
     }
   },
   "python_paths": {
-    "n_items": 36,
+    "n_items": 40,
     "proposer": "heuristic",
     "router_method": "heuristic",
     "rounds_max": 2,
     "paths": {
       "a_single_shot_no_moe": {
         "path": "a_single_shot_no_moe",
-        "n": 36,
+        "n": 40,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 0.0,
         "delta_solve_rate": 0.0,
@@ -198,12 +198,12 @@
         "solved_loop": 0,
         "repair_success_rate": 0.0,
         "repair_helped_n": 0,
-        "failed_single_n": 36,
+        "failed_single_n": 40,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "r5v_k8s_01",
+            "id": "r6v_gha_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -212,7 +212,7 @@
             "actions": []
           },
           {
-            "id": "r5v_k8s_02",
+            "id": "r6v_gha_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -221,7 +221,7 @@
             "actions": []
           },
           {
-            "id": "r5v_k8s_03",
+            "id": "r6v_gha_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -230,7 +230,7 @@
             "actions": []
           },
           {
-            "id": "r5v_k8s_04",
+            "id": "r6v_ngx_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -239,7 +239,7 @@
             "actions": []
           },
           {
-            "id": "r5v_prom_01",
+            "id": "r6v_ngx_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -248,7 +248,7 @@
             "actions": []
           },
           {
-            "id": "r5v_prom_02",
+            "id": "r6v_ngx_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -257,7 +257,7 @@
             "actions": []
           },
           {
-            "id": "r5v_prom_03",
+            "id": "r6v_kfk_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -266,7 +266,7 @@
             "actions": []
           },
           {
-            "id": "r5v_gql_01",
+            "id": "r6v_kfk_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -275,7 +275,7 @@
             "actions": []
           },
           {
-            "id": "r5v_gql_02",
+            "id": "r6v_kfk_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -284,7 +284,7 @@
             "actions": []
           },
           {
-            "id": "r5v_gql_03",
+            "id": "r6v_sys_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -293,7 +293,7 @@
             "actions": []
           },
           {
-            "id": "r5v_tf_01",
+            "id": "r6v_sys_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -302,7 +302,7 @@
             "actions": []
           },
           {
-            "id": "r5v_tf_02",
+            "id": "r6v_sys_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -311,7 +311,7 @@
             "actions": []
           },
           {
-            "id": "r5v_tf_03",
+            "id": "r6v_aws_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -320,7 +320,7 @@
             "actions": []
           },
           {
-            "id": "r5v_jwt_01",
+            "id": "r6v_aws_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -329,7 +329,7 @@
             "actions": []
           },
           {
-            "id": "r5v_jwt_02",
+            "id": "r6v_aws_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -338,7 +338,7 @@
             "actions": []
           },
           {
-            "id": "r5v_jwt_03",
+            "id": "r6v_bzl_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -347,7 +347,7 @@
             "actions": []
           },
           {
-            "id": "r5v_make_01",
+            "id": "r6v_bzl_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -356,7 +356,7 @@
             "actions": []
           },
           {
-            "id": "r5v_make_02",
+            "id": "r6v_bzl_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -365,7 +365,7 @@
             "actions": []
           },
           {
-            "id": "r5v_make_03",
+            "id": "r6v_crg_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -374,7 +374,7 @@
             "actions": []
           },
           {
-            "id": "r5v_css_01",
+            "id": "r6v_crg_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -383,7 +383,7 @@
             "actions": []
           },
           {
-            "id": "r5v_css_02",
+            "id": "r6v_crg_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -392,7 +392,7 @@
             "actions": []
           },
           {
-            "id": "r5v_css_03",
+            "id": "r6v_htm_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -401,7 +401,7 @@
             "actions": []
           },
           {
-            "id": "r5v_proto_01",
+            "id": "r6v_htm_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -410,7 +410,7 @@
             "actions": []
           },
           {
-            "id": "r5v_proto_02",
+            "id": "r6v_htm_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -419,7 +419,7 @@
             "actions": []
           },
           {
-            "id": "r5v_proto_03",
+            "id": "r6v_ldap_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -428,7 +428,7 @@
             "actions": []
           },
           {
-            "id": "r5v_redis_01",
+            "id": "r6v_ldap_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -437,7 +437,7 @@
             "actions": []
           },
           {
-            "id": "r5v_redis_02",
+            "id": "r6v_ldap_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -446,7 +446,7 @@
             "actions": []
           },
           {
-            "id": "r5v_redis_03",
+            "id": "r6v_cm_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -455,7 +455,7 @@
             "actions": []
           },
           {
-            "id": "r5v_npm_01",
+            "id": "r6v_cm_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -464,7 +464,7 @@
             "actions": []
           },
           {
-            "id": "r5v_npm_02",
+            "id": "r6v_cm_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -473,7 +473,7 @@
             "actions": []
           },
           {
-            "id": "r5v_npm_03",
+            "id": "r6v_jnk_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -482,7 +482,7 @@
             "actions": []
           },
           {
-            "id": "r5v_xpath_01",
+            "id": "r6v_jnk_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -491,7 +491,7 @@
             "actions": []
           },
           {
-            "id": "r5v_xpath_02",
+            "id": "r6v_jnk_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -500,7 +500,7 @@
             "actions": []
           },
           {
-            "id": "r5v_xpath_03",
+            "id": "r6v_es_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -509,7 +509,7 @@
             "actions": []
           },
           {
-            "id": "r5v_ans_01",
+            "id": "r6v_es_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -518,7 +518,43 @@
             "actions": []
           },
           {
-            "id": "r5v_ans_02",
+            "id": "r6v_es_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r6v_grd_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r6v_grd_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r6v_pls_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r6v_pls_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -530,7 +566,7 @@
       },
       "b_moe_alone": {
         "path": "b_moe_alone",
-        "n": 36,
+        "n": 40,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 0.0,
         "delta_solve_rate": 0.0,
@@ -538,12 +574,12 @@
         "solved_loop": 0,
         "repair_success_rate": 0.0,
         "repair_helped_n": 0,
-        "failed_single_n": 36,
+        "failed_single_n": 40,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "r5v_k8s_01",
+            "id": "r6v_gha_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -552,7 +588,7 @@
             "actions": []
           },
           {
-            "id": "r5v_k8s_02",
+            "id": "r6v_gha_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -561,7 +597,7 @@
             "actions": []
           },
           {
-            "id": "r5v_k8s_03",
+            "id": "r6v_gha_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -570,7 +606,7 @@
             "actions": []
           },
           {
-            "id": "r5v_k8s_04",
+            "id": "r6v_ngx_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -579,7 +615,7 @@
             "actions": []
           },
           {
-            "id": "r5v_prom_01",
+            "id": "r6v_ngx_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -588,7 +624,7 @@
             "actions": []
           },
           {
-            "id": "r5v_prom_02",
+            "id": "r6v_ngx_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -597,7 +633,7 @@
             "actions": []
           },
           {
-            "id": "r5v_prom_03",
+            "id": "r6v_kfk_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -606,7 +642,7 @@
             "actions": []
           },
           {
-            "id": "r5v_gql_01",
+            "id": "r6v_kfk_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -615,7 +651,7 @@
             "actions": []
           },
           {
-            "id": "r5v_gql_02",
+            "id": "r6v_kfk_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -624,7 +660,7 @@
             "actions": []
           },
           {
-            "id": "r5v_gql_03",
+            "id": "r6v_sys_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -633,7 +669,7 @@
             "actions": []
           },
           {
-            "id": "r5v_tf_01",
+            "id": "r6v_sys_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -642,7 +678,7 @@
             "actions": []
           },
           {
-            "id": "r5v_tf_02",
+            "id": "r6v_sys_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -651,7 +687,7 @@
             "actions": []
           },
           {
-            "id": "r5v_tf_03",
+            "id": "r6v_aws_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -660,7 +696,7 @@
             "actions": []
           },
           {
-            "id": "r5v_jwt_01",
+            "id": "r6v_aws_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -669,7 +705,7 @@
             "actions": []
           },
           {
-            "id": "r5v_jwt_02",
+            "id": "r6v_aws_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -678,7 +714,7 @@
             "actions": []
           },
           {
-            "id": "r5v_jwt_03",
+            "id": "r6v_bzl_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -687,7 +723,7 @@
             "actions": []
           },
           {
-            "id": "r5v_make_01",
+            "id": "r6v_bzl_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -696,7 +732,7 @@
             "actions": []
           },
           {
-            "id": "r5v_make_02",
+            "id": "r6v_bzl_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -705,7 +741,7 @@
             "actions": []
           },
           {
-            "id": "r5v_make_03",
+            "id": "r6v_crg_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -714,7 +750,7 @@
             "actions": []
           },
           {
-            "id": "r5v_css_01",
+            "id": "r6v_crg_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -723,7 +759,7 @@
             "actions": []
           },
           {
-            "id": "r5v_css_02",
+            "id": "r6v_crg_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -732,7 +768,7 @@
             "actions": []
           },
           {
-            "id": "r5v_css_03",
+            "id": "r6v_htm_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -741,7 +777,7 @@
             "actions": []
           },
           {
-            "id": "r5v_proto_01",
+            "id": "r6v_htm_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -750,7 +786,7 @@
             "actions": []
           },
           {
-            "id": "r5v_proto_02",
+            "id": "r6v_htm_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -759,7 +795,7 @@
             "actions": []
           },
           {
-            "id": "r5v_proto_03",
+            "id": "r6v_ldap_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -768,7 +804,7 @@
             "actions": []
           },
           {
-            "id": "r5v_redis_01",
+            "id": "r6v_ldap_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -777,7 +813,7 @@
             "actions": []
           },
           {
-            "id": "r5v_redis_02",
+            "id": "r6v_ldap_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -786,7 +822,7 @@
             "actions": []
           },
           {
-            "id": "r5v_redis_03",
+            "id": "r6v_cm_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -795,7 +831,7 @@
             "actions": []
           },
           {
-            "id": "r5v_npm_01",
+            "id": "r6v_cm_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -804,7 +840,7 @@
             "actions": []
           },
           {
-            "id": "r5v_npm_02",
+            "id": "r6v_cm_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -813,7 +849,7 @@
             "actions": []
           },
           {
-            "id": "r5v_npm_03",
+            "id": "r6v_jnk_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -822,7 +858,7 @@
             "actions": []
           },
           {
-            "id": "r5v_xpath_01",
+            "id": "r6v_jnk_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -831,7 +867,7 @@
             "actions": []
           },
           {
-            "id": "r5v_xpath_02",
+            "id": "r6v_jnk_03",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -840,7 +876,7 @@
             "actions": []
           },
           {
-            "id": "r5v_xpath_03",
+            "id": "r6v_es_01",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -849,7 +885,7 @@
             "actions": []
           },
           {
-            "id": "r5v_ans_01",
+            "id": "r6v_es_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -858,7 +894,43 @@
             "actions": []
           },
           {
-            "id": "r5v_ans_02",
+            "id": "r6v_es_03",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r6v_grd_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r6v_grd_02",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r6v_pls_01",
+            "single_solved": false,
+            "loop_solved": false,
+            "rounds_used": 0,
+            "repair_helped": false,
+            "prompt_touches_gt": false,
+            "actions": []
+          },
+          {
+            "id": "r6v_pls_02",
             "single_solved": false,
             "loop_solved": false,
             "rounds_used": 0,
@@ -867,223 +939,247 @@
             "actions": []
           }
         ],
-        "n_items_total": 36,
-        "n_routed_python": 36,
+        "n_items_total": 40,
+        "n_routed_python": 40,
         "n_routed_away": 0,
         "solve_rate_on_python_lane": 0.0,
         "routing": [
           {
-            "id": "r5v_k8s_01",
+            "id": "r6v_gha_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_k8s_02",
+            "id": "r6v_gha_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_k8s_03",
+            "id": "r6v_gha_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_k8s_04",
+            "id": "r6v_ngx_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_prom_01",
+            "id": "r6v_ngx_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_prom_02",
+            "id": "r6v_ngx_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_prom_03",
+            "id": "r6v_kfk_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_gql_01",
+            "id": "r6v_kfk_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_gql_02",
+            "id": "r6v_kfk_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_gql_03",
+            "id": "r6v_sys_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_tf_01",
+            "id": "r6v_sys_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_tf_02",
+            "id": "r6v_sys_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_tf_03",
+            "id": "r6v_aws_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_jwt_01",
+            "id": "r6v_aws_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_jwt_02",
+            "id": "r6v_aws_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_jwt_03",
+            "id": "r6v_bzl_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_make_01",
+            "id": "r6v_bzl_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_make_02",
+            "id": "r6v_bzl_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_make_03",
+            "id": "r6v_crg_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_css_01",
+            "id": "r6v_crg_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_css_02",
+            "id": "r6v_crg_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_css_03",
+            "id": "r6v_htm_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_proto_01",
+            "id": "r6v_htm_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_proto_02",
+            "id": "r6v_htm_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_proto_03",
+            "id": "r6v_ldap_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_redis_01",
+            "id": "r6v_ldap_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_redis_02",
+            "id": "r6v_ldap_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_redis_03",
+            "id": "r6v_cm_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_npm_01",
+            "id": "r6v_cm_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_npm_02",
+            "id": "r6v_cm_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_npm_03",
+            "id": "r6v_jnk_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_xpath_01",
+            "id": "r6v_jnk_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_xpath_02",
+            "id": "r6v_jnk_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_xpath_03",
+            "id": "r6v_es_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_ans_01",
+            "id": "r6v_es_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_ans_02",
+            "id": "r6v_es_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r6v_grd_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r6v_grd_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r6v_pls_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r6v_pls_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
@@ -1092,20 +1188,20 @@
       },
       "c_verifier_alone": {
         "path": "c_verifier_alone",
-        "n": 36,
+        "n": 40,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 1.0,
         "delta_solve_rate": 1.0,
         "solved_single": 0,
-        "solved_loop": 36,
+        "solved_loop": 40,
         "repair_success_rate": 1.0,
-        "repair_helped_n": 36,
-        "failed_single_n": 36,
+        "repair_helped_n": 40,
+        "failed_single_n": 40,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "r5v_k8s_01",
+            "id": "r6v_gha_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1116,7 +1212,7 @@
             ]
           },
           {
-            "id": "r5v_k8s_02",
+            "id": "r6v_gha_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1127,7 +1223,7 @@
             ]
           },
           {
-            "id": "r5v_k8s_03",
+            "id": "r6v_gha_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1138,7 +1234,7 @@
             ]
           },
           {
-            "id": "r5v_k8s_04",
+            "id": "r6v_ngx_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1149,7 +1245,7 @@
             ]
           },
           {
-            "id": "r5v_prom_01",
+            "id": "r6v_ngx_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1160,7 +1256,7 @@
             ]
           },
           {
-            "id": "r5v_prom_02",
+            "id": "r6v_ngx_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1171,7 +1267,7 @@
             ]
           },
           {
-            "id": "r5v_prom_03",
+            "id": "r6v_kfk_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1182,7 +1278,7 @@
             ]
           },
           {
-            "id": "r5v_gql_01",
+            "id": "r6v_kfk_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1193,7 +1289,7 @@
             ]
           },
           {
-            "id": "r5v_gql_02",
+            "id": "r6v_kfk_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1204,7 +1300,7 @@
             ]
           },
           {
-            "id": "r5v_gql_03",
+            "id": "r6v_sys_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1215,7 +1311,7 @@
             ]
           },
           {
-            "id": "r5v_tf_01",
+            "id": "r6v_sys_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1226,7 +1322,7 @@
             ]
           },
           {
-            "id": "r5v_tf_02",
+            "id": "r6v_sys_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1237,7 +1333,7 @@
             ]
           },
           {
-            "id": "r5v_tf_03",
+            "id": "r6v_aws_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1248,7 +1344,7 @@
             ]
           },
           {
-            "id": "r5v_jwt_01",
+            "id": "r6v_aws_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1259,7 +1355,7 @@
             ]
           },
           {
-            "id": "r5v_jwt_02",
+            "id": "r6v_aws_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1270,7 +1366,7 @@
             ]
           },
           {
-            "id": "r5v_jwt_03",
+            "id": "r6v_bzl_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1281,7 +1377,7 @@
             ]
           },
           {
-            "id": "r5v_make_01",
+            "id": "r6v_bzl_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1292,7 +1388,7 @@
             ]
           },
           {
-            "id": "r5v_make_02",
+            "id": "r6v_bzl_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1303,7 +1399,7 @@
             ]
           },
           {
-            "id": "r5v_make_03",
+            "id": "r6v_crg_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1314,7 +1410,7 @@
             ]
           },
           {
-            "id": "r5v_css_01",
+            "id": "r6v_crg_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1325,7 +1421,7 @@
             ]
           },
           {
-            "id": "r5v_css_02",
+            "id": "r6v_crg_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1336,7 +1432,7 @@
             ]
           },
           {
-            "id": "r5v_css_03",
+            "id": "r6v_htm_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1347,7 +1443,7 @@
             ]
           },
           {
-            "id": "r5v_proto_01",
+            "id": "r6v_htm_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1358,7 +1454,7 @@
             ]
           },
           {
-            "id": "r5v_proto_02",
+            "id": "r6v_htm_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1369,7 +1465,7 @@
             ]
           },
           {
-            "id": "r5v_proto_03",
+            "id": "r6v_ldap_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1380,7 +1476,7 @@
             ]
           },
           {
-            "id": "r5v_redis_01",
+            "id": "r6v_ldap_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1391,7 +1487,7 @@
             ]
           },
           {
-            "id": "r5v_redis_02",
+            "id": "r6v_ldap_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1402,7 +1498,7 @@
             ]
           },
           {
-            "id": "r5v_redis_03",
+            "id": "r6v_cm_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1413,7 +1509,7 @@
             ]
           },
           {
-            "id": "r5v_npm_01",
+            "id": "r6v_cm_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1424,7 +1520,7 @@
             ]
           },
           {
-            "id": "r5v_npm_02",
+            "id": "r6v_cm_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1435,7 +1531,7 @@
             ]
           },
           {
-            "id": "r5v_npm_03",
+            "id": "r6v_jnk_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1446,7 +1542,7 @@
             ]
           },
           {
-            "id": "r5v_xpath_01",
+            "id": "r6v_jnk_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1457,7 +1553,7 @@
             ]
           },
           {
-            "id": "r5v_xpath_02",
+            "id": "r6v_jnk_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1468,7 +1564,7 @@
             ]
           },
           {
-            "id": "r5v_xpath_03",
+            "id": "r6v_es_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1479,7 +1575,7 @@
             ]
           },
           {
-            "id": "r5v_ans_01",
+            "id": "r6v_es_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1490,7 +1586,51 @@
             ]
           },
           {
-            "id": "r5v_ans_02",
+            "id": "r6v_es_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r6v_grd_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r6v_grd_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r6v_pls_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r6v_pls_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1504,20 +1644,20 @@
       },
       "d_moe_verifier_unified": {
         "path": "d_moe_verifier_unified",
-        "n": 36,
+        "n": 40,
         "solve_rate_single": 0.0,
         "solve_rate_loop": 1.0,
         "delta_solve_rate": 1.0,
         "solved_single": 0,
-        "solved_loop": 36,
+        "solved_loop": 40,
         "repair_success_rate": 1.0,
-        "repair_helped_n": 36,
-        "failed_single_n": 36,
+        "repair_helped_n": 40,
+        "failed_single_n": 40,
         "prompt_touches_gt": false,
         "prompt_touches_gt_locked_false": true,
         "details": [
           {
-            "id": "r5v_k8s_01",
+            "id": "r6v_gha_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1528,7 +1668,7 @@
             ]
           },
           {
-            "id": "r5v_k8s_02",
+            "id": "r6v_gha_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1539,7 +1679,7 @@
             ]
           },
           {
-            "id": "r5v_k8s_03",
+            "id": "r6v_gha_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1550,7 +1690,7 @@
             ]
           },
           {
-            "id": "r5v_k8s_04",
+            "id": "r6v_ngx_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1561,7 +1701,7 @@
             ]
           },
           {
-            "id": "r5v_prom_01",
+            "id": "r6v_ngx_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1572,7 +1712,7 @@
             ]
           },
           {
-            "id": "r5v_prom_02",
+            "id": "r6v_ngx_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1583,7 +1723,7 @@
             ]
           },
           {
-            "id": "r5v_prom_03",
+            "id": "r6v_kfk_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1594,7 +1734,7 @@
             ]
           },
           {
-            "id": "r5v_gql_01",
+            "id": "r6v_kfk_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1605,7 +1745,7 @@
             ]
           },
           {
-            "id": "r5v_gql_02",
+            "id": "r6v_kfk_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1616,7 +1756,7 @@
             ]
           },
           {
-            "id": "r5v_gql_03",
+            "id": "r6v_sys_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1627,7 +1767,7 @@
             ]
           },
           {
-            "id": "r5v_tf_01",
+            "id": "r6v_sys_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1638,7 +1778,7 @@
             ]
           },
           {
-            "id": "r5v_tf_02",
+            "id": "r6v_sys_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1649,7 +1789,7 @@
             ]
           },
           {
-            "id": "r5v_tf_03",
+            "id": "r6v_aws_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1660,7 +1800,7 @@
             ]
           },
           {
-            "id": "r5v_jwt_01",
+            "id": "r6v_aws_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1671,7 +1811,7 @@
             ]
           },
           {
-            "id": "r5v_jwt_02",
+            "id": "r6v_aws_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1682,7 +1822,7 @@
             ]
           },
           {
-            "id": "r5v_jwt_03",
+            "id": "r6v_bzl_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1693,7 +1833,7 @@
             ]
           },
           {
-            "id": "r5v_make_01",
+            "id": "r6v_bzl_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1704,7 +1844,7 @@
             ]
           },
           {
-            "id": "r5v_make_02",
+            "id": "r6v_bzl_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1715,7 +1855,7 @@
             ]
           },
           {
-            "id": "r5v_make_03",
+            "id": "r6v_crg_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1726,7 +1866,7 @@
             ]
           },
           {
-            "id": "r5v_css_01",
+            "id": "r6v_crg_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1737,7 +1877,7 @@
             ]
           },
           {
-            "id": "r5v_css_02",
+            "id": "r6v_crg_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1748,7 +1888,7 @@
             ]
           },
           {
-            "id": "r5v_css_03",
+            "id": "r6v_htm_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1759,7 +1899,7 @@
             ]
           },
           {
-            "id": "r5v_proto_01",
+            "id": "r6v_htm_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1770,7 +1910,7 @@
             ]
           },
           {
-            "id": "r5v_proto_02",
+            "id": "r6v_htm_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1781,7 +1921,7 @@
             ]
           },
           {
-            "id": "r5v_proto_03",
+            "id": "r6v_ldap_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1792,7 +1932,7 @@
             ]
           },
           {
-            "id": "r5v_redis_01",
+            "id": "r6v_ldap_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1803,7 +1943,7 @@
             ]
           },
           {
-            "id": "r5v_redis_02",
+            "id": "r6v_ldap_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1814,7 +1954,7 @@
             ]
           },
           {
-            "id": "r5v_redis_03",
+            "id": "r6v_cm_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1825,7 +1965,7 @@
             ]
           },
           {
-            "id": "r5v_npm_01",
+            "id": "r6v_cm_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1836,7 +1976,7 @@
             ]
           },
           {
-            "id": "r5v_npm_02",
+            "id": "r6v_cm_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1847,7 +1987,7 @@
             ]
           },
           {
-            "id": "r5v_npm_03",
+            "id": "r6v_jnk_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1858,7 +1998,7 @@
             ]
           },
           {
-            "id": "r5v_xpath_01",
+            "id": "r6v_jnk_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1869,7 +2009,7 @@
             ]
           },
           {
-            "id": "r5v_xpath_02",
+            "id": "r6v_jnk_03",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1880,7 +2020,7 @@
             ]
           },
           {
-            "id": "r5v_xpath_03",
+            "id": "r6v_es_01",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1891,7 +2031,7 @@
             ]
           },
           {
-            "id": "r5v_ans_01",
+            "id": "r6v_es_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1902,7 +2042,51 @@
             ]
           },
           {
-            "id": "r5v_ans_02",
+            "id": "r6v_es_03",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r6v_grd_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r6v_grd_02",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r6v_pls_01",
+            "single_solved": false,
+            "loop_solved": true,
+            "rounds_used": 1,
+            "repair_helped": true,
+            "prompt_touches_gt": false,
+            "actions": [
+              "strip_trailing_prose"
+            ]
+          },
+          {
+            "id": "r6v_pls_02",
             "single_solved": false,
             "loop_solved": true,
             "rounds_used": 1,
@@ -1913,223 +2097,247 @@
             ]
           }
         ],
-        "n_items_total": 36,
-        "n_routed_python": 36,
+        "n_items_total": 40,
+        "n_routed_python": 40,
         "n_routed_away": 0,
         "solve_rate_on_python_lane": 1.0,
         "routing": [
           {
-            "id": "r5v_k8s_01",
+            "id": "r6v_gha_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_k8s_02",
+            "id": "r6v_gha_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_k8s_03",
+            "id": "r6v_gha_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_k8s_04",
+            "id": "r6v_ngx_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_prom_01",
+            "id": "r6v_ngx_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_prom_02",
+            "id": "r6v_ngx_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_prom_03",
+            "id": "r6v_kfk_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_gql_01",
+            "id": "r6v_kfk_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_gql_02",
+            "id": "r6v_kfk_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_gql_03",
+            "id": "r6v_sys_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_tf_01",
+            "id": "r6v_sys_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_tf_02",
+            "id": "r6v_sys_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_tf_03",
+            "id": "r6v_aws_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_jwt_01",
+            "id": "r6v_aws_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_jwt_02",
+            "id": "r6v_aws_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_jwt_03",
+            "id": "r6v_bzl_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_make_01",
+            "id": "r6v_bzl_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_make_02",
+            "id": "r6v_bzl_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_make_03",
+            "id": "r6v_crg_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_css_01",
+            "id": "r6v_crg_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_css_02",
+            "id": "r6v_crg_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_css_03",
+            "id": "r6v_htm_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_proto_01",
+            "id": "r6v_htm_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_proto_02",
+            "id": "r6v_htm_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_proto_03",
+            "id": "r6v_ldap_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_redis_01",
+            "id": "r6v_ldap_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_redis_02",
+            "id": "r6v_ldap_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_redis_03",
+            "id": "r6v_cm_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_npm_01",
+            "id": "r6v_cm_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_npm_02",
+            "id": "r6v_cm_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_npm_03",
+            "id": "r6v_jnk_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_xpath_01",
+            "id": "r6v_jnk_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_xpath_02",
+            "id": "r6v_jnk_03",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_xpath_03",
+            "id": "r6v_es_01",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_ans_01",
+            "id": "r6v_es_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
           },
           {
-            "id": "r5v_ans_02",
+            "id": "r6v_es_03",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r6v_grd_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r6v_grd_02",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r6v_pls_01",
+            "lane": "python",
+            "adapter": null,
+            "ent_blocked_on_python": true
+          },
+          {
+            "id": "r6v_pls_02",
             "lane": "python",
             "adapter": null,
             "ent_blocked_on_python": true
@@ -2140,7 +2348,7 @@
     "comparison_table": [
       {
         "path": "baseline_single_no_moe",
-        "n": 36,
+        "n": 40,
         "metric": "solve_rate_single",
         "rate": 0.0,
         "delta_vs_baseline": 0.0,
@@ -2149,7 +2357,7 @@
       },
       {
         "path": "moe_alone_python_lane",
-        "n": 36,
+        "n": 40,
         "metric": "solve_rate_single",
         "rate": 0.0,
         "delta_vs_baseline": 0.0,
@@ -2158,7 +2366,7 @@
       },
       {
         "path": "verifier_alone",
-        "n": 36,
+        "n": 40,
         "metric": "solve_rate_loop",
         "rate": 1.0,
         "delta_vs_baseline": 1.0,
@@ -2167,7 +2375,7 @@
       },
       {
         "path": "moe_verifier_unified_python_lane",
-        "n": 36,
+        "n": 40,
         "metric": "solve_rate_loop",
         "rate": 1.0,
         "delta_vs_baseline": 1.0,
@@ -2216,83 +2424,93 @@
   "notes": [],
   "hardneg_router": {
     "method": "heuristic",
-    "n": 44,
-    "hits": 44,
+    "n": 48,
+    "hits": 48,
     "misses": 0,
-    "score": "44/44",
+    "score": "48/48",
     "rate": 1.0,
     "by_family": {
-      "k8s_label_qubit": {
-        "n": 4,
-        "hits": 4,
-        "rate": 1.0
-      },
-      "prometheus_metric_cx": {
+      "github_action_qubit": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "graphql_field_entangle": {
+      "nginx_location_cx": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "terraform_resource_quantum": {
+      "kafka_topic_bell": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "jwt_claim_n_qubits": {
+      "systemd_unit_quantum": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "makefile_target_bell": {
+      "aws_arn_pennylane": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "css_class_qubit": {
+      "bazel_target_cx": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "protobuf_message_circuit": {
+      "cargo_feature_qubit": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "redis_key_gates": {
+      "html_data_attr_entangle": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "npm_package_cx": {
+      "ldap_dn_qubit": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "xpath_qubit": {
+      "cmake_option_n_qubits": {
         "n": 3,
         "hits": 3,
         "rate": 1.0
       },
-      "ansible_role_pennylane": {
+      "groovy_jenkins_gates": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "elasticsearch_index_bell": {
+        "n": 3,
+        "hits": 3,
+        "rate": 1.0
+      },
+      "gradle_task_entangle": {
         "n": 2,
         "hits": 2,
         "rate": 1.0
       },
-      "ent_control_r5": {
+      "plist_key_qubit": {
         "n": 2,
         "hits": 2,
         "rate": 1.0
       },
-      "vision_control_r5": {
+      "ent_control_r6": {
         "n": 2,
         "hits": 2,
         "rate": 1.0
       },
-      "base_control_r5": {
+      "vision_control_r6": {
+        "n": 2,
+        "hits": 2,
+        "rate": 1.0
+      },
+      "base_control_r6": {
         "n": 4,
         "hits": 4,
         "rate": 1.0
@@ -2301,368 +2519,408 @@
     "ent_never_on_python": true,
     "rows": [
       {
-        "id": "r5_k8s_01",
-        "family": "k8s_label_qubit",
+        "id": "r6_gha_01",
+        "family": "github_action_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('app.kubernetes.io/name=qubit-proxy'). K8s label on",
+        "prompt_preview": "Write Python that prints len('qubit-lint'). GitHub Actions job id only. ONLY cod",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_k8s_02",
-        "family": "k8s_label_qubit",
+        "id": "r6_gha_02",
+        "family": "github_action_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "ann = 'gates=[cleanup,nightly]'\nprint(ann.count(','))\n# K8s annotation value gat",
+        "prompt_preview": "step = 'uses: org/cx-action@v1'\nprint(step.count('/'))\n# GHA step uses:; not a C",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_k8s_03",
-        "family": "k8s_label_qubit",
+        "id": "r6_gha_03",
+        "family": "github_action_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 5*5. Pod annotation pennylane.io/enabled=false is a fea",
+        "prompt_preview": "Write Python that prints 8*3. Workflow env PENNYLANE_CI=0 is a feature flag. ONL",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_k8s_04",
-        "family": "k8s_label_qubit",
+        "id": "r6_ngx_01",
+        "family": "nginx_location_cx",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints int(8+2). Helm value gates: [cleanup] is a list of Cron",
+        "prompt_preview": "Write Python that prints len('location /cx-api'). nginx location path. ONLY code",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_prom_01",
-        "family": "prometheus_metric_cx",
+        "id": "r6_ngx_02",
+        "family": "nginx_location_cx",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('cx_total{job=\"api\"}'). Prometheus metric name cx_t",
+        "prompt_preview": "loc = 'location ~ ^/qubit/'\nprint(loc.count('/'))\n# nginx regex location; not a ",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_prom_02",
-        "family": "prometheus_metric_cx",
+        "id": "r6_ngx_03",
+        "family": "nginx_location_cx",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "m = 'bell_pair_latency_ms'\nprint(m.count('_'))\n# metric name only; not a Bell-pa",
+        "prompt_preview": "Write Python that prints 14+5. Proxy pass /hadamard-health is an HTTP path. ONLY",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_prom_03",
-        "family": "prometheus_metric_cx",
+        "id": "r6_kfk_01",
+        "family": "kafka_topic_bell",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 12+7. Alert rule hadamard_error_rate is SRE jargon. ONL",
+        "prompt_preview": "Write Python that prints len('bell.events.v1'). Kafka topic name. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_gql_01",
-        "family": "graphql_field_entangle",
+        "id": "r6_kfk_02",
+        "family": "kafka_topic_bell",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('entangleUsers'). GraphQL field name only. ONLY cod",
+        "prompt_preview": "t = 'cx.metrics.raw'\nprint(t.count('.'))\n# Kafka topic; not CX gate. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_gql_02",
-        "family": "graphql_field_entangle",
+        "id": "r6_kfk_03",
+        "family": "kafka_topic_bell",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "q = 'query { n_qubits }'\nprint(len(q))\n# GraphQL selection set; field n_qubits i",
+        "prompt_preview": "Write Python that prints 7*4. Consumer group entangle-workers is a fleet name. O",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_gql_03",
-        "family": "graphql_field_entangle",
+        "id": "r6_sys_01",
+        "family": "systemd_unit_quantum",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 4**2. GraphQL type CircuitConfig is a billing schema na",
+        "prompt_preview": "Write Python that prints len('quantum-agent.service'). systemd unit name. ONLY c",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_tf_01",
-        "family": "terraform_resource_quantum",
+        "id": "r6_sys_02",
+        "family": "systemd_unit_quantum",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('aws_quantum_ledger'). Terraform resource type stri",
+        "prompt_preview": "u = 'pennylane-sidecar.service'\nprint(u.count('-'))\n# systemd unit; not PennyLan",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_tf_02",
-        "family": "terraform_resource_quantum",
+        "id": "r6_sys_03",
+        "family": "systemd_unit_quantum",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "name = 'module.entangle_vpc'\nprint(name.count('.'))\n# Terraform module path; not",
+        "prompt_preview": "Write Python that prints 9+9. Unit drop-in Environment=GATES=cleanup is an ops a",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_tf_03",
-        "family": "terraform_resource_quantum",
+        "id": "r6_aws_01",
+        "family": "aws_arn_pennylane",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 9*3. HCL attribute qubit_count is an integer tag, not n",
+        "prompt_preview": "Write Python that prints len('arn:aws:lambda:us-east-1:1:function:pennylane-ci')",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_jwt_01",
-        "family": "jwt_claim_n_qubits",
+        "id": "r6_aws_02",
+        "family": "aws_arn_pennylane",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('n_qubits'). JWT claim key string only. ONLY code.",
+        "prompt_preview": "arn = 'arn:aws:iam::123:role/qubit-runner'\nprint(arn.count(':'))\n# IAM role ARN;",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_jwt_02",
-        "family": "jwt_claim_n_qubits",
+        "id": "r6_aws_03",
+        "family": "aws_arn_pennylane",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 6+5. Auth note: reply JSON only for /session — JWT clai",
+        "prompt_preview": "Write Python that prints 11+6. S3 key prefix gates/cleanup/nightly is an ops pat",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_jwt_03",
-        "family": "jwt_claim_n_qubits",
+        "id": "r6_bzl_01",
+        "family": "bazel_target_cx",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "claims = ['sub','gates','aud']\nprint(len(claims))\n# JWT claim names; gates is a ",
+        "prompt_preview": "Write Python that prints len('//cx:lint'). Bazel label. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_make_01",
-        "family": "makefile_target_bell",
+        "id": "r6_bzl_02",
+        "family": "bazel_target_cx",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('bell:'). Makefile target label. ONLY code.",
+        "prompt_preview": "label = '//gates:cleanup'\nprint(label.count(':'))\n# Bazel target //gates:cleanup",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_make_02",
-        "family": "makefile_target_bell",
+        "id": "r6_bzl_03",
+        "family": "bazel_target_cx",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "t = 'cx-lint: ## run cx linter'\nprint(t.count('-'))\n# Make target; not CX gate. ",
+        "prompt_preview": "Write Python that prints 5**2. Bazel query kind(qubit_*, ...) is a build graph f",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_make_03",
-        "family": "makefile_target_bell",
+        "id": "r6_crg_01",
+        "family": "cargo_feature_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 15-4. Recipe comment # not gates=[Hadamard] — that woul",
+        "prompt_preview": "Write Python that prints len('qubit-alloc'). Cargo feature name. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_css_01",
-        "family": "css_class_qubit",
+        "id": "r6_crg_02",
+        "family": "cargo_feature_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('.qubit-grid'). CSS class selector string. ONLY cod",
+        "prompt_preview": "feat = 'features = [\"bell-smoke\"]'\nprint(feat.count('\"'))\n# Cargo.toml features;",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_css_02",
-        "family": "css_class_qubit",
+        "id": "r6_crg_03",
+        "family": "cargo_feature_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "cls = 'circuit-board--dark'\nprint(cls.count('-'))\n# CSS BEM class; not a quantum",
+        "prompt_preview": "Write Python that prints 13-4. Crate pennylane-sys is a FFI binding name. ONLY c",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_css_03",
-        "family": "css_class_qubit",
+        "id": "r6_htm_01",
+        "family": "html_data_attr_entangle",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 2**5. HTML class='hadamard-btn' is UI chrome. ONLY code",
+        "prompt_preview": "Write Python that prints len('data-entangle-id'). HTML data-* attr. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_proto_01",
-        "family": "protobuf_message_circuit",
+        "id": "r6_htm_02",
+        "family": "html_data_attr_entangle",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('message Circuit'). Protobuf IDL fragment. ONLY cod",
+        "prompt_preview": "attr = 'data-gates=\"cleanup,nightly\"'\nprint(attr.count(','))\n# HTML data-gates a",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_proto_02",
-        "family": "protobuf_message_circuit",
+        "id": "r6_htm_03",
+        "family": "html_data_attr_entangle",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 7+6. Proto field int32 n_qubits = 1 is a seat counter; ",
+        "prompt_preview": "Write Python that prints 2**4. data-qubit-count=3 is a DOM dataset field. ONLY c",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_proto_03",
-        "family": "protobuf_message_circuit",
+        "id": "r6_ldap_01",
+        "family": "ldap_dn_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "idl = 'repeated Gate gates = 2;'\nprint(len(idl))\n# protobuf field; not a circuit",
+        "prompt_preview": "Write Python that prints len('cn=qubit-bot,ou=svc'). LDAP DN fragment. ONLY code",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_redis_01",
-        "family": "redis_key_gates",
+        "id": "r6_ldap_02",
+        "family": "ldap_dn_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('gates:session:42'). Redis key pattern. ONLY code.",
+        "prompt_preview": "dn = 'uid=cx-reader,dc=ex'\nprint(dn.count('='))\n# LDAP DN; not CX gate. ONLY cod",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_redis_02",
-        "family": "redis_key_gates",
+        "id": "r6_ldap_03",
+        "family": "ldap_dn_qubit",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "k = 'qubit:cache:v1'\nprint(k.count(':'))\n# Redis key; not a qubit circuit. ONLY ",
+        "prompt_preview": "Write Python that prints 6*6. Group cn=hadamard-ops is an ACL name. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_redis_03",
-        "family": "redis_key_gates",
+        "id": "r6_cm_01",
+        "family": "cmake_option_n_qubits",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 11*2. SET bell_pair 1 is a Redis command, not entanglem",
+        "prompt_preview": "Write Python that prints len('option(N_QUBITS'). CMake option token. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_npm_01",
-        "family": "npm_package_cx",
+        "id": "r6_cm_02",
+        "family": "cmake_option_n_qubits",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('@org/cx-utils'). npm package name. ONLY code.",
+        "prompt_preview": "Write Python that prints 10+3. CMake note: reply JSON only for /build-meta — opt",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_npm_02",
-        "family": "npm_package_cx",
+        "id": "r6_cm_03",
+        "family": "cmake_option_n_qubits",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "dep = 'pennylane-ci-helper'\nprint(dep.count('-'))\n# npm dep name; not PennyLane ",
+        "prompt_preview": "opt = 'ENABLE_BELL_TESTS'\nprint(len(opt))\n# CMake option; not Bell circuit. ONLY",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_npm_03",
-        "family": "npm_package_cx",
+        "id": "r6_jnk_01",
+        "family": "groovy_jenkins_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 18+1. package.json script 'entangle:build' is a bundler",
+        "prompt_preview": "Write Python that prints len('stage(\"qubit-lint\")'). Jenkins stage label. ONLY c",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_xpath_01",
-        "family": "xpath_qubit",
+        "id": "r6_jnk_02",
+        "family": "groovy_jenkins_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len(\"//qubit[@id]\"). XPath string only. ONLY code.",
+        "prompt_preview": "line = \"gates = 'cleanup'\"\nprint(line.count(\"'\"))\n# Jenkinsfile Groovy assign ga",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_xpath_02",
-        "family": "xpath_qubit",
+        "id": "r6_jnk_03",
+        "family": "groovy_jenkins_gates",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "xp = \"//gate[@name='cx']\"\nprint(len(xp))\n# XPath; XML tag gate is UI markup. ONL",
+        "prompt_preview": "Write Python that prints 16-7. pipeline { agent any } with env PENNYLANE=0 is CI",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_xpath_03",
-        "family": "xpath_qubit",
+        "id": "r6_es_01",
+        "family": "elasticsearch_index_bell",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 3*9. XPath //circuit/node is DOM navigation, not a quan",
+        "prompt_preview": "Write Python that prints len('bell-logs-2026'). ES index name. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_ans_01",
-        "family": "ansible_role_pennylane",
+        "id": "r6_es_02",
+        "family": "elasticsearch_index_bell",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints len('role: pennylane.ci'). Ansible role ref. ONLY code.",
+        "prompt_preview": "idx = 'cx-metrics-v2'\nprint(idx.count('-'))\n# ES index; not CX gate. ONLY code.",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_ans_02",
-        "family": "ansible_role_pennylane",
+        "id": "r6_es_03",
+        "family": "elasticsearch_index_bell",
         "expected": "python",
         "got": "python",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Write Python that prints 10+10. Vars file n_qubits: 0 disables a feature flag in",
+        "prompt_preview": "Write Python that prints 4*5. Mapping field qubit_id is a document property. ONL",
         "ent_adapter_blocked": true
       },
       {
-        "id": "r5_ent_01",
-        "family": "ent_control_r5",
+        "id": "r6_grd_01",
+        "family": "gradle_task_entangle",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len(':entangle:compile'). Gradle task path. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r6_grd_02",
+        "family": "gradle_task_entangle",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints 12+8. task qubitCheck(type: Exec) is a build hook. ONLY",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r6_pls_01",
+        "family": "plist_key_qubit",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "Write Python that prints len('CFBundleQubitId'). macOS plist key. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r6_pls_02",
+        "family": "plist_key_qubit",
+        "expected": "python",
+        "got": "python",
+        "ok": true,
+        "adapter": null,
+        "prompt_preview": "k = 'HadamardHotKey'\nprint(len(k))\n# plist key; not Hadamard gate. ONLY code.",
+        "ent_adapter_blocked": true
+      },
+      {
+        "id": "r6_ent_01",
+        "family": "ent_control_r6",
         "expected": "ent",
         "got": "ent",
         "ok": true,
@@ -2671,8 +2929,8 @@
         "ent_adapter_blocked": false
       },
       {
-        "id": "r5_ent_02",
-        "family": "ent_control_r5",
+        "id": "r6_ent_02",
+        "family": "ent_control_r6",
         "expected": "ent",
         "got": "ent",
         "ok": true,
@@ -2681,8 +2939,8 @@
         "ent_adapter_blocked": false
       },
       {
-        "id": "r5_vis_01",
-        "family": "vision_control_r5",
+        "id": "r6_vis_01",
+        "family": "vision_control_r6",
         "expected": "vision",
         "got": "vision",
         "ok": true,
@@ -2691,8 +2949,8 @@
         "ent_adapter_blocked": false
       },
       {
-        "id": "r5_vis_02",
-        "family": "vision_control_r5",
+        "id": "r6_vis_02",
+        "family": "vision_control_r6",
         "expected": "vision",
         "got": "vision",
         "ok": true,
@@ -2701,8 +2959,8 @@
         "ent_adapter_blocked": false
       },
       {
-        "id": "r5_base_01",
-        "family": "base_control_r5",
+        "id": "r6_base_01",
+        "family": "base_control_r6",
         "expected": "base",
         "got": "base",
         "ok": true,
@@ -2711,18 +2969,18 @@
         "ent_adapter_blocked": false
       },
       {
-        "id": "r5_base_02",
-        "family": "base_control_r5",
+        "id": "r6_base_02",
+        "family": "base_control_r6",
         "expected": "base",
         "got": "base",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Nice talk about JWT seat-count claims named n_qubits. Any gardening tips? No cod",
+        "prompt_preview": "Nice talk about Bazel //gates:cleanup labels. Any gardening tips? No code, no ci",
         "ent_adapter_blocked": false
       },
       {
-        "id": "r5_base_03",
-        "family": "base_control_r5",
+        "id": "r6_base_03",
+        "family": "base_control_r6",
         "expected": "base",
         "got": "base",
         "ok": true,
@@ -2731,17 +2989,17 @@
         "ent_adapter_blocked": false
       },
       {
-        "id": "r5_base_04",
-        "family": "base_control_r5",
+        "id": "r6_base_04",
+        "family": "base_control_r6",
         "expected": "base",
         "got": "base",
         "ok": true,
         "adapter": null,
-        "prompt_preview": "Thanks for the K8s annotation chat about gates=[cleanup]. Cooking ideas? No code",
+        "prompt_preview": "Thanks for the Jenkins chat about gates = 'cleanup'. Cooking ideas? No code, no ",
         "ent_adapter_blocked": false
       }
     ],
-    "fixture_path": "data/bench_live/hardneg_r5_mixed_router.json",
+    "fixture_path": "data/bench_live/hardneg_r6_mixed_router.json",
     "anti_contamination": {
       "expected_lane_harness_only": true,
       "gt_never_in_route_api": true
@@ -2749,7 +3007,7 @@
   },
   "hardneg_delta": {
     "router_rate": 1.0,
-    "router_score": "44/44",
+    "router_score": "48/48",
     "ent_never_on_python": true,
     "vs_freeze_floor": "hold"
   }
