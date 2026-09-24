@@ -202,5 +202,7 @@
     "codigo_vivo_tip_motion_r2_100pct_20260924_131537",
     "codigo_vivo_tip_collision_pred_100pct_20260924_131846",
     "codigo_vivo_tip_distance_danger_100pct_20260924_131243"
-  ]
+  ],
+  "freeze_sha": "0a1439d1a1356318667222753fb9e99e8df7be2c",
+  "freeze_id": "codigo_vivo_tip_inverse_r2_100pct_20260924_134326"
 }

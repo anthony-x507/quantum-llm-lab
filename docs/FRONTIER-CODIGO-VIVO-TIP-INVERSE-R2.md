@@ -4,7 +4,7 @@
 **Base tip SHA:** `2d13d0a` (`origin/frontier/codigo-vivo-tip`)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-inverse-r2` (Mac-111)  
 **When:** 2026-09-24 13:43:26 ET  
-**Freeze:** `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`  
+**Freeze:**  @ `codigo_vivo_tip_inverse_r2_100pct_20260924_134326`  
 **Scope:** Side-branch only — does **not** fold into tip; avoids tip-cv / tip-hardneg-r10 / tip-vision-ground / tip-motion-r3 / tip-vision-delta.
 
 ## LOCK (Anthony / Leader)
