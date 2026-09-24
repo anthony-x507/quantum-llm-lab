@@ -287,37 +287,116 @@ def refine_with_parallax(
     return max(0.5, refined), conf
 
 
+# TTI scoring tolerances (post-hoc vs GT; never at inference)
+TTI_TOL_REL = 0.20          # ±20% relative
+TTI_TOL_ABS_S = 0.50        # or ±0.5 s absolute
+TTI_V_CLOSE_MIN_MPS = 0.05  # approaching threshold
+DEFAULT_DT_S = 1.0 / 12.0
+
+
+def tti_within_tol(est_s: float | None, gt_s: float | None,
+                   *, rel: float = TTI_TOL_REL, abs_s: float = TTI_TOL_ABS_S) -> bool:
+    """Post-hoc TTI correctness (GT compare only)."""
+    if est_s is None or gt_s is None or gt_s <= 0:
+        return False
+    if abs(float(est_s) - float(gt_s)) <= abs_s:
+        return True
+    return abs(float(est_s) - float(gt_s)) / max(float(gt_s), 1e-6) <= rel
+
+
+def gt_tti_from_depth(
+    gt_m_curr: float,
+    *,
+    gt_m_prev: float | None = None,
+    v_depth_m_per_frame: float | None = None,
+    dt_s: float = DEFAULT_DT_S,
+) -> dict[str, float | None]:
+    """GT time-to-impact from depth change (sidecar / post-hoc only).
+
+    v_depth in synth is m/frame; negative ⇒ approaching camera.
+    Never call at inference — eval harness only.
+    """
+    out: dict[str, float | None] = {"tti_s": None, "closing_speed_mps": None}
+    if gt_m_curr <= 0 or dt_s <= 0:
+        return out
+    if gt_m_prev is not None:
+        v_close = (float(gt_m_prev) - float(gt_m_curr)) / dt_s
+    elif v_depth_m_per_frame is not None:
+        v_close = (-float(v_depth_m_per_frame)) / dt_s
+    else:
+        return out
+    out["closing_speed_mps"] = round(float(v_close), 4)
+    if v_close > TTI_V_CLOSE_MIN_MPS:
+        out["tti_s"] = round(float(gt_m_curr) / v_close, 3)
+    return out
+
+
+def tti_band(tti_s: float) -> str:
+    if tti_s < 2.0:
+        return "<2s"
+    if tti_s < 5.0:
+        return "2-5s"
+    if tti_s < 15.0:
+        return "5-15s"
+    return ">15s"
+
+
 def closing_speed_tti(
     size_prev: float,
     size_curr: float,
     d_est: float,
     *,
-    dt_s: float = 1.0 / 12.0,
+    dt_s: float = DEFAULT_DT_S,
+    d_est_prev: float | None = None,
+    size_prev2: float | None = None,
 ) -> dict[str, float | str | None]:
-    """If object grows X% per frame → closing speed + time-to-impact.
+    """% growth per frame → closing speed + time-to-impact (seconds).
 
-    d ∝ 1/s → d_curr ≈ d_est, d_prev ≈ d_est * (s_curr / s_prev)
-    v_close (m/s, + toward camera) = (d_prev - d_curr) / dt
-    tti = d_curr / v_close when approaching.
+    Primary (size-invariant): tti = dt / growth = dt * s_prev/(s_curr-s_prev).
+    Fallback: dist-rate when growth absent/weak-positive and depths approach
+    hard (never on recede). size_prev2 reserved for future multi-frame; unused
+    in v3 (EMA regressed scorable on synth).
     """
     out: dict[str, float | str | None] = {
         "growth_frac": None,
         "closing_speed_mps": None,
         "tti_s": None,
         "signal": "unknown",
+        "tti_source": None,
     }
-    if size_prev <= 1e-6 or size_curr <= 1e-6 or d_est <= 0 or dt_s <= 0:
+    _ = size_prev2  # API compat with eval harness
+    if d_est <= 0 or dt_s <= 0:
         return out
-    growth = (size_curr - size_prev) / size_prev
-    out["growth_frac"] = round(float(growth), 5)
-    signal = parallax_signal(size_prev, size_curr)
-    out["signal"] = signal
-    # d_prev from size ratio relative to current estimate
-    d_prev = d_est * (size_curr / size_prev)
-    v_close = (d_prev - d_est) / dt_s
-    out["closing_speed_mps"] = round(float(v_close), 4)
-    if v_close > 0.05:  # approaching
-        out["tti_s"] = round(float(d_est / v_close), 3)
+
+    growth = None
+    signal = "unknown"
+    if size_prev > 1e-6 and size_curr > 1e-6:
+        growth = (size_curr - size_prev) / size_prev
+        out["growth_frac"] = round(float(growth), 5)
+        signal = parallax_signal(size_prev, size_curr)
+        out["signal"] = signal
+
+    if growth is not None and growth > 1e-6:
+        tti = dt_s / growth
+        v_close = float(d_est) / tti if tti > 1e-9 else 0.0
+        if v_close > TTI_V_CLOSE_MIN_MPS:
+            out["closing_speed_mps"] = round(float(v_close), 4)
+            out["tti_s"] = round(float(tti), 3)
+            out["tti_source"] = "growth"
+            return out
+        out["closing_speed_mps"] = round(float(v_close), 4)
+
+    if signal == "recede":
+        return out
+    if d_est_prev is not None and d_est_prev > 0:
+        v_close_d = (float(d_est_prev) - float(d_est)) / dt_s
+        if v_close_d > max(TTI_V_CLOSE_MIN_MPS * 4, 0.25):
+            weak = growth is None or (0 < growth < 0.002)
+            if weak:
+                out["closing_speed_mps"] = round(float(v_close_d), 4)
+                out["tti_s"] = round(float(d_est) / v_close_d, 3)
+                out["tti_source"] = "dist_rate"
+                return out
     return out
 
 

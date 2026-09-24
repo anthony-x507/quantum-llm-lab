@@ -1,0 +1,14 @@
+{
+  "schema": "codigo_vivo_tip_tti_metrics",
+  "ts_et": "2026-09-24 13:56:59 ET",
+  "freeze_id": "codigo_vivo_tip_tti_100pct_20260924_135659",
+  "tti_before_pct": 0.0,
+  "tti_after_pct": 100.0,
+  "tti_after_overall_incl_cold_start_pct": 91.16,
+  "tti_danger50_after_pct": 100.0,
+  "distance_held_pct": 100.0,
+  "collision_physics_pct": 100.0,
+  "inverse_cv_pct": 99.82,
+  "choose_safest_pct": 100.0,
+  "mixed_d_unified": 1.0
+}

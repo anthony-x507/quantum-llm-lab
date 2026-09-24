@@ -9,7 +9,7 @@
 5. Signals: **floor-calibrated scale + fine frame-to-frame parallax + closing-speed/TTI** (growth % → v_close → time-to-impact).
 6. **DANGER ZONE 30–70 m** is the reinforce target (baseline ~50 m band was weakest).
 7. GT = known 3D positions in **synthetic render sidecars only**; **never** in inference prompts / memory / retrieval.
-8. Metric: % correct by band **and** % correct in 30–70 m; ablation tracking / inverse-style future-pred **in danger zone**.
+8. Metric: % correct by band **and** % correct in 30–70 m; **% correct TTI vs GT** (growth%→v_close→tti_s; bands <2/2-5/5-15/>15s); ablation tracking / inverse-style future-pred **in danger zone**.
 9. Quantum `data/lora_adapter/` = **READ-ONLY**. New adapters → `data/lora_adapter_distance/` only.
 10. Do **not** mix with inverse_planning corridor geometry (may compare prediction ablation only).
 11. Do **not** kill GPU screens; share via `data/TRAIN_LOCK.txt`; queue behind existing waiters.

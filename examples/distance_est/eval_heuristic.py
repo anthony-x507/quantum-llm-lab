@@ -9,6 +9,7 @@ Anti-contam audit every eval; dirty → INVALID.
 Metrics:
   - % correct distance by range band (tol 10% if GT<50m, 20% if 50–200m)
   - % correct in DANGER ZONE 30–70 m (+ delta vs baseline 48.69% ~50m)
+  - % correct TTI (time-to-impact seconds) vs GT — growth%→v_close→tti; bands <2/2-5/5-15/>15s
   - Ablation: tracking±distance; future-pred±distance — overall AND in danger zone
 
 Usage:
@@ -34,6 +35,7 @@ from physics import (
     band_for_distance,
     closing_speed_tti,
     estimate_via_floor_scale,
+    gt_tti_from_depth,
     in_danger_zone,
     parallax_signal,
     pick_building_scale,
@@ -41,6 +43,8 @@ from physics import (
     refine_with_parallax,
     temporal_ema_distance,
     track_associate_greedy,
+    tti_band,
+    tti_within_tol,
     within_tol,
 )
 
@@ -118,13 +122,23 @@ def estimate_frame(
             sp = float(prev.get("apparent_px") or 1)
             sc = float(o["apparent_px"])
             para = parallax_signal(sp, sc)
-            if prev.get("est_m"):
+            d_prev_est = float(prev["est_m"]) if prev.get("est_m") else None
+            if d_prev_est is not None:
                 est, conf = refine_with_parallax(est, para, sp, sc)
                 method = method + "+parallax"
                 # Temporal EMA + closing-speed hold (finer mid-band)
-                est = temporal_ema_distance(float(est), float(prev["est_m"]), para)
+                est = temporal_ema_distance(float(est), d_prev_est, para)
                 method = method + "+ema"
-            cs = closing_speed_tti(sp, sc, float(est))
+            # Multi-frame size (t-2) for growth EMA raise
+            sp2 = prev.get("apparent_px_prev")
+            sp2_f = float(sp2) if sp2 is not None else None
+            cs = closing_speed_tti(
+                sp, sc, float(est),
+                d_est_prev=d_prev_est,
+                size_prev2=sp2_f,
+            )
+            if cs.get("tti_s") is not None:
+                method = method + "+tti"
         # Honesty: very low confidence → unknown (excluded from distance %; counted)
         if est is not None and conf < 0.38 and "honesty" in method:
             honesty_unknown = True
@@ -139,6 +153,7 @@ def estimate_frame(
             "parallax": para,
             "closing_speed_mps": cs.get("closing_speed_mps"),
             "tti_s": cs.get("tti_s"),
+            "tti_source": cs.get("tti_source"),
             "growth_frac": cs.get("growth_frac"),
             "honesty_unknown": honesty_unknown,
             "cx": o["cx"], "cy": o["cy"],
@@ -330,6 +345,17 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
     pred_dist_dz = {"n": 0, "correct": 0, "pos_n": 0, "pos_c": 0}
     tti_rows = 0
     honesty_unknown_n = 0
+    # TTI accuracy vs GT (post-hoc only; GT never at inference)
+    tti_acc = {"n": 0, "correct": 0, "missed_emit": 0, "false_emit": 0, "cold_start_n": 0}
+    tti_danger = {"n": 0, "correct": 0}
+    tti_by_band: dict[str, dict[str, int]] = {
+        "<2s": {"n": 0, "correct": 0},
+        "2-5s": {"n": 0, "correct": 0},
+        "5-15s": {"n": 0, "correct": 0},
+        ">15s": {"n": 0, "correct": 0},
+    }
+    tti_scorable = {"n": 0, "correct": 0}  # exclude cold-start (no prev frame)
+    all_tti_rows: list[dict[str, Any]] = []
 
     for sid in eval_ids:
         seq_dir = data_dir / sid
@@ -375,6 +401,57 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
                         band50_acc["correct"] += 1
                 if p.get("tti_s") is not None:
                     tti_rows += 1
+                # --- TTI vs GT (sidecar depth change; never in prompt) ---
+                g_prev = None
+                if t > 0:
+                    gt_prev_fr = next((x for x in gt["frames"] if x["t"] == t - 1), None)
+                    if gt_prev_fr is not None:
+                        g_prev = next((x for x in gt_prev_fr["objects"] if x["id"] == p["id"]), None)
+                gt_tti = gt_tti_from_depth(
+                    float(g["gt_m"]),
+                    gt_m_prev=float(g_prev["gt_m"]) if g_prev is not None else None,
+                    v_depth_m_per_frame=float(g.get("v_depth") or 0.0) if g_prev is None else None,
+                )
+                tti_gt = gt_tti.get("tti_s")
+                tti_est = p.get("tti_s")
+                has_prev = g_prev is not None
+                if tti_gt is not None:
+                    tti_acc["n"] += 1
+                    if not has_prev:
+                        tti_acc["cold_start_n"] += 1
+                    else:
+                        tti_scorable["n"] += 1
+                    tti_ok = tti_within_tol(
+                        float(tti_est) if tti_est is not None else None,
+                        float(tti_gt),
+                    )
+                    if tti_est is None:
+                        tti_acc["missed_emit"] += 1
+                        tti_ok = False
+                    if tti_ok:
+                        tti_acc["correct"] += 1
+                        if has_prev:
+                            tti_scorable["correct"] += 1
+                    tb = tti_band(float(tti_gt))
+                    # bands + DZ primary = scorable only
+                    if has_prev:
+                        tti_by_band[tb]["n"] += 1
+                        if tti_ok:
+                            tti_by_band[tb]["correct"] += 1
+                        if in_danger_zone(gt_m):
+                            tti_danger["n"] += 1
+                            if tti_ok:
+                                tti_danger["correct"] += 1
+                    all_tti_rows.append({
+                        "seq_id": sid, "t": t, "id": p["id"], "class": g["class"],
+                        "gt_m": g["gt_m"], "tti_gt_s": tti_gt, "tti_est_s": tti_est,
+                        "tti_source": p.get("tti_source"),
+                        "correct": tti_ok, "cold_start": not has_prev,
+                        "in_danger_zone": in_danger_zone(gt_m),
+                        "band_tti": tb,
+                    })
+                elif tti_est is not None:
+                    tti_acc["false_emit"] += 1
                 all_dist_rows.append({
                     "seq_id": sid, "t": t, "id": p["id"], "class": g["class"],
                     "gt_m": g["gt_m"], "est_m": p["est_m"], "band": band,
@@ -382,6 +459,9 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
                     "correct": ok, "method": p.get("method"), "parallax": p.get("parallax"),
                     "closing_speed_mps": p.get("closing_speed_mps"),
                     "tti_s": p.get("tti_s"),
+                    "tti_gt_s": tti_gt,
+                    "tti_correct": (tti_within_tol(float(tti_est), float(tti_gt))
+                                   if (tti_gt is not None and tti_est is not None) else None),
                 })
 
             with audit_path.open("a") as af:
@@ -399,7 +479,14 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
                 }) + "\n")
             if touches:
                 dirty += 1
-            prev = {o["id"]: {**o, **next(p for p in preds if p["id"] == o["id"])} for o in fr["objects"]}
+            prev_snap = prev
+            prev = {}
+            for o in fr["objects"]:
+                pr = next(p for p in preds if p["id"] == o["id"])
+                row = {**o, **pr}
+                if prev_snap is not None and o["id"] in prev_snap:
+                    row["apparent_px_prev"] = prev_snap[o["id"]].get("apparent_px")
+                prev[o["id"]] = row
 
         for use_d, bucket, bucket_dz in [
             (False, track_only, track_only_dz),
@@ -459,7 +546,7 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
         "scale_lock": "FLOOR-SCALE",
         "no_fixed_object_heights": True,
         "soft_size_priors": {"car_length_m": 4.5, "car_height_m": 1.55, "ped_height_m": 1.7},
-        "predictor": "floor_scale_parallax_size_prior_closing_speed_v2_danger",
+        "predictor": "floor_scale_parallax_size_prior_closing_speed_v3_tti",
         "n_eval_seq": len(eval_ids),
         "distance": {
             "n": n, "correct": c, "pct": pct(n, c),
@@ -488,6 +575,38 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
         "closing_speed": {
             "tti_estimates_emitted": tti_rows,
             "note": "growth_frac → closing_speed_mps → tti_s when approaching",
+        },
+        "tti": {
+            "predictor": "growth_invariant_dist_rate_fallback_v3",
+            "tol": {"rel": 0.20, "abs_s": 0.50},
+            "formula": "growth% /frame → v_close → tti_s; size-invariant + dist-rate fallback",
+            "n": tti_scorable["n"],
+            "correct": tti_scorable["correct"],
+            "pct": pct(tti_scorable["n"], tti_scorable["correct"]),
+            "note_primary": "scorable frames only (prev observation required; cold-start excluded)",
+            "overall_incl_cold_start": {
+                "n": tti_acc["n"],
+                "correct": tti_acc["correct"],
+                "pct": pct(tti_acc["n"], tti_acc["correct"]),
+                "missed_emit": tti_acc["missed_emit"],
+                "cold_start_n": tti_acc["cold_start_n"],
+                "note": "cold-start counted as miss (no temporal signal yet)",
+            },
+            "missed_emit": tti_acc["missed_emit"],
+            "false_emit": tti_acc["false_emit"],
+            "cold_start_n": tti_acc["cold_start_n"],
+            "baseline_before_tti_metric_pct": 0.0,
+            "baseline_note": "before this branch TTI was emission-count only (no % vs GT)",
+            "danger_zone_30_70m": {
+                "n": tti_danger["n"],
+                "correct": tti_danger["correct"],
+                "pct": pct(tti_danger["n"], tti_danger["correct"]),
+            },
+            "by_tti_band": {
+                b: {"n": st["n"], "correct": st["correct"], "pct": pct(st["n"], st["correct"])}
+                for b, st in tti_by_band.items()
+            },
+            "anti_contam": "tti_gt from distances_gt.json depth deltas only; never in prompt/memory",
         },
         "honesty": {
             "unknown_when_unsure_n": honesty_unknown_n,

@@ -1,0 +1,101 @@
+{
+  "schema": "frontier_tip_tti_probe",
+  "ts_et": "2026-09-24 13:56:59 ET",
+  "branch": "frontier/tip-tti",
+  "base_tip_sha": "9cc5ed57a1c4ef972c325a940aa4169f2c4bbb30",
+  "worktree": "/Users/anthony/Documents/quantum-llm-lab-tip-tti",
+  "machine": "Mac-111",
+  "predictor": "growth_invariant_dist_rate_fallback_v3",
+  "tti": {
+    "before_pct": 0.0,
+    "before_note": "emission-count only (no % vs GT)",
+    "after_pct_original": 100.0,
+    "after_pct_danger50": 100.0,
+    "after_overall_incl_cold_start_original": 91.16,
+    "after_overall_incl_cold_start_danger50": 91.66,
+    "tol": {
+      "rel": 0.2,
+      "abs_s": 0.5
+    },
+    "bands_original": {
+      "<2s": {
+        "n": 152,
+        "correct": 152,
+        "pct": 100.0
+      },
+      "2-5s": {
+        "n": 123,
+        "correct": 123,
+        "pct": 100.0
+      },
+      "5-15s": {
+        "n": 210,
+        "correct": 210,
+        "pct": 100.0
+      },
+      ">15s": {
+        "n": 206,
+        "correct": 206,
+        "pct": 100.0
+      }
+    },
+    "bands_danger50": {
+      "<2s": {
+        "n": 199,
+        "correct": 199,
+        "pct": 100.0
+      },
+      "2-5s": {
+        "n": 130,
+        "correct": 130,
+        "pct": 100.0
+      },
+      "5-15s": {
+        "n": 288,
+        "correct": 288,
+        "pct": 100.0
+      },
+      ">15s": {
+        "n": 108,
+        "correct": 108,
+        "pct": 100.0
+      }
+    },
+    "danger_zone_original_pct": 100.0,
+    "danger_zone_danger50_pct": 100.0,
+    "false_emit_original": 0,
+    "false_emit_danger50": 0
+  },
+  "distance_held": {
+    "original_pct": 100.0,
+    "danger50_pct": 100.0,
+    "dz_30_70_original_pct": 100.0,
+    "dz_30_70_danger50_pct": 100.0
+  },
+  "collision_floors": {
+    "collision_physics_pct": 100.0,
+    "inverse_cv_pct": 99.82,
+    "choose_safest_pct": 100.0,
+    "n_eval_seqs": 40,
+    "n_queries": 2850,
+    "contam_passed": true,
+    "retrieval_ok": true
+  },
+  "floors": {
+    "collision_physics": 100.0,
+    "choose_safest": 100.0,
+    "inverse_cv": 99.82,
+    "mixed_d_unified": 1.0,
+    "held": true
+  },
+  "anti_contam": {
+    "distance": "CLEAN",
+    "collision": "PASS",
+    "gt_at_inference": false
+  },
+  "adapters_ro": true,
+  "freeze_eligible": true,
+  "freeze_reason": "TTI primary >=80% (100%) and floors held",
+  "git_sha": "102cd17973ba4197e2239595ab7dfbb148180b02",
+  "git_sha_short": "102cd17"
+}
