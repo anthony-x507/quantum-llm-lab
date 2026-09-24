@@ -1,7 +1,7 @@
 # FRONTIER — Circuit-graph MoE scaffold HARD expand
 
 **Branch:** `frontier/circuit-graph-scaffold-hard`  
-**Written:** 2026-09-24 10:52:39  
+**Written:** 2026-09-24 10:57:26  
 **Base:** `frontier/circuit-graph-moe-scaffold` @ `e769d16`
 
 ## Claims (cannot-claim)

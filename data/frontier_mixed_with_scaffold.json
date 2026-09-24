@@ -1,8 +1,34 @@
 {
   "frontier": "mixed-with-scaffold",
+  "branch": "frontier/mixed-with-scaffold",
   "written": "2026-09-24 10:57:47",
-  "primary": "/private/tmp/qlab-mixed-scaffold-wt/data/frontier_moe_verifier_mixed_cpu.json",
-  "scoreboard": {
+  "claims": [
+    "NO quantum-advantage claims",
+    "Scaffold = classical Clifford–Pauli graph features/hints only",
+    "Mixed scoreboard prior-replay ent/vis + heuristic python verifier"
+  ],
+  "parents": {
+    "mixed": {
+      "branch": "frontier/moe-verifier-mixed-live",
+      "sha": "efc5e9d"
+    },
+    "scaffold_hard": {
+      "branch": "frontier/circuit-graph-scaffold-hard",
+      "sha": "ecb7974"
+    }
+  },
+  "wiring": {
+    "circuit_scaffold_default_on_ent": true,
+    "flag": "--circuit-scaffold / --no-circuit-scaffold",
+    "scaffold_injected_n": 10,
+    "script": "examples/moe_verifier_mixed_live.py"
+  },
+  "scoreboard_cpu": {
+    "before_overall_d_unified": 0.9667,
+    "after_overall_d_unified": 0.9667,
+    "before_ent_b": 1.0,
+    "after_ent_b": 1.0,
+    "ent_pillar_delta_vs_baseline": 1.0,
     "table": [
       {
         "path": "a_baseline",
@@ -89,17 +115,17 @@
         "repair_success_rate": 1.0
       }
     ],
-    "delta_moe_vs_baseline": {
-      "python": 0.0,
-      "entanglement": 1.0,
-      "vision": 0.0,
-      "overall": 0.3333
-    },
-    "moe_delta_visible": true,
-    "priors_used": [
-      "/Users/anthony/Documents/quantum-llm-lab/data/BENCHMARK_CODIGO_VIVO.json",
-      "/private/tmp/qlab-mixed-scaffold-wt/data/frontier_moe_dual_lane_smoke.json"
-    ]
+    "moe_delta_visible": true
+  },
+  "freezes": {
+    "mixed_overall_floor": 0.9667,
+    "mixed_overall_floor_doc": 0.967,
+    "mixed_held": true,
+    "scaffold_solve_floor": 0.9,
+    "scaffold_held": true,
+    "scaffold_observed_solve": 0.9,
+    "hard_clear_win": true,
+    "hard_delta_solve": 0.6666
   },
   "anti_contamination": {
     "prompt_touches_gt": false,
@@ -112,13 +138,16 @@
     "circuit_scaffold_on_ent": true,
     "lock": "docs/LOCK-ANTI-CONTAMINATION.md"
   },
-  "moe_delta_visible": true,
-  "router_hardneg": "10/10",
-  "router_pillars": "26/26",
-  "circuit_scaffold_default_on_ent": true,
-  "freezes": {
-    "mixed_overall": 0.9667,
-    "scaffold_solve": 0.9,
-    "held": true
+  "paths": {
+    "cpu": "data/frontier_moe_verifier_mixed_cpu.json",
+    "unified": "data/frontier_moe_verifier_mixed_unified.json",
+    "smoke": "data/frontier_moe_verifier_mixed_smoke.json",
+    "scaffold_freeze": "data/FRONTIER_CIRCUIT_GRAPH_SCAFFOLD_FREEZE.json",
+    "scaffold_hard": "data/frontier_circuit_graph_scaffold_hard.json",
+    "scaffold_recheck": "data/frontier_circuit_graph_scaffold_hard_recheck.json",
+    "doc": "docs/FRONTIER-MIXED-WITH-SCAFFOLD.md"
+  },
+  "ro_lock": {
+    "script_writes_to_lora_adapter": false
   }
 }

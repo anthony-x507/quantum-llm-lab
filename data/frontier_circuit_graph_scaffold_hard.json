@@ -1,5 +1,5 @@
 {
-  "written": "2026-09-24 10:52:39",
+  "written": "2026-09-24 10:57:26",
   "router_method": "heuristic",
   "polish_features": false,
   "n_fixtures": 15,
@@ -1318,7 +1318,7 @@
       "hint_has_gt_token": false
     }
   ],
-  "elapsed_s": 1.46,
+  "elapsed_s": 1.51,
   "router_scaffold_smoke": {
     "n": 8,
     "ent_injected": 8,
@@ -1403,6 +1403,6 @@
       "clear_win": true,
       "n_ent": 20
     },
-    "written": "2026-09-24 10:52:40"
+    "written": "2026-09-24 10:57:26"
   }
 }

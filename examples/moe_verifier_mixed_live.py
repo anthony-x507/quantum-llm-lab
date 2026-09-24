@@ -11,8 +11,12 @@ Scoreboard paths (same mixed fixtures):
 CPU/heuristic + prior-replay for ent/vision rates (from BENCHMARK_CODIGO_VIVO +
 prior MoE dual-lane live). Optional --mlx-eval when weights/GPU free (never blocks).
 
+Ent lane: --circuit-scaffold is DEFAULT ON (disable with --no-circuit-scaffold).
+Injects GT-free Clifford–Pauli circuit-graph hints when router→ent.
+
 No quantum-advantage claims. Anti-contam: GT never in prompts; prompt_touches_gt=false.
 READ-ONLY: never write data/lora_adapter/.
+Freeze floors: mixed unified overall ≥0.9667 (~0.967 doc); scaffold-hard solve ≥0.90.
 """
 from __future__ import annotations
 
@@ -36,6 +40,10 @@ sys.path.insert(0, str(ROOT / "examples"))
 
 import moe_dual_lane_router as moe  # noqa: E402
 import python_verifier_loop as ver  # noqa: E402
+try:
+    import circuit_graph_moe_scaffold as cg_scaffold  # noqa: E402
+except ImportError:  # pragma: no cover
+    cg_scaffold = None  # type: ignore
 
 MIXED_ITEMS = ROOT / "data" / "bench_live" / "mixed_items.json"
 BENCH_CV = ROOT / "data" / "BENCHMARK_CODIGO_VIVO.json"
@@ -68,6 +76,28 @@ def _resolve_adapter(lane: moe.Lane) -> Path | None:
         if moe._adapter_complete(cand2):
             return cand2
     return None
+
+
+
+def _scaffold_meta_for_prompt(prompt: str, *, polish: bool = False) -> dict[str, Any] | None:
+    """GT-free circuit-graph scaffold metadata when module is available."""
+    if cg_scaffold is None:
+        return {"injected": False, "reason": "cg_scaffold_unavailable"}
+    hint = cg_scaffold.format_scaffold_hint(prompt, polish=polish)
+    return {
+        "injected": True,
+        "hint_chars": len(hint),
+        "has_markers": cg_scaffold.SCAFFOLD_BEGIN in hint,
+        "gt_leak": bool(cg_scaffold._FORBIDDEN_HINT.search(hint)),
+        "polish": polish,
+    }
+
+
+def maybe_inject_scaffold(prompt: str, lane: str, *, enabled: bool, polish: bool = False) -> str:
+    """When router→ent and scaffold enabled, append Clifford–Pauli hints (no GT)."""
+    if not enabled or lane != "ent" or cg_scaffold is None:
+        return prompt
+    return cg_scaffold.inject_scaffold(prompt, polish=polish)
 
 
 def load_mixed(path: Path = MIXED_ITEMS) -> dict[str, Any]:
@@ -182,10 +212,18 @@ def audit_prompts_vs_gt(mixed: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def run_router_mixed(mixed: dict[str, Any], method: str) -> dict[str, Any]:
+def run_router_mixed(
+    mixed: dict[str, Any],
+    method: str,
+    *,
+    circuit_scaffold: bool = True,
+    scaffold_polish: bool = False,
+) -> dict[str, Any]:
     rows = []
     hits = 0
     n = 0
+    scaffold_gt_leaks = 0
+    scaffold_injected = 0
     # pillar expected lanes (per-item expected_lane overrides defaults)
     default_lane = {
         "python": "python",
@@ -201,6 +239,13 @@ def run_router_mixed(mixed: dict[str, Any], method: str) -> dict[str, Any]:
             n += 1
             if ok:
                 hits += 1
+            sc_meta = None
+            if circuit_scaffold and got == "ent":
+                sc_meta = _scaffold_meta_for_prompt(it["prompt"], polish=scaffold_polish)
+                if sc_meta and sc_meta.get("injected"):
+                    scaffold_injected += 1
+                if sc_meta and sc_meta.get("gt_leak"):
+                    scaffold_gt_leaks += 1
             rows.append({
                 "id": it["id"],
                 "pillar": pillar,
@@ -208,6 +253,7 @@ def run_router_mixed(mixed: dict[str, Any], method: str) -> dict[str, Any]:
                 "got": got,
                 "ok": ok,
                 "adapter": str(ap) if ap else None,
+                "circuit_graph_scaffold": sc_meta,
             })
             if pillar == "python":
                 assert ap is None or "ent" not in Path(str(ap)).name
@@ -231,6 +277,10 @@ def run_router_mixed(mixed: dict[str, Any], method: str) -> dict[str, Any]:
     hn_n = len(mixed.get("hardneg_router") or [])
     return {
         "method": method,
+        "circuit_scaffold_default_on_ent": bool(circuit_scaffold),
+        "scaffold_polish": bool(scaffold_polish),
+        "scaffold_injected_n": scaffold_injected,
+        "scaffold_gt_leaks": scaffold_gt_leaks,
         "pillar_routing": {
             "n": n,
             "hits": hits,
@@ -354,6 +404,9 @@ def score_ent_vision_paths(
     mixed: dict[str, Any],
     priors: dict[str, Any],
     method: str,
+    *,
+    circuit_scaffold: bool = True,
+    scaffold_polish: bool = False,
 ) -> dict[str, Any]:
     """
     Map path → pillar rates using prior live measurements + router adapter choice.
@@ -361,6 +414,10 @@ def score_ent_vision_paths(
     (a) baseline: base rates for ent & vision
     (b)/(d) MoE: if router selects ent→ent2 use moe/ent adapter rates; vision→base
     (c) verifier-on-python: same as baseline for ent/vis (no MoE)
+
+    When circuit_scaffold (default on for ent), attach GT-free circuit-graph
+    scaffold metadata on router→ent items. Prior-replay pillar rates unchanged
+    (freeze-preserving); scaffold is an ent-lane conditioning signal.
     """
     base = priors["baseline_base"]
     moe_r = priors["moe_routed"]
@@ -368,13 +425,25 @@ def score_ent_vision_paths(
 
     # Route each ent/vision item; confirm adapter selection
     ent_routes = []
+    scaffold_gt_leaks = 0
     for it in mixed.get("entanglement") or []:
         lane = moe.route(it["prompt"], method=method)
         ap = _resolve_adapter(lane)  # type: ignore[arg-type]
+        sc_meta = None
+        if circuit_scaffold and lane == "ent":
+            sc_meta = _scaffold_meta_for_prompt(it["prompt"], polish=scaffold_polish)
+            if sc_meta and sc_meta.get("gt_leak"):
+                scaffold_gt_leaks += 1
         ent_routes.append({
             "id": it["id"], "lane": lane,
             "adapter": str(ap) if ap else None,
             "uses_ent_adapter": ap is not None and "ent" in Path(str(ap)).name,
+            "circuit_graph_scaffold": sc_meta,
+            "prompt_with_scaffold_chars": len(
+                maybe_inject_scaffold(
+                    it["prompt"], lane, enabled=circuit_scaffold, polish=scaffold_polish
+                )
+            ),
         })
     vis_routes = []
     for it in mixed.get("vision") or []:
@@ -421,6 +490,10 @@ def score_ent_vision_paths(
 
     return {
         "priors_ref": priors.get("sources"),
+        "circuit_scaffold_on_ent": bool(circuit_scaffold),
+        "scaffold_polish": bool(scaffold_polish),
+        "scaffold_gt_leaks": scaffold_gt_leaks,
+        "scaffold_module": cg_scaffold is not None,
         "ent_routing": ent_routes,
         "vision_routing": vis_routes,
         "paths": {
@@ -514,7 +587,9 @@ def build_artifact(**kwargs: Any) -> dict[str, Any]:
         "claims": [
             "NO quantum-advantage claims",
             "MoE routing usability + classical python -I exec oracle only",
+            "Ent lane may carry Clifford–Pauli circuit-graph scaffold hints (no GT)",
         ],
+        "frontier_lane": "mixed-with-scaffold",
         "ro_lock": {
             "script_writes_to_lora_adapter": False,
             "policy": "READ-ONLY; never overwrite data/lora_adapter/",
@@ -532,6 +607,24 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--smoke", action="store_true", help="Router+hardneg smoke only")
     p.add_argument("--mlp", action="store_true")
     p.add_argument("--vqc-router", action="store_true")
+    p.add_argument(
+        "--circuit-scaffold",
+        dest="circuit_scaffold",
+        action="store_true",
+        default=True,
+        help="When router→ent, inject Clifford–Pauli graph scaffold hints (default ON)",
+    )
+    p.add_argument(
+        "--no-circuit-scaffold",
+        dest="circuit_scaffold",
+        action="store_false",
+        help="Disable ent-lane circuit-graph scaffold",
+    )
+    p.add_argument(
+        "--scaffold-polish",
+        action="store_true",
+        help="Richer scaffold features (embed head, suggested_gates)",
+    )
     p.add_argument("--mixed", type=Path, default=MIXED_ITEMS)
     p.add_argument("--bench", type=Path, default=ver.DEFAULT_BENCH)
     p.add_argument("--replay-source", default="base", choices=("base", "adapter_run", "finetuned"))
@@ -558,12 +651,22 @@ def main(argv: list[str] | None = None) -> int:
     if any("label_in_prompt" in x for x in anti.get("leaks") or []):
         anti["prompt_touches_gt"] = True
 
-    print(f"=== C3b router mixed method={method} ===", flush=True)
-    router = run_router_mixed(mixed, method)
+    print(
+        f"=== C3b router mixed method={method} "
+        f"circuit_scaffold={args.circuit_scaffold} ===",
+        flush=True,
+    )
+    router = run_router_mixed(
+        mixed,
+        method,
+        circuit_scaffold=args.circuit_scaffold,
+        scaffold_polish=args.scaffold_polish,
+    )
     print(
         f"pillar_routing {router['pillar_routing']['score']} "
         f"hardneg {router['hardneg_routing']['score']} "
-        f"ent_never_on_python={router['ent_never_on_python']}",
+        f"ent_never_on_python={router['ent_never_on_python']} "
+        f"scaffold_injected={router.get('scaffold_injected_n', 0)}",
         flush=True,
     )
 
@@ -647,7 +750,13 @@ def main(argv: list[str] | None = None) -> int:
             raise
 
     print("=== C3b ent/vision prior-replay scoreboard ===", flush=True)
-    ev = score_ent_vision_paths(mixed, priors, method)
+    ev = score_ent_vision_paths(
+        mixed,
+        priors,
+        method,
+        circuit_scaffold=args.circuit_scaffold,
+        scaffold_polish=args.scaffold_polish,
+    )
     scoreboard = build_scoreboard(py_eval, ev, priors)
 
     print("--- scoreboard ---", flush=True)
@@ -677,7 +786,20 @@ def main(argv: list[str] | None = None) -> int:
             "prompt_touches_gt": bool(
                 anti.get("prompt_touches_gt") or py_eval.get("prompt_touches_gt")
             ),
+            "scaffold_gt_leaks": int(router.get("scaffold_gt_leaks") or 0)
+            + int(ev.get("scaffold_gt_leaks") or 0),
+            "circuit_scaffold_on_ent": bool(args.circuit_scaffold),
             "lock": "docs/LOCK-ANTI-CONTAMINATION.md",
+        },
+        circuit_scaffold={
+            "enabled_default_on_ent": bool(args.circuit_scaffold),
+            "polish": bool(args.scaffold_polish),
+            "module_available": cg_scaffold is not None,
+            "injected_n": router.get("scaffold_injected_n"),
+            "freeze_path": "data/FRONTIER_CIRCUIT_GRAPH_SCAFFOLD_FREEZE.json",
+            "mixed_freeze_overall_floor": 0.9667,
+            "mixed_freeze_overall_floor_doc": 0.967,
+            "scaffold_freeze_floor": 0.90,
         },
         router=router,
         python_paths=py_eval,
@@ -722,6 +844,24 @@ def main(argv: list[str] | None = None) -> int:
     if router["hardneg_routing"]["hits"] < router["hardneg_routing"]["n"]:
         print("FAIL: hardneg routing incomplete", flush=True)
         fail = True
+    if art["anti_contamination"].get("scaffold_gt_leaks", 0):
+        print("FAIL: scaffold_gt_leaks", flush=True)
+        fail = True
+    # Exact prior freeze is round((1+1+0.9)/3, 4) == 0.9667; docs display ~0.967.
+    MIXED_OVERALL_FLOOR = 0.9667
+    d_overall = None
+    for row in scoreboard["table"]:
+        if row["path"] == "d_unified":
+            d_overall = row["overall_mean"]
+            break
+    if d_overall is not None and d_overall + 1e-9 < MIXED_OVERALL_FLOOR:
+        print(f"FAIL: mixed overall {d_overall} < freeze {MIXED_OVERALL_FLOOR} (~0.967)", flush=True)
+        fail = True
+    elif d_overall is not None:
+        print(
+            f"freeze mixed overall held: {d_overall} ≥ {MIXED_OVERALL_FLOOR} (doc ~0.967)",
+            flush=True,
+        )
     if not scoreboard["moe_delta_visible"]:
         print("WARN: MoE Δ not visible — harden fixtures / retest", flush=True)
         # not a hard fail if numbers honest; still PASS with warn
