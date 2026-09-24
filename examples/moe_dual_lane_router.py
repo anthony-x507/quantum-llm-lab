@@ -161,6 +161,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R6: Bazel //gates:target; HTML data-gates="..."; Groovy/Jenkins gates = '...' quoted assigns.
     # R7: CI YAML multiline gates:\n  - …; Make .PHONY: gates; bare len('gates:') key tokens.
     # R8: Dockerfile ARG gates=; JSON Schema "gates"; TF/TOML/Nix gates = [...]; markdown 'gates: list'; Rego input.gates[_]; CUE #Gates:; EDN :gates; fullwidth lookalikes.
+    # R9: OpenAPI /gates:; Helm values gates: enabled; Pulumi gates:prod; CFN Gates:; Dhall gates : Bool; Justfile recipe gates:; Cedar when { gates:.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -240,7 +241,35 @@ def route_heuristic(prompt: str) -> Lane:
             # R8: ASCII 'gates' disclaimer near fullwidth lookalikes
             r"|fullwidth.*gates"
             r"|not\s+ASCII\s+gates"
-            r"|lookalike.*gates",
+            r"|lookalike.*gates"
+            # R9: OpenAPI path /gates: / gates:allow|read
+            r"|/gates\s*:"
+            r"|openapi\s+.*gates:"
+            r"|gates:allow"
+            r"|gates:read"
+            # R9: Helm values.yaml gates: enabled|disabled scalar
+            r"|gates\s*:\s*enabled\b"
+            r"|gates\s*:\s*disabled\b"
+            r"|helm\s+.*gates:"
+            r"|values\.yaml\s+gates:"
+            # R9: Pulumi config gates:prod|tag|staging|dev
+            r"|gates\s*:\s*(?:prod|tag|staging|dev)\b"
+            r"|pulumi\s+.*gates:"
+            r"|stackreference\s+gates:"
+            # R9: CloudFormation Parameter Gates:
+            r"|cloudformation\s+.*gates:"
+            r"|parameters?\s+gates:"
+            r"|cfn\s+.*gates:"
+            # R9: Dhall gates : Bool|Text|Natural|Integer
+            r"|gates\s*:\s*(?:Bool|Text|Natural|Integer)\b"
+            r"|dhall\s+.*gates"
+            # R9: Justfile recipe gates:
+            r"|justfile\s+.*gates:"
+            r"|recipe\s+gates:"
+            # R9: Cedar when { gates: / gates: true|false|attr
+            r"|when\s*\{\s*gates\s*:"
+            r"|cedar\s+.*gates:"
+            r"|gates\s*:\s*(?:true|false|attr)\b",
             text,
             re.I,
         )
@@ -796,6 +825,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r9' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r9.json"
         elif 'r8' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r8.json"
         elif 'r7' in hp:

@@ -1,0 +1,322 @@
+{
+  "n": 52,
+  "kind": "hardneg_r9_mixed_router",
+  "created": "2026-09-24 1:26:00 ET",
+  "round": 9,
+  "note": "R9 NEW traps (≠R1–R8/≠LP): openapi_path_gates, helm_values_yaml_gates, pulumi_config_gates, cloudformation_param_gates, bicep_param_gates, thrift_field_gates, avro_record_gates, go_build_tag_gates, java_anno_qubit, powershell_param_gates, latex_newcommand_gates, grpc_rpc_gates, dhall_record_gates, justfile_recipe_gates, cedar_policy_gates + controls. HARD: Helm/Cedar/Justfile gates: scalar; CFN Gates:; Dhall gates : Type; OpenAPI /gates:. GT harness-only.",
+  "anti_contamination": "expected lane is harness-only; never injected into route()",
+  "items": [
+    {
+      "id": "r9_oapi_01",
+      "expected": "python",
+      "family": "openapi_path_gates",
+      "prompt": "Write Python that prints len('/v1/gates:allow'). OpenAPI path. ONLY code."
+    },
+    {
+      "id": "r9_oapi_02",
+      "expected": "python",
+      "family": "openapi_path_gates",
+      "prompt": "path='/gates:read'\nprint(path.count(':'))\n# OpenAPI path gates: — not a circuit. ONLY code."
+    },
+    {
+      "id": "r9_oapi_03",
+      "expected": "python",
+      "family": "openapi_path_gates",
+      "prompt": "Write Python that prints 6*6. OpenAPI parameter name: gates is HTTP only. ONLY code."
+    },
+    {
+      "id": "r9_oapi_04",
+      "expected": "python",
+      "family": "openapi_path_gates",
+      "prompt": "Write Python that prints len('operationId: listGates'). OpenAPI op id. ONLY code."
+    },
+    {
+      "id": "r9_helm_01",
+      "expected": "python",
+      "family": "helm_values_yaml_gates",
+      "prompt": "Write Python that prints len('gates: enabled'). Helm values.yaml key. ONLY code."
+    },
+    {
+      "id": "r9_helm_02",
+      "expected": "python",
+      "family": "helm_values_yaml_gates",
+      "prompt": "line='gates: enabled'\nprint(line.count(':'))\n# Helm values gates: scalar — not circuit. ONLY code."
+    },
+    {
+      "id": "r9_helm_03",
+      "expected": "python",
+      "family": "helm_values_yaml_gates",
+      "prompt": "Write Python that prints 7. Helm chart values.yaml gates: key is ops only. ONLY code."
+    },
+    {
+      "id": "r9_pul_01",
+      "expected": "python",
+      "family": "pulumi_config_gates",
+      "prompt": "Write Python that prints len('pulumi config set gates:prod'). Pulumi config. ONLY code."
+    },
+    {
+      "id": "r9_pul_02",
+      "expected": "python",
+      "family": "pulumi_config_gates",
+      "prompt": "cfg='gates:prod'\nprint(len(cfg))\n# Pulumi config key gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r9_pul_03",
+      "expected": "python",
+      "family": "pulumi_config_gates",
+      "prompt": "Write Python that prints 3*3. Pulumi StackReference gates:tag is IaC only. ONLY code."
+    },
+    {
+      "id": "r9_cfn_01",
+      "expected": "python",
+      "family": "cloudformation_param_gates",
+      "prompt": "Write Python that prints len('Gates:'). CloudFormation Parameter Gates:. ONLY code."
+    },
+    {
+      "id": "r9_cfn_02",
+      "expected": "python",
+      "family": "cloudformation_param_gates",
+      "prompt": "p='Gates: Type'\nprint(p.count(':'))\n# CFN Parameter Gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r9_cfn_03",
+      "expected": "python",
+      "family": "cloudformation_param_gates",
+      "prompt": "Write Python that prints 8. CloudFormation Parameters Gates: is CFN only. ONLY code."
+    },
+    {
+      "id": "r9_bicep_01",
+      "expected": "python",
+      "family": "bicep_param_gates",
+      "prompt": "Write Python that prints len('param gates string'). Bicep param. ONLY code."
+    },
+    {
+      "id": "r9_bicep_02",
+      "expected": "python",
+      "family": "bicep_param_gates",
+      "prompt": "line='param gates string = allow'\nprint(line.count('='))\n# Bicep param gates — not circuit. ONLY code."
+    },
+    {
+      "id": "r9_bicep_03",
+      "expected": "python",
+      "family": "bicep_param_gates",
+      "prompt": "Write Python that prints 4*4. Bicep param gates string is ARM only. ONLY code."
+    },
+    {
+      "id": "r9_thrift_01",
+      "expected": "python",
+      "family": "thrift_field_gates",
+      "prompt": "Write Python that prints len('2: list<string> gates'). Thrift field. ONLY code."
+    },
+    {
+      "id": "r9_thrift_02",
+      "expected": "python",
+      "family": "thrift_field_gates",
+      "prompt": "f='2: string gates'\nprint(len(f))\n# Thrift IDL field gates — not circuit. ONLY code."
+    },
+    {
+      "id": "r9_thrift_03",
+      "expected": "python",
+      "family": "thrift_field_gates",
+      "prompt": "Write Python that prints 10. Thrift struct field gates is IDL only. ONLY code."
+    },
+    {
+      "id": "r9_avro_01",
+      "expected": "python",
+      "family": "avro_record_gates",
+      "prompt": "Write Python that prints len('{\"name\": \"gates\"}'). Avro field. ONLY code."
+    },
+    {
+      "id": "r9_avro_02",
+      "expected": "python",
+      "family": "avro_record_gates",
+      "prompt": "s='{\"name\":\"gates\"}'\nprint(s.count('gates'))\n# Avro schema field gates — not circuit. ONLY code."
+    },
+    {
+      "id": "r9_avro_03",
+      "expected": "python",
+      "family": "avro_record_gates",
+      "prompt": "Write Python that prints 5*2. Avro record field name gates is schema only. ONLY code."
+    },
+    {
+      "id": "r9_go_01",
+      "expected": "python",
+      "family": "go_build_tag_gates",
+      "prompt": "Write Python that prints len('//go:build gates'). Go build tag. ONLY code."
+    },
+    {
+      "id": "r9_go_02",
+      "expected": "python",
+      "family": "go_build_tag_gates",
+      "prompt": "tag='//go:build gates && linux'\nprint(tag.count('gates'))\n# Go build constraint — not circuit. ONLY code."
+    },
+    {
+      "id": "r9_go_03",
+      "expected": "python",
+      "family": "go_build_tag_gates",
+      "prompt": "Write Python that prints 11. //go:build gates is a Go constraint only. ONLY code."
+    },
+    {
+      "id": "r9_janno_01",
+      "expected": "python",
+      "family": "java_anno_qubit",
+      "prompt": "Write Python that prints len('@Qubit(id=1)'). Java annotation. ONLY code."
+    },
+    {
+      "id": "r9_janno_02",
+      "expected": "python",
+      "family": "java_anno_qubit",
+      "prompt": "a='@Gates(value=\"cleanup\")'\nprint(len(a))\n# Java annotation @Gates — not circuit. ONLY code."
+    },
+    {
+      "id": "r9_janno_03",
+      "expected": "python",
+      "family": "java_anno_qubit",
+      "prompt": "Write Python that prints 9. Java @Qubit annotation is metadata only. ONLY code."
+    },
+    {
+      "id": "r9_ps_01",
+      "expected": "python",
+      "family": "powershell_param_gates",
+      "prompt": "Write Python that prints len('param([string]$Gates)'). PowerShell. ONLY code."
+    },
+    {
+      "id": "r9_ps_02",
+      "expected": "python",
+      "family": "powershell_param_gates",
+      "prompt": "ps='param($Gates = \"allow\")'\nprint(ps.count('='))\n# PowerShell param $Gates — not circuit. ONLY code."
+    },
+    {
+      "id": "r9_ps_03",
+      "expected": "python",
+      "family": "powershell_param_gates",
+      "prompt": "Write Python that prints 12. PowerShell -Gates allowlist switch is ops only. ONLY code."
+    },
+    {
+      "id": "r9_tex_01",
+      "expected": "python",
+      "family": "latex_newcommand_gates",
+      "prompt": "Write Python that prints len('\\\\newcommand{\\\\gates}{}'). LaTeX macro. ONLY code."
+    },
+    {
+      "id": "r9_grpc_01",
+      "expected": "python",
+      "family": "grpc_rpc_gates",
+      "prompt": "Write Python that prints len('rpc ListGates (Empty)'). gRPC RPC. ONLY code."
+    },
+    {
+      "id": "r9_grpc_02",
+      "expected": "python",
+      "family": "grpc_rpc_gates",
+      "prompt": "rpc='rpc ApplyGates (GatesRequest)'\nprint(rpc.count('Gates'))\n# gRPC service — not circuit. ONLY code."
+    },
+    {
+      "id": "r9_grpc_03",
+      "expected": "python",
+      "family": "grpc_rpc_gates",
+      "prompt": "Write Python that prints 13. gRPC method ApplyGates is protobuf RPC only. ONLY code."
+    },
+    {
+      "id": "r9_dhall_01",
+      "expected": "python",
+      "family": "dhall_record_gates",
+      "prompt": "Write Python that prints len('gates : List Text'). Dhall field. ONLY code."
+    },
+    {
+      "id": "r9_dhall_02",
+      "expected": "python",
+      "family": "dhall_record_gates",
+      "prompt": "d='{ gates : Bool }'\nprint(len(d))\n# Dhall record field gates — not circuit. ONLY code."
+    },
+    {
+      "id": "r9_just_01",
+      "expected": "python",
+      "family": "justfile_recipe_gates",
+      "prompt": "Write Python that prints len('gates:'). Justfile recipe. ONLY code."
+    },
+    {
+      "id": "r9_just_02",
+      "expected": "python",
+      "family": "justfile_recipe_gates",
+      "prompt": "Write Python that prints 2. Justfile recipe gates: is a task name only. ONLY code."
+    },
+    {
+      "id": "r9_cedar_01",
+      "expected": "python",
+      "family": "cedar_policy_gates",
+      "prompt": "Write Python that prints len('when { gates:'). Cedar policy. ONLY code."
+    },
+    {
+      "id": "r9_cedar_02",
+      "expected": "python",
+      "family": "cedar_policy_gates",
+      "prompt": "pol='when { gates: true }'\nprint(pol.count('gates'))\n# Cedar policy attribute gates: — not circuit. ONLY code."
+    },
+    {
+      "id": "r9_cedar_03",
+      "expected": "python",
+      "family": "cedar_policy_gates",
+      "prompt": "Write Python that prints 15. Cedar when { gates: attr } is IAM policy only. ONLY code."
+    },
+    {
+      "id": "r9_ent_01",
+      "expected": "ent",
+      "family": "ent_control_r9",
+      "prompt": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelazado."
+    },
+    {
+      "id": "r9_ent_02",
+      "expected": "ent",
+      "family": "ent_control_r9",
+      "prompt": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separable."
+    },
+    {
+      "id": "r9_vis_01",
+      "expected": "vision",
+      "family": "vision_control_r9",
+      "prompt": "Look at the image. How many dots are visible? Only the integer. No circuit."
+    },
+    {
+      "id": "r9_vis_02",
+      "expected": "vision",
+      "family": "vision_control_r9",
+      "prompt": "Look at the chalkboard. How many letters? Only the integer. No circuit."
+    },
+    {
+      "id": "r9_base_01",
+      "expected": "base",
+      "family": "base_control_r9",
+      "prompt": "Thanks. Ignore OpenAPI path /gates:allow in the README. No code, no circuit."
+    },
+    {
+      "id": "r9_base_02",
+      "expected": "base",
+      "family": "base_control_r9",
+      "prompt": "Please ignore the Helm values gates: enabled phrase. Chat only — no program, no circuit."
+    },
+    {
+      "id": "r9_base_03",
+      "expected": "base",
+      "family": "base_control_r9",
+      "prompt": "Hello — Cedar when { gates: true } is policy only. No code, no circuit, no pennylane."
+    },
+    {
+      "id": "r9_base_04",
+      "expected": "base",
+      "family": "base_control_r9",
+      "prompt": "Weather update. Packer variable gates mention. No code, no circuit."
+    },
+    {
+      "id": "r9_ctrl_01",
+      "expected": "python",
+      "family": "base_python_control_r9",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code."
+    },
+    {
+      "id": "r9_ctrl_02",
+      "expected": "python",
+      "family": "base_python_control_r9",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code."
+    }
+  ]
+}

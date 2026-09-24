@@ -1,0 +1,317 @@
+{
+  "n": 44,
+  "kind": "hardneg_r9_python_items",
+  "created": "2026-09-24 1:26:00 ET",
+  "round": 9,
+  "seed_doc": "docs/FRONTIER-CODIGO-VIVO-TIP-R9.md",
+  "items": [
+    {
+      "id": "r9v_oapi_01",
+      "kind": "openapi_path_gates",
+      "prompt": "Write Python that prints len('/v1/gates:allow'). OpenAPI path. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_oapi_02",
+      "kind": "openapi_path_gates",
+      "prompt": "path='/gates:read'\nprint(path.count(':'))\n# OpenAPI path gates: — not a circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_oapi_03",
+      "kind": "openapi_path_gates",
+      "prompt": "Write Python that prints 6*6. OpenAPI parameter name: gates is HTTP only. ONLY code.",
+      "expected_stdout": "36\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_oapi_04",
+      "kind": "openapi_path_gates",
+      "prompt": "Write Python that prints len('operationId: listGates'). OpenAPI op id. ONLY code.",
+      "expected_stdout": "22\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_helm_01",
+      "kind": "helm_values_yaml_gates",
+      "prompt": "Write Python that prints len('gates: enabled'). Helm values.yaml key. ONLY code.",
+      "expected_stdout": "14\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_helm_02",
+      "kind": "helm_values_yaml_gates",
+      "prompt": "line='gates: enabled'\nprint(line.count(':'))\n# Helm values gates: scalar — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_helm_03",
+      "kind": "helm_values_yaml_gates",
+      "prompt": "Write Python that prints 7. Helm chart values.yaml gates: key is ops only. ONLY code.",
+      "expected_stdout": "7\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_pul_01",
+      "kind": "pulumi_config_gates",
+      "prompt": "Write Python that prints len('pulumi config set gates:prod'). Pulumi config. ONLY code.",
+      "expected_stdout": "28\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_pul_02",
+      "kind": "pulumi_config_gates",
+      "prompt": "cfg='gates:prod'\nprint(len(cfg))\n# Pulumi config key gates: — not circuit. ONLY code.",
+      "expected_stdout": "10\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_pul_03",
+      "kind": "pulumi_config_gates",
+      "prompt": "Write Python that prints 3*3. Pulumi StackReference gates:tag is IaC only. ONLY code.",
+      "expected_stdout": "9\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_cfn_01",
+      "kind": "cloudformation_param_gates",
+      "prompt": "Write Python that prints len('Gates:'). CloudFormation Parameter Gates:. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_cfn_02",
+      "kind": "cloudformation_param_gates",
+      "prompt": "p='Gates: Type'\nprint(p.count(':'))\n# CFN Parameter Gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_cfn_03",
+      "kind": "cloudformation_param_gates",
+      "prompt": "Write Python that prints 8. CloudFormation Parameters Gates: is CFN only. ONLY code.",
+      "expected_stdout": "8\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_bicep_01",
+      "kind": "bicep_param_gates",
+      "prompt": "Write Python that prints len('param gates string'). Bicep param. ONLY code.",
+      "expected_stdout": "18\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_bicep_02",
+      "kind": "bicep_param_gates",
+      "prompt": "line='param gates string = allow'\nprint(line.count('='))\n# Bicep param gates — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_bicep_03",
+      "kind": "bicep_param_gates",
+      "prompt": "Write Python that prints 4*4. Bicep param gates string is ARM only. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_thrift_01",
+      "kind": "thrift_field_gates",
+      "prompt": "Write Python that prints len('2: list<string> gates'). Thrift field. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_thrift_02",
+      "kind": "thrift_field_gates",
+      "prompt": "f='2: string gates'\nprint(len(f))\n# Thrift IDL field gates — not circuit. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_thrift_03",
+      "kind": "thrift_field_gates",
+      "prompt": "Write Python that prints 10. Thrift struct field gates is IDL only. ONLY code.",
+      "expected_stdout": "10\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_avro_01",
+      "kind": "avro_record_gates",
+      "prompt": "Write Python that prints len('{\"name\": \"gates\"}'). Avro field. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_avro_02",
+      "kind": "avro_record_gates",
+      "prompt": "s='{\"name\":\"gates\"}'\nprint(s.count('gates'))\n# Avro schema field gates — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_avro_03",
+      "kind": "avro_record_gates",
+      "prompt": "Write Python that prints 5*2. Avro record field name gates is schema only. ONLY code.",
+      "expected_stdout": "10\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_go_01",
+      "kind": "go_build_tag_gates",
+      "prompt": "Write Python that prints len('//go:build gates'). Go build tag. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_go_02",
+      "kind": "go_build_tag_gates",
+      "prompt": "tag='//go:build gates && linux'\nprint(tag.count('gates'))\n# Go build constraint — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_go_03",
+      "kind": "go_build_tag_gates",
+      "prompt": "Write Python that prints 11. //go:build gates is a Go constraint only. ONLY code.",
+      "expected_stdout": "11\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_janno_01",
+      "kind": "java_anno_qubit",
+      "prompt": "Write Python that prints len('@Qubit(id=1)'). Java annotation. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_janno_02",
+      "kind": "java_anno_qubit",
+      "prompt": "a='@Gates(value=\"cleanup\")'\nprint(len(a))\n# Java annotation @Gates — not circuit. ONLY code.",
+      "expected_stdout": "23\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_janno_03",
+      "kind": "java_anno_qubit",
+      "prompt": "Write Python that prints 9. Java @Qubit annotation is metadata only. ONLY code.",
+      "expected_stdout": "9\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_ps_01",
+      "kind": "powershell_param_gates",
+      "prompt": "Write Python that prints len('param([string]$Gates)'). PowerShell. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_ps_02",
+      "kind": "powershell_param_gates",
+      "prompt": "ps='param($Gates = \"allow\")'\nprint(ps.count('='))\n# PowerShell param $Gates — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_ps_03",
+      "kind": "powershell_param_gates",
+      "prompt": "Write Python that prints 12. PowerShell -Gates allowlist switch is ops only. ONLY code.",
+      "expected_stdout": "12\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_tex_01",
+      "kind": "latex_newcommand_gates",
+      "prompt": "Write Python that prints len('\\\\newcommand{\\\\gates}{}'). LaTeX macro. ONLY code.",
+      "expected_stdout": "23\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_grpc_01",
+      "kind": "grpc_rpc_gates",
+      "prompt": "Write Python that prints len('rpc ListGates (Empty)'). gRPC RPC. ONLY code.",
+      "expected_stdout": "21\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_grpc_02",
+      "kind": "grpc_rpc_gates",
+      "prompt": "rpc='rpc ApplyGates (GatesRequest)'\nprint(rpc.count('Gates'))\n# gRPC service — not circuit. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_grpc_03",
+      "kind": "grpc_rpc_gates",
+      "prompt": "Write Python that prints 13. gRPC method ApplyGates is protobuf RPC only. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_dhall_01",
+      "kind": "dhall_record_gates",
+      "prompt": "Write Python that prints len('gates : List Text'). Dhall field. ONLY code.",
+      "expected_stdout": "17\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_dhall_02",
+      "kind": "dhall_record_gates",
+      "prompt": "d='{ gates : Bool }'\nprint(len(d))\n# Dhall record field gates — not circuit. ONLY code.",
+      "expected_stdout": "16\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_just_01",
+      "kind": "justfile_recipe_gates",
+      "prompt": "Write Python that prints len('gates:'). Justfile recipe. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_just_02",
+      "kind": "justfile_recipe_gates",
+      "prompt": "Write Python that prints 2. Justfile recipe gates: is a task name only. ONLY code.",
+      "expected_stdout": "2\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_cedar_01",
+      "kind": "cedar_policy_gates",
+      "prompt": "Write Python that prints len('when { gates:'). Cedar policy. ONLY code.",
+      "expected_stdout": "13\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_cedar_02",
+      "kind": "cedar_policy_gates",
+      "prompt": "pol='when { gates: true }'\nprint(pol.count('gates'))\n# Cedar policy attribute gates: — not circuit. ONLY code.",
+      "expected_stdout": "1\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_cedar_03",
+      "kind": "cedar_policy_gates",
+      "prompt": "Write Python that prints 15. Cedar when { gates: attr } is IAM policy only. ONLY code.",
+      "expected_stdout": "15\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_ctrl_01",
+      "kind": "base_python_control_r9",
+      "prompt": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "expected_stdout": "25\n",
+      "timeout_s": 5
+    },
+    {
+      "id": "r9v_ctrl_02",
+      "kind": "base_python_control_r9",
+      "prompt": "print(sum(range(4)))\n# plain. ONLY code.",
+      "expected_stdout": "6\n",
+      "timeout_s": 5
+    }
+  ]
+}
