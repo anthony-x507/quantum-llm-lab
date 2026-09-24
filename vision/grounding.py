@@ -191,6 +191,9 @@ def circuit_vision_prompt_suffix() -> str:
         "List EVERY gate visible, in order. "
         "If a Pauli-X (X) appears on a qubit BEFORE a CX/CNOT involving that qubit, "
         "you MUST include that explicit X in gates — do not skip X and emit only H+CX. "
+        "If the image shows NO X (Bell H+CX only), do NOT invent an X. "
+        "If several CNOT/CX appear (e.g. GHZ chain), emit EACH with its control→target wires in order. "
+        "Set n_qubits to the qubit count stated in the image (2 or 3, etc.). "
         "CX and CNOT are the same gate family; use name \"CNOT\" or \"CX\" consistently. "
         "Include RY/RZ params as JSON numbers (use 1.5707963267948966 for pi/2), never bare pi tokens.\n"
         "ANTI-THINK JSON-ONLY: NO <think> prose. NO English narration. "
@@ -215,8 +218,9 @@ def circuit_vision_json_only_retry_prompt() -> str:
         "NO pienses en voz alta. NO uses <think>. NO escribas narración. "
         "Look at the circuit image. Answer ONLY JSON starting with `{` and ending with `}`. "
         "Keys: n_qubits (int), gates (list). "
-        "Include every visible gate in order; if Pauli-X appears before CX/CNOT, include explicit X. "
-        "Params as numbers (pi/2 -> 1.5707963267948966). Sin markdown."
+        "Include every visible gate in order; if Pauli-X appears before CX/CNOT, include explicit X; "
+        "if no X is shown, do not invent X. Emit each CNOT in a chain with wires. "
+        "n_qubits must match the image. Params as numbers (pi/2 -> 1.5707963267948966). Sin markdown."
     )
 
 

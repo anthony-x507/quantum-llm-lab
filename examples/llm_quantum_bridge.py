@@ -136,7 +136,7 @@ def parse_circuit_from_narrative(texto: str) -> dict[str, Any] | None:
         if m:
             nq = int(m.group(1))
     if nq is None:
-        m = re.search(r"\b([12])\s+qubit\b", t, flags=re.I)
+        m = re.search(r"\b([1-9])\s+qubits?\b", t, flags=re.I)
         if m:
             nq = int(m.group(1))
 

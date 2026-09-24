@@ -1,5 +1,28 @@
 # FRONTIER — Código-vivo tip scoreboard
 
+
+## Fold — tip-circ-expand → codigo-vivo-tip (2026-09-24 14:54:51 ET)
+
+| Surface | Score |
+|---------|-------|
+| mixed (d) unified | **1.0** |
+| vision BASE (before→after) | **1.000 (10/10) → 1.000 (13/13)** |
+| circ axis | **2/2 → 5/5** |
+| pillar routing · hardneg smoke | **29/29 · 18/18** |
+| R13 · future track · far MAE | **retained** (52/52 · 99.34% · 2.600 m) |
+| DZ/mid/TTI · inv/collision | **retained 100%** |
+| Freeze | `codigo_vivo_tip_circ_expand_fold_100pct_20260924_145451` |
+| Tip SHA (fold) | `PENDING` |
+| Policy | RO `data/lora_adapter/`; no main; future-r3+R13+far+mid+inv floors kept; pillars/R14+/LP not folded |
+
+**Method:** merge-port `bf906f9`/`2631d83` onto tip `abf0d25`; +3 grounded circ scenes + grounding anti-invent/multi-CNOT + bridge qubit regex; re-smoke MLX BASE + mixed CPU.
+
+**MLX/CPU re-smoke after fold:** BASE vision **13/13** circ **5/5**; unified **1.0**; smoke **29/29·18/18**; floors retained; `wired_to_vlm=true`; tip vis BASE.  
+Anti-contam **CLEAN**. Adapters RO unchanged. Freezes retained incl. future_track_r3 + r13 + distance_far + inverse_r3 + r12 + distance_mid + tti + r11 + motion_r4 + vision_ground + priors. Never abandon.
+
+**Not folded:** pillars @ b536f57 / R14+ / LP.
+
+
 ## Fold — tip-future-track-r3 → codigo-vivo-tip (2026-09-24 14:49:46 ET)
 
 | Surface | Score |
@@ -21,7 +44,7 @@
 **CPU re-smoke after fold:** unified **1.0**; R13 **52/52·44/44**; far MAE **2.600**; DZ/mid/TTI **100%**; inv/collision **100%**; future track **86.15→99.34** / +dist **95.36→99.52**; pillars 26/26; hardneg 18/18; `wired_to_vlm=true`; tip vis BASE.  
 Anti-contam **CLEAN**. Adapters RO unchanged. Freezes retained incl. r13 + distance_far + inverse_r3 + r12 + distance_mid + tti + r11 + motion_r4 + vision_ground + inverse_r2 + r10 + priors. Residual ~0.42–0.66 pp plateau — do not chase. Never abandon.
 
-**Not folded:** circ-expand @ 2631d83 / R14+ / pillars.
+**Not folded (at future-r3 time):** circ-expand @ 2631d83 / R14+ / pillars — **circ-expand later folded** (see fold tip-circ-expand).
 
 
 ## Fold — tip-hardneg-r13 → codigo-vivo-tip (2026-09-24 14:44:57 ET)

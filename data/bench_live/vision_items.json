@@ -1,5 +1,5 @@
 {
-  "n": 10,
+  "n": 13,
   "items": [
     {
       "id": "vis_math_01",
@@ -89,6 +89,46 @@
       "prompt": "Look at the image. Reply with ONLY the integer distance in meters.",
       "expected": "45",
       "match": "exact_int"
+    },
+    {
+      "id": "vis_circ_03",
+      "kind": "circuit",
+      "image": "data/bench_live/vision_items/vis_circ_03.png",
+      "prompt": "Look at the circuit description in the image. Emit ONLY a JSON object with keys n_qubits (int) and gates (list of {name, wires} or [name, ...wires..., optional params]). No markdown.",
+      "expected_gates": [
+        "H",
+        "CNOT"
+      ],
+      "match": "json_gates_contain",
+      "n_qubits": 2,
+      "note": "Bell H+CX only — grounded; must not require inventing X"
+    },
+    {
+      "id": "vis_circ_04",
+      "kind": "circuit",
+      "image": "data/bench_live/vision_items/vis_circ_04.png",
+      "prompt": "Look at the circuit description in the image. Emit ONLY a JSON object with keys n_qubits (int) and gates (list of {name, wires} or [name, ...wires..., optional params]). No markdown.",
+      "expected_gates": [
+        "H",
+        "CNOT"
+      ],
+      "match": "json_gates_contain",
+      "n_qubits": 3,
+      "note": "GHZ 3q H+CNOT+CNOT chain — multi-CNOT grounding"
+    },
+    {
+      "id": "vis_circ_05",
+      "kind": "circuit",
+      "image": "data/bench_live/vision_items/vis_circ_05.png",
+      "prompt": "Look at the circuit description in the image. Emit ONLY a JSON object with keys n_qubits (int) and gates (list of {name, wires} or [name, ...wires..., optional params]). No markdown.",
+      "expected_gates": [
+        "X",
+        "RY",
+        "CNOT"
+      ],
+      "match": "json_gates_contain",
+      "n_qubits": 2,
+      "note": "X before CX + RY(pi/2) — richer grounded scene"
     }
   ]
 }

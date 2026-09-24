@@ -1,0 +1,13 @@
+{
+  "written": "2026-09-24 14:14:14 ET",
+  "branch": "frontier/tip-circ-expand",
+  "base_tip_sha": "e70b23a",
+  "freeze_id": "codigo_vivo_tip_circ_expand_100pct_20260924_141414",
+  "vision_base": 1.0,
+  "circ_axis": "5/5",
+  "mixed_d_unified": 1.0,
+  "ro_mtime_unchanged": true,
+  "fold_into_tip": false,
+  "branch_sha": "bf906f9e609c81e0880d29ca168680714edd9b9d",
+  "branch_sha_short": "bf906f9"
+}

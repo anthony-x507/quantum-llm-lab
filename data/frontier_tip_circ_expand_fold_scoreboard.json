@@ -1,0 +1,90 @@
+{
+  "schema": "frontier_tip_circ_expand_fold_scoreboard",
+  "written": "2026-09-24 14:54:51 ET",
+  "branch": "frontier/codigo-vivo-tip",
+  "source_branch": "frontier/tip-circ-expand",
+  "source_sha": "2631d834a54a926c266355ca7a894661934c9a8e",
+  "source_feat_sha": "bf906f9e609c81e0880d29ca168680714edd9b9d",
+  "source_feat_sha_short": "bf906f9",
+  "base_tip_sha": "abf0d252b8e191e37642cc939deb4afb67cbd5d4",
+  "base_tip_sha_short": "abf0d25",
+  "host": "Mac-111",
+  "machine_id": "074c6626-0440-4817-9829-6bae77c578d6",
+  "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
+  "claim": "NO quantum-advantage. Fold circ-expand into tip; tip vis stays BASE; prompt/parse/grounding only.",
+  "fold_into_tip": true,
+  "adapters_ro": true,
+  "ro_mtime_unchanged": true,
+  "vision_before": {
+    "accuracy": 1.0,
+    "correct": "10/10",
+    "circ_axis": "2/2",
+    "source": "tip after future-track-r3 fold (abf0d25)"
+  },
+  "vision_after": {
+    "base_accuracy": 1.0,
+    "base_correct": "13/13",
+    "circ_axis": "5/5",
+    "circ_detail": {
+      "vis_circ_01": true,
+      "vis_circ_02": true,
+      "vis_circ_03": true,
+      "vis_circ_04": true,
+      "vis_circ_05": true
+    }
+  },
+  "coverage_rise": {
+    "circ_before": "2/2",
+    "circ_after": "5/5",
+    "new_scenes": [
+      "vis_circ_03",
+      "vis_circ_04",
+      "vis_circ_05"
+    ],
+    "clear_rise": true
+  },
+  "mixed_floor": {
+    "d_unified_overall": 1.0,
+    "vision": 1.0,
+    "floor_criterion": 0.9667,
+    "held": true
+  },
+  "floors_held": {
+    "mixed_d": 1.0,
+    "r13": "52/52",
+    "future_track": 99.34,
+    "far_mae": 2.6,
+    "dz_mid_tti": "100%",
+    "inv_collision": "100%",
+    "tip_vis": "BASE"
+  },
+  "smoke": {
+    "pillar_routing": "29/29",
+    "hardneg": "18/18",
+    "ent_never_on_python": true
+  },
+  "reinforce": [
+    "+3 grounded circ text-card scenes (Bell-only, GHZ-3q, X+RY+CNOT)",
+    "grounding: anti-invent X when absent; emit each CNOT in chain; n_qubits match image",
+    "runtime CIRCUIT GROUNDING + anti-think JSON-only (tip-vision-ground lineage)",
+    "tip vis pillar stays BASE; no LoRA writes"
+  ],
+  "freeze": true,
+  "freeze_id": "codigo_vivo_tip_circ_expand_fold_100pct_20260924_145451",
+  "anti_contam": {
+    "prompt_touches_gt": false,
+    "writes_lora_adapter": false,
+    "ent_never_on_python": true,
+    "tip_vis_pillar": "BASE"
+  },
+  "artifacts": {
+    "bench": "data/frontier_tip_circ_expand_fold_bench_after.json",
+    "cpu": "data/frontier_moe_verifier_mixed_cpu_circ_expand_fold.json",
+    "smoke": "data/frontier_moe_verifier_mixed_smoke_circ_expand_fold.json",
+    "ro_before": "data/tip_circ_expand_fold_adapter_ro_snapshot_before.json",
+    "ro_after": "data/tip_circ_expand_fold_adapter_ro_snapshot_after.json",
+    "renderer": "examples/vision_circ/render_grounded_circ_scenes.py",
+    "freeze": "data/freeze_manifests/codigo_vivo_tip_circ_expand_fold_100pct_20260924_145451.json"
+  },
+  "source_sha_short": "2631d83"
+}

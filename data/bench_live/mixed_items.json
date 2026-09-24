@@ -9,7 +9,7 @@
     "python": 8,
     "entanglement": 8,
     "vision_scored": 8,
-    "vision_routing_extra": 2,
+    "vision_routing_extra": 5,
     "hardneg_router": 18,
     "hardneg_vision_extra": 8
   },
@@ -325,6 +325,58 @@
       "score_accuracy": false,
       "expected_lane": "ent",
       "note": "circuit JSON from image → ent adapter (not vision-math)"
+    },
+    {
+      "id": "vis_circ_03",
+      "pillar": "vision",
+      "prompt": "Look at the circuit description in the image. Emit ONLY a JSON object with keys n_qubits (int) and gates (list of {name, wires}). No markdown.",
+      "image": "data/bench_live/vision_items/vis_circ_03.png",
+      "eval": {
+        "expected": [
+          "H",
+          "CNOT"
+        ],
+        "match": "json_gates_contain",
+        "n_qubits": 2
+      },
+      "kind": "circuit",
+      "score_accuracy": false,
+      "expected_lane": "ent"
+    },
+    {
+      "id": "vis_circ_04",
+      "pillar": "vision",
+      "prompt": "Look at the circuit description in the image. Emit ONLY a JSON object with keys n_qubits (int) and gates (list of {name, wires}). No markdown.",
+      "image": "data/bench_live/vision_items/vis_circ_04.png",
+      "eval": {
+        "expected": [
+          "H",
+          "CNOT"
+        ],
+        "match": "json_gates_contain",
+        "n_qubits": 3
+      },
+      "kind": "circuit",
+      "score_accuracy": false,
+      "expected_lane": "ent"
+    },
+    {
+      "id": "vis_circ_05",
+      "pillar": "vision",
+      "prompt": "Look at the circuit description in the image. Emit ONLY a JSON object with keys n_qubits (int) and gates (list of {name, wires}). No markdown.",
+      "image": "data/bench_live/vision_items/vis_circ_05.png",
+      "eval": {
+        "expected": [
+          "X",
+          "RY",
+          "CNOT"
+        ],
+        "match": "json_gates_contain",
+        "n_qubits": 2
+      },
+      "kind": "circuit",
+      "score_accuracy": false,
+      "expected_lane": "ent"
     }
   ],
   "hardneg_router": [

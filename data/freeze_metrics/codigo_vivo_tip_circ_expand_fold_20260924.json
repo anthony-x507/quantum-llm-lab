@@ -1,0 +1,15 @@
+{
+  "schema": "codigo_vivo_tip_circ_expand_fold_metrics",
+  "id": "codigo_vivo_tip_circ_expand_fold_100pct_20260924_145451",
+  "written": "2026-09-24 14:54:51 ET",
+  "circ_before": "2/2",
+  "circ_after": "5/5",
+  "vision_base": 1.0,
+  "vision_correct": "13/13",
+  "mixed_d_unified": 1.0,
+  "pillars_routing": "29/29",
+  "hardneg": "18/18",
+  "floors_held": true,
+  "ro_mtime_unchanged": true,
+  "tip_vis": "BASE"
+}

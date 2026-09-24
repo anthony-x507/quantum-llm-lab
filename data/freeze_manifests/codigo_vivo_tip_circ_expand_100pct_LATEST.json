@@ -1,0 +1,51 @@
+{
+  "schema": "codigo_vivo_tip_circ_expand_100pct",
+  "frozen_at_et": "2026-09-24 14:14:14 ET",
+  "domain": "codigo_vivo_tip_circ_expand",
+  "pct": 100,
+  "band": "100pct",
+  "git_sha": "bf906f9e609c81e0880d29ca168680714edd9b9d",
+  "git_sha_short": "bf906f9",
+  "artifact": "data/frontier_tip_circ_expand_bench_after.json",
+  "eval_path": "data/frontier_moe_verifier_mixed_cpu_circ_expand.json",
+  "base_tip_sha": "e70b23a7d6bf2120dc48c10684f69e12f3918ca4",
+  "branch": "frontier/tip-circ-expand",
+  "metrics": {
+    "vision_base_before": 1.0,
+    "vision_base_after": 1.0,
+    "vision_correct_after": "13/13",
+    "circ_axis_before": "2/2",
+    "circ_axis_after": "5/5",
+    "circ_axis_pct": 100.0,
+    "circ_detail": {
+      "vis_circ_01": true,
+      "vis_circ_02": true,
+      "vis_circ_03": true,
+      "vis_circ_04": true,
+      "vis_circ_05": true
+    },
+    "mixed_d_unified": 1.0,
+    "pillars_routing": "29/29",
+    "hardneg_smoke": "18/18",
+    "ent_never_on_python": true,
+    "ro_mtime_unchanged": true,
+    "tip_vis_pillar": "BASE",
+    "floor_held": true,
+    "fold_into_tip": false
+  },
+  "floors": {
+    "mixed_d_unified": 1.0,
+    "held": true,
+    "actual": 1.0,
+    "vision_base": 1.0,
+    "circ_axis_pct": 100.0,
+    "min_hold_pct": 80.0
+  },
+  "policy": "RO data/lora_adapter/; no merge main; NOT folded into tip; tip vis stays BASE; side-only circ expand; GT never at inference",
+  "note": "circ expand side: circ 2/2\u21925/5; vision BASE 1.0 (13/13); mixed 1.0 held; not folded",
+  "prior_freeze_retained": [
+    "codigo_vivo_tip_r11_100pct_20260924_140723",
+    "codigo_vivo_tip_motion_r4_100pct_20260924_135017",
+    "codigo_vivo_tip_vision_ground_100pct_20260924_134441"
+  ]
+}

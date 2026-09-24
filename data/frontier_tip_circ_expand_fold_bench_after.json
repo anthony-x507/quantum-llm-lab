@@ -1,0 +1,345 @@
+{
+  "written": "2026-09-24 14:54:13 ",
+  "elapsed_s": 53.6,
+  "model": "mlx-community/Qwen3-VL-8B-Thinking-4bit",
+  "adapter": "/Users/anthony/Documents/quantum-llm-lab/data/lora_adapter",
+  "adapter_null_for_base": true,
+  "claims": "No quantum-advantage claims. Usability / executable-code metrics only.",
+  "sets": {
+    "python": "data/bench_live/PYTHON_SET.md",
+    "entanglement": "data/bench_live/ENT_SET.md",
+    "vision": "data/bench_live/VISION_SET.md",
+    "balanced_n30_queued": "data/balanced_eval_set_n30.json"
+  },
+  "base": {
+    "python": {
+      "n": 0,
+      "solved": 0,
+      "solve_rate": 0.0,
+      "exec_errors": 0,
+      "details": []
+    },
+    "entanglement": {
+      "n": 0,
+      "parse_ok": 0,
+      "compile_ok": 0,
+      "circuit_ran": 0,
+      "label_correct": 0,
+      "domain_correct": 0,
+      "energy_ok": 0,
+      "parse_rate": 0.0,
+      "compile_rate": 0.0,
+      "label_acc": 0.0,
+      "domain_acc": 0.0,
+      "energy_ok_rate": 0.0,
+      "unique_gate_combos": 0,
+      "details": []
+    },
+    "vision": {
+      "n": 13,
+      "correct": 13,
+      "accuracy": 1.0,
+      "errors": 0,
+      "details": [
+        {
+          "id": "vis_math_01",
+          "kind": "math",
+          "correct": true,
+          "expected": "45",
+          "pred": "45",
+          "error": null,
+          "phase": "single",
+          "prompt_grounded": false,
+          "raw_preview": "Got it, let's solve 17 + 28. First, add the tens: 10 + 20 = 30. Then add the ones: 7 + 8 = 15. Now combine them: 30 + 15 = 45. So the answer is 45.\n</think>\n\n45"
+        },
+        {
+          "id": "vis_math_02",
+          "kind": "math",
+          "correct": true,
+          "expected": "50",
+          "pred": "50",
+          "error": null,
+          "phase": "single",
+          "prompt_grounded": false,
+          "raw_preview": "Got it, let's solve the problem. The expression is 9 * 7 - 13. First, I need to do the multiplication: 9 times 7 is 63. Then subtract 13 from 63. So 63 minus 13 is 50. I need to make sure I follow the order of operations: multiplication bef"
+        },
+        {
+          "id": "vis_math_03",
+          "kind": "math",
+          "correct": true,
+          "expected": "20",
+          "pred": "20",
+          "error": null,
+          "phase": "single",
+          "prompt_grounded": false,
+          "raw_preview": "Got it, let's see. The problem says there are 12 red balls and 8 blue balls. To find the total, I need to add those two numbers together. So 12 plus 8. Let me calculate that: 12 + 8 = 20. Yep, that's the total number of balls.\n</think>\n\n20"
+        },
+        {
+          "id": "vis_math_04",
+          "kind": "math",
+          "correct": true,
+          "expected": "6",
+          "pred": "6",
+          "error": null,
+          "phase": "single",
+          "prompt_grounded": false,
+          "raw_preview": "Got it, let's solve the equation 2x + 6 = 18. First, I need to isolate x. So, subtract 6 from both sides. That gives 2x = 18 - 6, which is 2x = 12. Then divide both sides by 2, so x = 12 / 2 = 6. Let me check: 2*6 + 6 = 12 + 6 = 18, which m"
+        },
+        {
+          "id": "vis_math_05",
+          "kind": "math",
+          "correct": true,
+          "expected": "20",
+          "pred": "20",
+          "error": null,
+          "phase": "single",
+          "prompt_grounded": false,
+          "raw_preview": "Got it, let's see. The problem is 25% of 80. To find a percentage of a number, you can convert the percentage to a decimal and multiply. 25% is 0.25 in decimal. So 0.25 times 80. Let me calculate that. 0.25 * 80 = 20. So the integer result "
+        },
+        {
+          "id": "vis_math_06",
+          "kind": "math",
+          "correct": true,
+          "expected": "48",
+          "pred": "48",
+          "error": null,
+          "phase": "single",
+          "prompt_grounded": false,
+          "raw_preview": "Got it, let's see. The sequence is 3, 6, 12, 24, ?. I need to find the next term. Let's check the pattern. From 3 to 6, that's multiplied by 2. 6 to 12 is also multiplied by 2. 12 to 24 is multiplied by 2. So each term is double the previou"
+        },
+        {
+          "id": "vis_circ_01",
+          "kind": "circuit",
+          "correct": true,
+          "expected": [
+            "H",
+            "X",
+            "CNOT"
+          ],
+          "pred": {
+            "n_qubits": 2,
+            "gates": [
+              "H",
+              "X",
+              "CNOT",
+              "X"
+            ]
+          },
+          "error": null,
+          "phase": "grounded",
+          "prompt_grounded": true,
+          "raw_preview": "Got it, let's parse the circuit step by step. The circuit has 2 qubits: q0 and q1.\n\nFirst, the gates applied in order:\n\n1. q0: H (Hadamard gate on q0)\n2. q1: X (Pauli-X gate on q1)\n3. Then CNOT q0->q1 (CNOT gate with control q0 and target q"
+        },
+        {
+          "id": "vis_circ_02",
+          "kind": "circuit",
+          "correct": true,
+          "expected": [
+            "RY",
+            "Z"
+          ],
+          "pred": {
+            "n_qubits": 1,
+            "gates": [
+              "RY",
+              "Z"
+            ]
+          },
+          "error": null,
+          "phase": "grounded",
+          "prompt_grounded": true,
+          "raw_preview": "Got it, let's parse the circuit. The circuit has 1 qubit. First gate is RY(pi/2). Then Z. \n\nFor RY(pi/2): name is \"RY\", wires is [0] (since 1 qubit, index 0), params is pi/2 which is 1.5707963267948966.\n\nThen Z: name \"Z\", wires [0].\n\nSo n_q"
+        },
+        {
+          "id": "vis_math_07",
+          "kind": "math",
+          "correct": true,
+          "expected": "20",
+          "pred": "20",
+          "error": null,
+          "phase": "single",
+          "prompt_grounded": false,
+          "raw_preview": "Got it, let's see. The problem is about finding the area of a rectangle. The formula for the area of a rectangle is length multiplied by width. Here, the length is 5 and the width is 4. So I need to calculate 5 times 4. Let me do that: 5 * "
+        },
+        {
+          "id": "vis_math_08",
+          "kind": "math",
+          "correct": true,
+          "expected": "45",
+          "pred": "45",
+          "error": null,
+          "phase": "single",
+          "prompt_grounded": false,
+          "raw_preview": "Got it, let's see. The problem says speed is 15 m/s, time is 3 seconds. Distance is speed multiplied by time. So 15 times 3 is 45. And it says integer meters, so that's 45.\n</think>\n\n45"
+        },
+        {
+          "id": "vis_circ_03",
+          "kind": "circuit",
+          "correct": true,
+          "expected": [
+            "H",
+            "CNOT"
+          ],
+          "pred": {
+            "n_qubits": 2,
+            "gates": [
+              "H",
+              "CNOT"
+            ]
+          },
+          "error": null,
+          "phase": "grounded",
+          "prompt_grounded": true,
+          "raw_preview": "Got it, let's parse the circuit description. The image says: 2 qubits. q0: H (so H gate on q0). Then CNOT q0->q1 (so CNOT with control q0, target q1). No other gates. \n\nFirst, n_qubits is 2 as stated. \n\nGates: first is H on q0. Then CNOT wi"
+        },
+        {
+          "id": "vis_circ_04",
+          "kind": "circuit",
+          "correct": true,
+          "expected": [
+            "H",
+            "CNOT"
+          ],
+          "pred": {
+            "n_qubits": 3,
+            "gates": [
+              "H",
+              "CNOT",
+              "CNOT",
+              "X"
+            ]
+          },
+          "error": null,
+          "phase": "grounded",
+          "prompt_grounded": true,
+          "raw_preview": "Got it, let's parse the circuit description. The image says: Circuit (3 qubits). Then q0: H. Then CNOT q0->q1. Then CNOT q1->q2. \n\nFirst, n_qubits is 3 as stated. Now the gates: \n\n1. H on q0. So gate name \"H\", wires [0] (since q0 is the fir"
+        },
+        {
+          "id": "vis_circ_05",
+          "kind": "circuit",
+          "correct": true,
+          "expected": [
+            "X",
+            "RY",
+            "CNOT"
+          ],
+          "pred": {
+            "n_qubits": 2,
+            "gates": [
+              "X",
+              "CNOT",
+              "RY"
+            ]
+          },
+          "error": null,
+          "phase": "grounded",
+          "prompt_grounded": true,
+          "raw_preview": "Got it, let's parse the circuit description. The image says: 2 qubits. q0: X. q1: RY(pi/2). Then CNOT q0->q1.\n\nFirst, n_qubits is 2 as stated.\n\nNow gates in order:\n\n1. q0: X. So gate X on wire 0.\n2. q1: RY(pi/2). So gate RY with parameter p"
+        }
+      ],
+      "circuit_grounding": true,
+      "anti_think_json_cue": true
+    }
+  },
+  "adapter_run": {
+    "python": {
+      "n": 0,
+      "solved": 0,
+      "solve_rate": 0.0,
+      "exec_errors": 0,
+      "details": []
+    },
+    "entanglement": {
+      "n": 0,
+      "parse_ok": 0,
+      "compile_ok": 0,
+      "circuit_ran": 0,
+      "label_correct": 0,
+      "domain_correct": 0,
+      "energy_ok": 0,
+      "parse_rate": 0.0,
+      "compile_rate": 0.0,
+      "label_acc": 0.0,
+      "domain_acc": 0.0,
+      "energy_ok_rate": 0.0,
+      "unique_gate_combos": 0,
+      "details": []
+    },
+    "vision": {
+      "n": 0,
+      "correct": 0,
+      "accuracy": 0.0,
+      "errors": 0,
+      "details": []
+    }
+  },
+  "summary": {
+    "python": {
+      "base_solve_rate": 0.0,
+      "adapter_solve_rate": 0.0,
+      "delta": 0.0,
+      "base_solved": "0/0",
+      "adapter_solved": "0/0"
+    },
+    "entanglement": {
+      "base_label_acc": 0.0,
+      "adapter_label_acc": 0.0,
+      "delta_label": 0.0,
+      "base_energy_ok_rate": 0.0,
+      "adapter_energy_ok_rate": 0.0,
+      "delta_energy": 0.0,
+      "base_compile_rate": 0.0,
+      "adapter_compile_rate": 0.0,
+      "delta_compile": 0.0,
+      "base_counts": {
+        "label": "0/0",
+        "energy": "0/0",
+        "compile": "0/0"
+      },
+      "adapter_counts": {
+        "label": "0/0",
+        "energy": "0/0",
+        "compile": "0/0"
+      }
+    },
+    "vision": {
+      "base_accuracy": 1.0,
+      "adapter_accuracy": 0.0,
+      "delta": -1.0,
+      "base_correct": "13/13",
+      "adapter_correct": "0/0"
+    }
+  },
+  "finetuned": {
+    "python": {
+      "n": 0,
+      "solved": 0,
+      "solve_rate": 0.0,
+      "exec_errors": 0,
+      "details": []
+    },
+    "entanglement": {
+      "n": 0,
+      "parse_ok": 0,
+      "compile_ok": 0,
+      "circuit_ran": 0,
+      "label_correct": 0,
+      "domain_correct": 0,
+      "energy_ok": 0,
+      "parse_rate": 0.0,
+      "compile_rate": 0.0,
+      "label_acc": 0.0,
+      "domain_acc": 0.0,
+      "energy_ok_rate": 0.0,
+      "unique_gate_combos": 0,
+      "details": []
+    },
+    "vision": {
+      "n": 0,
+      "correct": 0,
+      "accuracy": 0.0,
+      "errors": 0,
+      "details": []
+    }
+  }
+}
