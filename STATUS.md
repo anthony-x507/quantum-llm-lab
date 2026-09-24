@@ -1,3 +1,6 @@
+## 2026-09-24 — tip-future-track-r2 (side) track 97.89→99.34
+Branch `frontier/tip-future-track-r2` from future-track `0a1c9b5` (tip HEAD `e0f3183` deferred — TTI conflicts). Future track **97.89→99.34** · +dist **98.19→99.46**; DZ future **100%** held; danger50→**100/100**; distance DZ **100%** MAE unchanged; contam CLEAN; adapters RO; freeze `codigo_vivo_tip_future_track_r2_100pct_20260924_142016`. **No tip fold.** Avoided tip-cv / tti / mid / far / r12 / r13 / r14 / inv-r3 / circ / future-track (RO). See `docs/FRONTIER-CODIGO-VIVO-TIP-FUTURE-TRACK-R2.md`.
+
 ## 2026-09-24 — tip-future-track (side) future-pred → DZ 100%
 Branch `frontier/tip-future-track` from tip `e70b23a`. Future track **86.21→97.89** · +dist **95.36→98.19**; DZ future **97.3/96.59→100/100**; tracking assoc **100%** held; distance DZ **100%** MAE unchanged; contam CLEAN; adapters RO; freeze `codigo_vivo_tip_future_track_100pct_20260924_141347`. **No tip fold.** Avoided tip-cv / tti / mid / far / r12 / r13 / inv-r3. See `docs/FRONTIER-CODIGO-VIVO-TIP-FUTURE-TRACK.md`.
 

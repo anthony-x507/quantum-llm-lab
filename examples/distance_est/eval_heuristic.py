@@ -10,7 +10,7 @@ Metrics:
   - % correct distance by range band (tol 10% if GT<50m, 20% if 50–200m)
   - % correct in DANGER ZONE 30–70 m (+ delta vs baseline 48.69% ~50m)
   - Ablation: tracking±distance; future-pred±distance — overall AND in danger zone
-  - v5 future-track: size-rate + median blend; GP low-conf fallback (DZ floors held)
+  - v6 future-track-r2: near-floor clamp + rate dampen + cold motion_hint (DZ-guarded)
 
 Usage:
   python examples/distance_est/eval_heuristic.py
@@ -39,6 +39,9 @@ from physics import (
     parallax_signal,
     pick_building_scale,
     predict_future_distance_v5,
+    predict_future_distance_v6,
+    size_rate_next_distance_v6,
+    FUTURE_NEAR_FLOOR_M,
     predict_next_distance,
     refine_with_parallax,
     size_rate_next_distance,
@@ -218,11 +221,10 @@ def eval_tracking(seq_meta: dict, seq_gt: dict, *, use_distance: bool, danger_on
 
 
 def eval_future_pred(seq_meta: dict, seq_gt: dict, *, use_distance: bool, danger_only: bool = False) -> dict[str, Any]:
-    """Future depth / position pred — v5 tip-future-track polish.
+    """Future depth / position pred — v6 tip-future-track-r2 polish.
 
-    High-conf +distance: median(legacy blend, size-rate, depth-vel).
-    Low-conf / tracking-only: size-rate on est_m when available else GP on
-    current frame (no poisoned fake-apparent floor-scale projection).
+    High-conf +distance: v6 median (near-floor clamp + rate dampen); cold uses
+    motion_hint nudge (DZ-guarded). Tracking-only: size-rate-v6.
     Distance *estimator* path unchanged — DZ floors held via estimate_frame.
     """
     focal = float(seq_meta.get("focal_px") or DEFAULT_FOCAL_PX)
@@ -269,26 +271,36 @@ def eval_future_pred(seq_meta: dict, seq_gt: dict, *, use_distance: bool, danger
                     c_pos += 1
 
             size_curr = float(o["apparent_px"])
+            motion_hint = o.get("motion_hint")
             d_hat: float | None = None
             if use_distance:
-                d_hat, _src = predict_future_distance_v5(
+                d_hat, _src = predict_future_distance_v6(
                     e,
                     d_prev=float(d_prev) if d_prev is not None else None,
                     size_prev=size_prev,
                     size_curr=size_curr,
+                    motion_hint=motion_hint,
                 )
                 if d_hat is None:
                     # Low-conf honesty: prefer current-frame GP over size-poisoned fake
                     if scale is not None:
                         d_hat, _, _ = estimate_via_floor_scale(o, scale, focal)
-                    elif e.get("est_m") is not None and size_prev is not None:
-                        d_hat = size_rate_next_distance(float(e["est_m"]), size_prev, size_curr)
+                        if d_hat is not None:
+                            d_hat = max(FUTURE_NEAR_FLOOR_M, float(d_hat))
+                    elif e.get("est_m") is not None:
+                        d_hat = size_rate_next_distance_v6(
+                            float(e["est_m"]), size_prev, size_curr, motion_hint,
+                        )
             else:
-                # tracking-only: size-rate on est when present, else GP
+                # tracking-only: size-rate-v6 on est when present, else GP
                 if e.get("est_m") is not None:
-                    d_hat = size_rate_next_distance(float(e["est_m"]), size_prev, size_curr)
+                    d_hat = size_rate_next_distance_v6(
+                        float(e["est_m"]), size_prev, size_curr, motion_hint,
+                    )
                 elif scale is not None:
                     d_hat, _, _ = estimate_via_floor_scale(o, scale, focal)
+                    if d_hat is not None:
+                        d_hat = max(FUTURE_NEAR_FLOOR_M, float(d_hat))
 
             n += 1
             if d_hat is not None and within_tol(d_hat, float(next_gt[o["id"]]["gt_m"])):
@@ -458,7 +470,7 @@ def run_eval(data_dir: Path, *, out_name: str = "EVAL_FLOOR_SCALE_CPU.json") -> 
         "scale_lock": "FLOOR-SCALE",
         "no_fixed_object_heights": True,
         "soft_size_priors": {"car_length_m": 4.5, "car_height_m": 1.55, "ped_height_m": 1.7},
-        "predictor": "floor_scale_parallax_size_prior_closing_speed_v5_future_track",
+        "predictor": "floor_scale_parallax_size_prior_closing_speed_v6_future_track_r2",
         "n_eval_seq": len(eval_ids),
         "distance": {
             "n": n, "correct": c, "pct": pct(n, c),
