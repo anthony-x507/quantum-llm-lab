@@ -1,6 +1,29 @@
 # FRONTIER — Código-vivo tip scoreboard
 
 
+## Fold — tip-pillars-reinforce → codigo-vivo-tip (2026-09-24 14:59:46 ET)
+
+| Surface | Score |
+|---------|-------|
+| mixed (d) unified | **1.0** |
+| pillar routing (before→after) | **29/29 → 37/37** |
+| side trail | 26/26→34/34 (+8; circ extras retained) |
+| hardneg smoke | **18/18** |
+| circ axis · vision BASE | **retained** (5/5 · 1.000 13/13) |
+| R13 · R12 · LP | **52/52 · 52/52 · 43/43** |
+| future track · far MAE · DZ/mid/TTI/inv | **retained** (99.34% · 2.600 m · 100%) |
+| Freeze | `codigo_vivo_tip_pillars_reinforce_fold_100pct_20260924_145946` |
+| Tip SHA (fold) | `PENDING` |
+| Policy | RO `data/lora_adapter/`; no main; circ+R13+future-r3+far floors kept; LP-expand/R14+ not folded |
+
+**Method:** merge-port `9cd55eb`/`b536f57` onto tip `370f35a`; +8 pillar cases + router PYTHON_RE / no-python disclaimer / quantum-gates-vs-ops; re-smoke mixed CPU+smoke; R13/R12/LP floors.
+
+**CPU/smoke re-smoke after fold:** pillars **37/37** · hardneg **18/18**; unified **1.0**; R13 **52/52**; circ **5/5** retained; floors retained; `wired_to_vlm=true`; tip vis BASE.  
+Anti-contam **CLEAN**. Adapters RO unchanged. Freezes retained incl. circ_expand_fold + future_track_r3 + r13 + distance_far + inverse_r3 + r12 + mid + tti + r11 + motion_r4 + vision_ground + side pillars_reinforce. Never abandon.
+
+**Not folded:** LP-expand @ f2b5031 / R14+.
+
+
 ## Fold — tip-circ-expand → codigo-vivo-tip (2026-09-24 14:54:51 ET)
 
 | Surface | Score |

@@ -1,3 +1,4 @@
+- 2026-09-24: fold tip-pillars-reinforce → tip; pillars 29→37/37; freeze codigo_vivo_tip_pillars_reinforce_fold_100pct_20260924_145946
 - 2026-09-24 fold tip-circ-expand → tip: circ 2/2→5/5; BASE 13/13; mixed 1.0; freeze codigo_vivo_tip_circ_expand_fold_100pct_20260924_145451
 - 2026-09-24 fold tip-future-track-r3 → tip: track 86.15→99.34 / +dist 95.36→99.52; floors held; freeze `codigo_vivo_tip_future_track_r3_fold_100pct_20260924_144946`.
 - 2026-09-24 fold tip-hardneg-r13 → tip @ cab1873; freeze `codigo_vivo_tip_r13_100pct_20260924_144457`; R13 52/52·44/44; mixed 1.0; floors held.

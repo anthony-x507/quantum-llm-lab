@@ -1,18 +1,18 @@
 {
   "frontier": "C3b-moe-verifier-mixed-live",
-  "written": "2026-09-24 14:54:30",
-  "primary": "data/frontier_moe_verifier_mixed_cpu_circ_expand_fold.json",
+  "written": "2026-09-24 14:59:10",
+  "primary": "data/frontier_moe_verifier_mixed_cpu_pillars_reinforce_fold.json",
   "scoreboard": {
     "table": [
       {
         "path": "a_baseline",
         "python": {
-          "n": 8,
+          "n": 12,
           "rate": 0.0,
           "metric": "solve_rate_single"
         },
         "entanglement": {
-          "n": 8,
+          "n": 10,
           "label_acc": 0.0,
           "source": "prior_replay"
         },
@@ -28,12 +28,12 @@
       {
         "path": "b_moe_alone",
         "python": {
-          "n": 8,
+          "n": 12,
           "rate": 0.0,
           "metric": "solve_rate_single"
         },
         "entanglement": {
-          "n": 8,
+          "n": 10,
           "label_acc": 1.0,
           "source": "prior_replay"
         },
@@ -49,12 +49,12 @@
       {
         "path": "c_verifier_on_python",
         "python": {
-          "n": 8,
+          "n": 12,
           "rate": 1.0,
           "metric": "solve_rate_loop"
         },
         "entanglement": {
-          "n": 8,
+          "n": 10,
           "label_acc": 0.0,
           "source": "prior_replay"
         },
@@ -70,12 +70,12 @@
       {
         "path": "d_unified",
         "python": {
-          "n": 8,
+          "n": 12,
           "rate": 1.0,
           "metric": "solve_rate_loop"
         },
         "entanglement": {
-          "n": 8,
+          "n": 10,
           "label_acc": 1.0,
           "source": "prior_replay"
         },
@@ -114,5 +114,5 @@
   },
   "moe_delta_visible": true,
   "router_hardneg": "18/18",
-  "router_pillars": "29/29"
+  "router_pillars": "37/37"
 }

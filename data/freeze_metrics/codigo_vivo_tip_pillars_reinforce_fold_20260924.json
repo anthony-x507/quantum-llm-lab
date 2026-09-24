@@ -1,0 +1,18 @@
+{
+  "id": "codigo_vivo_tip_pillars_reinforce_fold_100pct_20260924_145946",
+  "frozen_at_et": "2026-09-24 14:59:46 ET",
+  "pillars_before": "29/29",
+  "pillars_after": "37/37",
+  "pillars_side": "26/26\u219234/34",
+  "mixed_d_unified": 1.0,
+  "hardneg_smoke": "18/18",
+  "circ_axis": "5/5",
+  "r13": "52/52",
+  "r12": "52/52",
+  "label_protect": "43/43",
+  "ro_mtime_unchanged": true,
+  "fold_into_tip": true,
+  "base_tip_sha": "370f35a",
+  "source_sha": "b536f57",
+  "source_feat_sha": "9cd55eb"
+}

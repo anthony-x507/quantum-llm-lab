@@ -1,15 +1,15 @@
 {
-  "name": "codigo-vivo-mixed",
-  "created": "2026-09-24 10:48:34",
+  "name": "codigo-vivo-mixed-pillars-reinforce-fold",
+  "created": "2026-09-24 14:58:50 ET",
   "anti_contamination": {
     "prompt_touches_gt": false,
     "rule": "eval.* fields harness-only; never concatenated into inference prompts"
   },
   "counts": {
-    "python": 8,
-    "entanglement": 8,
+    "python": 12,
+    "entanglement": 10,
     "vision_scored": 8,
-    "vision_routing_extra": 5,
+    "vision_routing_extra": 7,
     "hardneg_router": 18,
     "hardneg_vision_extra": 8
   },
@@ -101,6 +101,54 @@
       "timeout_s": 5,
       "kind": "algebra_word",
       "expected_lane": "python"
+    },
+    {
+      "id": "py_es_prog_01",
+      "pillar": "python",
+      "prompt": "Programa: imprime 9 + 9. Sin markdown.",
+      "eval": {
+        "expected_stdout": "18\n"
+      },
+      "timeout_s": 5,
+      "kind": "arithmetic_es",
+      "expected_lane": "python",
+      "note": "pillars-reinforce: Spanish programa/imprime without 'python' token"
+    },
+    {
+      "id": "py_es_cod_01",
+      "pillar": "python",
+      "prompt": "Código ejecutable: imprime 16 - 4. Sin markdown.",
+      "eval": {
+        "expected_stdout": "12\n"
+      },
+      "timeout_s": 5,
+      "kind": "arithmetic_es",
+      "expected_lane": "python",
+      "note": "pillars-reinforce: Spanish código ejecutable"
+    },
+    {
+      "id": "py_write_code_01",
+      "pillar": "python",
+      "prompt": "Write code that prints the integer result of 6 * 3. Sin markdown.",
+      "eval": {
+        "expected_stdout": "18\n"
+      },
+      "timeout_s": 5,
+      "kind": "arithmetic",
+      "expected_lane": "python",
+      "note": "pillars-reinforce: Write code (no explicit python token)"
+    },
+    {
+      "id": "py_exec_snip_01",
+      "pillar": "python",
+      "prompt": "Executable snippet: prints 2 ** 5. Sin markdown.",
+      "eval": {
+        "expected_stdout": "32\n"
+      },
+      "timeout_s": 5,
+      "kind": "arithmetic",
+      "expected_lane": "python",
+      "note": "pillars-reinforce: Executable snippet + prints"
     }
   ],
   "entanglement": [
@@ -191,6 +239,30 @@
         "domain": "entanglement"
       },
       "expected_lane": "ent"
+    },
+    {
+      "id": "ent_en_bell_01",
+      "pillar": "entanglement",
+      "scene_id": "synthetic_bell_en",
+      "prompt": "You are a quantum circuit assistant. Emit ONLY valid JSON with keys n_qubits and gates for a Bell pair: Hadamard on qubit 0, then CNOT 0->1.",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent",
+      "note": "pillars-reinforce: English ent JSON ask (tip pillars were Spanish-only)"
+    },
+    {
+      "id": "ent_nop_y_01",
+      "pillar": "entanglement",
+      "scene_id": "synthetic_nop_y",
+      "prompt": "No python code. Emit JSON circuit: n_qubits=2, gates=[H, CNOT].",
+      "eval": {
+        "label": "entangled",
+        "domain": "entanglement"
+      },
+      "expected_lane": "ent",
+      "note": "pillars-reinforce: 'No python code' + quantum gates=[] must stay ent"
     }
   ],
   "vision": [
@@ -377,6 +449,32 @@
       "kind": "circuit",
       "score_accuracy": false,
       "expected_lane": "ent"
+    },
+    {
+      "id": "vis_es_obs_01",
+      "pillar": "vision",
+      "prompt": "Observa la imagen. Responde SOLO con el entero final.",
+      "image": "vision_items/vis_math_01.png",
+      "eval": {
+        "expected_answer": "65"
+      },
+      "kind": "math_es",
+      "score_accuracy": false,
+      "expected_lane": "vision",
+      "note": "pillars-reinforce: Spanish observa (routing-only)"
+    },
+    {
+      "id": "vis_board_01",
+      "pillar": "vision",
+      "prompt": "Look at the chalkboard. Solve the arithmetic. ONLY the integer.",
+      "image": "vision_items/vis_math_02.png",
+      "eval": {
+        "expected_answer": "42"
+      },
+      "kind": "math_board",
+      "score_accuracy": false,
+      "expected_lane": "vision",
+      "note": "pillars-reinforce: chalkboard cue (routing-only)"
     }
   ],
   "hardneg_router": [
@@ -502,6 +600,7 @@
   "notes": [
     "Mixed set forces MoE Δ vs python-only: baseline=base-all; MoE applies ent2 on ent lane.",
     "No quantum-advantage claims.",
-    "Vision hard-neg expand +8 (hn_vis_diagram, hn_vis_whiteboard, hn_vis_screenshot_sheet, hn_vis_neg_textonly, hn_vis_neg_without_picture, hn_vis_neg_sin_imagen, hn_vis_street_overlay, hn_vis_neg_no_visual) — text-only negations + diagram/whiteboard/screenshot positives. GT harness-only."
+    "Vision hard-neg expand +8 (hn_vis_diagram, hn_vis_whiteboard, hn_vis_screenshot_sheet, hn_vis_neg_textonly, hn_vis_neg_without_picture, hn_vis_neg_sin_imagen, hn_vis_street_overlay, hn_vis_neg_no_visual) — text-only negations + diagram/whiteboard/screenshot positives. GT harness-only.",
+    "Pillars-reinforce fold +8: ES programa/código ejecutable, Write code, Executable snippet; EN ent Bell; No-python+quantum gates; ES observa; chalkboard. Tip circ extras retained."
   ]
 }
