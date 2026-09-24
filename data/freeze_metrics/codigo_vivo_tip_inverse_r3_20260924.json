@@ -1,0 +1,22 @@
+{
+  "schema": "codigo_vivo_tip_inverse_r3_metrics",
+  "git_sha": "a1cbee6417cc6b16bd95c01cf77aa66f3aa321ff",
+  "metrics": {
+    "collision_physics_overall_pct": 100.0,
+    "collision_choose_safest_overall_pct": 100.0,
+    "collision_inverse_cv_overall_pct": 100.0,
+    "collision_inverse_cv_overall_pct_before": 99.82,
+    "collision_inverse_cv_delta_pp": 0.18,
+    "collision_ablation_pp": 0.0,
+    "collision_ablation_pp_before": 0.18,
+    "collision_n_eval_seqs": 40,
+    "collision_n_queries": 2850,
+    "collision_contam_passed": true,
+    "collision_retrieval_ok": true,
+    "mixed_d_unified": 1.0,
+    "floor_held": true,
+    "floor_resmoke": "N/A",
+    "not_folded_into_tip": true
+  },
+  "frozen_at_et": "2026-09-24 14:05:11 ET"
+}

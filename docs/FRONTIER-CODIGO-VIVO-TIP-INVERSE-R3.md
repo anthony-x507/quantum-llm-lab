@@ -3,7 +3,8 @@
 **Branch:** `frontier/tip-inverse-r3`  
 **Base tip SHA:** `3f5f1b1` (`origin/frontier/codigo-vivo-tip`; tip-cv busy with motion-r4)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-inverse-r3` (Mac-111)  
-**When:** 2026-09-24 (ET)  
+**When:** 2026-09-24 14:05:11 ET
+**Freeze:**  @   
 **Fold status:** **NOT folded into tip** (side-branch only; TTI / distance-mid / R11 wait after motion-r4)  
 **Scope:** Side-branch only — avoids tip-cv / tip-tti / tip-distance-mid / tip-motion-r4 / tip-hardneg-r11 / tip-hardneg-r12.
 
