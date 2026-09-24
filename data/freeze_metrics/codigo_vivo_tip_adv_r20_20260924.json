@@ -1,0 +1,78 @@
+{
+  "round": "r20",
+  "branch": "frontier/tip-hardneg-r20",
+  "base_tip": "8beae2185b627b0ad8ce367ca05627c6c91d50f6",
+  "when_et": "2026-09-24T14:52:49-04:00",
+  "machine": "Mac-111",
+  "router_pre": {
+    "hits": 6,
+    "n": 52,
+    "rate": 0.1154
+  },
+  "router_post": {
+    "hits": 52,
+    "n": 52,
+    "rate": 1.0
+  },
+  "verifier_alone": {
+    "hits": 44,
+    "n": 44,
+    "rate": 1.0
+  },
+  "unified": {
+    "hits": 44,
+    "n": 44,
+    "rate": 1.0
+  },
+  "rise_pp": 88.46,
+  "rise_rate_pct_vs_pre": 766.6,
+  "freeze_gate_80pp": true,
+  "mixed_unified": 1.0,
+  "floors": {
+    "mixed": 1.0,
+    "motion": "100% (tip motion-r4; untouched)",
+    "tti": "100% (tip-tti fold; untouched)",
+    "distance_far": "held (tip distance-far on base; untouched)",
+    "collision": "100% (untouched)",
+    "inverse_cv": "100% (tip inverse-r3 fold; untouched)",
+    "r13": "52/52\u00b744/44 (on tip; held)"
+  },
+  "held_routers": {
+    "r7": "52/52",
+    "r8": "52/52",
+    "r9": "52/52",
+    "r10": "52/52",
+    "r11": "52/52",
+    "r12": "52/52",
+    "r13": "52/52",
+    "lp": "43/43"
+  },
+  "held_verifiers": {
+    "r12": "44/44",
+    "lp": "32/32"
+  },
+  "smoke": "12/12",
+  "ent_never_on_python": true,
+  "pillars": "26/26",
+  "hardneg_smoke": "18/18",
+  "families": [
+    "celery_task_gates",
+    "airbyte_stream_gates",
+    "supabase_policy_gates",
+    "trino_session_gates",
+    "vector_vrl_gates",
+    "fluentbit_filter_gates",
+    "thanos_query_gates",
+    "strimzi_topic_gates",
+    "tilt_resource_gates",
+    "mise_task_gates",
+    "cue_field_gates",
+    "nim_pragma_gates",
+    "hono_middleware_gates",
+    "axum_layer_gates"
+  ],
+  "not_folded": true,
+  "lora_adapter_ro": true,
+  "adapters_mtime_unchanged": true,
+  "feat_sha": "PENDING"
+}

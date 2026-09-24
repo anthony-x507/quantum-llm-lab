@@ -1,0 +1,9 @@
+{
+  "round": "r20",
+  "router_pre": "6/52",
+  "router_post": "52/52",
+  "verifier": "44/44",
+  "mixed": 1.0,
+  "rise_pp": 88.46,
+  "freeze": true
+}

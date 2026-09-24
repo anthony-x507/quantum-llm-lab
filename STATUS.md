@@ -1,3 +1,6 @@
+## 2026-09-24 — tip-hardneg-r20 polish (side; NOT folded)
+Branch `frontier/tip-hardneg-r20` from tip `8beae21` (post R13 fold pin). R20 router **6→52/52** · verifier **44/44**; mixed (d) **1.0**; R7–R13+LP held; `ent_never_on_python`. Novel: Celery / Airbyte / Supabase / Trino / Vector.dev / Fluent Bit / Thanos / Strimzi / Tilt / Mise / CUE / Nim / Hono / Axum. Freeze `codigo_vivo_tip_polish_r20_100pct_20260924_145249`. Do **not** fold (queue future-r3→circ→pillars→R14…→R19). RO `data/lora_adapter/`. See `docs/FRONTIER-CODIGO-VIVO-TIP-R20.md`.
+
 ## 2026-09-24 — fold tip-hardneg-r13 → codigo-vivo-tip
 Cherry-pick `304a45b` onto `f052420` → `845a292`. Conflicts: STATUS+mixed/r7–r10/LP JSON ours; router/verifier merged R11+R12+R13 gates. CPU unified **1.0** (re-smoke); R13 **52/52·44/44** (tip before **11/52**); R12 **52/52·44/44**; R11 **52/52**; far MAE **2.600 m** retained; DZ/mid/TTI **100%** retained; inv_cv **100%**; collision physics **100%** (n=40/2850); choose_safest **100%**; pillars 26/26; hardneg 18/18; `wired_to_vlm`; freezes retained incl. distance_far + inverse_r3 + r12 + distance_mid + tti + r11 + motion_r4 + vision_ground + inverse_r2 + r10 + priors. Freeze `codigo_vivo_tip_r13_100pct_20260924_144457`. Future-track / circ / R14+ **not** folded. Tip vis stays BASE. RO `data/lora_adapter/`. See SCOREBOARD + TIP-R13.
 
