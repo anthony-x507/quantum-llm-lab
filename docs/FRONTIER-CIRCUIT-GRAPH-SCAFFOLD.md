@@ -60,6 +60,16 @@
 }
 ```
 
+## Hard expand (stacked)
+
+Stacked branch `frontier/circuit-graph-scaffold-hard` adds ≥12 harder fixtures
+(teleport, small-QFT proxy, parity/error-detect, cluster/W/swap, product traps)
+without touching this freeze.
+
+- Doc: `docs/FRONTIER-CIRCUIT-GRAPH-SCAFFOLD-HARD.md`
+- JSON: `data/frontier_circuit_graph_scaffold_hard.json`
+- Freeze file above remains the source of truth for the original n=20 set.
+
 ## Reproduce
 
 ```bash
