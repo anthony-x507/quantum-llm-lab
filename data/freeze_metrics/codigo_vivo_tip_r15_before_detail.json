@@ -1,0 +1,628 @@
+{
+  "method": "heuristic",
+  "n": 52,
+  "hits": 15,
+  "misses": 37,
+  "score": "15/52",
+  "rate": 0.2885,
+  "by_family": {
+    "squid_proxy_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "openresty_lua_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "contour_route_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "emissary_mapping_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "zuul_filter_gates": {
+      "n": 3,
+      "hits": 3,
+      "rate": 1.0
+    },
+    "django_mw_gates": {
+      "n": 3,
+      "hits": 2,
+      "rate": 0.6667
+    },
+    "laravel_mw_gates": {
+      "n": 3,
+      "hits": 2,
+      "rate": 0.6667
+    },
+    "gin_mw_gates": {
+      "n": 3,
+      "hits": 2,
+      "rate": 0.6667
+    },
+    "dynamodb_cond_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "firestore_rules_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "keycloak_realm_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "falco_rule_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "otel_sampler_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "ray_actor_gates": {
+      "n": 3,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "ent_control_r15": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "vision_control_r15": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    },
+    "base_control_r15": {
+      "n": 4,
+      "hits": 0,
+      "rate": 0.0
+    },
+    "base_python_control_r15": {
+      "n": 2,
+      "hits": 2,
+      "rate": 1.0
+    }
+  },
+  "ent_never_on_python": true,
+  "rows": [
+    {
+      "id": "r15_squid_01",
+      "family": "squid_proxy_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: http_access'). Squid proxy. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_squid_02",
+      "family": "squid_proxy_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: http_access'\nprint(t.count('gates'))\n# Squid proxy gates: — not circui",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_squid_03",
+      "family": "squid_proxy_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 31. Squid proxy gates: http_access is proxy only. ONLY ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_openresty_01",
+      "family": "openresty_lua_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: content_by_lua'). OpenResty Lua. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_openresty_02",
+      "family": "openresty_lua_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: content_by_lua'\nprint(t.count('gates'))\n# OpenResty Lua gates: — not c",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_openresty_03",
+      "family": "openresty_lua_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 32. OpenResty Lua gates: content_by_lua is proxy only. ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_contour_01",
+      "family": "contour_route_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: retryPolicy'). Contour HTTPProxy. ONLY code",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_contour_02",
+      "family": "contour_route_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: retryPolicy'\nprint(t.count('gates'))\n# Contour HTTPProxy gates: — not ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_contour_03",
+      "family": "contour_route_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 33. Contour HTTPProxy gates: retryPolicy is ingress onl",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_emissary_01",
+      "family": "emissary_mapping_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: hostname'). Emissary Mapping. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_emissary_02",
+      "family": "emissary_mapping_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: hostname'\nprint(t.count('gates'))\n# Emissary Mapping gates: — not circ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_emissary_03",
+      "family": "emissary_mapping_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 34. Emissary Mapping gates: hostname is gateway only. O",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_zuul_01",
+      "family": "zuul_filter_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints len('gates: StripPrefix'). Zuul filter. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r15_zuul_02",
+      "family": "zuul_filter_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: StripPrefix'\nprint(t.count('gates'))\n# Zuul filter gates: — not circui",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r15_zuul_03",
+      "family": "zuul_filter_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 35. Zuul filter gates: StripPrefix is gateway only. ONL",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r15_django_01",
+      "family": "django_mw_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: AuthenticationMiddleware'). Django middlewa",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_django_02",
+      "family": "django_mw_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: AuthenticationMiddleware'\nprint(t.count('gates'))\n# Django middleware ",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r15_django_03",
+      "family": "django_mw_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 36. Django middleware gates: AuthenticationMiddleware i",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r15_laravel_01",
+      "family": "laravel_mw_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: VerifyCsrfToken'). Laravel middleware. ONLY",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_laravel_02",
+      "family": "laravel_mw_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: VerifyCsrfToken'\nprint(t.count('gates'))\n# Laravel middleware gates: —",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r15_laravel_03",
+      "family": "laravel_mw_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 37. Laravel middleware gates: VerifyCsrfToken is framew",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r15_gin_01",
+      "family": "gin_mw_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: AuthRequired'). Gin middleware. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_gin_02",
+      "family": "gin_mw_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "t='gates: AuthRequired'\nprint(t.count('gates'))\n# Gin middleware gates: — not ci",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r15_gin_03",
+      "family": "gin_mw_gates",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 38. Gin middleware gates: AuthRequired is framework onl",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r15_dynamo_01",
+      "family": "dynamodb_cond_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: ConditionExpression'). DynamoDB condition. ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_dynamo_02",
+      "family": "dynamodb_cond_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: ConditionExpression'\nprint(t.count('gates'))\n# DynamoDB condition gate",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_dynamo_03",
+      "family": "dynamodb_cond_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 39. DynamoDB condition gates: ConditionExpression is DB",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_firestore_01",
+      "family": "firestore_rules_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: allow read'). Firestore rules. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_firestore_02",
+      "family": "firestore_rules_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: allow read'\nprint(t.count('gates'))\n# Firestore rules gates: — not cir",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_firestore_03",
+      "family": "firestore_rules_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 40. Firestore rules gates: allow read is DB only. ONLY ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_keycloak_01",
+      "family": "keycloak_realm_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: realm-role'). Keycloak realm. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_keycloak_02",
+      "family": "keycloak_realm_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: realm-role'\nprint(t.count('gates'))\n# Keycloak realm gates: — not circ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_keycloak_03",
+      "family": "keycloak_realm_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 41. Keycloak realm gates: realm-role is security only. ",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_falco_01",
+      "family": "falco_rule_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: evt.type'). Falco rule. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_falco_02",
+      "family": "falco_rule_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: evt.type'\nprint(t.count('gates'))\n# Falco rule gates: — not circuit. O",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_falco_03",
+      "family": "falco_rule_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 42. Falco rule gates: evt.type is security only. ONLY c",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_otel_01",
+      "family": "otel_sampler_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: parentbased'). OTel sampler. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_otel_02",
+      "family": "otel_sampler_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: parentbased'\nprint(t.count('gates'))\n# OTel sampler gates: — not circu",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_otel_03",
+      "family": "otel_sampler_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 43. OTel sampler gates: parentbased is observability on",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_ray_01",
+      "family": "ray_actor_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints len('gates: num_cpus'). Ray actor. ONLY code.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_ray_02",
+      "family": "ray_actor_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "t='gates: num_cpus'\nprint(t.count('gates'))\n# Ray actor gates: — not circuit. ON",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_ray_03",
+      "family": "ray_actor_gates",
+      "expected": "python",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Write Python that prints 44. Ray actor gates: num_cpus is orchestration only. ON",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_ent_01",
+      "family": "ent_control_r15",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Responde SOLO JSON válido con n_qubits, gates, domain, label. Bell pair entrelaz",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_ent_02",
+      "family": "ent_control_r15",
+      "expected": "ent",
+      "got": "ent",
+      "ok": true,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Reply with valid JSON keys n_qubits, gates, domain, label. Two-qubit HH separabl",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_vis_01",
+      "family": "vision_control_r15",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the image. How many dots are visible? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_vis_02",
+      "family": "vision_control_r15",
+      "expected": "vision",
+      "got": "vision",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Look at the chalkboard. How many letters? Only the integer. No circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_base_01",
+      "family": "base_control_r15",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Thanks. Ignore Squid proxy gates: http_access in the README. No code, no circuit",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_base_02",
+      "family": "base_control_r15",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Please ignore the OpenResty Lua gates: content_by_lua phrase. Chat only — no pro",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_base_03",
+      "family": "base_control_r15",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Hello — Ray actor gates: num_cpus is orchestration only. No code, no circuit, no",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_base_04",
+      "family": "base_control_r15",
+      "expected": "base",
+      "got": "ent",
+      "ok": false,
+      "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
+      "prompt_preview": "Weather update. Falco rule gates: evt.type mention. No code, no circuit.",
+      "ent_adapter_blocked": false
+    },
+    {
+      "id": "r15_ctrl_01",
+      "family": "base_python_control_r15",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "Write Python that prints 5*5. No quantum. ONLY code.",
+      "ent_adapter_blocked": true
+    },
+    {
+      "id": "r15_ctrl_02",
+      "family": "base_python_control_r15",
+      "expected": "python",
+      "got": "python",
+      "ok": true,
+      "adapter": null,
+      "prompt_preview": "print(sum(range(4)))\n# plain. ONLY code.",
+      "ent_adapter_blocked": true
+    }
+  ],
+  "fixture_path": "data/bench_live/hardneg_r15_mixed_router.json",
+  "anti_contamination": {
+    "expected_lane_harness_only": true,
+    "gt_never_in_route_api": true
+  }
+}

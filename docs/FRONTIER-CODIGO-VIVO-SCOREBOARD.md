@@ -1,3 +1,23 @@
+## Hardneg R15 — FOLDED
+
+**Branch:** `frontier/tip-hardneg-r15` → **FOLDED** into `frontier/codigo-vivo-tip`  
+**Doc:** `docs/FRONTIER-CODIGO-VIVO-TIP-R15.md`  
+**Freeze:** `codigo_vivo_tip_r15_100pct_20260924_151243`
+
+| Surface | Score |
+|---------|-------|
+| R15 router / verifier | **52/52** / **44/44** (tip before **15/52**; side 6→52) |
+| R14 router / verifier | **52/52** / **44/44** (held) |
+| LP router / verifier | **64/64** / **42/42** |
+| mixed (d) unified | **1.0** |
+| pillars / circ / hardneg smoke | **37/37 · 5/5 · 18/18** |
+
+**CPU re-smoke after fold:** unified **1.0**; R15 **15→52**; R14 held; LP/pillars/circ floors retained; freezes retained incl. r14 + label_protect_expand_fold + pillars + circ + future_r3 + r13 + priors. Adapters RO. choose-n / R16+ / tti-cold not folded.
+
+**Method:** cherry-pick `7ef18ce` onto tip `bc6902f` → `a65dac6` / fold `PENDING`; merge R12+R13+R14+R15 gates_ops; keep tip STATUS+mixed/LP/r7–r11 JSON ours.
+
+**Not folded:** choose-n @ fecca86 → R16 → tti-cold → R17…R24.
+
 # FRONTIER — Código-vivo tip scoreboard
 
 

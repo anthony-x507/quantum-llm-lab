@@ -1,0 +1,118 @@
+{
+  "frontier": "C3b-moe-verifier-mixed-live",
+  "written": "2026-09-24 15:11:27",
+  "primary": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/frontier_moe_verifier_mixed_cpu.json",
+  "scoreboard": {
+    "table": [
+      {
+        "path": "a_baseline",
+        "python": {
+          "n": 12,
+          "rate": 0.0,
+          "metric": "solve_rate_single"
+        },
+        "entanglement": {
+          "n": 10,
+          "label_acc": 0.0,
+          "source": "prior_replay"
+        },
+        "vision": {
+          "n": 8,
+          "accuracy": 1.0,
+          "source": "prior_replay"
+        },
+        "overall_mean": 0.3333,
+        "prompt_touches_gt": false,
+        "repair_success_rate": 0.0
+      },
+      {
+        "path": "b_moe_alone",
+        "python": {
+          "n": 12,
+          "rate": 0.0,
+          "metric": "solve_rate_single"
+        },
+        "entanglement": {
+          "n": 10,
+          "label_acc": 1.0,
+          "source": "prior_replay"
+        },
+        "vision": {
+          "n": 8,
+          "accuracy": 1.0,
+          "source": "prior_replay"
+        },
+        "overall_mean": 0.6667,
+        "prompt_touches_gt": false,
+        "repair_success_rate": 0.0
+      },
+      {
+        "path": "c_verifier_on_python",
+        "python": {
+          "n": 12,
+          "rate": 1.0,
+          "metric": "solve_rate_loop"
+        },
+        "entanglement": {
+          "n": 10,
+          "label_acc": 0.0,
+          "source": "prior_replay"
+        },
+        "vision": {
+          "n": 8,
+          "accuracy": 1.0,
+          "source": "prior_replay"
+        },
+        "overall_mean": 0.6667,
+        "prompt_touches_gt": false,
+        "repair_success_rate": 1.0
+      },
+      {
+        "path": "d_unified",
+        "python": {
+          "n": 12,
+          "rate": 1.0,
+          "metric": "solve_rate_loop"
+        },
+        "entanglement": {
+          "n": 10,
+          "label_acc": 1.0,
+          "source": "prior_replay"
+        },
+        "vision": {
+          "n": 8,
+          "accuracy": 1.0,
+          "source": "prior_replay"
+        },
+        "overall_mean": 1.0,
+        "prompt_touches_gt": false,
+        "repair_success_rate": 1.0
+      }
+    ],
+    "delta_moe_vs_baseline": {
+      "python": 0.0,
+      "entanglement": 1.0,
+      "vision": 0.0,
+      "overall": 0.3334
+    },
+    "moe_delta_visible": true,
+    "priors_used": [
+      "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/BENCHMARK_CODIGO_VIVO.json",
+      "docs/FRONTIER-MOE-VERIFIER-UNIFIED.md#prior-live"
+    ]
+  },
+  "anti_contamination": {
+    "prompt_touches_gt": false,
+    "leaks": [],
+    "policy": "GT only in eval.*; never concatenated into inference prompts",
+    "locked_false": true,
+    "gt_never_in_inference_prompts": true,
+    "ent_never_on_python": true,
+    "scaffold_gt_leaks": 0,
+    "circuit_scaffold_on_ent": true,
+    "lock": "docs/LOCK-ANTI-CONTAMINATION.md"
+  },
+  "moe_delta_visible": true,
+  "router_hardneg": "18/18",
+  "router_pillars": "37/37"
+}

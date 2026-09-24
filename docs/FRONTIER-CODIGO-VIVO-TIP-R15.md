@@ -1,6 +1,6 @@
 # Frontier — Código-vivo tip hardneg R15
 
-**Branch:** `frontier/tip-hardneg-r15` (side; not folded)  
+**Branch:** `frontier/tip-hardneg-r15` → **FOLDED** into `frontier/codigo-vivo-tip`  
 **Base tip:** `e0f3183` (`origin/frontier/codigo-vivo-tip` post tip-tti fold freeze pin)  
 **When:** 2026-09-24 ~14:24 ET · Mac-111 (`074c6626-…`)  
 **Worktree:** `/Users/anthony/Documents/quantum-llm-lab-tip-hardneg-r15`  
@@ -82,6 +82,28 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `data/freeze_manifests/tip_moe_verifier_polish_r15_100pct_20260924_142410.json`
 - `docs/FRONTIER-CODIGO-VIVO-TIP-R15.md` (this file)
 
-## Not folded
+## Not folded (pre-fold note)
 
 Leave tip-cv / tip-tti / tip-distance-mid / tip-distance-far / tip-hardneg-r12 / tip-hardneg-r13 / tip-hardneg-r14 / tip-inverse-r3 / tip-circ-expand / tip-future-track alone (fold queue mid→R12→inv-r3→far→R13→future→circ→R14). Side branch only.
+
+## Folded into tip (2026-09-24 15:12:43 ET)
+
+Cherry-pick `7ef18ce` onto tip `bc6902f` (post R14) → `a65dac6` / fold `PENDING` (merge R12+R13+R14+R15 gates_ops; keep tip STATUS+mixed/LP/r7–r11 JSON ours). Re-smoke on tip-cv: R15 **15/52 → 52/52 · 44/44** (side trail 6→52); R14 **52/52 · 44/44** held; mixed **1.0**; LP **64/64 · 42/42**; pillars **37/37**; circ **5/5**; R13/R12/R5/R7 held; tip vis BASE; RO adapters. Freeze `codigo_vivo_tip_r15_100pct_20260924_151243`.
+
+**Not folded next:** choose-n / R16 / tti-cold / R17…R24.
+
+## Fold re-smoke (2026-09-24 15:12:43 ET)
+
+| Surface | Score |
+|---------|-------|
+| R15 router (tip before→after) | **15/52 → 52/52** |
+| R15 verifier | **44/44** |
+| R14 router · verifier | **52/52 · 44/44** |
+| LP router · verifier | **64/64 · 42/42** |
+| mixed (d) unified | **1.0** |
+| pillars / hardneg smoke | **37/37 · 18/18** |
+| circ axis (vis_circ_01…05) | **5/5** |
+| R13 / R12 / R5 / R7 | **52/52 · 52/52 · 44/44 · 52/52** |
+| `ent_never_on_python` | true |
+| tip vis | BASE |
+| Freeze | `codigo_vivo_tip_r15_100pct_20260924_151243` |
