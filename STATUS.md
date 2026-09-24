@@ -1,4 +1,14 @@
 ## 2026-09-24 — tip-future-track-r2 (side) track 97.89→99.34
+
+## tip-future-track-r3 (side) — 2026-09-24 14:28 ET
+
+- Branch `frontier/tip-future-track-r3` from r2 `6dab62d` / feat `ba5f2cf`
+- v7 class-aware near cold motion_hint: movable ±12% (<7 m), staticish ±4%, far ±8%; DZ-guard held
+- orig future track **99.34→99.58** (+0.24 pp) · +dist **99.46→99.64** (+0.18 pp)
+- DZ future 100% / distance DZ 100% MAE 1.491/0.726 / danger50 future 100% — **held**
+- Freeze `codigo_vivo_tip_future_track_r3_100pct_20260924_142834` — NO fold into tip; adapters RO; anti-contam CLEAN
+- Residual ~0.42 pp plateau (no safe obs-channel magnitude beyond class-aware step; no GT leak)
+
 Branch `frontier/tip-future-track-r2` from future-track `0a1c9b5` (tip HEAD `e0f3183` deferred — TTI conflicts). Future track **97.89→99.34** · +dist **98.19→99.46**; DZ future **100%** held; danger50→**100/100**; distance DZ **100%** MAE unchanged; contam CLEAN; adapters RO; freeze `codigo_vivo_tip_future_track_r2_100pct_20260924_142016`. **No tip fold.** Avoided tip-cv / tti / mid / far / r12 / r13 / r14 / inv-r3 / circ / future-track (RO). See `docs/FRONTIER-CODIGO-VIVO-TIP-FUTURE-TRACK-R2.md`.
 
 ## 2026-09-24 — tip-future-track (side) future-pred → DZ 100%
