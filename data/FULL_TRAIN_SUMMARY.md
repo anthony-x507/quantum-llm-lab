@@ -12,3 +12,6 @@
 - Throughput: ~0.55 it/s, ~200 tok/s
 - Smoke adapter preserved: `data/lora_adapter_smoke/` (r16, 1ep)
 - Eval: started 22:30 ET in screen `qlab-eval` → `data/lora_adapter/eval_compare.json`
+
+## Eval caveat
+First eval (`data/lora_adapter/eval_compare.json`) used old code: BASE fell back to gold on Thinking truncation → inflated parse/compile. FT emitted real JSON 9/10. Clean re-eval with hardened metrics → `data/eval_compare_clean.json` (in progress 22:32 ET).
