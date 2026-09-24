@@ -1,8 +1,9 @@
 # FRONTIER — Scaffold wire → VLM (MoE ent lane)
 
-**Branch:** `frontier/scaffold-wire-vlm`  
-**Written:** 2026-09-24 11:22:33  
-**Parent tip:** `frontier/codigo-vivo-tip` @ `5c67267`
+**Branch:** `frontier/codigo-vivo-tip` (folded from `frontier/scaffold-wire-vlm`)  
+**Written:** 2026-09-24 11:24:29  
+**Folded into:** `frontier/codigo-vivo-tip` @ `ae62ce2`  
+**Rebase base:** tip `e680271` (scaffold was `8f5e694` on `5c67267`)
 
 ## Claim scope
 

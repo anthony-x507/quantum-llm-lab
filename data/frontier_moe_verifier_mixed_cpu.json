@@ -1,6 +1,6 @@
 {
   "frontier": "C3b-moe-verifier-mixed-live",
-  "written": "2026-09-24 11:21:10",
+  "written": "2026-09-24 11:24:16",
   "claims": [
     "NO quantum-advantage claims",
     "MoE routing usability + classical python -I exec oracle only",
@@ -38,6 +38,9 @@
     "polish": false,
     "module_available": true,
     "injected_n": 10,
+    "wired_to_vlm": true,
+    "channel": "text_scaffold_prefix",
+    "weight_peft_injection": false,
     "freeze_path": "data/FRONTIER_CIRCUIT_GRAPH_SCAFFOLD_FREEZE.json",
     "mixed_freeze_overall_floor": 0.9667,
     "mixed_freeze_overall_floor_doc": 0.967,
@@ -49,6 +52,9 @@
     "scaffold_polish": false,
     "scaffold_injected_n": 10,
     "scaffold_gt_leaks": 0,
+    "wired_to_vlm": true,
+    "channel": "text_scaffold_prefix",
+    "weight_peft_injection": false,
     "pillar_routing": {
       "n": 26,
       "hits": 26,
@@ -135,10 +141,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 802,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.7557
           }
         },
         {
@@ -150,10 +164,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 802,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.7557
           }
         },
         {
@@ -165,10 +187,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 802,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.7557
           }
         },
         {
@@ -180,10 +210,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 821,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
           }
         },
         {
@@ -195,10 +233,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 821,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
           }
         },
         {
@@ -210,10 +256,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 821,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
           }
         },
         {
@@ -225,10 +279,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 821,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
           }
         },
         {
@@ -240,10 +302,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 821,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
           }
         },
         {
@@ -327,10 +397,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 802,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.7557
           }
         },
         {
@@ -342,10 +420,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 802,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.7557
           }
         }
       ]
@@ -628,6 +714,9 @@
     "scaffold_polish": false,
     "scaffold_gt_leaks": 0,
     "scaffold_module": true,
+    "wired_to_vlm": true,
+    "channel": "text_scaffold_prefix",
+    "weight_peft_injection": false,
     "ent_routing": [
       {
         "id": "ent_scene_0222",
@@ -636,10 +725,18 @@
         "uses_ent_adapter": true,
         "circuit_graph_scaffold": {
           "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
           "hint_chars": 802,
           "has_markers": true,
           "gt_leak": false,
-          "polish": false
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.7557
         },
         "prompt_with_scaffold_chars": 1000
       },
@@ -650,10 +747,18 @@
         "uses_ent_adapter": true,
         "circuit_graph_scaffold": {
           "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
           "hint_chars": 802,
           "has_markers": true,
           "gt_leak": false,
-          "polish": false
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.7557
         },
         "prompt_with_scaffold_chars": 1000
       },
@@ -664,10 +769,18 @@
         "uses_ent_adapter": true,
         "circuit_graph_scaffold": {
           "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
           "hint_chars": 802,
           "has_markers": true,
           "gt_leak": false,
-          "polish": false
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.7557
         },
         "prompt_with_scaffold_chars": 1000
       },
@@ -678,10 +791,18 @@
         "uses_ent_adapter": true,
         "circuit_graph_scaffold": {
           "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
           "hint_chars": 821,
           "has_markers": true,
           "gt_leak": false,
-          "polish": false
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.3909
         },
         "prompt_with_scaffold_chars": 1019
       },
@@ -692,10 +813,18 @@
         "uses_ent_adapter": true,
         "circuit_graph_scaffold": {
           "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
           "hint_chars": 821,
           "has_markers": true,
           "gt_leak": false,
-          "polish": false
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.3909
         },
         "prompt_with_scaffold_chars": 1019
       },
@@ -706,10 +835,18 @@
         "uses_ent_adapter": true,
         "circuit_graph_scaffold": {
           "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
           "hint_chars": 821,
           "has_markers": true,
           "gt_leak": false,
-          "polish": false
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.3909
         },
         "prompt_with_scaffold_chars": 1019
       },
@@ -720,10 +857,18 @@
         "uses_ent_adapter": true,
         "circuit_graph_scaffold": {
           "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
           "hint_chars": 821,
           "has_markers": true,
           "gt_leak": false,
-          "polish": false
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.3909
         },
         "prompt_with_scaffold_chars": 1019
       },
@@ -734,10 +879,18 @@
         "uses_ent_adapter": true,
         "circuit_graph_scaffold": {
           "injected": true,
+          "wired_to_vlm": true,
+          "channel": "text_scaffold_prefix",
+          "weight_peft_injection": false,
           "hint_chars": 821,
           "has_markers": true,
           "gt_leak": false,
-          "polish": false
+          "polish": false,
+          "prefix_shape": [
+            4,
+            64
+          ],
+          "embed_norm": 0.3909
         },
         "prompt_with_scaffold_chars": 1019
       }

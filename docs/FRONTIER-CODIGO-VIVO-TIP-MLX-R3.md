@@ -15,6 +15,7 @@
 | PLATFORM freeze write | `b114c51` | lock overall 1.0 @ **f0da3e7** (never abandon) |
 | hardneg R3 polish | `5c67267` | R3 35/35 + floor **1.0** held |
 | this consolidate freeze | `5c67267` | cite MLX+R3; keep prior manifests |
+| scaffold-wire-vlm fold | `ae62ce2` | wire→VLM on tip; **freeze retained** |
 
 ## LOCK
 
@@ -58,6 +59,26 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 .venv/bin/python examples/moe_dual_lane_router.py --hardneg \
   --hardneg-path data/bench_live/hardneg_r3_mixed_router.json
 ```
+
+
+
+## Post-freeze fold — scaffold-wire-vlm (does NOT abandon this freeze)
+
+**When:** 2026-09-24 11:24:45 ET · Mac-111 (`074c6626-…`)  
+**Tip after fold:** `ae62ce2` (rebase `8f5e694` onto consolidate `e680271` + FF)  
+**This freeze SHA `5c67267` / id `codigo_vivo_tip_mlx_r3_100pct_20260924_112131`:** **RETAINED** (not abandoned).  
+**Platform freeze `f0da3e7`:** **RETAINED**.
+
+| Check | Result |
+|-------|--------|
+| CPU (d) unified re-smoke | **py 1.0 / ent 1.0 / vis 1.0 / overall 1.0** |
+| Smoke pillars / hardneg | **26/26 · 18/18** |
+| `wired_to_vlm` | **true** (`text_scaffold_prefix`) |
+| scaffold Δsolve / hard | **0.5 / 0.6666**; freeze_held |
+| Floor ≥0.967 | **held at 1.0** |
+| `ent_never_on_python` | **true** |
+
+Detail: `docs/FRONTIER-SCAFFOLD-WIRE-VLM.md` · scoreboard fold section.
 
 ## What this does NOT do
 

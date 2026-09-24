@@ -1,6 +1,6 @@
 {
   "frontier": "C3b-moe-verifier-mixed-live",
-  "written": "2026-09-24 11:21:07",
+  "written": "2026-09-24 11:24:09",
   "claims": [
     "NO quantum-advantage claims",
     "MoE routing usability + classical python -I exec oracle only",
@@ -34,6 +34,9 @@
     "scaffold_polish": false,
     "scaffold_injected_n": 10,
     "scaffold_gt_leaks": 0,
+    "wired_to_vlm": true,
+    "channel": "text_scaffold_prefix",
+    "weight_peft_injection": false,
     "pillar_routing": {
       "n": 26,
       "hits": 26,
@@ -120,10 +123,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 802,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.7557
           }
         },
         {
@@ -135,10 +146,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 802,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.7557
           }
         },
         {
@@ -150,10 +169,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 802,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.7557
           }
         },
         {
@@ -165,10 +192,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 821,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
           }
         },
         {
@@ -180,10 +215,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 821,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
           }
         },
         {
@@ -195,10 +238,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 821,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
           }
         },
         {
@@ -210,10 +261,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 821,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
           }
         },
         {
@@ -225,10 +284,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 821,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.3909
           }
         },
         {
@@ -312,10 +379,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 802,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.7557
           }
         },
         {
@@ -327,10 +402,18 @@
           "adapter": "/Users/anthony/Documents/quantum-llm-lab-tip-cv/data/lora_adapter_ent2",
           "circuit_graph_scaffold": {
             "injected": true,
+            "wired_to_vlm": true,
+            "channel": "text_scaffold_prefix",
+            "weight_peft_injection": false,
             "hint_chars": 802,
             "has_markers": true,
             "gt_leak": false,
-            "polish": false
+            "polish": false,
+            "prefix_shape": [
+              4,
+              64
+            ],
+            "embed_norm": 0.7557
           }
         }
       ]
