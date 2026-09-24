@@ -46,5 +46,6 @@
     "inverse_r2_retained": true,
     "floor_resmoke": "mixed (d) 1.0 @ 2026-09-24 14:11:46 ET; TTI scorable 100% (691/691 \u00b7 725/725); R11 52/52\u00b744/44; motion 100%; inverse_cv 99.82%; collision 100.0%; R10 52/52"
   },
-  "git_sha_short": "6665e2c"
+  "git_sha_short": "a99362c",
+  "git_sha": "a99362ca3ee1272307be6365efca7b9adab01be7"
 }

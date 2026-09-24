@@ -4,8 +4,8 @@
   "domain": "codigo_vivo_tip_tti",
   "pct": 100,
   "band": "100pct",
-  "git_sha": "6665e2c9452ae815f123cc7d3e4e1225054ec87f",
-  "git_sha_short": "6665e2c",
+  "git_sha": "a99362ca3ee1272307be6365efca7b9adab01be7",
+  "git_sha_short": "a99362c",
   "artifact": "data/frontier_tip_tti_probe.json",
   "eval_path": "data/video_synth/distance_est/EVAL_FLOOR_SCALE_CPU.json",
   "metrics": {
@@ -73,5 +73,6 @@
   "side_pre_rebase": "1e79b23",
   "feat_pre_rebase": "c483e46",
   "adapters_ro": true,
-  "no_merge_main": true
+  "no_merge_main": true,
+  "pin_note": "pin_sha \u2192 a99362c (2026-09-24 14:12:27 ET)"
 }

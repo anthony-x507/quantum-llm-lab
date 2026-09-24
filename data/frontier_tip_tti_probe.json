@@ -2,7 +2,7 @@
   "frontier": "codigo-vivo-tip-tti-fold",
   "written": "2026-09-24 14:11:46 ET",
   "branch": "frontier/codigo-vivo-tip",
-  "tip_sha": "6665e2c9452ae815f123cc7d3e4e1225054ec87f",
+  "tip_sha": "a99362ca3ee1272307be6365efca7b9adab01be7",
   "feat_cherry": "6665e2c9452ae815f123cc7d3e4e1225054ec87f",
   "tti": {
     "orig_scorable_pct": 100.0,
@@ -20,5 +20,6 @@
   },
   "freeze": "codigo_vivo_tip_tti_fold_100pct_20260924_141146",
   "ro_mtime_unchanged": true,
-  "contam_passed": true
+  "contam_passed": true,
+  "fold_sha": "a99362ca3ee1272307be6365efca7b9adab01be7"
 }
