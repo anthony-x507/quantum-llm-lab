@@ -149,6 +149,39 @@
 | R6 doc | `docs/FRONTIER-CODIGO-VIVO-TIP-R6.md` |
 | Re-smoke | PASS · R6 48/48·40/40 · LP 43/43·32/32 · cpu overall 1.0 |
 
+
+## POST-OD2 TIP FREEZE (overall 1.0) — after own-delta refresh fold + R6
+
+**Freeze id:** `codigo_vivo_tip_post_od2_100pct_20260924_125301`  
+**Frozen SHA:** `15c9a2317409f63a1f58d801b1bedd203bb86758` (`15c9a23`) · branch `frontier/codigo-vivo-tip`  
+**When:** 2026-09-24 12:53:01 ET · Mac-111 (`074c6626-…`)  
+**Claim:** NO quantum advantage. Cites tip HEAD after own-delta-refresh fold on R6 tip; **prior platform / mlx_r3 / post_polish / R5 / label_protect / R6 freezes NOT abandoned**.
+
+| Lock | Value |
+|------|-------|
+| overall (d unified) | **1.0000** |
+| MoE Δ overall | **+0.3334** visible |
+| pillars | **26/26** |
+| hardneg R1–R6 | **18/18 · 22/22 · 35/35 · 40/40 · 44/44 · 48/48** |
+| R3–R6 verifier | **28/28 · 32/32 · 36/36 · 40/40** |
+| label-protect | **43/43 · 32/32** |
+| own-delta refresh | Py **−0.062** · Ent **+1.0** · Vis **−0.200** (dual-lane **1.0**) |
+| wired_to_vlm | **true** (`text_scaffold_prefix`) |
+| ent_never_on_python | **true** |
+| prompt_touches_gt | **false** |
+| floor held | **yes** (≥0.967, actual 1.0) |
+
+**Policy:** Never abandon platform / mlx_r3 / post_polish / R5 / LP / R6 (`codigo_vivo_tip_r6_100pct_20260924_124951`). `data/lora_adapter/` **READ-ONLY**. No merge to `main`.
+
+| Artifact | Path |
+|----------|------|
+| Manifest | `data/freeze_manifests/codigo_vivo_tip_post_od2_100pct_20260924_125301.json` |
+| Metrics | `data/freeze_metrics/codigo_vivo_tip_post_od2_20260924.json` |
+| Unified | `data/frontier_moe_verifier_mixed_unified.json` |
+| Own-delta refresh | `docs/FRONTIER-CODIGO-VIVO-TIP-OWN-DELTA-REFRESH.md` |
+| Re-smoke | PASS · pillars 26/26 · R6 48/48 · LP 43/43 · cpu overall 1.0 |
+
+
 ## LABEL-PROTECT TIP FREEZE (overall 1.0) — after label-protect fold
 
 **Freeze id:** `codigo_vivo_tip_label_protect_100pct_20260924_124608`  

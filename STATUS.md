@@ -3,6 +3,9 @@
 Ver **[`docs/STATUS.md`](docs/STATUS.md)** (Agent Lab / quantum-llm-lab).  
 Plan SSOT: [`docs/PLAN-MAESTRO-PARTE-1.md`](docs/PLAN-MAESTRO-PARTE-1.md).
 
+## 2026-09-24 — POST-OD2 tip freeze @ 15c9a23
+Freeze `codigo_vivo_tip_post_od2_100pct_20260924_125301`. CPU unified **1.0**; R1–R6 18/18·22/22·35/35·40/40·44/44·48/48; LP 43/43·32/32; own-delta Py−0.062 Ent+1.0 Vis−0.200 dual-lane 1.0; wired_to_vlm. Prior freezes **retained** (platform / mlx_r3 / post_polish / R5 / LP / R6). Blockers none. See SCOREBOARD.
+
 ## 2026-09-24 — fold tip-own-delta-refresh → codigo-vivo-tip
 Rebase `9c9b4d3` onto `4291aab` → `1b56131` FF. CPU unified **1.0** (re-smoke); RAW Py−0.062 Ent+1.0 Vis−0.200; dual-lane held; freezes retained incl. r6 + label_protect. See SCOREBOARD + OWN-DELTA-REFRESH.
 

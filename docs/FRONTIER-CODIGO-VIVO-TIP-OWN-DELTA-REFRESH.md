@@ -107,6 +107,16 @@ export QLAB_DATA=/Users/anthony/Documents/quantum-llm-lab/data
 - `data/frontier_tip_own_delta_refresh_mlx_sample.json`
 - `data/tip_own_delta_refresh_adapter_ro_snapshot_{before,after}.json`
 
+
+## TIP FREEZE (post-od2)
+
+| Manifest | pct |
+|----------|-----|
+| `data/freeze_manifests/codigo_vivo_tip_post_od2_100pct_20260924_125301.json` | **100** |
+
+Frozen tip SHA **`15c9a23`**. Metrics: `data/freeze_metrics/codigo_vivo_tip_post_od2_20260924.json`.  
+Prior freezes retained incl. R6 `codigo_vivo_tip_r6_100pct_20260924_124951` + label_protect.
+
 ## FOLDED into tip
 
 **When:** 2026-09-24 12:51:49 ET · Mac-111 (`074c6626-…`)  
