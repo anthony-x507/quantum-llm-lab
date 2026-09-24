@@ -1,0 +1,77 @@
+{
+  "round": "r18",
+  "branch": "frontier/tip-hardneg-r18",
+  "base_tip": "5fb00e37ee6b175dbfbc5f60a8b09c6d944d0d60",
+  "when_et": "2026-09-24T14:39:50-04:00",
+  "machine": "Mac-111",
+  "router_pre": {
+    "hits": 6,
+    "n": 52,
+    "rate": 0.1154
+  },
+  "router_post": {
+    "hits": 52,
+    "n": 52,
+    "rate": 1.0
+  },
+  "verifier_alone": {
+    "hits": 44,
+    "n": 44,
+    "rate": 1.0
+  },
+  "unified": {
+    "hits": 44,
+    "n": 44,
+    "rate": 1.0
+  },
+  "rise_pp": 88.46,
+  "rise_rate_pct_vs_pre": 766.6,
+  "freeze_gate_80pp": true,
+  "mixed_unified": 1.0,
+  "floors": {
+    "mixed": 1.0,
+    "motion": "100% (tip motion-r4; untouched)",
+    "tti": "100% (tip-tti fold; untouched)",
+    "distance_far": "held (tip distance-far on base; untouched)",
+    "collision": "100% (untouched)",
+    "inverse_cv": "100% (tip inverse-r3 fold; untouched)",
+    "r12": "52/52\u00b744/44 (on tip; held)"
+  },
+  "held_routers": {
+    "r7": "52/52",
+    "r8": "52/52",
+    "r9": "52/52",
+    "r10": "52/52",
+    "r11": "52/52",
+    "r12": "52/52",
+    "lp": "43/43"
+  },
+  "held_verifiers": {
+    "r12": "44/44",
+    "lp": "32/32"
+  },
+  "smoke": "12/12",
+  "ent_never_on_python": true,
+  "pillars": "26/26",
+  "hardneg_smoke": "18/18",
+  "families": [
+    "aws_alb_rule_gates",
+    "azure_frontdoor_gates",
+    "gcp_urlmap_gates",
+    "hudi_table_gates",
+    "iceberg_snapshot_gates",
+    "flink_checkpoint_gates",
+    "nifi_processor_gates",
+    "concourse_step_gates",
+    "woodpecker_when_gates",
+    "teamcity_condition_gates",
+    "cargo_feature_gates",
+    "go_build_tag_gates",
+    "quarkus_interceptor_gates",
+    "micronaut_filter_gates"
+  ],
+  "not_folded": true,
+  "lora_adapter_ro": true,
+  "adapters_mtime_unchanged": true,
+  "feat_sha": "PENDING"
+}

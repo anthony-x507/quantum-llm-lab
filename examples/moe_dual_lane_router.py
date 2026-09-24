@@ -165,6 +165,7 @@ def route_heuristic(prompt: str) -> Lane:
     # R10: AsyncAPI/Istio/ArgoCD/Tekton/FlatBuffers/Cypher/Earthfile gates:; Nomad/Vault/Cap'n/Solidity/Rust cfg/Kotlin/csproj/SPARQL.
     # R11: Smithy/Ansible/Linkerd/Cilium/Airflow/Kafka/Prometheus/Kyverno/Temporal gates: scalars; Prisma/Consul/Gradle/Zig/Dart held by priors.
     # R12: Traefik/Envoy/NATS/ClickHouse/dbt/Crossplane/Flux/RabbitMQ/ES/Swift/Elixir/Julia/Kong/Spinnaker gates: scalars.
+    # R18: ALB/FrontDoor/URLMap/Hudi/Iceberg/Flink/NiFi/Concourse/Woodpecker/TeamCity/Cargo/Go/Quarkus/Micronaut gates: scalars.
     gates_token = bool(re.search(r"\bgates\s*[=:\[]", text, re.I))
     gates_ops_label = bool(
         re.search(
@@ -405,7 +406,66 @@ def route_heuristic(prompt: str) -> Lane:
             r"|spinnaker\s+.*gates:"
             r"|stage\s+gates:"
             # R12: proxy / messaging / DB / SQL / k8s / GitOps / broker / search / language / BEAM / gateway / CD prose
-            r"|gates:\s+is\s+(?:proxy|messaging|DB|SQL|k8s|GitOps|broker|search|language|BEAM|gateway|CD)\b",
+            r"|gates:\s+is\s+(?:proxy|messaging|DB|SQL|k8s|GitOps|broker|search|language|BEAM|gateway|CD)\b"
+            # R18: AWS ALB rule gates: host-header
+            r"|gates\s*:\s*host-header\b"
+            r"|aws\s+alb\s+.*gates:"
+            r"|alb\s+.*gates:\s*host-header"
+            # R18: Azure Front Door gates: matchCondition
+            r"|gates\s*:\s*matchCondition\b"
+            r"|azure\s+front\s*door\s+.*gates:"
+            r"|frontdoor\s+.*gates:"
+            r"|front\s+door\s+.*gates:"
+            # R18: GCP URL Map gates: pathMatcher
+            r"|gates\s*:\s*pathMatcher\b"
+            r"|gcp\s+url\s*map\s+.*gates:"
+            r"|url\s*map\s+.*gates:"
+            # R18: Apache Hudi table gates: hoodie
+            r"|gates\s*:\s*hoodie\b"
+            r"|apache\s+hudi\s+.*gates:"
+            r"|hudi\s+.*gates:"
+            # R18: Apache Iceberg snapshot gates: snapshot-id
+            r"|gates\s*:\s*snapshot-id\b"
+            r"|apache\s+iceberg\s+.*gates:"
+            r"|iceberg\s+.*gates:"
+            # R18: Apache Flink checkpoint gates: exactly_once
+            r"|gates\s*:\s*exactly_once\b"
+            r"|apache\s+flink\s+.*gates:"
+            r"|flink\s+.*gates:"
+            # R18: Apache NiFi processor gates: auto-terminated
+            r"|gates\s*:\s*auto-terminated\b"
+            r"|apache\s+nifi\s+.*gates:"
+            r"|nifi\s+.*gates:"
+            # R18: Concourse CI step gates: try
+            r"|gates\s*:\s*try\b"
+            r"|concourse\s+(?:ci\s+)?.*gates:"
+            r"|step\s+gates:\s*try"
+            # R18: Woodpecker CI when gates: branch
+            r"|gates\s*:\s*branch\b"
+            r"|woodpecker\s+(?:ci\s+)?.*gates:"
+            r"|when\s+gates:\s*branch"
+            # R18: TeamCity condition gates: equals
+            r"|gates\s*:\s*equals\b"
+            r"|teamcity\s+.*gates:"
+            r"|condition\s+gates:\s*equals"
+            # R18: Cargo feature gates: default
+            r"|gates\s*:\s*default\b"
+            r"|cargo\s+.*gates:"
+            r"|feature\s+gates:\s*default"
+            # R18: Go build tag gates: goos
+            r"|gates\s*:\s*goos\b"
+            r"|go\s+build\s+tags?\s+.*gates:"
+            r"|build\s+tags?\s+.*gates:"
+            # R18: Quarkus interceptor gates: AroundInvoke
+            r"|gates\s*:\s*AroundInvoke\b"
+            r"|quarkus\s+.*gates:"
+            r"|interceptor\s+gates:\s*AroundInvoke"
+            # R18: Micronaut filter gates: Filter
+            r"|gates\s*:\s*Filter\b"
+            r"|micronaut\s+.*gates:"
+            r"|filter\s+gates:\s*Filter"
+            # R18: cloud / CDN / lake / stream / ETL / CI / build / language / framework prose
+            r"|gates:\s+is\s+(?:cloud|CDN|lake|stream|ETL|CI|build|language|framework)\b",
             text,
             re.I,
         )
@@ -961,6 +1021,8 @@ def main() -> int:
         hp = str(args.hardneg_path).lower()
         if 'label_protect' in hp or 'label-protect' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_label_protect.json"
+        elif 'r18' in hp:
+            out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r18.json"
         elif 'r12' in hp:
             out = ROOT / "data" / "frontier_moe_dual_lane_hardneg_r12.json"
         elif 'r11' in hp:
