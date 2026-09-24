@@ -1,0 +1,44 @@
+{
+  "ts": "2026-09-24T04:37:00-04:00",
+  "rows_jsonl_v2": 460,
+  "n_scenes": 460,
+  "domains": {
+    "superposition": 95,
+    "entanglement": 263,
+    "fall": 102
+  },
+  "labels": {
+    "collapsed": 23,
+    "superposed": 72,
+    "entangled": 179,
+    "fall": 54,
+    "fall_multi": 48,
+    "separable": 84
+  },
+  "n_ent_templates": 22,
+  "ent_templates": {
+    "bell_hxcx": 34,
+    "bell_yhcx": 15,
+    "bell_hcx": 31,
+    "bell_xxhcx": 21,
+    "bell_hcxry": 16,
+    "sep_hy": 11,
+    "sep_zz": 10,
+    "sep_hh": 12,
+    "sep_xx": 14,
+    "bell_xhcx": 26,
+    "sep_ryry": 10,
+    "sep_hx": 9,
+    "bell_hcxz": 17,
+    "sep_yh": 9,
+    "bell_zhcx": 5,
+    "bell_hycx": 5,
+    "sep_yz": 3,
+    "bell_hcx_x": 5,
+    "sep_xy": 2,
+    "bell_ryhcx": 4,
+    "sep_ryx": 2,
+    "sep_hz": 2
+  },
+  "note": "v2 templates bell=11 sep=11; staged to lora_dataset_ent_v2.jsonl; live train still on 380-row hf set"
+}

@@ -24,3 +24,9 @@ LLM→JSON gates→PennyLane + Jev toy. **No** quantum advantage. QEC = pedagogi
 1. Morning report audio (08:19) — ya listo el draft.
 2. Optional: larger n-test (30) daytime only; keep frozen adapter as baseline.
 3. Optional: SERC paper skim / Agent-Lab notes — no Fase4.
+
+## Night tip-of-spear (04:37 ET update)
+- Ent-more train in flight on 380-row set → `lora_adapter_ent` (target 1140 iters).
+- Parallel enrich landed: 11 bell + 11 sep templates; +80 scenes; `lora_dataset_ent_v2.jsonl` = 460 rows ready for next train after archive+eval.
+- Claims unchanged: LLM→JSON→PennyLane+Jev toy; no quantum advantage; QEC Fase4 HOLD.
+

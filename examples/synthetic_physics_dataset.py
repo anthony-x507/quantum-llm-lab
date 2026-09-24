@@ -730,9 +730,11 @@ def sample_configs(n_scenes: int, rng: random.Random) -> list[dict[str, Any]]:
     ENT_TEMPLATES_BELL = [
         "bell_hcx", "bell_xhcx", "bell_hxcx", "bell_xxhcx",
         "bell_hcxz", "bell_yhcx", "bell_hcxry",
+        "bell_zhcx", "bell_hycx", "bell_ryhcx", "bell_hcx_x",
     ]
     ENT_TEMPLATES_SEP = [
         "sep_hh", "sep_xx", "sep_hy", "sep_ryry", "sep_hx", "sep_zz", "sep_yh",
+        "sep_xy", "sep_hz", "sep_yz", "sep_ryx",
     ]
     n_ent = max(12, int(n_scenes * 0.38))
     for i in range(n_ent):
@@ -901,8 +903,12 @@ def generate_dataset(
                 ENT_B = [
                     "bell_hcx", "bell_xhcx", "bell_hxcx", "bell_xxhcx",
                     "bell_hcxz", "bell_yhcx", "bell_hcxry",
+                    "bell_zhcx", "bell_hycx", "bell_ryhcx", "bell_hcx_x",
                 ]
-                ENT_S = ["sep_hh", "sep_xx", "sep_hy", "sep_ryry", "sep_hx", "sep_zz", "sep_yh"]
+                ENT_S = [
+                    "sep_hh", "sep_xx", "sep_hy", "sep_ryry", "sep_hx", "sep_zz", "sep_yh",
+                    "sep_xy", "sep_hz", "sep_yz", "sep_ryx",
+                ]
                 forced.append({
                     "domain": "entanglement",
                     "entangled": entangled,

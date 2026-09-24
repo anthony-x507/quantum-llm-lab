@@ -76,6 +76,10 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
                 "bell_hcxz",     # H + CX + Z
                 "bell_yhcx",     # Y + H + CX
                 "bell_hcxry",    # H + CX + RY (soft)
+                "bell_zhcx",     # Z + H + CX
+                "bell_hycx",     # H + Y(q1) + CX
+                "bell_ryhcx",    # RY + H + CX
+                "bell_hcx_x",    # H + CX + X(q1)
             ]
             if not tpl:
                 tpl = bell_map.get(str(bell)) or pool[seed % len(pool)]
@@ -94,6 +98,10 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
                 "bell_hcxz": [["h", 0], ["cx", 0, 1], ["z", 1]],
                 "bell_yhcx": [["y", 0], ["h", 0], ["cx", 0, 1]],
                 "bell_hcxry": [["h", 0], ["cx", 0, 1], ["ry", 1, 0.4]],
+                "bell_zhcx": [["z", 0], ["h", 0], ["cx", 0, 1]],
+                "bell_hycx": [["h", 0], ["y", 1], ["cx", 0, 1]],
+                "bell_ryhcx": [["ry", 0, 0.35], ["h", 0], ["cx", 0, 1]],
+                "bell_hcx_x": [["h", 0], ["cx", 0, 1], ["x", 1]],
             }
             if tpl not in gates_by_tpl:
                 tpl = "bell_hcx"
@@ -118,6 +126,10 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
             "sep_hx",    # H X
             "sep_zz",    # Z Z
             "sep_yh",    # Y H
+            "sep_xy",    # X Y
+            "sep_hz",    # H Z
+            "sep_yz",    # Y Z
+            "sep_ryx",   # RY X
         ]
         if not tpl:
             tpl = sep_pool[seed % len(sep_pool)]
@@ -133,6 +145,10 @@ def _circuit_target_from_meta(meta: dict[str, Any]) -> dict[str, Any]:
             "sep_hx": [["h", 0], ["x", 1]],
             "sep_zz": [["z", 0], ["z", 1]],
             "sep_yh": [["y", 0], ["h", 1]],
+            "sep_xy": [["x", 0], ["y", 1]],
+            "sep_hz": [["h", 0], ["z", 1]],
+            "sep_yz": [["y", 0], ["z", 1]],
+            "sep_ryx": [["ry", 0, 0.45], ["x", 1]],
         }
         if tpl not in gates_by_tpl:
             tpl = "sep_hh"
