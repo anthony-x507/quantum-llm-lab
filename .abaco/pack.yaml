@@ -1,0 +1,34 @@
+schema_version: 1
+slug: qlab
+nombre: "QLab (quantum-llm-lab)"
+owner_agent: "PIONERO"
+idea: >
+  Laboratorio de modelos y agentes con MLX, PennyLane, LoRA y herramientas, con métricas propias y controles anti-contaminación.
+estado: activo
+cara: "Tip 1cc5721: harden GPU busy; visión temporal, distancia y bucle híbrido activos. Próximo: own-delta ent y colas GPU."
+repos:
+  - {repo: anthony-x507/quantum-llm-lab, rama: main, head: "1cc5721", rol: principal}
+locks:
+  - id: QL-CLEAN
+    texto: "Solo números de registro limpio; sin claims de ventaja cuántica y sin contaminación gold."
+    desde: "2026-09-24"
+    fuente: "https://github.com/anthony-x507/quantum-llm-lab/blob/main/docs/STATUS.md"
+  - id: QL-SEPARATE
+    texto: "agent-lab queda como proyecto separado; no fusionarlo a qlab."
+    desde: "2026-09-28"
+    fuente: "/workspace/contexto-por-proyecto/e0/owners-proposal.md"
+done:
+  - {id: D-LOOP, criterio: "Bucle híbrido gold-free reporta own-delta con evidencia", estado: PASS}
+  - {id: D-ENT, criterio: "Completar own-delta del adapter ent sin contaminar", estado: PEND}
+  - {id: D-QUEUE, criterio: "Drenar colas GPU sin waiter self-match deadlock", estado: PEND}
+no_hacer:
+  - "No afirmar ventaja cuántica sin evidencia reproducible."
+  - "No mezclar gold labels en prompts de evaluación."
+  - "No fusionar agent-lab a qlab."
+  - "No tocar Universal ni reabrir F1."
+links:
+  - {etiqueta: "Estado de avance", url: "https://github.com/anthony-x507/quantum-llm-lab/blob/main/docs/STATUS.md"}
+  - {etiqueta: "HEAD main", url: "https://github.com/anthony-x507/quantum-llm-lab/commit/1cc5721"}
+vitrina: {publico: false, url: null}
+actualizado: {fecha: "2026-09-28", por: "PIONERO", motivo: "alta pack piloto E2"}
+ttl_dias: 7
